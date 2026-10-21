@@ -1,0 +1,28 @@
+*.DS_Store
+
+# Python build / cache artefacts
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+
+# Virtual environments
+.venv/
+.venv-pw/
+venv/
+
+# Calculation output: checkpoints, training statistics, device logs.
+# Remove this line if you want to track results in git.
+results/
+
+# Editor and tooling settings
+.claude/
+.idea/
+.vscode/
+
+# 手元の作業用・計算の出力（リポジトリには入れない）
+*.log
+*.npz
+screening_analysis/out*/
+_to_delete/
+Claude outputs/

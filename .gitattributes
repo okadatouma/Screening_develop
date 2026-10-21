@@ -1,0 +1,5 @@
+# 改行はリポジトリの中では LF にそろえる（Windows では checkout のときに CRLF になる）
+* text=auto
+*.pdf binary
+*.png binary
+*.npz binary
