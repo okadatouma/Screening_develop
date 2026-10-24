@@ -1,0 +1,41 @@
+{
+  "fixed_reference": 1.2347060624819985,
+  "rows": [
+    {
+      "window": "burn128",
+      "mean": 1.2347429463481223,
+      "block_sem": 3.474755828167393e-05,
+      "z": 1.061480804630354,
+      "all_plateaus": true
+    },
+    {
+      "window": "burn512",
+      "mean": 1.234735909155592,
+      "block_sem": 3.5198202864470676e-05,
+      "z": 0.8479601560465404,
+      "all_plateaus": true
+    },
+    {
+      "window": "burn1024",
+      "mean": 1.2347262423775283,
+      "block_sem": 3.5749890872794784e-05,
+      "z": 0.564474325292882,
+      "all_plateaus": true
+    },
+    {
+      "window": "first_half",
+      "mean": 1.2347709286513915,
+      "block_sem": 4.929489001772784e-05,
+      "z": 1.315880193050703,
+      "all_plateaus": true
+    },
+    {
+      "window": "second_half",
+      "mean": 1.2347149640448531,
+      "block_sem": 4.917790129383972e-05,
+      "z": 0.18100737567906175,
+      "all_plateaus": true
+    }
+  ],
+  "warning": "Windows share samples. Burn comparisons are sensitivity diagnostics, not independent replications."
+}

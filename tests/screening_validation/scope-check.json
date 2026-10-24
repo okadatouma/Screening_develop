@@ -1,0 +1,19 @@
+{
+  "changed_existing_files": [
+    "tests/RESULTS.md",
+    "periodicwave/attention.py",
+    "periodicwave/CustomScreenformer.py"
+  ],
+  "factory_signature": "AST identical",
+  "initializer": "AST identical",
+  "forward_operations": "AST identical after binding names; no operations reordered",
+  "other_code": "AST identical after replacing delegate with original body",
+  "unit_length": "AST identical",
+  "analysis_tests_snapshots_checkpoints": "all recorded hashes unchanged except RESULTS.md; new test artifacts excluded",
+  "source_sha256_after": {
+    "periodicwave/attention.py": "58374cd578691937a3add567b76aad57d9d71799838e6cd6f5d51b9d4aa9f3d9",
+    "periodicwave/CustomScreenformer.py": "362e2d700537a82c6d97ccd8c080829e5b1c063e94d6194591f57d3d3d3ebb32",
+    "tests/check_screening.py": "7df0bff100eab889f641b401e8b58e1285976d5b7a4e2b5babaf13ff15a35943",
+    "tests/screening_reference.py": "ae7024f83b9e3b2fc8ba1f476cf04d037bef3b636bd5fcff1081f4ec9615ce15"
+  }
+}

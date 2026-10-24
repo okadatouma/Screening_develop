@@ -1,0 +1,6 @@
+test_internal_values_against_independent_equations (tests.check_attention_aux.AttentionAuxChecks.test_internal_values_against_independent_equations) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.630s
+
+OK

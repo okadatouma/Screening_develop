@@ -1,0 +1,73 @@
+test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+
+  test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) (route='psiformer') ... FAIL
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpr9y3nd53/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+
+======================================================================
+FAIL: test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) (route='psiformer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_wavefunction.py", line 59, in test_first_second_derivatives_and_forward_laplacian
+    np.testing.assert_allclose(forward.laplacian, jnp.trace(hess), rtol=1e-7, atol=1e-8)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-08
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 1.78235943e-07
+Max relative difference among violations: 5.32383814e-07
+ ACTUAL: array(-0.334788)
+ DESIRED: array(-0.334788)
+
+----------------------------------------------------------------------
+Ran 1 test in 21.843s
+
+FAILED (failures=1)

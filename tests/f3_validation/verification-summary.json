@@ -1,0 +1,56 @@
+{
+  "stage": "F3 only, complete; F4 not started",
+  "application_changes": [
+    "periodicwave/networks.py: direct reexport",
+    "periodicwave/wavefunction.py: unchanged numeric factory body plus local geometry import"
+  ],
+  "new_construction_methods": {
+    "PASS": 3
+  },
+  "F0_methods": {
+    "PASS": 12
+  },
+  "original_33_methods": {
+    "PASS": 27,
+    "ERROR": 2,
+    "XFAIL": 2,
+    "FAIL": 2
+  },
+  "original_status_changes": {},
+  "window_layernorm_screening_aux_formal_diagnostic": {
+    "PASS": 26
+  },
+  "embedding": {
+    "PASS": 3
+  },
+  "major_analysis_entries": {
+    "PASS": 16
+  },
+  "static_reproducibility": {
+    "PASS": 10,
+    "XFAIL": 1
+  },
+  "production_float64": {
+    "comparison": "exact",
+    "arrays": 902,
+    "elements": 21651
+  },
+  "production_float32": {
+    "comparison": "exact",
+    "arrays": 1319,
+    "elements": 31142,
+    "adam_kfac": "all 5 routes"
+  },
+  "float64_kfac": "Psiformer and SlaterNet old/new real training step: checkpoint params/state/data/width/step and CSV exact; Screen/lambda/HF remain known errors",
+  "diagnostic_36_conditions": "exact to existing independent-JIT references",
+  "checkpoint_scope": "10 pre-LayerNorm validation checkpoints plus diagnostic entries and new roundtrips/training checkpoints; historical research checkpoint not available",
+  "known_envelope_probes": "8 unchanged, not model-correctness PASS",
+  "snapshot_updates": false,
+  "new_failures": 0,
+  "not_run": [
+    "GPU/multiple devices",
+    "real historical research checkpoints and real HF data",
+    "long resume/statistical convergence",
+    "3 opt-in long legacy physics scripts"
+  ]
+}

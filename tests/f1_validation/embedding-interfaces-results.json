@@ -1,0 +1,111 @@
+{
+  "results": [
+    {
+      "test": "tests.check_embedding.EmbeddingChecks.test_initializer_bare_weight_and_subkeys",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "F1 equivalence"
+    },
+    {
+      "test": "tests.check_embedding.EmbeddingChecks.test_embedding_values_jit_derivatives_and_compilation",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "F1 equivalence"
+    },
+    {
+      "test": "tests.check_embedding.EmbeddingChecks.test_three_trunks_full_rng_tree_jit_coordinate_and_parameter_derivatives",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "F1 equivalence"
+    },
+    {
+      "test": "tests.check_interfaces.CurrentContracts.test_geometry_shapes_orientation_and_masked_derivatives",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "CurrentContracts"
+    },
+    {
+      "test": "tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "CurrentContracts"
+    },
+    {
+      "test": "tests.check_interfaces.CurrentContracts.test_orbital_packing_merged_jastrow_and_envelope_position",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "CurrentContracts"
+    },
+    {
+      "test": "tests.check_interfaces.CurrentContracts.test_node_and_near_node_current_behavior",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "CurrentContracts"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_periodic_norm_analytic_first_second_derivatives",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_features_values_covariance_and_pbc",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_determinant_sum_real_sign_and_complex_phase",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_hf_nn_correction_dynamic_spins_and_exchange",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_lambda_spin_flip_and_weighted_complex_kinetic",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_ewald_independent_background_self_and_length_scaling",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.IndependentPhysics.test_moire_value_derivatives_and_local_energy",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "IndependentPhysics"
+    },
+    {
+      "test": "tests.check_interfaces.KnownInconsistency.test_current_periodic_isotropic_envelope_shape_incompatibility",
+      "status": "PASS",
+      "suite_log": "embedding-interfaces-output.txt",
+      "environment": "CPU .venv-pw; environment.json",
+      "category": "KnownInconsistency"
+    }
+  ],
+  "precisions": "All F1 methods: float32 and float64; F0 per-method coverage unchanged (see RESULTS).",
+  "elapsed_seconds": 34.349
+}

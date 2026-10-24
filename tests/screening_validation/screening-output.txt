@@ -1,0 +1,8 @@
+test_forward_jit_all_modes (__main__.ScreeningChecks.test_forward_jit_all_modes) ... ok
+test_global_changes_and_cached_jit (__main__.ScreeningChecks.test_global_changes_and_cached_jit) ... ok
+test_gradients_and_hessian_all_modes (__main__.ScreeningChecks.test_gradients_and_hessian_all_modes) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 47.100s
+
+OK

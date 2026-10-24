@@ -1,0 +1,82 @@
+[
+  {
+    "route": "psiformer",
+    "x64": false,
+    "path": "tests/layernorm_validation/before-checkpoints/float32/psiformer/qmcjax_ckpt_000000.npz",
+    "sha256": "e205ffa5a6808a2ebf9a10b1dff8f08f3ce87f929fb4e712adfc824df2eaa9e0",
+    "phase": -0.5407483577728271,
+    "logabs": 1.0450465679168701
+  },
+  {
+    "route": "slater",
+    "x64": false,
+    "path": "tests/layernorm_validation/before-checkpoints/float32/slater/qmcjax_ckpt_000000.npz",
+    "sha256": "7fb07f0c0e229926258edb437a9270289826a9af27724674952f64338b985f85",
+    "phase": 0.28097084164619446,
+    "logabs": 0.6639001369476318
+  },
+  {
+    "route": "screen",
+    "x64": false,
+    "path": "tests/layernorm_validation/before-checkpoints/float32/screen/qmcjax_ckpt_000000.npz",
+    "sha256": "65776e4b76c25ee7c82b031e84f380bbc860444cbfe187dab7debbd4bbc97682",
+    "phase": -0.6089836955070496,
+    "logabs": 0.9904028177261353
+  },
+  {
+    "route": "lambda",
+    "x64": false,
+    "path": "tests/layernorm_validation/before-checkpoints/float32/lambda/qmcjax_ckpt_000000.npz",
+    "sha256": "65776e4b76c25ee7c82b031e84f380bbc860444cbfe187dab7debbd4bbc97682",
+    "phase": -0.6089836955070496,
+    "logabs": 0.9904028177261353
+  },
+  {
+    "route": "hf",
+    "x64": false,
+    "path": "tests/layernorm_validation/before-checkpoints/float32/hf/qmcjax_ckpt_000000.npz",
+    "sha256": "9f5e998bf24c856edd582c7aa0667ce84c4f2a1af377be0b623c9cc7ce012983",
+    "phase": 2.860769271850586,
+    "logabs": -1.8247079849243164
+  },
+  {
+    "route": "psiformer",
+    "x64": true,
+    "path": "tests/layernorm_validation/before-checkpoints/float64/psiformer/qmcjax_ckpt_000000.npz",
+    "sha256": "dcdb37a3d28acb81286bd6dbcf68585de408fd12a8e3bfc20caf25d6db03f5e5",
+    "phase": -0.16231676302338485,
+    "logabs": 1.375909433889459
+  },
+  {
+    "route": "slater",
+    "x64": true,
+    "path": "tests/layernorm_validation/before-checkpoints/float64/slater/qmcjax_ckpt_000000.npz",
+    "sha256": "74527efa455f105783b2bca6f3d33f789b5544df1f4e31f6fa1b1ac59665e4cb",
+    "phase": -0.5545514241253366,
+    "logabs": 0.6369653719325279
+  },
+  {
+    "route": "screen",
+    "x64": true,
+    "path": "tests/layernorm_validation/before-checkpoints/float64/screen/qmcjax_ckpt_000000.npz",
+    "sha256": "5a255613f901c4cffccdec886d900d395c8747c044f01fca2c39f57d3b54aa8d",
+    "phase": 0.16555098529761456,
+    "logabs": 1.2405480276185563
+  },
+  {
+    "route": "lambda",
+    "x64": true,
+    "path": "tests/layernorm_validation/before-checkpoints/float64/lambda/qmcjax_ckpt_000000.npz",
+    "sha256": "5a255613f901c4cffccdec886d900d395c8747c044f01fca2c39f57d3b54aa8d",
+    "phase": 0.16555098529761456,
+    "logabs": 1.2405480276185563
+  },
+  {
+    "route": "hf",
+    "x64": true,
+    "path": "tests/layernorm_validation/before-checkpoints/float64/hf/qmcjax_ckpt_000000.npz",
+    "sha256": "2bb8ebcd62d4972e0717455de98f6c5e33c2e8be7417f29ba2dac92c2304a5cb",
+    "phase": 2.6360732255162134,
+    "logabs": -1.4316784846634154
+  }
+]

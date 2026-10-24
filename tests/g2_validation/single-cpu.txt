@@ -1,0 +1,149 @@
+test_G1_vmc_phase_gradient_with_actual_local_energy (__main__.G2Checks.test_G1_vmc_phase_gradient_with_actual_local_energy) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+FAIL
+test_actual_ordinary_routes_and_real_projection_characterization (__main__.G2Checks.test_actual_ordinary_routes_and_real_projection_characterization) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+FAIL
+test_folx_and_ad_intermediates_against_analytic_derivatives (__main__.G2Checks.test_folx_and_ad_intermediates_against_analytic_derivatives) ... ok
+test_lambda_weighted_laplacian_and_spin_flip_full_complex_energy (__main__.G2Checks.test_lambda_weighted_laplacian_and_spin_flip_full_complex_energy) ... [λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+ok
+test_literal_constant_outputs_are_a_separate_known_contract_error (__main__.G2Checks.test_literal_constant_outputs_are_a_separate_known_contract_error) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+ok
+test_moire_real_potential_does_not_restore_missing_imaginary_part (__main__.G2Checks.test_moire_real_potential_does_not_restore_missing_imaginary_part) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.06366197723675814]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.06366197723675814]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.06366197723675814]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.06366197723675814]
+ok
+
+======================================================================
+FAIL: test_G1_vmc_phase_gradient_with_actual_local_energy (__main__.G2Checks.test_G1_vmc_phase_gradient_with_actual_local_energy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g2_local_energy.py", line 192, in test_G1_vmc_phase_gradient_with_actual_local_energy
+    np.testing.assert_allclose(fd,physical,atol=2e-9,rtol=2e-9)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=2e-09, atol=2e-09
+
+Mismatched elements: 1 / 2 (50%)
+Max absolute difference among violations: 2.98045491e-09
+Max relative difference among violations: 1.49022746e-08
+ ACTUAL: array([0. , 0.2])
+ DESIRED: array([0. , 0.2])
+
+======================================================================
+FAIL: test_actual_ordinary_routes_and_real_projection_characterization (__main__.G2Checks.test_actual_ordinary_routes_and_real_projection_characterization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g2_local_energy.py", line 110, in test_actual_ordinary_routes_and_real_projection_characterization
+    self.assertGreater(abs(expected.imag),.01)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.float32(0.0011231303) not greater than 0.01
+
+----------------------------------------------------------------------
+Ran 6 tests in 18.403s
+
+FAILED (failures=2)
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

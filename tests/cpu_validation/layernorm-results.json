@@ -1,0 +1,20 @@
+[
+  {
+    "x64": false,
+    "dtype": "float32",
+    "jit_values_parameter_grad_coordinate_grad_hessian": "exact match",
+    "parameter_keys": [
+      "scale",
+      "offset"
+    ]
+  },
+  {
+    "x64": true,
+    "dtype": "float64",
+    "jit_values_parameter_grad_coordinate_grad_hessian": "exact match",
+    "parameter_keys": [
+      "scale",
+      "offset"
+    ]
+  }
+]

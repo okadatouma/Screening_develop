@@ -1,0 +1,7 @@
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+Recorded 12 kernel cases and 12 public-pipeline cases.

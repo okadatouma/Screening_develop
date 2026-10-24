@@ -1,0 +1,7 @@
+{
+  "periodicwave/CustomPsiformer.py": "Only factory replaced by alias and call qualified; nested init/apply AST identical",
+  "periodicwave/CustomScreenformer.py": "Only factory replaced by alias and call qualified; nested init/apply AST identical",
+  "periodicwave/SlaterNet.py": "Only factory replaced by alias and call qualified; nested init/apply AST identical",
+  "periodicwave/network_blocks.py": "Only factory and Mapping import added",
+  "snapshot_integrity": "All 4 frozen files unchanged (SHA-256)"
+}

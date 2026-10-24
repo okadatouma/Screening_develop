@@ -1,0 +1,5 @@
+making 2DCoulomb potential with energy scale: 1.0
+making 2DCoulomb potential with energy scale: 1.0
+making 2DCoulomb potential with energy scale: 1.0
+making 2DCoulomb potential with energy scale: 1.0
+Recorded reference in tests/g3a_followup/reference-v2

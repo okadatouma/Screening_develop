@@ -1,0 +1,704 @@
+test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_geometry_shapes_orientation_and_masked_derivatives (tests.check_interfaces.CurrentContracts.test_geometry_shapes_orientation_and_masked_derivatives) ... making construct_input_features with periodic norm
+ok
+test_node_and_near_node_current_behavior (tests.check_interfaces.CurrentContracts.test_node_and_near_node_current_behavior) ... ok
+test_orbital_packing_merged_jastrow_and_envelope_position (tests.check_interfaces.CurrentContracts.test_orbital_packing_merged_jastrow_and_envelope_position) ... get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+ok
+test_determinant_sum_real_sign_and_complex_phase (tests.check_interfaces.IndependentPhysics.test_determinant_sum_real_sign_and_complex_phase) ... ok
+test_ewald_independent_background_self_and_length_scaling (tests.check_interfaces.IndependentPhysics.test_ewald_independent_background_self_and_length_scaling) ... making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+ok
+test_features_values_covariance_and_pbc (tests.check_interfaces.IndependentPhysics.test_features_values_covariance_and_pbc) ... making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_hf_nn_correction_dynamic_spins_and_exchange (tests.check_interfaces.IndependentPhysics.test_hf_nn_correction_dynamic_spins_and_exchange) ... [λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpvha2cjaj/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpvha2cjaj/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow なし
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_lambda_spin_flip_and_weighted_complex_kinetic (tests.check_interfaces.IndependentPhysics.test_lambda_spin_flip_and_weighted_complex_kinetic) ... [λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 1, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 1, potential = none
+ok
+test_moire_value_derivatives_and_local_energy (tests.check_interfaces.IndependentPhysics.test_moire_value_derivatives_and_local_energy) ... make_triangular_potential: using [U, phi/pi] = [0.7, 0.06366197723675814]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.7, 0.06366197723675814]
+ok
+test_periodic_norm_analytic_first_second_derivatives (tests.check_interfaces.IndependentPhysics.test_periodic_norm_analytic_first_second_derivatives) ... making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_current_periodic_isotropic_envelope_shape_incompatibility (tests.check_interfaces.KnownInconsistency.test_current_periodic_isotropic_envelope_shape_incompatibility) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+ok
+test_exact_initialization_orbitals_determinants_jastrow_jit_and_derivatives (tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_exact_initialization_orbitals_determinants_jastrow_jit_and_derivatives) ... get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+ok
+test_float64_executable_kfac_old_new_training_step (tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_float64_executable_kfac_old_new_training_step) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpr56j7z3c/psiformer-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpgmv0dpxe/psiformer-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpvdxn6p_p/slater-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpukqg88e6/slater-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+ok
+test_reexport_import_orders_signature_and_unchanged_body (tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_reexport_import_orders_signature_and_unchanged_body) ... ok
+test_actual_orbitals_status_for_nodal_and_regular_models (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_actual_orbitals_status_for_nodal_and_regular_models) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+ok
+test_dprime_36_conditions_and_all_internal_arrays (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_dprime_36_conditions_and_all_internal_arrays) ... ok
+test_production_old_loop_and_derivatives_remain_exact (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_production_old_loop_and_derivatives_remain_exact) ... making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_rank_status_keeps_attention_defined (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_rank_status_keeps_attention_defined) ... ok
+test_saved_checkpoint_entry (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_saved_checkpoint_entry) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpgxub94i3/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpqhbponzl/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_shared_intermediates_and_attention_dimensions (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_shared_intermediates_and_attention_dimensions) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_standalone_api_36_conditions (tests.check_formal_diagnostic.FormalDiagnosticChecks.test_standalone_api_36_conditions) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 198.986s
+
+OK

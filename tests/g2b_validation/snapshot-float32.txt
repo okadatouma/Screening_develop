@@ -1,0 +1,569 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/psiformer-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/psiformer-kfac'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/slater-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/slater-kfac'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/screen-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/screen-kfac'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/lambda-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/lambda-kfac'.
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/hf-adam'.
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-_nb0hceg/hf-kfac'.
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+{
+  "exact_arrays": 792,
+  "exact_elements": 17850,
+  "changed_gradient_update_arrays": [
+    "psiformer/energy/0",
+    "psiformer/loss_gradient/1",
+    "psiformer/loss_gradient/2",
+    "psiformer/loss_gradient/3",
+    "psiformer/loss_gradient/4",
+    "psiformer/loss_gradient/5",
+    "psiformer/loss_gradient/6",
+    "psiformer/loss_gradient/7",
+    "psiformer/loss_gradient/8",
+    "psiformer/loss_gradient/9",
+    "psiformer/loss_gradient/10",
+    "psiformer/loss_gradient/11",
+    "psiformer/loss_gradient/12",
+    "psiformer/loss_gradient/13",
+    "psiformer/loss_gradient/14",
+    "psiformer/loss_gradient/15",
+    "psiformer/loss_gradient/16",
+    "psiformer/adam/1",
+    "psiformer/adam/2",
+    "psiformer/adam/4",
+    "psiformer/adam/5",
+    "psiformer/adam/7",
+    "psiformer/adam/10",
+    "psiformer/adam/13",
+    "psiformer/adam/14",
+    "psiformer/adam/15",
+    "psiformer/adam/16",
+    "psiformer/adam/17",
+    "psiformer/adam/18",
+    "psiformer/adam/19",
+    "psiformer/adam/20",
+    "psiformer/adam/21",
+    "psiformer/adam/22",
+    "psiformer/adam/23",
+    "psiformer/adam/24",
+    "psiformer/adam/25",
+    "psiformer/adam/26",
+    "psiformer/adam/27",
+    "psiformer/adam/28",
+    "psiformer/adam/29",
+    "psiformer/adam/30",
+    "psiformer/adam/31",
+    "psiformer/adam/32",
+    "psiformer/adam/33",
+    "psiformer/adam/34",
+    "psiformer/adam/35",
+    "psiformer/adam/36",
+    "psiformer/adam/38",
+    "psiformer/adam/39",
+    "psiformer/adam/40",
+    "psiformer/adam/41",
+    "psiformer/adam_training_checkpoint/5",
+    "psiformer/adam_training_checkpoint/6",
+    "psiformer/adam_training_checkpoint/7",
+    "psiformer/adam_training_checkpoint/8",
+    "psiformer/adam_training_checkpoint/9",
+    "psiformer/adam_training_checkpoint/10",
+    "psiformer/adam_training_checkpoint/11",
+    "psiformer/adam_training_checkpoint/12",
+    "psiformer/adam_training_checkpoint/13",
+    "psiformer/adam_training_checkpoint/14",
+    "psiformer/adam_training_checkpoint/15",
+    "psiformer/adam_training_checkpoint/16",
+    "psiformer/adam_training_checkpoint/18",
+    "psiformer/adam_training_checkpoint/19",
+    "psiformer/adam_training_checkpoint/20",
+    "psiformer/adam_training_checkpoint/21",
+    "psiformer/adam_training_checkpoint/22",
+    "psiformer/adam_training_checkpoint/23",
+    "psiformer/adam_training_checkpoint/24",
+    "psiformer/adam_training_checkpoint/25",
+    "psiformer/adam_training_checkpoint/26",
+    "psiformer/adam_training_checkpoint/27",
+    "psiformer/adam_training_checkpoint/28",
+    "psiformer/adam_training_checkpoint/29",
+    "psiformer/adam_training_checkpoint/30",
+    "psiformer/adam_training_checkpoint/31",
+    "psiformer/adam_training_checkpoint/32",
+    "psiformer/adam_training_checkpoint/33",
+    "psiformer/adam_training_checkpoint/34",
+    "psiformer/adam_training_checkpoint/35",
+    "psiformer/adam_training_checkpoint/36",
+    "psiformer/adam_training_checkpoint/37",
+    "psiformer/adam_training_checkpoint/38",
+    "psiformer/adam_training_checkpoint/39",
+    "psiformer/adam_training_checkpoint/40",
+    "psiformer/adam_training_checkpoint/41",
+    "psiformer/adam_training_stats/3",
+    "psiformer/kfac_training_checkpoint/5",
+    "psiformer/kfac_training_checkpoint/6",
+    "psiformer/kfac_training_checkpoint/7",
+    "psiformer/kfac_training_checkpoint/8",
+    "psiformer/kfac_training_checkpoint/9",
+    "psiformer/kfac_training_checkpoint/10",
+    "psiformer/kfac_training_checkpoint/11",
+    "psiformer/kfac_training_checkpoint/12",
+    "psiformer/kfac_training_checkpoint/13",
+    "psiformer/kfac_training_checkpoint/14",
+    "psiformer/kfac_training_checkpoint/15",
+    "psiformer/kfac_training_checkpoint/16",
+    "psiformer/kfac_training_checkpoint/17",
+    "psiformer/kfac_training_checkpoint/18",
+    "psiformer/kfac_training_checkpoint/19",
+    "psiformer/kfac_training_checkpoint/20",
+    "psiformer/kfac_training_checkpoint/21",
+    "psiformer/kfac_training_checkpoint/22",
+    "psiformer/kfac_training_checkpoint/23",
+    "psiformer/kfac_training_checkpoint/24",
+    "psiformer/kfac_training_checkpoint/25",
+    "psiformer/kfac_training_checkpoint/26",
+    "psiformer/kfac_training_checkpoint/27",
+    "psiformer/kfac_training_checkpoint/28",
+    "psiformer/kfac_training_stats/3",
+    "slater/energy/0",
+    "slater/loss_gradient/1",
+    "slater/loss_gradient/2",
+    "slater/loss_gradient/3",
+    "slater/loss_gradient/4",
+    "slater/loss_gradient/5",
+    "slater/loss_gradient/6",
+    "slater/loss_gradient/7",
+    "slater/loss_gradient/8",
+    "slater/loss_gradient/9",
+    "slater/loss_gradient/10",
+    "slater/adam/0",
+    "slater/adam/1",
+    "slater/adam/4",
+    "slater/adam/5",
+    "slater/adam/7",
+    "slater/adam/8",
+    "slater/adam/9",
+    "slater/adam/10",
+    "slater/adam/11",
+    "slater/adam/12",
+    "slater/adam/13",
+    "slater/adam/14",
+    "slater/adam/15",
+    "slater/adam/16",
+    "slater/adam/17",
+    "slater/adam/18",
+    "slater/adam/20",
+    "slater/adam/21",
+    "slater/adam/22",
+    "slater/adam/23",
+    "slater/adam_training_checkpoint/5",
+    "slater/adam_training_checkpoint/6",
+    "slater/adam_training_checkpoint/7",
+    "slater/adam_training_checkpoint/8",
+    "slater/adam_training_checkpoint/9",
+    "slater/adam_training_checkpoint/10",
+    "slater/adam_training_checkpoint/12",
+    "slater/adam_training_checkpoint/13",
+    "slater/adam_training_checkpoint/14",
+    "slater/adam_training_checkpoint/15",
+    "slater/adam_training_checkpoint/16",
+    "slater/adam_training_checkpoint/17",
+    "slater/adam_training_checkpoint/18",
+    "slater/adam_training_checkpoint/19",
+    "slater/adam_training_checkpoint/20",
+    "slater/adam_training_checkpoint/21",
+    "slater/adam_training_checkpoint/22",
+    "slater/adam_training_checkpoint/23",
+    "slater/adam_training_stats/3",
+    "slater/kfac_training_checkpoint/5",
+    "slater/kfac_training_checkpoint/6",
+    "slater/kfac_training_checkpoint/7",
+    "slater/kfac_training_checkpoint/8",
+    "slater/kfac_training_checkpoint/9",
+    "slater/kfac_training_checkpoint/10",
+    "slater/kfac_training_checkpoint/11",
+    "slater/kfac_training_checkpoint/12",
+    "slater/kfac_training_checkpoint/13",
+    "slater/kfac_training_checkpoint/14",
+    "slater/kfac_training_checkpoint/15",
+    "slater/kfac_training_checkpoint/16",
+    "slater/kfac_training_stats/3",
+    "screen/energy/0",
+    "screen/loss_gradient/1",
+    "screen/loss_gradient/2",
+    "screen/loss_gradient/3",
+    "screen/loss_gradient/4",
+    "screen/loss_gradient/5",
+    "screen/loss_gradient/6",
+    "screen/loss_gradient/7",
+    "screen/loss_gradient/8",
+    "screen/loss_gradient/9",
+    "screen/loss_gradient/10",
+    "screen/loss_gradient/11",
+    "screen/loss_gradient/12",
+    "screen/loss_gradient/13",
+    "screen/loss_gradient/14",
+    "screen/loss_gradient/15",
+    "screen/loss_gradient/16",
+    "screen/loss_gradient/17",
+    "screen/loss_gradient/18",
+    "screen/loss_gradient/19",
+    "screen/loss_gradient/20",
+    "screen/adam/0",
+    "screen/adam/1",
+    "screen/adam/2",
+    "screen/adam/5",
+    "screen/adam/6",
+    "screen/adam/7",
+    "screen/adam/8",
+    "screen/adam/9",
+    "screen/adam/10",
+    "screen/adam/11",
+    "screen/adam/12",
+    "screen/adam/13",
+    "screen/adam/14",
+    "screen/adam/15",
+    "screen/adam/17",
+    "screen/adam/18",
+    "screen/adam/19",
+    "screen/adam/20",
+    "screen/adam/21",
+    "screen/adam/22",
+    "screen/adam/23",
+    "screen/adam/24",
+    "screen/adam/25",
+    "screen/adam/26",
+    "screen/adam/27",
+    "screen/adam/28",
+    "screen/adam/29",
+    "screen/adam/30",
+    "screen/adam/31",
+    "screen/adam/32",
+    "screen/adam/33",
+    "screen/adam/34",
+    "screen/adam/35",
+    "screen/adam/36",
+    "screen/adam/37",
+    "screen/adam/38",
+    "screen/adam/39",
+    "screen/adam/40",
+    "screen/adam/41",
+    "screen/adam/42",
+    "screen/adam/43",
+    "screen/adam/44",
+    "screen/adam/45",
+    "screen/adam/46",
+    "screen/adam/47",
+    "screen/adam/48",
+    "screen/adam/50",
+    "screen/adam/51",
+    "screen/adam/52",
+    "screen/adam/53",
+    "screen/adam_training_checkpoint/5",
+    "screen/adam_training_checkpoint/6",
+    "screen/adam_training_checkpoint/7",
+    "screen/adam_training_checkpoint/8",
+    "screen/adam_training_checkpoint/10",
+    "screen/adam_training_checkpoint/11",
+    "screen/adam_training_checkpoint/12",
+    "screen/adam_training_checkpoint/13",
+    "screen/adam_training_checkpoint/14",
+    "screen/adam_training_checkpoint/15",
+    "screen/adam_training_checkpoint/16",
+    "screen/adam_training_checkpoint/17",
+    "screen/adam_training_checkpoint/18",
+    "screen/adam_training_checkpoint/19",
+    "screen/adam_training_checkpoint/20",
+    "screen/adam_training_checkpoint/22",
+    "screen/adam_training_checkpoint/23",
+    "screen/adam_training_checkpoint/24",
+    "screen/adam_training_checkpoint/25",
+    "screen/adam_training_checkpoint/26",
+    "screen/adam_training_checkpoint/27",
+    "screen/adam_training_checkpoint/28",
+    "screen/adam_training_checkpoint/29",
+    "screen/adam_training_checkpoint/30",
+    "screen/adam_training_checkpoint/31",
+    "screen/adam_training_checkpoint/32",
+    "screen/adam_training_checkpoint/33",
+    "screen/adam_training_checkpoint/34",
+    "screen/adam_training_checkpoint/35",
+    "screen/adam_training_checkpoint/36",
+    "screen/adam_training_checkpoint/37",
+    "screen/adam_training_checkpoint/38",
+    "screen/adam_training_checkpoint/39",
+    "screen/adam_training_checkpoint/40",
+    "screen/adam_training_checkpoint/41",
+    "screen/adam_training_checkpoint/42",
+    "screen/adam_training_checkpoint/43",
+    "screen/adam_training_checkpoint/44",
+    "screen/adam_training_checkpoint/45",
+    "screen/adam_training_checkpoint/46",
+    "screen/adam_training_checkpoint/47",
+    "screen/adam_training_checkpoint/48",
+    "screen/adam_training_checkpoint/49",
+    "screen/adam_training_checkpoint/50",
+    "screen/adam_training_checkpoint/51",
+    "screen/adam_training_checkpoint/52",
+    "screen/adam_training_checkpoint/53",
+    "screen/adam_training_stats/3",
+    "screen/kfac_training_checkpoint/5",
+    "screen/kfac_training_checkpoint/6",
+    "screen/kfac_training_checkpoint/7",
+    "screen/kfac_training_checkpoint/8",
+    "screen/kfac_training_checkpoint/9",
+    "screen/kfac_training_checkpoint/10",
+    "screen/kfac_training_checkpoint/11",
+    "screen/kfac_training_checkpoint/12",
+    "screen/kfac_training_checkpoint/13",
+    "screen/kfac_training_checkpoint/14",
+    "screen/kfac_training_checkpoint/15",
+    "screen/kfac_training_checkpoint/16",
+    "screen/kfac_training_checkpoint/17",
+    "screen/kfac_training_checkpoint/18",
+    "screen/kfac_training_checkpoint/19",
+    "screen/kfac_training_checkpoint/20",
+    "screen/kfac_training_checkpoint/21",
+    "screen/kfac_training_checkpoint/22",
+    "screen/kfac_training_checkpoint/23",
+    "screen/kfac_training_checkpoint/24",
+    "screen/kfac_training_checkpoint/25",
+    "screen/kfac_training_checkpoint/26",
+    "screen/kfac_training_checkpoint/27",
+    "screen/kfac_training_checkpoint/28",
+    "screen/kfac_training_checkpoint/29",
+    "screen/kfac_training_checkpoint/30",
+    "screen/kfac_training_checkpoint/31",
+    "screen/kfac_training_checkpoint/32",
+    "screen/kfac_training_checkpoint/33",
+    "screen/kfac_training_checkpoint/34",
+    "screen/kfac_training_checkpoint/35",
+    "screen/kfac_training_checkpoint/36",
+    "screen/kfac_training_stats/3"
+  ],
+  "gradient_update_arrays": 527,
+  "dtype_changes": [
+    {
+      "name": "psiformer/energy/0",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "psiformer/loss_gradient/1",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "psiformer/loss_gradient/2",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "psiformer/loss_gradient/3",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "psiformer/adam/38",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "psiformer/adam/39",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "psiformer/adam/40",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/energy/0",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/loss_gradient/1",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/loss_gradient/2",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/loss_gradient/3",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/adam/20",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/adam/21",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "slater/adam/22",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/energy/0",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/loss_gradient/1",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/loss_gradient/2",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/loss_gradient/3",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/adam/50",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/adam/51",
+      "old": "float32",
+      "new": "complex64"
+    },
+    {
+      "name": "screen/adam/52",
+      "old": "float32",
+      "new": "complex64"
+    }
+  ]
+}

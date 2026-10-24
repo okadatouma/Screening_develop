@@ -1,0 +1,86 @@
+test_csv_npz_roundtrip_and_no_optimizer_raw_complex_boundary (__main__.DownstreamChecks.test_csv_npz_roundtrip_and_no_optimizer_raw_complex_boundary) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+ok
+test_old_checkpoint_inference_reporting_problem_is_explicit (__main__.DownstreamChecks.test_old_checkpoint_inference_reporting_problem_is_explicit) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'inference_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpdm98z2zy/screen-none'.
+FAIL
+test_real_complex_amplitude_phase_moments_and_adam (__main__.DownstreamChecks.test_real_complex_amplitude_phase_moments_and_adam) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: False
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: False
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+ok
+
+======================================================================
+FAIL: test_old_checkpoint_inference_reporting_problem_is_explicit (__main__.DownstreamChecks.test_old_checkpoint_inference_reporting_problem_is_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g2b_downstream.py", line 131, in test_old_checkpoint_inference_reporting_problem_is_explicit
+    self.assertEqual(len(rows),2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 3 tests in 8.910s
+
+FAILED (failures=1)
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

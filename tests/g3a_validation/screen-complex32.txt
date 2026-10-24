@@ -1,0 +1,221 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+'train_stats.csv' does not exist in the folder 'tests/g3a_validation/screen-complex32/run'.
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+{
+  "final_reference": 0.05620885620609239,
+  "initial_reference": 0.5648486614227295,
+  "sampling": {
+    "energy": {
+      "mean": 0.055774420490878995,
+      "local_std": 0.3857571970623642,
+      "iid_sem": 0.002131060095256386,
+      "conservative_block_sem": 0.002635835215689609,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.002131060095256386
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.0024269793752790636
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.0025830450985342905
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.002635835215689609
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.0025329592320256005
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.002568018438389051
+        }
+      ],
+      "plateau_last3": true
+    },
+    "imaginary_energy": {
+      "mean": -0.0007676090756110199,
+      "local_std": 0.2711920785560432,
+      "iid_sem": 0.0014981615927362388,
+      "conservative_block_sem": 0.0017964579324405451,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.0014981615927362388
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.00168925555433419
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.0017906163569687973
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.0017962165526794088
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.0017964579324405451
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.0017697876874807415
+        }
+      ],
+      "plateau_last3": true
+    },
+    "gradient_direction": {
+      "mean": 0.0002258397093322026,
+      "local_std": 0.08205292502650542,
+      "iid_sem": 0.0004532895706279737,
+      "conservative_block_sem": 0.0004966761211125742,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.0004532895706279737
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.0004890069841516685
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.0004966761211125742
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.0004966230632747223
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.0004913248541558481
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.00047630186180809607
+        }
+      ],
+      "plateau_last3": true
+    },
+    "exact_energy": 0.05620885620609239,
+    "exact_direction": 0.0007765681948512793,
+    "energy_z": -0.16481899650913182,
+    "gradient_z": -1.1088281922743195,
+    "cos_x": {
+      "mean": -0.04848601436851538,
+      "local_std": 0.705561499525306,
+      "iid_sem": 0.003897772919955542,
+      "conservative_block_sem": 0.00581665007113116,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.003897772919955542
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.005239968536298002
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.0057182348971037775
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.005695437011814874
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.00581665007113116
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.0056908871919441875
+        }
+      ],
+      "plateau_last3": true
+    },
+    "acceptance": 0.837890625,
+    "chains": 32,
+    "sweeps": 1024,
+    "burn_in": 128,
+    "production_direction": 0.0002955118252430111,
+    "independent_centered_score": 0.00029551240731962025,
+    "independent_energy_finite_difference": 0.000776569939256455,
+    "reference_cos_x": -0.04773985686590804,
+    "numerical_budget": 3.8146990846144035e-06,
+    "reference_truncation_budget": 1.8234164178565493e-12,
+    "energy_compatible": true,
+    "gradient_compatible": true,
+    "imaginary_mean_compatible": true,
+    "production_contraction_compatible": true,
+    "cos_x_compatible": true
+  },
+  "log_errors": []
+}

@@ -1,0 +1,21 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+[λJ] HF の軌道 tests/g3a_validation/exact32-v2/plane/hf.txt：k 1 点、G 2 本、lam = 0.0、カスプ (++, --, +-) = (0.0, 0.0, 0.0)、網の初期の大きさ 0.0、Jastrow なし
+making construct_input_features with periodic norm
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+[λJ] HF の軌道 tests/g3a_validation/exact32-v2/standing/hf.txt：k 1 点、G 2 本、lam = 0.0、カスプ (++, --, +-) = (0.0, 0.0, 0.0)、網の初期の大きさ 0.0、Jastrow なし
+making construct_input_features with periodic norm
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+[λJ] HF の軌道 tests/g3a_validation/exact32-v2/two_fermions/hf.txt：k 2 点、G 1 本、lam = 0.0、カスプ (++, --, +-) = (0.0, 0.0, 0.0)、網の初期の大きさ 0.0、Jastrow なし
+making construct_input_features with periodic norm
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+Exact HF eigenstates, antisymmetry, PBC, zero gradient and MCMC laws checked: 3

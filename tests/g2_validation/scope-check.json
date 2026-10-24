@@ -1,0 +1,20 @@
+{
+  "existing_files_checked": 741,
+  "unchanged_existing_files": 737,
+  "changed_existing_files": [
+    "HANDOFF.md",
+    "tests/CONTRACTS.md",
+    "tests/README.md",
+    "tests/RESULTS.md"
+  ],
+  "production_changes": [],
+  "loss_unchanged": true,
+  "existing_snapshot_checkpoint_and_validation_data_unchanged": true,
+  "after_sha256": {
+    "HANDOFF.md": "735f3cf5225e835c857e747793053b1695c387a81475dd102509e80343d8bf27",
+    "tests/CONTRACTS.md": "ee04bb4a1d0517a1655fb46f7ab4300c101fad8bbfd2c78ee91d947e88788882",
+    "tests/README.md": "24cf0dd4ae68a76e19d37a8afaa444076e7a64fb14f7ba63b4de5485c2e8691f",
+    "tests/RESULTS.md": "ef098ba3da29bfec311f773533a326167dca8c185d3c065e23d82c2ab4ec557a",
+    "tests/check_g2_local_energy.py": "046e317b9ddb04566bc1d37c15a80da3ab07046a8adb1f3fb6294afee5957f1f"
+  }
+}

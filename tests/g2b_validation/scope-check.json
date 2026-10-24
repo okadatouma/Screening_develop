@@ -1,0 +1,36 @@
+{
+  "existing_files_checked": 759,
+  "unchanged_existing_files": 749,
+  "changed_existing_files": [
+    "HANDOFF.md",
+    "README.md",
+    "periodicwave/pbc/hamiltonian.py",
+    "tests/CONTRACTS.md",
+    "tests/README.md",
+    "tests/RESULTS.md",
+    "tests/baseline.py",
+    "tests/check_g2_local_energy.py",
+    "tests/test_physics.py",
+    "tests/test_wavefunction.py"
+  ],
+  "production_changes": [
+    "periodicwave/pbc/hamiltonian.py:234"
+  ],
+  "loss_unchanged": true,
+  "old_snapshots_checkpoints_and_validation_data_unchanged": true,
+  "archives_match": true,
+  "after_sha256": {
+    "HANDOFF.md": "2a84a5bd1fd08e5051985c78db5ee885ed0aa7211e18fa3d096ee6716b009b13",
+    "README.md": "c4ec72d330c7fd81c06dd4a403ce951bd51bb06229f53c8fc594b434403780c4",
+    "periodicwave/pbc/hamiltonian.py": "d1267a3d31b08e1c547933a2edf0542890b75e24e07cac1a710735ca1432595f",
+    "tests/CONTRACTS.md": "70d44352407fdc2f7c8c062276c0564bce772d8bd507a7268c9d9fb820049219",
+    "tests/README.md": "b080534255c00a31e4a93e4474f8ec9bed89b3b581ad233cd52de29c0c632800",
+    "tests/RESULTS.md": "a5795f62bc2b9538f4b50b977b3504803cb6a9bb4c616b5779076bc317dfb7d4",
+    "tests/baseline.py": "e8678f2a87c7aa61899cfab4f65ae8156133f5b9a04f85f439849fe7785dc771",
+    "tests/check_g2_local_energy.py": "24a2a52115a61c9dcf8f01b6cc269b962015e8607ea55dca44a1259e1207294a",
+    "tests/check_g2b_downstream.py": "8c232c8e92766aa6ca0d8ae884aa47a2acc512320afdd53ef8d698b15f068043",
+    "tests/check_g2b_snapshots.py": "7ce40bef3c02e57ae3571bb76780520696303257f064131caa84fdfeed048096",
+    "tests/test_physics.py": "ebe1c157d2fab4e00ca2d54a55ab2d95950222c21f78cfb3b8e6d84264ae157e",
+    "tests/test_wavefunction.py": "0f7777452c3aa6bfb38c266bdb8e88ac904ce0e84e6005e7734885e5d833bb10"
+  }
+}

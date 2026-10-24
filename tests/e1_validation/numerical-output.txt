@@ -1,0 +1,532 @@
+test_attention_equations_and_internal_values (tests.test_attention.AttentionEquivalence.test_attention_equations_and_internal_values) ... ok
+test_freeze_window_stops_parameter_gradient_only (tests.test_attention.AttentionEquivalence.test_freeze_window_stops_parameter_gradient_only) ... ok
+test_gaussian_ring_partition_and_zero_origin_slope (tests.test_attention.AttentionEquivalence.test_gaussian_ring_partition_and_zero_origin_slope) ... ok
+test_default_analysis_weights_match (tests.test_known_attention.AnalysisAttention.test_default_analysis_weights_match) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+ERROR
+test_K01_trim_power_four_analysis_should_match (tests.test_known_attention.AnalysisAttention.test_K01_trim_power_four_analysis_should_match) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+expected failure
+test_K01_smooth7_analysis_should_match (tests.test_known_attention.AnalysisAttention.test_K01_smooth7_analysis_should_match) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+expected failure
+test_complex_kinetic_including_imaginary_part (tests.test_physics.IndependentPhysics.test_complex_kinetic_including_imaginary_part) ... ok
+test_plane_wave_kinetic (tests.test_physics.IndependentPhysics.test_plane_wave_kinetic) ... ERROR
+test_lambda_lower_upper_band_both_pseudospins (tests.test_physics.IndependentPhysics.test_lambda_lower_upper_band_both_pseudospins) ... [λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+ok
+test_lambda_zero_and_component_sum (tests.test_physics.IndependentPhysics.test_lambda_zero_and_component_sum) ... [λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+ok
+test_ewald_lattice_translation_and_scaling (tests.test_physics.IndependentPhysics.test_ewald_lattice_translation_and_scaling) ... making 2DCoulomb potential with energy scale: 1.0
+making 2DCoulomb potential with energy scale: 2.0
+ok
+test_current_folx_path_discards_only_imaginary_part (tests.test_physics.KnownEnergyDifference.test_current_folx_path_discards_only_imaginary_part) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 1.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 1.0
+ok
+test_K03_both_paths_should_preserve_complex_local_energy (tests.test_physics.KnownEnergyDifference.test_K03_both_paths_should_preserve_complex_local_energy) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 1.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 1.0
+expected failure
+test_K05_NoneMoire_is_currently_unimplemented (tests.test_physics.KnownEnergyDifference.test_K05_NoneMoire_is_currently_unimplemented) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+ok
+test_roundtrip_fields_and_completed_step (tests.test_training_checkpoint.CheckpointContract.test_roundtrip_fields_and_completed_step) ... [λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp6p7kgkqc/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+ok
+test_current_config_array_serialization_is_lossy (tests.test_training_checkpoint.CheckpointContract.test_current_config_array_serialization_is_lossy) ... Configuration saved as JSON to /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmprqcr8jbs/config.json
+ok
+test_adam_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_adam_training_all_routes) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/psiformer-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/slater-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/screen-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/lambda-adam'.
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-xc6k6vpy/hf-adam'.
+ok
+test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/psiformer-kfac'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/slater-kfac'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/screen-kfac'.
+
+  test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) (route='screen', optimizer='kfac') ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/lambda-kfac'.
+  test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) (route='lambda', optimizer='kfac') ... ERROR
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-x5retv95/hf-kfac'.
+  test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) (route='hf', optimizer='kfac') ... ERROR
+test_current_real_and_complex_gradient_coefficients (tests.test_vmc_mcmc.VMCEstimator.test_current_real_and_complex_gradient_coefficients) ... ok
+test_complex_gradient_against_normalized_exact_expectation (tests.test_vmc_mcmc.VMCEstimator.test_complex_gradient_against_normalized_exact_expectation) ... ok
+test_K04_real_gradient_should_equal_normalized_exact_derivative (tests.test_vmc_mcmc.VMCEstimator.test_K04_real_gradient_should_equal_normalized_exact_derivative) ... expected failure
+test_imaginary_energy_contributes_to_phase_gradient (tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient) ... FAIL
+test_chunked_and_unbatched_loss_gradient_match (tests.test_vmc_mcmc.VMCEstimator.test_chunked_and_unbatched_loss_gradient_match) ... ok
+test_clipping_changes_gradient_not_reported_mean (tests.test_vmc_mcmc.VMCEstimator.test_clipping_changes_gradient_not_reported_mean) ... ok
+test_one_adam_update_both_trainers (tests.test_vmc_mcmc.VMCEstimator.test_one_adam_update_both_trainers) ... ok
+test_all_electron_move_against_explicit_proposal_and_acceptance (tests.test_vmc_mcmc.MCMCChecks.test_all_electron_move_against_explicit_proposal_and_acceptance) ... ok
+test_pseudospin_flip_acceptance (tests.test_vmc_mcmc.MCMCChecks.test_pseudospin_flip_acceptance) ... ok
+test_K02_block_move_currently_raises_argument_error (tests.test_vmc_mcmc.MCMCChecks.test_K02_block_move_currently_raises_argument_error) ... ok
+test_values_orbitals_and_determinants (tests.test_wavefunction.WavefunctionChecks.test_values_orbitals_and_determinants) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp6zphuibn/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+ok
+test_fermion_exchange_and_individual_electron_pbc (tests.test_wavefunction.WavefunctionChecks.test_fermion_exchange_and_individual_electron_pbc) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp9qudzes5/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+ok
+test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+
+  test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) (route='psiformer') ... FAIL
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpeeze49d8/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+test_hf_only_matches_synthetic_bloch_spinors (tests.test_wavefunction.WavefunctionChecks.test_hf_only_matches_synthetic_bloch_spinors) ... [λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmppimgruj0/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmppimgruj0/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.0、Jastrow なし
+making construct_input_features with periodic norm
+ok
+test_frozen_numerical_baseline (tests.test_wavefunction.WavefunctionChecks.test_frozen_numerical_baseline) ... skipped '数値基準未指定。変更前に tests.baseline capture を実行する'
+
+======================================================================
+ERROR: test_default_analysis_weights_match (tests.test_known_attention.AnalysisAttention.test_default_analysis_weights_match)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_known_attention.py", line 56, in test_default_analysis_weights_match
+    actual, expected = probe_weights()
+                       ~~~~~~~~~~~~~^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_known_attention.py", line 36, in probe_weights
+    observed = attn_probe.probe(tmp, nconf=1)["W"][0, 0]
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/attn_probe.py", line 105, in probe
+    if cfg["network"]["network_type"] != "CustomScreenformer" or cfg["system"]["ndim"] != 2:
+       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'network_type'
+
+======================================================================
+ERROR: test_plane_wave_kinetic (tests.test_physics.IndependentPhysics.test_plane_wave_kinetic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_physics.py", line 43, in test_plane_wave_kinetic
+    np.testing.assert_allclose(kinetic(None, one_particle()), jnp.dot(q, q) / 2, atol=1e-12)
+                               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/hamiltonian.py", line 148, in _lapl_over_f
+    result = - (output[1].laplacian +
+                ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'jaxlib._jax.ArrayImpl' object has no attribute 'laplacian'
+
+======================================================================
+ERROR: test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) (route='screen', optimizer='kfac')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_training_checkpoint.py", line 100, in run_routes
+    module.train(cfg)
+    ~~~~~~~~~~~~^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 728, in train
+    data, params, opt_state, loss, aux_data, pmove = step(
+                                                     ~~~~^
+        data,
+        ^^^^^
+    ...<2 lines>...
+        subkeys,
+        ^^^^^^^^
+        mcmc_width)
+        ^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 320, in step
+    new_params, new_state, stats = optimizer.step(
+                                   ~~~~~~~~~~~~~~^
+        params=params,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        damping=shared_damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1404, in step
+    return self._step(
+           ~~~~~~~~~~^
+        params, state, rng, batch, func_state, learning_rate, momentum, damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        should_update_estimate_curvature, should_update_damping)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 297, in decorated
+    outs = func(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/misc.py", line 342, in wrapped
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1186, in _step
+    delta = self.weighted_sum_of_objects(vectors, coefficients)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 233, in decorated
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1710, in weighted_sum_of_objects
+    return utils.weighted_sum_of_objects(objects, coefficients)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/math.py", line 145, in weighted_sum_of_objects
+    raise ValueError("One or more objects do not have equivalent abstract "
+                     "structure.")
+ValueError: One or more objects do not have equivalent abstract structure.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+======================================================================
+ERROR: test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) (route='lambda', optimizer='kfac')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_training_checkpoint.py", line 100, in run_routes
+    module.train(cfg)
+    ~~~~~~~~~~~~^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 728, in train
+    data, params, opt_state, loss, aux_data, pmove = step(
+                                                     ~~~~^
+        data,
+        ^^^^^
+    ...<2 lines>...
+        subkeys,
+        ^^^^^^^^
+        mcmc_width)
+        ^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 320, in step
+    new_params, new_state, stats = optimizer.step(
+                                   ~~~~~~~~~~~~~~^
+        params=params,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        damping=shared_damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1404, in step
+    return self._step(
+           ~~~~~~~~~~^
+        params, state, rng, batch, func_state, learning_rate, momentum, damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        should_update_estimate_curvature, should_update_damping)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 297, in decorated
+    outs = func(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/misc.py", line 342, in wrapped
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1186, in _step
+    delta = self.weighted_sum_of_objects(vectors, coefficients)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 233, in decorated
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1710, in weighted_sum_of_objects
+    return utils.weighted_sum_of_objects(objects, coefficients)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/math.py", line 145, in weighted_sum_of_objects
+    raise ValueError("One or more objects do not have equivalent abstract "
+                     "structure.")
+ValueError: One or more objects do not have equivalent abstract structure.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+======================================================================
+ERROR: test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) (route='hf', optimizer='kfac')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_training_checkpoint.py", line 100, in run_routes
+    module.train(cfg)
+    ~~~~~~~~~~~~^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 728, in train
+    data, params, opt_state, loss, aux_data, pmove = step(
+                                                     ~~~~^
+        data,
+        ^^^^^
+    ...<2 lines>...
+        subkeys,
+        ^^^^^^^^
+        mcmc_width)
+        ^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 320, in step
+    new_params, new_state, stats = optimizer.step(
+                                   ~~~~~~~~~~~~~~^
+        params=params,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        damping=shared_damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1404, in step
+    return self._step(
+           ~~~~~~~~~~^
+        params, state, rng, batch, func_state, learning_rate, momentum, damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        should_update_estimate_curvature, should_update_damping)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 297, in decorated
+    outs = func(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/misc.py", line 342, in wrapped
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1186, in _step
+    delta = self.weighted_sum_of_objects(vectors, coefficients)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 233, in decorated
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1710, in weighted_sum_of_objects
+    return utils.weighted_sum_of_objects(objects, coefficients)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/math.py", line 145, in weighted_sum_of_objects
+    raise ValueError("One or more objects do not have equivalent abstract "
+                     "structure.")
+ValueError: One or more objects do not have equivalent abstract structure.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+======================================================================
+FAIL: test_imaginary_energy_contributes_to_phase_gradient (tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_vmc_mcmc.py", line 57, in test_imaginary_energy_contributes_to_phase_gradient
+    np.testing.assert_allclose(got["theta"], -2., atol=1e-12)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-12
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 2.
+Max relative difference among violations: 1.
+ ACTUAL: array(-4.)
+ DESIRED: array(-2.)
+
+======================================================================
+FAIL: test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) (route='psiformer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_wavefunction.py", line 59, in test_first_second_derivatives_and_forward_laplacian
+    np.testing.assert_allclose(forward.laplacian, jnp.trace(hess), rtol=1e-7, atol=1e-8)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-08
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 1.78235943e-07
+Max relative difference among violations: 5.32383814e-07
+ ACTUAL: array(-0.334788)
+ DESIRED: array(-0.334788)
+
+----------------------------------------------------------------------
+Ran 33 tests in 183.792s
+
+FAILED (failures=2, errors=5, skipped=1, expected failures=4)
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+PASS tests.test_attention.AttentionEquivalence.test_attention_equations_and_internal_values
+PASS tests.test_attention.AttentionEquivalence.test_freeze_window_stops_parameter_gradient_only
+PASS tests.test_attention.AttentionEquivalence.test_gaussian_ring_partition_and_zero_origin_slope
+ERROR tests.test_known_attention.AnalysisAttention.test_default_analysis_weights_match
+XFAIL tests.test_known_attention.AnalysisAttention.test_K01_trim_power_four_analysis_should_match
+XFAIL tests.test_known_attention.AnalysisAttention.test_K01_smooth7_analysis_should_match
+PASS tests.test_physics.IndependentPhysics.test_complex_kinetic_including_imaginary_part
+ERROR tests.test_physics.IndependentPhysics.test_plane_wave_kinetic
+PASS tests.test_physics.IndependentPhysics.test_lambda_lower_upper_band_both_pseudospins
+PASS tests.test_physics.IndependentPhysics.test_lambda_zero_and_component_sum
+PASS tests.test_physics.IndependentPhysics.test_ewald_lattice_translation_and_scaling
+PASS tests.test_physics.KnownEnergyDifference.test_current_folx_path_discards_only_imaginary_part
+XFAIL tests.test_physics.KnownEnergyDifference.test_K03_both_paths_should_preserve_complex_local_energy
+PASS tests.test_physics.KnownEnergyDifference.test_K05_NoneMoire_is_currently_unimplemented
+PASS tests.test_training_checkpoint.CheckpointContract.test_roundtrip_fields_and_completed_step
+PASS tests.test_training_checkpoint.CheckpointContract.test_current_config_array_serialization_is_lossy
+PASS tests.test_training_checkpoint.TrainingIntegration.test_adam_training_all_routes
+ERROR tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes (route='screen', optimizer='kfac')
+ERROR tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes (route='lambda', optimizer='kfac')
+ERROR tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes (route='hf', optimizer='kfac')
+PASS tests.test_vmc_mcmc.VMCEstimator.test_current_real_and_complex_gradient_coefficients
+PASS tests.test_vmc_mcmc.VMCEstimator.test_complex_gradient_against_normalized_exact_expectation
+XFAIL tests.test_vmc_mcmc.VMCEstimator.test_K04_real_gradient_should_equal_normalized_exact_derivative
+FAIL tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient
+PASS tests.test_vmc_mcmc.VMCEstimator.test_chunked_and_unbatched_loss_gradient_match
+PASS tests.test_vmc_mcmc.VMCEstimator.test_clipping_changes_gradient_not_reported_mean
+PASS tests.test_vmc_mcmc.VMCEstimator.test_one_adam_update_both_trainers
+PASS tests.test_vmc_mcmc.MCMCChecks.test_all_electron_move_against_explicit_proposal_and_acceptance
+PASS tests.test_vmc_mcmc.MCMCChecks.test_pseudospin_flip_acceptance
+PASS tests.test_vmc_mcmc.MCMCChecks.test_K02_block_move_currently_raises_argument_error
+PASS tests.test_wavefunction.WavefunctionChecks.test_values_orbitals_and_determinants
+PASS tests.test_wavefunction.WavefunctionChecks.test_fermion_exchange_and_individual_electron_pbc
+FAIL tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian (route='psiformer')
+PASS tests.test_wavefunction.WavefunctionChecks.test_hf_only_matches_synthetic_bloch_spinors
+SKIP tests.test_wavefunction.WavefunctionChecks.test_frozen_numerical_baseline

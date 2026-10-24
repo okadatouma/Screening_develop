@@ -1,0 +1,6 @@
+{
+  "normal_forward_ast": "identical after removing static return_aux branches and restoring signatures/docstrings",
+  "initializers": "unchanged",
+  "production_candidate": "CustomScreenformer.py only",
+  "warning": "Candidate fails strict JIT ON/OFF tests; not accepted"
+}

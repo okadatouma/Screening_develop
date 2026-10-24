@@ -1,0 +1,18 @@
+{
+  "methods": {
+    "test_production_old_loop_and_derivatives_remain_exact": "PASS",
+    "test_shared_intermediates_and_attention_dimensions": "PASS",
+    "test_rank_status_keeps_attention_defined": "PASS",
+    "test_actual_orbitals_status_for_nodal_and_regular_models": "PASS",
+    "test_dprime_36_conditions_and_all_internal_arrays": "PASS",
+    "test_saved_checkpoint_entry": "PASS",
+    "test_standalone_api_36_conditions": "PASS"
+  },
+  "evidence": [
+    "contracts-output.txt",
+    "status-output.txt",
+    "exact-and-checkpoint-output.txt",
+    "standalone-output.txt"
+  ],
+  "legacy_rejected_D_candidate": "3 SKIP, not PASS"
+}

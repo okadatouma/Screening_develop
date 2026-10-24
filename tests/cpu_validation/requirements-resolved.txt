@@ -1,0 +1,33 @@
+absl-py==2.3.1
+attrs==25.4.0
+chex==0.1.91
+cloudpickle==3.1.1
+decorator==5.2.1
+distrax==0.1.7
+dm-tree==0.1.9
+folx @ git+https://github.com/microsoft/folx@d05c107028e3f88239ebf9e894d4a8c01abf90f6
+gast==0.6.0
+h5py==3.14.0
+immutabledict==4.2.1
+jax==0.7.2
+jaxlib==0.7.2
+jaxtyping==0.3.3
+kfac-jax @ git+https://github.com/deepmind/kfac-jax@d9ecae99e588e4abbb0dd3d4e977d1266824e14c
+ml-collections==1.1.0
+ml-dtypes==0.5.3
+numpy==2.3.3
+opt-einsum==3.4.0
+optax==0.2.6
+pandas==2.3.3
+pyblock==0.6
+python-dateutil==2.9.0.post0
+pytz==2025.2
+pyyaml==6.0.3
+scipy==1.16.2
+six==1.17.0
+tfp-nightly==0.26.0.dev20251007
+toolz==1.0.0
+typing-extensions==4.15.0
+tzdata==2025.2
+wadler-lindig==0.1.7
+wrapt==1.17.3

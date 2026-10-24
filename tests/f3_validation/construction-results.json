@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "test": "tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_reexport_import_orders_signature_and_unchanged_body",
+      "status": "PASS",
+      "environment": "CPU .venv-pw; environment.json",
+      "log": "construction-interfaces-output.txt"
+    },
+    {
+      "test": "tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_exact_initialization_orbitals_determinants_jastrow_jit_and_derivatives",
+      "status": "PASS",
+      "environment": "CPU .venv-pw; environment.json",
+      "log": "construction-interfaces-output.txt"
+    },
+    {
+      "test": "tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_float64_executable_kfac_old_new_training_step",
+      "status": "PASS",
+      "environment": "CPU .venv-pw; environment.json",
+      "log": "float64-kfac-old-new-output.txt"
+    }
+  ],
+  "existing_F0_methods": {
+    "PASS": 12
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "one_token_attention_identity": {
+    "jacfwd": {
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_rms": 0.7071067811865476
+    },
+    "jacrev": {
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_rms": 0.7071067811865476
+    }
+  },
+  "psiformer": {
+    "direct_orbital_ad": {
+      "real": 0.32280339632614913,
+      "imag": 0.07254664273777983
+    },
+    "production": {
+      "default": {
+        "real": 0.32280339016895493,
+        "imag": 0.07254663866678379
+      },
+      "folx": {
+        "real": 0.32280339384843054,
+        "imag": 0.072546639081813
+      }
+    },
+    "orbital_finite_difference": [
+      {
+        "h": 0.016,
+        "energy": {
+          "real": 0.3228033694341262,
+          "imag": 0.07254664695537191
+        },
+        "difference_from_orbital_ad": 2.722074541348921e-08
+      },
+      {
+        "h": 0.008,
+        "energy": {
+          "real": 0.32280339232821337,
+          "imag": 0.0725466395726812
+        },
+        "difference_from_orbital_ad": 5.099150876913812e-09
+      },
+      {
+        "h": 0.004,
+        "energy": {
+          "real": 0.32280339377008194,
+          "imag": 0.07254663910382853
+        },
+        "difference_from_orbital_ad": 4.442868621106035e-09
+      },
+      {
+        "h": 0.002,
+        "energy": {
+          "real": 0.32280339392748036,
+          "imag": 0.07254663902199529
+        },
+        "difference_from_orbital_ad": 4.422744237906444e-09
+      }
+    ]
+  },
+  "screen": {
+    "direct_orbital_ad": {
+      "real": 0.017762837967109573,
+      "imag": -0.05702533640581526
+    },
+    "production": {
+      "default": {
+        "real": 0.01776283796710952,
+        "imag": -0.05702533640581523
+      },
+      "folx": {
+        "real": 0.017762837967109698,
+        "imag": -0.05702533640581526
+      }
+    },
+    "orbital_finite_difference": [
+      {
+        "h": 0.016,
+        "energy": {
+          "real": 0.01776292216437243,
+          "imag": -0.057025305969673167
+        },
+        "difference_from_orbital_ad": 8.95295360089261e-08
+      },
+      {
+        "h": 0.008,
+        "energy": {
+          "real": 0.017762843229254338,
+          "imag": -0.05702533449702319
+        },
+        "difference_from_orbital_ad": 5.597647245997675e-09
+      },
+      {
+        "h": 0.004,
+        "energy": {
+          "real": 0.017762838272627687,
+          "imag": -0.05702533629319332
+        },
+        "difference_from_orbital_ad": 3.2561483292607013e-10
+      },
+      {
+        "h": 0.002,
+        "energy": {
+          "real": 0.01776283789987815,
+          "imag": -0.05702533644394177
+        },
+        "difference_from_orbital_ad": 7.728968081338088e-11
+      }
+    ]
+  },
+  "screen_graphs": [
+    {
+      "chunk": 0,
+      "production_tangent": 0.019247937877706324,
+      "separate_score_contraction": 0.019247937871872227,
+      "contraction_delta": 5.834097094314927e-12,
+      "local_energy_vs_saved": {
+        "max_abs": 2.5421743688004187e-15,
+        "rms": 1.4934261828159217e-16,
+        "reference_rms": 0.34021983409042655
+      },
+      "score_vs_saved": {
+        "max_abs": 1.4152622167509192e-16,
+        "rms": 9.950967294481695e-18,
+        "reference_rms": 0.14201567914850308
+      }
+    },
+    {
+      "chunk": 32,
+      "production_tangent": 0.019247937877706327,
+      "separate_score_contraction": 0.019247937871872227,
+      "contraction_delta": 5.834100563761879e-12,
+      "local_energy_vs_saved": {
+        "max_abs": 2.5967414043929343e-15,
+        "rms": 1.4786835715590393e-16,
+        "reference_rms": 0.34021983409042655
+      },
+      "score_vs_saved": {
+        "max_abs": 1.4152622167509192e-16,
+        "rms": 9.950967294481695e-18,
+        "reference_rms": 0.14201567914850308
+      }
+    },
+    {
+      "chunk": 128,
+      "production_tangent": 0.019247937877706324,
+      "separate_score_contraction": 0.019247937871872227,
+      "contraction_delta": 5.834097094314927e-12,
+      "local_energy_vs_saved": {
+        "max_abs": 2.5967414043929343e-15,
+        "rms": 1.4782403708129888e-16,
+        "reference_rms": 0.34021983409042655
+      },
+      "score_vs_saved": {
+        "max_abs": 1.4152622167509192e-16,
+        "rms": 9.950967294481695e-18,
+        "reference_rms": 0.14201567914850308
+      }
+    }
+  ],
+  "screen_parameter_dtypes": {
+    "['layers']['attention'][0]['attn_output']": "float64",
+    "['layers']['attention'][0]['g_w']": "float64",
+    "['layers']['attention'][0]['k_w']": "float64",
+    "['layers']['attention'][0]['mask_omega']": "float32",
+    "['layers']['attention'][0]['out_scale']": "float32",
+    "['layers']['attention'][0]['q_w']": "float64",
+    "['layers']['attention'][0]['trim_rho']": "float64",
+    "['layers']['attention'][0]['v_w']": "float64",
+    "['layers']['embed']": "float64",
+    "['layers']['mlp'][0][0]['b']": "float64",
+    "['layers']['mlp'][0][0]['w']": "float64",
+    "['orbital'][0]['b']": "float64",
+    "['orbital'][0]['w']": "float64"
+  },
+  "jax_attention_implementation": "jax/_src/nn/functions.py:966 casts padded logits to float32 before softmax (jax 0.7.2); this is independent of the Screening mixed parameter dtypes."
+}

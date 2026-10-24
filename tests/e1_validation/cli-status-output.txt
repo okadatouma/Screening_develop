@@ -1,0 +1,23 @@
+test_cli_uses_separate_name_and_refuses_overwrite (tests.check_attn_probe.AttnProbeChecks.test_cli_uses_separate_name_and_refuses_overwrite) ... ok
+test_rank_warning_is_not_a_wavefunction_certificate (tests.check_attn_probe.AttnProbeChecks.test_rank_warning_is_not_a_wavefunction_certificate) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 8.397s
+
+OK
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm

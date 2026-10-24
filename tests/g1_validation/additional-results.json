@@ -1,0 +1,44 @@
+{
+  "additional-tests-final.txt": {
+    "methods": 44,
+    "pass_count": 44,
+    "xfail_count": 0,
+    "fail_count": 0,
+    "error_count": 0
+  },
+  "analysis-static-final.txt": {
+    "methods": 27,
+    "pass_count": 26,
+    "xfail_count": 1,
+    "fail_count": 0,
+    "error_count": 0
+  },
+  "frozen-method.txt": {
+    "methods": 1,
+    "pass_count": 1,
+    "xfail_count": 0,
+    "fail_count": 0,
+    "error_count": 0
+  },
+  "physics-final.txt": {
+    "methods": 7,
+    "pass_count": 7,
+    "xfail_count": 0,
+    "fail_count": 0,
+    "error_count": 0
+  },
+  "physics-two-devices.txt": {
+    "methods": 1,
+    "pass_count": 1,
+    "xfail_count": 0,
+    "fail_count": 0,
+    "error_count": 0
+  },
+  "legacy-reproduction.txt": {
+    "methods": 8,
+    "pass_count": 8,
+    "xfail_count": 0,
+    "fail_count": 0,
+    "error_count": 0
+  }
+}

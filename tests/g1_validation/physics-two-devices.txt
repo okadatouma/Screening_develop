@@ -1,0 +1,8 @@
+test_pmap_global_center_and_trainer_average_match_covariance (__main__.DeviceGradient.test_pmap_global_center_and_trainer_average_match_covariance) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.944s
+
+OK
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

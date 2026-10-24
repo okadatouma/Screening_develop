@@ -1,0 +1,9 @@
+test_fixed_pair_gradient_and_hessian (__main__.ScreeningChecks.test_fixed_pair_gradient_and_hessian) ... ok
+test_forward_jit_all_modes (__main__.ScreeningChecks.test_forward_jit_all_modes) ... ok
+test_global_changes_and_cached_jit (__main__.ScreeningChecks.test_global_changes_and_cached_jit) ... ok
+test_gradients_and_hessian_all_modes (__main__.ScreeningChecks.test_gradients_and_hessian_all_modes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 43.083s
+
+OK

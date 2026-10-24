@@ -1,0 +1,27 @@
+{
+  "existing_changed_files": {
+    "tests/CONTRACTS.md": {
+      "before": "69da02682d1625ad3955d232a6b2b7af0ded9f49b1e79b75094514773cab0463",
+      "after": "359a2c8e6c12b428af90b5cd27774f78a38624ac6440a36664c1ed32c481e478"
+    },
+    "tests/README.md": {
+      "before": "9d7224d59a4c6d8dde83270acdb09b1ced014eb1a06724cb80797c38b34f2524",
+      "after": "961cd32bca5b8a0273e22aaf5fc8d9da1b11462aa47b602ee9d1fe585f4d83b6"
+    },
+    "tests/RESULTS.md": {
+      "before": "686a89bc8799ca923d3e6bed9b6c4ff39d9c862db5914edd0d9fa2a886658ffe",
+      "after": "7ed41093d34dc45371c3914142b7437aeab55cfcf68d2e70b6d8c8c3cc2c1295"
+    }
+  },
+  "new_test_file": "tests/check_vmc_gradients.py",
+  "new_test_sha256": "1cad6c481e3b0bcb05964ec7fad965d96338eeb4836e5986acfce58010feb65b",
+  "production_or_analysis_changes": [],
+  "unchanged_hashed_files": 688,
+  "other_document_updates": [
+    "README.md",
+    "HANDOFF.md"
+  ],
+  "snapshot_and_checkpoint_updates": false,
+  "normal_production_compiler_settings_modified": false,
+  "test_only_device_flag": "--xla_force_host_platform_device_count=2"
+}

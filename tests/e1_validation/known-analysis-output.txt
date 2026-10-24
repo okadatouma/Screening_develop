@@ -1,0 +1,32 @@
+test_K01_smooth7_analysis_should_match (tests.test_known_attention.AnalysisAttention.test_K01_smooth7_analysis_should_match) ... ok
+test_K01_trim_power_four_analysis_should_match (tests.test_known_attention.AnalysisAttention.test_K01_trim_power_four_analysis_should_match) ... ok
+test_default_analysis_weights_match (tests.test_known_attention.AnalysisAttention.test_default_analysis_weights_match) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.091s
+
+OK
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm

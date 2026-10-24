@@ -1,0 +1,641 @@
+test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='cos', layers=1, heads=1) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='cos', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='cos', layers=3, heads=3) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='pow4', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='smooth7', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='nomask', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='fixed', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='noln', layers=1, heads=1) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='noln', layers=2, heads=3) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='band', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='sin', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='gauss', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='freeze', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='hooks', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='cos', layers=1, heads=1) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='cos', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='cos', layers=3, heads=3) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='pow4', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='smooth7', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='nomask', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='fixed', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='noln', layers=1, heads=1) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='noln', layers=2, heads=3) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='band', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='sin', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='gauss', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='freeze', layers=2, heads=2) ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+  test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='hooks', layers=2, heads=2) ... ERROR
+test_bypass_flags_and_tuple_contract (tests.check_head_contrib.HeadContribChecks.test_bypass_flags_and_tuple_contract) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+ERROR
+test_projection_bias_scale_and_nonlinear_distinction (tests.check_head_contrib.HeadContribChecks.test_projection_bias_scale_and_nonlinear_distinction) ... ok
+test_settings_selection_protection_and_cli (tests.check_head_contrib.HeadContribChecks.test_settings_selection_protection_and_cli) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+ERROR
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='cos', layers=1, heads=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='cos', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='cos', layers=3, heads=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='pow4', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='smooth7', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='nomask', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='fixed', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='noln', layers=1, heads=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='noln', layers=2, heads=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='band', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='sin', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='gauss', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='freeze', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=False, mode='hooks', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='cos', layers=1, heads=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='cos', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='cos', layers=3, heads=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='pow4', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='smooth7', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='nomask', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='fixed', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='noln', layers=1, heads=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='noln', layers=2, heads=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='band', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='sin', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='gauss', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='freeze', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_api_and_legacy_matrix (tests.check_head_contrib.HeadContribChecks.test_api_and_legacy_matrix) (x64=True, mode='hooks', layers=2, heads=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 61, in test_api_and_legacy_matrix
+    r=hc.analyze(tmp,settings=settings,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_bypass_flags_and_tuple_contract (tests.check_head_contrib.HeadContribChecks.test_bypass_flags_and_tuple_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 136, in test_bypass_flags_and_tuple_contract
+    r=hc.analyze(tmp,settings=s,lattice=L)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+======================================================================
+ERROR: test_settings_selection_protection_and_cli (tests.check_head_contrib.HeadContribChecks.test_settings_selection_protection_and_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_head_contrib.py", line 146, in test_settings_selection_protection_and_cli
+    with self.assertRaisesRegex(ValueError,'未保存設定'):hc.analyze(tmp,lattice=L)
+                                                         ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/head_contrib.py", line 60, in analyze
+    effective, provenance = _effective_settings(cfg, settings, trim_max)
+                                                               ^^^^^^^^
+NameError: name 'trim_max' is not defined
+
+----------------------------------------------------------------------
+Ran 4 tests in 4.023s
+
+FAILED (errors=30)

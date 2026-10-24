@@ -1,0 +1,50 @@
+{
+  "stage": "F1 only, complete; F2a not implemented",
+  "environment": "environment.json; existing .venv-pw CPU, no dependency or compiler-setting changes",
+  "new_embedding_methods": {
+    "PASS": 3
+  },
+  "F0_methods": {
+    "PASS": 12
+  },
+  "original_33_methods": {
+    "PASS": 27,
+    "ERROR": 2,
+    "XFAIL": 2,
+    "FAIL": 2
+  },
+  "original_status_changes": {},
+  "window_layernorm_screening_aux_formal_diagnostic": {
+    "PASS": 26
+  },
+  "major_analysis_entries": {
+    "PASS": 16
+  },
+  "static_reproducibility": {
+    "PASS": 10,
+    "XFAIL": 1
+  },
+  "production_float64": {
+    "comparison": "exact",
+    "arrays": 902,
+    "elements": 21651
+  },
+  "production_float32": {
+    "comparison": "exact",
+    "arrays": 1319,
+    "elements": 31142,
+    "adam_kfac": "all 5 routes"
+  },
+  "diagnostic_36_conditions": "exact with existing diagnostic archive; independent JIT retained",
+  "embedding_compilation": "JAXPR and lowered HLO text equal; strict output/gradient/Hessian comparisons at both precisions",
+  "checkpoint_scope": "10 saved validation checkpoints; synthetic HF; real historical research checkpoints unavailable",
+  "not_run": [
+    "GPU/multi-device",
+    "real research HF/checkpoints",
+    "long training/statistical comparison",
+    "3 opt-in long legacy physics scripts"
+  ],
+  "snapshot_updates": false,
+  "existing_tolerances_modified": false,
+  "new_failures": 0
+}

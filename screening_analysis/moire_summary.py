@@ -2,10 +2,13 @@
 
     python screening_analysis/moire_summary.py <folder> [<folder> ...] [--nconf 4096]
 
+--forceは旧cacheを削除せず再計算し、summary_recomputed.jsonへ新規保存する。
+再度保存するときは--outputで別名を指定する（単一folderのみ）。
+
 出すもの: r_s, a_M, ν, エネルギー, ハニカム秩序変数, 谷占有のコントラスト,
 各ヘッドの窓 w_h と寄与率, 寄与で重み付けした窓 w*。
 """
-import argparse, glob, json, os, sys
+import argparse, json, os, sys
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -21,20 +24,19 @@ def energy(folder, tail=300):
                 steps=int(d["step"][-1]), locstd=float(d["locstd"][-tail:].mean()))
 
 
-def summarize(folder, nconf=4096, force=False):
-    p = os.path.join(folder, "summary.json")
-    if os.path.exists(p) and not force:
-        return json.load(open(p))
-    if force:                                  # 学習が進んでいるのでキャッシュを捨てる
-        for f in (glob.glob(os.path.join(folder, "samples_*.npy"))
-                  + [os.path.join(folder, "head_contrib.npz"),
-                     os.path.join(folder, "reach.npz")]):
-            if os.path.exists(f): os.remove(f)
+def summarize(folder, nconf=4096, force=False, *, output=None):
+    """forceは再標本化して新規保存する。旧結果・cacheは削除しない。"""
+    p = output or os.path.join(folder, "summary_recomputed.json" if force else "summary.json")
+    if os.path.exists(p) and not force and output is None:
+        with open(p) as f:
+            return json.load(f)
+    if os.path.exists(p):
+        raise FileExistsError("既存結果は上書きしません。別の--outputを指定してください: " + str(p))
     d = MA.load(folder)
     L, MO, ne = d["L"], d["MO"], d["ne"]
     nsite = int(round(abs(np.linalg.det(L)) / abs(np.linalg.det(MO))))
     aM = float(np.linalg.norm(MO[:, 0]))
-    R = SM.cached(folder, nconf)
+    R = SM.sample(folder, nconf)[0] if force else SM.cached(folder, nconf)
     d = dict(d); d["R"] = R
     op = MA.order_parameter(d)
     oc = MA.occupation_summary(d)
@@ -43,9 +45,9 @@ def summarize(folder, nconf=4096, force=False):
     import jax.numpy as jnp
     dref = float(CS._max_periodic_distance(jnp.asarray(L)))
 
-    from head_contrib import cached as HC
+    from head_contrib import analyze, cached
     import reach as RE
-    z = HC(folder, nconf=48)
+    z = analyze(folder, nconf=48) if force else cached(folder, nconf=48)
     C, Cd, Cp, X, Rn, w = z["C"], z["Cd"], z["Cp"], z["X"], z["R"], z["w"]
     SQ = Cp ** 2 / (Cp ** 2).sum()               # 2 体の寄与だけで見た割合
     SQall = C ** 2 / (C ** 2).sum()              # 1 体を含めた全体
@@ -74,7 +76,8 @@ def summarize(folder, nconf=4096, force=False):
         orth=[float(C[l].sum() / Rn[l]) for l in range(C.shape[0])],
         ratio=[float(C[l].sum() / X[l]) for l in range(C.shape[0])],
         **energy(folder))
-    json.dump(out, open(p, "w"), indent=1)
+    with open(p, "x") as f:
+        json.dump(out, f, indent=1)
     return out
 
 
@@ -82,13 +85,16 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("folders", nargs="+")
     ap.add_argument("--nconf", type=int, default=4096)
-    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--force", action="store_true", help="cacheを削除せず再計算し、summary_recomputed.jsonへ新規保存")
+    ap.add_argument("--output", help="新規JSON保存先（単一folderのみ）")
     a = ap.parse_args()
+    if a.output and len(a.folders) != 1:
+        ap.error("--outputは単一folderに対して指定してください")
     print("  %-26s %7s %6s %6s %9s %7s %7s %7s %7s" %
           ("run", "r_s", "nu", "a_M", "E", "S(K)/bg", "占有σ", "w*", "到達"))
     print("  " + "-" * 84)
     for f in a.folders:
-        s = summarize(f.rstrip("/"), a.nconf, a.force)
+        s = summarize(f.rstrip("/"), a.nconf, a.force, output=a.output)
         print("  %-26s %7.4g %6.3f %6.3f %9.3f %7.2f %7.3f %7.3f %7.3f"
               % (s["tag"], s["rs"], s["nu"], s["aM"], s["E"], s["S_K"],
                  s["contrast"], s["wstar"], s["rho"]))

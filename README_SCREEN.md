@@ -4,10 +4,12 @@ Liang Fu グループの Transformer 波動関数コード（PeriodicWave）に�
 教科書『Transformerを理解する』Part 3 で扱ったスクリーニング注意
 （Trim・Softmask・分母なし集約・TanhNorm・ゲート）を移植したものです。
 
-**元のファイルは一切変更していません。** すべて複製・新規ファイルとして追加してあり、
-従来の CustomPsiformer（softmax 注意）と同一条件で並走比較できます。
+この文書の追加ファイル一覧と基本式は導入当初の履歴です。現在は既存AnsatzのLayerNormを共通化し、
+Screening評価/Windowを`periodicwave/attention.py`へ移し、主要3解析入口を独立Diagnostic APIへ移行しています。
+元ファイルが全て未変更という状態ではありません。train_screenにも擬スピン等の追加があります。
+現行の全設定・数値契約は[tests/CONTRACTS.md](tests/CONTRACTS.md)、実行結果は[tests/RESULTS.md](tests/RESULTS.md)を参照してください。
 
-## 追加ファイル（6 個）
+## 導入当初の追加ファイル（履歴）
 
 | ファイル | 内容 |
 |---|---|

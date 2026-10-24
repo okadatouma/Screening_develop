@@ -33,14 +33,15 @@ def exponentialy_weighted_stats(
     observation: T,
     previous_stats: Optional[WeightedStats[T]] = None,
 ) -> WeightedStats[T]:
-  """Returns the exponentially-weighted mean and variance.
+  """Returns EW moments of real observations (or real arrays).
 
-  mu_t = alpha mu_{t-1} + (1-alpha) x_t
-
-  and similarly for the variance.
+  mu_t = (1-alpha) mu_{t-1} + alpha x_t
+  var_t = (1-alpha) [var_{t-1} + alpha (x_t-mu_{t-1})**2]
+  The first observation initializes mu=x and var=0. These are moments of the
+  observations, not a standard error or an autocorrelation correction.
 
   Args:
-    alpha: weighting factor for previous observations.
+    alpha: weight of the new observation (normally between 0 and 1).
     observation: new (t-th) value to include in the mean and variance.
     previous_stats: previous value of the mean and variance after (t-1)
       observations. Pass in None to indicate no prior observations have been

@@ -1,0 +1,1 @@
+Recorded stability in tests/g3a_followup/stability-v1

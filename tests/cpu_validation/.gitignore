@@ -1,0 +1,2 @@
+# 固定した検証snapshotだけを研究結果の一般的な除外規則から除く。
+!snapshot-*/values.npz

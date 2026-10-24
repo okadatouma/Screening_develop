@@ -1,0 +1,35 @@
+{
+  "existing_files_checked": 705,
+  "existing_files_unchanged": 695,
+  "changed_existing_files": [
+    "HANDOFF.md",
+    "README.md",
+    "periodicwave/loss.py",
+    "tests/CONTRACTS.md",
+    "tests/README.md",
+    "tests/RESULTS.md",
+    "tests/baseline.py",
+    "tests/check_vmc_gradients.py",
+    "tests/test_vmc_mcmc.py",
+    "tests/test_wavefunction.py"
+  ],
+  "production_files_changed": [
+    "periodicwave/loss.py"
+  ],
+  "unchanged_existing_data_and_snapshots": true,
+  "archives_match_before": true,
+  "after_sha256": {
+    "HANDOFF.md": "2a7ee6752bada68ce045e5d1c9e31f9fb959f7dcd2ff6f859631466bc8324051",
+    "README.md": "f720a57e9c7354e32f83a87d7d55a2e9562d6b943870fba386322fa47559b5cf",
+    "periodicwave/loss.py": "536f3575884711a4cf9bf706006ad189835e4c778bc05288e9d43f97e0b38a28",
+    "tests/CONTRACTS.md": "cc17a58f714bfbe9188d382cd66eb458f32e4ed3dbc404ad3e835fd5f27a29f9",
+    "tests/README.md": "3427aee3638a3afaea2d3137a080c1679e40d66b9c611449a121638efacdc9c4",
+    "tests/RESULTS.md": "b92f269e37b5af8419d0475149ffa814501fbf8cc4b05d39757743cff57c1461",
+    "tests/baseline.py": "e0a2a77f1e4a127e3fb2d249f4419a40ff492ed88b13ae46050f58d92162635d",
+    "tests/check_g1_snapshots.py": "2489990f8a1ffecf17c7c3a1e34b386fd81974aa22b5664d0bed1603b409f4f6",
+    "tests/check_g1_vmc.py": "3521508ffd41786d06d4228d9247cfd9212bc72b3664d3d75b609665b5e9ece7",
+    "tests/check_vmc_gradients.py": "ab6e96bc204358d3c5f7a0cf4b538a93089fe34bf82406e85a32ebf88eeea54d",
+    "tests/test_vmc_mcmc.py": "3a1dad5654bc36c785794edf76c4f46fb02177a0c9f683c2871ff86b091a8f5d",
+    "tests/test_wavefunction.py": "c9d9901d2f7cf93bd674898079c3396fcd3ac2c761a5798094c8b5bad73fb5a8"
+  }
+}

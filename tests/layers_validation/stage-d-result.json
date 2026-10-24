@@ -1,0 +1,33 @@
+{
+  "status": "NOT COMPLETE; candidate reverted to B2",
+  "candidate_methods": 3,
+  "candidate_failed_methods": 3,
+  "candidate_failed_subtests": 62,
+  "failure_counts_by_method": {
+    "test_actual_wavefunction_trunk_entry": 6,
+    "test_coordinate_hessian_parameter_gradients_with_aux": 16,
+    "test_forward_each_layer_and_jit": 40
+  },
+  "candidate_off_existing_tests": {
+    "PASS": 25,
+    "XFAIL": 4,
+    "ERROR": 2,
+    "FAIL": 2
+  },
+  "existing_extra_methods_passed": 19,
+  "candidate_on_optimizer": "not run after strict numerical gate failed",
+  "candidate_performance": "not benchmarked after numerical gate failed",
+  "candidate_wavefunction_checks": "trunk comparison failed before later wavefunction assertions",
+  "evidence": [
+    "layers-output.txt",
+    "diagnosis.json",
+    "hlo-False-off.txt",
+    "hlo-False-on.txt",
+    "candidate.patch"
+  ],
+  "final_production": "byte-for-byte B2 at turn start; no D API retained",
+  "restored_b2_methods_passed": 9,
+  "restored_static": "10 PASS / 1 XFAIL; 3 candidate methods SKIP (not PASS)",
+  "protected_existing_files": "all hashes unchanged except RESULTS.md",
+  "snapshots": "4 files match frozen SHA-256 manifest"
+}

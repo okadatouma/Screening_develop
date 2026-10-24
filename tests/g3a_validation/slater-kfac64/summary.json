@@ -1,0 +1,344 @@
+{
+  "version": "g3a-v1",
+  "laplacian_method": "folx",
+  "blocking_plateau_pass": true,
+  "physics_reference_pass": true,
+  "route": "slater",
+  "particles": 1,
+  "complex_output": true,
+  "x64": true,
+  "optimizer": "kfac",
+  "iterations": 8,
+  "batch": 64,
+  "box_length": 4.0,
+  "hamiltonian": "PBC Coulomb with interaction_energy_scale=0 (free)",
+  "ground_energy": 0.0,
+  "log_errors": [
+    {
+      "format": "Initial energy: %03.4f E_h",
+      "error": "float() argument must be a string or a real number, not 'complex'"
+    }
+  ],
+  "trace": [
+    {
+      "step": 0,
+      "reported_energy": 0.8481680951215128,
+      "local_complex_variance": 0.26038713246807027,
+      "gradient_norm": 1.9500223044927618,
+      "reference_gradient_norm": 2.2991879622556004,
+      "reference_before": 0.8479885784286543,
+      "reference_after": 0.7686631412496363,
+      "acceptance": 0.634765625,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 1
+    },
+    {
+      "step": 1,
+      "reported_energy": 0.8464572493095148,
+      "local_complex_variance": 0.4301807114654071,
+      "gradient_norm": 2.971196492970293,
+      "reference_gradient_norm": 2.3303799842727515,
+      "reference_before": 0.7686631412496363,
+      "reference_after": 0.7000726653059796,
+      "acceptance": 0.60546875,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 2
+    },
+    {
+      "step": 2,
+      "reported_energy": 0.7775902116947663,
+      "local_complex_variance": 0.600147482621682,
+      "gradient_norm": 4.317436082956971,
+      "reference_gradient_norm": 2.3202837635491416,
+      "reference_before": 0.7000726653059796,
+      "reference_after": 0.6379940488367543,
+      "acceptance": 0.583984375,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 3
+    },
+    {
+      "step": 3,
+      "reported_energy": 0.5723187425897278,
+      "local_complex_variance": 0.30388270239942883,
+      "gradient_norm": 1.8701980702883045,
+      "reference_gradient_norm": 2.2872065896028078,
+      "reference_before": 0.6379940488367543,
+      "reference_after": 0.5701678124012293,
+      "acceptance": 0.607421875,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 4
+    },
+    {
+      "step": 4,
+      "reported_energy": 0.5122721341568255,
+      "local_complex_variance": 0.9664005244342739,
+      "gradient_norm": 5.659555179222146,
+      "reference_gradient_norm": 2.237422396336337,
+      "reference_before": 0.5701678124012293,
+      "reference_after": 0.5127088587179762,
+      "acceptance": 0.61328125,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 5
+    },
+    {
+      "step": 5,
+      "reported_energy": 0.49455259783580097,
+      "local_complex_variance": 0.35950126868762283,
+      "gradient_norm": 2.165230518463772,
+      "reference_gradient_norm": 2.170327556328512,
+      "reference_before": 0.5127088587179762,
+      "reference_after": 0.4535738315995126,
+      "acceptance": 0.673828125,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 6
+    },
+    {
+      "step": 6,
+      "reported_energy": 0.4240233167923974,
+      "local_complex_variance": 0.32097840516078746,
+      "gradient_norm": 1.8715718265188732,
+      "reference_gradient_norm": 2.071254226517925,
+      "reference_before": 0.4535738315995126,
+      "reference_after": 0.3940410853998513,
+      "acceptance": 0.666015625,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 7
+    },
+    {
+      "step": 7,
+      "reported_energy": 0.420701119908822,
+      "local_complex_variance": 0.22315945605763066,
+      "gradient_norm": 1.3215785210560835,
+      "reference_gradient_norm": 1.9522099175239915,
+      "reference_before": 0.3940410853998513,
+      "reference_after": 0.34973838295026366,
+      "acceptance": 0.71484375,
+      "adam_independent_update_max_abs": null,
+      "restored_next_step": 8
+    }
+  ],
+  "point_checks": {
+    "pbc_0": 7.021666937153402e-16,
+    "psi_error": 1.1102230246251565e-16,
+    "energy_error": 1.6653345369377348e-16,
+    "analytic_psi": {
+      "real": -0.6793508876515354,
+      "imag": -1.3858067306367179
+    },
+    "analytic_energy": {
+      "real": 0.6262799164741902,
+      "imag": -0.2522459090936789
+    }
+  },
+  "reference_final": 0.34973838295026366,
+  "reference_convergence": null,
+  "sampling": {
+    "energy": {
+      "mean": 0.35110480189793,
+      "local_std": 0.2898081899347908,
+      "iid_sem": 0.0016010036197682935,
+      "conservative_block_sem": 0.002623692220869024,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.0016010036197682935
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.0021437458473344082
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.002471607335270985
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.0024849146663243385
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.002577317376079967
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.002623692220869024
+        }
+      ],
+      "plateau_last3": true
+    },
+    "imaginary_energy": {
+      "mean": 0.0031284337886265147,
+      "local_std": 0.4713774971622838,
+      "iid_sem": 0.0026040571158597804,
+      "conservative_block_sem": 0.00447285450852733,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.0026040571158597804
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.0036305689898601277
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.004260920050146573
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.004366984504343597
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.00447285450852733
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.004420035879992103
+        }
+      ],
+      "plateau_last3": true
+    },
+    "gradient_direction": {
+      "mean": 0.1875023693683336,
+      "local_std": 1.0913502911345274,
+      "iid_sem": 0.006029007554737173,
+      "conservative_block_sem": 0.008593855107684293,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.006029007554737173
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.007644120936214086
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.00833885539897546
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.008593855107684293
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.008510559504198012
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.008370637794151916
+        }
+      ],
+      "plateau_last3": true
+    },
+    "exact_energy": 0.34973838295026366,
+    "exact_direction": 0.18260000337194535,
+    "energy_z": 0.5208000148789278,
+    "gradient_z": 0.5704501571133932,
+    "cos_x": {
+      "mean": 0.2435224898565237,
+      "local_std": 0.6761716222986978,
+      "iid_sem": 0.003735412774664504,
+      "conservative_block_sem": 0.0067068460888621605,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 32768,
+          "sem": 0.003735412774664504
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 8192,
+          "sem": 0.005433471935614983
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 2048,
+          "sem": 0.006329010239754571
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 1024,
+          "sem": 0.0065174080579282565
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 512,
+          "sem": 0.006601363301969124
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 256,
+          "sem": 0.0067068460888621605
+        }
+      ],
+      "plateau_last3": true
+    },
+    "acceptance": 0.72216796875,
+    "chains": 32,
+    "sweeps": 1024,
+    "burn_in": 128,
+    "production_direction": 0.18431063089586885,
+    "independent_centered_score": 0.1843106308958682,
+    "independent_energy_finite_difference": 0.18260000333170098,
+    "reference_cos_x": 0.24098782448810202,
+    "numerical_budget": 7.105427357601002e-15,
+    "reference_truncation_budget": 0.0,
+    "energy_compatible": true,
+    "gradient_compatible": true,
+    "imaginary_mean_compatible": true,
+    "production_contraction_compatible": true,
+    "cos_x_compatible": true
+  },
+  "checkpoint_format_unchanged": true,
+  "checkpoint_roundtrip_exact": true,
+  "PRNG_not_in_production_checkpoint": true,
+  "point_checks_pass": true,
+  "core_physics_pass": true,
+  "production_logging_healthy": false,
+  "statistical_gate": "4.5 conservative-block SEM + predeclared 32eps numerical budget + measured reference truncation",
+  "reference_grid_converged": true
+}

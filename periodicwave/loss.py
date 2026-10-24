@@ -254,7 +254,7 @@ def make_loss(network: networks.LogFermiNetLike,
 
   @total_energy.defjvp
   def total_energy_jvp(primals, tangents):  # pylint: disable=unused-variable
-    """Custom Jacobian-vector product for unbiased local energy gradients."""
+    """Energy-score JVP; clipping can bias the energy gradient estimator."""
     params, key, data = primals
     loss, aux_data = total_energy(params, key, data)
 
@@ -285,20 +285,16 @@ def make_loss(network: networks.LogFermiNetLike,
     )
     psi_primal, psi_tangent = jax.jvp(batch_network, primals, tangents)
     if complex_output:
-      clipped_el = diff + aux_data.clipped_energy
-      term1 = (jnp.dot(clipped_el, jnp.conjugate(psi_tangent)) +
-               jnp.dot(jnp.conjugate(clipped_el), psi_tangent))
-      term2 = jnp.sum(aux_data.clipped_energy*psi_tangent.real)
       kfac_jax.register_normal_predictive_distribution(
           psi_primal.real[:, None])
       primals_out = loss.real, aux_data
-      device_batch_size = jnp.shape(aux_data.local_energy)[0]
-      tangents_out = ((term1 - 2*term2).real / device_batch_size, aux_data)
     else:
       kfac_jax.register_normal_predictive_distribution(psi_primal[:, None])
       primals_out = loss, aux_data
-      device_batch_size = jnp.shape(aux_data.local_energy)[0]
-      tangents_out = (jnp.dot(psi_tangent, diff) / device_batch_size, aux_data)
+    # 2 Re <(E_L - center) conj(d log psi)>; retain the clipping policy in diff.
+    device_batch_size = jnp.shape(aux_data.local_energy)[0]
+    tangents_out = (2 * jnp.real(jnp.vdot(psi_tangent, diff)) /
+                    device_batch_size, aux_data)
     return primals_out, tangents_out
 
   return total_energy

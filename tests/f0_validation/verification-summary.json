@@ -1,0 +1,34 @@
+{
+  "new_interface_methods": {
+    "PASS": 12,
+    "current": 4,
+    "independent": 7,
+    "known_inconsistency_reproducer": 1
+  },
+  "additional_methods": "19 PASS plus 2 formal Diagnostic checks (36 conditions)",
+  "static_methods": {
+    "PASS": 10,
+    "XFAIL": 1
+  },
+  "original_33_methods": {
+    "PASS": 27,
+    "ERROR": 2,
+    "XFAIL": 2,
+    "FAIL": 2
+  },
+  "original_status_changes": {},
+  "application_source_changes": "none; no F1 or later refactoring",
+  "new_existing_problem": "I01 PBC r_ae/isotropic Envelope broadcast incompatibility; reproduced, not fixed",
+  "vmc_phase_investigation": "plan only; existing -4/-2 FAIL preserved",
+  "gpu_and_research_checkpoint": "not verified",
+  "production_float64": {
+    "comparison": "exact",
+    "arrays": 902,
+    "elements": 21651
+  },
+  "production_float32": {
+    "comparison": "exact",
+    "arrays": 1319,
+    "elements": 31142
+  }
+}

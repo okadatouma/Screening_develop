@@ -1,0 +1,17 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g3a_exact.py", line 92, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--float32',action='store_true');p.add_argument('--output',type=Path,required=True);run(p.parse_args())
+                                                                                                                                                      ~~~^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g3a_exact.py", line 28, in run
+    net=CS.make_fermi_net((n,0),jnp.zeros(1),**opts);p=net.init(jax.random.PRNGKey(7))
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py", line 923, in make_fermi_net
+    _k, _G, _c = lj_orbitals.load_hf_table(lj_hf_path)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/lj_orbitals.py", line 35, in load_hf_table
+    kxy = t[:, 0:2]
+          ~^^^^^^^^
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed

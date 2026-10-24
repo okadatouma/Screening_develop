@@ -1,0 +1,24 @@
+{
+  "existing_files_changed_except_RESULTS": [],
+  "production_files_checked": 48,
+  "fixed_snapshots_and_checkpoints_checked": [
+    "tests/layernorm_validation/before-checkpoints/evaluations.json",
+    "tests/layernorm_validation/before-checkpoints/float64/lambda/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float64/hf/synthetic_hf.txt",
+    "tests/layernorm_validation/before-checkpoints/float64/hf/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float64/screen/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float64/slater/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float64/psiformer/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float32/lambda/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float32/hf/synthetic_hf.txt",
+    "tests/layernorm_validation/before-checkpoints/float32/hf/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float32/screen/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float32/slater/qmcjax_ckpt_000000.npz",
+    "tests/layernorm_validation/before-checkpoints/float32/psiformer/qmcjax_ckpt_000000.npz",
+    "tests/cpu_validation/snapshot-float32-v1/metadata.json",
+    "tests/cpu_validation/snapshot-float32-v1/values.npz",
+    "tests/cpu_validation/snapshot-sha256.json",
+    "tests/cpu_validation/snapshot-v1/metadata.json",
+    "tests/cpu_validation/snapshot-v1/values.npz"
+  ]
+}

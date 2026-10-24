@@ -1,0 +1,2054 @@
+test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+
+  test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=False, route='screen') ... FAIL
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+  test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=False, route='lambda') ... FAIL
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp8b2ssvji/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp8b2ssvji/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp8b2ssvji/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+  test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=False, route='hf') ... FAIL
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+  test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=True, route='screen') ... FAIL
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+  test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=True, route='lambda') ... FAIL
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpqnpk0lcw/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpqnpk0lcw/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpqnpk0lcw/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+  test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=True, route='hf') ... FAIL
+test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) ... making construct_input_features with periodic norm
+
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=1, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=2, ln=False, mode='pow4') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=True, mode='smooth7') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=False, mode='fixed') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=2, ln=True, mode='gauss') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=True, mode='freeze') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=False, mode='hooks') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=2, ln=True, mode='nomask') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=1, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=2, ln=False, mode='pow4') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=True, mode='smooth7') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=False, mode='fixed') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=2, ln=True, mode='gauss') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=True, mode='freeze') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=False, mode='hooks') ... FAIL
+making construct_input_features with periodic norm
+  test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=2, ln=True, mode='nomask') ... FAIL
+test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) ... making construct_input_features with periodic norm
+
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=1, ln=False, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=1, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=2, ln=False, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=2, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=False, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='smooth7') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='pow4') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='band') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='sin') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='gauss') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='fixed') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='nomask') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='nogate') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='noscale') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='nonorm') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='freeze') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='hooks') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=2, ln=False, mode='fixed') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=False, mode='gauss') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=1, ln=False, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=1, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=2, ln=False, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=2, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=False, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='cos') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='smooth7') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='pow4') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='band') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='sin') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='gauss') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='fixed') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='nomask') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='nogate') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='noscale') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='nonorm') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='freeze') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='hooks') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=2, ln=False, mode='fixed') ... FAIL
+making construct_input_features with periodic norm
+  test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=False, mode='gauss') ... FAIL
+
+======================================================================
+FAIL: test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=False, route='screen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 141, in test_actual_wavefunction_trunk_entry
+    assert_exact(self,out,jax.jit(lambda pp,r:evaluate(pp,r,False))(p,data.positions))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 16 (37.5%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 9.955482e-07
+ ACTUAL: array([[-0.631936,  0.602939,  1.074696,  1.969306,  0.291892,  0.026194,
+         2.156745,  1.701495],
+       [ 0.274338,  0.257733, -0.925219,  0.135738,  0.651378,  0.204321,
+         0.815363, -0.787142]], dtype=float32)
+ DESIRED: array([[-0.631936,  0.602939,  1.074696,  1.969306,  0.291892,  0.026194,
+         2.156746,  1.701495],
+       [ 0.274338,  0.257733, -0.925219,  0.135737,  0.651378,  0.204321,
+         0.815363, -0.787142]], dtype=float32)
+
+======================================================================
+FAIL: test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=False, route='lambda')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 141, in test_actual_wavefunction_trunk_entry
+    assert_exact(self,out,jax.jit(lambda pp,r:evaluate(pp,r,False))(p,data.positions))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 15 / 16 (93.8%)
+Max absolute difference among violations: 5.364418e-07
+Max relative difference among violations: 9.223064e-06
+ ACTUAL: array([[-1.340911, -0.08573 ,  0.588689,  1.551815, -0.956146, -0.96751 ,
+         1.25978 , -0.049989],
+       [ 0.035595, -0.282778, -1.438003, -0.011511,  1.319933,  1.226547,
+         0.63412 , -1.483902]], dtype=float32)
+ DESIRED: array([[-1.340911, -0.08573 ,  0.588689,  1.551816, -0.956145, -0.96751 ,
+         1.25978 , -0.049989],
+       [ 0.035595, -0.282778, -1.438003, -0.011511,  1.319933,  1.226548,
+         0.63412 , -1.483903]], dtype=float32)
+
+======================================================================
+FAIL: test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=False, route='hf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 141, in test_actual_wavefunction_trunk_entry
+    assert_exact(self,out,jax.jit(lambda pp,r:evaluate(pp,r,False))(p,data.positions))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 10 / 16 (62.5%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 3.178477e-06
+ ACTUAL: array([[-0.695435,  0.657066,  1.159618,  1.975218,  0.442923, -0.523457,
+         2.2177  ,  2.206055],
+       [ 0.243184,  0.059161, -1.058373,  0.012892,  0.468414,  0.38087 ,
+         0.448807, -0.882321]], dtype=float32)
+ DESIRED: array([[-0.695435,  0.657066,  1.159618,  1.975218,  0.442923, -0.523457,
+         2.2177  ,  2.206055],
+       [ 0.243184,  0.059161, -1.058373,  0.012892,  0.468414,  0.38087 ,
+         0.448807, -0.882321]], dtype=float32)
+
+======================================================================
+FAIL: test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=True, route='screen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 141, in test_actual_wavefunction_trunk_entry
+    assert_exact(self,out,jax.jit(lambda pp,r:evaluate(pp,r,False))(p,data.positions))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 10 / 16 (62.5%)
+Max absolute difference among violations: 8.8817842e-16
+Max relative difference among violations: 3.56377447e-16
+ ACTUAL: array([[ 4.385114,  5.373098,  0.890159, -0.068346,  0.694418,  1.229534,
+         0.31153 ,  4.494765],
+       [ 2.903155,  2.594254, -0.666992, -1.136638,  4.323531, -1.441392,
+        -0.127337,  2.887331]])
+ DESIRED: array([[ 4.385114,  5.373098,  0.890159, -0.068346,  0.694418,  1.229534,
+         0.31153 ,  4.494765],
+       [ 2.903155,  2.594254, -0.666992, -1.136638,  4.323531, -1.441392,
+        -0.127337,  2.887331]])
+
+======================================================================
+FAIL: test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=True, route='lambda')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 141, in test_actual_wavefunction_trunk_entry
+    assert_exact(self,out,jax.jit(lambda pp,r:evaluate(pp,r,False))(p,data.positions))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 12 / 16 (75%)
+Max absolute difference among violations: 6.66133815e-16
+Max relative difference among violations: 1.89253696e-15
+ ACTUAL: array([[ 1.144551,  1.03704 , -1.125687, -1.430135,  1.230824, -0.874729,
+        -0.095328,  0.113464],
+       [ 0.715459,  0.633012, -0.921459, -0.961305,  1.544852, -1.54952 ,
+        -0.167169,  0.706131]])
+ DESIRED: array([[ 1.144551,  1.03704 , -1.125687, -1.430135,  1.230824, -0.874729,
+        -0.095328,  0.113464],
+       [ 0.715459,  0.633012, -0.921459, -0.961305,  1.544852, -1.54952 ,
+        -0.167169,  0.706131]])
+
+======================================================================
+FAIL: test_actual_wavefunction_trunk_entry (__main__.MultiLayerChecks.test_actual_wavefunction_trunk_entry) (x64=True, route='hf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 141, in test_actual_wavefunction_trunk_entry
+    assert_exact(self,out,jax.jit(lambda pp,r:evaluate(pp,r,False))(p,data.positions))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 16 (43.8%)
+Max absolute difference among violations: 8.8817842e-16
+Max relative difference among violations: 3.26733366e-15
+ ACTUAL: array([[ 5.099987,  5.071314,  0.452637,  1.1203  ,  7.578708,  1.320428,
+         1.468274,  4.305525],
+       [ 2.911927,  2.469403, -0.711377, -0.665213,  4.72806 , -1.466447,
+         0.203877,  3.145516]])
+ DESIRED: array([[ 5.099987,  5.071314,  0.452637,  1.1203  ,  7.578708,  1.320428,
+         1.468274,  4.305525],
+       [ 2.911927,  2.469403, -0.711377, -0.665213,  4.72806 , -1.466447,
+         0.203877,  3.145516]])
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=1, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 2.9802322e-08
+Max relative difference among violations: 2.2106448e-07
+ ACTUAL: array(0.134813, dtype=float32)
+ DESIRED: array(0.134813, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=2, ln=False, mode='pow4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 5.9604645e-08
+Max relative difference among violations: 7.907742e-08
+ ACTUAL: array(0.75375, dtype=float32)
+ DESIRED: array(0.753751, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=True, mode='smooth7')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 8.464625e-07
+ ACTUAL: array(0.281665, dtype=float32)
+ DESIRED: array(0.281665, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=False, mode='fixed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 12 / 40 (30%)
+Max absolute difference among violations: 7.450581e-09
+Max relative difference among violations: 1.171502e-07
+ ACTUAL: array([[ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],...
+ DESIRED: array([[ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],...
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=2, ln=True, mode='gauss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 5.9604645e-08
+Max relative difference among violations: 1.1990642e-07
+ ACTUAL: array(0.497093, dtype=float32)
+ DESIRED: array(0.497093, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=True, mode='freeze')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 1.013279e-06
+Max relative difference among violations: 3.6790605e-06
+ ACTUAL: array(0.275419, dtype=float32)
+ DESIRED: array(0.275418, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=3, ln=False, mode='hooks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 9.995939e-08
+ ACTUAL: array(2.385155, dtype=float32)
+ DESIRED: array(2.385154, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=False, n=2, ln=True, mode='nomask')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 5.9604645e-08
+Max relative difference among violations: 1.0960417e-07
+ ACTUAL: array(0.543817, dtype=float32)
+ DESIRED: array(0.543817, dtype=float32)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=1, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 1.11022302e-16
+Max relative difference among violations: 2.94884302e-16
+ ACTUAL: array(-0.376494)
+ DESIRED: array(-0.376494)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=2, ln=False, mode='pow4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 16 (12.5%)
+Max absolute difference among violations: 3.25260652e-17
+Max relative difference among violations: 1.29826828e-14
+ ACTUAL: array([[-0.040322, -0.012004,  0.177461,  0.222171],
+       [-0.006943, -0.00205 ,  0.030457,  0.038122],
+       [ 0.03083 , -0.028604,  0.091461,  0.132005],
+       [-0.100777,  0.043354,  0.002505, -0.030843]])
+ DESIRED: array([[-0.040322, -0.012004,  0.177461,  0.222171],
+       [-0.006943, -0.00205 ,  0.030457,  0.038122],
+       [ 0.03083 , -0.028604,  0.091461,  0.132005],
+       [-0.100777,  0.043354,  0.002505, -0.030843]])
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=True, mode='smooth7')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 5.19014946e-16
+ ACTUAL: array(0.855639)
+ DESIRED: array(0.855639)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=False, mode='fixed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 40 (2.5%)
+Max absolute difference among violations: 6.9388939e-18
+Max relative difference among violations: 1.15790067e-16
+ ACTUAL: array([[ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],...
+ DESIRED: array([[ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],
+       [ 0.      ,  0.      ,  0.      ,  0.      ],...
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=2, ln=True, mode='gauss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 1.11022302e-16
+Max relative difference among violations: 1.86231707e-15
+ ACTUAL: array(0.059615)
+ DESIRED: array(0.059615)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=True, mode='freeze')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 6.66133815e-16
+Max relative difference among violations: 7.85702414e-16
+ ACTUAL: array(0.847819)
+ DESIRED: array(0.847819)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=3, ln=False, mode='hooks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 1.45266826e-16
+ ACTUAL: array(3.057059)
+ DESIRED: array(3.057059)
+
+======================================================================
+FAIL: test_coordinate_hessian_parameter_gradients_with_aux (__main__.MultiLayerChecks.test_coordinate_hessian_parameter_gradients_with_aux) (x64=True, n=2, ln=True, mode='nomask')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 116, in test_coordinate_hessian_parameter_gradients_with_aux
+    assert_exact(self,(value,g),(v0,g0));assert_exact(self,(value,g),(vo,go))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 13 / 16 (81.2%)
+Max absolute difference among violations: 1.11022302e-16
+Max relative difference among violations: 1.11993165e-13
+ ACTUAL: array([[-2.081595e-01,  8.114210e-02,  2.736230e-01, -1.466056e-01],
+       [-4.182933e-02,  1.592058e-02,  5.642523e-02, -3.051649e-02],
+       [-7.953738e-02,  2.780584e-02,  1.165293e-01, -6.479779e-02],
+       [ 9.293729e-05,  4.337338e-03, -1.650172e-02,  1.207144e-02]])
+ DESIRED: array([[-2.081595e-01,  8.114210e-02,  2.736230e-01, -1.466056e-01],
+       [-4.182933e-02,  1.592058e-02,  5.642523e-02, -3.051649e-02],
+       [-7.953738e-02,  2.780584e-02,  1.165293e-01, -6.479779e-02],
+       [ 9.293729e-05,  4.337338e-03, -1.650172e-02,  1.207144e-02]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=1, ln=False, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3 / 8 (37.5%)
+Max absolute difference among violations: 1.1920929e-07
+Max relative difference among violations: 1.1202256e-07
+ ACTUAL: array([[ 0.648639,  0.695333,  0.180888,  0.418307],
+       [-0.317315,  0.811022, -1.064154, -0.685188]], dtype=float32)
+ DESIRED: array([[ 0.648639,  0.695333,  0.180888,  0.418307],
+       [-0.317315,  0.811022, -1.064154, -0.685188]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=1, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 8 (25%)
+Max absolute difference among violations: 2.9802322e-08
+Max relative difference among violations: 2.9350778e-07
+ ACTUAL: array([[ 1.003395,  0.592258, -1.625272,  0.029619],
+       [ 0.038077,  1.561931, -1.173413, -0.426595]], dtype=float32)
+ DESIRED: array([[ 1.003395,  0.592258, -1.625272,  0.029619],
+       [ 0.038077,  1.561931, -1.173413, -0.426595]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=2, ln=False, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 8 (62.5%)
+Max absolute difference among violations: 1.1920929e-07
+Max relative difference among violations: 1.1944545e-07
+ ACTUAL: array([[ 0.670243,  0.564212,  0.124753,  0.625519],
+       [-0.47782 ,  0.689521, -1.087492, -0.256844]], dtype=float32)
+ DESIRED: array([[ 0.670243,  0.564212,  0.124753,  0.625519],
+       [-0.47782 ,  0.689521, -1.087492, -0.256844]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=2, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 8 (62.5%)
+Max absolute difference among violations: 1.1920929e-07
+Max relative difference among violations: 6.985856e-07
+ ACTUAL: array([[ 0.904716,  0.341504, -1.692757,  0.446536],
+       [-0.053326,  1.460619, -1.364503, -0.042789]], dtype=float32)
+ DESIRED: array([[ 0.904716,  0.341504, -1.692757,  0.446536],
+       [-0.053326,  1.460619, -1.364503, -0.042789]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=False, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 1.1920929e-07
+Max relative difference among violations: 1.9759277e-07
+ ACTUAL: array([[ 0.517213,  0.48464 ,  2.866398,  0.768009],
+       [-0.603308,  0.615045,  1.105927, -0.354473]], dtype=float32)
+ DESIRED: array([[ 0.517213,  0.48464 ,  2.866398,  0.768009],
+       [-0.603308,  0.615045,  1.105927, -0.354473]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 8 (62.5%)
+Max absolute difference among violations: 6.2584877e-07
+Max relative difference among violations: 2.0302186e-06
+ ACTUAL: array([[-0.308266, -1.382161,  1.376868,  0.31356 ],
+       [-1.524301,  0.6281  ,  1.111556, -0.215354]], dtype=float32)
+ DESIRED: array([[-0.308267, -1.382161,  1.376868,  0.31356 ],
+       [-1.524301,  0.6281  ,  1.111555, -0.215354]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='smooth7')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 8 (87.5%)
+Max absolute difference among violations: 4.7683716e-07
+Max relative difference among violations: 1.5086523e-06
+ ACTUAL: array([[-0.302114, -1.386872,  1.372917,  0.316069],
+       [-1.523895,  0.629417,  1.111118, -0.21664 ]], dtype=float32)
+ DESIRED: array([[-0.302113, -1.386872,  1.372917,  0.316068],
+       [-1.523895,  0.629417,  1.111118, -0.21664 ]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='pow4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 6.4074993e-07
+Max relative difference among violations: 3.4355646e-06
+ ACTUAL: array([[ 0.488456, -1.660066,  0.985104,  0.186506],
+       [-1.515463,  0.637802,  1.113875, -0.236214]], dtype=float32)
+ DESIRED: array([[ 0.488456, -1.660066,  0.985104,  0.186505],
+       [-1.515463,  0.637803,  1.113875, -0.236214]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='band')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 8 (25%)
+Max absolute difference among violations: 6.556511e-07
+Max relative difference among violations: 8.61092e-07
+ ACTUAL: array([[ 0.692198, -1.645923,  0.899087,  0.054638],
+       [-1.539215,  0.602249,  1.112336, -0.17537 ]], dtype=float32)
+ DESIRED: array([[ 0.692198, -1.645923,  0.899086,  0.054638],
+       [-1.539215,  0.602249,  1.112336, -0.17537 ]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='sin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 1.667745e-05
+ ACTUAL: array([[ 0.646476, -1.626719,  0.967008,  0.013235],
+       [-1.545685,  0.580197,  1.118382, -0.152894]], dtype=float32)
+ DESIRED: array([[ 0.646476, -1.626719,  0.967009,  0.013235],
+       [-1.545685,  0.580197,  1.118382, -0.152894]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='gauss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 4.5448542e-07
+Max relative difference among violations: 3.8940176e-05
+ ACTUAL: array([[ 0.646914, -1.626197,  0.967611,  0.011672],
+       [-1.545635,  0.58028 ,  1.118388, -0.153033]], dtype=float32)
+ DESIRED: array([[ 0.646914, -1.626197,  0.967611,  0.011671],
+       [-1.545635,  0.58028 ,  1.118388, -0.153033]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='fixed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 1.7881393e-07
+Max relative difference among violations: 6.987555e-07
+ ACTUAL: array([[ 0.145863,  1.425251, -0.188442, -1.382672],
+       [-1.507014,  0.647563,  1.115355, -0.255903]], dtype=float32)
+ DESIRED: array([[ 0.145863,  1.425251, -0.188442, -1.382672],
+       [-1.507014,  0.647563,  1.115355, -0.255903]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='nomask')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 6.7055225e-07
+Max relative difference among violations: 3.1400104e-06
+ ACTUAL: array([[-0.18726 , -1.441072,  1.344252,  0.284081],
+       [-1.525177,  0.627933,  1.110796, -0.213552]], dtype=float32)
+ DESIRED: array([[-0.18726 , -1.441072,  1.344251,  0.284081],
+       [-1.525178,  0.627933,  1.110796, -0.213551]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='nogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 8 (87.5%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 5.321711e-07
+ ACTUAL: array([[-0.942405,  0.535052,  1.374703, -0.967351],
+       [-1.644887,  0.403327,  1.045556,  0.196005]], dtype=float32)
+ DESIRED: array([[-0.942405,  0.535052,  1.374703, -0.967351],
+       [-1.644887,  0.403327,  1.045556,  0.196005]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='noscale')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 8 (25%)
+Max absolute difference among violations: 1.7881393e-07
+Max relative difference among violations: 5.4419166e-07
+ ACTUAL: array([[-0.015628, -0.733226,  1.63509 , -0.886234],
+       [-1.545951,  0.609647,  1.100598, -0.164293]], dtype=float32)
+ DESIRED: array([[-0.015628, -0.733226,  1.63509 , -0.886234],
+       [-1.545951,  0.609647,  1.100598, -0.164293]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='nonorm')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 8 / 8 (100%)
+Max absolute difference among violations: 6.2584877e-07
+Max relative difference among violations: 9.484706e-05
+ ACTUAL: array([[ 0.001959, -1.555272,  1.209292,  0.344021],
+       [-1.516407,  0.633249,  1.115912, -0.232754]], dtype=float32)
+ DESIRED: array([[ 0.001959, -1.555271,  1.209292,  0.34402 ],
+       [-1.516408,  0.633249,  1.115912, -0.232753]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='freeze')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 8 (62.5%)
+Max absolute difference among violations: 6.2584877e-07
+Max relative difference among violations: 2.0302186e-06
+ ACTUAL: array([[-0.308266, -1.382161,  1.376868,  0.31356 ],
+       [-1.524301,  0.6281  ,  1.111556, -0.215354]], dtype=float32)
+ DESIRED: array([[-0.308267, -1.382161,  1.376868,  0.31356 ],
+       [-1.524301,  0.6281  ,  1.111555, -0.215354]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=True, mode='hooks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 3.9565452e-07
+ ACTUAL: array([[-1.150007,  0.808816,  1.161823, -0.820631],
+       [-1.487558,  0.674956,  1.113898, -0.301296]], dtype=float32)
+ DESIRED: array([[-1.150007,  0.808816,  1.161823, -0.820631],
+       [-1.487558,  0.674957,  1.113898, -0.301296]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=2, ln=False, mode='fixed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 8 (25%)
+Max absolute difference among violations: 5.9604645e-08
+Max relative difference among violations: 1.1867246e-07
+ ACTUAL: array([[ 0.903141,  0.768082,  0.443735,  0.661696],
+       [-0.502262,  0.675537, -0.868117, -0.144659]], dtype=float32)
+ DESIRED: array([[ 0.903141,  0.768082,  0.443735,  0.661696],
+       [-0.502262,  0.675537, -0.868117, -0.144659]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=False, n=3, ln=False, mode='gauss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 2.3841858e-07
+Max relative difference among violations: 1.6140332e-07
+ ACTUAL: array([[ 0.571924,  0.511488,  2.982525,  0.93298 ],
+       [-0.628215,  0.538763,  1.007029, -0.36929 ]], dtype=float32)
+ DESIRED: array([[ 0.571924,  0.511488,  2.982525,  0.93298 ],
+       [-0.628215,  0.538763,  1.007029, -0.36929 ]], dtype=float32)
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=1, ln=False, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 8 (12.5%)
+Max absolute difference among violations: 5.55111512e-17
+Max relative difference among violations: 1.91240301e-16
+ ACTUAL: array([[ 0.823268,  1.828023,  0.646462,  0.290269],
+       [-0.224309,  1.785742, -1.086246, -0.789408]])
+ DESIRED: array([[ 0.823268,  1.828023,  0.646462,  0.290269],
+       [-0.224309,  1.785742, -1.086246, -0.789408]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=1, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 6.42545225e-16
+ ACTUAL: array([[ 0.524764,  1.243206, -0.328927, -1.439043],
+       [-0.129589,  1.6644  , -0.899964, -0.634847]])
+ DESIRED: array([[ 0.524764,  1.243206, -0.328927, -1.439043],
+       [-0.129589,  1.6644  , -0.899964, -0.634847]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=2, ln=False, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3 / 8 (37.5%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 2.56003292e-16
+ ACTUAL: array([[ 1.813765,  1.752968,  0.479569,  0.216838],
+       [ 0.818004,  1.774378, -1.222338, -0.915127]])
+ DESIRED: array([[ 1.813765,  1.752968,  0.479569,  0.216838],
+       [ 0.818004,  1.774378, -1.222338, -0.915127]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=2, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 5 / 8 (62.5%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 3.49753659e-16
+ ACTUAL: array([[ 1.032673,  0.863021, -0.505168, -1.390525],
+       [ 0.63486 ,  1.301107, -1.090578, -0.845388]])
+ DESIRED: array([[ 1.032673,  0.863021, -0.505168, -1.390525],
+       [ 0.63486 ,  1.301107, -1.090578, -0.845388]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=False, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3 / 8 (37.5%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 5.10671928e-16
+ ACTUAL: array([[ 2.082465,  2.539221,  2.210045, -0.081527],
+       [ 2.080917,  3.502725,  1.007747, -1.001454]])
+ DESIRED: array([[ 2.082465,  2.539221,  2.210045, -0.081527],
+       [ 2.080917,  3.502725,  1.007747, -1.001454]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='cos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 8 (25%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 3.72724243e-16
+ ACTUAL: array([[ 0.595734,  0.743707,  0.377878, -1.71732 ],
+       [ 0.363972,  1.235609, -0.071284, -1.528297]])
+ DESIRED: array([[ 0.595734,  0.743707,  0.377878, -1.71732 ],
+       [ 0.363972,  1.235609, -0.071284, -1.528297]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='smooth7')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3 / 8 (37.5%)
+Max absolute difference among violations: 3.33066907e-16
+Max relative difference among violations: 2.30055794e-15
+ ACTUAL: array([[ 0.618087,  0.705401,  0.39763 , -1.721118],
+       [ 0.364233,  1.236012, -0.072388, -1.527857]])
+ DESIRED: array([[ 0.618087,  0.705401,  0.39763 , -1.721118],
+       [ 0.364233,  1.236012, -0.072388, -1.527857]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='pow4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 8 (87.5%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 3.48489071e-16
+ ACTUAL: array([[ 0.637164,  0.698725,  0.384075, -1.719963],
+       [ 0.383565,  1.227544, -0.081622, -1.529487]])
+ DESIRED: array([[ 0.637164,  0.698725,  0.384075, -1.719963],
+       [ 0.383565,  1.227544, -0.081622, -1.529487]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='band')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 1.27252246e-15
+ ACTUAL: array([[ 0.816346,  0.337517,  0.5531  , -1.706963],
+       [ 0.346863,  1.277501, -0.130869, -1.493495]])
+ DESIRED: array([[ 0.816346,  0.337517,  0.5531  , -1.706963],
+       [ 0.346863,  1.277501, -0.130869, -1.493495]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='sin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 8 (87.5%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 2.63118729e-15
+ ACTUAL: array([[ 0.676286,  0.639393,  0.407123, -1.722802],
+       [ 0.340259,  1.274539, -0.116036, -1.498762]])
+ DESIRED: array([[ 0.676286,  0.639393,  0.407123, -1.722802],
+       [ 0.340259,  1.274539, -0.116036, -1.498762]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='gauss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 8 (87.5%)
+Max absolute difference among violations: 3.05311332e-16
+Max relative difference among violations: 2.6339081e-15
+ ACTUAL: array([[ 0.674569,  0.64269 ,  0.405396, -1.722655],
+       [ 0.340343,  1.274423, -0.115916, -1.498851]])
+ DESIRED: array([[ 0.674569,  0.64269 ,  0.405396, -1.722655],
+       [ 0.340343,  1.274423, -0.115916, -1.498851]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='fixed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 3.33066907e-16
+Max relative difference among violations: 8.17554565e-16
+ ACTUAL: array([[ 0.851422,  0.629361,  0.203697, -1.68448 ],
+       [ 0.467483,  1.197225, -0.138646, -1.526063]])
+ DESIRED: array([[ 0.851422,  0.629361,  0.203697, -1.68448 ],
+       [ 0.467483,  1.197225, -0.138646, -1.526063]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='nomask')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 8 / 8 (100%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 2.31736554e-15
+ ACTUAL: array([[ 0.616439,  0.648865,  0.462442, -1.727746],
+       [ 0.337752,  1.250533, -0.065875, -1.52241 ]])
+ DESIRED: array([[ 0.616439,  0.648865,  0.462442, -1.727746],
+       [ 0.337752,  1.250533, -0.065875, -1.52241 ]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='nogate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 3.33066907e-16
+Max relative difference among violations: 1.00194472e-15
+ ACTUAL: array([[ 0.806464,  0.568662,  0.33242 , -1.707547],
+       [ 0.674522,  1.104524, -0.280211, -1.498835]])
+ DESIRED: array([[ 0.806464,  0.568662,  0.33242 , -1.707547],
+       [ 0.674522,  1.104524, -0.280211, -1.498835]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='noscale')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 1.65391686e-15
+ ACTUAL: array([[ 0.633218,  0.794246,  0.273527, -1.700991],
+       [ 0.407484,  1.220782, -0.10069 , -1.527576]])
+ DESIRED: array([[ 0.633218,  0.794246,  0.273527, -1.700991],
+       [ 0.407484,  1.220782, -0.10069 , -1.527576]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='nonorm')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 6 / 8 (75%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 2.56299302e-15
+ ACTUAL: array([[ 0.582951,  0.739458,  0.396853, -1.719261],
+       [ 0.352864,  1.239856, -0.064976, -1.527744]])
+ DESIRED: array([[ 0.582951,  0.739458,  0.396853, -1.719261],
+       [ 0.352864,  1.239856, -0.064976, -1.527744]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='freeze')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 8 (25%)
+Max absolute difference among violations: 2.22044605e-16
+Max relative difference among violations: 3.72724243e-16
+ ACTUAL: array([[ 0.595734,  0.743707,  0.377878, -1.71732 ],
+       [ 0.363972,  1.235609, -0.071284, -1.528297]])
+ DESIRED: array([[ 0.595734,  0.743707,  0.377878, -1.71732 ],
+       [ 0.363972,  1.235609, -0.071284, -1.528297]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=True, mode='hooks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 7 / 8 (87.5%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 1.20247473e-15
+ ACTUAL: array([[ 0.339018,  1.302193, -0.171548, -1.469663],
+       [ 0.369313,  1.231697, -0.070816, -1.530194]])
+ DESIRED: array([[ 0.339018,  1.302193, -0.171548, -1.469663],
+       [ 0.369313,  1.231697, -0.070816, -1.530194]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=2, ln=False, mode='fixed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 8 (12.5%)
+Max absolute difference among violations: 1.11022302e-16
+Max relative difference among violations: 1.37628001e-16
+ ACTUAL: array([[ 1.784473,  1.724983,  0.416342,  0.242465],
+       [ 0.806684,  2.022343, -1.213341, -0.720531]])
+ DESIRED: array([[ 1.784473,  1.724983,  0.416342,  0.242465],
+       [ 0.806684,  2.022343, -1.213341, -0.720531]])
+
+======================================================================
+FAIL: test_forward_each_layer_and_jit (__main__.MultiLayerChecks.test_forward_each_layer_and_jit) (x64=True, n=3, ln=False, mode='gauss')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_layers.py", line 96, in test_forward_each_layer_and_jit
+    assert_exact(self,jit_out,jax.jit(apply)(p,x,d,pair))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_window.py", line 38, in assert_exact
+    np.testing.assert_array_equal(a, b)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1061, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 4 / 8 (50%)
+Max absolute difference among violations: 4.4408921e-16
+Max relative difference among violations: 2.69291113e-16
+ ACTUAL: array([[ 2.022644,  2.42258 ,  2.244266, -0.015276],
+       [ 2.090904,  3.745967,  1.053905, -0.824552]])
+ DESIRED: array([[ 2.022644,  2.42258 ,  2.244266, -0.015276],
+       [ 2.090904,  3.745967,  1.053905, -0.824552]])
+
+----------------------------------------------------------------------
+Ran 3 tests in 40.539s
+
+FAILED (failures=62)

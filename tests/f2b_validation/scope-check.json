@@ -1,0 +1,10 @@
+{
+  "reference_manifest": "tests/f2a_validation/before-sha256.json",
+  "reference_sha256": "bee407f38fd2f451aae89ab4b617b96fa698594ed7e026e221fe8d612076339b",
+  "files_checked": 331,
+  "changes": [],
+  "application_code_changed": false,
+  "existing_test_source_sha256": "57a8edacfa3fe3dd55a97f9f5350d677b9143e3a82f9323b5a007302a8a6f458",
+  "executed": "tests.check_interfaces: 12 PASS / 15.360s, including existing error reproducer; not a success certification for isotropic PBC",
+  "full_production_diagnostic_optimizer_checkpoint_suites": "not rerun; latest executed numerical comparisons remain F1; existing data/source hashes unchanged"
+}

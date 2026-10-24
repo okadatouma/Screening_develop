@@ -1,0 +1,16 @@
+{
+  "float32": {
+    "energy_conditions": 24,
+    "max_abs_real": 2.9802322387695312e-08,
+    "max_abs_imag": 1.4901161193847656e-08,
+    "complex_RMS": 1.112401042578675e-08,
+    "G1_gradient_max_abs": 1.4901161193847656e-08
+  },
+  "float64": {
+    "energy_conditions": 24,
+    "max_abs_real": 1.3877787807814457e-17,
+    "max_abs_imag": 2.7755575615628914e-17,
+    "complex_RMS": 1.4234601489530378e-17,
+    "G1_gradient_max_abs": 2.7755575615628914e-17
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "stage": "F2a investigation complete; retain separate implementations",
+  "application_code_changed": false,
+  "hashed_source_and_validation_files": 331,
+  "hash_changes": [],
+  "kernel_executable_bodies": "identical AST excluding docstrings",
+  "kernel_cases": 12,
+  "public_pipeline_cases": 12,
+  "precisions": [
+    "float32",
+    "float64"
+  ],
+  "lattices": [
+    "square",
+    "oblique"
+  ],
+  "configurations": [
+    "regular",
+    "cross_boundary",
+    "coincident_distinct_electrons"
+  ],
+  "existing_geometry_tests": {
+    "PASS": 3
+  },
+  "regular_and_boundary_pipeline_comparisons": "value, jacfwd and jacfwd(jacrev), eager and JIT: exact for tested configurations",
+  "singular_condition": "Distinct coincident electrons: finite zero pair distance; undefined norm derivatives cause matching NaNs. Full matrix Hessian can propagate NaNs into diagonal output entries. Not a correctness PASS.",
+  "production_full_suite_this_stage": "not rerun: application code unchanged; latest F1 exact comparisons retained, not reported as new executions",
+  "production_last_verified_stage": "F1; both precisions, 5 routes / 11 settings, Adam and executable KFAC",
+  "diagnostic_36_and_checkpoint_this_stage": "not rerun; source and saved fixtures unchanged",
+  "original_33_last_verified": "F1: 27 PASS / 2 XFAIL / 2 FAIL / 2 ERROR",
+  "F2b": "not started; reconsider whether shared geometry is actually needed",
+  "existing_eager_vs_jit_max_absolute_difference": {
+    "float32": {
+      "value": 0,
+      "coordinate_gradient": 1.1920928955078125e-07,
+      "coordinate_hessian": 3.5762786865234375e-07
+    },
+    "float64": {
+      "value": 0,
+      "coordinate_gradient": 2.220446049250313e-16,
+      "coordinate_hessian": 8.881784197001252e-16
+    }
+  }
+}

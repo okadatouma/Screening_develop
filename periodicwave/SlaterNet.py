@@ -55,25 +55,8 @@ class SlaterNetOptions(networks.BaseNetworkOptions):
   use_layer_norm: bool = False
   mlp_activation_fct: str = "TANH"
 
-def make_layer_norm() ->...:
-  """Implementation of LayerNorm."""
-
-  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:
-    params = {}
-    params['scale'] = jnp.ones(param_shape)
-    params['offset'] = jnp.zeros(param_shape)
-    return params
-
-  def apply(params: networks.ParamTree,
-            inputs: jnp.ndarray,
-            axis: int = -1) -> jnp.ndarray:
-    mean = jnp.mean(inputs, axis=axis, keepdims=True)
-    variance = jnp.var(inputs, axis=axis, keepdims=True)
-    eps = 1e-5
-    inv = params['scale'] * jax.lax.rsqrt(variance + eps)
-    return inv * (inputs - mean) + params['offset']
-
-  return init, apply
+# Keep the original public name for analysis scripts and external callers.
+make_layer_norm = network_blocks.make_layer_norm
 
 def make_mlp(activation_fct_name: str = "TANH") ->...:
   """Construct MLP, with final linear projection to embedding size."""
@@ -124,7 +107,7 @@ def make_SlaterNet_block(num_layers: int,
                               use_layer_norm: bool = False,
                               mlp_activation_fct: str = "TANH") ->...:
   if use_layer_norm:
-    layer_norm_init, layer_norm_apply = make_layer_norm()
+    layer_norm_init, layer_norm_apply = network_blocks.make_layer_norm()
 
   mlp_init, mlp_apply = make_mlp(mlp_activation_fct)
 
@@ -192,14 +175,12 @@ def make_SlaterNet_layers(
     key, subkey = jax.random.split(key)
     feature_dims, params['input'] = options.feature_layer.init()
     one_electron_feature_dim, _ = feature_dims
-    # Concatenate spin of each electron with other one-electron features.
-    feature_dim = one_electron_feature_dim + 1
 
     # Map to MLP dim.
     key, subkey = jax.random.split(key)
-    params['embed'] = network_blocks.init_linear_layer(
-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
-    )['w']
+    params['embed'] = network_blocks.init_input_embedding(
+        subkey, one_electron_feature_dim, options.mlp_dim
+    )
 
     # MLP block params.
     key, subkey = jax.random.split(key)
@@ -240,13 +221,8 @@ def make_SlaterNet_layers(
         ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee, **params['input']
     )
 
-    # For Hartree-Fock, the spin feature is required for correct permutation equivariance, as in PsiFormer.
-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
-
-    features = ae_features  # Just 1-electron stream for now.
-
-    # Embed into attention dimension.
-    x = jnp.dot(features, params['embed'])
+    # Spin is part of the equivariant one-electron embedding.
+    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
 
     return SlaterNet_apply(params, x)
 

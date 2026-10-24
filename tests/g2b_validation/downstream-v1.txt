@@ -1,0 +1,65 @@
+test_csv_npz_roundtrip_and_no_optimizer_raw_complex_boundary (__main__.DownstreamChecks.test_csv_npz_roundtrip_and_no_optimizer_raw_complex_boundary) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+ok
+test_real_complex_amplitude_phase_moments_and_adam (__main__.DownstreamChecks.test_real_complex_amplitude_phase_moments_and_adam) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: False
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: False
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 7.703s
+
+OK
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

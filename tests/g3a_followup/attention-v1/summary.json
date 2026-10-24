@@ -1,0 +1,45 @@
+{
+  "conditions": "Existing 2-electron/two-head/GELU/LayerNorm test case, seed7, float64",
+  "rows": [
+    {
+      "test_only_float64_attention": false,
+      "components": [
+        {
+          "component": 0,
+          "value": -0.16231676302338485,
+          "hessian_trace": -0.33478843216405074,
+          "folx_laplacian": -0.33478825392810824,
+          "difference": 1.7823594250510055e-07
+        },
+        {
+          "component": 1,
+          "value": 1.375909433889459,
+          "hessian_trace": -3.397968713084241,
+          "folx_laplacian": -3.397968664966685,
+          "difference": 4.811755616174196e-08
+        }
+      ]
+    },
+    {
+      "test_only_float64_attention": true,
+      "components": [
+        {
+          "component": 0,
+          "value": -0.16231677104486436,
+          "hessian_trace": -0.3347883650148971,
+          "folx_laplacian": -0.33478836501489795,
+          "difference": -8.326672684688674e-16
+        },
+        {
+          "component": 1,
+          "value": 1.3759094248430084,
+          "hessian_trace": -3.397968742427194,
+          "folx_laplacian": -3.3979687424271936,
+          "difference": 4.440892098500626e-16
+        }
+      ]
+    }
+  ],
+  "production_modified": false,
+  "caution": "Counterfactual changes legacy forward arithmetic; a potential fix requires separate authorization and versioned numerical baselines."
+}

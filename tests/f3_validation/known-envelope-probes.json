@@ -1,0 +1,66 @@
+[
+  {
+    "N": 1,
+    "A": 1,
+    "O": 1,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 1,
+    "A": 1,
+    "O": 2,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 2,
+    "A": 1,
+    "O": 2,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 2,
+    "A": 1,
+    "O": 4,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 3,
+    "A": 1,
+    "O": 6,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 3,
+    "A": 1,
+    "O": 1,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 2,
+    "A": 2,
+    "O": 2,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  },
+  {
+    "N": 3,
+    "A": 2,
+    "O": 6,
+    "unchanged": true,
+    "scope": "existing I01 shape probe, not all are valid full-Ansatz configurations",
+    "certifies_model_correctness": false
+  }
+]

@@ -1,0 +1,37 @@
+test_K04_real_gradient_should_equal_normalized_exact_derivative (tests.test_vmc_mcmc.VMCEstimator.test_K04_real_gradient_should_equal_normalized_exact_derivative) ... expected failure
+test_chunked_and_unbatched_loss_gradient_match (tests.test_vmc_mcmc.VMCEstimator.test_chunked_and_unbatched_loss_gradient_match) ... ok
+test_clipping_changes_gradient_not_reported_mean (tests.test_vmc_mcmc.VMCEstimator.test_clipping_changes_gradient_not_reported_mean) ... ok
+test_complex_gradient_against_normalized_exact_expectation (tests.test_vmc_mcmc.VMCEstimator.test_complex_gradient_against_normalized_exact_expectation) ... ok
+test_current_real_and_complex_gradient_coefficients (tests.test_vmc_mcmc.VMCEstimator.test_current_real_and_complex_gradient_coefficients) ... ok
+test_imaginary_energy_contributes_to_phase_gradient (tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient) ... FAIL
+test_one_adam_update_both_trainers (tests.test_vmc_mcmc.VMCEstimator.test_one_adam_update_both_trainers) ... ok
+
+======================================================================
+FAIL: test_imaginary_energy_contributes_to_phase_gradient (tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_vmc_mcmc.py", line 57, in test_imaginary_energy_contributes_to_phase_gradient
+    np.testing.assert_allclose(got["theta"], -2., atol=1e-12)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-12
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 2.
+Max relative difference among violations: 1.
+ ACTUAL: array(-4.)
+ DESIRED: array(-2.)
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.728s
+
+FAILED (failures=1, expected failures=1)

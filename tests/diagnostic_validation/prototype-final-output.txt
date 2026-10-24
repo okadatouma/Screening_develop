@@ -1,0 +1,31 @@
+test_checkpoint_and_discarded_aux (tests.check_diagnostic_layers.DiagnosticChecks.test_checkpoint_and_discarded_aux) ... ok
+test_saved_experiment_has_complete_coverage (tests.check_diagnostic_layers.DiagnosticChecks.test_saved_experiment_has_complete_coverage) ... ok
+test_saved_values_and_layer_connections (tests.check_diagnostic_layers.DiagnosticChecks.test_saved_values_and_layer_connections) ... ok
+test_source_and_configuration_are_isolated (tests.check_diagnostic_layers.DiagnosticChecks.test_source_and_configuration_are_isolated) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.270s
+
+OK
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+checkpoint diagnostic max_abs False 0.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+checkpoint diagnostic max_abs True 0.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm

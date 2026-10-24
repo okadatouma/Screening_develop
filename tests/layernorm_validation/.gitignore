@@ -1,0 +1,2 @@
+# 今回の移動前に作成した小規模検証checkpointだけを保持する。
+!before-checkpoints/*/*/qmcjax_ckpt_000000.npz

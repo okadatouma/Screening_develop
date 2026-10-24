@@ -59,6 +59,7 @@ import attr
 import chex
 from periodicwave import envelopes
 from periodicwave import jastrows
+from periodicwave import attention
 from periodicwave import network_blocks
 from periodicwave import networks
 import jax
@@ -145,25 +146,8 @@ TRIM_MAX = 2.0
 CLIP_R = None
 CLIP_BETA = 0.30
 
-def make_layer_norm() ->...:
-  """Implementation of LayerNorm."""
-
-  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:
-    params = {}
-    params['scale'] = jnp.ones(param_shape)
-    params['offset'] = jnp.zeros(param_shape)
-    return params
-
-  def apply(params: networks.ParamTree,
-            inputs: jnp.ndarray,
-            axis: int = -1) -> jnp.ndarray:
-    mean = jnp.mean(inputs, axis=axis, keepdims=True)
-    variance = jnp.var(inputs, axis=axis, keepdims=True)
-    eps = 1e-5
-    inv = params['scale'] * jax.lax.rsqrt(variance + eps)
-    return inv * (inputs - mean) + params['offset']
-
-  return init, apply
+# Keep the original public name for analysis scripts and external callers.
+make_layer_norm = network_blocks.make_layer_norm
 
 
 # [SCREEN] PW_FREEZE_W=1 にすると窓 w_h を学習させず、初期値のまま固定する。
@@ -182,10 +166,8 @@ if TRIM_POW not in (2, 4):
   raise ValueError("PW_TRIM_POW は 2 か 4")
 
 
-def _smooth7(x):
-  """S_7(x) = 35x^4 - 84x^5 + 70x^6 - 20x^7（x は [0, 1] に clip 済み）。S_7(0) = 0、S_7(1) = 1、両端で 3 階微分まで 0。"""
-  x2 = x * x
-  return x2 * x2 * (35.0 + x * (-84.0 + x * (70.0 - 20.0 * x)))
+# Keep helper names used by existing analysis scripts.
+_smooth7 = attention._smooth7
 
 
 # [SCREEN] ガウスでぼかした輪切りは erf を使う。folx の前向きラプラシアンに erf を要素ごとの関数として
@@ -197,31 +179,12 @@ except Exception:  # folx の無い環境（解析だけなど）ではそのま
   pass
 
 
-def _ring_steps(d_ee, b, dl, gauss=False):
-  """輪切りの階段 T_k(d)（k = 0..H、T_0 = 1、T_H = 0）。窓は m_h = g (T_h - T_{h+1})。
-
-  gauss=False：半周期の sin の階段（遷移の半幅 dl）。
-  gauss=True ：輪の指示関数をガウス核（標準偏差 dl）でぼかしたもの。
-      T_k(d) = Phi((d - b_k)/dl) + Phi((-d - b_k)/dl)
-  第 2 項は d = 0 での折り返しで、T_k は d の偶関数（m_h'(0) = 0）。どの階数の微分も連続。
-  どちらも差が telescoping するので sum_h m_h = g は厳密。
-  """
-  if gauss:
-    s2 = dl * jnp.sqrt(2.0)
-    bb = b[:, None, None]
-    th = 1.0 + 0.5 * (jax.lax.erf((d_ee[None, :, :] - bb) / s2)
-                      + jax.lax.erf((-d_ee[None, :, :] - bb) / s2))
-  else:
-    u = (d_ee[None, :, :] - b[:, None, None]) / dl
-    th = 0.5 * (1.0 + jnp.sin(0.5 * jnp.pi * jnp.clip(u, -1.0, 1.0)))
-  return th.at[0].set(1.0).at[-1].set(0.0)             # 端の輪は片側だけ切る
+_ring_steps = attention._ring_steps
 
 
 # [SCREEN] Helper: unit-length normalization along the last axis.
 # The small eps keeps the map twice differentiable at the origin.
-def _unit_length(x: jnp.ndarray, eps: float = 1e-6) -> jnp.ndarray:
-  norm = jnp.sqrt(jnp.sum(x * x, axis=-1, keepdims=True) + eps * eps)
-  return x / norm
+_unit_length = attention._unit_length
 
 
 # [SCREEN] Helper: maximal value of the periodic norm over the unit cell,
@@ -415,8 +378,23 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
 
     return params
 
+  # 既存factoryの静的な構成。学習パラメータやcheckpointには追加しない。
+  attention_options = dict(
+      num_electrons=num_electrons,
+      num_heads=num_heads,
+      attn_dim=attn_dim,
+      value_dim=value_dim,
+      d_ref=d_ref,
+      use_softmask=use_softmask,
+      use_fixed_value=use_fixed_value,
+      use_tanh_norm=use_tanh_norm,
+      use_gate=use_gate,
+      use_output_scale=use_output_scale,
+  )
+
   def apply(params: networks.ParamTree, single_electron_stream: jnp.ndarray,
-            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None) -> jnp.ndarray:
+            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None, *,
+            return_aux: bool = False):
     """Computes screening attention.
 
     Args:
@@ -429,146 +407,15 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
       A projection of screening-weighted value projections.
       Shape [num_electrons, embed_dim]
     """
-
-    # Projections for q, k, v.
-    # Output shape: [..., index_dim, num_heads, attn_dim].
-    q = jnp.dot(single_electron_stream, params['q_w']).reshape(num_electrons, num_heads, attn_dim)
-    k = jnp.dot(single_electron_stream, params['k_w']).reshape(num_electrons, num_heads, attn_dim)
-    v = (None if use_fixed_value
-         else jnp.dot(single_electron_stream, params['v_w']).reshape(
-             num_electrons, num_heads, value_dim))
-
-    # [SCREEN] 1. unit-length normalization -> bounded cosine similarity.
-    qbar = _unit_length(q)
-    kbar = _unit_length(k)
-    vbar = None if v is None else _unit_length(v)
-    # [PROBE] 解析用: params に '_v_mode'（ヘッドごとの 0/1）があれば、そのヘッドの
-    # value を電子平均で置き換える。value が電子ごとに違うことに意味があるか
-    # （＝ヘッドが「誰を見るか」だけでなく「何を運ぶか」も使っているか）を測る。
-    # 学習では None のまま（何も起きない）。
-    _vm = params.get('_v_mode', None)
-    if _vm is not None and vbar is not None:
-      _vmean = jnp.mean(vbar, axis=0, keepdims=True)              # [1, H, VD]
-      vbar = vbar * (1.0 - _vm)[None, :, None] + _vmean * _vm[None, :, None]
-    # s: [num_heads, i, j]
-    s = jnp.einsum('ihd,jhd->hij', qbar, kbar)
-
-    # [SCREEN] 2. Trim with learnable acceptance width r_h in (0, 2).
-    r = TRIM_MAX * jax.nn.sigmoid(params['trim_rho'])      # [FIX] r in (0, TRIM_MAX)
-    r = r[:, None, None]
-    alpha = jax.nn.relu(s - (1.0 - r)) / r                   # exactly 0 for s <= 1-r
-    alpha = jnp.square(alpha) if TRIM_POW == 2 else jnp.square(jnp.square(alpha))
-
-    # [SCREEN] 3. Softmask on the PHYSICAL distance with learnable screening
-    # length w_h (raised cosine; exactly 0 for d >= w; C^1 at the edge).
-    if use_softmask:
-      _om = params['mask_omega']
-      if FREEZE_W:
-        _om = jax.lax.stop_gradient(_om)   # 窓を固定（目盛りとして使う）
-      w = d_ref * jax.nn.softplus(_om)                     # [num_heads] 半値幅 sigma_h
-      # [SCREEN] 帯窓。内側の端 a_h を入れると、ヘッド h は自分の輪の中で
-      # 重みが 1 から 0 へ落ちる（近い相手ほど重い）形になる。
-      #   m_h(d) = (1 + cos(pi * clip((d - a_h)/Delta_h, -1, 1))) / 2
-      #   台は [a_h - Delta_h, a_h + Delta_h]、外は厳密に 0、両端で m' = 0（C^1）。
-      # a_h = 0 のとき clip の下側は効かず、従来の単調減少窓と厳密に一致する
-      # （つまり単調窓はこの族の h = 0 そのもの）。
-      # a_h = h * Delta と等間隔に置くと raised cosine は 1 の分割になり、
-      #   sum_h m_h(d) = 1   ([a_0, a_{H-1}] で厳密)
-      # Delta = d_ref / (H - 1) に取れば a_{H-1} = d_ref なので、届く範囲すべてで 1。
-      # となるので q_h がそのまま動径分布になる。内側の裾は隣のヘッドの
-      # 落ち方とちょうど相補的なので、情報としては重複しない。
-      # 内向きの裾を切って [a_h, a_{h+1}] だけに台を持たせると d = a_h で
-      # 0 -> 1 の跳びが出る（decreasing かつ compact support なら必ず不連続）。
-      # log psi の 2 階微分が発散するのでそれは採らない。
-      if 'mask_rings' in params:
-        _b = params['mask_rings']
-        if FREEZE_W:
-          _b = jax.lax.stop_gradient(_b)
-        _pp = jax.lax.stop_gradient(params['mask_envp'])   # 形の指数は常に固定
-        b = d_ref * _b                                     # [num_heads + 1]
-        dl = w[0]                                          # 遷移の半幅 delta（gauss なら標準偏差 sigma）
-        if 'mask_gauss' in params:
-          th = _ring_steps(d_ee, b, dl * jax.lax.stop_gradient(params['mask_gauss']), gauss=True)
-        else:
-          th = _ring_steps(d_ee, b, dl)
-        P = th[:-1] - th[1:]                               # 1 の分割（telescoping）
-        x = jnp.clip(d_ee / d_ref, 0.0, 1.0)
-        # x^p を素直に書くと x = 0（対角 d_ii = 0）で 2 階微分が 0 * inf = NaN になる
-        # （p = 1 で実際に全配置 NaN）。両側 where で安全側の枝からだけ微分を取る。
-        _pos = x > 0.0
-        xp = jnp.where(_pos, jnp.power(jnp.where(_pos, x, 1.0), _pp), 0.0)
-        g = 0.5 * (1.0 + jnp.cos(jnp.pi * xp))             # 全体で 1 本の窓
-        m = P * g[None, :, :]
-      elif 'mask_centre' in params:
-        _ct = params['mask_centre']
-        if FREEZE_W:
-          _ct = jax.lax.stop_gradient(_ct)
-        c = d_ref * _ct                                    # [num_heads] 生の値（0 も負も可）
-        t = jnp.clip((d_ee[None, :, :] - c[:, None, None]) / w[:, None, None], -1.0, 1.0)
-        m = 0.5 * (1.0 + jnp.cos(jnp.pi * t))
-      else:
-        t = jnp.clip(d_ee[None, :, :] / w[:, None, None], 0.0, 1.0)
-        if WIN_SHAPE == "smooth7":
-          m = 1.0 - _smooth7(t)
-        else:
-          m = 0.5 * (1.0 + jnp.cos(jnp.pi * t))
-      weights = alpha * m
-    else:
-      weights = alpha
-
-    # [PROBE] 解析用: params に '_diag_only'（ヘッドごとの 0/1）が入っていれば、
-    # そのヘッドの重みを対角（自分自身）だけに落とす。1 体成分は残したまま
-    # 2 体成分だけを抜けるので、「そのヘッドが運ぶ相関」の効きを測れる。
-    _do = params.get('_diag_only', None)
-    if _do is not None:
-      _eye = jnp.eye(d_ee.shape[0])[None]
-      _g = _do[:, None, None]
-      weights = weights * (_g * _eye + (1.0 - _g))
-
-    # [PROBE] 解析用のフック。学習では None のまま（何も起きない）。
-    # 学習した窓の形はそのままに、届く範囲だけを R に縮めて
-    # 「どこまでの距離が要るのか」を測るために使う。
-    if CLIP_R is not None:
-      _t = jnp.clip((d_ee[None, :, :] - (1.0 - CLIP_BETA) * CLIP_R)
-                    / (CLIP_BETA * CLIP_R), 0.0, 1.0)
-      weights = weights * 0.5 * (1.0 + jnp.cos(jnp.pi * _t))
-
-    # [SCREEN] 4. denominator-free aggregation (no softmax).
-    if use_fixed_value:
-      # [SCREEN] value を学習させず、対の相対座標の固定特徴 e(r_ij) を運ぶ。
-      # 重み W_ij が「誰をどれだけ見るか」、e(r_ij) が「何を運ぶか」。
-      # 全ヘッドで同じ e を使うので、ヘッドを分けているのは窓だけになる。
-      # j = i は落とす。e(r_ii) = [0, 0, 1] は定数（1 体項）で、しかも帯窓では
-      # a_0 = 0 のヘッドだけがそれを拾うので、q_h の動径分布としての意味が濁る。
-      _w = weights * (1.0 - jnp.eye(d_ee.shape[0]))[None]
-      attn = jnp.einsum('hij,ijd->ihd', _w, pair_feat)      # [i, num_heads, pair_dim]
-    else:
-      attn = jnp.einsum('hij,jhd->ihd', weights, vbar)      # [i, num_heads, value_dim]
-
-    # [SCREEN] 5. TanhNorm: bounded output magnitude per head.
-    if use_tanh_norm:
-      eps = 1e-6
-      n = jnp.sqrt(jnp.sum(attn * attn, axis=-1, keepdims=True) + eps * eps)
-      attn = attn * jnp.tanh(n) / n
-
-    # Concatenate attention matrix of all heads into a single vector.
-    attn = attn.reshape(*single_electron_stream.shape[:-1], -1)   # [length, heads*value_dim]
-
-    # [SCREEN] 6. gate (elementwise, per electron -> permutation equivariant).
-    if use_gate:
-      g = jnp.dot(single_electron_stream, params['g_w'])
-      attn = attn * jnp.tanh(jax.nn.silu(g))
-
-    # Apply a final projection to get the final embeddings.
-    out = network_blocks.linear_layer(attn, params['attn_output'])
-
-    # [SCREEN] 7. learnable output scale e^{s_O}. TanhNorm bounds |o| < 1 and
-    # the gate shrinks it further, so without this the attention branch cannot
-    # contribute at the magnitude the residual stream works at.
-    if use_output_scale:
-      out = jnp.exp(params['out_scale']) * out
-
-    return out
+    if return_aux:
+      return attention.screening_attention(
+          params, single_electron_stream, d_ee, pair_feat, options=attention_options,
+          trim_max=TRIM_MAX, trim_pow=TRIM_POW, win_shape=WIN_SHAPE,
+          freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA, return_aux=True)
+    return attention.screening_attention(
+        params, single_electron_stream, d_ee, pair_feat, options=attention_options,
+        trim_max=TRIM_MAX, trim_pow=TRIM_POW, win_shape=WIN_SHAPE,
+        freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA)
 
   return init, apply
 
@@ -662,7 +509,7 @@ def make_self_attention_block(num_layers: int,
       init_output_scale=init_output_scale)
 
   if use_layer_norm:
-    layer_norm_init, layer_norm_apply = make_layer_norm()
+    layer_norm_init, layer_norm_apply = network_blocks.make_layer_norm()
 
   mlp_init, mlp_apply = make_mlp(num_perceptrons_per_layer, mlp_activation_fct)
 
@@ -688,24 +535,53 @@ def make_self_attention_block(num_layers: int,
     return params
 
   def apply(params: networks.ParamTree, single_electron_stream: jnp.ndarray,
-            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None) -> jnp.ndarray:
+            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None, *,
+            return_aux: bool = False):
+    """通常は最終X、return_aux=Trueなら(final_X, layers)を返す。
+
+    layersは層順のtuple。各辞書のinput/outputと残差・LN・MLP出力は[N,E]。
+    attentionにはB2の辞書、attention_outputには実際に残差へ加えた[N,E]を保持。
+    LNなしではln1_output/ln2_outputは恒等。次層は常に本体のxを使う。
+    return_auxはJITで静的指定。通常モードは辞書・リストを構築しない。
+    """
+    if return_aux:
+      layers = []
     # [SCREEN] d_ee（と、固定 value を使うときは対の特徴）を各層へ通す。
     x = single_electron_stream
     for layer in range(num_layers):
-      attn_output = attention_apply(params['attention'][layer], x, d_ee, pair_feat)
+      if return_aux:
+        record = dict(input=x)
+        attn_output, attn_aux = attention_apply(
+            params['attention'][layer], x, d_ee, pair_feat, return_aux=True)
+        record.update(attention=attn_aux, attention_output=attn_output)
+      else:
+        attn_output = attention_apply(params['attention'][layer], x, d_ee, pair_feat)
       # Residual + optional LayerNorm.
       x = x + attn_output
+      if return_aux:
+        record['attention_residual'] = x
       if use_layer_norm:
         x = layer_norm_apply(params['ln'][layer][0], x)
+      if return_aux:
+        record['ln1_output'] = x
 
       # MLP
       mlp_output = mlp_apply(params['mlp'][layer], x)
+      if return_aux:
+        record['mlp_output'] = mlp_output
 
       # Residual + optional LayerNorm.
       x = x + mlp_output
+      if return_aux:
+        record['mlp_residual'] = x
       if use_layer_norm:
         x = layer_norm_apply(params['ln'][layer][1], x)
+      if return_aux:
+        record.update(ln2_output=x, output=x)
+        layers.append(record)
 
+    if return_aux:
+      return x, tuple(layers)
     return x
 
   return init, apply
@@ -764,14 +640,12 @@ def make_screenformer_layers(
     key, subkey = jax.random.split(key)
     feature_dims, params['input'] = options.feature_layer.init()
     one_electron_feature_dim, _ = feature_dims
-    # Concatenate spin of each electron with other one-electron features.
-    feature_dim = one_electron_feature_dim + 1
 
     # Map to Attention dim.
     key, subkey = jax.random.split(key)
-    params['embed'] = network_blocks.init_linear_layer(
-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
-    )['w']
+    params['embed'] = network_blocks.init_input_embedding(
+        subkey, one_electron_feature_dim, options.mlp_dim
+    )
 
     # Attention block params.
     key, subkey = jax.random.split(key)
@@ -788,7 +662,8 @@ def make_screenformer_layers(
       r_ee: jnp.ndarray,
       spins: jnp.ndarray,
       charges: jnp.ndarray,
-  ) -> jnp.ndarray:
+      return_aux: bool = False,
+  ):
     """Applies the Screenformer interaction layers to a walker configuration.
 
     Args:
@@ -799,6 +674,7 @@ def make_screenformer_layers(
       r_ee: electron-electron distances.
       spins: spin of each electron.
       charges: nuclear charges.
+      return_aux: 静的Trueなら(final_X, layers)を返す。内容はブロックapply参照。
 
     Returns:
       Array of shape (nelectron, output_dim), where the output dimension,
@@ -812,14 +688,8 @@ def make_screenformer_layers(
         ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee, **params['input']
     )
 
-    # For the Psiformer, the spin feature is required for correct permutation
-    # equivariance.
-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
-
-    features = ae_features  # Just 1-electron stream for now.
-
-    # Embed into attention dimension.
-    x = jnp.dot(features, params['embed'])
+    # Spin is part of the equivariant one-electron embedding.
+    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
 
     # [SCREEN] pairwise physical (periodic) distances for the softmask.
     d_ee = r_ee[..., 0]
@@ -835,9 +705,86 @@ def make_screenformer_layers(
       pair_feat = jnp.concatenate(
           (ee_features[..., :1] / d_ref, ee_features[..., 1:]), axis=-1)
 
+    if return_aux:
+      return self_attn_apply(params, x, d_ee, pair_feat, return_aux=True)
     return self_attn_apply(params, x, d_ee, pair_feat)
 
   return init, apply
+
+
+def make_screenformer_diagnostic(nspins, options):
+  """Build a diagnostic trunk, independently JIT-compiled from Network.apply.
+
+  The returned evaluate(params, pos, spins, atoms, charges) accepts the unchanged
+  full network PyTree and returns (final_X, layers). X and layer boundaries have
+  shape [N, E]; layers[i]['attention'] contains the B2 quantities. In each layer,
+  attention_residual / ln1_output are before / after the first LayerNorm;
+  ln1_output / mlp_output are MLP input / output; mlp_residual / ln2_output are
+  before / after the second LayerNorm. With no LayerNorm these pairs coincide.
+
+  Uses the same embedding and Transformer loop as Production. Extra outputs can
+  change XLA fusion: these are diagnostic reevaluations, NOT Production-internal
+  bit patterns. Do not use them for VMC/optimization, or compile this together
+  with Network.apply. Globals are read at trace time as in the ordinary trunk.
+  This interface stops before orbitals; it also works with an HF-connected trunk
+  without trying to reconstruct that wavefunction.
+  """
+  _, apply = make_screenformer_layers(nspins, 0, options)
+  geometry = networks.make_periodic_construct_input_features(options.pbc_lattice)
+
+  def evaluate(params, pos, spins, atoms, charges):
+    ae, ee, r_ae, r_ee = geometry(pos, atoms, ndim=options.ndim)
+    return apply(params['layers'], ae=ae, ee=ee, r_ae=r_ae, r_ee=r_ee,
+                 spins=spins, charges=charges, return_aux=True)
+
+  return evaluate
+
+
+def screening_diagnostic_status(final_x, *, orbitals=None, phase_logabs=None):
+  """Check numerical rank separately from the diagnostic forward/JIT.
+
+  Rank threshold is max(matrix.shape[-2:]) * eps of that array's real dtype.
+  A small feature singular value is a warning; a nonuniform envelope can change
+  orbital rank. Pass orbital matrices [ndet, Nspin, Nspin] (one per spin channel)
+  for a wavefunction check. At N=E=4, initial final LayerNorm with zero offset,
+  null envelope and no orbital bias, all determinants are rank deficient.
+
+  Flags identify ill-conditioning, not a proof of stability when False. In
+  particular determinant cancellation can occur even with full-rank orbitals.
+  Missing wavefunction inputs are explicitly marked as unchecked (None), never
+  silently certified. Does not replace, clip, detach or repair any values.
+  """
+  singular_values = jnp.linalg.svd(final_x, compute_uv=False)
+  threshold = max(final_x.shape) * jnp.finfo(final_x.dtype).eps
+  ratio = singular_values[-1] / jnp.maximum(singular_values[0], jnp.finfo(final_x.dtype).tiny)
+  feature_deficient = (final_x.shape[0] > final_x.shape[1]) | (ratio <= threshold)
+  state = dict(feature_singular_values=singular_values, feature_rcond=ratio,
+               feature_rank_deficient=feature_deficient,
+               finite_features=jnp.all(jnp.isfinite(final_x)),
+               orbital_rcond=None, singular_determinants=None,
+               all_determinants_rank_deficient=None, finite_phase_logabs=None,
+               orbital_check_performed=orbitals is not None,
+               wavefunction_unstable_or_undefined=None)
+  unstable = None
+  if orbitals is not None:
+    ratios, bad = [], []
+    for matrix in orbitals:
+      s = jnp.linalg.svd(matrix, compute_uv=False)
+      eps = jnp.finfo(matrix.real.dtype).eps
+      r = s[..., -1] / jnp.maximum(s[..., 0], jnp.finfo(matrix.real.dtype).tiny)
+      ratios.append(r)
+      bad.append((r <= max(matrix.shape[-2:]) * eps) | ~jnp.all(jnp.isfinite(matrix), axis=(-2, -1)))
+    singular = jnp.any(jnp.stack(bad), axis=0)
+    state.update(orbital_rcond=tuple(ratios), singular_determinants=singular,
+                 all_determinants_rank_deficient=jnp.all(singular))
+    unstable = jnp.any(singular)
+  if phase_logabs is not None:
+    finite = jnp.all(jnp.isfinite(jnp.asarray(phase_logabs)))
+    state['finite_phase_logabs'] = finite
+    unstable = ~finite if unstable is None else unstable | ~finite
+  state['wavefunction_unstable_or_undefined'] = unstable
+  state['local_energy_unstable_or_undefined'] = unstable
+  return state
 
 
 def make_fermi_net(

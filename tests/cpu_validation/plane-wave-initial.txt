@@ -1,0 +1,18 @@
+test_plane_wave_kinetic (tests.test_physics.IndependentPhysics.test_plane_wave_kinetic) ... ERROR
+
+======================================================================
+ERROR: test_plane_wave_kinetic (tests.test_physics.IndependentPhysics.test_plane_wave_kinetic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_physics.py", line 43, in test_plane_wave_kinetic
+    np.testing.assert_allclose(kinetic(None, one_particle()), jnp.dot(q, q) / 2, atol=1e-12)
+                               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/hamiltonian.py", line 148, in _lapl_over_f
+    result = - (output[1].laplacian +
+                ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'jaxlib._jax.ArrayImpl' object has no attribute 'laplacian'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.195s
+
+FAILED (errors=1)

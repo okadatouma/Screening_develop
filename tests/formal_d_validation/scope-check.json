@@ -1,0 +1,16 @@
+{
+  "changed_preexisting": [
+    "periodicwave/CustomScreenformer.py",
+    "tests/diagnostic_layers.py",
+    "tests/measure_diagnostic_layers.py",
+    "tests/README.md",
+    "tests/RESULTS.md",
+    "tests/check_layers.py",
+    "tests/check_diagnostic_layers.py"
+  ],
+  "production_changed": [
+    "periodicwave/CustomScreenformer.py"
+  ],
+  "immutable_files_checked": 170,
+  "immutable_snapshots_and_prior_measurements_preserved": true
+}

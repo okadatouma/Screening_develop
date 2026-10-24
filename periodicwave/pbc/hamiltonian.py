@@ -231,7 +231,7 @@ def local_energy(
         result += 0.5 * jnp.sum(output[0].jacobian.dense_array ** 2)
         result -= 1.j * jnp.sum(output[0].jacobian.dense_array *
                                 output[1].jacobian.dense_array)
-        return jnp.real(result)
+        return result
     else:
       def _lapl_over_f(params, data):
         f_closure = lambda x: f(params, x, data.spins, data.atoms, data.charges)

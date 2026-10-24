@@ -1,0 +1,29 @@
+{
+  "e2b_unique_methods": "5 PASS (3 initial + 3 extended, IO repeated)",
+  "condition_comparisons": 46,
+  "additional_methods": "26 PASS: E2a 5 + Window/LayerNorm/B1/B2 19 + formal Diagnostic 2 (36 conditions)",
+  "numerical_method_counts": {
+    "PASS": 27,
+    "ERROR": 2,
+    "XFAIL": 2,
+    "FAIL": 2
+  },
+  "numerical_status_changes": {},
+  "head_reconstruction_max_abs": {
+    "float32": 5.960464477539063e-08,
+    "float64": 1.1102230246251565e-16
+  },
+  "self_only_observation": "both precisions: response difference exactly zero, rho_p undefined; no observed nonzero rounding residue in this case",
+  "real_research_runs": "not available; small synthetic saved checkpoint fixtures",
+  "application_scope": "screening_analysis/head_cancel.py only",
+  "production_float64": {
+    "comparison": "exact",
+    "arrays": 902,
+    "elements": 21651
+  },
+  "production_float32": {
+    "comparison": "exact",
+    "arrays": 1319,
+    "elements": 31142
+  }
+}

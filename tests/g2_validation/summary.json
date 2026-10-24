@@ -1,0 +1,28 @@
+{
+  "physics-v1.json": {
+    "methods": 7,
+    "failures": 0,
+    "errors": 0,
+    "records": 180
+  },
+  "two-cpu-devices-final.json": {
+    "methods": 1,
+    "failures": 0,
+    "errors": 0,
+    "records": 6
+  },
+  "g1-regression.json": {
+    "methods": 7,
+    "failures": 0,
+    "errors": 0,
+    "records": 228
+  },
+  "existing-targeted.txt": {
+    "methods": 16,
+    "pass_count": 13,
+    "xfail_count": 1,
+    "fail_count": 1,
+    "error_count": 1,
+    "note": "same existing plane-wave folx ERROR, Psiformer derivative FAIL, K03 XFAIL; full 33 not rerun"
+  }
+}

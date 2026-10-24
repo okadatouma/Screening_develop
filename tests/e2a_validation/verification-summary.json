@@ -1,0 +1,26 @@
+{
+  "e2a_unique_methods": "5 PASS",
+  "condition_comparisons": 28,
+  "final_guard_rerun": "3 PASS",
+  "additional_core_methods": "19 PASS",
+  "diagnostic_reference_methods": "2 PASS (all internal arrays and standalone 36 conditions)",
+  "numerical_methods": {
+    "PASS": 27,
+    "ERROR": 2,
+    "XFAIL": 2,
+    "FAIL": 2
+  },
+  "numerical_status_changes": {},
+  "application_scope": "screening_analysis/head_contrib.py only",
+  "real_research_runs": "not available; synthetic saved checkpoints used",
+  "production_float64": {
+    "comparison": "exact",
+    "arrays": 902,
+    "elements": 21651
+  },
+  "production_float32": {
+    "comparison": "exact",
+    "arrays": 1319,
+    "elements": 31142
+  }
+}

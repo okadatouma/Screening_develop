@@ -1,0 +1,179 @@
+{
+  "purpose": "Read-only shape investigation, not a production fix; nonuniform test parameters; float64 CPU",
+  "formula": "sum_a exp(-r_ia sigma_ao) pi_ao; expected output [N,O]",
+  "cases": [
+    {
+      "N": 1,
+      "A": 1,
+      "O": 1,
+      "periodic_r_ae_shape": [
+        1,
+        1
+      ],
+      "expected_envelope_shape": [
+        1,
+        1
+      ],
+      "current_envelope_shape": [
+        1
+      ],
+      "current_scaled_orbital_shape": [
+        1,
+        1
+      ],
+      "shape_matches": true,
+      "max_abs_difference_to_documented_shape_formula": 0.0,
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 1,
+      "A": 1,
+      "O": 2,
+      "periodic_r_ae_shape": [
+        1,
+        1
+      ],
+      "expected_envelope_shape": [
+        1,
+        2
+      ],
+      "current_envelope_shape": [
+        1
+      ],
+      "current_scaled_orbital_shape": [
+        1,
+        2
+      ],
+      "shape_matches": true,
+      "max_abs_difference_to_documented_shape_formula": 0.19803067818055814,
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 2,
+      "A": 1,
+      "O": 2,
+      "periodic_r_ae_shape": [
+        2,
+        1
+      ],
+      "expected_envelope_shape": [
+        2,
+        2
+      ],
+      "current_envelope_shape": [
+        2
+      ],
+      "current_scaled_orbital_shape": [
+        2,
+        2
+      ],
+      "shape_matches": true,
+      "max_abs_difference_to_documented_shape_formula": 0.2928336421318588,
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 2,
+      "A": 1,
+      "O": 4,
+      "periodic_r_ae_shape": [
+        2,
+        1
+      ],
+      "expected_envelope_shape": [
+        2,
+        4
+      ],
+      "current_envelope_shape": [
+        2
+      ],
+      "error": "Incompatible shapes for broadcasting: shapes=[(2, 4), (2,)]",
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 3,
+      "A": 1,
+      "O": 6,
+      "periodic_r_ae_shape": [
+        3,
+        1
+      ],
+      "expected_envelope_shape": [
+        3,
+        6
+      ],
+      "current_envelope_shape": [
+        3
+      ],
+      "error": "Incompatible shapes for broadcasting: shapes=[(3, 6), (3,)]",
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 3,
+      "A": 1,
+      "O": 1,
+      "periodic_r_ae_shape": [
+        3,
+        1
+      ],
+      "expected_envelope_shape": [
+        3,
+        1
+      ],
+      "current_envelope_shape": [
+        3
+      ],
+      "current_scaled_orbital_shape": [
+        3,
+        3
+      ],
+      "shape_matches": false,
+      "max_abs_difference_to_documented_shape_formula": null,
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 2,
+      "A": 2,
+      "O": 2,
+      "periodic_r_ae_shape": [
+        2,
+        2
+      ],
+      "expected_envelope_shape": [
+        2,
+        2
+      ],
+      "current_envelope_shape": [
+        2
+      ],
+      "current_scaled_orbital_shape": [
+        2,
+        2
+      ],
+      "shape_matches": true,
+      "max_abs_difference_to_documented_shape_formula": 0.14262305268369607,
+      "nonperiodic_shape_control_matches": true
+    },
+    {
+      "N": 3,
+      "A": 2,
+      "O": 6,
+      "periodic_r_ae_shape": [
+        3,
+        2
+      ],
+      "expected_envelope_shape": [
+        3,
+        6
+      ],
+      "error": "mul got incompatible shapes for broadcasting: (3, 2), (2, 6).",
+      "nonperiodic_shape_control_matches": true
+    }
+  ],
+  "inputs": {
+    "distance": "r[i,a] = 0.31 + 0.17*(i*A+a)",
+    "sigma": "sigma[a,o] = 1 + 0.1*(a*O+o)",
+    "pi": "pi[a,o] = 1 + 0.05*(a*O+o)",
+    "orbital": "M[i,o] = 0.2 + 0.07*(i*O+o)"
+  },
+  "scope": "Low-level isotropic Envelope and orbital multiplication; N=3/O=1 is a shape probe, not a full NK-column orbital configuration. Existing F0 test separately reproduces actual make_orbitals N=3/K=2/complex failure."
+}

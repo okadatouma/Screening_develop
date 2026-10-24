@@ -1,0 +1,6 @@
+test_window_boundaries_off_on (tests.check_attention_aux.AttentionAuxChecks.test_window_boundaries_off_on) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 11.262s
+
+OK

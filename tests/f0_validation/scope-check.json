@@ -1,0 +1,21 @@
+{
+  "changed_preexisting": [
+    "README.md",
+    "README_SCREEN.md",
+    "HANDOFF.md",
+    "tests/CONTRACTS.md",
+    "tests/README.md",
+    "tests/RESULTS.md",
+    "screening_analysis/README.md"
+  ],
+  "new_code": [
+    "tests/check_interfaces.py"
+  ],
+  "production_python_files_unchanged": 48,
+  "analysis_python_files_unchanged": 113,
+  "preexisting_test_python_files_unchanged": 29,
+  "preexisting_tests_measurements_snapshots_files_unchanged": 454,
+  "checkpoint_research_data_unchanged": true,
+  "production_and_diagnostic_api_unchanged": true,
+  "no_f1_or_later": true
+}

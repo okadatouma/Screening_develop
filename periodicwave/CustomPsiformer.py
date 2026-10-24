@@ -60,25 +60,8 @@ class PsiformerOptions(networks.BaseNetworkOptions):
   mlp_activation_fct: str = "TANH"
 
 
-def make_layer_norm() ->...:
-  """Implementation of LayerNorm."""
-
-  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:
-    params = {}
-    params['scale'] = jnp.ones(param_shape)
-    params['offset'] = jnp.zeros(param_shape)
-    return params
-
-  def apply(params: networks.ParamTree,
-            inputs: jnp.ndarray,
-            axis: int = -1) -> jnp.ndarray:
-    mean = jnp.mean(inputs, axis=axis, keepdims=True)
-    variance = jnp.var(inputs, axis=axis, keepdims=True)
-    eps = 1e-5
-    inv = params['scale'] * jax.lax.rsqrt(variance + eps)
-    return inv * (inputs - mean) + params['offset']
-
-  return init, apply
+# Keep the original public name for analysis scripts and external callers.
+make_layer_norm = network_blocks.make_layer_norm
 
 def make_multi_head_attention(num_heads: int, embed_dim: int, attn_dim: int, value_dim: int, num_electrons: int) ->...:
   """FermiNet-style version of latent MultiHeadAttention."""
@@ -200,7 +183,7 @@ def make_self_attention_block(num_layers: int,
       num_heads, mlp_dim, attn_dim, value_dim, num_electrons)
 
   if use_layer_norm:
-    layer_norm_init, layer_norm_apply = make_layer_norm()
+    layer_norm_init, layer_norm_apply = network_blocks.make_layer_norm()
   
   mlp_init, mlp_apply = make_mlp(num_perceptrons_per_layer, mlp_activation_fct)
 
@@ -285,14 +268,12 @@ def make_psiformer_layers(
     key, subkey = jax.random.split(key)
     feature_dims, params['input'] = options.feature_layer.init()
     one_electron_feature_dim, _ = feature_dims
-    # Concatenate spin of each electron with other one-electron features.
-    feature_dim = one_electron_feature_dim + 1
 
     # Map to Attention dim.
     key, subkey = jax.random.split(key)
-    params['embed'] = network_blocks.init_linear_layer(
-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
-    )['w']
+    params['embed'] = network_blocks.init_input_embedding(
+        subkey, one_electron_feature_dim, options.mlp_dim
+    )
 
     # Attention block params.
     key, subkey = jax.random.split(key)
@@ -333,16 +314,8 @@ def make_psiformer_layers(
         ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee, **params['input']
     )
 
-    # For the Psiformer, the spin feature is required for correct permutation
-    # equivariance.
-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
-
-    features = ae_features  # Just 1-electron stream for now.
-
-    # jax.debug.print("apply from make_psiformer_layers: [ae, feature] = {}", [ae, features])
-
-    # Embed into attention dimension.
-    x = jnp.dot(features, params['embed'])
+    # Spin is part of the equivariant one-electron embedding.
+    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
 
     return self_attn_apply(params, x)
 

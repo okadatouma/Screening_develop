@@ -1,0 +1,127 @@
+test_actual_training_csv_and_checkpoint (__main__.DownstreamChecks.test_actual_training_csv_and_checkpoint) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp69goc0wp/psiformer-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpxv5gq_vb/psiformer-kfac'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpzy6aglpr/screen-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpt7xqc4zt/screen-kfac'.
+ok
+test_csv_npz_roundtrip_preserves_raw_complex_boundary (__main__.DownstreamChecks.test_csv_npz_roundtrip_preserves_raw_complex_boundary) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+ok
+test_old_checkpoint_inference_reports_real_energy (__main__.DownstreamChecks.test_old_checkpoint_inference_reports_real_energy) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+INFO:absl:Starting QMC with 1 XLA devices per host across 1 hosts.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+INFO:absl:Loading checkpoint /Users/toma/academic/reserch/projects/Screening_develop/tests/layernorm_validation/before-checkpoints/float32/screen/qmcjax_ckpt_000000.npz
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'inference_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpn7t7yvy2/screen-none'.
+INFO:absl:Step 00001: 1.5740 E_h, exp. variance=0.0000 E_h^2, pmove=0.50
+INFO:absl:Step 00002: -0.1811 E_h, exp. variance=0.2772 E_h^2, pmove=1.00
+INFO:absl:Saving checkpoint /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpn7t7yvy2/screen-none/qmcjax_ckpt_000002.npz
+ok
+test_real_complex_amplitude_phase_moments_and_adam (__main__.DownstreamChecks.test_real_complex_amplitude_phase_moments_and_adam) ... Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: False
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: False
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.3, 0.0]
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 53.728s
+
+OK
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

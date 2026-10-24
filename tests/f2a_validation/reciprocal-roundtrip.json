@@ -1,0 +1,242 @@
+[
+  {
+    "x64": false,
+    "search_lattices": 128,
+    "changed_reciprocal_matrices": 58,
+    "max_reciprocal_abs_difference": 2.9802322387695312e-08,
+    "lattice": [
+      [
+        2.384167432785034,
+        0.1335594803094864
+      ],
+      [
+        -0.003463061759248376,
+        3.250767707824707
+      ]
+    ],
+    "positions": [
+      0.23000000417232513,
+      0.4099999964237213,
+      1.1699999570846558,
+      0.8899999856948853,
+      0.6499999761581421,
+      1.399999976158142
+    ],
+    "value": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "equal_including_nonfinite": true,
+      "finite_components": 9,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.933362603187561,
+      "relative_to_reference_max": 0.0
+    },
+    "value_jit": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "float32",
+      "equal_including_nonfinite": true,
+      "finite_components": 9,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.933362603187561,
+      "relative_to_reference_max": 0.0
+    },
+    "gradient": {
+      "shape": [
+        3,
+        3,
+        6
+      ],
+      "dtype": "float32",
+      "equal_including_nonfinite": true,
+      "finite_components": 54,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.6499680876731873,
+      "relative_to_reference_max": 0.0
+    },
+    "gradient_jit": {
+      "shape": [
+        3,
+        3,
+        6
+      ],
+      "dtype": "float32",
+      "equal_including_nonfinite": true,
+      "finite_components": 54,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.6499680876731873,
+      "relative_to_reference_max": 0.0
+    },
+    "hessian": {
+      "shape": [
+        3,
+        3,
+        6,
+        6
+      ],
+      "dtype": "float32",
+      "equal_including_nonfinite": true,
+      "finite_components": 324,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 1.0212268829345703,
+      "relative_to_reference_max": 0.0
+    },
+    "hessian_jit": {
+      "shape": [
+        3,
+        3,
+        6,
+        6
+      ],
+      "dtype": "float32",
+      "equal_including_nonfinite": true,
+      "finite_components": 324,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 1.0212268829345703,
+      "relative_to_reference_max": 0.0
+    }
+  },
+  {
+    "x64": true,
+    "search_lattices": 128,
+    "changed_reciprocal_matrices": 57,
+    "max_reciprocal_abs_difference": 1.1102230246251565e-16,
+    "lattice": [
+      [
+        2.3841675155426114,
+        0.1335594738604342
+      ],
+      [
+        -0.003463061781823268,
+        3.250767647577394
+      ]
+    ],
+    "positions": [
+      0.23,
+      0.41,
+      1.17,
+      0.89,
+      0.65,
+      1.4
+    ],
+    "value": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "float64",
+      "equal_including_nonfinite": true,
+      "finite_components": 9,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.933362658678131,
+      "relative_to_reference_max": 0.0
+    },
+    "value_jit": {
+      "shape": [
+        3,
+        3
+      ],
+      "dtype": "float64",
+      "equal_including_nonfinite": true,
+      "finite_components": 9,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.933362658678131,
+      "relative_to_reference_max": 0.0
+    },
+    "gradient": {
+      "shape": [
+        3,
+        3,
+        6
+      ],
+      "dtype": "float64",
+      "equal_including_nonfinite": true,
+      "finite_components": 54,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.6499680595717502,
+      "relative_to_reference_max": 0.0
+    },
+    "gradient_jit": {
+      "shape": [
+        3,
+        3,
+        6
+      ],
+      "dtype": "float64",
+      "equal_including_nonfinite": true,
+      "finite_components": 54,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 0.6499680595717503,
+      "relative_to_reference_max": 0.0
+    },
+    "hessian": {
+      "shape": [
+        3,
+        3,
+        6,
+        6
+      ],
+      "dtype": "float64",
+      "equal_including_nonfinite": true,
+      "finite_components": 324,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 1.0212269303032966,
+      "relative_to_reference_max": 0.0
+    },
+    "hessian_jit": {
+      "shape": [
+        3,
+        3,
+        6,
+        6
+      ],
+      "dtype": "float64",
+      "equal_including_nonfinite": true,
+      "finite_components": 324,
+      "a_nonfinite": 0,
+      "b_nonfinite": 0,
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 1.0212269303032964,
+      "relative_to_reference_max": 0.0
+    }
+  }
+]

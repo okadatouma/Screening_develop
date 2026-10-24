@@ -1,0 +1,138 @@
+{
+  "model": "N=2 fully polarized square 2DEG; 3D 1/r interaction confined to 2D, uniform neutralizing background, periodic Ewald",
+  "L": 4.0,
+  "area": 16.0,
+  "density": 0.125,
+  "rs": 1.5957691216057308,
+  "kinetic_prefactor": -0.5,
+  "interaction_energy_scale": 1.0,
+  "twist": [
+    0.0,
+    0.0
+  ],
+  "units": "Hartree atomic units; TOTAL energy, divide by 2 for per electron",
+  "independent_displacements": [
+    [
+      0.3,
+      0.7
+    ],
+    [
+      1.1,
+      -0.9
+    ],
+    [
+      1.9,
+      1.7
+    ]
+  ],
+  "independent_values": [
+    -0.6163916976283359,
+    -1.1793215925357359,
+    -1.3725007691187099
+  ],
+  "alpha_invariance": [
+    {
+      "alpha": 0.375,
+      "values": [
+        -0.6163916976283361,
+        -1.1793215925357357,
+        -1.3725007691187097
+      ]
+    },
+    {
+      "alpha": 0.7,
+      "values": [
+        -0.6163916976283359,
+        -1.1793215925357359,
+        -1.3725007691187099
+      ]
+    },
+    {
+      "alpha": 1.0,
+      "values": [
+        -0.6163916976283363,
+        -1.1793215925357359,
+        -1.37250076911871
+      ]
+    }
+  ],
+  "production_cutoff": [
+    {
+      "cutoff": 2,
+      "values": [
+        -0.6163922751837696,
+        -1.1793225972860097,
+        -1.372501567614325
+      ],
+      "vs_independent": {
+        "max_abs": 1.0047502738697034e-06,
+        "rms": 8.125451042468514e-07,
+        "reference_rms": 1.1037053508912023
+      }
+    },
+    {
+      "cutoff": 3,
+      "values": [
+        -0.6163916976901214,
+        -1.1793215926645624,
+        -1.3725007692112356
+      ],
+      "vs_independent": {
+        "max_abs": 1.2882650501921944e-10,
+        "rms": 9.82763608671143e-11,
+        "reference_rms": 1.1037053508912023
+      }
+    },
+    {
+      "cutoff": 5,
+      "values": [
+        -0.6163916976283361,
+        -1.1793215925357357,
+        -1.3725007691187099
+      ],
+      "vs_independent": {
+        "max_abs": 2.220446049250313e-16,
+        "rms": 1.8129866073473578e-16,
+        "reference_rms": 1.1037053508912023
+      }
+    },
+    {
+      "cutoff": 7,
+      "values": [
+        -0.6163916976283361,
+        -1.1793215925357357,
+        -1.3725007691187099
+      ],
+      "vs_independent": {
+        "max_abs": 2.220446049250313e-16,
+        "rms": 1.8129866073473578e-16,
+        "reference_rms": 1.1037053508912023
+      }
+    }
+  ],
+  "xi_with_background": -0.9750662300004891,
+  "analytic_plane_determinant_expectation": 0.008634320135680662,
+  "per_electron": 0.004317160067840331,
+  "finite_fourier_slater_references": {
+    "plane": {
+      "kinetic": 1.2337005501361697,
+      "pair": -0.25,
+      "background_self": -0.9750662300004891,
+      "total": 0.008634320135680662
+    },
+    "standing": {
+      "kinetic": 1.2337005501361697,
+      "pair": -0.25,
+      "background_self": -0.9750662300004891,
+      "total": 0.008634320135680662
+    },
+    "prepared_real_slater96": {
+      "kinetic": 1.2337230578498934,
+      "pair": -0.2499980641485502,
+      "background_self": -0.9750662300004891,
+      "total": 0.008658763700854166
+    }
+  },
+  "reference_definition": "q!=0 Fourier pair coefficient 2*pi/(A*|q|), q=0 omitted, constant N*xi/2; E=Q^2/2-2*pi/(A*Q)+xi. A calibration state, NOT interacting ground energy.",
+  "production_interacting_training_executed": false
+}

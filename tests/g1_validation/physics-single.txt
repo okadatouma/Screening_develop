@@ -1,0 +1,70 @@
+test_adam_trainers_against_independent_physical_gradient (__main__.CorrectedGradient.test_adam_trainers_against_independent_physical_gradient) ... FAIL
+test_auxiliary_contract_is_separate_and_still_known_invalid (__main__.CorrectedGradient.test_auxiliary_contract_is_separate_and_still_known_invalid) ... ok
+test_batch_chunk_and_main_jvp_linear_directional_derivative (__main__.CorrectedGradient.test_batch_chunk_and_main_jvp_linear_directional_derivative) ... FAIL
+test_clipping_off_inactive_active_and_centering (__main__.CorrectedGradient.test_clipping_off_inactive_active_and_centering) ... ok
+test_full_sum_covariance_ad_fd_and_production_jit (__main__.CorrectedGradient.test_full_sum_covariance_ad_fd_and_production_jit) ... ok
+test_normalized_sum_ad_finite_difference_covariance_and_conjugate (tests.check_vmc_gradients.ExactPhysics.test_normalized_sum_ad_finite_difference_covariance_and_conjugate) ... ok
+test_test_only_centered_surrogate_derivative (tests.check_vmc_gradients.ExactPhysics.test_test_only_centered_surrogate_derivative) ... ok
+
+======================================================================
+FAIL: test_adam_trainers_against_independent_physical_gradient (__main__.CorrectedGradient.test_adam_trainers_against_independent_physical_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g1_vmc.py", line 114, in test_adam_trainers_against_independent_physical_gradient
+    ref.close(actual,expected,x64)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_vmc_gradients.py", line 117, in close
+    np.testing.assert_allclose(a,b,rtol=32*eps,atol=32*eps)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=3.8147e-06, atol=3.8147e-06
+
+Mismatched elements: 1 / 3 (33.3%)
+Max absolute difference among violations: 0.00899398
+Max relative difference among violations: 0.04496992
+ ACTUAL: array([0.356574, 0.32    , 0.191006], dtype=float32)
+ DESIRED: array([0.356574, 0.32    , 0.2     ], dtype=float32)
+
+======================================================================
+FAIL: test_batch_chunk_and_main_jvp_linear_directional_derivative (__main__.CorrectedGradient.test_batch_chunk_and_main_jvp_linear_directional_derivative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g1_vmc.py", line 84, in test_batch_chunk_and_main_jvp_linear_directional_derivative
+    ref.close(a,fd,x64)
+    ~~~~~~~~~^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_vmc_gradients.py", line 117, in close
+    np.testing.assert_allclose(a,b,rtol=32*eps,atol=32*eps)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=7.10543e-15, atol=7.10543e-15
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 2.74369416e-11
+Max relative difference among violations: 3.33141238e-11
+ ACTUAL: array(0.823583)
+ DESIRED: array(0.823583)
+
+----------------------------------------------------------------------
+Ran 7 tests in 13.869s
+
+FAILED (failures=2)
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

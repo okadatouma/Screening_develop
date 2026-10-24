@@ -1,7 +1,10 @@
 # screening_analysis — 遮蔽注意の設定生成と内部解析
 
 2026-08-14 のクラウド実験で使ったものを、GPU で再実行できる形に置いたもの。
-`periodicwave/` のオリジナルは書き換えていない（`CustomScreenformer.py` の `TRIM_MAX` 追加のみ、既定値は従来と同じ）。
+以下の実験記述は当時の履歴です。現在は本体のLayerNorm/Screening Attentionの整理と、
+attn_probe/head_contrib/head_cancelの正式Diagnostic APIへの移行が完了しています。
+現行の式・shape・単位は[tests/CONTRACTS.md](../tests/CONTRACTS.md)、新旧解析差と検証は[tests/RESULTS.md](../tests/RESULTS.md)を参照してください。
+過去の研究結果・図・cacheの数値を新方式で上書きしたわけではありません。
 
 ## 何が分かっているか（要約）
 

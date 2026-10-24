@@ -1,0 +1,7 @@
+{
+  "make_screening_attention": true,
+  "make_self_attention_block": true,
+  "make_screenformer_layers": true,
+  "make_fermi_net": true,
+  "make_mlp": true
+}

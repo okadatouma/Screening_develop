@@ -1,0 +1,53 @@
+{
+  "reporting-v1.json": {
+    "methods": 3,
+    "failures": 0,
+    "errors": 0,
+    "records": 20
+  },
+  "downstream-v1.json": {
+    "methods": 4,
+    "failures": 0,
+    "errors": 0,
+    "records": 31
+  },
+  "g1-regression.json": {
+    "methods": 7,
+    "failures": 0,
+    "errors": 0,
+    "records": 228
+  },
+  "g2b-regression.json": {
+    "methods": 7,
+    "failures": 0,
+    "errors": 0,
+    "records": 180
+  },
+  "two-devices.json": {
+    "methods": 1,
+    "failures": 0,
+    "errors": 0,
+    "records": 6
+  },
+  "strict_G2b_snapshots": {
+    "float32": {
+      "arrays": 1319,
+      "elements": 31142,
+      "exact": true,
+      "exclusions": false
+    },
+    "float64": {
+      "arrays": 902,
+      "elements": 21651,
+      "exact": true,
+      "exclusions": false
+    }
+  },
+  "original_33": {
+    "PASS": 30,
+    "ERROR": 2,
+    "FAIL": 1
+  },
+  "R08_fixed": true,
+  "K10_fixed": false
+}

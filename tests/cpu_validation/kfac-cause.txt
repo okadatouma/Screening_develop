@@ -1,0 +1,15 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmptoqxarwo/screen-kfac'.
+OBJECT 1 tree_equal True
+MISMATCH (DictKey(key='layers'), DictKey(key='attention'), SequenceKey(idx=0), DictKey(key='mask_omega')) float64 float32 (2,) (2,)
+MISMATCH (DictKey(key='layers'), DictKey(key='attention'), SequenceKey(idx=0), DictKey(key='out_scale')) float64 float32 () ()
+ValueError One or more objects do not have equivalent abstract structure.

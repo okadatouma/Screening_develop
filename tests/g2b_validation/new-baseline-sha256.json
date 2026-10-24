@@ -1,0 +1,11 @@
+{
+  "tests/g2b_validation/downstream-v3.json": "f129895710eb43fbfa1ca8afee8d27b1151233532e9f4696994afbd8afb371d9",
+  "tests/g2b_validation/physics-v1.json": "cbd69172af1a2b24d8d58b98d715db799b5f3e7787f13241ca0a0195e1e7f676",
+  "tests/g2b_validation/snapshot-float32-g2b-v1/comparison.json": "81638631974ee875d637700a30fa9c48b4569fa2ea9411e87efa639c005c9282",
+  "tests/g2b_validation/snapshot-float32-g2b-v1/metadata.json": "2aa7f74fe550be380e33671dfdbcde8ae1caca77daa97fe5d6ba0e19b3757380",
+  "tests/g2b_validation/snapshot-float32-g2b-v1/values.npz": "a65ce505615c195fce814643079b39ccf5a94aec7e0c07b0c6401b0839bd0f0d",
+  "tests/g2b_validation/snapshot-float64-g2b-v1/comparison.json": "8e141beff76ae13969921ce839406587bb361f114f5d6c5e1c1fb49fde47bfb5",
+  "tests/g2b_validation/snapshot-float64-g2b-v1/metadata.json": "30fbd931b111d6348b8b8809f593fab6ad5dfa0cbcf5728ab08ae0a330b340e0",
+  "tests/g2b_validation/snapshot-float64-g2b-v1/values.npz": "4604faf839f646628c1477470468bdfd5cebf634ccdfe6ce95e80d7c6501b741",
+  "tests/g2b_validation/two-devices-v1.json": "84031a876e1a296d45eb890414d39232c9e3fd159a4376fc7e65a42120b4254f"
+}

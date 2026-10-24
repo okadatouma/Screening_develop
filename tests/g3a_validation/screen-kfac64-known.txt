@@ -1,0 +1,65 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 0.0
+'train_stats.csv' does not exist in the folder 'tests/g3a_validation/screen-kfac64-known/run'.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g3a_vmc.py", line 292, in <module>
+    run_case(args)
+    ~~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_g3a_vmc.py", line 211, in run_case
+    with patch.object(trainer.logging,'info',side_effect=log):trainer.train(cfg)
+                                                              ~~~~~~~~~~~~~^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 728, in train
+    data, params, opt_state, loss, aux_data, pmove = step(
+                                                     ~~~~^
+        data,
+        ^^^^^
+    ...<2 lines>...
+        subkeys,
+        ^^^^^^^^
+        mcmc_width)
+        ^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/train_screen.py", line 320, in step
+    new_params, new_state, stats = optimizer.step(
+                                   ~~~~~~~~~~~~~~^
+        params=params,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        damping=shared_damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1404, in step
+    return self._step(
+           ~~~~~~~~~~^
+        params, state, rng, batch, func_state, learning_rate, momentum, damping,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        should_update_estimate_curvature, should_update_damping)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 297, in decorated
+    outs = func(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/misc.py", line 342, in wrapped
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1186, in _step
+    delta = self.weighted_sum_of_objects(vectors, coefficients)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/staging.py", line 233, in decorated
+    return method(instance, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/optimizer.py", line 1710, in weighted_sum_of_objects
+    return utils.weighted_sum_of_objects(objects, coefficients)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/kfac_jax/_src/utils/math.py", line 145, in weighted_sum_of_objects
+    raise ValueError("One or more objects do not have equivalent abstract "
+                     "structure.")
+ValueError: One or more objects do not have equivalent abstract structure.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

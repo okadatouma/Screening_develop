@@ -1,0 +1,22 @@
+{
+  "float32": {
+    "conditions": 20,
+    "gradient_max_abs": 1.93216180388589e-07,
+    "gradient_rms": 4.818672185584901e-08,
+    "production_vs_ad_max_abs": 1.1920928955078125e-07,
+    "finite_difference_vs_exact_max_abs": 2.7861046802968303e-10,
+    "global_phase_score_roundoff": 8.940696716308594e-08,
+    "adam_global_phase_difference_from_exact_zero_score": 0.008993983268737793,
+    "clipped_score_oracle_max_abs": 2.0129036659710664e-07
+  },
+  "float64": {
+    "conditions": 20,
+    "gradient_max_abs": 5.551115123125783e-16,
+    "gradient_rms": 1.7723407514627602e-16,
+    "production_vs_ad_max_abs": 4.996003610813204e-16,
+    "finite_difference_vs_exact_max_abs": 2.7861046802968303e-10,
+    "global_phase_score_roundoff": 5.551115123125783e-17,
+    "adam_global_phase_difference_from_exact_zero_score": 1.6653345369377348e-10,
+    "clipped_score_oracle_max_abs": 3.0531133177191805e-16
+  }
+}

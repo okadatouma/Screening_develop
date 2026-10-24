@@ -1,0 +1,4 @@
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+{'periodic_r_ae_shape': [3, 1], 'euclidean_r_ae_shape': [3, 1, 1], 'error_type': 'ValueError', 'error': 'Incompatible shapes for broadcasting: shapes=[(3, 6), (3,)]'}

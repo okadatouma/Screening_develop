@@ -1,0 +1,169 @@
+"""G2c: preserve G2b physics and check real reporting/complex auxiliary boundaries."""
+import argparse
+import csv
+import contextlib
+import hashlib
+import io
+import json
+import logging
+from pathlib import Path
+import tempfile
+import unittest
+from tests.support import require_numerics
+require_numerics()
+import jax
+import jax.numpy as jnp
+import numpy as np
+import optax
+from periodicwave import networks, loss, train, train_screen
+from periodicwave.pbc import hamiltonian as PH
+from periodicwave.utils import writers
+from tests.check_g2_local_energy import close_parts
+from tests.check_vmc_gradients import serial
+
+RECORDS=[]
+
+
+def fixture(complex_output,method,theta):
+    # The grid is a cell dual to the two independent moire reciprocal vectors.
+    b=4*np.pi/(np.sqrt(3)*4);G=np.array([[0,b],[b*np.sin(2*np.pi/3),b*np.cos(2*np.pi/3)]])
+    f=np.arange(8)/8+.017;u,v=np.meshgrid(f,f,indexing='ij')
+    r=np.stack((u.ravel(),v.ravel()),axis=-1)@np.linalg.inv(G).T*(2*np.pi)
+    d=networks.FermiNetData(positions=jnp.asarray(r),spins=jnp.ones((len(r),1)),atoms=jnp.zeros((len(r),1,2)),charges=jnp.zeros((len(r),1)))
+    q=jnp.asarray(G[0]);p=jnp.asarray([0.,theta if complex_output else 0.])
+    def network(pp,x,s,a,c):
+        t=jnp.dot(q,x)
+        return (pp[1]*jnp.sin(t) if complex_output else jnp.ones((),x.dtype)),pp[0]*jnp.cos(t)
+    def logpsi(pp,x,s,a,c):
+        ph,la=network(pp,x,s,a,c);return la+1j*ph if complex_output else la
+    local=PH.local_energy(network,jnp.zeros(1),(1,0),complex_output=complex_output,lattice=jnp.asarray(np.linalg.inv(G)*(2*np.pi)),potential_type='CoulombMoire',convergence_radius=2,potential_kwargs={'interaction_energy_scale':0.,'moire_lattice_vectors':jnp.eye(2)*4,'moire_potential_strength':.3,'moire_potential_phi':0.},kinetic_kwargs={'laplacian_method':method})
+    t=np.asarray(d.positions,dtype=float)@np.asarray(q,dtype=float);q2=float(np.asarray(q,dtype=float)@np.asarray(q,dtype=float));th=float(p[1])
+    potential=-.6*np.cos(np.asarray(d.positions,dtype=float)@np.vstack((G,-G.sum(axis=0))).T).sum(axis=1)
+    el=q2*th**2*np.cos(t)**2/2+potential+1j*q2*th*np.sin(t)/2
+    return p,d,logpsi,local,el,t,q2
+
+
+def independent_energy(p,q2):
+    x=np.arange(256)*2*np.pi/256;w=np.exp(2*p[0]*np.cos(x));w/=w.sum()
+    return q2/2*np.sum(w*(p[0]**2*np.sin(x)**2+p[1]**2*np.cos(x)**2))-.6*np.sum(w*np.cos(x))
+
+
+class DownstreamChecks(unittest.TestCase):
+    def tearDown(self):jax.config.update('jax_enable_x64',True)
+
+    def test_real_complex_amplitude_phase_moments_and_adam(self):
+        # At alpha=0: dE/dalpha=-2U=-.6; dE/dtheta=theta |q|^2/2.
+        # This checks nonzero amplitude and phase gradients at the same inputs.
+        for x64 in (False,True):
+            jax.config.update('jax_enable_x64',x64)
+            for complex_output,theta in ((False,0.),(True,0.),(True,.4)):
+                for method in ('default','folx'):
+                    p,d,net,local,el,t,q2=fixture(complex_output,method,theta)
+                    f=loss.make_loss(net,local,complex_output=complex_output)
+                    expected=np.array([-.6,q2*float(p[1])/2 if complex_output else 0.])
+                    # Real branch's theta is intentionally unused, hence zero derivative.
+                    h=1e-5;fd=np.array([(independent_energy(np.asarray(p,dtype=float)+h*e,q2)-independent_energy(np.asarray(p,dtype=float)-h*e,q2))/(2*h) for e in np.eye(2)])
+                    np.testing.assert_allclose(fd,expected,atol=2e-9,rtol=2e-9)
+                    for jit in (False,True):
+                        evaluate=jax.value_and_grad(f,has_aux=True)
+                        (value,aux),g=(jax.jit(evaluate) if jit else evaluate)(p,jax.random.PRNGKey(7),d)
+                        close_parts(g,expected,x64);close_parts(aux.local_energy,el if complex_output else el.real,x64)
+                        close_parts(value,el.mean().real,x64)
+                        close_parts(aux.variance,np.mean(np.abs(el-el.mean())**2),x64)
+                        if complex_output and theta:
+                            self.assertGreater(float(np.asarray(aux.local_energy).imag.std()),.01)
+                            self.assertGreater(float(aux.variance)-float(np.var(np.asarray(aux.local_energy).real)),.01)
+                        for trainer in (train,train_screen):
+                            opt=optax.adam(.001);state=opt.init(p)
+                            update,os=opt.update(g,state,p);expected_p=optax.apply_updates(p,update)
+                            pp,ss,vv,aa=trainer.make_opt_update_step(f,opt)(p,d,state,jax.random.PRNGKey(7))
+                            close_parts(pp,expected_p,x64)
+                            for a,b in zip(jax.tree_util.tree_leaves(ss),jax.tree_util.tree_leaves(os)):close_parts(a,b,x64)
+                        RECORDS.append(serial(dict(test='real_complex_gradient_moments_adam',x64=x64,complex_output=complex_output,theta=theta,method=method,jit=jit,parameters=p,analytic_gradient=expected,finite_difference=fd,gradient=g,energy=value,variance=aux.variance,imaginary_std=np.asarray(aux.local_energy).imag.std())))
+
+    def test_csv_npz_roundtrip_preserves_raw_complex_boundary(self):
+        # Normal training gets the real primary from G1's JVP. Optimizer='none'
+        # instead reports the unchanged raw complex primal (known K10 boundary).
+        for x64 in (False,True):
+            jax.config.update('jax_enable_x64',x64)
+            p,d,net,local,el,t,q2=fixture(True,'folx',.4)
+            f=loss.make_loss(net,local,complex_output=True)
+            raw,raw_aux=f(p,jax.random.PRNGKey(7),d)
+            (value,aux),g=jax.value_and_grad(f,has_aux=True)(p,jax.random.PRNGKey(7),d)
+            self.assertFalse(jnp.iscomplexobj(value));self.assertTrue(jnp.iscomplexobj(raw))
+            # Exercise the actual evaluation-only helper, without changing it.
+            _,_,none_value,_=train_screen.make_loss_step(f)(p,d,None,jax.random.PRNGKey(7))
+            np.testing.assert_array_equal(none_value,raw)
+            with tempfile.TemporaryDirectory() as tmp:
+                with writers.Writer('stats',['energy','variance','raw_energy'],directory=tmp,log=False) as writer:
+                    writer.write(0,energy=np.asarray(value),variance=np.asarray(aux.variance),raw_energy=np.asarray(raw))
+                with Path(tmp,'stats.csv').open() as handle:
+                    row=next(csv.DictReader(handle))
+                close_parts(float(row['energy']),value,x64);close_parts(complex(row['raw_energy']),raw,x64)
+                with self.assertRaises(ValueError):float(row['raw_energy'])
+                np.savez(Path(tmp,'energy.npz'),local_energy=aux.local_energy,mean_energy=raw,real_energy=value,variance=aux.variance)
+                with np.load(Path(tmp,'energy.npz')) as saved:
+                    np.testing.assert_array_equal(saved['local_energy'],aux.local_energy)
+                    np.testing.assert_array_equal(saved['mean_energy'],raw)
+                # Same formatter as the trainer: complex JAX primal is unsupported.
+                with self.assertRaises(TypeError):
+                    logging.LogRecord('g2b',logging.INFO,'',0,'%03.4f E_h',(none_value,),None).getMessage()
+                logging.LogRecord('g2b',logging.INFO,'',0,'%03.4f E_h',(value,),None).getMessage()
+                RECORDS.append(serial(dict(test='serialization_preserves_raw_primal_and_real_report_boundary',x64=x64,training_energy=value,raw_energy=raw,csv=row,local_energy_dtype=str(aux.local_energy.dtype),variance=aux.variance,evaluation_only_complex_primal=True,raw_csv_requires_complex_parser=True,direct_raw_formatter_unsupported=True)))
+
+    def test_old_checkpoint_inference_reports_real_energy(self):
+        # A real restored inference run must also have healthy reporting.
+        from absl import logging as absl_logging
+        from tests.test_training_checkpoint import training_config
+        jax.config.update('jax_enable_x64',False)
+        root=Path(__file__).resolve().parents[1]
+        old=root/'tests/layernorm_validation/before-checkpoints/float32/screen/qmcjax_ckpt_000000.npz'
+        digest=hashlib.sha256(old.read_bytes()).hexdigest()
+        stderr=io.StringIO();verbosity=absl_logging.get_verbosity()
+        try:
+            absl_logging.set_verbosity(absl_logging.INFO)
+            with tempfile.TemporaryDirectory() as tmp,contextlib.redirect_stderr(stderr):
+                cfg=training_config('screen',tmp,'none')
+                # The saved t=0 / state=None checkpoint resumes at t=1.
+                cfg.log.restore_path=str(old.parent);cfg.optim.iterations=3
+                train_screen.train(cfg)
+                with Path(cfg.log.save_path,'inference_stats.csv').open() as handle:
+                    rows=list(csv.DictReader(handle))
+                self.assertEqual(len(rows),2)
+                for row in rows:
+                    for field in ('energy','ewmean','ewvar','locstd'):
+                        self.assertTrue(np.isfinite(float(row[field])))
+                    self.assertGreaterEqual(float(row['ewvar']),0.)
+                self.assertNotIn('TypeError',stderr.getvalue())
+                RECORDS.append(dict(test='restored_inference_real_reporting',checkpoint=str(old.relative_to(root)),checkpoint_sha256=digest,iterations=2,csv=rows,logging_error_excerpt=stderr.getvalue()[-2500:],reporting_healthy=True))
+        finally:
+            absl_logging.set_verbosity(verbosity)
+        self.assertEqual(hashlib.sha256(old.read_bytes()).hexdigest(),digest)
+
+    def test_actual_training_csv_and_checkpoint(self):
+        from tests.test_training_checkpoint import training_config
+        from periodicwave import checkpoint
+        jax.config.update('jax_enable_x64',False)
+        for route,trainer in (('psiformer',train),('screen',train_screen)):
+            for optimizer in ('adam','kfac'):
+                with tempfile.TemporaryDirectory() as tmp:
+                    cfg=training_config(route,tmp,optimizer);trainer.train(cfg)
+                    with Path(cfg.log.save_path,'train_stats.csv').open() as handle:
+                        rows=list(csv.DictReader(handle))
+                    self.assertEqual(len(rows),1)
+                    for field in ('energy','ewmean','ewvar','locstd'):
+                        self.assertTrue(np.isfinite(float(rows[0][field])))
+                    restored=checkpoint.restore(str(Path(cfg.log.save_path,'qmcjax_ckpt_000000.npz')),2)
+                    self.assertEqual(restored[0],1);self.assertIsNotNone(restored[3])
+                    for leaf in jax.tree_util.tree_leaves(restored[1:]):
+                        self.assertTrue(np.all(np.isfinite(np.asarray(leaf))))
+                    RECORDS.append(dict(test='actual_training_csv_and_checkpoint',x64=False,route=route,optimizer=optimizer,csv=rows[0],restored_next_step=restored[0],real_report_fields=True))
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--report',type=Path,required=True);args=parser.parse_args()
+    if args.report.exists():parser.error('existing report is protected')
+    result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(DownstreamChecks))
+    from tests.baseline import metadata
+    with args.report.open('x') as f:json.dump(dict(version='g2c-v1',environment=metadata(),methods=result.testsRun,failures=len(result.failures),errors=len(result.errors),records=RECORDS),f,indent=2,allow_nan=False)
+    raise SystemExit(0 if result.wasSuccessful() else 1)

@@ -1,0 +1,149 @@
+--- CustomPsiformer before F1
++++ CustomPsiformer after F1
+@@ -268,14 +268,12 @@
+     key, subkey = jax.random.split(key)
+     feature_dims, params['input'] = options.feature_layer.init()
+     one_electron_feature_dim, _ = feature_dims
+-    # Concatenate spin of each electron with other one-electron features.
+-    feature_dim = one_electron_feature_dim + 1
+ 
+     # Map to Attention dim.
+     key, subkey = jax.random.split(key)
+-    params['embed'] = network_blocks.init_linear_layer(
+-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
+-    )['w']
++    params['embed'] = network_blocks.init_input_embedding(
++        subkey, one_electron_feature_dim, options.mlp_dim
++    )
+ 
+     # Attention block params.
+     key, subkey = jax.random.split(key)
+@@ -316,16 +314,8 @@
+         ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee, **params['input']
+     )
+ 
+-    # For the Psiformer, the spin feature is required for correct permutation
+-    # equivariance.
+-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
+-
+-    features = ae_features  # Just 1-electron stream for now.
+-
+-    # jax.debug.print("apply from make_psiformer_layers: [ae, feature] = {}", [ae, features])
+-
+-    # Embed into attention dimension.
+-    x = jnp.dot(features, params['embed'])
++    # Spin is part of the equivariant one-electron embedding.
++    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
+ 
+     return self_attn_apply(params, x)
+ 
+--- CustomScreenformer before F1
++++ CustomScreenformer after F1
+@@ -640,14 +640,12 @@
+     key, subkey = jax.random.split(key)
+     feature_dims, params['input'] = options.feature_layer.init()
+     one_electron_feature_dim, _ = feature_dims
+-    # Concatenate spin of each electron with other one-electron features.
+-    feature_dim = one_electron_feature_dim + 1
+ 
+     # Map to Attention dim.
+     key, subkey = jax.random.split(key)
+-    params['embed'] = network_blocks.init_linear_layer(
+-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
+-    )['w']
++    params['embed'] = network_blocks.init_input_embedding(
++        subkey, one_electron_feature_dim, options.mlp_dim
++    )
+ 
+     # Attention block params.
+     key, subkey = jax.random.split(key)
+@@ -690,14 +688,8 @@
+         ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee, **params['input']
+     )
+ 
+-    # For the Psiformer, the spin feature is required for correct permutation
+-    # equivariance.
+-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
+-
+-    features = ae_features  # Just 1-electron stream for now.
+-
+-    # Embed into attention dimension.
+-    x = jnp.dot(features, params['embed'])
++    # Spin is part of the equivariant one-electron embedding.
++    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
+ 
+     # [SCREEN] pairwise physical (periodic) distances for the softmask.
+     d_ee = r_ee[..., 0]
+--- SlaterNet before F1
++++ SlaterNet after F1
+@@ -175,14 +175,12 @@
+     key, subkey = jax.random.split(key)
+     feature_dims, params['input'] = options.feature_layer.init()
+     one_electron_feature_dim, _ = feature_dims
+-    # Concatenate spin of each electron with other one-electron features.
+-    feature_dim = one_electron_feature_dim + 1
+ 
+     # Map to MLP dim.
+     key, subkey = jax.random.split(key)
+-    params['embed'] = network_blocks.init_linear_layer(
+-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
+-    )['w']
++    params['embed'] = network_blocks.init_input_embedding(
++        subkey, one_electron_feature_dim, options.mlp_dim
++    )
+ 
+     # MLP block params.
+     key, subkey = jax.random.split(key)
+@@ -223,13 +221,8 @@
+         ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee, **params['input']
+     )
+ 
+-    # For Hartree-Fock, the spin feature is required for correct permutation equivariance, as in PsiFormer.
+-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
+-
+-    features = ae_features  # Just 1-electron stream for now.
+-
+-    # Embed into attention dimension.
+-    x = jnp.dot(features, params['embed'])
++    # Spin is part of the equivariant one-electron embedding.
++    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
+ 
+     return SlaterNet_apply(params, x)
+ 
+--- network_blocks before F1
++++ network_blocks after F1
+@@ -51,6 +51,34 @@
+   return init, apply
+ 
+ 
++# Learned embedding from the three Ansatz modules (same provenance as LayerNorm
++# above). Geometry and fixed features remain the responsibility of FeatureLayer.
++def init_input_embedding(key: chex.PRNGKey,
++                         one_electron_feature_dim: int,
++                         output_dim: int) -> jnp.ndarray:
++  """Return bare W[F+1,E], without bias; caller owns the PRNG split order.
++
++  The existing linear initializer uses normal(key1)/sqrt(F+1), with its original
++  dtype and two-key split. No extra parameter nesting is introduced.
++  """
++  return init_linear_layer(
++      key, in_dim=one_electron_feature_dim + 1, out_dim=output_dim,
++      include_bias=False
++  )['w']
++
++
++def apply_input_embedding(weight: jnp.ndarray,
++                          one_electron_features: jnp.ndarray,
++                          spins: jnp.ndarray) -> jnp.ndarray:
++  """X = concat(f_i, s_i) W: [N,F], [N] -> [N,E], W[F+1,E].
++
++  Features and spin are concatenated before the single dot, preserving dtype,
++  operation order and electron-permutation equivariance. No geometry is computed.
++  """
++  features = jnp.concatenate((one_electron_features, spins[..., None]), axis=-1)
++  return jnp.dot(features, weight)
++
++
+ def array_partitions(sizes: Sequence[int]) -> Sequence[int]:
+   """Returns the indices for splitting an array into separate partitions.
+ 

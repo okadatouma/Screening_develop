@@ -1,0 +1,866 @@
+[
+  {
+    "case": "f32-L1-LN0-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.02560000866651535,
+      "samples_ms": [
+        0.024958280846476555,
+        0.02560000866651535,
+        0.02642921172082424,
+        0.025679217651486397,
+        0.02720830962061882,
+        0.02437504008412361,
+        0.025362474843859673,
+        0.02415417693555355,
+        0.02617090940475464
+      ],
+      "memory": {
+        "argument_size_in_bytes": 676,
+        "output_size_in_bytes": 1104,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L1-LN1-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.027700001373887062,
+      "samples_ms": [
+        0.026683323085308075,
+        0.02650003880262375,
+        0.027004210278391838,
+        0.028366688638925552,
+        0.027700001373887062,
+        0.02565421164035797,
+        0.03093332052230835,
+        0.03172918222844601,
+        0.030420860275626183
+      ],
+      "memory": {
+        "argument_size_in_bytes": 740,
+        "output_size_in_bytes": 1104,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN0-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.041454192250967026,
+      "samples_ms": [
+        0.04275832325220108,
+        0.041454192250967026,
+        0.04150001332163811,
+        0.04186253063380718,
+        0.04130001179873943,
+        0.04081660881638527,
+        0.04099998623132706,
+        0.040616560727357864,
+        0.04231669008731842
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1240,
+        "output_size_in_bytes": 2168,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04512909799814224,
+      "samples_ms": [
+        0.04494166933000088,
+        0.044737476855516434,
+        0.045716576278209686,
+        0.04562907852232456,
+        0.05053333006799221,
+        0.04520001821219921,
+        0.04493747837841511,
+        0.04512909799814224,
+        0.044945813715457916
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1368,
+        "output_size_in_bytes": 2168,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L3-LN0-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.05462076514959335,
+      "samples_ms": [
+        0.055679213255643845,
+        0.05462076514959335,
+        0.054612476378679276,
+        0.054899975657463074,
+        0.05571669898927212,
+        0.05400003865361214,
+        0.05469168536365032,
+        0.05454579368233681,
+        0.05330001004040241
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1804,
+        "output_size_in_bytes": 3232,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L3-LN1-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.05858340300619602,
+      "samples_ms": [
+        0.05882079713046551,
+        0.05858340300619602,
+        0.059104105457663536,
+        0.059954170137643814,
+        0.058120815083384514,
+        0.05880421958863735,
+        0.05851667374372482,
+        0.05786251276731491,
+        0.05602501332759857
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1996,
+        "output_size_in_bytes": 3232,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L1-LN1-N4-cos",
+    "feature_rank_deficient": true,
+    "performance": {
+      "median_ms": 0.03327918238937855,
+      "samples_ms": [
+        0.031966716051101685,
+        0.030612479895353317,
+        0.031133322045207024,
+        0.03237919881939888,
+        0.03327918238937855,
+        0.0341000035405159,
+        0.037454115226864815,
+        0.034016696736216545,
+        0.035412516444921494
+      ],
+      "memory": {
+        "argument_size_in_bytes": 764,
+        "output_size_in_bytes": 2384,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N4-cos",
+    "feature_rank_deficient": true,
+    "performance": {
+      "median_ms": 0.04307078197598457,
+      "samples_ms": [
+        0.0429708044975996,
+        0.042229099199175835,
+        0.043129222467541695,
+        0.0450334046036005,
+        0.04307078197598457,
+        0.043562520295381546,
+        0.043679215013980865,
+        0.04303748719394207,
+        0.043066730722784996
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1392,
+        "output_size_in_bytes": 4696,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L3-LN1-N4-cos",
+    "feature_rank_deficient": true,
+    "performance": {
+      "median_ms": 0.05818330682814121,
+      "samples_ms": [
+        0.05799173377454281,
+        0.05818330682814121,
+        0.05971668288111687,
+        0.06406246684491634,
+        0.05647921934723854,
+        0.07649161852896214,
+        0.05770418792963028,
+        0.06117499433457851,
+        0.05727922543883324
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2020,
+        "output_size_in_bytes": 7008,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-smooth7",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04170001484453678,
+      "samples_ms": [
+        0.04193750210106373,
+        0.04170001484453678,
+        0.04188339225947857,
+        0.04154578782618046,
+        0.04171673208475113,
+        0.03991252742707729,
+        0.04100417718291283,
+        0.04086252301931381,
+        0.04214593209326267
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1368,
+        "output_size_in_bytes": 2168,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-pow4",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.044683320447802544,
+      "samples_ms": [
+        0.04518749192357063,
+        0.045333290472626686,
+        0.04388750530779362,
+        0.04380000755190849,
+        0.04426250234246254,
+        0.04431251436471939,
+        0.04567909054458141,
+        0.04508332349359989,
+        0.044683320447802544
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1368,
+        "output_size_in_bytes": 2168,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-sin",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04564998671412468,
+      "samples_ms": [
+        0.045170774683356285,
+        0.04477920010685921,
+        0.04414999857544899,
+        0.051229214295744896,
+        0.046629225835204124,
+        0.0462166965007782,
+        0.04552500322461128,
+        0.04564998671412468,
+        0.045779114589095116
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1400,
+        "output_size_in_bytes": 2168,
+        "temp_size_in_bytes": 176,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-gauss",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04536248743534088,
+      "samples_ms": [
+        0.04551657475531101,
+        0.046783313155174255,
+        0.04754159599542618,
+        0.04536248743534088,
+        0.043516699224710464,
+        0.04338747821748257,
+        0.04352922551333904,
+        0.04637502133846283,
+        0.04347087815403938
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1408,
+        "output_size_in_bytes": 2168,
+        "temp_size_in_bytes": 176,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-nomask",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04336247220635414,
+      "samples_ms": [
+        0.04447922110557556,
+        0.04416247829794884,
+        0.04297089762985706,
+        0.04413328133523464,
+        0.044224970042705536,
+        0.04320410080254078,
+        0.04336247220635414,
+        0.04327087663114071,
+        0.04282500594854355
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1352,
+        "output_size_in_bytes": 2088,
+        "temp_size_in_bytes": 112,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N2-fixed",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.043345941230654716,
+      "samples_ms": [
+        0.043345941230654716,
+        0.043558282777667046,
+        0.04265420138835907,
+        0.042566703632473946,
+        0.04378343001008034,
+        0.043675024062395096,
+        0.04386249929666519,
+        0.043008383363485336,
+        0.04304586909711361
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1624,
+        "output_size_in_bytes": 2392,
+        "temp_size_in_bytes": 8,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L1-LN0-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.02620411105453968,
+      "samples_ms": [
+        0.027970923110842705,
+        0.027462514117360115,
+        0.025125034153461456,
+        0.024787476286292076,
+        0.025575002655386925,
+        0.026141712442040443,
+        0.029083387926220894,
+        0.026233308017253876,
+        0.02620411105453968
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1340,
+        "output_size_in_bytes": 2000,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L1-LN1-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.02936660312116146,
+      "samples_ms": [
+        0.03393338993191719,
+        0.032354192808270454,
+        0.02936660312116146,
+        0.028570787981152534,
+        0.026308326050639153,
+        0.028020795434713364,
+        0.02842498943209648,
+        0.03208750858902931,
+        0.031800009310245514
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1468,
+        "output_size_in_bytes": 2000,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN0-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.039470940828323364,
+      "samples_ms": [
+        0.045345909893512726,
+        0.045504188165068626,
+        0.039470940828323364,
+        0.04107910208404064,
+        0.04032501019537449,
+        0.039404211565852165,
+        0.038395822048187256,
+        0.038345903158187866,
+        0.03739171661436558
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2456,
+        "output_size_in_bytes": 3928,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.043008290231227875,
+      "samples_ms": [
+        0.043008290231227875,
+        0.041187508031725883,
+        0.04147910512983799,
+        0.051608262583613396,
+        0.04547080025076866,
+        0.04355423152446747,
+        0.05986667238175869,
+        0.04214583896100521,
+        0.04108748398721218
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2712,
+        "output_size_in_bytes": 3928,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L3-LN0-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.05497499369084835,
+      "samples_ms": [
+        0.055679166689515114,
+        0.054783280938863754,
+        0.0544459093362093,
+        0.05479156970977783,
+        0.05498337559401989,
+        0.05452083423733711,
+        0.05505001172423363,
+        0.05497499369084835,
+        0.05502919666469097
+      ],
+      "memory": {
+        "argument_size_in_bytes": 3572,
+        "output_size_in_bytes": 5856,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L3-LN1-N2-cos",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.057108327746391296,
+      "samples_ms": [
+        0.05868328735232353,
+        0.056941667571663857,
+        0.057012494653463364,
+        0.05737920291721821,
+        0.05674576386809349,
+        0.057504186406731606,
+        0.05787499248981476,
+        0.057108327746391296,
+        0.05692080594599247
+      ],
+      "memory": {
+        "argument_size_in_bytes": 3956,
+        "output_size_in_bytes": 5856,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L1-LN1-N4-cos",
+    "feature_rank_deficient": true,
+    "performance": {
+      "median_ms": 0.03415420651435852,
+      "samples_ms": [
+        0.034837471321225166,
+        0.035966699942946434,
+        0.03392091020941734,
+        0.03395001403987408,
+        0.03427499905228615,
+        0.03376249223947525,
+        0.03353753127157688,
+        0.03415420651435852,
+        0.03477497957646847
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1516,
+        "output_size_in_bytes": 4560,
+        "temp_size_in_bytes": 32,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N4-cos",
+    "feature_rank_deficient": true,
+    "performance": {
+      "median_ms": 0.04280409775674343,
+      "samples_ms": [
+        0.04305001348257065,
+        0.04253326915204525,
+        0.04298328422009945,
+        0.04214160144329071,
+        0.042845914140343666,
+        0.042670825496315956,
+        0.043095787987113,
+        0.042395759373903275,
+        0.04280409775674343
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2760,
+        "output_size_in_bytes": 8984,
+        "temp_size_in_bytes": 32,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L3-LN1-N4-cos",
+    "feature_rank_deficient": true,
+    "performance": {
+      "median_ms": 0.05541662685573101,
+      "samples_ms": [
+        0.05726250819861889,
+        0.055612483993172646,
+        0.05590827204287052,
+        0.05497913807630539,
+        0.05466248840093613,
+        0.05446248687803745,
+        0.05541662685573101,
+        0.05702082999050617,
+        0.05385410040616989
+      ],
+      "memory": {
+        "argument_size_in_bytes": 4004,
+        "output_size_in_bytes": 13408,
+        "temp_size_in_bytes": 32,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-smooth7",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.042841676622629166,
+      "samples_ms": [
+        0.04307497292757034,
+        0.0418792013078928,
+        0.04509170539677143,
+        0.04260828718543053,
+        0.042841676622629166,
+        0.042941560968756676,
+        0.04318747669458389,
+        0.042349984869360924,
+        0.04222081042826176
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2712,
+        "output_size_in_bytes": 3928,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-pow4",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.041237520053982735,
+      "samples_ms": [
+        0.042625004425644875,
+        0.04054591991007328,
+        0.041237520053982735,
+        0.04205838777124882,
+        0.042166560888290405,
+        0.042120879516005516,
+        0.040508294478058815,
+        0.03902078606188297,
+        0.03983336500823498
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2712,
+        "output_size_in_bytes": 3928,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-sin",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04330421797931194,
+      "samples_ms": [
+        0.04958747886121273,
+        0.04569999873638153,
+        0.043783290311694145,
+        0.04330421797931194,
+        0.04520411603152752,
+        0.041512539610266685,
+        0.04322086460888386,
+        0.04214588552713394,
+        0.042287493124604225
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2744,
+        "output_size_in_bytes": 3928,
+        "temp_size_in_bytes": 352,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-gauss",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.042666634544730186,
+      "samples_ms": [
+        0.050116702914237976,
+        0.045858416706323624,
+        0.044066598638892174,
+        0.0433875247836113,
+        0.042666634544730186,
+        0.042504118755459785,
+        0.040670810267329216,
+        0.0408833846449852,
+        0.042399996891617775
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2752,
+        "output_size_in_bytes": 3928,
+        "temp_size_in_bytes": 352,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-nomask",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04127495922148228,
+      "samples_ms": [
+        0.041833287104964256,
+        0.040570786222815514,
+        0.04042908549308777,
+        0.040787504985928535,
+        0.04145423881709576,
+        0.04125419072806835,
+        0.041674962267279625,
+        0.04127495922148228,
+        0.043337466195225716
+      ],
+      "memory": {
+        "argument_size_in_bytes": 2696,
+        "output_size_in_bytes": 3784,
+        "temp_size_in_bytes": 224,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N2-fixed",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.0409458763897419,
+      "samples_ms": [
+        0.04280409775674343,
+        0.040466710925102234,
+        0.040733302012085915,
+        0.0409458763897419,
+        0.04232502542436123,
+        0.0424250029027462,
+        0.04215841181576252,
+        0.04055420868098736,
+        0.038554100319743156
+      ],
+      "memory": {
+        "argument_size_in_bytes": 3224,
+        "output_size_in_bytes": 4408,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L1-LN1-N4-cos-E8",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.03521246835589409,
+      "samples_ms": [
+        0.03588330000638962,
+        0.03521246835589409,
+        0.040074996650218964,
+        0.03400002606213093,
+        0.034854188561439514,
+        0.03651659935712814,
+        0.034949975088238716,
+        0.034787505865097046,
+        0.036733318120241165
+      ],
+      "memory": {
+        "argument_size_in_bytes": 1708,
+        "output_size_in_bytes": 3024,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L2-LN1-N4-cos-E8",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.04307921044528484,
+      "samples_ms": [
+        0.04369160160422325,
+        0.04425421357154846,
+        0.044400012120604515,
+        0.04255417734384537,
+        0.04307921044528484,
+        0.04111253656446934,
+        0.042008282616734505,
+        0.04244586452841759,
+        0.04324587062001228
+      ],
+      "memory": {
+        "argument_size_in_bytes": 3200,
+        "output_size_in_bytes": 5912,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f32-L3-LN1-N4-cos-E8",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.06553325802087784,
+      "samples_ms": [
+        0.05925418809056282,
+        0.0624209176748991,
+        0.06553325802087784,
+        0.059004221111536026,
+        0.05757920444011688,
+        0.07042922079563141,
+        0.07762080058455467,
+        0.1057750079780817,
+        0.0764000229537487
+      ],
+      "memory": {
+        "argument_size_in_bytes": 4692,
+        "output_size_in_bytes": 8800,
+        "temp_size_in_bytes": 16,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L1-LN1-N4-cos-E8",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.035570794716477394,
+      "samples_ms": [
+        0.035570794716477394,
+        0.042516691610217094,
+        0.03585410304367542,
+        0.03454592078924179,
+        0.03551659174263477,
+        0.03777495585381985,
+        0.03610416315495968,
+        0.034958356991410255,
+        0.03504166379570961
+      ],
+      "memory": {
+        "argument_size_in_bytes": 3404,
+        "output_size_in_bytes": 5840,
+        "temp_size_in_bytes": 32,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L2-LN1-N4-cos-E8",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.0425542239099741,
+      "samples_ms": [
+        0.043283263221383095,
+        0.042012473568320274,
+        0.04279999993741512,
+        0.04377500154078007,
+        0.042295828461647034,
+        0.04230421036481857,
+        0.041516683995723724,
+        0.0425542239099741,
+        0.04620831459760666
+      ],
+      "memory": {
+        "argument_size_in_bytes": 6376,
+        "output_size_in_bytes": 11416,
+        "temp_size_in_bytes": 32,
+        "alias_size_in_bytes": 0
+      }
+    }
+  },
+  {
+    "case": "f64-L3-LN1-N4-cos-E8",
+    "feature_rank_deficient": false,
+    "performance": {
+      "median_ms": 0.0583041924983263,
+      "samples_ms": [
+        0.06058341823518276,
+        0.0583041924983263,
+        0.059275003150105476,
+        0.05707917734980583,
+        0.05793329328298569,
+        0.05955002270638943,
+        0.05747918039560318,
+        0.05760421045124531,
+        0.05832500755786896
+      ],
+      "memory": {
+        "argument_size_in_bytes": 9348,
+        "output_size_in_bytes": 16992,
+        "temp_size_in_bytes": 32,
+        "alias_size_in_bytes": 0
+      }
+    }
+  }
+]

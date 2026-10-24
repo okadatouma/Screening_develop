@@ -1,0 +1,36 @@
+{
+  "status": "ERROR (known K08 reproduced, not corrected)",
+  "error": {
+    "type": "ValueError",
+    "message": "One or more objects do not have equivalent abstract structure."
+  },
+  "observations": [
+    {
+      "coefficients": [
+        "float64",
+        "float64"
+      ],
+      "mismatched_leaves": [
+        {
+          "path": "['layers']['attention'][0]['mask_omega']",
+          "scaled_first_dtype": "float64",
+          "second_dtype": "float32",
+          "first_shape": [
+            1
+          ],
+          "second_shape": [
+            1
+          ]
+        },
+        {
+          "path": "['layers']['attention'][0]['out_scale']",
+          "scaled_first_dtype": "float64",
+          "second_dtype": "float32",
+          "first_shape": [],
+          "second_shape": []
+        }
+      ]
+    }
+  ],
+  "production_modified": false
+}

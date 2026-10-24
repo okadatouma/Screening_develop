@@ -1,0 +1,108 @@
+--- a/periodicwave/CustomScreenformer.py
++++ b/periodicwave/CustomScreenformer.py
+@@ -393,7 +393,8 @@
+   )
+ 
+   def apply(params: networks.ParamTree, single_electron_stream: jnp.ndarray,
+-            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None) -> jnp.ndarray:
++            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None, *,
++            return_aux: bool = False):
+     """Computes screening attention.
+ 
+     Args:
+@@ -406,6 +407,11 @@
+       A projection of screening-weighted value projections.
+       Shape [num_electrons, embed_dim]
+     """
++    if return_aux:
++      return attention.screening_attention(
++          params, single_electron_stream, d_ee, pair_feat, options=attention_options,
++          trim_max=TRIM_MAX, trim_pow=TRIM_POW, win_shape=WIN_SHAPE,
++          freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA, return_aux=True)
+     return attention.screening_attention(
+         params, single_electron_stream, d_ee, pair_feat, options=attention_options,
+         trim_max=TRIM_MAX, trim_pow=TRIM_POW, win_shape=WIN_SHAPE,
+@@ -529,24 +535,53 @@
+     return params
+ 
+   def apply(params: networks.ParamTree, single_electron_stream: jnp.ndarray,
+-            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None) -> jnp.ndarray:
++            d_ee: jnp.ndarray, pair_feat: jnp.ndarray = None, *,
++            return_aux: bool = False):
++    """通常は最終X、return_aux=Trueなら(final_X, layers)を返す。
++
++    layersは層順のtuple。各辞書のinput/outputと残差・LN・MLP出力は[N,E]。
++    attentionにはB2の辞書、attention_outputには実際に残差へ加えた[N,E]を保持。
++    LNなしではln1_output/ln2_outputは恒等。次層は常に本体のxを使う。
++    return_auxはJITで静的指定。通常モードは辞書・リストを構築しない。
++    """
++    if return_aux:
++      layers = []
+     # [SCREEN] d_ee（と、固定 value を使うときは対の特徴）を各層へ通す。
+     x = single_electron_stream
+     for layer in range(num_layers):
+-      attn_output = attention_apply(params['attention'][layer], x, d_ee, pair_feat)
++      if return_aux:
++        record = dict(input=x)
++        attn_output, attn_aux = attention_apply(
++            params['attention'][layer], x, d_ee, pair_feat, return_aux=True)
++        record.update(attention=attn_aux, attention_output=attn_output)
++      else:
++        attn_output = attention_apply(params['attention'][layer], x, d_ee, pair_feat)
+       # Residual + optional LayerNorm.
+       x = x + attn_output
++      if return_aux:
++        record['attention_residual'] = x
+       if use_layer_norm:
+         x = layer_norm_apply(params['ln'][layer][0], x)
++      if return_aux:
++        record['ln1_output'] = x
+ 
+       # MLP
+       mlp_output = mlp_apply(params['mlp'][layer], x)
++      if return_aux:
++        record['mlp_output'] = mlp_output
+ 
+       # Residual + optional LayerNorm.
+       x = x + mlp_output
++      if return_aux:
++        record['mlp_residual'] = x
+       if use_layer_norm:
+         x = layer_norm_apply(params['ln'][layer][1], x)
+-
++      if return_aux:
++        record.update(ln2_output=x, output=x)
++        layers.append(record)
++
++    if return_aux:
++      return x, tuple(layers)
+     return x
+ 
+   return init, apply
+@@ -629,7 +664,8 @@
+       r_ee: jnp.ndarray,
+       spins: jnp.ndarray,
+       charges: jnp.ndarray,
+-  ) -> jnp.ndarray:
++      return_aux: bool = False,
++  ):
+     """Applies the Screenformer interaction layers to a walker configuration.
+ 
+     Args:
+@@ -640,6 +676,7 @@
+       r_ee: electron-electron distances.
+       spins: spin of each electron.
+       charges: nuclear charges.
++      return_aux: 静的Trueなら(final_X, layers)を返す。内容はブロックapply参照。
+ 
+     Returns:
+       Array of shape (nelectron, output_dim), where the output dimension,
+@@ -676,6 +713,8 @@
+       pair_feat = jnp.concatenate(
+           (ee_features[..., :1] / d_ref, ee_features[..., 1:]), axis=-1)
+ 
++    if return_aux:
++      return self_attn_apply(params, x, d_ee, pair_feat, return_aux=True)
+     return self_attn_apply(params, x, d_ee, pair_feat)
+ 
+   return init, apply

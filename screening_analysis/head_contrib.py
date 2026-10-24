@@ -1,264 +1,315 @@
-"""各ヘッドが波動関数（残差ストリーム）に実際に足し込む量を測る。
+"""Screenformer Head寄与（独立Diagnostic再評価、Production内部のビット列ではない）。
 
-    python screening_analysis/head_contrib.py <run_folder> [--nconf 64]
+c_h = exp(s_O) z_h W_O[h]、zはAPIのgate_output。biasは共有項として別保存。
+C=<||c_h||>, Cd=<||c_h(self)||>, Cp=<||c_h-c_h(self)||>。
+selfは同じ層入力で自己項だけを通す反実仮想。Cpは純粋な二体/Head除去/エネルギー寄与ではない。
+R=<||sum_h c_h||>、A=<||aggregate_h||>、Ap=<||aggregate_h-self_h||>。
+平均はwalkerと電子に取る。C²のshareは平均ノルムの二乗（平均二乗ではない）。
+Head分解の和は解析用であり、次層入力には使用しない。
 
-遮蔽注意でも通常の softmax 注意（Psiformer）でも、注意ブロックの出力は
-ヘッド出力を [heads*value_dim] に並べて W_O を掛ける形なので、W_O の行が
-ヘッドごとのブロックに分かれ、**出力はヘッドについて厳密に加法的**になる。
-
-    遮蔽:    out_i = e^{s_O} Σ_h [ gate ⊙ TanhNorm(attn) ]_{i,h} · W_O^{(h)}
-    softmax: out_i =           Σ_h [ softmax(qk/√d) v ]_{i,h}  · W_O^{(h)}
-
-したがってヘッド h の寄与ベクトル c_h(i) = (h ブロック) · W_O^{(h)} をそのまま取り出せる。
-
-出す量:
-  ‖c_h‖        そのヘッドが足すベクトルの長さ（電子・配置平均）
-  ノルム share ‖c_h‖ / Σ‖c‖            … 直感的だが加法の指標としては正しくない
-  二乗 share   ‖c_h‖² / Σ‖c‖²          … 各ヘッドが足し込む量の二乗の割合。ヘッドどうしは打ち消し合うので
-                                          ‖Σc‖² の内訳ではない（head_cancel.py：run 1929 の相手の分で
-                                          ‖Σc‖²/Σ‖c‖² = 0.90 液体〜0.47 結晶、直交なら 1）
-  Σ‖c_h‖/‖Σc_h‖                        … 1 なら完全整列、√H ならほぼ直交
+CLI: head_contrib.py RUN --settings known.json --lattice '[[...],[...]]'
+新規head_contrib_diagnostic_v1.npzだけに保存し、既存ファイルを上書きしない。
+旧softmax解析はこの入口の対象外。他の解析スクリプトは変更しない。
 """
-import argparse, glob, json, os, re, sys
-import numpy as np, jax, jax.numpy as jnp
+import argparse
+import hashlib
+import importlib
+import json
+import os
+from pathlib import Path
+import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.dirname(HERE)); sys.path.insert(0, HERE)
-from periodicwave import networks                                     # noqa
-from periodicwave.pbc import feature_layer as FL                      # noqa
+import attr
+import jax
+import jax.numpy as jnp
+import jaxlib
+import numpy as np
 
-
-def _lattice(cfg):
-    m = re.search(r"unserializable object: \[\[(.*?)\]\]", json.dumps(cfg))
-    return np.array([float(x) for x in re.findall(
-        r"-?\d+\.?\d*(?:[eE][-+]?\d+)?", m.group(1))][:4]).reshape(2, 2)
-
-
-def compute(folder, nconf=64, checkpoint=None, sel=None):
-    """(C, Rn, w) を返す。C=(L,H) の ‖c_h‖、Rn=(L,) の ‖Σ_h c_h‖、w=(L,H) の w/d_ref。"""
-    ck = checkpoint or sorted(glob.glob(os.path.join(folder, "qmcjax_ckpt_*.npz")))[-1]
-    z = np.load(ck, allow_pickle=True); data = z["data"].item()
-    P = jax.tree_util.tree_map(lambda x: np.asarray(x)[0], z["params"].item())
-    cfg = json.load(open(os.path.join(folder, "config.json")))
-    ntype = cfg["network"]["network_type"]
-    softmax = ntype == "CustomPsiformer"
-    o = cfg["network"][ntype]
-    L = _lattice(cfg)
-    NH, AD, VD, NL = o["num_heads"], o["attn_dim"], o["value_dim"], o["num_layers"]
-    fixv = bool(o.get("use_fixed_value", False))       # [SCREEN] value を対の固定特徴に置換
-    NE = sum(cfg["system"]["electrons"])
-    from periodicwave import CustomScreenformer as CS
-    dref = float(CS._max_periodic_distance(jnp.asarray(L)))
-
-    fl = FL.make_pbc_feature_layer(natoms=1, nspins=tuple(cfg["system"]["electrons"]), ndim=2,
-                                   lattice=jnp.asarray(L), include_r_ae=False)
-    cif = networks.make_periodic_construct_input_features(jnp.asarray(L))
-
-    if softmax:
-        from periodicwave import CustomPsiformer as CP
-        _, ln = CP.make_layer_norm()
-        _, mlp = CP.make_mlp(o["num_perceptrons_per_layer"], o["mlp_activation_fct"])
-        use_ln = o["use_layer_norm"]
-    else:
-        _, ln = CS.make_layer_norm()
-        _, mlp = CS.make_mlp(o["num_perceptrons_per_layer"], o["mlp_activation_fct"])
-
-    def _post(at, x, ap, sc):
-        """注意の出力ベクトル at からヘッドごとの寄与ベクトルまで（共通の後段）。"""
-        if (not softmax) and o["use_tanh_norm"]:
-            n = jnp.sqrt(jnp.sum(at * at, -1, keepdims=True) + 1e-12)
-            at = at * jnp.tanh(n) / n
-        vd = at.shape[-1]
-        flat = at.reshape(NE, NH * vd)
-        if (not softmax) and o["use_gate"]:
-            flat = flat * jnp.tanh(jax.nn.silu(jnp.dot(x, ap["g_w"])))
-        WO = ap["attn_output"]["w"] if isinstance(ap["attn_output"], dict) else ap["attn_output"]
-        return sc * jnp.einsum("ihd,hde->ihe", flat.reshape(NE, NH, vd),
-                               WO.reshape(NH, vd, -1))
-
-    def forward(pos, spins, atoms):
-        ae, ee, r_ae, r_ee = cif(pos, atoms, ndim=2)
-        f, eef = fl.apply(ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee)
-        f = jnp.concatenate((f, spins[..., None]), axis=-1)
-        x = jnp.dot(f, P["layers"]["embed"]); d_ee = r_ee[..., 0]
-        # [SCREEN] 固定 value のとき運ぶ対の特徴 e(r_ij)（ネットワーク側と同じ作り方）
-        pf = jnp.concatenate((eef[..., :1] / dref, eef[..., 1:]), axis=-1) if fixv else None
-        eye = jnp.eye(NE)[None]
-        C, Cd, Cp, X, R, A, Ap = [], [], [], [], [], [], []
-        for l in range(NL):
-            ap = P["layers"]["attention"][l]
-            q = jnp.dot(x, ap["q_w"]).reshape(NE, NH, AD)
-            k = jnp.dot(x, ap["k_w"]).reshape(NE, NH, AD)
-            v = (None if fixv else jnp.dot(x, ap["v_w"]).reshape(NE, NH, VD))
-            if softmax:
-                s = jnp.einsum("ihd,jhd->hij", q, k) / jnp.sqrt(float(AD))
-                wgt = jax.nn.softmax(s, axis=-1); vv = v; sc = 1.0
-            else:
-                s = jnp.einsum("ihd,jhd->hij", CS._unit_length(q), CS._unit_length(k))
-                r = (CS.TRIM_MAX * jax.nn.sigmoid(ap["trim_rho"]))[:, None, None]
-                wgt = jnp.square(jax.nn.relu(s - (1.0 - r)) / r)
-                if o["use_softmask"]:
-                    ww = dref * jax.nn.softplus(ap["mask_omega"])
-                    if "mask_rings" in ap:       # 全体窓 g の輪切り
-                        bb = dref * ap["mask_rings"]; dl = ww[0]
-                        # 階段は本体と同じ関数で作る（ガウス核の輪切りなら "mask_gauss" がある）
-                        th = (CS._ring_steps(d_ee, bb, dl * ap["mask_gauss"], gauss=True) if "mask_gauss" in ap
-                              else CS._ring_steps(d_ee, bb, dl))
-                        xx = jnp.clip(d_ee / dref, 0.0, 1.0); ps = xx > 0.0
-                        xp = jnp.where(ps, jnp.power(jnp.where(ps, xx, 1.0), ap["mask_envp"]), 0.0)
-                        wgt = wgt * (th[:-1] - th[1:]) * (0.5 * (1 + jnp.cos(jnp.pi * xp)))[None]
-                    else:
-                        if "mask_centre" in ap:      # 帯域窓（殻）
-                            cc = dref * ap["mask_centre"]
-                            u = jnp.clip((d_ee[None] - cc[:, None, None]) / ww[:, None, None], -1.0, 1.0)
-                        else:                        # 単調減少窓
-                            u = jnp.clip(d_ee[None] / ww[:, None, None], 0.0, 1.0)
-                        wgt = wgt * 0.5 * (1 + jnp.cos(jnp.pi * u))
-                vv = (None if fixv else CS._unit_length(v))
-                sc = jnp.exp(ap["out_scale"]) if o["use_output_scale"] else 1.0
-                if fixv:
-                    wgt = wgt * (1.0 - eye)            # 固定 value では j = i を落とす
-            if fixv:
-                at_all = jnp.einsum("hij,ijd->ihd", wgt, pf)
-                at_dia = jnp.zeros_like(at_all)
-            else:
-                at_all = jnp.einsum("hij,jhd->ihd", wgt, vv)
-                at_dia = jnp.einsum("hij,jhd->ihd", wgt * eye, vv)
-            # [PROBE] TanhNorm より前（重みの和そのもの）。読み出しの飽和を切り分けるため。
-            A.append(jnp.linalg.norm(at_all, axis=-1))
-            Ap.append(jnp.linalg.norm(at_all - at_dia, axis=-1))
-            ch = _post(at_all, x, ap, sc)
-            chd = _post(at_dia, x, ap, sc)
-            C.append(jnp.linalg.norm(ch, axis=-1))            # [i,h] 全体
-            Cd.append(jnp.linalg.norm(chd, axis=-1))          # [i,h] 自分だけ（1 体）
-            Cp.append(jnp.linalg.norm(ch - chd, axis=-1))     # [i,h] 相手のぶん（2 体）
-            X.append(jnp.linalg.norm(x, axis=-1))             # [i]
-            R.append(jnp.linalg.norm(ch.sum(1), axis=-1))     # [i]  ‖Σ_h c_h‖
-            out = ch.sum(1)
-            if softmax:
-                x = x + out
-                if use_ln: x = ln(P["layers"]["ln"][l][0], x)
-                x = x + mlp(P["layers"]["mlp"][l], x)
-                if use_ln: x = ln(P["layers"]["ln"][l][1], x)
-            else:
-                x = ln(P["layers"]["ln"][l][0], x + out)
-                x = ln(P["layers"]["ln"][l][1], x + mlp(P["layers"]["mlp"][l], x))
-        return (jnp.stack(C), jnp.stack(Cd), jnp.stack(Cp), jnp.stack(X), jnp.stack(R),
-                jnp.stack(A), jnp.stack(Ap))
-
-    pos = np.asarray(data["positions"][0]); sp = np.asarray(data["spins"][0])
-    at_ = np.asarray(data["atoms"][0])
-    if sel is not None:                     # 呼び出し側が選んだウォーカー（誤差の見積もり用）
-        sel = np.asarray(sel); pos, sp, at_ = pos[sel], sp[sel], at_[sel]
-    elif pos.shape[0] > nconf:
-        i = np.linspace(0, pos.shape[0] - 1, nconf).astype(int); pos, sp, at_ = pos[i], sp[i], at_[i]
-    C, Cd, Cp, X, R, A, Ap = jax.vmap(forward)(jnp.asarray(pos), jnp.asarray(sp), jnp.asarray(at_))
-    C = np.asarray(C).mean(axis=(0, 2)); Cd = np.asarray(Cd).mean(axis=(0, 2))
-    Cp = np.asarray(Cp).mean(axis=(0, 2)); X = np.asarray(X).mean(axis=(0, 2))
-    R = np.asarray(R).mean(axis=(0, 2))
-    A = np.asarray(A).mean(axis=(0, 2)); Ap = np.asarray(Ap).mean(axis=(0, 2))
-    if softmax:
-        w = np.full((NL, NH), np.nan)
-        meta = dict(shell=False, sigma=w, centre=w, outer=w)
-    else:
-        _ap = [P["layers"]["attention"][l] for l in range(NL)]
-        _sg = np.asarray(dref * jax.nn.softplus(np.stack([a["mask_omega"] for a in _ap])))
-        rings = all("mask_rings" in a for a in _ap)
-        shell = all("mask_centre" in a for a in _ap)
-        if rings:
-            # 輪切りではヘッドを代表する長さは輪の中点。
-            _bb = np.asarray(dref * np.stack([a["mask_rings"] for a in _ap]))
-            _mid = 0.5 * (_bb[:, :-1] + _bb[:, 1:])
-            w, meta = _mid / dref, dict(shell=True, sigma=np.diff(_bb, axis=1) / dref,
-                                        centre=_mid / dref, outer=_bb[:, 1:] / dref)
-        elif shell:
-            # 殻ではヘッドを代表する長さは中心 c_h（そこの相関だけを見るので）。
-            # 外縁 c_h + sigma_h は「窓が 0 になる距離」で、d_ref との比較に使う。
-            _ct = np.asarray(dref * np.stack([a["mask_centre"] for a in _ap]))
-            w, meta = _ct / dref, dict(shell=True, sigma=_sg / dref,
-                                       centre=_ct / dref, outer=(_ct + _sg) / dref)
-        else:
-            w = _sg / dref
-            meta = dict(shell=False, sigma=w, centre=np.zeros_like(w), outer=w)
-    meta = dict(meta, A=A, Ap=Ap, fixv=fixv)
-    return C, Cd, Cp, X, R, w, softmax, meta
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from periodicwave import networks, CustomScreenformer as CS
+from screening_analysis.attn_probe import SETTINGS, _effective_settings, lattice_from_config, _centres_from
 
 
-def cached(folder, nconf=64):
-    """<folder>/head_contrib.npz にキャッシュして dict を返す。
+def projected_heads(gate_output, projection, num_heads, scale=1.):
+    """[N,H*D]をc[N,H,E]へ分解。共有bias[E]はどのHeadにも割り当てない。
 
-    C  … ヘッドが波動関数に足すベクトルの長さ（全体）
-    Cd … そのうち自分自身だけを見たぶん（1 体的。窓が最短の対距離より狭いと
-          ヘッドはこれだけになる）
-    Cp … 相手を見たぶん（2 体。相関を運んでいるのはこちら）
+    実数演算ではsum(c,head)+bias=scale*(z@W+b)。加算順の違う解析的分解で、
+    forwardや次層更新には使用しない。現行checkpointのprojectionはbiasなしの配列。
     """
-    p = os.path.join(folder, "head_contrib.npz")
-    if os.path.exists(p):
-        z = np.load(p)
-        if "Cp" in z.files and "shell" in z.files and "Ap" in z.files:
-            return {k: z[k] for k in z.files}
-        os.remove(p)                                   # 旧形式は作り直す
-    C, Cd, Cp, X, R, w, sm, mt = compute(folder, nconf)
-    d = dict(C=C, Cd=Cd, Cp=Cp, X=X, R=R, w=w, softmax=np.asarray(sm),
-             shell=np.asarray(mt["shell"]), w_sigma=mt["sigma"],
-             w_centre=mt["centre"], w_outer=mt["outer"],
-             A=mt["A"], Ap=mt["Ap"], fixv=np.asarray(mt["fixv"]))
-    np.savez(p, **d)
-    return d
+    w = projection['w'] if isinstance(projection, dict) else projection
+    b = projection.get('b') if isinstance(projection, dict) else None
+    n, hd = gate_output.shape
+    c = scale * jnp.einsum('ihd,hde->ihe', gate_output.reshape(n,num_heads,hd//num_heads),
+                          w.reshape(num_heads,hd//num_heads,-1))
+    bias = jnp.zeros(w.shape[-1],dtype=c.dtype) if b is None else scale*b
+    return c, bias
+
+
+def analyze(folder, nconf=64, checkpoint=None, sel=None, *, settings=None, lattice=None):
+    """全保存deviceから選択。未保存の実効設定・元精度格子は明示指定が必要。
+
+    各walkerの正式APIを独立JIT。自己項統計だけは、同じ層入力を固定して既存B2の
+    _diag_only介入を別途評価する（層列を再評価/更新しない）。本体の数式はコピーしない。
+    設定一時適用中に同一プロセスでProductionのtraceを並行しないこと。
+    """
+    folder = Path(folder)
+    cfg_path = folder / "config.json"
+    cfg = json.loads(cfg_path.read_text())
+    if cfg["network"]["network_type"] != "CustomScreenformer" or cfg["system"]["ndim"] != 2:
+        raise ValueError("この入口は2D CustomScreenformer専用です")
+    effective, provenance = _effective_settings(cfg, settings, None)
+    stored_lattice = lattice_from_config(cfg)
+    if isinstance(cfg["system"]["pbc_lattice"], str) and lattice is None:
+        raise ValueError("文字列化格子は元精度を保証できません。lattice=または--latticeで元の格子を指定してください")
+    L = stored_lattice if lattice is None else lattice_from_config({"system": {"pbc_lattice": lattice}})
+    candidates = sorted(folder.glob("qmcjax_ckpt_*.npz"))
+    if checkpoint is None and not candidates:
+        raise FileNotFoundError("checkpointがありません: " + str(folder))
+    ck = Path(checkpoint) if checkpoint is not None else candidates[-1]
+    with np.load(ck, allow_pickle=True) as z:
+        raw_params, data, step = z["params"].item(), z["data"].item(), int(z["t"])
+    devices, walkers = data["positions"].shape[:2]
+    for leaf in jax.tree_util.tree_leaves(raw_params):
+        a = np.asarray(leaf)
+        if a.ndim == 0 or a.shape[0] != devices or any(not np.array_equal(a[0], v) for v in a[1:]):
+            raise ValueError("checkpointのパラメータreplicaが不一致または未対応のshapeです")
+    P = jax.tree_util.tree_map(lambda a: np.asarray(a)[0], raw_params)
+    batch = {}
+    for key in ("positions", "spins", "atoms", "charges"):
+        a = np.asarray(data[key])
+        if a.shape[:2] != (devices, walkers):
+            raise ValueError("checkpoint dataのdevice/walker軸が不一致: " + key)
+        batch[key] = a.reshape((-1,) + a.shape[2:])
+    if nconf is not None and (type(nconf) is not int or nconf <= 0):
+        raise ValueError("nconfは正の整数です")
+    count = min(nconf or devices*walkers, devices*walkers)
+    indices = np.linspace(0, devices*walkers-1, count).astype(int)
+    batch = {key: value[indices] for key, value in batch.items()}
+    if sel is not None:
+        indices = np.asarray(sel)
+        if indices.ndim != 1 or indices.size == 0 or indices.dtype.kind not in 'iu' or np.any(indices < 0) or np.any(indices >= devices*walkers):
+            raise ValueError("selは全保存walkerに対する空でない整数index列です")
+        # nconfによる予備選択ではなく、元のdevice-major indexから選ぶ。
+        batch = {key: np.asarray(data[key]).reshape((-1,)+np.asarray(data[key]).shape[2:])[indices]
+                 for key in ("positions","spins","atoms","charges")}
+        count = len(indices)
+    if not effective["jax_enable_x64"] and any(np.asarray(a).dtype == np.float64
+            for a in jax.tree_util.tree_leaves((P, batch))):
+        raise ValueError("float64 checkpointをx64無効で切り捨てることはできません")
+
+    globals_before = {k: getattr(CS, k) for k in SETTINGS[:6]}
+    try:
+        for key in SETTINGS[:6]:
+            setattr(CS, key, effective[key])
+        with jax.experimental.enable_x64(effective["jax_enable_x64"]), jax.default_matmul_precision(effective["jax_default_matmul_precision"]):
+            nspins = tuple(cfg["system"]["electrons"])
+            network = cfg["network"]
+            feature_kwargs = dict(network.get("make_feature_layer_kwargs", {}))
+            if "lattice" in feature_kwargs:
+                value = feature_kwargs["lattice"]
+                feature_L = lattice_from_config({"system": {"pbc_lattice": value}})
+                if isinstance(value, str) and lattice is None:
+                    raise ValueError("feature latticeも文字列です。元精度の共通latticeを指定してください")
+                if lattice is not None:
+                    if not np.array_equal(feature_L, stored_lattice):
+                        raise ValueError("共通格子の上書きに対してfeature latticeが異なります。元の構造化configが必要です")
+                    feature_L = L
+                feature_kwargs["lattice"] = jnp.asarray(feature_L)
+            if any(isinstance(v, str) and v.startswith("unserializable object:") for v in feature_kwargs.values()):
+                raise ValueError("feature kwargsに復元不能な配列があります")
+            if not network.get("make_feature_layer_fn") or not isinstance(network.get("make_feature_layer_kwargs"),dict):
+                raise ValueError("feature factoryとkwargsをconfigに明示してください。特徴の定義を推測しません")
+            feature_name = network["make_feature_layer_fn"]
+            module, name = feature_name.rsplit(".", 1)
+            feature_factory = getattr(importlib.import_module(module), name)
+            fl = feature_factory(natoms=batch["charges"].shape[-1], nspins=nspins, ndim=2, **feature_kwargs)
+            opts = dict(network["CustomScreenformer"])
+            required = ("num_layers", "num_heads", "attn_dim", "value_dim", "mlp_dim",
+                        "num_perceptrons_per_layer", "use_layer_norm", "mlp_activation_fct",
+                        "use_softmask", "use_gate", "use_tanh_norm", "use_fixed_value", "use_output_scale")
+            if any(k not in opts for k in required):
+                raise ValueError("必須のScreenformer構成がconfigにありません")
+            # HF/波動関数構成はtrunk診断には不要。外部HF表もロードしない。
+            hf_keys = {"lj_hf_path", "lj_lam", "lj_cusps", "lj_net_scale", "lj_jastrow"}
+            unknown = set(opts) - {a.name for a in attr.fields(CS.ScreenformerOptions)} - hf_keys
+            if unknown:
+                raise ValueError("未対応のScreenformer設定: " + str(sorted(unknown)))
+            opts = {k: v for k, v in opts.items() if k not in hf_keys}
+            dref = CS._max_periodic_distance(jnp.asarray(L))
+            # 初期値だけの設定。診断はinitを呼ばず、学習済み配列をそのまま使う。
+            opts["init_softmask_centres"] = _centres_from(P, dref, opts["num_layers"])
+            ap0 = P["layers"]["attention"][0]
+            opts["init_softmask_rings"] = None
+            if "mask_rings" in ap0:
+                delta = float(np.logaddexp(0., np.asarray(ap0["mask_omega"]))[0])
+                opts["init_softmask_rings"] = (np.asarray(ap0["mask_rings"]), delta,
+                    float(ap0["mask_envp"]), "gauss" if "mask_gauss" in ap0 else "sin")
+            options = CS.ScreenformerOptions(feature_layer=fl, pbc_lattice=jnp.asarray(L), ndim=2, **opts)
+            if len(P["layers"]["attention"]) != options.num_layers:
+                raise ValueError("configとcheckpointの層数が不一致")
+            ln = P["layers"]["ln"]
+            if len(ln) != (options.num_layers if options.use_layer_norm else 0):
+                raise ValueError("configとcheckpointのLayerNorm構造が不一致")
+            for ap, mlp in zip(P["layers"]["attention"], P["layers"]["mlp"]):
+                flags = {"v_w": not options.use_fixed_value, "g_w": options.use_gate,
+                         "out_scale": options.use_output_scale, "mask_omega": options.use_softmask}
+                if any((key in ap) != enabled for key, enabled in flags.items()):
+                    raise ValueError("configとcheckpointのValue/Gate/Window/出力倍率の構造が不一致")
+                if (ap["q_w"].shape != (options.mlp_dim, options.num_heads*options.attn_dim)
+                        or ap["k_w"].shape != ap["q_w"].shape
+                        or ap["trim_rho"].shape != (options.num_heads,)
+                        or len(mlp) != options.num_perceptrons_per_layer):
+                    raise ValueError("configとcheckpointのAttention/MLP次元が不一致")
+            diagnostic = jax.jit(CS.make_screenformer_diagnostic(nspins, options))
+            geometry = jax.jit(networks.make_periodic_construct_input_features(jnp.asarray(L)), static_argnames=("ndim",))
+            core_options = dict(num_electrons=sum(nspins),num_heads=options.num_heads,
+                attn_dim=options.attn_dim,value_dim=options.value_dim,d_ref=dref,
+                use_softmask=options.use_softmask,use_fixed_value=options.use_fixed_value,
+                use_tanh_norm=options.use_tanh_norm,use_gate=options.use_gate,
+                use_output_scale=options.use_output_scale)
+            # 自己項だけの反実仮想も本体kernelを使う。QKV/Trim/窓/非線形の別実装はない。
+            self_attention = jax.jit(lambda ap,x,d,pair: CS.attention.screening_attention(
+                dict(ap,_diag_only=jnp.ones(options.num_heads)),x,d,pair,options=core_options,
+                trim_max=effective['TRIM_MAX'],trim_pow=effective['TRIM_POW'],
+                win_shape=effective['WIN_SHAPE'],freeze_w=effective['FREEZE_W'],
+                clip_r=effective['CLIP_R'],clip_beta=effective['CLIP_BETA'],return_aux=True))
+            samples=[]
+            for i in range(count):
+                args=[jnp.asarray(batch[k][i]) for k in ('positions','spins','atoms','charges')]
+                final_x,layers=diagnostic(P,*args)
+                distance=geometry(args[0],args[2],ndim=2)[3][...,0]
+                rows=[]
+                for record,ap in zip(layers,P['layers']['attention']):
+                    aux=record['attention']
+                    _,self_aux=self_attention(ap,record['input'],distance,aux['pair_features'])
+                    scale=jnp.exp(ap['out_scale']) if options.use_output_scale else 1.
+                    c,bias=projected_heads(aux['gate_output'],ap['attn_output'],options.num_heads,scale)
+                    cd,_=projected_heads(self_aux['gate_output'],ap['attn_output'],options.num_heads,scale)
+                    a=aux['aggregate']; ad=self_aux['aggregate']
+                    norm=lambda value: np.linalg.norm(np.asarray(value),axis=-1)
+                    rows.append(dict(C=norm(c),Cd=norm(cd),Cp=norm(c-cd),X=norm(record['input']),
+                        R=norm(c.sum(axis=1)),A=norm(a),Ap=norm(a-ad),
+                        head_vectors=np.asarray(c),self_head_vectors=np.asarray(cd),bias=np.asarray(bias),
+                        attention_output=np.asarray(record['attention_output']),
+                        decomposition_sum=np.asarray(c.sum(axis=1)+bias),
+                        aggregation_weights=np.asarray(aux['aggregation_weights']),
+                        weights_window=np.asarray(aux['weights_window']),aggregate=np.asarray(a),
+                        self_aggregate=np.asarray(ad),gate_output=np.asarray(aux['gate_output']),
+                        tanh_output=np.asarray(aux['tanh_output']),weights_intervened=np.asarray(aux['weights']),
+                        layer_input=np.asarray(record['input']),layer_output=np.asarray(record['output'])))
+                samples.append({key:np.stack([row[key] for row in rows]) for key in rows[0]})
+            result={key:np.stack([s[key] for s in samples]) for key in samples[0]}
+            for key in ('C','Cd','Cp','X','R','A','Ap'):
+                result[key]=result[key].mean(axis=(0,2))
+            # 旧CLIの派生指標も定義を維持する。ゼロ総量は未定義としてNaNを明示する。
+            for source,target in (('C','q_C'),('Cp','q_Cp'),('Ap','q_Ap')):
+                power=result[source]**2
+                result[target]=power/power.sum() if power.sum()>0 else np.full_like(power,np.nan)
+            A=result['A']
+            unsat=A/np.maximum(np.tanh(A),1e-12)
+            power=(result['Cp']*unsat)**2
+            result['q_g_heuristic']=power/power.sum() if power.sum()>0 else np.full_like(power,np.nan)
+            result['compression_heuristic']=np.divide(np.tanh(A),A,out=np.full_like(A,np.nan),where=A>1e-12)
+            result['alignment_ratio']=np.divide(result['C'].sum(axis=-1),result['R'],
+                out=np.full_like(result['R'],np.nan),where=result['R']>0)
+            # 表示用の長さだけをcheckpointから読む。輪切りsigmaは旧head_contribと同じ全幅。
+            widths=[];centres=[];outer=[];representative=[];shells=[]
+            for ap in P['layers']['attention']:
+                sigma=np.asarray(jax.nn.softplus(ap['mask_omega'])) if 'mask_omega' in ap else np.full(options.num_heads,np.nan)
+                centre=np.asarray(ap['mask_centre']) if 'mask_centre' in ap else np.zeros_like(sigma)
+                shell='mask_centre' in ap or 'mask_rings' in ap
+                edge=centre+sigma
+                if 'mask_rings' in ap:
+                    rings=np.asarray(ap['mask_rings']);centre=.5*(rings[:-1]+rings[1:])
+                    sigma=np.diff(rings);edge=rings[1:]
+                widths.append(sigma);centres.append(centre);outer.append(edge)
+                representative.append(centre if shell else sigma);shells.append(shell)
+            result.update(w=np.asarray(representative),w_sigma=np.asarray(widths),
+                w_centre=np.asarray(centres),w_outer=np.asarray(outer),shell=np.asarray(all(shells)),
+                softmax=np.asarray(False),fixv=np.asarray(options.use_fixed_value),lattice=L,
+                layer_index=np.arange(options.num_layers),**batch)
+    finally:
+        for key, value in globals_before.items():
+            setattr(CS, key, value)
+    result["metadata"] = dict(method="head-contrib-diagnostic-v1", weight_definition="aggregation_weights",
+        legacy_weight_definition="Trim^2 * legacy cosine window; fixed-Value diagonal removed; other interventions ignored",
+        interpretation="independent diagnostic reevaluation; not Production-internal bit patterns",
+        checkpoint=str(ck.resolve()), checkpoint_sha256=hashlib.sha256(ck.read_bytes()).hexdigest(),
+        config_sha256=hashlib.sha256(cfg_path.read_bytes()).hexdigest(), step=step,
+        settings=effective, settings_provenance=provenance, lattice_override=lattice is not None,
+        selected_indices=indices.tolist(), saved_devices=devices,
+        feature_factory=feature_name, feature_kwargs=network.get("make_feature_layer_kwargs", {}),
+        network_options=network["CustomScreenformer"], jax=jax.__version__, jaxlib=jaxlib.__version__, numpy=np.__version__,
+        parameter_dtypes=sorted({str(np.asarray(a).dtype) for a in jax.tree_util.tree_leaves(P)}),
+        input_dtypes={key: str(value.dtype) for key, value in batch.items()},
+        backend=jax.default_backend(), devices=[str(d) for d in jax.devices()],
+        xla_flags=os.environ.get("XLA_FLAGS"), runtime_settings_recovered_from_checkpoint=False,
+        source_sha256={str(Path(path).resolve()): hashlib.sha256(Path(path).read_bytes()).hexdigest()
+            for path in {__file__, CS.__file__, CS.attention.__file__, networks.__file__,
+                         CS.network_blocks.__file__, importlib.import_module('screening_analysis.attn_probe').__file__,
+                         importlib.import_module(feature_factory.__module__).__file__}},
+        wavefunction_status="not evaluated; Head norms do not certify wavefunction stability")
+    result['metadata'].update(head_definition='c_h=exp(s_O)*gate_output_h@W_O[h]; shared bias separate',
+        self_definition='same layer input, native B2 _diag_only=1 counterfactual; no layer update',
+        Cp_definition='mean norm(c_h-c_h(self)); nonlinear self-response difference, not pure two-body',
+        statistic='mean norm over walkers/electrons; squared shares square the mean over ALL layers/heads, not mean-square',
+        q_g_definition='normalize((Cp*A/max(tanh(A),1e-12))**2); legacy heuristic, not exact unsaturation',
+        decomposition='sum_h c_h + bias; analysis only, different floating-point accumulation order')
+    return result
+
+
+def compute(folder,nconf=64,checkpoint=None,sel=None,*,settings=None,lattice=None):
+    """旧8要素tupleのshapeを保持。Screening専用、意味はmodule docstring参照。"""
+    r=analyze(folder,nconf,checkpoint,sel,settings=settings,lattice=lattice)
+    meta=dict(shell=r['shell'],sigma=r['w_sigma'],centre=r['w_centre'],outer=r['w_outer'],
+              A=r['A'],Ap=r['Ap'],fixv=r['fixv'],metadata=r['metadata'])
+    return *(r[k] for k in ('C','Cd','Cp','X','R','w','softmax')),meta
+
+
+def save(result,output):
+    """旧キャッシュも新規結果も上書きしない。object配列を含まないNPZ。"""
+    output=Path(output)
+    if output.name in ('head_contrib.npz','head_contrib.npy'):
+        raise ValueError('旧解析名には保存しません')
+    payload={k:v for k,v in result.items() if k!='metadata'}
+    payload['metadata_json']=np.asarray(json.dumps(result['metadata'],ensure_ascii=False))
+    with output.open('xb') as handle:np.savez(handle,**payload)
+
+
+def cached(folder,nconf=64,*,settings=None,lattice=None,checkpoint=None,sel=None,output=None):
+    """新方式で計算・保存。旧cacheを読まず、既存新cacheも再利用/削除しない。
+
+    条件不明のcacheを黙って再利用しない。再実行は明示的な別outputを指定する。
+    """
+    target=Path(output) if output else Path(folder)/'head_contrib_diagnostic_v1.npz'
+    if target.exists():raise FileExistsError('既存結果は上書きしません: '+str(target))
+    result=analyze(folder,nconf,checkpoint,sel,settings=settings,lattice=lattice)
+    save(result,target)
+    return result
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("folder")
-    ap.add_argument("--nconf", type=int, default=64); a = ap.parse_args()
-    z = cached(a.folder, a.nconf)
-    C, Cd, Cp, X, R, w = z["C"], z["Cd"], z["Cp"], z["X"], z["R"], z["w"]
-    softmax = bool(np.all(np.isnan(w)))
-    NL, NH = C.shape
-    sq = 100 * C ** 2 / (C ** 2).sum()
-    sqp = 100 * Cp ** 2 / (Cp ** 2).sum()
-    print("  %s   %d層×%dヘッド   %s"
-          % (os.path.basename(a.folder), NL, NH, "softmax" if softmax else "遮蔽"))
-    for l in range(NL):
-        print("\n  第%d層   ‖x‖ = %.3f,  Σ‖c‖/‖Σc‖ = %.2f （直交なら √H = %.2f）"
-              % (l + 1, X[l], C[l].sum() / R[l], np.sqrt(NH)))
-        _hd = "中心" if bool(z.get("shell", False)) else "窓  "
-        print("    %s    寄与率   うち 2 体   2 体の割合   2 体だけで見た寄与率" % _hd)
-        for h in np.argsort(w[l] if not softmax else np.arange(NH)):
-            print("    %6s %7.1f%% %8.4f %10.2f %14.1f%%"
-                  % ("--" if softmax else "%.2f" % w[l, h], sq[l, h], Cp[l, h],
-                     Cp[l, h] / max(C[l, h], 1e-9), sqp[l, h]))
-    if not softmax:
-        wt = (Cp ** 2) / (Cp ** 2).sum()
-        print("\n  2 体の寄与で重み付けした平均%s = %.4f （周期ノルム単位）"
-              % ("窓の山" if bool(z.get("shell", False)) else "窓幅",
-                 float((wt * w).sum())))
-        if "Ap" in z:
-            # [PROBE] TanhNorm の前後で読み出しがどれだけ変わるか。
-            # q_h は c_h（TanhNorm・ゲート・W_O の後）で定義しているが、
-            # TanhNorm はヘッドごとに飽和するので、相手を多く見るヘッドほど潰れる。
-            A_, Ap_ = z["A"], z["Ap"]
-            # TanhNorm はベクトル全体に tanh|a|/|a| を掛ける。その分を割り戻すと
-            # 残るのはゲートと W_O —— すなわち「学習した係数」で、読み出したいのはこれ。
-            unsat = A_ / np.maximum(np.tanh(A_), 1e-12)
-            q_a = (Ap_ ** 2) / (Ap_ ** 2).sum()                 # 窓が集めた量（ほぼ幾何）
-            q_c = (Cp ** 2) / (Cp ** 2).sum()                   # いまの定義
-            Cg = Cp * unsat
-            q_g = (Cg ** 2) / (Cg ** 2).sum()                   # 飽和を割り戻した定義
-            print("\n  読み出しの 3 通り   a = 窓が集めた量（幾何）/ c = いまの定義 / g = 飽和を割り戻す")
-            print("    %-6s %9s %9s %9s %9s" % ("窓の山", "q_h(a)", "q_h(c)", "q_h(g)", "圧縮率"))
-            for l in range(NL):
-                for h in np.argsort(w[l]):
-                    _cr = (float(np.tanh(A_[l, h]) / A_[l, h]) if A_[l, h] > 1e-12
-                           else float("nan"))
-                    print("    %6.3f %8.2f%% %8.2f%% %8.2f%% %9s"
-                          % (w[l, h], 100 * q_a[l, h], 100 * q_c[l, h], 100 * q_g[l, h],
-                             "—（相手なし）" if not np.isfinite(_cr) else "%.3f" % _cr))
-            tv = lambda p, q: 0.5 * float(np.abs(p - q).sum())
-            print("    平均の山:  a %.4f   c %.4f   g %.4f" %
-                  (float((q_a * w).sum()), float((q_c * w).sum()), float((q_g * w).sum())))
-            print("    全変動距離:  a-c %.4f   a-g %.4f   c-g %.4f" %
-                  (tv(q_a, q_c), tv(q_a, q_g), tv(q_c, q_g)))
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('folder');parser.add_argument('--nconf',type=int,default=64)
+    parser.add_argument('--checkpoint');parser.add_argument('--settings');parser.add_argument('--lattice',type=json.loads)
+    parser.add_argument('--output');args=parser.parse_args()
+    z=cached(args.folder,args.nconf,checkpoint=args.checkpoint,settings=args.settings,lattice=args.lattice,output=args.output)
+    C,Cp=z['C'],z['Cp']
+    print('head-contrib-diagnostic-v1: 独立診断。Cpは非線形な自己項との差（純粋な二体/エネルギー寄与ではない）')
+    total=np.sum(C**2)
+    for l in range(C.shape[0]):
+        ratio=np.sum(C[l])/z['R'][l] if z['R'][l]>0 else np.nan
+        print('layer %d: mean-norm alignment ratio=%.6g (等ノルム・直交Headならsqrt(H))'%(l,ratio))
+        for h in range(C.shape[1]):
+            print('  head %d: C=%.6g Cd=%.6g Cp=%.6g square-of-mean share=%.6g'%
+                (h,C[l,h],z['Cd'][l,h],Cp[l,h],C[l,h]**2/total if total else np.nan))
+    delta=z['decomposition_sum']-z['attention_output']
+    print('sum(heads)+shared bias vs diagnostic Attention: max_abs=%.6g RMS=%.6g'%
+          (np.max(np.abs(delta)),np.sqrt(np.mean(delta**2))))
+    print('q_Ap / q_Cp / q_g_heuristic（最後は平均後の飽和補正heuristic、正確な逆変換ではない）')
+    for l in range(C.shape[0]):
+        for h in range(C.shape[1]):
+            print('  layer %d head %d: %.6g / %.6g / %.6g'%(l,h,z['q_Ap'][l,h],z['q_Cp'][l,h],z['q_g_heuristic'][l,h]))
 
 
-if __name__ == "__main__":
-    main()
+if __name__=='__main__':main()

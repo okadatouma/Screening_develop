@@ -1,0 +1,40 @@
+{
+  "physics-v1.json": {
+    "methods": 7,
+    "failures": 0,
+    "errors": 0,
+    "records": 180
+  },
+  "two-devices-v1.json": {
+    "methods": 1,
+    "failures": 0,
+    "errors": 0,
+    "records": 6
+  },
+  "downstream-v3.json": {
+    "methods": 4,
+    "failures": 0,
+    "errors": 0,
+    "records": 31
+  },
+  "additional-tests.txt": {
+    "methods": 22,
+    "failures": 0,
+    "errors": 0
+  },
+  "frozen-method.txt": {
+    "methods": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "original_33": {
+    "PASS": 30,
+    "ERROR": 2,
+    "FAIL": 1
+  },
+  "R08": {
+    "ordinary_PBC_evaluation_only_reporting_healthy": false,
+    "normal_training_csv_checked": true,
+    "production_fix_outside_G2b": false
+  }
+}

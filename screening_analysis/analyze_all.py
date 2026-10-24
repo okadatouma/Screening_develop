@@ -22,7 +22,13 @@ def folder(tag):
 
 
 def sh(*cmd):
-    print("\n$", " ".join(cmd)); subprocess.run(cmd, cwd=ROOT, check=False)
+    if "--out" in cmd:
+        target = cmd[cmd.index("--out") + 1]
+        target = target if os.path.isabs(target) else os.path.join(ROOT, target)
+        if os.path.exists(target):
+            raise FileExistsError("既存の図は上書きしません: " + target)
+    print("\n$", " ".join(cmd))
+    subprocess.run(cmd, cwd=ROOT, check=True)
 
 
 if __name__ == "__main__":
@@ -32,8 +38,11 @@ if __name__ == "__main__":
     ap.add_argument("--nu", nargs="+", default=None)
     ap.add_argument("--lam", nargs="+", default=None)
     ap.add_argument("--nconf", type=int, default=6144)
-    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--force", action="store_true", help="--scan/--nuとの併用は不可（旧summaryによる誤作図を防止）")
     a = ap.parse_args()
+    if a.force and (a.scan or a.nu):
+        ap.error("--forceの別名summaryを後続の図はまだ読みません。古い結果で作図しないため停止します。"
+                 "moire_summary.py --force --output 新規JSONを単独で実行してください")
     py = sys.executable
     F = lambda t: folder(t)                              # noqa: E731
     ext = ["--force"] if a.force else []

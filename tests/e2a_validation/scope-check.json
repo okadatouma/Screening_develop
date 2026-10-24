@@ -1,0 +1,17 @@
+{
+  "changed_preexisting": [
+    "tests/RESULTS.md",
+    "screening_analysis/head_contrib.py"
+  ],
+  "production_files_unchanged": true,
+  "production_python_files": 48,
+  "other_analysis_files_unchanged": true,
+  "other_analysis_files": 116,
+  "all_preexisting_test_sources_refs_measurements_unchanged": true,
+  "preexisting_test_files_checked": 417,
+  "snapshots_checkpoints_research_data_unchanged": true,
+  "permitted_new_files": [
+    "tests/check_head_contrib.py",
+    "tests/e2a_validation/*"
+  ]
+}

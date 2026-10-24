@@ -1,0 +1,98 @@
+{
+  "interpreters": [
+    {
+      "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+      "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "jax": null,
+      "jaxlib": null,
+      "folx": null,
+      "kfac-jax": null,
+      "optax": null,
+      "numpy": null,
+      "chex": null,
+      "ml-collections": null
+    },
+    {
+      "python": "3.13.14 (main, Jul 18 2026, 16:56:45) [Clang 22.1.3 ]",
+      "executable": "/Users/toma/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/bin/python3",
+      "jax": null,
+      "jaxlib": null,
+      "folx": null,
+      "kfac-jax": null,
+      "optax": null,
+      "numpy": null,
+      "chex": null,
+      "ml-collections": null
+    },
+    {
+      "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+      "executable": "/Users/toma/academic/.venv-hubbard/bin/python",
+      "jax": null,
+      "jaxlib": null,
+      "folx": null,
+      "kfac-jax": null,
+      "optax": null,
+      "numpy": "2.0.2",
+      "chex": null,
+      "ml-collections": null
+    },
+    {
+      "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+      "executable": "/Users/toma/academic/reserch/code/fermi_machine/.venv/bin/python",
+      "jax": null,
+      "jaxlib": null,
+      "folx": null,
+      "kfac-jax": null,
+      "optax": null,
+      "numpy": "2.0.2",
+      "chex": null,
+      "ml-collections": null
+    }
+  ],
+  "cpu_logical_count": 10,
+  "machine": "arm64",
+  "jax_devices": null,
+  "jax_precision": null,
+  "reason": "JAX is not installed in any inspected interpreter",
+  "environment": {},
+  "search_scope": [
+    "/Users/toma/academic",
+    "/Users/toma/.local/share/uv",
+    "/Users/toma/.venv",
+    "/usr/local"
+  ],
+  "search_limit": "environment/checkpoint directory scan up to depth 8; .git/node_modules/cache excluded; no remote server accessed",
+  "display_hardware": {
+    "SPDisplaysDataType": [
+      {
+        "_name": "Apple M5",
+        "spdisplays_metal": "spdisplays_supported",
+        "spdisplays_vendor": "sppci_vendor_Apple",
+        "sppci_bus": "spdisplays_builtin",
+        "sppci_cores": "10",
+        "sppci_device_type": "spdisplays_gpu",
+        "sppci_model": "Apple M5"
+      }
+    ]
+  },
+  "layernorm": {
+    "CustomPsiformer": {
+      "line": 63,
+      "ast_sha256": "aae394012b08edbb7489de51459e430122e3298d2dea7daf77af7f960b0e2e25",
+      "source": "def make_layer_norm() ->...:\n  \"\"\"Implementation of LayerNorm.\"\"\"\n\n  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:\n    params = {}\n    params['scale'] = jnp.ones(param_shape)\n    params['offset'] = jnp.zeros(param_shape)\n    return params\n\n  def apply(params: networks.ParamTree,\n            inputs: jnp.ndarray,\n            axis: int = -1) -> jnp.ndarray:\n    mean = jnp.mean(inputs, axis=axis, keepdims=True)\n    variance = jnp.var(inputs, axis=axis, keepdims=True)\n    eps = 1e-5\n    inv = params['scale'] * jax.lax.rsqrt(variance + eps)\n    return inv * (inputs - mean) + params['offset']\n\n  return init, apply"
+    },
+    "CustomScreenformer": {
+      "line": 148,
+      "ast_sha256": "aae394012b08edbb7489de51459e430122e3298d2dea7daf77af7f960b0e2e25",
+      "source": "def make_layer_norm() ->...:\n  \"\"\"Implementation of LayerNorm.\"\"\"\n\n  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:\n    params = {}\n    params['scale'] = jnp.ones(param_shape)\n    params['offset'] = jnp.zeros(param_shape)\n    return params\n\n  def apply(params: networks.ParamTree,\n            inputs: jnp.ndarray,\n            axis: int = -1) -> jnp.ndarray:\n    mean = jnp.mean(inputs, axis=axis, keepdims=True)\n    variance = jnp.var(inputs, axis=axis, keepdims=True)\n    eps = 1e-5\n    inv = params['scale'] * jax.lax.rsqrt(variance + eps)\n    return inv * (inputs - mean) + params['offset']\n\n  return init, apply"
+    },
+    "SlaterNet": {
+      "line": 58,
+      "ast_sha256": "aae394012b08edbb7489de51459e430122e3298d2dea7daf77af7f960b0e2e25",
+      "source": "def make_layer_norm() ->...:\n  \"\"\"Implementation of LayerNorm.\"\"\"\n\n  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:\n    params = {}\n    params['scale'] = jnp.ones(param_shape)\n    params['offset'] = jnp.zeros(param_shape)\n    return params\n\n  def apply(params: networks.ParamTree,\n            inputs: jnp.ndarray,\n            axis: int = -1) -> jnp.ndarray:\n    mean = jnp.mean(inputs, axis=axis, keepdims=True)\n    variance = jnp.var(inputs, axis=axis, keepdims=True)\n    eps = 1e-5\n    inv = params['scale'] * jax.lax.rsqrt(variance + eps)\n    return inv * (inputs - mean) + params['offset']\n\n  return init, apply"
+    }
+  },
+  "layernorm_ast_identical": true,
+  "available_checkpoints": [],
+  "changed_production_sources": []
+}

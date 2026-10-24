@@ -1,0 +1,22 @@
+{
+  "tests": {
+    "test_off_on_forward_and_jit": "PASS",
+    "test_derivatives_with_aux_materialized": "PASS",
+    "test_window_boundaries_off_on": "PASS",
+    "test_internal_values_against_independent_equations": "PASS",
+    "test_network_values_and_derivatives": "PASS"
+  },
+  "precisions": [
+    "float32",
+    "float64"
+  ],
+  "backend": "cpu",
+  "logs": [
+    "aux-output.txt",
+    "aux-values-output.txt",
+    "aux-boundary-output.txt"
+  ],
+  "provenance": "4 original methods plus new boundary method; independent-equation method rerun after adding stage assertions",
+  "aux_training_snapshot_float32": "exact PASS",
+  "memory_performance": "performance.json"
+}

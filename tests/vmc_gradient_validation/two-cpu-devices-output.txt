@@ -1,0 +1,8 @@
+test_pmap_local_scores_then_trainer_pmean (__main__.DeviceAggregation.test_pmap_local_scores_then_trainer_pmean) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.558s
+
+OK
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

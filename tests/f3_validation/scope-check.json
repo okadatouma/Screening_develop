@@ -1,0 +1,24 @@
+{
+  "changed_existing_files": {
+    "periodicwave/networks.py": {
+      "before": "f01b93d4d708e935dd8363f339a1d88ad20b3dcdb4e48716f9e1bdf5be549613",
+      "after": "d0b6e1a39dc1338a92b66e8ae1a9177144fc8ff706e6a41784e57e783fec93e5"
+    },
+    "tests/CONTRACTS.md": {
+      "before": "5095d56795b5100306b967f5a75b3efa695ea8858419b0195af4b3f77654c262",
+      "after": "69da02682d1625ad3955d232a6b2b7af0ded9f49b1e79b75094514773cab0463"
+    },
+    "tests/README.md": {
+      "before": "8a167112cba2ed1eb273289283483a8cf682187ea7a74584c9474ac17ecb4159",
+      "after": "9d7224d59a4c6d8dde83270acdb09b1ced014eb1a06724cb80797c38b34f2524"
+    },
+    "tests/RESULTS.md": {
+      "before": "55abc696b82cffd21e56e908ce855a2659eede86c78bed184d394e7f9a7f2c5d",
+      "after": "686a89bc8799ca923d3e6bed9b6c4ff39d9c862db5914edd0d9fa2a886658ffe"
+    }
+  },
+  "new_application_file": "periodicwave/wavefunction.py",
+  "unchanged_existing_hashed_files": 667,
+  "analysis_or_other_application_changes": [],
+  "note": "README.md and HANDOFF.md updated for F3. Existing research/snapshot/checkpoint files in the manifest unchanged."
+}

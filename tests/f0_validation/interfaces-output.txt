@@ -1,0 +1,282 @@
+test_current_periodic_isotropic_envelope_shape_incompatibility (tests.check_interfaces.CurrentContracts.test_current_periodic_isotropic_envelope_shape_incompatibility) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+ok
+test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+
+  test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=False, route='psiformer') ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+  test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=False, route='screen') ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+  test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=False, route='slater') ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+  test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=True, route='psiformer') ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+  test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=True, route='screen') ... ERROR
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+  test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=True, route='slater') ... ERROR
+test_geometry_shapes_orientation_and_masked_derivatives (tests.check_interfaces.CurrentContracts.test_geometry_shapes_orientation_and_masked_derivatives) ... making construct_input_features with periodic norm
+ERROR
+test_node_and_near_node_current_behavior (tests.check_interfaces.CurrentContracts.test_node_and_near_node_current_behavior) ... ok
+test_orbital_packing_merged_jastrow_and_envelope_position (tests.check_interfaces.CurrentContracts.test_orbital_packing_merged_jastrow_and_envelope_position) ... get_jastrow: Using SIMPLE_EE Jastrow with parameters:
+{'ndim': 2, 'interaction_strength': 2.0}
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+ok
+test_determinant_sum_real_sign_and_complex_phase (tests.check_interfaces.IndependentPhysics.test_determinant_sum_real_sign_and_complex_phase) ... ok
+test_ewald_independent_background_self_and_length_scaling (tests.check_interfaces.IndependentPhysics.test_ewald_independent_background_self_and_length_scaling) ... making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+making 2DCoulomb potential with energy scale: 2.0
+ok
+test_features_values_covariance_and_pbc (tests.check_interfaces.IndependentPhysics.test_features_values_covariance_and_pbc) ... making construct_input_features with periodic norm
+ERROR
+test_hf_nn_correction_dynamic_spins_and_exchange (tests.check_interfaces.IndependentPhysics.test_hf_nn_correction_dynamic_spins_and_exchange) ... [λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp1_lfl3ks/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp1_lfl3ks/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow なし
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+test_lambda_spin_flip_and_weighted_complex_kinetic (tests.check_interfaces.IndependentPhysics.test_lambda_spin_flip_and_weighted_complex_kinetic) ... ERROR
+test_moire_value_derivatives_and_local_energy (tests.check_interfaces.IndependentPhysics.test_moire_value_derivatives_and_local_energy) ... make_triangular_potential: using [U, phi/pi] = [0.7, 0.06366197723675814]
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 0.0
+make_triangular_potential: using [U, phi/pi] = [0.7, 0.06366197723675814]
+ERROR
+test_periodic_norm_analytic_first_second_derivatives (tests.check_interfaces.IndependentPhysics.test_periodic_norm_analytic_first_second_derivatives) ... making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+ok
+
+======================================================================
+ERROR: test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=False, route='psiformer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 78, in test_embedding_rng_tree_and_evaluation_all_three_ansatz
+    one,_=net.options.feature_layer.apply(*geom)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=False, route='screen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 78, in test_embedding_rng_tree_and_evaluation_all_three_ansatz
+    one,_=net.options.feature_layer.apply(*geom)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=False, route='slater')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 78, in test_embedding_rng_tree_and_evaluation_all_three_ansatz
+    one,_=net.options.feature_layer.apply(*geom)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=True, route='psiformer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 78, in test_embedding_rng_tree_and_evaluation_all_three_ansatz
+    one,_=net.options.feature_layer.apply(*geom)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=True, route='screen')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 78, in test_embedding_rng_tree_and_evaluation_all_three_ansatz
+    one,_=net.options.feature_layer.apply(*geom)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_embedding_rng_tree_and_evaluation_all_three_ansatz (tests.check_interfaces.CurrentContracts.test_embedding_rng_tree_and_evaluation_all_three_ansatz) (x64=True, route='slater')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 78, in test_embedding_rng_tree_and_evaluation_all_three_ansatz
+    one,_=net.options.feature_layer.apply(*geom)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_geometry_shapes_orientation_and_masked_derivatives (tests.check_interfaces.CurrentContracts.test_geometry_shapes_orientation_and_masked_derivatives)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 57, in test_geometry_shapes_orientation_and_masked_derivatives
+    for value in (fn(x),jax.jacfwd(fn)(x),jax.jacfwd(jax.jacrev(fn))(x)):
+                  ~~^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 56, in <lambda>
+    lambda r:FL.make_pbc_feature_layer(1,(1,1),2,lattice=L).apply(*periodic(r,atoms,2))[1][...,:1]):
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_features_values_covariance_and_pbc (tests.check_interfaces.IndependentPhysics.test_features_values_covariance_and_pbc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 165, in test_features_values_covariance_and_pbc
+    one,pair=fl.apply(*geom(r.reshape(-1),a,2))
+             ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py", line 92, in apply
+    s_ee = jnp.einsum('il,jkl->jki', reciprocal_vecs, ee)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/einsum.py", line 309, in einsum
+    operands, contractions = contract_path(
+                             ~~~~~~~~~~~~~^
+          *operands, einsum_call=True, use_blas=True, optimize=path_type)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/opt_einsum/contract.py", line 312, in contract_path
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Einstein sum subscript 'jkl' does not contain the correct number of indices for operand 1.
+
+======================================================================
+ERROR: test_lambda_spin_flip_and_weighted_complex_kinetic (tests.check_interfaces.IndependentPhysics.test_lambda_spin_flip_and_weighted_complex_kinetic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 237, in test_lambda_spin_flip_and_weighted_complex_kinetic
+    d=networks.FermiNetData(x,spins,jnp.zeros((1,2)),jnp.zeros(1))
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/chex/_src/dataclass.py", line 250, in _init
+    return orig_init(self, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/chex/_src/dataclass.py", line 67, in new_init
+    raise ValueError(
+        "Mappable dataclass constructor doesn't support positional args."
+        "(it has the same constructor as python dict)")
+ValueError: Mappable dataclass constructor doesn't support positional args.(it has the same constructor as python dict)
+
+======================================================================
+ERROR: test_moire_value_derivatives_and_local_energy (tests.check_interfaces.IndependentPhysics.test_moire_value_derivatives_and_local_energy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/check_interfaces.py", line 281, in test_moire_value_derivatives_and_local_energy
+    d=networks.FermiNetData(x,jnp.ones(1),jnp.zeros((1,2)),jnp.zeros(1))
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/chex/_src/dataclass.py", line 250, in _init
+    return orig_init(self, *args, **kwargs)
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/chex/_src/dataclass.py", line 67, in new_init
+    raise ValueError(
+        "Mappable dataclass constructor doesn't support positional args."
+        "(it has the same constructor as python dict)")
+ValueError: Mappable dataclass constructor doesn't support positional args.(it has the same constructor as python dict)
+
+----------------------------------------------------------------------
+Ran 12 tests in 12.668s
+
+FAILED (errors=10)

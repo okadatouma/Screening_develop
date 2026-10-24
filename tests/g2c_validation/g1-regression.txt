@@ -1,0 +1,14 @@
+test_adam_trainers_against_independent_physical_gradient (__main__.CorrectedGradient.test_adam_trainers_against_independent_physical_gradient) ... ok
+test_auxiliary_contract_is_separate_and_still_known_invalid (__main__.CorrectedGradient.test_auxiliary_contract_is_separate_and_still_known_invalid) ... ok
+test_batch_chunk_and_main_jvp_linear_directional_derivative (__main__.CorrectedGradient.test_batch_chunk_and_main_jvp_linear_directional_derivative) ... ok
+test_clipping_off_inactive_active_and_centering (__main__.CorrectedGradient.test_clipping_off_inactive_active_and_centering) ... ok
+test_full_sum_covariance_ad_fd_and_production_jit (__main__.CorrectedGradient.test_full_sum_covariance_ad_fd_and_production_jit) ... ok
+test_normalized_sum_ad_finite_difference_covariance_and_conjugate (tests.check_vmc_gradients.ExactPhysics.test_normalized_sum_ad_finite_difference_covariance_and_conjugate) ... ok
+test_test_only_centered_surrogate_derivative (tests.check_vmc_gradients.ExactPhysics.test_test_only_centered_surrogate_derivative) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 42.305s
+
+OK
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'

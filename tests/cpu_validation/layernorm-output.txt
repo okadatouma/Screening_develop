@@ -1,0 +1,1 @@
+[{'x64': False, 'dtype': 'float32', 'jit_values_parameter_grad_coordinate_grad_hessian': 'exact match', 'parameter_keys': ['scale', 'offset']}, {'x64': True, 'dtype': 'float64', 'jit_values_parameter_grad_coordinate_grad_hessian': 'exact match', 'parameter_keys': ['scale', 'offset']}]

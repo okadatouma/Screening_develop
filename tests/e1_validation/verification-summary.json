@@ -1,0 +1,26 @@
+{
+  "e1_methods": "6 PASS",
+  "condition_comparisons": 24,
+  "additional_core_methods": "19 PASS",
+  "diagnostic_reference_methods": "2 PASS, including standalone 36 conditions",
+  "production_float64": "exact 902 arrays / 21651 elements",
+  "production_float32": "exact 1319 arrays / 31142 elements, including Adam/KFAC",
+  "numerical_methods": {
+    "PASS": 27,
+    "ERROR": 2,
+    "XFAIL": 2,
+    "FAIL": 2
+  },
+  "numerical_status_changes": {
+    "tests.test_known_attention.AnalysisAttention.test_K01_trim_power_four_analysis_should_match": [
+      "XFAIL",
+      "PASS"
+    ],
+    "tests.test_known_attention.AnalysisAttention.test_K01_smooth7_analysis_should_match": [
+      "XFAIL",
+      "PASS"
+    ]
+  },
+  "application_scope": "screening_analysis/attn_probe.py only",
+  "real_research_runs": "not available; synthetic saved checkpoints used"
+}

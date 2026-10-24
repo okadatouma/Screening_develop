@@ -1,0 +1,991 @@
+HloModule jit__lambda, is_scheduled=true, entry_computation_layout={(f32[4,4]{1,0}, f32[4,4]{1,0}, f32[4,6]{1,0}, f32[2]{0}, f32[], /*index=5*/f32[4,6]{1,0}, f32[2]{0}, f32[4,4]{1,0}, f32[4,4]{1,0}, f32[4,4]{1,0}, /*index=10*/f32[4,6]{1,0}, f32[2]{0}, f32[], f32[4,6]{1,0}, f32[2]{0}, /*index=15*/f32[4,4]{1,0}, f32[4]{0}, f32[4]{0}, f32[4]{0}, f32[4]{0}, /*index=20*/f32[4]{0}, f32[4]{0}, f32[4]{0}, f32[4]{0}, f32[4]{0}, /*index=25*/f32[4,4]{1,0}, f32[4]{0}, f32[4,4]{1,0}, f32[4]{0}, f32[4,4]{1,0}, /*index=30*/f32[4]{0}, f32[4,4]{1,0}, f32[2,4]{1,0}, f32[2,2]{1,0})->(f32[2,4]{1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, /*index=5*/f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, f32[2,4]{1,0}, f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, /*index=10*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, /*index=15*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=20*/f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=25*/f32[2,4]{1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, /*index=30*/f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, f32[2,4]{1,0}, f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, /*index=35*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, /*index=40*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=45*/f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=50*/f32[2,4]{1,0})}, allow_spmd_sharding_propagation_to_parameters={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true}, allow_spmd_sharding_propagation_to_output={true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true}
+
+%region_5.10 (reduce_sum.38: f32[], reduce_sum.39: f32[]) -> f32[] {
+  %reduce_sum.38 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.39 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.40 = f32[] add(%reduce_sum.38, %reduce_sum.39), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%region_5.10.clone (reduce_sum.2: f32[], reduce_sum.6: f32[]) -> f32[] {
+  %reduce_sum.2 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.6 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.7 = f32[] add(%reduce_sum.2, %reduce_sum.6), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%region_5.10.clone.1 (reduce_sum.16: f32[], reduce_sum.20: f32[]) -> f32[] {
+  %reduce_sum.16 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.20 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.21 = f32[] add(%reduce_sum.16, %reduce_sum.20), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%region_5.10.clone.2 (reduce_sum.30: f32[], reduce_sum.34: f32[]) -> f32[] {
+  %reduce_sum.30 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.34 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.35 = f32[] add(%reduce_sum.30, %reduce_sum.34), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%fused_computation (param_0.1: f32[4], param_1.5: f32[2], param_2.3: f32[2,4], param_3.3: f32[2], param_4.3: f32[4]) -> f32[2,4] {
+  %param_4.3 = f32[4]{0} parameter(4)
+  %mul.6 = f32[2,4]{1,0} broadcast(%param_4.3), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_1.5 = f32[2]{0} parameter(1)
+  %mul.5 = f32[2,4]{1,0} broadcast(%param_1.5), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.4 = f32[2,4]{1,0} multiply(%mul.6, %mul.5), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_2.3 = f32[2,4]{1,0} parameter(2)
+  %param_3.3 = f32[2]{0} parameter(3)
+  %constant.85 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.129 = f32[2]{0} broadcast(%constant.85), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.20 = f32[2]{0} multiply(%param_3.3, %broadcast.129), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.73 = f32[2,4]{1,0} broadcast(%multiply.20), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.72 = f32[2,4]{1,0} subtract(%param_2.3, %sub.73), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.3 = f32[2,4]{1,0} multiply(%mul.4, %sub.72), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_0.1 = f32[4]{0} parameter(0)
+  %add.21 = f32[2,4]{1,0} broadcast(%param_0.1), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  ROOT %add.20 = f32[2,4]{1,0} add(%mul.3, %add.21), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+}
+
+%region_6.11.clone.2 (reduce_sum.36: f32[], reduce_sum.37: f32[]) -> f32[] {
+  %reduce_sum.36 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.37 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.41 = f32[] add(%reduce_sum.36, %reduce_sum.37), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%fused_computation.1 (param_0.7: f32[2,4], param_1.11: f32[2]) -> f32[2] {
+  %param_0.7 = f32[2,4]{1,0} parameter(0)
+  %param_1.11 = f32[2]{0} parameter(1)
+  %constant.87 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.131 = f32[2]{0} broadcast(%constant.87), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.22 = f32[2]{0} multiply(%param_1.11, %broadcast.131), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.75 = f32[2,4]{1,0} broadcast(%multiply.22), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.74 = f32[2,4]{1,0} subtract(%param_0.7, %sub.75), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %square.10 = f32[2,4]{1,0} multiply(%sub.74, %sub.74), metadata={op_name="jit(<lambda>)/jit(_var)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.88 = f32[] constant(0)
+  %reduce_sum.58 = f32[2]{0} reduce(%square.10, %constant.88), dimensions={1}, to_apply=%region_6.11.clone.2, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %multiply.21 = f32[2]{0} multiply(%reduce_sum.58, %broadcast.131), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.86 = f32[] constant(1e-05)
+  %broadcast.130 = f32[2]{0} broadcast(%constant.86), dimensions={}
+  %add.22 = f32[2]{0} add(%multiply.21, %broadcast.130), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=42 source_end_column=56}
+  ROOT %rsqrt.8 = f32[2]{0} rsqrt(%add.22), metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+}
+
+%fused_computation.2 (param_0.9: f32[2,4], param_1.14: f32[4], param_2.14: f32[2], param_3.12: f32[2,4], param_4.11: f32[2], param_5.5: f32[4]) -> f32[2,4] {
+  %param_5.5 = f32[4]{0} parameter(5)
+  %mul.10 = f32[2,4]{1,0} broadcast(%param_5.5), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_2.14 = f32[2]{0} parameter(2)
+  %mul.9 = f32[2,4]{1,0} broadcast(%param_2.14), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.8 = f32[2,4]{1,0} multiply(%mul.10, %mul.9), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_3.12 = f32[2,4]{1,0} parameter(3)
+  %param_4.11 = f32[2]{0} parameter(4)
+  %constant.89 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.132 = f32[2]{0} broadcast(%constant.89), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.23 = f32[2]{0} multiply(%param_4.11, %broadcast.132), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.77 = f32[2,4]{1,0} broadcast(%multiply.23), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.76 = f32[2,4]{1,0} subtract(%param_3.12, %sub.77), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.7 = f32[2,4]{1,0} multiply(%mul.8, %sub.76), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_1.14 = f32[4]{0} parameter(1)
+  %add.25 = f32[2,4]{1,0} broadcast(%param_1.14), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %add.24 = f32[2,4]{1,0} add(%mul.7, %add.25), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_0.9 = f32[2,4]{1,0} parameter(0)
+  ROOT %add.23 = f32[2,4]{1,0} add(%add.24, %param_0.9), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=574 source_end_line=574 source_column=10 source_end_column=24}
+}
+
+%fused_computation.3 (param_0.13: f32[2,4], param_1.22: f32[4]) -> f32[2,4] {
+  %param_0.13 = f32[2,4]{1,0} parameter(0)
+  %param_1.22 = f32[4]{0} parameter(1)
+  %add.29 = f32[2,4]{1,0} broadcast(%param_1.22), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %add.28 = f32[2,4]{1,0} add(%param_0.13, %add.29), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %integer_pow.1 = f32[2,4]{1,0} multiply(%add.28, %add.28), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %integer_pow.0 = f32[2,4]{1,0} multiply(%integer_pow.1, %add.28), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.91 = f32[] constant(0.044715)
+  %broadcast.135 = f32[2,4]{1,0} broadcast(%constant.91), dimensions={}
+  %mul.15 = f32[2,4]{1,0} multiply(%integer_pow.0, %broadcast.135), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %add.27 = f32[2,4]{1,0} add(%add.28, %mul.15), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.90 = f32[] constant(0.797884583)
+  %broadcast.134 = f32[2,4]{1,0} broadcast(%constant.90), dimensions={}
+  %mul.13 = f32[2,4]{1,0} multiply(%add.27, %broadcast.134), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %tanh.2 = f32[2,4]{1,0} tanh(%mul.13), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.93 = f32[] constant(1)
+  %broadcast.136 = f32[2,4]{1,0} broadcast(%constant.93), dimensions={}, metadata={op_name="jit(<lambda>)/jit(silu)"}
+  %add.26 = f32[2,4]{1,0} add(%tanh.2, %broadcast.136), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.92 = f32[] constant(0.5)
+  %broadcast.133 = f32[2,4]{1,0} broadcast(%constant.92), dimensions={}
+  %mul.12 = f32[2,4]{1,0} multiply(%add.26, %broadcast.133), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  ROOT %mul.11 = f32[2,4]{1,0} multiply(%add.28, %mul.12), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+}
+
+%fused_computation.4 (param_0.17: f32[2,4], param_1.30: f32[4]) -> f32[2,4] {
+  %param_0.17 = f32[2,4]{1,0} parameter(0)
+  %param_1.30 = f32[4]{0} parameter(1)
+  %add.33 = f32[2,4]{1,0} broadcast(%param_1.30), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %add.32 = f32[2,4]{1,0} add(%param_0.17, %add.33), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %integer_pow.3 = f32[2,4]{1,0} multiply(%add.32, %add.32), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %integer_pow.2 = f32[2,4]{1,0} multiply(%integer_pow.3, %add.32), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.95 = f32[] constant(0.044715)
+  %broadcast.139 = f32[2,4]{1,0} broadcast(%constant.95), dimensions={}
+  %mul.19 = f32[2,4]{1,0} multiply(%integer_pow.2, %broadcast.139), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %add.31 = f32[2,4]{1,0} add(%add.32, %mul.19), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.94 = f32[] constant(0.797884583)
+  %broadcast.138 = f32[2,4]{1,0} broadcast(%constant.94), dimensions={}
+  %mul.18 = f32[2,4]{1,0} multiply(%add.31, %broadcast.138), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %tanh.3 = f32[2,4]{1,0} tanh(%mul.18), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.97 = f32[] constant(1)
+  %broadcast.140 = f32[2,4]{1,0} broadcast(%constant.97), dimensions={}, metadata={op_name="jit(<lambda>)/jit(silu)"}
+  %add.30 = f32[2,4]{1,0} add(%tanh.3, %broadcast.140), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.96 = f32[] constant(0.5)
+  %broadcast.137 = f32[2,4]{1,0} broadcast(%constant.96), dimensions={}
+  %mul.17 = f32[2,4]{1,0} multiply(%add.30, %broadcast.137), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  ROOT %mul.16 = f32[2,4]{1,0} multiply(%add.32, %mul.17), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+}
+
+%fused_computation.5 (param_0.19: f32[4], param_1.36: f32[2], param_2.36: f32[2,4], param_3.34: f32[2], param_4.31: f32[4]) -> f32[2,4] {
+  %param_4.31 = f32[4]{0} parameter(4)
+  %mul.23 = f32[2,4]{1,0} broadcast(%param_4.31), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_1.36 = f32[2]{0} parameter(1)
+  %mul.22 = f32[2,4]{1,0} broadcast(%param_1.36), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.21 = f32[2,4]{1,0} multiply(%mul.23, %mul.22), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_2.36 = f32[2,4]{1,0} parameter(2)
+  %param_3.34 = f32[2]{0} parameter(3)
+  %constant.98 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.141 = f32[2]{0} broadcast(%constant.98), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.24 = f32[2]{0} multiply(%param_3.34, %broadcast.141), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.79 = f32[2,4]{1,0} broadcast(%multiply.24), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.78 = f32[2,4]{1,0} subtract(%param_2.36, %sub.79), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.20 = f32[2,4]{1,0} multiply(%mul.21, %sub.78), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_0.19 = f32[4]{0} parameter(0)
+  %add.35 = f32[2,4]{1,0} broadcast(%param_0.19), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  ROOT %add.34 = f32[2,4]{1,0} add(%mul.20, %add.35), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+}
+
+%region_6.11.clone.1 (reduce_sum.22: f32[], reduce_sum.23: f32[]) -> f32[] {
+  %reduce_sum.22 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.23 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.27 = f32[] add(%reduce_sum.22, %reduce_sum.23), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%fused_computation.6 (param_0.25: f32[2,4], param_1.42: f32[2]) -> f32[2] {
+  %param_0.25 = f32[2,4]{1,0} parameter(0)
+  %param_1.42 = f32[2]{0} parameter(1)
+  %constant.100 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.143 = f32[2]{0} broadcast(%constant.100), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.26 = f32[2]{0} multiply(%param_1.42, %broadcast.143), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.81 = f32[2,4]{1,0} broadcast(%multiply.26), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.80 = f32[2,4]{1,0} subtract(%param_0.25, %sub.81), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %square.11 = f32[2,4]{1,0} multiply(%sub.80, %sub.80), metadata={op_name="jit(<lambda>)/jit(_var)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.101 = f32[] constant(0)
+  %reduce_sum.59 = f32[2]{0} reduce(%square.11, %constant.101), dimensions={1}, to_apply=%region_6.11.clone.1, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %multiply.25 = f32[2]{0} multiply(%reduce_sum.59, %broadcast.143), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.99 = f32[] constant(1e-05)
+  %broadcast.142 = f32[2]{0} broadcast(%constant.99), dimensions={}
+  %add.36 = f32[2]{0} add(%multiply.25, %broadcast.142), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=42 source_end_column=56}
+  ROOT %rsqrt.9 = f32[2]{0} rsqrt(%add.36), metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+}
+
+%fused_computation.7 (param_0.27: f32[2,4], param_1.46: f32[], param_2.45: f32[4], param_3.45: f32[2], param_4.39: f32[2,4], param_5.23: f32[2], param_6.5: f32[4]) -> f32[2,4] {
+  %param_6.5 = f32[4]{0} parameter(6)
+  %mul.29 = f32[2,4]{1,0} broadcast(%param_6.5), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_3.45 = f32[2]{0} parameter(3)
+  %mul.28 = f32[2,4]{1,0} broadcast(%param_3.45), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.27 = f32[2,4]{1,0} multiply(%mul.29, %mul.28), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_4.39 = f32[2,4]{1,0} parameter(4)
+  %param_5.23 = f32[2]{0} parameter(5)
+  %constant.102 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.144 = f32[2]{0} broadcast(%constant.102), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.27 = f32[2]{0} multiply(%param_5.23, %broadcast.144), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.83 = f32[2,4]{1,0} broadcast(%multiply.27), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.82 = f32[2,4]{1,0} subtract(%param_4.39, %sub.83), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.26 = f32[2,4]{1,0} multiply(%mul.27, %sub.82), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_2.45 = f32[4]{0} parameter(2)
+  %add.39 = f32[2,4]{1,0} broadcast(%param_2.45), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %add.38 = f32[2,4]{1,0} add(%mul.26, %add.39), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_1.46 = f32[] parameter(1)
+  %mul.25 = f32[2,4]{1,0} broadcast(%param_1.46), dimensions={}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %param_0.27 = f32[2,4]{1,0} parameter(0)
+  %mul.24 = f32[2,4]{1,0} multiply(%mul.25, %param_0.27), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  ROOT %add.37 = f32[2,4]{1,0} add(%add.38, %mul.24), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=560 source_end_line=560 source_column=10 source_end_column=25}
+}
+
+%fused_computation.8 (param_0.29: f32[2,4], param_1.48: f32[]) -> f32[2,4] {
+  %param_1.48 = f32[] parameter(1)
+  %mul.31 = f32[2,4]{1,0} broadcast(%param_1.48), dimensions={}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %param_0.29 = f32[2,4]{1,0} parameter(0)
+  ROOT %mul.30 = f32[2,4]{1,0} multiply(%mul.31, %param_0.29), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+}
+
+%fused_computation.9 (param_0.31: f32[2,4], param_1.53: f32[2,2,2]) -> f32[2,4] {
+  %param_1.53 = f32[2,2,2]{2,1,0} parameter(1)
+  %bitcast.8 = f32[2,4]{1,0} bitcast(%param_1.53), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %param_0.31 = f32[2,4]{1,0} parameter(0)
+  %constant.103 = f32[] constant(1)
+  %broadcast.145 = f32[2,4]{1,0} broadcast(%constant.103), dimensions={}, metadata={op_name="jit(<lambda>)/jit(silu)"}
+  %neg.10 = f32[2,4]{1,0} negate(%param_0.31), metadata={op_name="jit(<lambda>)/jit(silu)/neg" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %exp.12 = f32[2,4]{1,0} exponential(%neg.10), metadata={op_name="jit(<lambda>)/jit(silu)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %add.40 = f32[2,4]{1,0} add(%exp.12, %broadcast.145), metadata={op_name="jit(<lambda>)/jit(silu)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %div.28 = f32[2,4]{1,0} divide(%broadcast.145, %add.40), metadata={op_name="jit(<lambda>)/jit(silu)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %mul.33 = f32[2,4]{1,0} multiply(%param_0.31, %div.28), metadata={op_name="jit(<lambda>)/jit(silu)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %tanh.4 = f32[2,4]{1,0} tanh(%mul.33), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=18 source_end_column=42}
+  ROOT %mul.32 = f32[2,4]{1,0} multiply(%bitcast.8, %tanh.4), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=11 source_end_column=42}
+}
+
+%fused_computation.10 (param_0.33: f32[2,2], param_1.57: f32[2,2], param_2.53: f32[2,2,2]) -> f32[2,2,2] {
+  %param_2.53 = f32[2,2,2]{2,1,0} parameter(2)
+  %transpose.10 = f32[2,2,2]{0,2,1} transpose(%param_2.53), dimensions={2,0,1}, metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %copy.14 = f32[2,2,2]{2,1,0} copy(%transpose.10), metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %param_1.57 = f32[2,2]{1,0} parameter(1)
+  %mul.35 = f32[2,2,2]{2,1,0} broadcast(%param_1.57), dimensions={0,1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %mul.34 = f32[2,2,2]{2,1,0} multiply(%copy.14, %mul.35), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %param_0.33 = f32[2,2]{1,0} parameter(0)
+  %div.31 = f32[2,2,2]{2,1,0} broadcast(%param_0.33), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  ROOT %div.30 = f32[2,2,2]{2,1,0} divide(%mul.34, %div.31), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+}
+
+%region_11.18 (reduce_sum.82: f32[], reduce_sum.83: f32[]) -> f32[] {
+  %reduce_sum.82 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.83 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.84 = f32[] add(%reduce_sum.82, %reduce_sum.83), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=17 source_end_column=61}
+}
+
+%fused_computation.11 (param_0.38: f32[2,2,2]) -> f32[2,2] {
+  %param_0.38 = f32[2,2,2]{2,1,0} parameter(0)
+  %transpose.11 = f32[2,2,2]{0,2,1} transpose(%param_0.38), dimensions={2,0,1}, metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %copy.16 = f32[2,2,2]{2,1,0} copy(%transpose.11), metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %mul.36 = f32[2,2,2]{2,1,0} multiply(%copy.16, %copy.16), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=25 source_end_column=36}
+  %constant.105 = f32[] constant(0)
+  %reduce_sum.60 = f32[2,2]{1,0} reduce(%mul.36, %constant.105), dimensions={2}, to_apply=%region_11.18, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=17 source_end_column=61}
+  %constant.104 = f32[] constant(1e-12)
+  %broadcast.146 = f32[2,2]{1,0} broadcast(%constant.104), dimensions={}
+  %add.41 = f32[2,2]{1,0} add(%reduce_sum.60, %broadcast.146), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=17 source_end_column=61}
+  ROOT %sqrt.16 = f32[2,2]{1,0} sqrt(%add.41), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=8 source_end_column=74}
+}
+
+%fused_computation.12 (param_0.43: f32[2,2,2], param_1.69: f32[2,2,2]) -> f32[2,2,2] {
+  %param_1.69 = f32[2,2,2]{2,1,0} parameter(1)
+  %square.12 = f32[2,2,2]{2,1,0} multiply(%param_1.69, %param_1.69), metadata={op_name="jit(<lambda>)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=187 source_end_line=187 source_column=10 source_end_column=27}
+  %constant.109 = f32[] constant(0)
+  %broadcast.149 = f32[2,2,2]{2,1,0} broadcast(%constant.109), dimensions={}, metadata={op_name="jit(<lambda>)/jit(relu)"}
+  %param_0.43 = f32[2,2,2]{2,1,0} parameter(0)
+  %constant.108 = f32[] constant(1)
+  %min.8 = f32[2,2,2]{2,1,0} broadcast(%constant.108), dimensions={}, metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %clamp.2 = f32[2,2,2]{2,1,0} clamp(%broadcast.149, %param_0.43, %min.8), metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %constant.107 = f32[] constant(3.14159274)
+  %broadcast.148 = f32[2,2,2]{2,1,0} broadcast(%constant.107), dimensions={}
+  %mul.39 = f32[2,2,2]{2,1,0} multiply(%clamp.2, %broadcast.148), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=31 source_end_column=41}
+  %cos.0 = f32[2,2,2]{2,1,0} cosine(%mul.39), metadata={op_name="jit(<lambda>)/cos" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=23 source_end_column=42}
+  %add.42 = f32[2,2,2]{2,1,0} add(%cos.0, %min.8), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=17 source_end_column=42}
+  %constant.106 = f32[] constant(0.5)
+  %broadcast.147 = f32[2,2,2]{2,1,0} broadcast(%constant.106), dimensions={}
+  %mul.38 = f32[2,2,2]{2,1,0} multiply(%add.42, %broadcast.147), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=10 source_end_column=43}
+  ROOT %mul.37 = f32[2,2,2]{2,1,0} multiply(%square.12, %mul.38), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=193 source_end_line=193 source_column=14 source_end_column=23}
+}
+
+%fused_computation.13 (param_0.48: f32[2,2,2]) -> f32[2,2,2] {
+  %constant.113 = f32[] constant(0)
+  %broadcast.152 = f32[2,2,2]{2,1,0} broadcast(%constant.113), dimensions={}, metadata={op_name="jit(<lambda>)/jit(relu)"}
+  %param_0.48 = f32[2,2,2]{2,1,0} parameter(0)
+  %constant.112 = f32[] constant(1)
+  %min.9 = f32[2,2,2]{2,1,0} broadcast(%constant.112), dimensions={}, metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %clamp.3 = f32[2,2,2]{2,1,0} clamp(%broadcast.152, %param_0.48, %min.9), metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %constant.111 = f32[] constant(3.14159274)
+  %broadcast.151 = f32[2,2,2]{2,1,0} broadcast(%constant.111), dimensions={}
+  %mul.41 = f32[2,2,2]{2,1,0} multiply(%clamp.3, %broadcast.151), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=31 source_end_column=41}
+  %cos.1 = f32[2,2,2]{2,1,0} cosine(%mul.41), metadata={op_name="jit(<lambda>)/cos" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=23 source_end_column=42}
+  %add.43 = f32[2,2,2]{2,1,0} add(%cos.1, %min.9), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=17 source_end_column=42}
+  %constant.110 = f32[] constant(0.5)
+  %broadcast.150 = f32[2,2,2]{2,1,0} broadcast(%constant.110), dimensions={}
+  ROOT %mul.40 = f32[2,2,2]{2,1,0} multiply(%add.43, %broadcast.150), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=10 source_end_column=43}
+}
+
+%fused_computation.14 (param_0.50: f32[2], param_1.83: f32[2], param_2.81: f32[2,2]) -> f32[2,2,2] {
+  %param_2.81 = f32[2,2]{1,0} parameter(2)
+  %div.37 = f32[2,2,2]{2,1,0} broadcast(%param_2.81), dimensions={1,2}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+  %param_0.50 = f32[2]{0} parameter(0)
+  %ne.4 = pred[2]{0} compare(%param_0.50, %param_0.50), direction=NE, metadata={op_name="jit(<lambda>)/jit(softplus)/ne" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %constant.115 = f32[] constant(0)
+  %broadcast.154 = f32[2]{0} broadcast(%constant.115), dimensions={}, metadata={op_name="jit(<lambda>)/jit(softplus)"}
+  %max.16 = f32[2]{0} maximum(%param_0.50, %broadcast.154), metadata={op_name="jit(<lambda>)/jit(softplus)/max" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %param_1.83 = f32[2]{0} parameter(1)
+  %add.44 = f32[2]{0} add(%max.16, %param_1.83), metadata={op_name="jit(<lambda>)/jit(softplus)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %select_n.28 = f32[2]{0} select(%ne.4, %param_0.50, %add.44), metadata={op_name="jit(<lambda>)/jit(softplus)/select_n" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %constant.114 = f32[] constant(1.08037961)
+  %broadcast.153 = f32[2]{0} broadcast(%constant.114), dimensions={}
+  %mul.42 = f32[2]{0} multiply(%select_n.28, %broadcast.153), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=6 source_end_column=34}
+  %div.33 = f32[2,2,2]{2,1,0} broadcast(%mul.42), dimensions={0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+  ROOT %div.32 = f32[2,2,2]{2,1,0} divide(%div.37, %div.33), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+}
+
+%fused_computation.15 (param_0.54: f32[2]) -> f32[2] {
+  %param_0.54 = f32[2]{0} parameter(0)
+  %abs.4 = f32[2]{0} abs(%param_0.54), metadata={op_name="jit(<lambda>)/jit(softplus)/abs" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %neg.11 = f32[2]{0} negate(%abs.4), metadata={op_name="jit(<lambda>)/jit(softplus)/neg" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %exp.13 = f32[2]{0} exponential(%neg.11), metadata={op_name="jit(<lambda>)/jit(softplus)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  ROOT %log1p.4 = f32[2]{0} log-plus-one(%exp.13), metadata={op_name="jit(<lambda>)/jit(softplus)/log1p" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+}
+
+%fused_computation.16 (param_0.58: f32[2,2,2], param_1.90: f32[2]) -> f32[2,2,2] {
+  %param_0.58 = f32[2,2,2]{2,1,0} parameter(0)
+  %constant.117 = f32[] constant(1)
+  %broadcast.157 = f32[2]{0} broadcast(%constant.117), dimensions={}
+  %param_1.90 = f32[2]{0} parameter(1)
+  %constant.116 = f32[] constant(2)
+  %broadcast.156 = f32[2]{0} broadcast(%constant.116), dimensions={}
+  %mul.43 = f32[2]{0} multiply(%param_1.90, %broadcast.156), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=6 source_end_column=51}
+  %sub.86 = f32[2]{0} subtract(%broadcast.157, %mul.43), metadata={op_name="jit(<lambda>)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=27 source_end_column=34}
+  %sub.85 = f32[2,2,2]{2,1,0} broadcast(%sub.86), dimensions={0}, metadata={op_name="jit(<lambda>)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=22 source_end_column=35}
+  %sub.84 = f32[2,2,2]{2,1,0} subtract(%param_0.58, %sub.85), metadata={op_name="jit(<lambda>)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=22 source_end_column=35}
+  %constant.118 = f32[] constant(0)
+  %broadcast.155 = f32[2,2,2]{2,1,0} broadcast(%constant.118), dimensions={}, metadata={op_name="jit(<lambda>)/jit(relu)"}
+  %max.17 = f32[2,2,2]{2,1,0} maximum(%sub.84, %broadcast.155), metadata={op_name="jit(<lambda>)/jit(relu)/max" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+  %div.39 = f32[2,2,2]{2,1,0} broadcast(%mul.43), dimensions={0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+  ROOT %div.38 = f32[2,2,2]{2,1,0} divide(%max.17, %div.39), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+}
+
+%fused_computation.17 (param_0.60: f32[2]) -> f32[2] {
+  %constant.119 = f32[] constant(1)
+  %broadcast.158 = f32[2]{0} broadcast(%constant.119), dimensions={}
+  %param_0.60 = f32[2]{0} parameter(0)
+  %neg.12 = f32[2]{0} negate(%param_0.60), metadata={op_name="jit(<lambda>)/neg" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  %exp.14 = f32[2]{0} exponential(%neg.12), metadata={op_name="jit(<lambda>)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  %add.45 = f32[2]{0} add(%exp.14, %broadcast.158), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  ROOT %div.40 = f32[2]{0} divide(%broadcast.158, %add.45), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+}
+
+%fused_computation.18 (param_0.62: f32[2,2,3]) -> f32[2,3,2] {
+  %param_0.62 = f32[2,2,3]{2,1,0} parameter(0)
+  %transpose.12 = f32[2,3,2]{1,0,2} transpose(%param_0.62), dimensions={1,2,0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %copy.17 = f32[2,3,2]{2,1,0} copy(%transpose.12), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%fused_computation.19 (param_0.64: f32[2,2], param_1.98: f32[2,6]) -> f32[2,2,3] {
+  %param_1.98 = f32[2,6]{1,0} parameter(1)
+  %bitcast.9 = f32[2,2,3]{2,1,0} bitcast(%param_1.98), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %param_0.64 = f32[2,2]{1,0} parameter(0)
+  %div.42 = f32[2,2,3]{2,1,0} broadcast(%param_0.64), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %div.41 = f32[2,2,3]{2,1,0} divide(%bitcast.9, %div.42), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%region_9.16 (reduce_sum.68: f32[], reduce_sum.69: f32[]) -> f32[] {
+  %reduce_sum.68 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.69 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.70 = f32[] add(%reduce_sum.68, %reduce_sum.69), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+}
+
+%fused_computation.20 (param_0.69: f32[2,6]) -> f32[2,2] {
+  %param_0.69 = f32[2,6]{1,0} parameter(0)
+  %bitcast.10 = f32[2,2,3]{2,1,0} bitcast(%param_0.69), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %mul.44 = f32[2,2,3]{2,1,0} multiply(%bitcast.10, %bitcast.10), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=26 source_end_column=31}
+  %constant.121 = f32[] constant(0)
+  %reduce_sum.64 = f32[2,2]{1,0} reduce(%mul.44, %constant.121), dimensions={2}, to_apply=%region_9.16, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  %constant.120 = f32[] constant(1e-12)
+  %broadcast.159 = f32[2,2]{1,0} broadcast(%constant.120), dimensions={}
+  %add.46 = f32[2,2]{1,0} add(%reduce_sum.64, %broadcast.159), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  ROOT %sqrt.17 = f32[2,2]{1,0} sqrt(%add.46), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+}
+
+%fused_computation.21 (param_0.71: f32[2,2,3]) -> f32[2,2,3] {
+  %param_0.71 = f32[2,2,3]{2,1,0} parameter(0)
+  %transpose.13 = f32[2,2,3]{2,0,1} transpose(%param_0.71), dimensions={1,0,2}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %copy.18 = f32[2,2,3]{2,1,0} copy(%transpose.13), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%fused_computation.22 (param_0.73: f32[2,2], param_1.105: f32[2,6]) -> f32[2,2,3] {
+  %param_1.105 = f32[2,6]{1,0} parameter(1)
+  %bitcast.11 = f32[2,2,3]{2,1,0} bitcast(%param_1.105), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %param_0.73 = f32[2,2]{1,0} parameter(0)
+  %div.44 = f32[2,2,3]{2,1,0} broadcast(%param_0.73), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %div.43 = f32[2,2,3]{2,1,0} divide(%bitcast.11, %div.44), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%region_8.15 (reduce_sum.61: f32[], reduce_sum.62: f32[]) -> f32[] {
+  %reduce_sum.61 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.62 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.63 = f32[] add(%reduce_sum.61, %reduce_sum.62), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+}
+
+%fused_computation.23 (param_0.78: f32[2,6]) -> f32[2,2] {
+  %param_0.78 = f32[2,6]{1,0} parameter(0)
+  %bitcast.12 = f32[2,2,3]{2,1,0} bitcast(%param_0.78), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %mul.45 = f32[2,2,3]{2,1,0} multiply(%bitcast.12, %bitcast.12), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=26 source_end_column=31}
+  %constant.123 = f32[] constant(0)
+  %reduce_sum.65 = f32[2,2]{1,0} reduce(%mul.45, %constant.123), dimensions={2}, to_apply=%region_8.15, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  %constant.122 = f32[] constant(1e-12)
+  %broadcast.160 = f32[2,2]{1,0} broadcast(%constant.122), dimensions={}
+  %add.47 = f32[2,2]{1,0} add(%reduce_sum.65, %broadcast.160), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  ROOT %sqrt.18 = f32[2,2]{1,0} sqrt(%add.47), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+}
+
+%fused_computation.24 (param_0.80: f32[2,2,2]) -> f32[2,2,2] {
+  %param_0.80 = f32[2,2,2]{2,1,0} parameter(0)
+  %transpose.14 = f32[2,2,2]{1,0,2} transpose(%param_0.80), dimensions={1,2,0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %copy.19 = f32[2,2,2]{2,1,0} copy(%transpose.14), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%fused_computation.25 (param_0.82: f32[2,2], param_1.112: f32[2,4]) -> f32[2,2,2] {
+  %param_1.112 = f32[2,4]{1,0} parameter(1)
+  %bitcast.13 = f32[2,2,2]{2,1,0} bitcast(%param_1.112), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %param_0.82 = f32[2,2]{1,0} parameter(0)
+  %div.46 = f32[2,2,2]{2,1,0} broadcast(%param_0.82), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %div.45 = f32[2,2,2]{2,1,0} divide(%bitcast.13, %div.46), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%region_10.17 (reduce_sum.75: f32[], reduce_sum.76: f32[]) -> f32[] {
+  %reduce_sum.75 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.76 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.77 = f32[] add(%reduce_sum.75, %reduce_sum.76), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+}
+
+%fused_computation.26 (param_0.87: f32[2,4]) -> f32[2,2] {
+  %param_0.87 = f32[2,4]{1,0} parameter(0)
+  %bitcast.14 = f32[2,2,2]{2,1,0} bitcast(%param_0.87), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %mul.46 = f32[2,2,2]{2,1,0} multiply(%bitcast.14, %bitcast.14), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=26 source_end_column=31}
+  %constant.125 = f32[] constant(0)
+  %reduce_sum.66 = f32[2,2]{1,0} reduce(%mul.46, %constant.125), dimensions={2}, to_apply=%region_10.17, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  %constant.124 = f32[] constant(1e-12)
+  %broadcast.161 = f32[2,2]{1,0} broadcast(%constant.124), dimensions={}
+  %add.48 = f32[2,2]{1,0} add(%reduce_sum.66, %broadcast.161), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  ROOT %sqrt.19 = f32[2,2]{1,0} sqrt(%add.48), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+}
+
+%fused_computation.27 (param_0.89: f32[4], param_1.122: f32[2], param_2.102: f32[2,4], param_3.79: f32[2], param_4.58: f32[4]) -> f32[2,4] {
+  %param_4.58 = f32[4]{0} parameter(4)
+  %mul.50 = f32[2,4]{1,0} broadcast(%param_4.58), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_1.122 = f32[2]{0} parameter(1)
+  %mul.49 = f32[2,4]{1,0} broadcast(%param_1.122), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.48 = f32[2,4]{1,0} multiply(%mul.50, %mul.49), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_2.102 = f32[2,4]{1,0} parameter(2)
+  %param_3.79 = f32[2]{0} parameter(3)
+  %constant.126 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.162 = f32[2]{0} broadcast(%constant.126), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.28 = f32[2]{0} multiply(%param_3.79, %broadcast.162), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.88 = f32[2,4]{1,0} broadcast(%multiply.28), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.87 = f32[2,4]{1,0} subtract(%param_2.102, %sub.88), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.47 = f32[2,4]{1,0} multiply(%mul.48, %sub.87), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_0.89 = f32[4]{0} parameter(0)
+  %add.50 = f32[2,4]{1,0} broadcast(%param_0.89), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  ROOT %add.49 = f32[2,4]{1,0} add(%mul.47, %add.50), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+}
+
+%region_6.11.clone (reduce_sum.8: f32[], reduce_sum.9: f32[]) -> f32[] {
+  %reduce_sum.8 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.9 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.13 = f32[] add(%reduce_sum.8, %reduce_sum.9), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%fused_computation.28 (param_0.95: f32[2,4], param_1.128: f32[2]) -> f32[2] {
+  %param_0.95 = f32[2,4]{1,0} parameter(0)
+  %param_1.128 = f32[2]{0} parameter(1)
+  %constant.128 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.164 = f32[2]{0} broadcast(%constant.128), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.30 = f32[2]{0} multiply(%param_1.128, %broadcast.164), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.90 = f32[2,4]{1,0} broadcast(%multiply.30), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.89 = f32[2,4]{1,0} subtract(%param_0.95, %sub.90), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %square.13 = f32[2,4]{1,0} multiply(%sub.89, %sub.89), metadata={op_name="jit(<lambda>)/jit(_var)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.129 = f32[] constant(0)
+  %reduce_sum.67 = f32[2]{0} reduce(%square.13, %constant.129), dimensions={1}, to_apply=%region_6.11.clone, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %multiply.29 = f32[2]{0} multiply(%reduce_sum.67, %broadcast.164), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.127 = f32[] constant(1e-05)
+  %broadcast.163 = f32[2]{0} broadcast(%constant.127), dimensions={}
+  %add.51 = f32[2]{0} add(%multiply.29, %broadcast.163), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=42 source_end_column=56}
+  ROOT %rsqrt.10 = f32[2]{0} rsqrt(%add.51), metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+}
+
+%fused_computation.29 (param_0.97: f32[2,4], param_1.131: f32[4], param_2.113: f32[2], param_3.88: f32[2,4], param_4.66: f32[2], param_5.34: f32[4]) -> f32[2,4] {
+  %param_5.34 = f32[4]{0} parameter(5)
+  %mul.54 = f32[2,4]{1,0} broadcast(%param_5.34), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_2.113 = f32[2]{0} parameter(2)
+  %mul.53 = f32[2,4]{1,0} broadcast(%param_2.113), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.52 = f32[2,4]{1,0} multiply(%mul.54, %mul.53), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_3.88 = f32[2,4]{1,0} parameter(3)
+  %param_4.66 = f32[2]{0} parameter(4)
+  %constant.130 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.165 = f32[2]{0} broadcast(%constant.130), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.31 = f32[2]{0} multiply(%param_4.66, %broadcast.165), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.92 = f32[2,4]{1,0} broadcast(%multiply.31), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.91 = f32[2,4]{1,0} subtract(%param_3.88, %sub.92), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.51 = f32[2,4]{1,0} multiply(%mul.52, %sub.91), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_1.131 = f32[4]{0} parameter(1)
+  %add.54 = f32[2,4]{1,0} broadcast(%param_1.131), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %add.53 = f32[2,4]{1,0} add(%mul.51, %add.54), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_0.97 = f32[2,4]{1,0} parameter(0)
+  ROOT %add.52 = f32[2,4]{1,0} add(%add.53, %param_0.97), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=574 source_end_line=574 source_column=10 source_end_column=24}
+}
+
+%fused_computation.30 (param_0.101: f32[2,4], param_1.139: f32[4]) -> f32[2,4] {
+  %param_0.101 = f32[2,4]{1,0} parameter(0)
+  %param_1.139 = f32[4]{0} parameter(1)
+  %add.58 = f32[2,4]{1,0} broadcast(%param_1.139), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %add.57 = f32[2,4]{1,0} add(%param_0.101, %add.58), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %integer_pow.5 = f32[2,4]{1,0} multiply(%add.57, %add.57), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %integer_pow.4 = f32[2,4]{1,0} multiply(%integer_pow.5, %add.57), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.132 = f32[] constant(0.044715)
+  %broadcast.168 = f32[2,4]{1,0} broadcast(%constant.132), dimensions={}
+  %mul.58 = f32[2,4]{1,0} multiply(%integer_pow.4, %broadcast.168), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %add.56 = f32[2,4]{1,0} add(%add.57, %mul.58), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.131 = f32[] constant(0.797884583)
+  %broadcast.167 = f32[2,4]{1,0} broadcast(%constant.131), dimensions={}
+  %mul.57 = f32[2,4]{1,0} multiply(%add.56, %broadcast.167), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %tanh.5 = f32[2,4]{1,0} tanh(%mul.57), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.134 = f32[] constant(1)
+  %broadcast.169 = f32[2,4]{1,0} broadcast(%constant.134), dimensions={}, metadata={op_name="jit(<lambda>)/jit(silu)"}
+  %add.55 = f32[2,4]{1,0} add(%tanh.5, %broadcast.169), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.133 = f32[] constant(0.5)
+  %broadcast.166 = f32[2,4]{1,0} broadcast(%constant.133), dimensions={}
+  %mul.56 = f32[2,4]{1,0} multiply(%add.55, %broadcast.166), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  ROOT %mul.55 = f32[2,4]{1,0} multiply(%add.57, %mul.56), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+}
+
+%fused_computation.31 (param_0.104: f32[2,4], param_1.145: f32[4]) -> f32[2,4] {
+  %param_0.104 = f32[2,4]{1,0} parameter(0)
+  %param_1.145 = f32[4]{0} parameter(1)
+  %add.62 = f32[2,4]{1,0} broadcast(%param_1.145), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %add.61 = f32[2,4]{1,0} add(%param_0.104, %add.62), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %integer_pow.7 = f32[2,4]{1,0} multiply(%add.61, %add.61), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %integer_pow.6 = f32[2,4]{1,0} multiply(%integer_pow.7, %add.61), metadata={op_name="jit(<lambda>)/integer_pow" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.136 = f32[] constant(0.044715)
+  %broadcast.172 = f32[2,4]{1,0} broadcast(%constant.136), dimensions={}
+  %mul.62 = f32[2,4]{1,0} multiply(%integer_pow.6, %broadcast.172), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %add.60 = f32[2,4]{1,0} add(%add.61, %mul.62), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.135 = f32[] constant(0.797884583)
+  %broadcast.171 = f32[2,4]{1,0} broadcast(%constant.135), dimensions={}
+  %mul.61 = f32[2,4]{1,0} multiply(%add.60, %broadcast.171), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %tanh.6 = f32[2,4]{1,0} tanh(%mul.61), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.138 = f32[] constant(1)
+  %broadcast.173 = f32[2,4]{1,0} broadcast(%constant.138), dimensions={}, metadata={op_name="jit(<lambda>)/jit(silu)"}
+  %add.59 = f32[2,4]{1,0} add(%tanh.6, %broadcast.173), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %constant.137 = f32[] constant(0.5)
+  %broadcast.170 = f32[2,4]{1,0} broadcast(%constant.137), dimensions={}
+  %mul.60 = f32[2,4]{1,0} multiply(%add.59, %broadcast.170), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  ROOT %mul.59 = f32[2,4]{1,0} multiply(%add.61, %mul.60), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+}
+
+%fused_computation.32 (param_0.106: f32[4], param_1.151: f32[2], param_2.133: f32[2,4], param_3.110: f32[2], param_4.82: f32[4]) -> f32[2,4] {
+  %param_4.82 = f32[4]{0} parameter(4)
+  %mul.66 = f32[2,4]{1,0} broadcast(%param_4.82), dimensions={1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_1.151 = f32[2]{0} parameter(1)
+  %mul.65 = f32[2,4]{1,0} broadcast(%param_1.151), dimensions={0}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %mul.64 = f32[2,4]{1,0} multiply(%mul.66, %mul.65), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=10 source_end_column=57}
+  %param_2.133 = f32[2,4]{1,0} parameter(2)
+  %param_3.110 = f32[2]{0} parameter(3)
+  %constant.139 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.174 = f32[2]{0} broadcast(%constant.139), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.32 = f32[2]{0} multiply(%param_3.110, %broadcast.174), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.94 = f32[2,4]{1,0} broadcast(%multiply.32), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.93 = f32[2,4]{1,0} subtract(%param_2.133, %sub.94), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %mul.63 = f32[2,4]{1,0} multiply(%mul.64, %sub.93), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %param_0.106 = f32[4]{0} parameter(0)
+  %add.124 = f32[2,4]{1,0} broadcast(%param_0.106), dimensions={1}, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  ROOT %add.63 = f32[2,4]{1,0} add(%mul.63, %add.124), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+}
+
+%region_6.11 (reduce_sum.45: f32[], reduce_sum.46: f32[]) -> f32[] {
+  %reduce_sum.45 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.46 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.47 = f32[] add(%reduce_sum.45, %reduce_sum.46), metadata={op_name="reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+}
+
+%fused_computation.33 (param_0.112: f32[2,4], param_1.158: f32[2]) -> f32[2] {
+  %param_0.112 = f32[2,4]{1,0} parameter(0)
+  %param_1.158 = f32[2]{0} parameter(1)
+  %constant.141 = f32[] constant(0.25), metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %broadcast.176 = f32[2]{0} broadcast(%constant.141), dimensions={}, metadata={op_name="jit(<lambda>)/jit(_var)"}
+  %multiply.34 = f32[2]{0} multiply(%param_1.158, %broadcast.176), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.96 = f32[2,4]{1,0} broadcast(%multiply.34), dimensions={0}, metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %sub.95 = f32[2,4]{1,0} subtract(%param_0.112, %sub.96), metadata={op_name="jit(<lambda>)/jit(_var)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %square.14 = f32[2,4]{1,0} multiply(%sub.95, %sub.95), metadata={op_name="jit(<lambda>)/jit(_var)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.142 = f32[] constant(0)
+  %reduce_sum.71 = f32[2]{0} reduce(%square.14, %constant.142), dimensions={1}, to_apply=%region_6.11, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %multiply.33 = f32[2]{0} multiply(%reduce_sum.71, %broadcast.176), metadata={op_name="jit(<lambda>)/jit(_var)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %constant.140 = f32[] constant(1e-05)
+  %broadcast.175 = f32[2]{0} broadcast(%constant.140), dimensions={}
+  %add.125 = f32[2]{0} add(%multiply.33, %broadcast.175), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=42 source_end_column=56}
+  ROOT %rsqrt.11 = f32[2]{0} rsqrt(%add.125), metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+}
+
+%fused_computation.34 (param_0.113: f32[2,4], param_1.161: f32[2,4], param_2.139: f32[]) -> f32[2,4] {
+  %param_0.113 = f32[2,4]{1,0} parameter(0)
+  %param_2.139 = f32[] parameter(2)
+  %mul.68 = f32[2,4]{1,0} broadcast(%param_2.139), dimensions={}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %param_1.161 = f32[2,4]{1,0} parameter(1)
+  %mul.67 = f32[2,4]{1,0} multiply(%mul.68, %param_1.161), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  ROOT %add.126 = f32[2,4]{1,0} add(%param_0.113, %mul.67), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=560 source_end_line=560 source_column=10 source_end_column=25}
+}
+
+%fused_computation.35 (param_0.115: f32[2,4], param_1.163: f32[]) -> f32[2,4] {
+  %param_1.163 = f32[] parameter(1)
+  %mul.70 = f32[2,4]{1,0} broadcast(%param_1.163), dimensions={}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %param_0.115 = f32[2,4]{1,0} parameter(0)
+  ROOT %mul.69 = f32[2,4]{1,0} multiply(%mul.70, %param_0.115), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+}
+
+%fused_computation.36 (param_0.117: f32[2,4], param_1.168: f32[2,2,2]) -> f32[2,4] {
+  %param_1.168 = f32[2,2,2]{2,1,0} parameter(1)
+  %bitcast.15 = f32[2,4]{1,0} bitcast(%param_1.168), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %param_0.117 = f32[2,4]{1,0} parameter(0)
+  %constant.143 = f32[] constant(1)
+  %broadcast.177 = f32[2,4]{1,0} broadcast(%constant.143), dimensions={}, metadata={op_name="jit(<lambda>)/jit(silu)"}
+  %neg.13 = f32[2,4]{1,0} negate(%param_0.117), metadata={op_name="jit(<lambda>)/jit(silu)/neg" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %exp.15 = f32[2,4]{1,0} exponential(%neg.13), metadata={op_name="jit(<lambda>)/jit(silu)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %add.127 = f32[2,4]{1,0} add(%exp.15, %broadcast.177), metadata={op_name="jit(<lambda>)/jit(silu)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %div.47 = f32[2,4]{1,0} divide(%broadcast.177, %add.127), metadata={op_name="jit(<lambda>)/jit(silu)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %mul.72 = f32[2,4]{1,0} multiply(%param_0.117, %div.47), metadata={op_name="jit(<lambda>)/jit(silu)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=27 source_end_column=41}
+  %tanh.7 = f32[2,4]{1,0} tanh(%mul.72), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=18 source_end_column=42}
+  ROOT %mul.71 = f32[2,4]{1,0} multiply(%bitcast.15, %tanh.7), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=11 source_end_column=42}
+}
+
+%fused_computation.37 (param_0.119: f32[2,2], param_1.172: f32[2,2], param_2.147: f32[2,2,2]) -> f32[2,2,2] {
+  %param_2.147 = f32[2,2,2]{2,1,0} parameter(2)
+  %transpose.15 = f32[2,2,2]{0,2,1} transpose(%param_2.147), dimensions={2,0,1}, metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %copy.20 = f32[2,2,2]{2,1,0} copy(%transpose.15), metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %param_1.172 = f32[2,2]{1,0} parameter(1)
+  %mul.74 = f32[2,2,2]{2,1,0} broadcast(%param_1.172), dimensions={0,1}, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %mul.73 = f32[2,2,2]{2,1,0} multiply(%copy.20, %mul.74), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %param_0.119 = f32[2,2]{1,0} parameter(0)
+  %div.49 = f32[2,2,2]{2,1,0} broadcast(%param_0.119), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  ROOT %div.48 = f32[2,2,2]{2,1,0} divide(%mul.73, %div.49), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+}
+
+%region_3.7 (reduce_sum.24: f32[], reduce_sum.25: f32[]) -> f32[] {
+  %reduce_sum.24 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.25 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.26 = f32[] add(%reduce_sum.24, %reduce_sum.25), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=17 source_end_column=61}
+}
+
+%fused_computation.38 (param_0.124: f32[2,2,2]) -> f32[2,2] {
+  %param_0.124 = f32[2,2,2]{2,1,0} parameter(0)
+  %transpose.16 = f32[2,2,2]{0,2,1} transpose(%param_0.124), dimensions={2,0,1}, metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %copy.22 = f32[2,2,2]{2,1,0} copy(%transpose.16), metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %mul.75 = f32[2,2,2]{2,1,0} multiply(%copy.22, %copy.22), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=25 source_end_column=36}
+  %constant.145 = f32[] constant(0)
+  %reduce_sum.72 = f32[2,2]{1,0} reduce(%mul.75, %constant.145), dimensions={2}, to_apply=%region_3.7, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=17 source_end_column=61}
+  %constant.144 = f32[] constant(1e-12)
+  %broadcast.178 = f32[2,2]{1,0} broadcast(%constant.144), dimensions={}
+  %add.128 = f32[2,2]{1,0} add(%reduce_sum.72, %broadcast.178), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=17 source_end_column=61}
+  ROOT %sqrt.20 = f32[2,2]{1,0} sqrt(%add.128), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=8 source_end_column=74}
+}
+
+%fused_computation.39 (param_0.127: f32[2,2,2], param_1.184: f32[2,2,2]) -> f32[2,2,2] {
+  %param_1.184 = f32[2,2,2]{2,1,0} parameter(1)
+  %square.15 = f32[2,2,2]{2,1,0} multiply(%param_1.184, %param_1.184), metadata={op_name="jit(<lambda>)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=187 source_end_line=187 source_column=10 source_end_column=27}
+  %constant.149 = f32[] constant(0)
+  %broadcast.181 = f32[2,2,2]{2,1,0} broadcast(%constant.149), dimensions={}, metadata={op_name="jit(<lambda>)/jit(relu)"}
+  %param_0.127 = f32[2,2,2]{2,1,0} parameter(0)
+  %constant.148 = f32[] constant(1)
+  %min.10 = f32[2,2,2]{2,1,0} broadcast(%constant.148), dimensions={}, metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %clamp.4 = f32[2,2,2]{2,1,0} clamp(%broadcast.181, %param_0.127, %min.10), metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %constant.147 = f32[] constant(3.14159274)
+  %broadcast.180 = f32[2,2,2]{2,1,0} broadcast(%constant.147), dimensions={}
+  %mul.78 = f32[2,2,2]{2,1,0} multiply(%clamp.4, %broadcast.180), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=31 source_end_column=41}
+  %cos.4 = f32[2,2,2]{2,1,0} cosine(%mul.78), metadata={op_name="jit(<lambda>)/cos" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=23 source_end_column=42}
+  %add.129 = f32[2,2,2]{2,1,0} add(%cos.4, %min.10), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=17 source_end_column=42}
+  %constant.146 = f32[] constant(0.5)
+  %broadcast.179 = f32[2,2,2]{2,1,0} broadcast(%constant.146), dimensions={}
+  %mul.77 = f32[2,2,2]{2,1,0} multiply(%add.129, %broadcast.179), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=10 source_end_column=43}
+  ROOT %mul.76 = f32[2,2,2]{2,1,0} multiply(%square.15, %mul.77), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=193 source_end_line=193 source_column=14 source_end_column=23}
+}
+
+%fused_computation.40 (param_0.132: f32[2,2,2]) -> f32[2,2,2] {
+  %constant.153 = f32[] constant(0)
+  %broadcast.184 = f32[2,2,2]{2,1,0} broadcast(%constant.153), dimensions={}, metadata={op_name="jit(<lambda>)/jit(relu)"}
+  %param_0.132 = f32[2,2,2]{2,1,0} parameter(0)
+  %constant.152 = f32[] constant(1)
+  %min.11 = f32[2,2,2]{2,1,0} broadcast(%constant.152), dimensions={}, metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %clamp.5 = f32[2,2,2]{2,1,0} clamp(%broadcast.184, %param_0.132, %min.11), metadata={op_name="jit(<lambda>)/jit(clip)/min" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=8 source_end_column=63}
+  %constant.151 = f32[] constant(3.14159274)
+  %broadcast.183 = f32[2,2,2]{2,1,0} broadcast(%constant.151), dimensions={}
+  %mul.80 = f32[2,2,2]{2,1,0} multiply(%clamp.5, %broadcast.183), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=31 source_end_column=41}
+  %cos.5 = f32[2,2,2]{2,1,0} cosine(%mul.80), metadata={op_name="jit(<lambda>)/cos" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=23 source_end_column=42}
+  %add.130 = f32[2,2,2]{2,1,0} add(%cos.5, %min.11), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=17 source_end_column=42}
+  %constant.150 = f32[] constant(0.5)
+  %broadcast.182 = f32[2,2,2]{2,1,0} broadcast(%constant.150), dimensions={}
+  ROOT %mul.79 = f32[2,2,2]{2,1,0} multiply(%add.130, %broadcast.182), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=10 source_end_column=43}
+}
+
+%fused_computation.41 (param_0.134: f32[2], param_1.199: f32[2], param_2.173: f32[2,2]) -> f32[2,2,2] {
+  %param_2.173 = f32[2,2]{1,0} parameter(2)
+  %div.52 = f32[2,2,2]{2,1,0} broadcast(%param_2.173), dimensions={1,2}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+  %param_0.134 = f32[2]{0} parameter(0)
+  %ne.5 = pred[2]{0} compare(%param_0.134, %param_0.134), direction=NE, metadata={op_name="jit(<lambda>)/jit(softplus)/ne" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %constant.155 = f32[] constant(0)
+  %broadcast.186 = f32[2]{0} broadcast(%constant.155), dimensions={}, metadata={op_name="jit(<lambda>)/jit(softplus)"}
+  %max.18 = f32[2]{0} maximum(%param_0.134, %broadcast.186), metadata={op_name="jit(<lambda>)/jit(softplus)/max" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %param_1.199 = f32[2]{0} parameter(1)
+  %add.131 = f32[2]{0} add(%max.18, %param_1.199), metadata={op_name="jit(<lambda>)/jit(softplus)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %select_n.29 = f32[2]{0} select(%ne.5, %param_0.134, %add.131), metadata={op_name="jit(<lambda>)/jit(softplus)/select_n" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %constant.154 = f32[] constant(1.08037961)
+  %broadcast.185 = f32[2]{0} broadcast(%constant.154), dimensions={}
+  %mul.81 = f32[2]{0} multiply(%select_n.29, %broadcast.185), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=6 source_end_column=34}
+  %div.51 = f32[2,2,2]{2,1,0} broadcast(%mul.81), dimensions={0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+  ROOT %div.50 = f32[2,2,2]{2,1,0} divide(%div.52, %div.51), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+}
+
+%fused_computation.42 (param_0.138: f32[2]) -> f32[2] {
+  %param_0.138 = f32[2]{0} parameter(0)
+  %abs.5 = f32[2]{0} abs(%param_0.138), metadata={op_name="jit(<lambda>)/jit(softplus)/abs" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %neg.14 = f32[2]{0} negate(%abs.5), metadata={op_name="jit(<lambda>)/jit(softplus)/neg" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %exp.16 = f32[2]{0} exponential(%neg.14), metadata={op_name="jit(<lambda>)/jit(softplus)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  ROOT %log1p.5 = f32[2]{0} log-plus-one(%exp.16), metadata={op_name="jit(<lambda>)/jit(softplus)/log1p" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+}
+
+%fused_computation.43 (param_0.142: f32[2,2,2], param_1.205: f32[2]) -> f32[2,2,2] {
+  %param_0.142 = f32[2,2,2]{2,1,0} parameter(0)
+  %constant.157 = f32[] constant(1)
+  %broadcast.189 = f32[2]{0} broadcast(%constant.157), dimensions={}
+  %param_1.205 = f32[2]{0} parameter(1)
+  %constant.156 = f32[] constant(2)
+  %broadcast.188 = f32[2]{0} broadcast(%constant.156), dimensions={}
+  %mul.162 = f32[2]{0} multiply(%param_1.205, %broadcast.188), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=6 source_end_column=51}
+  %sub.99 = f32[2]{0} subtract(%broadcast.189, %mul.162), metadata={op_name="jit(<lambda>)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=27 source_end_column=34}
+  %sub.98 = f32[2,2,2]{2,1,0} broadcast(%sub.99), dimensions={0}, metadata={op_name="jit(<lambda>)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=22 source_end_column=35}
+  %sub.97 = f32[2,2,2]{2,1,0} subtract(%param_0.142, %sub.98), metadata={op_name="jit(<lambda>)/sub" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=22 source_end_column=35}
+  %constant.158 = f32[] constant(0)
+  %broadcast.187 = f32[2,2,2]{2,1,0} broadcast(%constant.158), dimensions={}, metadata={op_name="jit(<lambda>)/jit(relu)"}
+  %max.19 = f32[2,2,2]{2,1,0} maximum(%sub.97, %broadcast.187), metadata={op_name="jit(<lambda>)/jit(relu)/max" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+  %div.54 = f32[2,2,2]{2,1,0} broadcast(%mul.162), dimensions={0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+  ROOT %div.53 = f32[2,2,2]{2,1,0} divide(%max.19, %div.54), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+}
+
+%fused_computation.44 (param_0.144: f32[2]) -> f32[2] {
+  %constant.159 = f32[] constant(1)
+  %broadcast.190 = f32[2]{0} broadcast(%constant.159), dimensions={}
+  %param_0.144 = f32[2]{0} parameter(0)
+  %neg.15 = f32[2]{0} negate(%param_0.144), metadata={op_name="jit(<lambda>)/neg" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  %exp.17 = f32[2]{0} exponential(%neg.15), metadata={op_name="jit(<lambda>)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  %add.132 = f32[2]{0} add(%exp.17, %broadcast.190), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  ROOT %div.55 = f32[2]{0} divide(%broadcast.190, %add.132), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+}
+
+%fused_computation.45 (param_0.146: f32[2,2,3]) -> f32[2,3,2] {
+  %param_0.146 = f32[2,2,3]{2,1,0} parameter(0)
+  %transpose.17 = f32[2,3,2]{1,0,2} transpose(%param_0.146), dimensions={1,2,0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %copy.23 = f32[2,3,2]{2,1,0} copy(%transpose.17), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%fused_computation.46 (param_0.148: f32[2,2], param_1.213: f32[2,6]) -> f32[2,2,3] {
+  %param_1.213 = f32[2,6]{1,0} parameter(1)
+  %bitcast.16 = f32[2,2,3]{2,1,0} bitcast(%param_1.213), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %param_0.148 = f32[2,2]{1,0} parameter(0)
+  %div.57 = f32[2,2,3]{2,1,0} broadcast(%param_0.148), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %div.56 = f32[2,2,3]{2,1,0} divide(%bitcast.16, %div.57), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%region_1.2 (reduce_sum.10: f32[], reduce_sum.11: f32[]) -> f32[] {
+  %reduce_sum.10 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.11 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.12 = f32[] add(%reduce_sum.10, %reduce_sum.11), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+}
+
+%fused_computation.47 (param_0.153: f32[2,6]) -> f32[2,2] {
+  %param_0.153 = f32[2,6]{1,0} parameter(0)
+  %bitcast.17 = f32[2,2,3]{2,1,0} bitcast(%param_0.153), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %mul.163 = f32[2,2,3]{2,1,0} multiply(%bitcast.17, %bitcast.17), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=26 source_end_column=31}
+  %constant.161 = f32[] constant(0)
+  %reduce_sum.73 = f32[2,2]{1,0} reduce(%mul.163, %constant.161), dimensions={2}, to_apply=%region_1.2, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  %constant.160 = f32[] constant(1e-12)
+  %broadcast.191 = f32[2,2]{1,0} broadcast(%constant.160), dimensions={}
+  %add.133 = f32[2,2]{1,0} add(%reduce_sum.73, %broadcast.191), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  ROOT %sqrt.21 = f32[2,2]{1,0} sqrt(%add.133), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+}
+
+%fused_computation.48 (param_0.155: f32[2,2,3]) -> f32[2,2,3] {
+  %param_0.155 = f32[2,2,3]{2,1,0} parameter(0)
+  %transpose.18 = f32[2,2,3]{2,0,1} transpose(%param_0.155), dimensions={1,0,2}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %copy.24 = f32[2,2,3]{2,1,0} copy(%transpose.18), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%fused_computation.49 (param_0.157: f32[2,2], param_1.220: f32[2,6]) -> f32[2,2,3] {
+  %param_1.220 = f32[2,6]{1,0} parameter(1)
+  %bitcast.18 = f32[2,2,3]{2,1,0} bitcast(%param_1.220), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %param_0.157 = f32[2,2]{1,0} parameter(0)
+  %div.59 = f32[2,2,3]{2,1,0} broadcast(%param_0.157), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %div.58 = f32[2,2,3]{2,1,0} divide(%bitcast.18, %div.59), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%region_0.1 (reduce_sum.3: f32[], reduce_sum.4: f32[]) -> f32[] {
+  %reduce_sum.3 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.4 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.5 = f32[] add(%reduce_sum.3, %reduce_sum.4), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+}
+
+%fused_computation.50 (param_0.162: f32[2,6]) -> f32[2,2] {
+  %param_0.162 = f32[2,6]{1,0} parameter(0)
+  %bitcast.19 = f32[2,2,3]{2,1,0} bitcast(%param_0.162), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %mul.164 = f32[2,2,3]{2,1,0} multiply(%bitcast.19, %bitcast.19), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=26 source_end_column=31}
+  %constant.163 = f32[] constant(0)
+  %reduce_sum.74 = f32[2,2]{1,0} reduce(%mul.164, %constant.163), dimensions={2}, to_apply=%region_0.1, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  %constant.162 = f32[] constant(1e-12)
+  %broadcast.192 = f32[2,2]{1,0} broadcast(%constant.162), dimensions={}
+  %add.134 = f32[2,2]{1,0} add(%reduce_sum.74, %broadcast.192), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  ROOT %sqrt.22 = f32[2,2]{1,0} sqrt(%add.134), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+}
+
+%fused_computation.51 (param_0.164: f32[2,2,2]) -> f32[2,2,2] {
+  %param_0.164 = f32[2,2,2]{2,1,0} parameter(0)
+  %transpose.19 = f32[2,2,2]{1,0,2} transpose(%param_0.164), dimensions={1,2,0}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %copy.25 = f32[2,2,2]{2,1,0} copy(%transpose.19), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%fused_computation.52 (param_0.166: f32[2,2], param_1.227: f32[2,4]) -> f32[2,2,2] {
+  %param_1.227 = f32[2,4]{1,0} parameter(1)
+  %bitcast.20 = f32[2,2,2]{2,1,0} bitcast(%param_1.227), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %param_0.166 = f32[2,2]{1,0} parameter(0)
+  %div.61 = f32[2,2,2]{2,1,0} broadcast(%param_0.166), dimensions={0,1}, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  ROOT %div.60 = f32[2,2,2]{2,1,0} divide(%bitcast.20, %div.61), metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+}
+
+%region_2.3 (reduce_sum.17: f32[], reduce_sum.18: f32[]) -> f32[] {
+  %reduce_sum.17 = f32[] parameter(0), metadata={op_name="reduce_sum"}
+  %reduce_sum.18 = f32[] parameter(1), metadata={op_name="reduce_sum"}
+  ROOT %reduce_sum.19 = f32[] add(%reduce_sum.17, %reduce_sum.18), metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+}
+
+%fused_computation.53 (param_0.171: f32[2,4]) -> f32[2,2] {
+  %param_0.171 = f32[2,4]{1,0} parameter(0)
+  %bitcast.21 = f32[2,2,2]{2,1,0} bitcast(%param_0.171), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %mul.165 = f32[2,2,2]{2,1,0} multiply(%bitcast.21, %bitcast.21), metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=26 source_end_column=31}
+  %constant.165 = f32[] constant(0)
+  %reduce_sum.78 = f32[2,2]{1,0} reduce(%mul.165, %constant.165), dimensions={2}, to_apply=%region_2.3, metadata={op_name="jit(<lambda>)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  %constant.164 = f32[] constant(1e-12)
+  %broadcast.193 = f32[2,2]{1,0} broadcast(%constant.164), dimensions={}
+  %add.135 = f32[2,2]{1,0} add(%reduce_sum.78, %broadcast.193), metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=18 source_end_column=56}
+  ROOT %sqrt.23 = f32[2,2]{1,0} sqrt(%add.135), metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+}
+
+ENTRY %main.21 (pp__attention___0___attn_output__.1: f32[4,4], pp__attention___0___g_w__.1: f32[4,4], pp__attention___0___k_w__.1: f32[4,6], pp__attention___0___mask_omega__.1: f32[2], pp__attention___0___out_scale__.1: f32[], pp__attention___0___q_w__.1: f32[4,6], pp__attention___0___trim_rho__.1: f32[2], pp__attention___0___v_w__.1: f32[4,4], pp__attention___1___attn_output__.1: f32[4,4], pp__attention___1___g_w__.1: f32[4,4], pp__attention___1___k_w__.1: f32[4,6], pp__attention___1___mask_omega__.1: f32[2], pp__attention___1___out_scale__.1: f32[], pp__attention___1___q_w__.1: f32[4,6], pp__attention___1___trim_rho__.1: f32[2], pp__attention___1___v_w__.1: f32[4,4], pp__ln___0__0___offset__.1: f32[4], pp__ln___0__0___scale__.1: f32[4], pp__ln___0__1___offset__.1: f32[4], pp__ln___0__1___scale__.1: f32[4], pp__ln___1__0___offset__.1: f32[4], pp__ln___1__0___scale__.1: f32[4], pp__ln___1__1___offset__.1: f32[4], pp__ln___1__1___scale__.1: f32[4], pp__mlp___0__0___b__.1: f32[4], pp__mlp___0__0___w__.1: f32[4,4], pp__mlp___0__1___b__.1: f32[4], pp__mlp___0__1___w__.1: f32[4,4], pp__mlp___1__0___b__.1: f32[4], pp__mlp___1__0___w__.1: f32[4,4], pp__mlp___1__1___b__.1: f32[4], pp__mlp___1__1___w__.1: f32[4,4], xx.1: f32[2,4], dd.1: f32[2,2]) -> (f32[2,4], f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,4], /*index=5*/f32[2,2,3], f32[2,2,3], f32[2,4], f32[2,2,3], f32[2,2,3], /*index=10*/f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,2,2], /*index=15*/f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,4], f32[2,4], /*index=20*/f32[2,4], f32[2,4], f32[2,4], f32[2,4], f32[2,4], /*index=25*/f32[2,4], f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,4], /*index=30*/f32[2,2,3], f32[2,2,3], f32[2,4], f32[2,2,3], f32[2,2,3], /*index=35*/f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,2,2], /*index=40*/f32[2,2,2], f32[2,2,2], f32[2,2,2], f32[2,4], f32[2,4], /*index=45*/f32[2,4], f32[2,4], f32[2,4], f32[2,4], f32[2,4], /*index=50*/f32[2,4]) {
+  %pp__attention___0___attn_output__.1 = f32[4,4]{1,0} parameter(0), metadata={op_name="pp[\'attention\'][0][\'attn_output\']"}
+  %pp__attention___0___g_w__.1 = f32[4,4]{1,0} parameter(1), metadata={op_name="pp[\'attention\'][0][\'g_w\']"}
+  %pp__attention___0___k_w__.1 = f32[4,6]{1,0} parameter(2), metadata={op_name="pp[\'attention\'][0][\'k_w\']"}
+  %pp__attention___0___mask_omega__.1 = f32[2]{0} parameter(3), metadata={op_name="pp[\'attention\'][0][\'mask_omega\']"}
+  %pp__attention___0___out_scale__.1 = f32[] parameter(4), metadata={op_name="pp[\'attention\'][0][\'out_scale\']"}
+  %pp__attention___0___q_w__.1 = f32[4,6]{1,0} parameter(5), metadata={op_name="pp[\'attention\'][0][\'q_w\']"}
+  %pp__attention___0___trim_rho__.1 = f32[2]{0} parameter(6), metadata={op_name="pp[\'attention\'][0][\'trim_rho\']"}
+  %pp__attention___0___v_w__.1 = f32[4,4]{1,0} parameter(7), metadata={op_name="pp[\'attention\'][0][\'v_w\']"}
+  %pp__attention___1___attn_output__.1 = f32[4,4]{1,0} parameter(8), metadata={op_name="pp[\'attention\'][1][\'attn_output\']"}
+  %pp__attention___1___g_w__.1 = f32[4,4]{1,0} parameter(9), metadata={op_name="pp[\'attention\'][1][\'g_w\']"}
+  %pp__attention___1___k_w__.1 = f32[4,6]{1,0} parameter(10), metadata={op_name="pp[\'attention\'][1][\'k_w\']"}
+  %pp__attention___1___mask_omega__.1 = f32[2]{0} parameter(11), metadata={op_name="pp[\'attention\'][1][\'mask_omega\']"}
+  %pp__attention___1___out_scale__.1 = f32[] parameter(12), metadata={op_name="pp[\'attention\'][1][\'out_scale\']"}
+  %pp__attention___1___q_w__.1 = f32[4,6]{1,0} parameter(13), metadata={op_name="pp[\'attention\'][1][\'q_w\']"}
+  %pp__attention___1___trim_rho__.1 = f32[2]{0} parameter(14), metadata={op_name="pp[\'attention\'][1][\'trim_rho\']"}
+  %pp__attention___1___v_w__.1 = f32[4,4]{1,0} parameter(15), metadata={op_name="pp[\'attention\'][1][\'v_w\']"}
+  %pp__ln___0__0___offset__.1 = f32[4]{0} parameter(16), metadata={op_name="pp[\'ln\'][0][0][\'offset\']"}
+  %pp__ln___0__0___scale__.1 = f32[4]{0} parameter(17), metadata={op_name="pp[\'ln\'][0][0][\'scale\']"}
+  %pp__ln___0__1___offset__.1 = f32[4]{0} parameter(18), metadata={op_name="pp[\'ln\'][0][1][\'offset\']"}
+  %pp__ln___0__1___scale__.1 = f32[4]{0} parameter(19), metadata={op_name="pp[\'ln\'][0][1][\'scale\']"}
+  %pp__ln___1__0___offset__.1 = f32[4]{0} parameter(20), metadata={op_name="pp[\'ln\'][1][0][\'offset\']"}
+  %pp__ln___1__0___scale__.1 = f32[4]{0} parameter(21), metadata={op_name="pp[\'ln\'][1][0][\'scale\']"}
+  %pp__ln___1__1___offset__.1 = f32[4]{0} parameter(22), metadata={op_name="pp[\'ln\'][1][1][\'offset\']"}
+  %pp__ln___1__1___scale__.1 = f32[4]{0} parameter(23), metadata={op_name="pp[\'ln\'][1][1][\'scale\']"}
+  %pp__mlp___0__0___b__.1 = f32[4]{0} parameter(24), metadata={op_name="pp[\'mlp\'][0][0][\'b\']"}
+  %pp__mlp___0__0___w__.1 = f32[4,4]{1,0} parameter(25), metadata={op_name="pp[\'mlp\'][0][0][\'w\']"}
+  %pp__mlp___0__1___b__.1 = f32[4]{0} parameter(26), metadata={op_name="pp[\'mlp\'][0][1][\'b\']"}
+  %pp__mlp___0__1___w__.1 = f32[4,4]{1,0} parameter(27), metadata={op_name="pp[\'mlp\'][0][1][\'w\']"}
+  %pp__mlp___1__0___b__.1 = f32[4]{0} parameter(28), metadata={op_name="pp[\'mlp\'][1][0][\'b\']"}
+  %pp__mlp___1__0___w__.1 = f32[4,4]{1,0} parameter(29), metadata={op_name="pp[\'mlp\'][1][0][\'w\']"}
+  %pp__mlp___1__1___b__.1 = f32[4]{0} parameter(30), metadata={op_name="pp[\'mlp\'][1][1][\'b\']"}
+  %pp__mlp___1__1___w__.1 = f32[4,4]{1,0} parameter(31), metadata={op_name="pp[\'mlp\'][1][1][\'w\']"}
+  %xx.1 = f32[2,4]{1,0} parameter(32), metadata={op_name="xx"}
+  %dd.1 = f32[2,2]{1,0} parameter(33), metadata={op_name="dd"}
+  %constant.47 = f32[] constant(0)
+  %exponential_log-plus-one_fusion.1 = f32[2]{0} fusion(%pp__attention___0___mask_omega__.1), kind=kLoop, calls=%fused_computation.42, metadata={op_name="jit(<lambda>)/jit(softplus)/log1p" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %exp.9 = f32[] exponential(%pp__attention___0___out_scale__.1), metadata={op_name="jit(<lambda>)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %add_divide_fusion.1 = f32[2]{0} fusion(%pp__attention___0___trim_rho__.1), kind=kLoop, calls=%fused_computation.44, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  %exponential_log-plus-one_fusion = f32[2]{0} fusion(%pp__attention___1___mask_omega__.1), kind=kLoop, calls=%fused_computation.15, metadata={op_name="jit(<lambda>)/jit(softplus)/log1p" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=74 source_end_line=74 source_column=14 source_end_column=34}
+  %exp.11 = f32[] exponential(%pp__attention___1___out_scale__.1), metadata={op_name="jit(<lambda>)/exp" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %add_divide_fusion = f32[2]{0} fusion(%pp__attention___1___trim_rho__.1), kind=kLoop, calls=%fused_computation.17, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=184 source_end_line=184 source_column=17 source_end_column=51}
+  %dot_general.20 = f32[2,4]{1,0} dot(%xx.1, %pp__attention___0___v_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %dot_general.18 = f32[2,6]{1,0} dot(%xx.1, %pp__attention___0___q_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %dot_general.19 = f32[2,6]{1,0} dot(%xx.1, %pp__attention___0___k_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %dot_general.23 = f32[2,4]{1,0} dot(%xx.1, %pp__attention___0___g_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=255 source_end_line=255 source_column=8 source_end_column=54}
+  %copy.29 = f32[2,4]{1,0} copy(%xx.1)
+  %broadcast_divide_fusion.7 = f32[2,2,2]{2,1,0} fusion(%pp__attention___0___mask_omega__.1, %exponential_log-plus-one_fusion.1, %dd.1), kind=kLoop, calls=%fused_computation.41, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+  %broadcast_divide_fusion.1 = f32[2,2,2]{2,1,0} fusion(%pp__attention___1___mask_omega__.1, %exponential_log-plus-one_fusion, %dd.1), kind=kLoop, calls=%fused_computation.14, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=102 source_end_line=102 source_column=17 source_end_column=33}
+  %bitcast = f32[2,2,2]{2,1,0} bitcast(%dot_general.20), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %add_sqrt_fusion.7 = f32[2,2]{1,0} fusion(%dot_general.20), kind=kLoop, calls=%fused_computation.53, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+  %bitcast.1 = f32[2,2,3]{2,1,0} bitcast(%dot_general.18), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %add_sqrt_fusion.6 = f32[2,2]{1,0} fusion(%dot_general.18), kind=kLoop, calls=%fused_computation.50, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+  %bitcast.2 = f32[2,2,3]{2,1,0} bitcast(%dot_general.19), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %add_sqrt_fusion.5 = f32[2,2]{1,0} fusion(%dot_general.19), kind=kLoop, calls=%fused_computation.47, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+  %broadcast_multiply_fusion.2 = f32[2,2,2]{2,1,0} fusion(%broadcast_divide_fusion.7), kind=kLoop, calls=%fused_computation.40, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=10 source_end_column=43}
+  %add_multiply_fusion = f32[2,2,2]{2,1,0} fusion(%broadcast_divide_fusion.1), kind=kLoop, calls=%fused_computation.13, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=106 source_end_line=106 source_column=10 source_end_column=43}
+  %broadcast_divide_fusion.11 = f32[2,2,2]{2,1,0} fusion(%add_sqrt_fusion.7, %dot_general.20), kind=kLoop, calls=%fused_computation.52, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %broadcast_divide_fusion.10 = f32[2,2,3]{2,1,0} fusion(%add_sqrt_fusion.6, %dot_general.18), kind=kLoop, calls=%fused_computation.49, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %broadcast_divide_fusion.9 = f32[2,2,3]{2,1,0} fusion(%add_sqrt_fusion.5, %dot_general.19), kind=kLoop, calls=%fused_computation.46, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %transpose_copy_fusion.5 = f32[2,2,2]{2,1,0} fusion(%broadcast_divide_fusion.11), kind=kLoop, calls=%fused_computation.51, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %copy.26 = f32[2,2,2]{2,1,0} copy(%broadcast_divide_fusion.11)
+  %transpose_copy_fusion.4 = f32[2,2,3]{2,1,0} fusion(%broadcast_divide_fusion.10), kind=kLoop, calls=%fused_computation.48, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %transpose_copy_fusion.3 = f32[2,3,2]{2,1,0} fusion(%broadcast_divide_fusion.9), kind=kLoop, calls=%fused_computation.45, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %dot = f32[2,2,2]{2,1,0} dot(%transpose_copy_fusion.4, %transpose_copy_fusion.3), lhs_batch_dims={0}, lhs_contracting_dims={2}, rhs_batch_dims={0}, rhs_contracting_dims={1}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/ihd,jhd->hij/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=181 source_end_line=181 source_column=6 source_end_column=44}
+  %broadcast_divide_fusion.8 = f32[2,2,2]{2,1,0} fusion(%dot, %add_divide_fusion.1), kind=kLoop, calls=%fused_computation.43, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+  %square.4 = f32[2,2,2]{2,1,0} multiply(%broadcast_divide_fusion.8, %broadcast_divide_fusion.8), metadata={op_name="jit(<lambda>)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=187 source_end_line=187 source_column=10 source_end_column=27}
+  %multiply_multiply_fusion.5 = f32[2,2,2]{2,1,0} fusion(%broadcast_divide_fusion.7, %broadcast_divide_fusion.8), kind=kLoop, calls=%fused_computation.39, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=193 source_end_line=193 source_column=14 source_end_column=23}
+  %dot.1 = f32[2,2,2]{2,1,0} dot(%transpose_copy_fusion.5, %multiply_multiply_fusion.5), lhs_batch_dims={0}, lhs_contracting_dims={2}, rhs_batch_dims={0}, rhs_contracting_dims={2}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/hij,jhd->ihd/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %copy.28 = f32[2,2,2]{2,1,0} copy(%multiply_multiply_fusion.5)
+  %copy.27 = f32[2,2,2]{2,1,0} copy(%multiply_multiply_fusion.5)
+  %bitcast.22 = f32[2,2,2]{0,2,1} bitcast(%dot.1), metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %add_sqrt_fusion.4 = f32[2,2]{1,0} fusion(%dot.1), kind=kLoop, calls=%fused_computation.38, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=8 source_end_column=74}
+  %copy.12 = f32[2,2,2]{2,1,0} copy(%bitcast.22)
+  %tanh.0 = f32[2,2]{1,0} tanh(%add_sqrt_fusion.4), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=18 source_end_column=29}
+  %broadcast_divide_fusion.6 = f32[2,2,2]{2,1,0} fusion(%add_sqrt_fusion.4, %tanh.0, %dot.1), kind=kLoop, calls=%fused_computation.37, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %tanh_multiply_fusion.1 = f32[2,4]{1,0} fusion(%dot_general.23, %broadcast_divide_fusion.6), kind=kLoop, calls=%fused_computation.36, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=11 source_end_column=42}
+  %dot_general.24 = f32[2,4]{1,0} dot(%tanh_multiply_fusion.1, %pp__attention___0___attn_output__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=131 source_end_line=131 source_column=6 source_end_column=19}
+  %broadcast_multiply_fusion.1 = f32[2,4]{1,0} fusion(%dot_general.24, %exp.9), kind=kLoop, calls=%fused_computation.35, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %multiply_add_fusion.1 = f32[2,4]{1,0} fusion(%xx.1, %dot_general.24, %exp.9), kind=kLoop, calls=%fused_computation.34, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=560 source_end_line=560 source_column=10 source_end_column=25}
+  %reduce_sum.42 = f32[2]{0} reduce(%multiply_add_fusion.1, %constant.47), dimensions={1}, to_apply=%region_5.10, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %add_rsqrt_fusion.3 = f32[2]{0} fusion(%multiply_add_fusion.1, %reduce_sum.42), kind=kLoop, calls=%fused_computation.33, metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+  %broadcast_add_fusion.3 = f32[2,4]{1,0} fusion(%pp__ln___0__0___offset__.1, %add_rsqrt_fusion.3, %multiply_add_fusion.1, %reduce_sum.42, %pp__ln___0__0___scale__.1), kind=kLoop, calls=%fused_computation.32, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %dot_general.25 = f32[2,4]{1,0} dot(%broadcast_add_fusion.3, %pp__mlp___0__0___w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %multiply_multiply_fusion.4 = f32[2,4]{1,0} fusion(%dot_general.25, %pp__mlp___0__0___b__.1), kind=kLoop, calls=%fused_computation.31, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %dot_general.26 = f32[2,4]{1,0} dot(%multiply_multiply_fusion.4, %pp__mlp___0__1___w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %multiply_multiply_fusion.3 = f32[2,4]{1,0} fusion(%dot_general.26, %pp__mlp___0__1___b__.1), kind=kLoop, calls=%fused_computation.30, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %add_add_fusion.1 = f32[2,4]{1,0} fusion(%multiply_multiply_fusion.3, %pp__ln___0__0___offset__.1, %add_rsqrt_fusion.3, %multiply_add_fusion.1, %reduce_sum.42, /*index=5*/%pp__ln___0__0___scale__.1), kind=kLoop, calls=%fused_computation.29, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=574 source_end_line=574 source_column=10 source_end_column=24}
+  %reduce_sum.44 = f32[2]{0} reduce(%add_add_fusion.1, %constant.47), dimensions={1}, to_apply=%region_5.10.clone, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %add_rsqrt_fusion.2 = f32[2]{0} fusion(%add_add_fusion.1, %reduce_sum.44), kind=kLoop, calls=%fused_computation.28, metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+  %broadcast_add_fusion.2 = f32[2,4]{1,0} fusion(%pp__ln___0__1___offset__.1, %add_rsqrt_fusion.2, %add_add_fusion.1, %reduce_sum.44, %pp__ln___0__1___scale__.1), kind=kLoop, calls=%fused_computation.27, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %dot_general.29 = f32[2,4]{1,0} dot(%broadcast_add_fusion.2, %pp__attention___1___v_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %dot_general.27 = f32[2,6]{1,0} dot(%broadcast_add_fusion.2, %pp__attention___1___q_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %dot_general.28 = f32[2,6]{1,0} dot(%broadcast_add_fusion.2, %pp__attention___1___k_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %dot_general.32 = f32[2,4]{1,0} dot(%broadcast_add_fusion.2, %pp__attention___1___g_w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=255 source_end_line=255 source_column=8 source_end_column=54}
+  %copy.34 = f32[2,4]{1,0} copy(%broadcast_add_fusion.2)
+  %copy.30 = f32[2,4]{1,0} copy(%broadcast_add_fusion.2)
+  %bitcast.4 = f32[2,2,2]{2,1,0} bitcast(%dot_general.29), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=162 source_end_line=162 source_column=12 source_end_column=58}
+  %add_sqrt_fusion.3 = f32[2,2]{1,0} fusion(%dot_general.29), kind=kLoop, calls=%fused_computation.26, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+  %bitcast.5 = f32[2,2,3]{2,1,0} bitcast(%dot_general.27), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=159 source_end_line=159 source_column=6 source_end_column=52}
+  %add_sqrt_fusion.2 = f32[2,2]{1,0} fusion(%dot_general.27), kind=kLoop, calls=%fused_computation.23, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+  %bitcast.6 = f32[2,2,3]{2,1,0} bitcast(%dot_general.28), metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=160 source_end_line=160 source_column=6 source_end_column=52}
+  %add_sqrt_fusion.1 = f32[2,2]{1,0} fusion(%dot_general.28), kind=kLoop, calls=%fused_computation.20, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=111 source_end_line=111 source_column=9 source_end_column=69}
+  %broadcast_divide_fusion.5 = f32[2,2,2]{2,1,0} fusion(%add_sqrt_fusion.3, %dot_general.29), kind=kLoop, calls=%fused_computation.25, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %broadcast_divide_fusion.4 = f32[2,2,3]{2,1,0} fusion(%add_sqrt_fusion.2, %dot_general.27), kind=kLoop, calls=%fused_computation.22, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %broadcast_divide_fusion.3 = f32[2,2,3]{2,1,0} fusion(%add_sqrt_fusion.1, %dot_general.28), kind=kLoop, calls=%fused_computation.19, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %transpose_copy_fusion.2 = f32[2,2,2]{2,1,0} fusion(%broadcast_divide_fusion.5), kind=kLoop, calls=%fused_computation.24, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %copy.31 = f32[2,2,2]{2,1,0} copy(%broadcast_divide_fusion.5)
+  %transpose_copy_fusion.1 = f32[2,2,3]{2,1,0} fusion(%broadcast_divide_fusion.4), kind=kLoop, calls=%fused_computation.21, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %transpose_copy_fusion = f32[2,3,2]{2,1,0} fusion(%broadcast_divide_fusion.3), kind=kLoop, calls=%fused_computation.18, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=112 source_end_line=112 source_column=9 source_end_column=17}
+  %dot.2 = f32[2,2,2]{2,1,0} dot(%transpose_copy_fusion.1, %transpose_copy_fusion), lhs_batch_dims={0}, lhs_contracting_dims={2}, rhs_batch_dims={0}, rhs_contracting_dims={1}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/ihd,jhd->hij/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=181 source_end_line=181 source_column=6 source_end_column=44}
+  %broadcast_divide_fusion.2 = f32[2,2,2]{2,1,0} fusion(%dot.2, %add_divide_fusion), kind=kLoop, calls=%fused_computation.16, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=186 source_end_line=186 source_column=10 source_end_column=36}
+  %square.5 = f32[2,2,2]{2,1,0} multiply(%broadcast_divide_fusion.2, %broadcast_divide_fusion.2), metadata={op_name="jit(<lambda>)/square" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=187 source_end_line=187 source_column=10 source_end_column=27}
+  %multiply_multiply_fusion.2 = f32[2,2,2]{2,1,0} fusion(%broadcast_divide_fusion.1, %broadcast_divide_fusion.2), kind=kLoop, calls=%fused_computation.12, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=193 source_end_line=193 source_column=14 source_end_column=23}
+  %dot.3 = f32[2,2,2]{2,1,0} dot(%transpose_copy_fusion.2, %multiply_multiply_fusion.2), lhs_batch_dims={0}, lhs_contracting_dims={2}, rhs_batch_dims={0}, rhs_contracting_dims={2}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/hij,jhd->ihd/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %copy.33 = f32[2,2,2]{2,1,0} copy(%multiply_multiply_fusion.2)
+  %copy.32 = f32[2,2,2]{2,1,0} copy(%multiply_multiply_fusion.2)
+  %bitcast.23 = f32[2,2,2]{0,2,1} bitcast(%dot.3), metadata={op_name="jit(<lambda>)/hij,jhd->ihd/transpose" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=235 source_end_line=235 source_column=11 source_end_column=52}
+  %add_sqrt_fusion = f32[2,2]{1,0} fusion(%dot.3), kind=kLoop, calls=%fused_computation.11, metadata={op_name="jit(<lambda>)/sqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=244 source_end_line=244 source_column=8 source_end_column=74}
+  %copy.13 = f32[2,2,2]{2,1,0} copy(%bitcast.23)
+  %tanh.1 = f32[2,2]{1,0} tanh(%add_sqrt_fusion), metadata={op_name="jit(<lambda>)/tanh" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=18 source_end_column=29}
+  %broadcast_divide_fusion = f32[2,2,2]{2,1,0} fusion(%add_sqrt_fusion, %tanh.1, %dot.3), kind=kLoop, calls=%fused_computation.10, metadata={op_name="jit(<lambda>)/div" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=245 source_end_line=245 source_column=11 source_end_column=29}
+  %tanh_multiply_fusion = f32[2,4]{1,0} fusion(%dot_general.32, %broadcast_divide_fusion), kind=kLoop, calls=%fused_computation.9, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=256 source_end_line=256 source_column=11 source_end_column=42}
+  %dot_general.33 = f32[2,4]{1,0} dot(%tanh_multiply_fusion, %pp__attention___1___attn_output__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=131 source_end_line=131 source_column=6 source_end_column=19}
+  %broadcast_multiply_fusion = f32[2,4]{1,0} fusion(%dot_general.33, %exp.11), kind=kLoop, calls=%fused_computation.8, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py" source_line=270 source_end_line=270 source_column=10 source_end_column=38}
+  %multiply_add_fusion = f32[2,4]{1,0} fusion(%dot_general.33, %exp.11, %pp__ln___0__1___offset__.1, %add_rsqrt_fusion.2, %add_add_fusion.1, /*index=5*/%reduce_sum.44, %pp__ln___0__1___scale__.1), kind=kLoop, calls=%fused_computation.7, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=560 source_end_line=560 source_column=10 source_end_column=25}
+  %reduce_sum.51 = f32[2]{0} reduce(%multiply_add_fusion, %constant.47), dimensions={1}, to_apply=%region_5.10.clone.1, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %add_rsqrt_fusion.1 = f32[2]{0} fusion(%multiply_add_fusion, %reduce_sum.51), kind=kLoop, calls=%fused_computation.6, metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+  %broadcast_add_fusion.1 = f32[2,4]{1,0} fusion(%pp__ln___1__0___offset__.1, %add_rsqrt_fusion.1, %multiply_add_fusion, %reduce_sum.51, %pp__ln___1__0___scale__.1), kind=kLoop, calls=%fused_computation.5, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %dot_general.34 = f32[2,4]{1,0} dot(%broadcast_add_fusion.1, %pp__mlp___1__0___w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %multiply_multiply_fusion.1 = f32[2,4]{1,0} fusion(%dot_general.34, %pp__mlp___1__0___b__.1), kind=kLoop, calls=%fused_computation.4, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %dot_general.35 = f32[2,4]{1,0} dot(%multiply_multiply_fusion.1, %pp__mlp___1__1___w__.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, operand_precision={highest,highest}, metadata={op_name="jit(<lambda>)/dot_general" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=27 source_end_column=53}
+  %multiply_multiply_fusion = f32[2,4]{1,0} fusion(%dot_general.35, %pp__mlp___1__1___b__.1), kind=kLoop, calls=%fused_computation.3, metadata={op_name="jit(<lambda>)/mul" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=470 source_end_line=470 source_column=12 source_end_column=71}
+  %add_add_fusion = f32[2,4]{1,0} fusion(%multiply_multiply_fusion, %pp__ln___1__0___offset__.1, %add_rsqrt_fusion.1, %multiply_add_fusion, %reduce_sum.51, /*index=5*/%pp__ln___1__0___scale__.1), kind=kLoop, calls=%fused_computation.2, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py" source_line=574 source_end_line=574 source_column=10 source_end_column=24}
+  %reduce_sum.53 = f32[2]{0} reduce(%add_add_fusion, %constant.47), dimensions={1}, to_apply=%region_5.10.clone.2, metadata={op_name="jit(<lambda>)/jit(_var)/reduce_sum" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=46 source_end_line=46 source_column=15 source_end_column=56}
+  %add_rsqrt_fusion = f32[2]{0} fusion(%add_add_fusion, %reduce_sum.53), kind=kLoop, calls=%fused_computation.1, metadata={op_name="jit(<lambda>)/rsqrt" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=48 source_end_line=48 source_column=28 source_end_column=57}
+  %broadcast_add_fusion = f32[2,4]{1,0} fusion(%pp__ln___1__1___offset__.1, %add_rsqrt_fusion, %add_add_fusion, %reduce_sum.53, %pp__ln___1__1___scale__.1), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(<lambda>)/add" source_file="/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py" source_line=49 source_end_line=49 source_column=11 source_end_column=32}
+  %copy.36 = f32[2,4]{1,0} copy(%broadcast_add_fusion)
+  %copy.35 = f32[2,4]{1,0} copy(%broadcast_add_fusion)
+  ROOT %tuple.2 = (f32[2,4]{1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, /*index=5*/f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, f32[2,4]{1,0}, f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, /*index=10*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, /*index=15*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=20*/f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=25*/f32[2,4]{1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, /*index=30*/f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, f32[2,4]{1,0}, f32[2,2,3]{2,1,0}, f32[2,2,3]{2,1,0}, /*index=35*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, /*index=40*/f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,2,2]{2,1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=45*/f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, f32[2,4]{1,0}, /*index=50*/f32[2,4]{1,0}) tuple(%broadcast_add_fusion, %copy.12, %multiply_multiply_fusion.5, %square.4, %tanh_multiply_fusion.1, /*index=5*/%bitcast.2, %broadcast_divide_fusion.9, %dot_general.24, %bitcast.1, %broadcast_divide_fusion.10, /*index=10*/%dot, %broadcast_divide_fusion.6, %bitcast, %broadcast_divide_fusion.11, %copy.26, /*index=15*/%copy.27, %copy.28, %broadcast_multiply_fusion.2, %broadcast_multiply_fusion.1, %multiply_add_fusion.1, /*index=20*/%copy.29, %broadcast_add_fusion.3, %broadcast_add_fusion.2, %multiply_multiply_fusion.3, %add_add_fusion.1, /*index=25*/%copy.30, %copy.13, %multiply_multiply_fusion.2, %square.5, %tanh_multiply_fusion, /*index=30*/%bitcast.6, %broadcast_divide_fusion.3, %dot_general.33, %bitcast.5, %broadcast_divide_fusion.4, /*index=35*/%dot.2, %broadcast_divide_fusion, %bitcast.4, %broadcast_divide_fusion.5, %copy.31, /*index=40*/%copy.32, %copy.33, %add_multiply_fusion, %broadcast_multiply_fusion, %multiply_add_fusion, /*index=45*/%copy.34, %broadcast_add_fusion.1, %copy.35, %multiply_multiply_fusion, %add_add_fusion, /*index=50*/%copy.36)
+}
+

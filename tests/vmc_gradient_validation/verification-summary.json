@@ -1,0 +1,61 @@
+{
+  "task": "independent VMC-gradient investigation only; no repair",
+  "new_single_device_methods": {
+    "PASS": 8,
+    "independent_physics": 2,
+    "current_behavior_characterizations": 6,
+    "FAIL": 0,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "new_isolated_two_device_methods": {
+    "PASS": 1,
+    "conditions": 24,
+    "FAIL": 0,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "existing_vmc_subset": {
+    "PASS": 5,
+    "XFAIL": 1,
+    "FAIL": 1,
+    "ERROR": 0,
+    "SKIP": 0
+  },
+  "existing_vmc_fail": "K07 remains -4 vs -2; K04 remains expected failure 1 vs 2",
+  "records": {
+    "single_final": 93,
+    "two_device": 24
+  },
+  "first_mismatch": "loss.py:288 combines diff with an E_L vector only when clip is disabled; real branch line301 omits 2",
+  "clipping_qualification": "clip>0 uses a scalar center; do not infer phase factor 2 for all historical runs",
+  "extra_contract_problem": "K10 auxiliary JVP nonlinearity and primal dtype difference; distinct from the main gradient mismatch",
+  "full_suite_last_run": "F3: 27 PASS/2 XFAIL/2 FAIL/2 ERROR; not rerun this task",
+  "full_production_snapshots_this_task": "not rerun; all protected source and preexisting validation data unchanged",
+  "production_changed": false,
+  "fixed_snapshots_updated": false,
+  "F4": "on hold until a research Ansatz is specified",
+  "repair": "proposal only; explicit future task required",
+  "metrics": {
+    "float32": {
+      "exact_AD_vs_independent_covariance_max_abs": 1.385067659454009e-07,
+      "numpy_central_difference_vs_covariance_max_abs": 2.7861046802968303e-10,
+      "test_only_correct_contraction_max_abs": 5.960464466436832e-08,
+      "current_JVP_vs_numpy_current_algebra_max_abs": 3.81522640147125e-07,
+      "two_device_pmean_vs_single_global_batch_max_abs": 0.0
+    },
+    "float64": {
+      "exact_AD_vs_independent_covariance_max_abs": 4.440892098500626e-16,
+      "numpy_central_difference_vs_covariance_max_abs": 2.7861046802968303e-10,
+      "test_only_correct_contraction_max_abs": 0.0,
+      "current_JVP_vs_numpy_current_algebra_max_abs": 3.885780586188048e-16,
+      "two_device_pmean_vs_single_global_batch_max_abs": 0.0
+    }
+  },
+  "not_verified": [
+    "actual past-run quantitative impact",
+    "real multi-host/GPU collectives",
+    "new KFAC optimizer/device integration or long training",
+    "complex trainable parameters/parameter-dependent Hamiltonian gradients"
+  ]
+}

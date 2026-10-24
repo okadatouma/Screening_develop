@@ -16,11 +16,67 @@
 
 import functools
 import itertools
-from typing import MutableMapping, Optional, Sequence, Tuple
+from typing import Mapping, MutableMapping, Optional, Sequence, Tuple
 
 import chex
 import jax
 import jax.numpy as jnp
+
+
+# LayerNorm from CustomPsiformer.py, CustomScreenformer.py and SlaterNet.py:
+# Copyright 2023 DeepMind Technologies Limited.
+# Modifications Copyright (c) 2025 Max Geier, Khachatur Nazaryan
+# Massachusetts Institute of Technology, MA, USA
+# Distributed under the Apache License, Version 2.0 stated above.
+def make_layer_norm() ->...:
+  """Implementation of LayerNorm."""
+  # Import here to preserve ParamTree annotations without a module import cycle.
+  from periodicwave import networks
+
+  def init(param_shape: int) -> Mapping[str, jnp.ndarray]:
+    params = {}
+    params['scale'] = jnp.ones(param_shape)
+    params['offset'] = jnp.zeros(param_shape)
+    return params
+
+  def apply(params: networks.ParamTree,
+            inputs: jnp.ndarray,
+            axis: int = -1) -> jnp.ndarray:
+    mean = jnp.mean(inputs, axis=axis, keepdims=True)
+    variance = jnp.var(inputs, axis=axis, keepdims=True)
+    eps = 1e-5
+    inv = params['scale'] * jax.lax.rsqrt(variance + eps)
+    return inv * (inputs - mean) + params['offset']
+
+  return init, apply
+
+
+# Learned embedding from the three Ansatz modules (same provenance as LayerNorm
+# above). Geometry and fixed features remain the responsibility of FeatureLayer.
+def init_input_embedding(key: chex.PRNGKey,
+                         one_electron_feature_dim: int,
+                         output_dim: int) -> jnp.ndarray:
+  """Return bare W[F+1,E], without bias; caller owns the PRNG split order.
+
+  The existing linear initializer uses normal(key1)/sqrt(F+1), with its original
+  dtype and two-key split. No extra parameter nesting is introduced.
+  """
+  return init_linear_layer(
+      key, in_dim=one_electron_feature_dim + 1, out_dim=output_dim,
+      include_bias=False
+  )['w']
+
+
+def apply_input_embedding(weight: jnp.ndarray,
+                          one_electron_features: jnp.ndarray,
+                          spins: jnp.ndarray) -> jnp.ndarray:
+  """X = concat(f_i, s_i) W: [N,F], [N] -> [N,E], W[F+1,E].
+
+  Features and spin are concatenated before the single dot, preserving dtype,
+  operation order and electron-permutation equivariance. No geometry is computed.
+  """
+  features = jnp.concatenate((one_electron_features, spins[..., None]), axis=-1)
+  return jnp.dot(features, weight)
 
 
 def array_partitions(sizes: Sequence[int]) -> Sequence[int]:

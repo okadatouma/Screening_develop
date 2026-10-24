@@ -1,0 +1,74 @@
+test_float64_executable_kfac_old_new_training_step (tests.check_wavefunction_construction.WavefunctionConstructionChecks.test_float64_executable_kfac_old_new_training_step) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp3e59dgws/psiformer-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpi5e16t9p/psiformer-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpvn8q8r6l/slater-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmptm3138sg/slater-kfac'.
+/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/jax/_src/numpy/array_methods.py:125: DeprecationWarning: Casting from complex to real dtypes will soon raise a ValueError. Please first use jnp.real or jnp.imag to take the real/imaginary component of your input.
+  return lax_numpy.astype(self, dtype, copy=copy, device=device)
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 16.824s
+
+OK

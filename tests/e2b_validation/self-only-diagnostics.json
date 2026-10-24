@@ -1,0 +1,62 @@
+[
+  {
+    "x64": false,
+    "R": [
+      [
+        0.027353372424840927,
+        0.028140723705291748,
+        0.0,
+        0.0
+      ],
+      [
+        0.056299418210983276,
+        0.06317496299743652,
+        0.0,
+        0.0
+      ]
+    ],
+    "rho_p": [
+      null,
+      null
+    ],
+    "floating_denominator_positive": [
+      false,
+      false
+    ],
+    "self_only_warning": [
+      true,
+      true
+    ],
+    "response_difference_max_abs": 0.0
+  },
+  {
+    "x64": true,
+    "R": [
+      [
+        0.10642237860292166,
+        0.1315701321258138,
+        0.0,
+        0.0
+      ],
+      [
+        0.047737270552128924,
+        0.049588400538236314,
+        0.0,
+        0.0
+      ]
+    ],
+    "rho_p": [
+      null,
+      null
+    ],
+    "floating_denominator_positive": [
+      false,
+      false
+    ],
+    "self_only_warning": [
+      true,
+      true
+    ],
+    "response_difference_max_abs": 0.0
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "changed_existing_files": [
+    "tests/RESULTS.md",
+    "periodicwave/attention.py"
+  ],
+  "normal_forward": "AST identical after removing static aux captures and optional argument/docstring",
+  "other_sources_tests_checkpoints_snapshots": "All recorded hashes unchanged except RESULTS.md; new test artifacts excluded",
+  "source_sha256_after": {
+    "periodicwave/attention.py": "ae277f97c7a19a3fbb70245ec61e9c0f75e82afe29bf7b885b90af5a99a3e46f",
+    "tests/check_attention_aux.py": "6187b45b06c709e8f7e1f3d24ffef78ded201099d2904b5ec1b910331a4b2174",
+    "tests/measure_attention_aux.py": "ee8348d9c387e4013107c9f0af23100719743a6b343653e557304fe74e02f4e2"
+  }
+}

@@ -1,0 +1,9 @@
+test_global_settings_and_jit_trace_timing (__main__.WindowChecks.test_global_settings_and_jit_trace_timing) ... ok
+test_no_window_and_legacy_helper_names (__main__.WindowChecks.test_no_window_and_legacy_helper_names) ... ok
+test_parameter_gradient_hessian_and_freeze (__main__.WindowChecks.test_parameter_gradient_hessian_and_freeze) ... ok
+test_values_coordinate_derivatives_and_jit_at_boundaries (__main__.WindowChecks.test_values_coordinate_derivatives_and_jit_at_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 66.874s
+
+OK

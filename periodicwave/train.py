@@ -684,13 +684,15 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
       
       # due to pmean, loss, and pmove should be the same across devices.
       loss = loss[0]
-      # per batch variance isn't informative. Use weighted mean and variance instead.
+      # Report Re(mean(E_L)); retain the raw loss/complex aux for physics and checks.
+      reported_energy = jnp.real(loss)
+      # EW statistics describe the sequence of reported real batch means.
       weighted_stats = statistics.exponentialy_weighted_stats(
-          alpha=0.1, observation=loss, previous_stats=weighted_stats)
+          alpha=0.1, observation=reported_energy, previous_stats=weighted_stats)
 
       pmove = pmove[0]
 
-      # variance = aux_data.variance[0] 
+      # Complex local-energy RMS fluctuation, not the SEM of its real mean.
       local_std = jnp.sqrt(aux_data.variance[0])
 
       # Update MCMC move width
@@ -722,7 +724,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
         # write to train_stats
         writer_kwargs = {
             'step': t,
-            'energy': np.asarray(loss),
+            'energy': np.asarray(reported_energy),
             'ewmean': np.asarray(weighted_stats.mean),
             'ewvar': np.asarray(weighted_stats.variance),
             'pmove': np.asarray(pmove),
@@ -733,7 +735,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
         # log training data
         logging_str = ('Step %05d: '
                        '%03.4f E_h, exp. variance=%03.4f E_h^2, pmove=%0.2f')
-        logging_args = t, loss, weighted_stats.variance, pmove
+        logging_args = t, reported_energy, weighted_stats.variance, pmove
         logging.info(logging_str, *logging_args)
         
       # Checkpointing every cfg.log.save_frequency minutes and at final iteration

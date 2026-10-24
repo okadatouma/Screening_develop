@@ -1,0 +1,93 @@
+{
+  "stage": "G3a residual investigation / G3b preparation only",
+  "protected_preexisting_files": 1279,
+  "protected_paths_changed": [
+    "tests/CONTRACTS.md",
+    "tests/README.md",
+    "tests/RESULTS.md"
+  ],
+  "production_and_old_analysis_changed": [],
+  "old_numeric_assets_changed": [],
+  "old_tests_changed": [],
+  "new_test_module": "tests/check_g3a_followup.py",
+  "original_g3a_classification_preserved": {
+    "full_pass": 4,
+    "constrained": 9
+  },
+  "new_short_training": {
+    "slater-real-two64-96": "PASS tested conditions incl. logging",
+    "slater-two64-96": "Physical checks PASS; known initial INFO error, CLI exit2"
+  },
+  "measured_windows": 28,
+  "measurement_seeds": [
+    2303,
+    2304,
+    2305,
+    2306
+  ],
+  "all_measured_abs_z_below_4p5": true,
+  "all_measured_energy_blocking_plateaus": true,
+  "training_initial_seed": 42,
+  "independent_training_random_streams_tested": false,
+  "native_screen_jvp_max_delta": 3.469446951953614e-17,
+  "existing_psiformer_error_still_present": true,
+  "test_only_f64_attention_implemented_as_counterfactual": true,
+  "known_kfac_status": "ERROR (known K08 reproduced, not corrected)",
+  "original33": {
+    "status": "NOT RERUN this stage",
+    "previous_g3a_method_counts": {
+      "PASS": 30,
+      "XFAIL": 0,
+      "FAIL": 1,
+      "ERROR": 2
+    }
+  },
+  "production_snapshots": {
+    "float64": {
+      "status": "PASS exact",
+      "arrays": 902,
+      "elements": 21651
+    },
+    "float32": {
+      "status": "PASS exact",
+      "arrays": 1319,
+      "elements": 31142
+    }
+  },
+  "shared_first_24_checkpoints": "All fields exact; prefix-exact.json",
+  "g3b_selected": {
+    "ansatz": "existing real SlaterNet, num_layers0, one N2 determinant, bias orbitals, no Jastrow, null Envelope",
+    "optimizer": "Adam",
+    "dtype": "float64",
+    "particles": 2,
+    "nspins": [
+      2,
+      0
+    ],
+    "L": 4.0,
+    "rs": 1.5957691216057308,
+    "density": 0.125,
+    "twist": [
+      0,
+      0
+    ],
+    "hamiltonian": "normal PBC, Coulomb scale1, Ewald cutoff5, no moire, atomic units, total energy",
+    "reference": "independent finite-Fourier Slater kinetic plus Hartree-exchange sum, neutralizing background/self constant N*xi/2",
+    "independent_measurement_seeds": [
+      2303,
+      2304,
+      2305,
+      2306
+    ],
+    "training_seed": 42,
+    "independent_training_rng_seeds_verified": false
+  },
+  "interacting_production_training_executed": false,
+  "limitations": [
+    "Only one CPU device, no GPU",
+    "G3b interaction energy references are specified-state expectations, not exact interacting ground energies",
+    "Burn/sample-length windows share samples",
+    "32eps fixed-baseline conditions were not relaxed",
+    "Mixed-dtype scalar perturbations are not native PyTree derivatives"
+  ]
+}

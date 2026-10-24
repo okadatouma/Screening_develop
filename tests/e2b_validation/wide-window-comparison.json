@@ -1,0 +1,378 @@
+[
+  {
+    "x64": false,
+    "mode": "wide",
+    "layers": 3,
+    "heads": 3,
+    "reconstruction": {
+      "max_abs": 2.9802322387695312e-08,
+      "rms": 1.0195136061489412e-08,
+      "reference_rms": 0.17652994141952416,
+      "reference_max": 0.49603429436683655,
+      "relative_rms": 5.775301333874364e-08,
+      "max_relative_above_floor": 5.968177626158301e-05,
+      "relative_floor": 1.7652994141952415e-07,
+      "excluded_near_zero": 0,
+      "size": 48
+    },
+    "rho": [
+      1.483878493309021,
+      0.9625207185745239,
+      1.3588449954986572
+    ],
+    "rho_p": [
+      0.8105337619781494,
+      0.406854510307312,
+      1.3260350227355957
+    ],
+    "rho_defined": [
+      true,
+      true,
+      true
+    ],
+    "rho_p_defined": [
+      true,
+      true,
+      true
+    ],
+    "legacy_moments": {
+      "max_abs": 5.960464477539063e-08,
+      "rms": 2.156837991461375e-08,
+      "reference_rms": 0.11623627658232194,
+      "reference_max": 0.24709081649780273,
+      "relative_rms": 1.8555635597410408e-07,
+      "max_relative_above_floor": 4.7471450966085563e-07,
+      "relative_floor": 1.1623627658232193e-07,
+      "excluded_near_zero": 0,
+      "size": 12
+    },
+    "legacy_ratios": [
+      {
+        "quantity": "rho",
+        "legacy": [
+          1.483878493309021,
+          0.9625206589698792,
+          1.3588448762893677
+        ],
+        "valid": [
+          true,
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 1.1920928955078125e-07,
+          "rms": 7.694926552389894e-08,
+          "reference_rms": 1.2877371366945363,
+          "reference_max": 1.483878493309021,
+          "relative_rms": 5.975541384278028e-08,
+          "max_relative_above_floor": 8.772840199118909e-08,
+          "relative_floor": 1.287737136694536e-06,
+          "excluded_near_zero": 0,
+          "size": 3
+        }
+      },
+      {
+        "quantity": "rho_p",
+        "legacy": [
+          0.8105337619781494,
+          0.4068545401096344,
+          1.3260351419448853
+        ],
+        "valid": [
+          true,
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 1.1920928955078125e-07,
+          "rms": 7.094371744536211e-08,
+          "reference_rms": 0.9275172583815832,
+          "reference_max": 1.3260351419448853,
+          "relative_rms": 7.648775998966444e-08,
+          "max_relative_above_floor": 8.989904247630869e-08,
+          "relative_floor": 9.275172583815831e-07,
+          "excluded_near_zero": 0,
+          "size": 3
+        }
+      }
+    ]
+  },
+  {
+    "x64": false,
+    "mode": "widefixed",
+    "layers": 2,
+    "heads": 3,
+    "reconstruction": {
+      "max_abs": 4.470348358154297e-08,
+      "rms": 1.341005005074133e-08,
+      "reference_rms": 0.09762034150342347,
+      "reference_max": 0.2309296876192093,
+      "relative_rms": 1.3736942366946185e-07,
+      "max_relative_above_floor": 1.2549881136288516e-05,
+      "relative_floor": 9.762034150342346e-08,
+      "excluded_near_zero": 0,
+      "size": 32
+    },
+    "rho": [
+      0.505624532699585,
+      1.2918214797973633
+    ],
+    "rho_p": [
+      0.505624532699585,
+      1.2918214797973633
+    ],
+    "rho_defined": [
+      true,
+      true
+    ],
+    "rho_p_defined": [
+      true,
+      true
+    ],
+    "legacy_moments": {
+      "max_abs": 7.450580596923828e-09,
+      "rms": 4.177996526687956e-09,
+      "reference_rms": 0.046959410603849304,
+      "reference_max": 0.0741795226931572,
+      "relative_rms": 8.897037831104043e-08,
+      "max_relative_above_floor": 2.2623390232667994e-07,
+      "relative_floor": 4.69594106038493e-08,
+      "excluded_near_zero": 0,
+      "size": 8
+    },
+    "legacy_ratios": [
+      {
+        "quantity": "rho",
+        "legacy": [
+          0.5056245923042297,
+          1.2918214797973633
+        ],
+        "valid": [
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 5.960464477539063e-08,
+          "rms": 4.2146848510894035e-08,
+          "reference_rms": 0.9809329650920771,
+          "reference_max": 1.2918214797973633,
+          "relative_rms": 4.296608434087832e-08,
+          "max_relative_above_floor": 1.1788319967539683e-07,
+          "relative_floor": 9.80932965092077e-07,
+          "excluded_near_zero": 0,
+          "size": 2
+        }
+      },
+      {
+        "quantity": "rho_p",
+        "legacy": [
+          0.5056245923042297,
+          1.2918214797973633
+        ],
+        "valid": [
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 5.960464477539063e-08,
+          "rms": 4.2146848510894035e-08,
+          "reference_rms": 0.9809329650920771,
+          "reference_max": 1.2918214797973633,
+          "relative_rms": 4.296608434087832e-08,
+          "max_relative_above_floor": 1.1788319967539683e-07,
+          "relative_floor": 9.80932965092077e-07,
+          "excluded_near_zero": 0,
+          "size": 2
+        }
+      }
+    ]
+  },
+  {
+    "x64": true,
+    "mode": "wide",
+    "layers": 3,
+    "heads": 3,
+    "reconstruction": {
+      "max_abs": 1.1102230246251565e-16,
+      "rms": 3.164770169984312e-17,
+      "reference_rms": 0.2046241582768553,
+      "reference_max": 0.680376596758934,
+      "relative_rms": 1.5466258708819692e-16,
+      "max_relative_above_floor": 5.813339993762553e-15,
+      "relative_floor": 2.0462415827685527e-07,
+      "excluded_near_zero": 0,
+      "size": 48
+    },
+    "rho": [
+      0.9537063542646159,
+      0.8695441810061046,
+      0.9684964204641626
+    ],
+    "rho_p": [
+      0.7355899809600891,
+      0.43200992684678413,
+      0.9434960601488802
+    ],
+    "rho_defined": [
+      true,
+      true,
+      true
+    ],
+    "rho_p_defined": [
+      true,
+      true,
+      true
+    ],
+    "legacy_moments": {
+      "max_abs": 5.551115123125783e-17,
+      "rms": 2.409727237776506e-17,
+      "reference_rms": 0.15554133853238042,
+      "reference_max": 0.34470544865286296,
+      "relative_rms": 1.5492519612558509e-16,
+      "max_relative_above_floor": 1.3662627451590572e-15,
+      "relative_floor": 1.5554133853238042e-07,
+      "excluded_near_zero": 0,
+      "size": 12
+    },
+    "legacy_ratios": [
+      {
+        "quantity": "rho",
+        "legacy": [
+          0.9537063542646157,
+          0.8695441810061049,
+          0.9684964204641626
+        ],
+        "valid": [
+          true,
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 2.220446049250313e-16,
+          "rms": 1.8129866073473578e-16,
+          "reference_rms": 0.9316022415419896,
+          "reference_max": 0.9684964204641626,
+          "relative_rms": 1.9460951535995655e-16,
+          "max_relative_above_floor": 2.5535747323168203e-16,
+          "relative_floor": 9.316022415419895e-07,
+          "excluded_near_zero": 0,
+          "size": 3
+        }
+      },
+      {
+        "quantity": "rho_p",
+        "legacy": [
+          0.7355899809600889,
+          0.4320099268467838,
+          0.9434960601488802
+        ],
+        "valid": [
+          true,
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 3.3306690738754696e-16,
+          "rms": 2.3111135221866393e-16,
+          "reference_rms": 0.7343727510602698,
+          "reference_max": 0.9434960601488802,
+          "relative_rms": 3.147057837930273e-16,
+          "max_relative_above_floor": 7.70970495559173e-16,
+          "relative_floor": 7.343727510602697e-07,
+          "excluded_near_zero": 0,
+          "size": 3
+        }
+      }
+    ]
+  },
+  {
+    "x64": true,
+    "mode": "widefixed",
+    "layers": 2,
+    "heads": 3,
+    "reconstruction": {
+      "max_abs": 1.3877787807814457e-17,
+      "rms": 5.422941753668502e-18,
+      "reference_rms": 0.04527665101921882,
+      "reference_max": 0.09323502926090999,
+      "relative_rms": 1.197734733376503e-16,
+      "max_relative_above_floor": 7.790834115909294e-16,
+      "relative_floor": 4.527665101921882e-08,
+      "excluded_near_zero": 0,
+      "size": 32
+    },
+    "rho": [
+      1.206625719634065,
+      0.8573148142636184
+    ],
+    "rho_p": [
+      1.206625719634065,
+      0.8573148142636184
+    ],
+    "rho_defined": [
+      true,
+      true
+    ],
+    "rho_p_defined": [
+      true,
+      true
+    ],
+    "legacy_moments": {
+      "max_abs": 1.734723475976807e-18,
+      "rms": 9.69739903612216e-19,
+      "reference_rms": 0.008792971893375972,
+      "reference_max": 0.012886822077652418,
+      "relative_rms": 1.1028579590283375e-16,
+      "max_relative_above_floor": 2.469020601008563e-16,
+      "relative_floor": 8.792971893375971e-09,
+      "excluded_near_zero": 0,
+      "size": 8
+    },
+    "legacy_ratios": [
+      {
+        "quantity": "rho",
+        "legacy": [
+          1.2066257196340653,
+          0.8573148142636186
+        ],
+        "valid": [
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 2.220446049250313e-16,
+          "rms": 1.7554167342883506e-16,
+          "reference_rms": 1.0466456702337923,
+          "reference_max": 1.2066257196340653,
+          "relative_rms": 1.6771833909141744e-16,
+          "max_relative_above_floor": 1.840211105332406e-16,
+          "relative_floor": 1.0466456702337922e-06,
+          "excluded_near_zero": 0,
+          "size": 2
+        }
+      },
+      {
+        "quantity": "rho_p",
+        "legacy": [
+          1.2066257196340653,
+          0.8573148142636186
+        ],
+        "valid": [
+          true,
+          true
+        ],
+        "metrics": {
+          "max_abs": 2.220446049250313e-16,
+          "rms": 1.7554167342883506e-16,
+          "reference_rms": 1.0466456702337923,
+          "reference_max": 1.2066257196340653,
+          "relative_rms": 1.6771833909141744e-16,
+          "max_relative_above_floor": 1.840211105332406e-16,
+          "relative_floor": 1.0466456702337922e-06,
+          "excluded_near_zero": 0,
+          "size": 2
+        }
+      }
+    ]
+  }
+]

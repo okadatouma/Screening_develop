@@ -1,0 +1,22 @@
+test_K02_actual_block_call_cannot_bind_to_accept_signature (tests.test_reproducibility.ReproducibilityContracts.test_K02_actual_block_call_cannot_bind_to_accept_signature) ... ok
+test_K02_block_call_should_satisfy_accept_interface (tests.test_reproducibility.ReproducibilityContracts.test_K02_block_call_should_satisfy_accept_interface) ... expected failure
+test_all_current_runtime_sources_parse (tests.test_reproducibility.ReproducibilityContracts.test_all_current_runtime_sources_parse) ... <unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+ok
+test_checkpoint_schema_excludes_rng_and_resumes_at_next_step (tests.test_reproducibility.ReproducibilityContracts.test_checkpoint_schema_excludes_rng_and_resumes_at_next_step) ... ok
+test_config_is_currently_saved_before_deterministic_override (tests.test_reproducibility.ReproducibilityContracts.test_config_is_currently_saved_before_deterministic_override) ... ok
+test_environment_inventory_covers_hidden_physics_switches (tests.test_reproducibility.ReproducibilityContracts.test_environment_inventory_covers_hidden_physics_switches) ... <unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+ok
+test_existing_baseline_directory_is_never_overwritten (tests.test_reproducibility.ReproducibilityContracts.test_existing_baseline_directory_is_never_overwritten) ... ok
+test_metadata_reports_missing_packages_without_importing_them (tests.test_reproducibility.ReproducibilityContracts.test_metadata_reports_missing_packages_without_importing_them) ... <unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+ok
+test_recorded_source_manifest_has_baseline_identity (tests.test_reproducibility.ReproducibilityContracts.test_recorded_source_manifest_has_baseline_identity) ... ok
+test_representative_entry_routes (tests.test_reproducibility.ReproducibilityContracts.test_representative_entry_routes) ... ok
+test_seed_override_differs_between_current_trainers (tests.test_reproducibility.ReproducibilityContracts.test_seed_override_differs_between_current_trainers) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.471s
+
+OK (expected failures=1)

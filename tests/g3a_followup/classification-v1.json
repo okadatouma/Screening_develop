@@ -1,0 +1,135 @@
+{
+  "stage": "G3a residual investigation and G3b preparation only",
+  "original_cases": [
+    {
+      "case": "slater-real64",
+      "original_g3a": "PASS (tested conditions only)",
+      "original_reason": "なし",
+      "followup": "検証した小規模条件で全検査適合",
+      "research_use": "検証範囲内で使用可"
+    },
+    {
+      "case": "slater-real32-v2",
+      "original_g3a": "PASS (tested conditions only)",
+      "original_reason": "なし",
+      "followup": "検証した小規模条件で全検査適合",
+      "research_use": "検証範囲内で使用可"
+    },
+    {
+      "case": "slater-complex64-v2",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "初期INFO整形のみ",
+      "followup": "検査した物理量は適合、ログは未修正",
+      "research_use": "計算経路は候補、無監視の新規complex学習は回避"
+    },
+    {
+      "case": "slater-complex32-v2",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "初期INFO整形のみ",
+      "followup": "検査した物理量は適合、ログは未修正",
+      "research_use": "計算経路は候補、無監視の新規complex学習は回避"
+    },
+    {
+      "case": "slater-two64",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "初期INFO整形のみ",
+      "followup": "検査した物理量は適合、ログは未修正",
+      "research_use": "計算経路は候補、無監視の新規complex学習は回避"
+    },
+    {
+      "case": "slater-kfac64",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "初期INFO整形のみ",
+      "followup": "検査した物理量は適合、ログは未修正",
+      "research_use": "計算経路は候補、無監視の新規complex学習は回避"
+    },
+    {
+      "case": "slater-kfac32",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "初期INFO整形のみ",
+      "followup": "検査した物理量は適合、ログは未修正",
+      "research_use": "計算経路は候補、無監視の新規complex学習は回避"
+    },
+    {
+      "case": "screen-complex64",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "別graph方向微分差",
+      "followup": "検証側のdtype昇格を特定、native JVP適合",
+      "research_use": "当該N1 Adam条件は候補、G3bでは非選択"
+    },
+    {
+      "case": "screen-default64",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "別graph方向微分差",
+      "followup": "検証側のdtype昇格を特定、native JVP適合",
+      "research_use": "当該N1 Adam条件は候補、G3bでは非選択"
+    },
+    {
+      "case": "screen-complex32",
+      "original_g3a": "PASS (tested conditions only)",
+      "original_reason": "なし",
+      "followup": "検証した小規模条件で全検査適合",
+      "research_use": "検証範囲内で使用可"
+    },
+    {
+      "case": "screen-kfac32",
+      "original_g3a": "PASS (tested conditions only)",
+      "original_reason": "なし",
+      "followup": "検証した小規模条件で全検査適合",
+      "research_use": "検証範囲内で使用可"
+    },
+    {
+      "case": "psiformer-complex64",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "点微分の混合精度＋初期INFO",
+      "followup": "倍精度softmax/AD経路を未認定",
+      "research_use": "精密な局所energy・微分研究には回避"
+    },
+    {
+      "case": "psiformer-default64",
+      "original_g3a": "NOT FULL PASS (see component flags)",
+      "original_reason": "点微分の混合精度＋初期INFO",
+      "followup": "倍精度softmax/AD経路を未認定",
+      "research_use": "精密な局所energy・微分研究には回避"
+    }
+  ],
+  "original_full_pass": 4,
+  "original_constrained": 9,
+  "known_extra_training_error": "Screenformer float64 KFAC (not one of the 13 completed cases)",
+  "two_electron_fixed_target": 1.2347060624819985,
+  "original_mc_mean": 1.235339228085392,
+  "original_block_sem": 0.0002783227611195225,
+  "additional_new_full_pass": "real SlaterNet N2 float64 Adam96, null Envelope, layers0",
+  "screen_difference_cause": "test scalar perturbation promotes float32 mask_omega/out_scale to float64; native PyTree JVP delta <=3.47e-17",
+  "psiformer_cause": "installed JAX 0.7.2 dot_product_attention casts softmax logits to f32 even for f64 inputs; test-only f64 softmax removes existing Hessian-folx discrepancy",
+  "kfac_cause": "KFAC scales first vector using f64 coefficients, compares promoted mask_omega/out_scale leaves with f32 velocity leaves; ValueError",
+  "selected_g3b": {
+    "ansatz": "existing real SlaterNet, num_layers0, one N2 determinant, bias orbitals, no Jastrow, null Envelope",
+    "optimizer": "Adam",
+    "dtype": "float64",
+    "particles": 2,
+    "nspins": [
+      2,
+      0
+    ],
+    "L": 4.0,
+    "rs": 1.5957691216057308,
+    "density": 0.125,
+    "twist": [
+      0,
+      0
+    ],
+    "hamiltonian": "normal PBC, Coulomb scale1, Ewald cutoff5, no moire, atomic units, total energy",
+    "reference": "independent finite-Fourier Slater kinetic plus Hartree-exchange sum, neutralizing background/self constant N*xi/2",
+    "independent_measurement_seeds": [
+      2303,
+      2304,
+      2305,
+      2306
+    ],
+    "training_seed": 42,
+    "independent_training_rng_seeds_verified": false
+  },
+  "production_modified": false,
+  "interacting_production_training_started": false
+}

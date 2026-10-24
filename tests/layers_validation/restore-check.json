@@ -1,0 +1,10 @@
+{
+  "changed_existing_files": [
+    "tests/RESULTS.md"
+  ],
+  "production": "all recorded source hashes equal B2",
+  "snapshots": "unchanged",
+  "candidate": "not applied",
+  "b2_retest": "9 PASS",
+  "normal_test_status_changes": {}
+}

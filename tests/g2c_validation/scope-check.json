@@ -1,0 +1,39 @@
+{
+  "existing_files_checked": 794,
+  "unchanged_existing_files": 784,
+  "changed_existing_files": [
+    "HANDOFF.md",
+    "README.md",
+    "periodicwave/train.py",
+    "periodicwave/train_screen.py",
+    "periodicwave/utils/statistics.py",
+    "tests/CONTRACTS.md",
+    "tests/README.md",
+    "tests/RESULTS.md",
+    "tests/check_g2b_downstream.py",
+    "tests/test_wavefunction.py"
+  ],
+  "production_changes": [
+    "periodicwave/train.py:reporting only",
+    "periodicwave/train_screen.py:reporting only",
+    "periodicwave/utils/statistics.py:docstring only"
+  ],
+  "loss_and_Hamiltonians_unchanged": true,
+  "old_numeric_baselines_checkpoints_and_research_data_unchanged": true,
+  "non_train_trainer_functions_AST_unchanged": true,
+  "EW_arithmetic_AST_unchanged": true,
+  "source_archives_match": true,
+  "after_sha256": {
+    "HANDOFF.md": "e36c679fdfb87d4da9350ba6e385a1c6b0ec18c801423f13ff2c19d2958b0f38",
+    "README.md": "446163ffc79915af4453696ea88026e60d7aba25abf34cb864aef9380e05166d",
+    "periodicwave/train.py": "f4cb1cfe77282e2381c4b2f60058a1f30d838e809c39d79a15cdae042bf8018b",
+    "periodicwave/train_screen.py": "8e659eaa346fc232080ad79eab0aece3e14d3d22e6be61171901367dd98ec80b",
+    "periodicwave/utils/statistics.py": "c7aed6a41348736d0f82b8610023c2de47a1c5ee49c53e23a14ee9d44bb242f0",
+    "tests/CONTRACTS.md": "8c7eebcbc51de3cc666e385d62f82ac020e45945e6a7083de9e59b1199a7a25e",
+    "tests/README.md": "bc62e4e93d34d40160b724cddd547c4cc588571dbdfc385466ecab1c55affda6",
+    "tests/RESULTS.md": "9486a985db6df89094b0ee21ec2786473aa682b6fb2acff92296e2b9ccdf70a7",
+    "tests/check_g2b_downstream.py": "a4e8d1270b6d782af57dcac26de45563b38e7444510e5366aa121c29f8fd345e",
+    "tests/check_g2c_reporting.py": "227afd6c3681f202cba2eca476e38e571eed352ec8caa3c08aae3c5dc1533577",
+    "tests/test_wavefunction.py": "61b454e61486900116c5774c0b7112a7fa20258e0631ef42460b5df5b77f5825"
+  }
+}

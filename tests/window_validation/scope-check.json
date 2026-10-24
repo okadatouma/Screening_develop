@@ -1,0 +1,15 @@
+{
+  "changed_existing_sources": [
+    "periodicwave/CustomScreenformer.py"
+  ],
+  "window_helpers": "AST identical",
+  "outside_window": "AST identical after restoring extracted block; prior LayerNorm changes excluded",
+  "snapshot_sha256": "4 files unchanged",
+  "analysis_sources": "unchanged",
+  "source_sha256_after": {
+    "periodicwave/attention.py": "4fbb9ca6f4d277414b66319d1f1d8b509f75f61d2feafb216f8697dd0934a05b",
+    "periodicwave/CustomScreenformer.py": "0875ad2e9d2252b85de696c960f07b2d87ff28736af39fb8e1ad92dceee17cef",
+    "tests/check_window.py": "2f467fcbcc4e1a5b1b84ac5f2d5d96c55f546524333e74b6cacb53c17738a612",
+    "tests/window_reference.py": "edd28c983d8e108f855a224600925836010547a0f42002e78bcbecfcb438e74e"
+  }
+}

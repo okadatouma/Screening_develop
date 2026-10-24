@@ -1,0 +1,22 @@
+{
+  "changed": {
+    "periodicwave/CustomScreenformer.py": {
+      "before": "a8a36329f142aef8f4666d983315508056c399fbcb9e5f5d31b728f164cba127",
+      "after": "89e5cec54fcbfc97dd7628af9e2ab9e7734a36d75940cccd2e0a710dd7b4a646"
+    },
+    "periodicwave/network_blocks.py": {
+      "before": "4cae526a9b492a91ea2f6f923ad517f6e189b7481cd190d9d630540bc186af44",
+      "after": "ae5caacb5bab5ae276e6e48fbd586eac63948baeb925a9508f2e23de740ce2dc"
+    },
+    "periodicwave/CustomPsiformer.py": {
+      "before": "f708658d9e45cd0eb4312db11118acdf9179f6ac45410199fa535cf69e5e25dc",
+      "after": "524204e63ac8eef1e3abcf9df7c482d74e38b85d7785330f94c2c0027e8c9658"
+    },
+    "periodicwave/SlaterNet.py": {
+      "before": "bc8b958d8645c4274219959575457728a3be37f9434dcfaa820a61f13d532050",
+      "after": "638249c51103b83b65e45638acce50b01dc9444d626b1b76521a9dffae5b5e61"
+    }
+  },
+  "unchanged_hashed_files": 314,
+  "outside_allowed_source_changes": []
+}
