@@ -14,6 +14,8 @@
 
 """Main wrapper for FermiNet in JAX."""
 
+# 通常のCLI入口。--configで読み込んだ設定をtrain.trainへ渡す。
+# Screenformer専用configやwindow_experimentsは、それぞれの入口から実行する。
 from absl import app
 from absl import flags
 from absl import logging

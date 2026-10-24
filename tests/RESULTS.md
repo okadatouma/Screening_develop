@@ -1,4 +1,92 @@
-# 解析境界の安全性：削除防止・失敗伝播・Head辞書対応（2026-10-24・最新）
+# 学習可能Window＋高調波Q/K入力の比較実験（2026-10-24・最新）
+
+実行手順：[window_experiments/README.md](../periodicwave/window_experiments/README.md)。
+新しい独立入口でE0/E1/E2/E3、W0/W1/W2/W3、対依存窓、推奨A/B/C/Dを選択可能。
+Slurm arrayの条件planを生成する。λ=0.64を優先し、各λのWC/AHC HF表を別々に指定する。
+他のλはcases JSONで展開する。HF表からλを推測せず、作成メタデータ・ハッシュ・λ/rs/Delta/N/格子/labelを照合し、不足・不一致で停止。
+
+**今回確立したのはCPU小規模の接続検証であり、大学のGPU・実HFによるWC/AHCの物理的な検証ではない。**
+本計算の既定はN36・rs15・Coulombありだが未実行。実HF表の大学パスは未指定、Slurm投入も未実行。
+推測したHF表の生成や既存研究データの変更は行っていない。
+
+## 実装と定義
+
+- `periodicwave/window_experiments/`：`windows.py`（raw入力／研究用Windowの数式）、`network.py`（実験モデル・独立診断）、
+  `run.py`（既存λ Hamiltonian/MCMC/VMC勾配＋Adam、凍結／解放、保存再開）、`suite.py`/`submit.slurm`（比較条件と実行）。
+- 既存本体の変更は`attention.screening_attention`へ任意の`window`、`qk_stream`、`gate_stream`を追加した部分だけ。
+  省略時の計算・既存の公開入口は維持。通常のconfig、Hamiltonian、loss、HF/Jastrow、MCMC、Optimizer、既存Diagnostic/解析は変更なし。
+- QKは`X+extra @ qk_extra`。追加射影ゼロ初期化、Valueと残差の元のXを維持する。E2/E3のone-hotは(s,1)基底で元のspin射影を利用。
+  入力全体を通常Embeddingへ置換する方式とは区別する。位置Gateは明示選択時のみ。
+- W1：正増分から順序付き累積幅。W2：正増分境界＋`sigmoid((b²−d²)/(2bτ))`差分の非負分割。
+  W3：同じ固定距離基底のsoftmax混合。W2/W3は最外端をセルd_refに固定する。
+  `min_gap_fraction=0`が添付の増分式。正の値を指定すると一様増分との混合になるため追加仮定として保存する。
+  対依存W1/W2は3チャネル(++/--/+-)、小さいlog幅補正の上限を近傍gapから決め、順序と混合チャネルの対称性を保つ。
+- 窓Adamはwarmup中にパラメータ・状態とも凍結、解放後は小さいLR＋ramp。新入口はAdamのみ。
+  位置提案幅は固定で、旧trainerのadaptive幅やKFAC runと同一の学習条件だとは扱わない。
+- 新実験のcheckpointは既存loaderで読める形式＋RNG sidecar。Optax partition状態はobject scalarに保持しNamedTupleのlist化を防ぐ。
+  **新実験用パラメータは旧checkpointとは互換でない**。通常ProductionのPyTree／形式は不変。
+
+## ΔC_core（ユーザーが確定した定義）
+
+`C_hij=Qbar_ih·Kbar_jh`。coreは実行時に明示した中心・半径で判定する。
+距離は`min_{center,n∈Z²}|r_i−center−L n|`の最小像Euclidean、単位r_s a_B。
+斜交格子も探索し、成分ごとのroundだけで代用しない。Attentionの距離は別の周期ノルム。
+Query iだけをcore内に制限し、Key jはcore外も含め、自己項を除外する。
+
+```
+M_ss = 1[i in core] 1[s_i=s_j=s] 1[i!=j]
+C_core,h,ss = Σ_bij M_ss m_hij C_hij / Σ_bij M_ss m_hij
+ΔC_core,h = C_core,h,-- − C_core,h,++
+```
+
+中心／半径なしでは計算せず、片方だけではエラー。有効Window質量0はNaNと質量・対数を保存する。
+`C`、`alpha`、`W_window`、`W_aggregation`は別名で保存。coreのα／Wも別のWindow加重平均として記録する。
+Head出力寄与やq_hはΔCへ混ぜない。q_hは**mean||c_h||²の割合**であり旧mean-norm²指標とは異なる。
+WC/AHC比較の`--compare`はλ・core・窓定義／設定等を照合する。学習後の幅は異なり得るので併せて保存する。
+ΔCの標本推定値だけで相やトポロジーを自動判定しない。
+
+## 実行結果
+
+環境：Python3.13.14、JAX/jaxlib0.7.2、folx0.2.19、Optax0.2.6、KFAC-JAX0.0.7、NumPy2.3.3、CPU1device。
+既存環境・依存は更新していない。検証記録は`tests/window_experiments_validation/`。
+
+|検証|実行結果|
+|---|---|
+|新規unit（入力、全16組forward/JIT、窓順序・分割・微分、固定Value/位置Gateの勾配/Hessian、凍結／解放、core、Slurm plan等）|float32 **13 PASS**、float64 **13 PASS**|
+|既存Production G2b固定snapshot float64|**902配列／21651要素 厳密一致**、5経路・11 Attention設定|
+|同float32、Adam/KFAC込み|**1319配列／31142要素 厳密一致**|
+|元33メソッド＋最初の新規10件を一括実行|40 PASS / 1 FAIL / 1 ERROR / 1 SKIP。内、元33は30 PASS / 1 FAIL / 1 ERROR / 1 SKIP|
+|一括時にSKIPしたfloat64 KFACを別途有効化|既知のscreen/λ/HFの3 subcase ERRORを再確認。抽象構造／混合dtype問題。新実験KFACの成功を意味しない|
+|合成HF λ=.64、N4、Coulombなし、A〜D×両精度、各3 Adam更新|**8条件完走**、複素EL・位置／spin受理・CSV・保存を確認|
+|A-float64を3→4更新へ再開 vs 4更新連続実行|params・Adam状態・標本・RNGが**厳密一致**|
+|独立JIT診断・core集計・cut半径2個で別途再平衡化|完走。短系列でblocking plateau未確認、Rstar=nullを確認（物理長を捏造しない）|
+|Slurm script|`bash -n`成功。実ジョブ投入・GPU動作は未検証|
+
+一括の既存FAILはPsiformer点微分比較、ERRORは定数出力folx `.laplacian`。
+KFAC SKIPは環境不足ではなく`PW_RUN_KFAC`未指定であり、上記の別実行で既知の失敗を確認した。
+元33をメソッド単位でKFACも含めて整理すれば**30 PASS / 1 FAIL / 2 ERROR**。
+KFAC内の3 subcaseを個々に数えるとERROR数が増えるため、メソッド数と混同しない。
+既存の失敗を修正・除外・許容値変更していない。
+
+`unit32/64.txt`、`frozen32/64.txt`、`existing-and-first10.json`、`kfac64-known.txt`、
+`integration-summary.json`、8条件のCSV、`synthetic-analysis-v1.npz/json`を保存した。
+一括検証後に追加した3件を含む最終13件は両精度で別途すべて再実行した。
+実行前の1540ファイルをハッシュ照合し、文書更新前の変更は`periodicwave/attention.py`のみ、削除0。
+固定snapshot・既存検証データ・解析結果は不変（`scope-check.json`）。
+
+## 未検証・使用上の区別
+
+- 実HFのWC/AHC、N36の相互作用学習、大学GPUのメモリ・所要時間・Slurm投入・物理収束は**未実行**。
+- 実HFが来るまでメタデータ照合は合成表だけ。6列係数からλの真偽を独立に証明することはできない。
+- 小規模smokeのエネルギー低下／平均値を物理的成功の基準にしていない。
+- R*は別ψで再標本化した変分応答。blocking plateauや有意な悪化がなければ未確定。
+  q_h・dbar・窓幅／境界・core Cは異なる量であり、エネルギー加法分解ではない。
+- Matplotlib導入や既存環境の変更は行っていない。数値はNPZ/JSON/CSVで出力する。
+- K10、定数folx、Psiformer点微分、倍精度KFAC、Envelope不整合等は残る。新実験はAdamを使用。
+
+---
+
+# 解析境界の安全性：削除防止・失敗伝播・Head辞書対応（2026-10-24）
 
 今回の変更はscreening_analysisの指定3入口と小規模テストだけ。大規模整理や他の解析移行は行っていない。
 Production、Hamiltonian/loss、MCMC/Optimizer、Diagnostic計算、head_contrib.py、研究データ・旧結果は不変。

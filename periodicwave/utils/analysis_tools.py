@@ -73,6 +73,8 @@ def estimate_stats(df: pd.DataFrame,
     df does not contain a key to group over, insert a dummy column with
     identical values or use pyblock directly.
   """
+  # runを区別する列でグループ分けし、burn_in以後の系列をblocking解析する。
+  # 瞬時ELの標準偏差を、そのまま平均エネルギーの標準誤差として使わない。
   wid = 'work_unit_id'
   if groups is None:
     groups = []

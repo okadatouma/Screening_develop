@@ -1,3 +1,6 @@
+# 既存lj2/readoutの内部量をまとめ、同符号/異符号対の類似度・重み・Head寄与を集計する旧解析入口。
+# 正式Diagnosticへ移行済みの主要3入口とは別であり、ここでのDeltaは新しいcoreのΔCとは異なる。
+# 結果はreadouts.jsonへ保存する。
 import json, numpy as np, jax, jax.numpy as jnp, time
 import lj2net as LN, readout as RO
 NW = 512

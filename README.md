@@ -1,5 +1,8 @@
 # Screening_develop
 
+新しい窓研究の実行入口：**[入力E0〜E3・Window W0〜W3・WC/AHC HF比較・Slurm手順](periodicwave/window_experiments/README.md)**。
+λ=0.64を優先。HF表と作成条件メタデータのパスを実行時に指定する。GPU本計算は未実行、CPU小規模検証済み。
+
 遮蔽アテンション（screening attention）を使ったニューラルネットワーク変分モンテカルロ（VMC）のコード。
 [PeriodicWave](https://github.com/mg607/PeriodicWave)（M. Geier, K. Nazaryan, T. Zaklama, L. Fu, Phys. Rev. B **112**, 045119 (2025)）をもとに、次のものを足しています。
 

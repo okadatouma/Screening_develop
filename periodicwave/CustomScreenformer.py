@@ -245,6 +245,8 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
 
   # Inverse parameterizations for the requested initial values.
   # [FIX] paper (arXiv:2604.01178) defines r = sigmoid(s_r) in (0,1).
+  # 初期化と設定の取得を担当するfactory。forwardの数式本体はattention.screening_attentionにある。
+  # グローバル設定は呼出時、JITの場合はtrace時に参照される点に注意。
   init_trim_r = float(np.clip(init_trim_r, 1e-3, TRIM_MAX - 1e-3))
   rho_init = float(np.log(init_trim_r / (TRIM_MAX - init_trim_r)))  # logit(r/TRIM_MAX)
 
@@ -602,6 +604,8 @@ def make_screenformer_layers(
   Returns:
     Tuple of init, apply functions.
   """
+  # 固定1体特徴＋spinをEmbeddingへ渡し、電子対の周期距離をAttentionへ別に渡す。
+  # 固定Valueでは電子対特徴も使う。1体入力と距離依存性は別の変更箇所。
   del natoms  # Unused.
 
   # [SCREEN] Reference scale for the screening length: the largest periodic
@@ -729,6 +733,9 @@ def make_screenformer_diagnostic(nspins, options):
   This interface stops before orbitals; it also works with an HF-connected trunk
   without trying to reconstruct that wavefunction.
   """
+  # 通常Network.applyとは別にJITする診断入口。返値は(final_X, 層順の内部量tuple)。
+  # 同じ層評価コードを使うが、追加出力によるXLA融合の違いでProductionと丸め差が出る。
+  # 診断出力を学習・VMC勾配・最適化へ渡さない。軌道評価の手前で止まる。
   _, apply = make_screenformer_layers(nspins, 0, options)
   geometry = networks.make_periodic_construct_input_features(options.pbc_lattice)
 

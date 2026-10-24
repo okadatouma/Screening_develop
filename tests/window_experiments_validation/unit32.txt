@@ -1,0 +1,108 @@
+test_all_input_window_forwards (tests.test_window_experiments.WindowExperiments.test_all_input_window_forwards) ... ok
+test_blocking_does_not_call_std_sem (tests.test_window_experiments.WindowExperiments.test_blocking_does_not_call_std_sem) ... ok
+test_core_cosine_definition (tests.test_window_experiments.WindowExperiments.test_core_cosine_definition) ... ok
+test_core_periodic_oblique (tests.test_window_experiments.WindowExperiments.test_core_periodic_oblique) ... ok
+test_core_uses_window_not_alpha_or_head_output (tests.test_window_experiments.WindowExperiments.test_core_uses_window_not_alpha_or_head_output) ... ok
+test_features (tests.test_window_experiments.WindowExperiments.test_features) ... ok
+test_fixed_value_position_gate_derivatives (tests.test_window_experiments.WindowExperiments.test_fixed_value_position_gate_derivatives) ... ok
+test_hf_metadata_rejects_wrong_lambda (tests.test_window_experiments.WindowExperiments.test_hf_metadata_rejects_wrong_lambda) ... ok
+test_missing_hf_and_incomplete_core_stop (tests.test_window_experiments.WindowExperiments.test_missing_hf_and_incomplete_core_stop) ... ok
+test_optimizer_freeze_release_and_checkpoint (tests.test_window_experiments.WindowExperiments.test_optimizer_freeze_release_and_checkpoint) ... ok
+test_order_and_pair_symmetry (tests.test_window_experiments.WindowExperiments.test_order_and_pair_symmetry) ... ok
+test_suite_preserves_paired_conditions_and_fails_on_override (tests.test_window_experiments.WindowExperiments.test_suite_preserves_paired_conditions_and_fails_on_override) ... ok
+test_window_reference_and_derivatives (tests.test_window_experiments.WindowExperiments.test_window_reference_and_derivatives) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 11.437s
+
+OK
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm

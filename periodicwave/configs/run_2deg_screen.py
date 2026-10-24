@@ -45,6 +45,9 @@ present in the results folder. To start a run from scratch, move that folder
 aside first.
 """
 
+# 実行用config：下でbase_configの既定値を上書きし、最後にtrainerを呼び出す。
+# 単なる定数定義ではなく、読み込み時に保存先の準備・設定保存・学習が実行されるスクリプト。
+# 物理条件はcfg.system、モデル構造はcfg.network、標本化はcfg.mcmc、更新則はcfg.optimを確認する。
 import os
 import sys
 from sys import argv

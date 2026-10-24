@@ -1,5 +1,29 @@
 # 作業引き継ぎ：Periodic Wave Transformerの段階的整理
 
+## 最新：高調波QK入力＋学習可能距離窓の独立実験（2026-10-24）
+
+ユーザー依頼で`periodicwave/window_experiments/`を追加。通常config/trainerを置き換えず、
+E0〜E3、W0〜W3、対依存窓、推奨A/B/C/D、warmup凍結／小LR解放、HF＋NN＋Jastrowを比較できる。
+大学はSlurm。まずλ=.64でWC/AHC初期HFを別々に使用、以後.33/.40/.48/.56/.72へ展開する。
+大学のHFパスは**未指定**。HFの作成JSONと表のハッシュを照合し、欠落／条件不一致なら停止する。
+6列係数表だけからλを推測しない。新規run/plan/解析は旧出力へ上書きしない。
+
+**最新のcore定義はHead出力でなくQ/K cosine類似度。**
+Queryだけcore内、同符号対、自己項除外、各HeadのWindowで分子／分母を全標本合算し、ΔC=--平均−++平均。
+中心／半径は明示指定が必要。coreは最小像Euclidean、Windowは周期ノルム。C/α/W/q_hを別名で保存。
+WC/AHCの`--compare`は同じλ・core・Window条件を検査する。
+
+実行手順は`periodicwave/window_experiments/README.md`、結果は`tests/RESULTS.md`先頭。
+新規unitは両精度各13 PASS。通常Productionの固定snapshotは両精度厳密一致（f32 Adam/KFAC込み）。
+合成HF N4で8条件の短期Adam、checkpoint/RNG再開厳密一致、core診断・cut再標本化まで確認。
+**実HFのWC/AHC・N36 Coulomb学習・大学GPU/Slurm投入・相の判定は未検証。**
+新入口はAdamのみ。旧checkpointとは新実験用PyTreeが異なり、旧研究の再開には使わない。
+通常の既存コードの変更はattention.pyの任意window/qk_stream/gate_stream入力だけで、未指定経路は厳密一致。
+Hamiltonian/loss/MCMC/HF/Jastrow/既存Diagnostic/解析は変更していない。
+新しい研究実験の追加であり、F4/G3bの全面成功や既知問題の解決と混同しない。
+
+---
+
 更新日：2026-10-24。**G3aの自由電子VMC検証まで完了し停止。** **構造整理はF3で停止。G1でloss.pyのVMC主勾配を最小修正。G2bで通常PBC複素folxの虚部欠落を1行修正。lossとλ専用は保持。G2cでoptimizerなしの報告境界を修正。補助JVP等の既知問題は保持。F4は必要な新Ansatzが決まるまで保留。**
 最新の実測結果は `tests/RESULTS.md` 先頭、物理/数値契約は `tests/CONTRACTS.md`。
 過去の「依存不足」「B2まで」「25 PASS/4 XFAIL」は履歴であり現在の状態ではない。

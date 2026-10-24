@@ -114,7 +114,8 @@ def _unit_length(x: jnp.ndarray, eps: float = 1e-6) -> jnp.ndarray:
 
 def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
                         options, trim_max, trim_pow, win_shape, freeze_w,
-                        clip_r, clip_beta, return_aux=False):
+                        clip_r, clip_beta, return_aux=False,
+                        window=None, qk_stream=None, gate_stream=None):
   """Screening Attentionの出力 [N, embed_dim] を評価する。
 
   x=single_electron_stream は [N,embed_dim]、d_eeは周期距離 [N,N]。
@@ -123,6 +124,8 @@ def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
   value_dimはreshapeの寸法、d_refはWindow用の基準距離。
   use_softmask/use_fixed_value/use_tanh_norm/use_gate/use_output_scaleは既存フラグ。
   この関数では初期化や設定の取得を行わない。
+  実験用の任意指定: window[H,N,N]、qk_stream/gate_stream[N,E]。
+  Noneなら従来のWindowとXを使う。Valueは常に元のXから生成する。
   trim_max/trim_pow、win_shape/freeze_w、clip_r/clip_betaは呼出元が
   apply実行時（JITならtrace時）に読む既存設定。静的なPython値として渡す。
 
@@ -156,8 +159,9 @@ def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
   use_output_scale = options['use_output_scale']
 
   # 1. Q/K/V: XWを[N,H,D]に分ける。固定Value時はVを作らない。
-  q = jnp.dot(single_electron_stream, params['q_w']).reshape(num_electrons, num_heads, attn_dim)
-  k = jnp.dot(single_electron_stream, params['k_w']).reshape(num_electrons, num_heads, attn_dim)
+  qk_input = single_electron_stream if qk_stream is None else qk_stream
+  q = jnp.dot(qk_input, params['q_w']).reshape(num_electrons, num_heads, attn_dim)
+  k = jnp.dot(qk_input, params['k_w']).reshape(num_electrons, num_heads, attn_dim)
   v = (None if use_fixed_value
        else jnp.dot(single_electron_stream, params['v_w']).reshape(
            num_electrons, num_heads, value_dim))
@@ -188,8 +192,8 @@ def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
 
   # 5–6. 周期距離のWindowと重み weights=alpha*m（行和で割らない）。
   if use_softmask:
-    m = screening_window(
-        params, d_ee, d_ref, win_shape=win_shape, freeze_w=freeze_w)
+    m = (screening_window(params, d_ee, d_ref, win_shape=win_shape, freeze_w=freeze_w)
+         if window is None else window)
     weights = alpha * m
     if return_aux:
       aux['window'] = m
@@ -252,7 +256,7 @@ def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
 
   # 9. Gate: tanh(SiLU(XW_G))を要素ごとに掛ける。
   if use_gate:
-    g = jnp.dot(single_electron_stream, params['g_w'])
+    g = jnp.dot(single_electron_stream if gate_stream is None else gate_stream, params['g_w'])
     attn = attn * jnp.tanh(jax.nn.silu(g))
 
   if return_aux:

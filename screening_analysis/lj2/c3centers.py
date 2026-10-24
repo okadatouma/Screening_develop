@@ -1,3 +1,5 @@
+# 特定のN36 HF表についてC3応答の中心候補を探索し、密度と擬スピン比を記録する研究専用解析。
+# 入力は固定の絶対パス、出力はc3_hf_centers.json。import時にもトップレベルの処理が走る。
 import numpy as np, json, sys
 from scipy.optimize import minimize
 from c3hf import load_table, c3_value, find_centers, A

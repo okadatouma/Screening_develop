@@ -19,6 +19,8 @@
 
 """ Multiplicative envelope functions for systems with open boundary conditions. """
 
+# Envelopeは軌道や軌道生成前の特徴へ掛ける因子であり、電子間Jastrowとは別物。
+# PBCではnullを使う構成がある。isotropicとPBCの既知shape不整合は解消済みと扱わない。
 import enum
 from typing import Any, Mapping, Sequence, Union
 
@@ -178,6 +180,7 @@ def make_full_envelope() -> Envelope:
 def make_null_envelope() -> Envelope:
   """Creates an no-op (identity) envelope."""
 
+  # 常に1を返す。パラメータは空で、軌道の値を変えない。
   def init(
       natom: int, output_dims: Sequence[int], ndim: int = 3
   ) -> Sequence[Mapping[str, jnp.ndarray]]:

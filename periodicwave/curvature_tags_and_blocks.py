@@ -13,6 +13,8 @@
 # limitations under the License.
 
 """Curvature blocks for FermiNet."""
+# KFACが線形演算の構造を認識するためのtagと曲率近似block。
+# 物理的な波動関数の式ではなく、optimizerへ渡す曲率情報を担当する。
 import dataclasses
 import functools
 from typing import Sequence, Set, Tuple

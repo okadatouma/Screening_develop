@@ -22,6 +22,8 @@ Contains:
 See M Geier, K Nazaryan, T Zaklama, and L Fu, Phys. Rev. B 112, 045119
 """
 
+# 通常PBCのHamiltonian：局所運動エネルギー＋2D Ewald相互作用＋必要ならモアレ外場。
+# λ-jelliumの擬スピン依存運動項・反転項はlambda_jellium.pyで独立に扱う。
 import itertools
 from typing import Callable, Optional, Sequence, Tuple
 
@@ -43,6 +45,8 @@ def make_triangular_potential(
     phi: float
 ) -> Callable[[jnp.ndarray, jnp.ndarray], float]: #callable:
     """Creates a function to evaluate a triangular periodic potential."""
+    # 3本の逆格子ベクトルに対する−2U Σ cos(G·r+phi)を全電子について足す。
+    # モアレ格子の周期は電子を入れるスーパーセルとは区別する。
     del atoms, charges # unused
     a_M = potential_lattice[0, 0]  # Extract fixed moire period
     g1 = (4 * jnp.pi / (jnp.sqrt(3) * a_M)) * jnp.array([0, 1])
@@ -85,6 +89,8 @@ def make_2DCoulomb_potential(
         electron-electron displacement vectors respectively, and spins are electron spins,
         which evaluates the Coulomb sum for the periodic lattice via the Ewald method.
   """
+  # 一様背景電荷と自己像の寄与を含む2D Ewald和。相互作用強度はinteraction_energy_scale。
+  # 生のee変位と格子像から距離を計算し、Embedding/Attentionの周期ノルムで代用しない。
   print("making 2DCoulomb potential with energy scale: " + str(interaction_energy_scale))
   del atoms, charges # unused
   rec = 2 * jnp.pi * jnp.linalg.inv(lattice)
@@ -208,6 +214,8 @@ def local_energy(
     energy of the wavefunction given the parameters params, RNG state key,
     and a single MCMC configuration in data.
   """
+  # 返すe_l(params,key,data)は1配置の局所エネルギーを評価する。
+  # 複素ELの虚部をここで捨てず、平均の報告時に実部を取り出す。
   print("Using customized local_energy from pbc.hamiltonian ")
   del nspins
   assert lattice is not None, "pbc.hamiltonian.local_energy requires lattice to be passed"

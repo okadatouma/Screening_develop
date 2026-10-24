@@ -1,0 +1,343 @@
+{
+  "version": "window-analysis-v1",
+  "manifest": {
+    "schema": "screening-window-v1",
+    "config": {
+      "smoke": true,
+      "preset": "A",
+      "input": "E2",
+      "window": "W1",
+      "value": "learned",
+      "gate": "learned",
+      "pair_windows": false,
+      "layer_norm": false,
+      "jastrow": true,
+      "freeze_window": false,
+      "coulomb": false,
+      "hf": "/private/tmp/pw-window-integration-final/synthetic_hf.txt",
+      "hf_meta": "/private/tmp/pw-window-integration-final/synthetic_hf.json",
+      "label": "WC",
+      "init_spins": "random",
+      "lam": 0.64,
+      "delta": 1.0,
+      "rs": 1.0,
+      "n": 4,
+      "layers": 1,
+      "heads": 2,
+      "width": 8,
+      "attn_dim": 2,
+      "value_dim": 2,
+      "determinants": 1,
+      "harmonic": 6,
+      "batch": 4,
+      "iterations": 3,
+      "warmup": 1,
+      "window_ramp": 1,
+      "burn": 2,
+      "mcmc_steps": 1,
+      "spin_flips": 1,
+      "flip_batch": 4,
+      "chunk": 2,
+      "save_every": 1,
+      "seed": 0,
+      "ewald_radius": 5,
+      "w_min": 0.1,
+      "w_first": 0.2,
+      "w_max": null,
+      "min_gap_fraction": 0.0,
+      "transition": 0.1,
+      "pair_max_log_shift": 0.15,
+      "net_scale": 0.05,
+      "output_scale": 0.0,
+      "lr": 0.01,
+      "lr_delay": 20000.0,
+      "lr_decay": 1.0,
+      "window_ratio": 0.05,
+      "move_width": 0.2,
+      "clip": 0.0,
+      "basis_edges": [
+        0.0,
+        0.3215185342893719,
+        0.6430370685787438,
+        0.9645556028681157,
+        1.2860741371574875
+      ],
+      "dtype": "float64",
+      "laplacian": "folx",
+      "trim_pow": 2,
+      "lattice": [
+        [
+          3.8092512274558294,
+          -1.9046256137279147
+        ],
+        [
+          0.0,
+          3.298908332373803
+        ]
+      ],
+      "crystal_lattice": [
+        [
+          1.9046256137279147,
+          -0.9523128068639574
+        ],
+        [
+          0.0,
+          1.6494541661869015
+        ]
+      ],
+      "trim_max": 2.0,
+      "cut_radius": null,
+      "cut_beta": 0.3,
+      "hf_sha256": "3b72efba41b7063d1a441a635d6c80092b1346121208b30947573eb1ca7cc557",
+      "hf_metadata": {
+        "lam": 0.64,
+        "rs": 1.0,
+        "delta": 1.0,
+        "n": 4,
+        "lattice": [
+          [
+            3.8092512274558294,
+            -1.9046256137279147
+          ],
+          [
+            0.0,
+            3.298908332373803
+          ]
+        ],
+        "label": "WC",
+        "sha256": "3b72efba41b7063d1a441a635d6c80092b1346121208b30947573eb1ca7cc557",
+        "purpose": "synthetic wiring test; not a WC solution"
+      }
+    },
+    "versions": {
+      "jax": "0.7.2",
+      "jaxlib": "0.7.2",
+      "folx": "0.2.19",
+      "optax": "0.2.6",
+      "kfac-jax": "0.0.7",
+      "numpy": "2.3.3"
+    },
+    "python": "3.13.14",
+    "environment": {
+      "JAX_PLATFORMS": "cpu"
+    },
+    "matmul_precision": "None",
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "source_sha256": {
+      "periodicwave/CustomPsiformer.py": "524204e63ac8eef1e3abcf9df7c482d74e38b85d7785330f94c2c0027e8c9658",
+      "periodicwave/CustomScreenformer.py": "89e5cec54fcbfc97dd7628af9e2ab9e7734a36d75940cccd2e0a710dd7b4a646",
+      "periodicwave/SlaterNet.py": "638249c51103b83b65e45638acce50b01dc9444d626b1b76521a9dffae5b5e61",
+      "periodicwave/__init__.py": "ea62cc744e122fb79d6c9360968b734b62a2ac198b6bbcd076dbefc2dd124b4d",
+      "periodicwave/ahc_simple/example.py": "b53f73b1515a570c30d155c06d3a2a237e36e9f378c82e0ae3498fdea9c78f7c",
+      "periodicwave/ahc_simple/pfaffian.py": "b662e9fd7347fa2cea4e62bc12568daa09c9cf68446ce8a22558e57d2276ffa8",
+      "periodicwave/ahc_simple/spinor.py": "2aa275517ef7bfb53a47eed46e3ad0b924bfbc0423911665e7544a69e039ef31",
+      "periodicwave/ahc_simple/test_wavefunctions.py": "7768f522d5978a7e83b786e975396aaaf1b227cdd4add538167f73f555938c37",
+      "periodicwave/ahc_simple/wavefunctions.py": "988536668c1931e191baa4f8e627b54920595b4f7f054d1fb1ebf13993530c69",
+      "periodicwave/attention.py": "26201bb548b02ea722e97bb356704d7e5a67e83c8ca022cf3aa8d0e3c1e49fa5",
+      "periodicwave/base_config.py": "c19d1274cc0d394cfebf533caf510f26f9e3524822cd0aa8af9011f6351706f4",
+      "periodicwave/checkpoint.py": "a8a0a1902507c6cafe8cb8709c1491f5b7f9ba782bd9accd0acaaadc3175cb00",
+      "periodicwave/configs/__init__.py": "ea62cc744e122fb79d6c9360968b734b62a2ac198b6bbcd076dbefc2dd124b4d",
+      "periodicwave/configs/run_2deg.py": "8461357dbab4a4a5576711f9c13f3a42d4a6366a25cdb2736b3bce631ebc4ad8",
+      "periodicwave/configs/run_2deg_local.py": "83e3fbfa6a1811014255740f5ab838dc5e628e4ca03230e20aa9a8b2fad0cf33",
+      "periodicwave/configs/run_2deg_moire.py": "c998715e7016c39b268275688c56866d6ab667a5e10a6e700ad67e461960a734",
+      "periodicwave/configs/run_2deg_screen.py": "67d3e271bd704c7a5449c29231e376a6335abb10792f0080cc3b9d7b2e5ff33e",
+      "periodicwave/configs/run_2deg_screen_det.py": "993a3e79771c0fdd9d17f5e005f6dd9ae2e9a7c2f68ea18f5912b3ae6988fd0a",
+      "periodicwave/configs/run_2deg_screen_l1h16.py": "8c14dcb7df7309aa0180bb7755f4f2eb628429096dfc05b36a63bf8da046da1b",
+      "periodicwave/configs/run_2deg_screen_l1h4.py": "7fc685a95e06f5d25d5ca58a930ee9dad9a86204373c0f221b2ea1da7830664e",
+      "periodicwave/configs/run_2deg_screen_l1h8.py": "2979ec2aa87d6a5bd69413a4e0028d0f88e2e908305cf506d01320e3963c9846",
+      "periodicwave/configs/run_2deg_screen_l2h16.py": "aca912bd826209992650c64c980a02cb5afd3e19804d4ac2b8dfd9aa6b0b5189",
+      "periodicwave/configs/run_2deg_screen_l2h8.py": "2da19299adcd9568f2210557da4181d56a7a98ce8463d210e85db739cadf1f99",
+      "periodicwave/configs/run_2deg_screen_l2h8mov.py": "5e716baf87d1633bb7f5e94ba79dd279704dd905b34923c2d285d7276e31c939",
+      "periodicwave/configs/run_2deg_screen_local.py": "5bfa952fd9afaeb0ecba1cd14407132f38f91d7dbc85a22856b940f3563b64a4",
+      "periodicwave/configs/run_2deg_screen_psi_l2h16.py": "c2d87539708d59ff8476176504003924c75166a309ad72d7e61e0df411ca1f03",
+      "periodicwave/configs/run_2deg_triangular_potential.py": "1fd148352368d9b7ad7b4979590217a0498edb64384d5034443237c5900a935b",
+      "periodicwave/configs/run_lambda_jellium.py": "0c4836978e130a479086fc9d748153e5d3762eb8661fa21c2143ab5c32178c99",
+      "periodicwave/constants.py": "b233c14fbffba1701eda29fbbe7c01a6c275aa7aefe338c631e5c02450dd7263",
+      "periodicwave/curvature_tags_and_blocks.py": "3e63e87116d52075e6c42dfe461514d7df494aedfb3e98b12db28191fe77c3b5",
+      "periodicwave/envelopes.py": "fde79427a085582f0f09189c939c13fceab8bd27e7e52e110340bad530a99d11",
+      "periodicwave/hamiltonian.py": "40a98befca82a3db72c15e8ddcfb9ed238bfce852296e3020ee52b1d8abcd54f",
+      "periodicwave/jastrows.py": "93459302d2495562efc743d54403f5c23bb2337e48e44ada259256a152e9eb37",
+      "periodicwave/lj_orbitals.py": "09e1ceddca6ba7926d2a375f9394d90dd39a81dd86de3befa313612a82cc351b",
+      "periodicwave/loss.py": "536f3575884711a4cf9bf706006ad189835e4c778bc05288e9d43f97e0b38a28",
+      "periodicwave/main.py": "c17afc2a811ba5f7b5a67adf03d3c980e7fdcc7fbc0fba0693cc97516bc91bc6",
+      "periodicwave/mcmc.py": "adce05f9097669d66c156fa63e3dd7bc51fe1f8a76c8d71855985379b699a30c",
+      "periodicwave/network_blocks.py": "ae5caacb5bab5ae276e6e48fbd586eac63948baeb925a9508f2e23de740ce2dc",
+      "periodicwave/networks.py": "d0b6e1a39dc1338a92b66e8ae1a9177144fc8ff706e6a41784e57e783fec93e5",
+      "periodicwave/pbc/feature_layer.py": "836bbca445119c875a115ac2867e3c6d5e49bd79a043a759f8348610640cfa04",
+      "periodicwave/pbc/hamiltonian.py": "d1267a3d31b08e1c547933a2edf0542890b75e24e07cac1a710735ca1432595f",
+      "periodicwave/pbc/lambda_jellium.py": "449b2b477e370822cf6d0c3d8979143a6fe7c95c38ef3714cfadc3898c07e0df",
+      "periodicwave/pbc/lattices.py": "1ed6b8984f66a872509d0356fd9debd260f57d07894d16be3630e736e8e66271",
+      "periodicwave/pbc/lj_hf.py": "25af8d14bddd8bfee36942312ce9ffa52c3d28113ac9c347037d82c5f33dd42e",
+      "periodicwave/train.py": "f4cb1cfe77282e2381c4b2f60058a1f30d838e809c39d79a15cdae042bf8018b",
+      "periodicwave/train_screen.py": "8e659eaa346fc232080ad79eab0aece3e14d3d22e6be61171901367dd98ec80b",
+      "periodicwave/utils/analysis_tools.py": "55483d9ec7b5eb1efd30cf98ad41a4c2058524e79eefcd38eea2a4d994f5c7d3",
+      "periodicwave/utils/custom_logging.py": "f7171eed74217408583add9e6761c0f5f598a8d6af0cafbbd4243d505bcf7a88",
+      "periodicwave/utils/jax_utils.py": "a4a82d80245373a346c6c0f1f3f693916d2f6013d9ae09f3110be2b1a928c8dd",
+      "periodicwave/utils/multi_host.py": "8f8b8451e7bf763cc0a138e6cf9ca8f0da5630aca29e775b079e91748dec1f3e",
+      "periodicwave/utils/statistics.py": "c7aed6a41348736d0f82b8610023c2de47a1c5ee49c53e23a14ee9d44bb242f0",
+      "periodicwave/utils/utils.py": "cedffb5a9d131f6b9e25c5d2e090eb964de0fe01200d8a19d47f27e769b59a3e",
+      "periodicwave/utils/writers.py": "62b4c6da67be60b8bb17d2b9435b2ac82d632b8027c5c3d82d79797d1e539383",
+      "periodicwave/wavefunction.py": "c47922d51e1a63d0e1d0c0ee4488ebee3ed5b8d06657e03e1182d405b225605f",
+      "periodicwave/window_experiments/__init__.py": "a3177fe2f999729f108b5be6857580a4d1596b916af97bcf8330d41244c0a30d",
+      "periodicwave/window_experiments/analyze.py": "95ff9531338b8dc8a503254701e8aff1429bf1ec50fad5552195d489e7496914",
+      "periodicwave/window_experiments/network.py": "8714a7f637253d3517269285a71f7ef6a0061cc987c289005cea0849d855e6c1",
+      "periodicwave/window_experiments/run.py": "de78a5fcc206b4fcd2c35d5fcd23f270ae8fd99a2dcee84d736d70f553c8a561",
+      "periodicwave/window_experiments/suite.py": "8dfa869e46c4e0528140c0aacab41b9b29b36af0ecef93250aa4cfc2683c875d",
+      "periodicwave/window_experiments/windows.py": "47837dacaa1d8a4296595c416218d7fc2e74865584cf1b2cd8e9f0f21eafc400"
+    },
+    "units": "length=r_s*a_B; energy=total code units, multiply by 1/r_s^2 for total Ha",
+    "initialization": "uniform positions, random pseudospins, followed by burn-in",
+    "diagnostic": "independent JIT; may differ from forward by XLA rounding"
+  },
+  "burn": 1,
+  "measure": 8,
+  "walkers": 2,
+  "energy_real": {
+    "mean": 8.99753139253442,
+    "sem_blocking": 0.16384956991100832,
+    "block_sizes": [
+      1
+    ],
+    "sem_by_block": [
+      0.16384956991100832
+    ],
+    "plateau": false,
+    "samples": 32,
+    "warning": "blocking plateau\u672a\u78ba\u8a8d"
+  },
+  "energy_imag": {
+    "mean": 0.3387024247760828,
+    "sem_blocking": 0.1321254547643253,
+    "block_sizes": [
+      1
+    ],
+    "sem_by_block": [
+      0.1321254547643253
+    ],
+    "plateau": false,
+    "samples": 32,
+    "warning": "blocking plateau\u672a\u78ba\u8a8d"
+  },
+  "d_ref": 1.2860741371574875,
+  "core": {
+    "centers_cartesian": [
+      [
+        0,
+        0
+      ]
+    ],
+    "radius": 1.0,
+    "distance": "minimum-image Euclidean, supercell L, length r_s*a_B",
+    "query_only": true,
+    "exclude_self": true,
+    "weighting": "Window m; pooled numerator/denominator",
+    "delta": "mm minus pp"
+  },
+  "head_power": "mean ||c_h||^2 normalized across heads; shared bias excluded",
+  "warning": "Diagnostic uses independent JIT. C, alpha, W_aggregation are distinct. No topology inference.",
+  "cutoff_scan": {
+    "results": [
+      {
+        "radius": null,
+        "real": {
+          "mean": 9.28293965560709,
+          "sem_blocking": 0.12028154949257681,
+          "block_sizes": [
+            1
+          ],
+          "sem_by_block": [
+            0.12028154949257681
+          ],
+          "plateau": false,
+          "samples": 32,
+          "warning": "blocking plateau\u672a\u78ba\u8a8d"
+        },
+        "imag": {
+          "mean": -0.1504879142352957,
+          "sem_blocking": 0.1124755177300151,
+          "block_sizes": [
+            1
+          ],
+          "sem_by_block": [
+            0.1124755177300151
+          ],
+          "plateau": false,
+          "samples": 32,
+          "warning": "blocking plateau\u672a\u78ba\u8a8d"
+        }
+      },
+      {
+        "radius": 0.8,
+        "real": {
+          "mean": 7.850959953360222,
+          "sem_blocking": 0.5788170075478013,
+          "block_sizes": [
+            1
+          ],
+          "sem_by_block": [
+            0.5788170075478013
+          ],
+          "plateau": false,
+          "samples": 32,
+          "warning": "blocking plateau\u672a\u78ba\u8a8d"
+        },
+        "imag": {
+          "mean": 1.171837557010762,
+          "sem_blocking": 0.9216086931047406,
+          "block_sizes": [
+            1
+          ],
+          "sem_by_block": [
+            0.9216086931047406
+          ],
+          "plateau": false,
+          "samples": 32,
+          "warning": "blocking plateau\u672a\u78ba\u8a8d"
+        },
+        "energy_cost": -1.431979702246867,
+        "cost_sem": 0.5911825262767216
+      },
+      {
+        "radius": 1.2,
+        "real": {
+          "mean": 8.370035849216144,
+          "sem_blocking": 0.6208929020380528,
+          "block_sizes": [
+            1
+          ],
+          "sem_by_block": [
+            0.6208929020380528
+          ],
+          "plateau": false,
+          "samples": 32,
+          "warning": "blocking plateau\u672a\u78ba\u8a8d"
+        },
+        "imag": {
+          "mean": 0.39402233773658357,
+          "sem_blocking": 0.6121055575380311,
+          "block_sizes": [
+            1
+          ],
+          "sem_by_block": [
+            0.6121055575380311
+          ],
+          "plateau": false,
+          "samples": 32,
+          "warning": "blocking plateau\u672a\u78ba\u8a8d"
+        },
+        "energy_cost": -0.9129038063909451,
+        "cost_sem": 0.6324362789637943
+      }
+    ],
+    "cut_layer": null,
+    "cut_head": null,
+    "beta": 0.3,
+    "burn": 2,
+    "measure": 8,
+    "Rstar": null,
+    "definition": "smallest measured R with cost+3SEM <= 10% max resolved positive cost; no interpolation",
+    "warning": "finite scan, variational cutoff response, not a screening length or energy decomposition"
+  }
+}

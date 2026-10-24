@@ -18,6 +18,9 @@ This code runs a calculation of a two-dimensional electron gas with triangular p
 Reference: M Geier, K Nazaryan, T Zaklama, and L Fu, Phys. Rev. B 112, 045119
 """
 
+# 実行用config：下でbase_configの既定値を上書きし、最後にtrainerを呼び出す。
+# 単なる定数定義ではなく、読み込み時に保存先の準備・設定保存・学習が実行されるスクリプト。
+# 物理条件はcfg.system、モデル構造はcfg.network、標本化はcfg.mcmc、更新則はcfg.optimを確認する。
 import os
 import sys
 from sys import argv

@@ -22,6 +22,11 @@
 import ml_collections
 from ml_collections import config_dict
 
+# 通常の学習用設定の土台。configs/run_*.pyでdefault()を呼び、系やAnsatzに合わせて上書きする。
+# この関数は設定を作るだけで、学習やパラメータ初期化は実行しない。
+# system.electronsなどの未設定値は、実行用configで必ず指定する。
+# window_experimentsの独立入口は、この設定ではなく専用CLIの引数を使う。
+
 def default() -> ml_collections.ConfigDict:
   """Create set of default parameters for running qmc.py.
 
@@ -30,160 +35,141 @@ def default() -> ml_collections.ConfigDict:
   Returns:
     ml_collections.ConfigDict containing default settings.
   """
-  # wavefunction output.
+  # ConfigDictはcfg.system.ndimのように、属性形式で設定を読み書きできる。
   cfg = ml_collections.ConfigDict({
-      'batch_size': 1024,  # Default value that empirically works well for two-dimensional problems.
+      'batch_size': 1024,  # 同時に保持するMCMC標本（walker）の総数。独立標本数とは限らない。
       'optim': {
-          # Objective type. Only 'vmc' implemented.
-          # 'vmc': minimise <H> by standard VMC energy minimization
+          # 最適化：|ψ|²で標本化し、エネルギー期待値〈H〉を下げるVMC。
           'objective': 'vmc',
-          'iterations': 1000000,  # number of iterations
-          'optimizer': 'kfac',  # one of adam, kfac, lamb, none
-          'laplacian': 'default',  # one of default or folx (for forward lapl)
+          'iterations': 1000000,  # パラメータ更新の総ステップ数
+          'optimizer': 'kfac',  # adam / kfac / lamb / none（noneは更新なしの評価）
+          # 微分方式の設定項目。実際のHamiltonianへの受け渡しは実行用configも確認する。
+          'laplacian': 'default',  # default：通常の自動微分、folx：前進ラプラシアン
           'lr': {
-              'rate':  0.05,  # learning rate
-              'decay': 1.0,  # exponent of learning rate decay
-              'delay': 10000.0,  # term that sets the scale of the rate decay
+              # 学習率：rate * (1 + step / delay)^(-decay)
+              'rate':  0.05,  # 初期学習率
+              'decay': 1.0,  # 減衰の指数
+              'delay': 10000.0,  # 学習率が変化するステップ数の目安
           },
-          # If greater than zero, scale (at which to clip local energy) in units
-          # of the mean deviation from the mean.
+          # 勾配推定に使う局所エネルギーの外れ値を制限する幅。0なら無効。
+          # 幅の単位は平均絶対偏差。報告用エネルギー自体を置き換える設定ではない。
           'clip_local_energy': 5.0,
-          # If true, center the clipping window around the median rather than
-          # the mean. More "correct" for removing outliers, but also potentially
-          # slow, especially with multihost training.
+          # True：clippingの中心を中央値にする。False：平均値を使う。
           'clip_median': False,
-          # If true, center the local energy differences in the gradient at the
-          # average clipped energy rather than average energy, guaranteeing that
-          # the average energy difference will be zero in each batch.
+          # True：勾配内のELの差を、clipping後の平均を基準にして中心化する。
           'center_at_clip': True,
-          # If true, keep the parameters and optimizer state from the previous
-          # step and revert them if they become NaN after an update. 
+          # 更新後にNaNが生じたら、パラメータとoptimizer状態を前ステップへ戻す。
           'reset_if_nan': False,
-          # KFAC hyperparameters. See KFAC documentation for details.
+          # KFAC：勾配の曲率情報を近似して更新する。Adamとは別の設定群。
           'kfac': {
-              'invert_every': 1,
-              'cov_update_every': 1,
-              'damping': 0.001,
-              'cov_ema_decay': 0.95,
-              'momentum': 0.0,
+              'invert_every': 1,  # 曲率近似の逆行列を更新する間隔
+              'cov_update_every': 1,  # 共分散の更新間隔
+              'damping': 0.001,  # 逆行列計算を安定化する正則化
+              'cov_ema_decay': 0.95,  # 共分散の指数移動平均の減衰率
+              'momentum': 0.0,  # 過去の更新方向を残す割合
               'momentum_type': 'regular',
-              # Warning: adaptive damping is not currently available.
+              # 現在のtrainerではdampingの自動調整は使わない。
               'min_damping': 1.0e-6,
               'norm_constraint': 0.001,
               'mean_center': True,
               'l2_reg': 0.0,
               'register_only_generic': False,
           },
-          # ADAM hyperparameters. See optax documentation for details.
+          # Adam：勾配の一次・二次モーメントの移動平均で更新幅を調整する。
           'adam': {
-              'b1': 0.9,
-              'b2': 0.999,
-              'eps': 1.0e-8,
-              'eps_root': 0.0,
+              'b1': 0.9,  # 一次モーメントの減衰率
+              'b2': 0.999,  # 二次モーメントの減衰率
+              'eps': 1.0e-8,  # ゼロ除算防止：平方根の外側に加える
+              'eps_root': 0.0,  # 平方根の内側に加える安定化項
           },
       },
       'log': {
-          'stats_frequency': 1,  # iterations between logging of stats
-          'save_frequency': 10.0,  # minutes between saving network params
-          # Path to save/restore network to/from. If falsy,
-          # creates a timestamped directory in the working directory.
+          # 結果の記録とcheckpoint。頻度の単位（step / 分）に注意。
+          'stats_frequency': 1,  # 統計量を記録する間隔［step］
+          'save_frequency': 10.0,  # checkpointを保存する間隔［分］
+          # 保存先。空なら作業ディレクトリに時刻付きのフォルダを作る。
           'save_path': '',
-          # Path containing checkpoint to restore network from.
-          # Ignored if falsy or save_path contains a checkpoint.
+          # 再開元。save_pathにcheckpointがあれば、そちらの復元を優先する。
           'restore_path': '',
       },
       'system': {
-          # Specify the system by setting variables below.
-          # number of spin up, spin-down electrons
+          # 物理系：(上向き電子数, 下向き電子数)。空tupleは未設定。
+          # λ-jelliumの動的擬スピンは専用configのpseudospin設定も必要。
           'electrons': tuple(),
-          # Dimensionality. 
+          # 実空間の次元。2DEG・モアレ・λ-jelliumでは2。
           'ndim': 2,
-          # String set to module.make_local_energy, where make_local_energy is a
-          # callable (type: MakeLocalEnergy) which creates a function which
-          # evaluates the local energy and module is the absolute module
-          # containing make_local_energy.
-          # If not set, hamiltonian.local_energy is used (only kinetic energy).
+          # 局所エネルギー EL=(Hψ)/ψ を作る関数を「module.function」で指定する。
+          # 通常PBCとλ-jelliumでは別Hamiltonianを選ぶ。trainerはこの文字列から関数を読む。
           'make_local_energy_fn': '',
-          # Additional kwargs to pass into make_local_energy_fn.
+          # 上の関数に渡す物理条件（相互作用・λ・Delta・微分方式など）。
           'make_local_energy_kwargs': {},
-          # If periodic boundary conditions are used, store lattice:
+          # 周期セルの格子行列。格子ベクトルを列に並べる。長さの単位は各モデルに従う。
           'pbc_lattice': None,
       },
       'mcmc': {
-          # Note: HMC options are not currently used.
-          # Number of burn in steps after pretraining.  If zero do not burn in
-          # or reinitialize walkers.
+          # MCMC：現在の波動関数の|ψ|²に従う標本を位置移動で生成する。
+          # 学習開始前の平衡化回数。0の場合の初期化／復元の扱いはtrainer側も確認する。
           'burn_in': 300,
-          'steps': 30,  # Number of MCMC steps to make between network updates.
-          # Width of (atom-centred) Gaussian used to generate initial electron
-          # configurations.
+          'steps': 30,  # NNパラメータを1回更新する間のMCMCステップ数
+          # 初期電子配置を生成するGaussianの幅（提案移動幅とは別）。
           'init_width': 1.0,
-          # Width of Gaussian used for random moves for RMW or step size for HMC.
+          # Metropolis法で位置を動かすGaussian提案の幅。
           'move_width': 0.1,
-          # How to update move_width during runtime.
-          # const: move_width remains constant
-          # adaptive: increases or reduces move_width depending on pmove (default)
+          # const：移動幅を固定。adaptive：受理率に応じて移動幅を調整。
           'move_width_updater': 'adaptive',
-          # Number of steps after which to update the adaptive MCMC step size
+          # adaptiveで移動幅を見直す間隔［学習step］。
           'adapt_frequency': 100,
-          'blocks': 1,  # Number of blocks to split the MCMC sampling into
+          'blocks': 1,  # 電子を何組に分けて提案するか。1は全電子をまとめて移動。
       },
       'network': {
-          'network_type': 'CustomPsiformer',  # One of 'SlaterNet' or 'CustomPsiformer'.
-          # If true, the network outputs complex numbers rather than real.
+          # 波動関数Ansatzの選択。Screenformer固有の設定は各実行用configで追加する。
+          'network_type': 'CustomPsiformer',
+          # True：複素波動関数（位相とlog振幅）を扱う。
           'complex': False,
-          # Only used if network_type is 'CustomPsiformer'.
+          # CustomPsiformerを選んだときのTransformer設定。
           'CustomPsiformer': {
               # Customized Psiformer architecture: Geier et al,. arXiv:2502.05383
-              'num_layers': 4, # number of self-attention layers
-              'num_heads': 4,  # number of heads per layer
-              'attn_dim': 32,  # dimension of the scalar product within each attention head
-              'value_dim': 32, # dimension of the value vector multiplied with the softmax result
-              'mlp_dim': 128,  # MLP dimension equals internal token dimension
-              'num_perceptrons_per_layer': 2, # number of subsequenct perceptrons after each attention layer
-              'use_layer_norm': True, # whether to apply layer norm after each MLP and attention operation
-              'mlp_activation_fct': "GELU", # MLP non-linearity
+              'num_layers': 4, # Transformer層数
+              'num_heads': 4,  # 各層のAttention Head数
+              'attn_dim': 32,  # HeadごとのQuery/Key次元（内積を取る空間）
+              'value_dim': 32, # HeadごとのValue次元（集約する情報の幅）
+              'mlp_dim': 128,  # 電子ごとの内部特徴Xの幅。MLPの入出力もこの次元。
+              'num_perceptrons_per_layer': 2, # Attention後のMLPの線形層数
+              'use_layer_norm': True, # Attention/MLPの残差接続後にLayerNormを使う
+              'mlp_activation_fct': "GELU", # MLPの活性化関数
           },
-          # Only used if network_type is 'SlaterNet': Geier et al,. arXiv:2502.05383
-          # NOTE: SlaterNet is equivalent to Hartree-Fock if cfg.network.determinants = 1.
+          # SlaterNetの電子ごとのMLP設定（Attentionは使わない）。
+          # determinants=1は単一Slater行列式。外部HF係数表を読む指定ではない。
           'SlaterNet': {
-              'num_layers': 4, # number layers over which a residual connection is applied
-              'mlp_dim': 128,  # MLP dimension equals internal token dimension
-              'num_perceptrons_per_layer': 2, # number of perceptrons between residual connections
-              'use_layer_norm': True, # whether to apply layer norm in each layer
-              'mlp_activation_fct': "GELU", # MLP non-linearity
+              'num_layers': 4, # 残差接続付きMLPブロック数
+              'mlp_dim': 128,  # 電子ごとの内部特徴Xの幅
+              'num_perceptrons_per_layer': 2, # 各ブロック内の線形層数
+              'use_layer_norm': True, # 各ブロックでLayerNormを使う
+              'mlp_activation_fct': "GELU", # MLPの活性化関数
           },
-          # Config common to all architectures.
-          'determinants': 4,  # Number of determinants.
-          'bias_orbitals': False,  # include bias in last layer to orbitals
-          # If specified, include a pre-determinant Jastrow factor.
-          # One of 'default' (use network_type default), 'none', or 'simple_ee'.
-          # NOTE: simple_ee Jastrow is specific to Coulomb interaction. 
-          # It requires to specify the spatial dimensional as well as interaction_strength 
-          # of Coulomb such that cusp conditions are correctly enforced.
-          # These parameters are passed in jastrow_kwargs
+          # 全Ansatzに共通する軌道・行列式・相関因子の設定。
+          'determinants': 4,  # 足し合わせるSlater行列式の数
+          'bias_orbitals': False,  # 軌道を作る最終線形射影にbiasを付けるか
+          # Jastrowは電子対の短距離相関を表す。none / default / simple_eeを選ぶ。
+          # simple_eeのCoulombカスプ条件には次元と相互作用強度が必要。
+          # λ-jelliumのHF用擬スピン対Jastrowとは別の設定経路。
           'jastrow': 'none',
-          # Additional kwargs for custom jastrow
+          # 通常Jastrowへ渡す引数。相互作用強度はHamiltonianの単位系と揃える。
           'jastrow_kwargs': {'ndim': 2, "interaction_strength": 1.0}, 
-          # String set to module.make_feature_layer, where make_feature_layer is
-          # callable (type: MakeFeatureLayer) which creates an object with
-          # member functions init() and apply() that initialize parameters
-          # for custom input features and modify raw input features,
-          # respectively. Module is the absolute module containing
-          # make_feature_layer.
-          # If not set, networks.make_ferminet_features is used.
+          # 入力特徴量を作る関数を「module.function」で指定する。
+          # PBCのsin/cos特徴量などをここで選択し、その後に学習可能Embeddingへ渡す。
+          # 空の場合はnetworks.make_ferminet_featuresを使う。
           'make_feature_layer_fn': '',
-          # Additional kwargs to pass into make_local_energy_fn.
+          # 特徴量生成に渡す引数（格子、電子-原子距離を含めるか、など）。
           'make_feature_layer_kwargs': {},
-          # Same structure as make_feature_layer
+          # 軌道へ掛けるEnvelopeの生成関数と引数。特徴量生成とは別の役割。
           'make_envelope_fn': '',
           'make_envelope_kwargs': {},
       },
       'debug': {
-          # Check optimizer state, parameters and loss and raise an exception if
-          # NaN is found.
+          # optimizer状態・パラメータ・lossにNaNがあれば例外を出す。
           'check_nan': False,
-          'deterministic': False,  # Use a deterministic seed.
+          'deterministic': False,  # Trueなら固定seedを使う（乱数の生成方法はtrainer側）。
       },
   })
 

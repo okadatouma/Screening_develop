@@ -24,6 +24,8 @@ Spencer, J.S. and Foulkes, W.M.C., 2022. Discovering Quantum Phase Transitions
 with Fermionic Neural Networks. arXiv preprint arXiv:2202.05183.
 """
 
+# Embeddingに渡す固定の周期特徴を作る。学習可能な線形射影はnetwork_blocks.pyの別処理。
+# 同式の周期ノルムがnetworks.pyにもあるが、研究上の役割が異なるため独立実装を維持する。
 from typing import Optional, Tuple
 
 import chex
@@ -40,6 +42,9 @@ def periodic_norm(metric: jnp.ndarray, scaled_r: jnp.ndarray) -> jnp.ndarray:
     scaled_r: vectors in fractional coordinates of the lattice cell, with
       trailing dimension ndim, to compute the periodic norm of.
   """
+  # sは分数座標、G=AᵀA、a=1−cos(2πs)、b=sin(2πs)。距離はsqrt(aᵀGa+bᵀGb)/(2π)。
+  # sin/cosから作る周期的な特徴距離であり、最小像Euclidean距離・Ewald距離ではない。
+  # 別電子の完全一致では微分が未定義になり得る。自己項の対角保護とは別の問題。
   chex.assert_rank(metric, expected_ranks=2)
   a = (1 - jnp.cos(2 * jnp.pi * scaled_r))
   b = jnp.sin(2 * jnp.pi * scaled_r)
@@ -70,6 +75,8 @@ def make_pbc_feature_layer(
         to avoid cusps with ghost atoms in, e.g., homogeneous electron gas.
   """
 
+  # initは特徴次元と空パラメータを返す。applyの出力は1体[N,F1]と電子対[N,N,F2]。
+  # 2次元・原点1個・include_r_ae=Falseなら1体4成分、電子対5成分になる。
   del nspins
 
   if lattice is None:

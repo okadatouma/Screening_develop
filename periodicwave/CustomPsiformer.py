@@ -21,6 +21,8 @@
 
 """ Attention-based neural network variational wavefunction ansatz. """
 
+# softmax Attentionを使うAnsatz。固定特徴 → 学習可能Embedding → Transformer → 通常の軌道構成。
+# 距離窓とTrimを使うCustomScreenformerとは別のAttention方式。
 from typing import Mapping, Optional, Sequence, Tuple, Union
 
 import attr
@@ -66,6 +68,8 @@ make_layer_norm = network_blocks.make_layer_norm
 def make_multi_head_attention(num_heads: int, embed_dim: int, attn_dim: int, value_dim: int, num_electrons: int) ->...:
   """FermiNet-style version of latent MultiHeadAttention."""
 
+  # X[N,E]をQ/K[N,H,Dq]、V[N,H,Dv]に射影し、softmax重みでValueを集約する。
+  # Headを連結してから一度の出力射影を行う。
   def init(key: chex.PRNGKey) -> Mapping[str, jnp.ndarray]:
 
     key, *subkeys = jax.random.split(key, num=5)
@@ -104,6 +108,7 @@ def make_multi_head_attention(num_heads: int, embed_dim: int, attn_dim: int, val
 
     # Scaled dot-product attention. The operation applies 1/√d_k automatically.
     # This jax function implements GPU-optimized Flash attention automatically.
+    # softmax_j(Q_i·K_j/sqrt(Dq))を使う標準Attention。Screeningの非正規化重みとは異なる。
     attn = jax.nn.dot_product_attention(q, k, v)   # same shape as q
 
     # # Concatenate attention matrix of all heads into a single vector.
@@ -244,6 +249,7 @@ def make_psiformer_layers(
   Returns:
     Tuple of init, apply functions.
   """
+  # 幾何から固定特徴を作り、spinを連結して初期Xへ射影する。ここからTransformerへ接続する。
   del natoms  # Unused.
 
   # print(options)
@@ -374,6 +380,7 @@ def make_fermi_net(
     the orbitals, and options specifies the settings used in the network.
   """
 
+  # 公開Networkを組み立てる入口。init・apply・orbitalsは同じパラメータPyTreeを使う。
   if not envelope:
     envelope = envelopes.make_isotropic_envelope()
 

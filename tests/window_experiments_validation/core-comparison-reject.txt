@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/window_experiments/analyze.py", line 233, in <module>
+    analyze(args)
+    ~~~~~~~^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/window_experiments/analyze.py", line 152, in analyze
+    raise ValueError('WC/AHC core比較には同じ明示core定義が必要です')
+ValueError: WC/AHC core比較には同じ明示core定義が必要です
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+[λ-jellium] lam = 0.64, Delta = 1.0 (code units; Delta/r_s = 1), r_s = 1.0, laplacian = folx, flip_batch = 4, potential = none
+making construct_input_features with periodic norm

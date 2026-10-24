@@ -1,3 +1,5 @@
+# 格子サイトの占有を入れ替えた合成配置で、既存の秩序指標の応答を調べる。
+# Hamiltonianの厳密解や学習結果の検証ではなく、固定runに対応する解析の感度確認。
 import sys; sys.path.insert(0,'screening_analysis')
 import numpy as np, moire_analysis as MA
 f='results/2deg-Coulomb/CustomScreenformer/el9_9_rs3.4156_tri_l2h16_eps10'

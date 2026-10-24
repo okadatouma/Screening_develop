@@ -1,0 +1,475 @@
+test_attention_equations_and_internal_values (tests.test_attention.AttentionEquivalence.test_attention_equations_and_internal_values) ... ok
+test_freeze_window_stops_parameter_gradient_only (tests.test_attention.AttentionEquivalence.test_freeze_window_stops_parameter_gradient_only) ... ok
+test_gaussian_ring_partition_and_zero_origin_slope (tests.test_attention.AttentionEquivalence.test_gaussian_ring_partition_and_zero_origin_slope) ... ok
+test_default_analysis_weights_match (tests.test_known_attention.AnalysisAttention.test_default_analysis_weights_match) ... ok
+test_K01_trim_power_four_analysis_should_match (tests.test_known_attention.AnalysisAttention.test_K01_trim_power_four_analysis_should_match) ... ok
+test_K01_smooth7_analysis_should_match (tests.test_known_attention.AnalysisAttention.test_K01_smooth7_analysis_should_match) ... ok
+test_complex_kinetic_including_imaginary_part (tests.test_physics.IndependentPhysics.test_complex_kinetic_including_imaginary_part) ... ok
+test_plane_wave_kinetic (tests.test_physics.IndependentPhysics.test_plane_wave_kinetic) ... ERROR
+test_lambda_lower_upper_band_both_pseudospins (tests.test_physics.IndependentPhysics.test_lambda_lower_upper_band_both_pseudospins) ... ok
+test_lambda_zero_and_component_sum (tests.test_physics.IndependentPhysics.test_lambda_zero_and_component_sum) ... ok
+test_ewald_lattice_translation_and_scaling (tests.test_physics.IndependentPhysics.test_ewald_lattice_translation_and_scaling) ... ok
+test_current_folx_path_preserves_complex_local_energy (tests.test_physics.KnownEnergyDifference.test_current_folx_path_preserves_complex_local_energy) ... ok
+test_K03_both_paths_should_preserve_complex_local_energy (tests.test_physics.KnownEnergyDifference.test_K03_both_paths_should_preserve_complex_local_energy) ... ok
+test_K05_NoneMoire_is_currently_unimplemented (tests.test_physics.KnownEnergyDifference.test_K05_NoneMoire_is_currently_unimplemented) ... ok
+test_roundtrip_fields_and_completed_step (tests.test_training_checkpoint.CheckpointContract.test_roundtrip_fields_and_completed_step) ... ok
+test_current_config_array_serialization_is_lossy (tests.test_training_checkpoint.CheckpointContract.test_current_config_array_serialization_is_lossy) ... ok
+test_adam_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_adam_training_all_routes) ... ok
+test_kfac_training_all_routes (tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes) ... skipped 'PW_RUN_KFAC=1 でCPU KFAC統合試験を実行'
+test_current_real_and_complex_gradient_coefficients (tests.test_vmc_mcmc.VMCEstimator.test_current_real_and_complex_gradient_coefficients) ... ok
+test_complex_gradient_against_normalized_exact_expectation (tests.test_vmc_mcmc.VMCEstimator.test_complex_gradient_against_normalized_exact_expectation) ... ok
+test_K04_real_gradient_should_equal_normalized_exact_derivative (tests.test_vmc_mcmc.VMCEstimator.test_K04_real_gradient_should_equal_normalized_exact_derivative) ... ok
+test_imaginary_energy_contributes_to_phase_gradient (tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient) ... ok
+test_chunked_and_unbatched_loss_gradient_match (tests.test_vmc_mcmc.VMCEstimator.test_chunked_and_unbatched_loss_gradient_match) ... ok
+test_clipping_changes_gradient_not_reported_mean (tests.test_vmc_mcmc.VMCEstimator.test_clipping_changes_gradient_not_reported_mean) ... ok
+test_one_adam_update_both_trainers (tests.test_vmc_mcmc.VMCEstimator.test_one_adam_update_both_trainers) ... ok
+test_all_electron_move_against_explicit_proposal_and_acceptance (tests.test_vmc_mcmc.MCMCChecks.test_all_electron_move_against_explicit_proposal_and_acceptance) ... ok
+test_pseudospin_flip_acceptance (tests.test_vmc_mcmc.MCMCChecks.test_pseudospin_flip_acceptance) ... ok
+test_K02_block_move_currently_raises_argument_error (tests.test_vmc_mcmc.MCMCChecks.test_K02_block_move_currently_raises_argument_error) ... ok
+test_values_orbitals_and_determinants (tests.test_wavefunction.WavefunctionChecks.test_values_orbitals_and_determinants) ... get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.0, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = default, flip_batch = 0, potential = none
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 2), r_s = 1.0, laplacian = folx, flip_batch = 0, potential = none
+making 2DCoulomb potential with energy scale: 1.0
+making 2DCoulomb potential with energy scale: 2.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 1.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 1.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+making 2DCoulomb potential with energy scale: 1.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 1.0
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using laplacian_method: default
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp6spyoa7g/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+Configuration saved as JSON to /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp204fyl25/config.json
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/psiformer-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/slater-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/screen-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/lambda-adam'.
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-training-3xcx74r1/hf-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp4yzandx9/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0ok
+test_fermion_exchange_and_individual_electron_pbc (tests.test_wavefunction.WavefunctionChecks.test_fermion_exchange_and_individual_electron_pbc) ... ok
+test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) ... 
+  test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) (route='psiformer') ... FAIL
+test_hf_only_matches_synthetic_bloch_spinors (tests.test_wavefunction.WavefunctionChecks.test_hf_only_matches_synthetic_bloch_spinors) ... ok
+test_frozen_numerical_baseline (tests.test_wavefunction.WavefunctionChecks.test_frozen_numerical_baseline) ... 
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpt3m7aa4x/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpyaykb1kj/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpwe0x4aee/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpwe0x4aee/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.0、Jastrow なし
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/psiformer-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/slater-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/screen-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/lambda-adam'.
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+[λJ] HF の軌道 /var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/synthetic_hf.txt：k 2 点、G 1 本、lam = 0.4、カスプ (++, --, +-) = (0.2, 0.5, 0.3)、網の初期の大きさ 0.05、Jastrow あり<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+ok
+test_features (tests.test_window_experiments.WindowExperiments.test_features) ... ok
+test_order_and_pair_symmetry (tests.test_window_experiments.WindowExperiments.test_order_and_pair_symmetry) ... ok
+test_window_reference_and_derivatives (tests.test_window_experiments.WindowExperiments.test_window_reference_and_derivatives) ... ok
+test_core_cosine_definition (tests.test_window_experiments.WindowExperiments.test_core_cosine_definition) ... ok
+test_core_periodic_oblique (tests.test_window_experiments.WindowExperiments.test_core_periodic_oblique) ... ok
+test_all_input_window_forwards (tests.test_window_experiments.WindowExperiments.test_all_input_window_forwards) ... ok
+test_fixed_value_position_gate_derivatives (tests.test_window_experiments.WindowExperiments.test_fixed_value_position_gate_derivatives) ... ok
+test_optimizer_freeze_release_and_checkpoint (tests.test_window_experiments.WindowExperiments.test_optimizer_freeze_release_and_checkpoint) ... ok
+test_hf_metadata_rejects_wrong_lambda (tests.test_window_experiments.WindowExperiments.test_hf_metadata_rejects_wrong_lambda) ... ok
+test_blocking_does_not_call_std_sem (tests.test_window_experiments.WindowExperiments.test_blocking_does_not_call_std_sem) ... ok
+
+======================================================================
+ERROR: test_plane_wave_kinetic (tests.test_physics.IndependentPhysics.test_plane_wave_kinetic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_physics.py", line 43, in test_plane_wave_kinetic
+    np.testing.assert_allclose(kinetic(None, one_particle()), jnp.dot(q, q) / 2, atol=1e-12)
+                               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/hamiltonian.py", line 148, in _lapl_over_f
+    result = - (output[1].laplacian +
+                ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'jaxlib._jax.ArrayImpl' object has no attribute 'laplacian'
+
+======================================================================
+FAIL: test_first_second_derivatives_and_forward_laplacian (tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian) (route='psiformer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/toma/academic/reserch/projects/Screening_develop/tests/test_wavefunction.py", line 59, in test_first_second_derivatives_and_forward_laplacian
+    np.testing.assert_allclose(forward.laplacian, jnp.trace(hess), rtol=1e-7, atol=1e-8)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 1718, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "/Users/toma/academic/reserch/projects/Screening_develop/.venv-pw/lib/python3.13/site-packages/numpy/testing/_private/utils.py", line 926, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-07, atol=1e-08
+
+Mismatched elements: 1 / 1 (100%)
+Max absolute difference among violations: 1.78235943e-07
+Max relative difference among violations: 5.32383814e-07
+ ACTUAL: array(-0.334788)
+ DESIRED: array(-0.334788)
+
+----------------------------------------------------------------------
+Ran 43 tests in 108.595s
+
+FAILED (failures=1, errors=1, skipped=1)
+<unknown>:131: SyntaxWarning: invalid escape sequence '\p'
+<unknown>:308: SyntaxWarning: invalid escape sequence '\s'
+
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 2.0
+[λ-jellium] lam = 0.4, Delta = 2.0 (code units; Delta/r_s = 1), r_s = 2.0, laplacian = folx, flip_batch = 1, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/pw-baseline-iv4oqikl/hf-adam'.
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+PASS tests.test_attention.AttentionEquivalence.test_attention_equations_and_internal_values
+PASS tests.test_attention.AttentionEquivalence.test_freeze_window_stops_parameter_gradient_only
+PASS tests.test_attention.AttentionEquivalence.test_gaussian_ring_partition_and_zero_origin_slope
+PASS tests.test_known_attention.AnalysisAttention.test_default_analysis_weights_match
+PASS tests.test_known_attention.AnalysisAttention.test_K01_trim_power_four_analysis_should_match
+PASS tests.test_known_attention.AnalysisAttention.test_K01_smooth7_analysis_should_match
+PASS tests.test_physics.IndependentPhysics.test_complex_kinetic_including_imaginary_part
+ERROR tests.test_physics.IndependentPhysics.test_plane_wave_kinetic
+PASS tests.test_physics.IndependentPhysics.test_lambda_lower_upper_band_both_pseudospins
+PASS tests.test_physics.IndependentPhysics.test_lambda_zero_and_component_sum
+PASS tests.test_physics.IndependentPhysics.test_ewald_lattice_translation_and_scaling
+PASS tests.test_physics.KnownEnergyDifference.test_current_folx_path_preserves_complex_local_energy
+PASS tests.test_physics.KnownEnergyDifference.test_K03_both_paths_should_preserve_complex_local_energy
+PASS tests.test_physics.KnownEnergyDifference.test_K05_NoneMoire_is_currently_unimplemented
+PASS tests.test_training_checkpoint.CheckpointContract.test_roundtrip_fields_and_completed_step
+PASS tests.test_training_checkpoint.CheckpointContract.test_current_config_array_serialization_is_lossy
+PASS tests.test_training_checkpoint.TrainingIntegration.test_adam_training_all_routes
+SKIP tests.test_training_checkpoint.TrainingIntegration.test_kfac_training_all_routes
+PASS tests.test_vmc_mcmc.VMCEstimator.test_current_real_and_complex_gradient_coefficients
+PASS tests.test_vmc_mcmc.VMCEstimator.test_complex_gradient_against_normalized_exact_expectation
+PASS tests.test_vmc_mcmc.VMCEstimator.test_K04_real_gradient_should_equal_normalized_exact_derivative
+PASS tests.test_vmc_mcmc.VMCEstimator.test_imaginary_energy_contributes_to_phase_gradient
+PASS tests.test_vmc_mcmc.VMCEstimator.test_chunked_and_unbatched_loss_gradient_match
+PASS tests.test_vmc_mcmc.VMCEstimator.test_clipping_changes_gradient_not_reported_mean
+PASS tests.test_vmc_mcmc.VMCEstimator.test_one_adam_update_both_trainers
+PASS tests.test_vmc_mcmc.MCMCChecks.test_all_electron_move_against_explicit_proposal_and_acceptance
+PASS tests.test_vmc_mcmc.MCMCChecks.test_pseudospin_flip_acceptance
+PASS tests.test_vmc_mcmc.MCMCChecks.test_K02_block_move_currently_raises_argument_error
+PASS tests.test_wavefunction.WavefunctionChecks.test_values_orbitals_and_determinants
+PASS tests.test_wavefunction.WavefunctionChecks.test_fermion_exchange_and_individual_electron_pbc
+FAIL tests.test_wavefunction.WavefunctionChecks.test_first_second_derivatives_and_forward_laplacian (route='psiformer')
+PASS tests.test_wavefunction.WavefunctionChecks.test_hf_only_matches_synthetic_bloch_spinors
+PASS tests.test_wavefunction.WavefunctionChecks.test_frozen_numerical_baseline
+PASS tests.test_window_experiments.WindowExperiments.test_features
+PASS tests.test_window_experiments.WindowExperiments.test_order_and_pair_symmetry
+PASS tests.test_window_experiments.WindowExperiments.test_window_reference_and_derivatives
+PASS tests.test_window_experiments.WindowExperiments.test_core_cosine_definition
+PASS tests.test_window_experiments.WindowExperiments.test_core_periodic_oblique
+PASS tests.test_window_experiments.WindowExperiments.test_all_input_window_forwards
+PASS tests.test_window_experiments.WindowExperiments.test_fixed_value_position_gate_derivatives
+PASS tests.test_window_experiments.WindowExperiments.test_optimizer_freeze_release_and_checkpoint
+PASS tests.test_window_experiments.WindowExperiments.test_hf_metadata_rejects_wrong_lambda
+PASS tests.test_window_experiments.WindowExperiments.test_blocking_does_not_call_std_sem

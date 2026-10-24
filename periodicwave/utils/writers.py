@@ -14,6 +14,8 @@
 
 """Writer utility classes."""
 
+# CSVの列と書き出しを管理する。物理計算ではなく結果保存の境界。
+# 既存ファイルの扱いは呼出元とrename_fileを確認する。
 import contextlib
 import os
 from typing import Optional, Sequence
@@ -94,6 +96,7 @@ def rename_file(base_name, folder_path, file_extension="csv"):
         file_extension (str): The file extension (e.g., "csv", "log").
     """
     # Get a list of files in the specified folder
+    # 既存の同名ファイルを番号付きへ移す処理。単に別の新規名を返す関数ではない。
     try:
         files = os.listdir(folder_path)
     except FileNotFoundError:

@@ -14,6 +14,7 @@
 
 """Generic utilities."""
 
+# 複数ホストにまたがる配列の同期確認用。物理モデルやMCMCの更新式は持たない。
 from absl import logging
 import jax
 import jax.numpy as jnp

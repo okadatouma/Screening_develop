@@ -23,6 +23,8 @@ NOTE: these functions operate on batches of MCMC configurations and should not
 be vmapped.
 """
 
+# 固定した現在のパラメータで|ψ|²を標本化する。パラメータ更新はtrainer側の責務。
+# Metropolis受理判定にはlog|ψ|を使い、位相そのものは確率比に入れない。
 import chex
 from periodicwave import constants
 from periodicwave import networks
@@ -50,6 +52,7 @@ def _pin_pattern(pos, sites, lattice, ndim=2):
 
 def mh_accept(x1, x2, spins1, spins2, lp_1, lp_2, ratio, key, num_accepts):
   """Given state, proposal, and probabilities, execute MH accept/reject step."""
+  # ratioは提案確率を含めた対数受理比。log(一様乱数)と比較し、棄却なら旧配置を残す。
   key, subkey = jax.random.split(key)
   rnd = jnp.log(jax.random.uniform(subkey, shape=ratio.shape))
   cond = ratio > rnd
@@ -129,6 +132,7 @@ def mh_spin_flip(
   Returns:
     (data, key, lp, num_accepts)。num_accepts は受理された反転の数の累計。
   """
+  # 位置を固定し、擬スピン反転を提案する。λ-jelliumでは位置とspinの両方を標本化する。
   key, subkey = jax.random.split(key)
   spins1 = data.spins
   nwalk, nelec = spins1.shape
@@ -235,6 +239,8 @@ def make_mcmc_step(batch_network,
   Returns:
     Callable which performs the set of MCMC steps.
   """
+  # 返すstepはdataを更新するだけ。spin_flips>0なら受理率は[位置,spin]の2成分。
+  # blocks>1やPINとの組合せには既存の制約があるため、全組合せが利用可能とは限らない。
   if spin_flips > 0:
     return _make_mcmc_step_with_flips(batch_network, batch_per_device, steps,
                                       ndim, blocks, spin_flips)

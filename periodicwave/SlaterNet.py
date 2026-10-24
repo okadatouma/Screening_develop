@@ -21,6 +21,8 @@ This approach is equivalent to unrestricted Hartree-Fock when generating a singl
 from the network.
 """
 
+# Attentionを使わないAnsatz。電子ごとのEmbeddingと残差MLPから軌道を作る。
+# 通常の行列式構成はwavefunction.py、HF表を使う構成はlj_orbitals.pyを参照する。
 from typing import Mapping, Optional, Sequence, Tuple, Union
 
 import attr
@@ -159,6 +161,7 @@ def make_SlaterNet_layers(
   Returns:
     Tuple of init, apply functions.
   """
+  # 固定1体特徴とspinを学習可能Embeddingへ渡し、各電子の特徴をMLPで更新する。
   del nspins, natoms  # Unused.
 
   SlaterNet_init, SlaterNet_apply = make_SlaterNet_block(

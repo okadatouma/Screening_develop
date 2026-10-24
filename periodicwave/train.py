@@ -21,6 +21,8 @@
 
 """Core training loop for neural QMC in JAX."""
 
+# 学習の接続点：設定読込 → Network初期化/復元 → MCMC平衡化 → EL/勾配 → optimizer更新 → 統計/保存。
+# Attention等の数式は各モジュール、学習の実行順とdevice方向の集約はこのファイルの責務。
 import functools
 import importlib
 import os
@@ -179,6 +181,7 @@ def make_opt_update_step(evaluate_loss: qmc_loss_functions.LossFn,
   """Returns an OptUpdate function for performing a parameter update."""
 
   # Define function that differentiates wrt parameters (argument 0)
+  # lossの主勾配を計算し、device間で平均してからOptaxへ渡す。MCMCによる標本更新はここでは行わない。
   loss_and_grad = jax.value_and_grad(evaluate_loss, argnums=0, has_aux=True)
 
   def opt_update(
@@ -233,6 +236,8 @@ def make_training_step(
     update. See the Step protocol for details.
   """
   @functools.partial(constants.pmap, donate_argnums=(0, 1, 2)) # applies pmap to step with args 0,1,2 donated for memory efficiency
+  # 1学習stepでMCMCを先に回し、その標本でoptimizerを更新する。
+  # MCMC用とloss用の乱数キーを分け、pmapではdeviceごとの標本を処理する。
   def step(
       data: networks.FermiNetData,
       params: networks.ParamTree,
@@ -340,6 +345,8 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
     ValueError: if an illegal or unsupported value in cfg is detected.
   """
   # Device logging
+  # まずNetwork/標本/optimizer状態を準備し、必要ならcheckpointを復元する。
+  # 複素ELはVMC勾配へ保持し、実数専用の報告・EW統計とは区別する。
   num_devices = jax.local_device_count()
   num_hosts = jax.device_count() // num_devices
   logging.info('Starting QMC with %i XLA devices per host '
@@ -518,6 +525,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
   )
 
   # Construct loss and optimizer
+  # HamiltonianがELを評価し、lossがそのELと波動関数微分からVMC勾配を作る。
   # Requires a local energy function to be specified.
   local_energy_module, local_energy_fn = (
       cfg.system.make_local_energy_fn.rsplit('.', maxsplit=1))
@@ -620,6 +628,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
         jnp.asarray(cfg.mcmc.move_width))
 
   if t_init == 0: # MCMC burn in
+    # 初回だけ、NNパラメータを更新せず標本を平衡化する。
     logging.info('Burning in MCMC chain for %d steps', cfg.mcmc.burn_in)
 
     burn_in_step = make_training_step(
@@ -672,6 +681,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
     
   with writer_manager as writer:
     # Main training loop
+    # stepは「現在のψでMCMC → 同じ標本でEL/勾配 → パラメータ更新」の順。
     num_resets = 0  # used if reset_if_nan is true
     for t in range(t_init, cfg.optim.iterations):
       sharded_key, subkeys = kfac_jax.utils.p_split(sharded_key)

@@ -19,6 +19,8 @@
 
 """ Checkpoints using numpy."""
 
+# 学習途中のparams・標本・optimizer状態・移動幅をnpzへ保存／復元する。
+# 既存の通常checkpointはPRNG状態を保存しないため、復元だけで乱数軌道の一致は保証しない。
 import dataclasses
 import datetime
 import os
@@ -150,6 +152,7 @@ def restore(restore_filename: str, batch_size: Optional[int] = None):
     if the total batch size is not equal to the number of MCMC configurations in
     data.
   """
+  # 返すstepは保存step+1。標本の先頭軸はdeviceで、復元先のdevice数・batch数を照合する。
   logging.info('Loading checkpoint %s', restore_filename)
   with open(restore_filename, 'rb') as f:
     ckpt_data = np.load(f, allow_pickle=True)

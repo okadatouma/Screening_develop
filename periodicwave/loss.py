@@ -19,6 +19,8 @@
 
 """Helper functions to create the loss and custom gradient of the loss."""
 
+# VMCのエネルギー評価と主勾配を定義する。局所エネルギーの虚部は位相勾配に必要。
+# 報告する実数エネルギーと、勾配推定に使う複素ELを区別する。
 import functools
 from typing import Tuple
 
@@ -118,6 +120,8 @@ def clip_local_values(
     device.
   """
 
+  # 複素ELは実部と虚部をそれぞれclipする。返すdiffは勾配用で、元のELは別に保持する。
+  # clipが実際に効く場合、得られる勾配推定量は元の変分エネルギーの厳密勾配とは限らない。
   batch_mean = lambda values: constants.pmean(jnp.mean(values, axis=0))
 
   def clip_at_total_variation(values, center, scale):
@@ -197,6 +201,8 @@ def make_loss(network: networks.LogFermiNetLike,
   #   keys: vector of keys of dimension batch_size
   #   data: FermiNetData where positions, spins, atoms, charges have dim (batch_size, x) 
   #     where x is the dimension of the respective element
+  # 返す関数の引数は(params,key,data)。dataの先頭軸はwalker、device間の平均はpmeanで行う。
+  # custom JVPで勾配を指定する。主勾配の検証と、補助出力JVPの既知問題K10は区別する。
   batch_local_energy = jax.vmap(
       local_energy,
       in_axes=(

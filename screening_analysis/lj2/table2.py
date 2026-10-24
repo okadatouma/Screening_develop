@@ -8,6 +8,8 @@ ps = json.load(open(os.path.join(HERE, 'pstype.json')))['runs']
 ro = json.load(open(os.path.join(HERE, 'readouts.json')))
 
 def quantities(key):
+    # 既存JSONのhead平均とq加重窓幅を表用に集約する。元JSONのqの定義をそのまま使う。
+    # 新実験のmean||c_h||²指標やcoreのΔCに置き換えてはいない。
     A = np.array(ps[key]['A'])                                   # [head, σ, σ']
     same = 0.5 * (A[:, 0, 0] + A[:, 1, 1]).mean()               # 同じ向きの ᾱ（ヘッド平均）
     opp = 0.5 * (A[:, 0, 1] + A[:, 1, 0]).mean()                # 逆向きの ᾱ

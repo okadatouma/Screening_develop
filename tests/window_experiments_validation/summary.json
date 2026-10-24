@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-24",
+  "unit_float64": "13 PASS",
+  "unit_float32": "13 PASS",
+  "frozen_float64": {
+    "exact_arrays": 902,
+    "exact_elements": 21651
+  },
+  "frozen_float32": {
+    "exact_arrays": 1319,
+    "exact_elements": 31142,
+    "kfac_included": true
+  },
+  "original33": {
+    "PASS": 30,
+    "FAIL": 1,
+    "ERROR": 1,
+    "SKIP": 1,
+    "note": "KFAC integration not enabled in this run; tested separately with 3 known float64 subcase errors"
+  },
+  "integration": "8 synthetic-HF Adam runs (A-D x float32/64), resume and uninterrupted exact, diagnostic/core/cutoff complete",
+  "unexecuted": [
+    "University GPU and Slurm submission",
+    "Actual WC/AHC HF tables, N36 Coulomb training",
+    "Physical convergence/phase/topology inference",
+    "KFAC training of the new experimental model"
+  ]
+}

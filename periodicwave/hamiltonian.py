@@ -19,6 +19,7 @@
 
 """ Basic function for evaluating the Hamiltonian on a wavefunction. """
 
+# 座標微分から局所運動エネルギーを作る。相互作用・背景電荷はPBC等の専用Hamiltonianで足す。
 from typing import Any, Callable, Optional, Sequence, Tuple, Union
 
 import chex
@@ -102,6 +103,8 @@ def local_kinetic_energy(
     -1/2f \nabla^2 f = -1/2 (\nabla^2 log|f| + (\nabla log|f|)^2).
   """
 
+  # ψ=exp(a+iφ)に対しT_L=−1/2[Δa+|∇a|²−|∇φ|²+i(Δφ+2∇a·∇φ)]。
+  # 座標だけを微分し、複素数全体を保持する。fの返値は(位相または符号,log|ψ|)。
   phase_f = utils.select_output(f, 0)
   logabs_f = utils.select_output(f, 1)
 

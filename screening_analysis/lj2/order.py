@@ -1,3 +1,5 @@
+# 固定されたN36の保存標本から密度Fourier成分、構造因子、密度ピーク付近の負擬スピン比を計算する。
+# 新しくMCMCを回す処理ではない。標本数1024・特定パスを仮定し、order.jsonへ保存する。
 import numpy as np, glob, json
 base = 'results/lambda-jellium/CustomScreenformer'
 a = np.sqrt(2 * np.pi / np.sqrt(3))

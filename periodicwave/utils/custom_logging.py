@@ -14,6 +14,8 @@
 
 """ Logging functionalities. """
 
+# デバイス情報と設定JSONの保存・読込を担当する。
+# JSONに変換できない配列等の復元可能性は、各解析入口の実効設定照合も確認する。
 import jax
 import jax.numpy as jnp
 import platform

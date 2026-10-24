@@ -15,6 +15,8 @@
 
 """ Defines supercell lattice vectors for two-dimensional periodic systems. """
 
+# セルの格子行列と座標の折り返しを作る。格子ベクトルは列に並べる。
+# 単位胞への折り返しは、2点間の最小像距離の計算とは異なる操作。
 import numpy as np
 from typing import Tuple
 

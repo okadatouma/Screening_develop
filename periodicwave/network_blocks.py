@@ -14,6 +14,8 @@
 
 """Neural network building blocks."""
 
+# 複数Ansatzで数式・初期化が共通の小さな演算を置く。
+# Embedding、LayerNorm、線形層、行列式の和を変更する際の共通入口。
 import functools
 import itertools
 from typing import Mapping, MutableMapping, Optional, Sequence, Tuple
@@ -31,6 +33,7 @@ import jax.numpy as jnp
 def make_layer_norm() ->...:
   """Implementation of LayerNorm."""
   # Import here to preserve ParamTree annotations without a module import cycle.
+  # 電子ごとの特徴軸を正規化する。epsilon・dtype・演算順は固定snapshotの比較対象。
   from periodicwave import networks
 
   def init(param_shape: int) -> Mapping[str, jnp.ndarray]:
@@ -61,6 +64,7 @@ def init_input_embedding(key: chex.PRNGKey,
   The existing linear initializer uses normal(key1)/sqrt(F+1), with its original
   dtype and two-key split. No extra parameter nesting is introduced.
   """
+  # 1体特徴の末尾にspinを1成分足すため、重みの入力次元はone_electron_feature_dim+1。
   return init_linear_layer(
       key, in_dim=one_electron_feature_dim + 1, out_dim=output_dim,
       include_bias=False
@@ -75,6 +79,7 @@ def apply_input_embedding(weight: jnp.ndarray,
   Features and spin are concatenated before the single dot, preserving dtype,
   operation order and electron-permutation equivariance. No geometry is computed.
   """
+  # X_i = concat(1体特徴_i, spin_i) @ weight。電子の行順を保つため交換共変。
   features = jnp.concatenate((one_electron_features, spins[..., None]), axis=-1)
   return jnp.dot(features, weight)
 
@@ -132,6 +137,7 @@ def init_linear_layer(
     A mapping containing the weight matrix (key 'w') and, if required, bias
     unit (key 'b').
   """
+  # 重みとbiasは別subkeyで初期化する。乱数splitを変えると後続の初期値も変わり得る。
   key1, key2 = jax.random.split(key)
   weight = (
       jax.random.normal(key1, shape=(in_dim, out_dim)) /
@@ -209,6 +215,8 @@ def logdet_matmul(
   # wavefunction). Avoid this by not going into the log domain for 1x1 matrices.
   # Pass initial value to functools so det1d = 1 if all matrices are larger than
   # 1x1.
+  # 通常Ansatzからは全電子N×N行列の配列[ndet,N,N]が渡される。
+  # 最大log|det|を引いてから行列式を足し、桁あふれを抑える。複素出力のphaseは角度。
   det1d = functools.reduce(lambda a, b: a * b,
                            [x.reshape(-1) for x in xs if x.shape[-1] == 1], 1)
   # Pass initial value to functools so sign_in = 1, logdet = 0 if all matrices

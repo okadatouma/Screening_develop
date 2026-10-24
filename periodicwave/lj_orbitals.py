@@ -31,6 +31,8 @@ ALPHA0 = 0.3   # Jastrow の到達距離の初期値（r_s a_B 単位。最近�
 
 def load_hf_table(path):
   """lj_hf.LJHF.orbitals_text の表（k_x k_y G_x G_y Re c Im c）を読む。返り値 k (Nk,2), G (NG,2), c (Nk,NG)。"""
+  # 6列はkx,ky,Gx,Gy,Re(c),Im(c)。kごとに連続したGブロックとして並ぶ表を読む。
+  # 係数表だけには作成時のλや格子の情報は含まれない。実効設定と別途照合する。
   t = np.loadtxt(path)
   kxy = t[:, 0:2]
   gxy = t[:, 2:4]
@@ -47,6 +49,7 @@ def load_hf_table(path):
 
 
 def cusp_values(r_s, lam, delta):
+  # 運動項の係数c+=1/2+Delta*lambda²、c−=1/2に対応する(++/--/+-)カスプ係数。
   cp = 0.5 + delta * lam ** 2
   cm = 0.5
   return (r_s / (3.0 * 2 * cp), r_s / (3.0 * 2 * cm), r_s / (cp + cm))   # (++, --, +-)
@@ -65,6 +68,8 @@ def make_lj_orbitals(
     net_scale: float = 0.05,
     use_jastrow: bool = True,
 ):
+  # 固定HFスピノル軌道＋net_scale×NN補正で各電子の軌道を作る。
+  # 実際のspin値で成分を選び、[ndet,N,N]に組み替える。Jastrowも動的なspin対で評価する。
   equivariant_layers_init, equivariant_layers_apply = equivariant_layers
   n = int(sum(nspins))
   nk = hf_k.shape[0]

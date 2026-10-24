@@ -1,3 +1,5 @@
+# 過去に集計したチャネル寄与の数値を直接記した再描画用スクリプト。checkpointの再解析はしない。
+# 元の環境の絶対パスとout/qk_decomp.pngへの保存があるため、実行前に入出力を確認する。
 import sys, numpy as np
 sys.path.insert(0,'/home/claude/run/screening_analysis')
 import style as ST; ST.use()

@@ -1,0 +1,6 @@
+{
+  "matching_core_comparison": "completed; /tmp/window-core-compare.txt",
+  "mismatched_radius_rejected": true,
+  "exit_code": 1,
+  "output_created": false
+}

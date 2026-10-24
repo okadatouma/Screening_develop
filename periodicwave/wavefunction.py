@@ -23,6 +23,8 @@ exp(J/N). The Ansatz then calls network_blocks.logdet_matmul for the determinant
 sum and (sign or phase angle, log|psi|). That numerical reducer stays unchanged.
 HF orbitals plus NN corrections and the dynamic-spin Jastrow stay in lj_orbitals.
 """
+# 通常Ansatzの構成：電子ごとの特徴X → 軌道射影 → [ndet,N,N] → 行列式の和。
+# HF軌道＋NN補正と動的擬スピンJastrowはlj_orbitals.pyの独立した構成を使う。
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Sequence, Tuple
@@ -50,6 +52,8 @@ def make_orbitals(
   """
   # Geometry stays in networks; defer this import so either module can be
   # imported first while networks keeps the historical make_orbitals export.
+  # initはパラメータを作り、applyは軌道行列のリストを返す。行列式の和は呼出元で評価する。
+  # スピン別の小行列には分けず、全電子を統合したN×N行列を作る仕様。
   from periodicwave.networks import (
       construct_input_features, make_periodic_construct_input_features)
 
@@ -144,6 +148,7 @@ def make_orbitals(
     # Linear projection to orbitals (single channel)
     orbital = network_blocks.linear_layer(h, **params['orbital'][0])
 
+    # 偶数列が実部、奇数列が虚部。組にして1つの複素軌道へ戻す。
     # Complex packing
     if options.complex_output:
       orbital = orbital[..., ::2] + 1.0j * orbital[..., 1::2]
@@ -155,6 +160,7 @@ def make_orbitals(
           ae=ae, r_ae=r_ae, r_ee=r_ee, **params['envelope'][0]
       )
 
+    # 行は電子i、列は軌道j。電子とspinを同時交換すると行が交換され、detの符号が反転する。
     # Reshape to (ndet*states, n_total, n_total)
     orbital = jnp.reshape(orbital, (n_total, -1, n_total))  # (elec, blocks, elec)
     orbital = jnp.transpose(orbital, (1, 0, 2))             # (blocks, elec, elec)
@@ -163,6 +169,8 @@ def make_orbitals(
 
     # Jastrow factor (pre-determinant for compatibility with pretraining)
     if jastrow_apply is not None:
+      # 各行列要素にexp(J/N)を掛けるため、N×Nの行列式には全体でexp(J)が掛かる。
+      # 通常版では動的spinsではなく、統合したnspins_mergedをJastrowへ渡す現行仕様。
       jastrow = jnp.exp(jastrow_apply(r_ee, params['jastrow'], nspins_merged) / n_total)
       orbitals = [o * jastrow for o in orbitals]
 

@@ -47,6 +47,8 @@ def exponentialy_weighted_stats(
       observations. Pass in None to indicate no prior observations have been
       made.
   """
+  # 対象は実数の観測値。meanとvarianceは観測系列の指数重み付き統計。
+  # varianceは平均の標準誤差でも、MCMC自己相関を補正した誤差でもない。
   if previous_stats is None:
     return WeightedStats[T](mean=observation, variance=0.0 * observation)
   else:

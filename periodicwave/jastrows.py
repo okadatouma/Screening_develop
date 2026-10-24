@@ -19,6 +19,8 @@
 
 """ Multiplicative Jastrow factors. """
 
+# 通常の電子間Jastrow。返すのは乗算因子そのものではなく、指数に入る実数J。
+# スピン組の判定にはnspinsを使う。λ-jelliumの動的擬スピン対Jastrowとは独立。
 import enum
 from typing import Any, Callable, Iterable, Mapping, Union
 import jax.numpy as jnp
@@ -42,6 +44,7 @@ def _jastrow_ee(
     interaction_strength: float = 1.0,
 ) -> jnp.ndarray:
   """Jastrow factor for electron-electron cusps."""
+  # 同スピン・異スピンの電子対に異なるカスプ係数を使い、対ごとの項を足す。
   if ndim == 3:
     cusp_parallel = interaction_strength/4
     cusp_anti     = interaction_strength/2
@@ -78,6 +81,7 @@ def _jastrow_ee(
 def make_simple_ee_jastrow(ndim: int = 3, interaction_strength: float = 1.0) -> ...:
   """Creates a Jastrow factor for electron-electron cusps."""
 
+  # 各対の項は−cusp*alpha²/(alpha+r)。次元とCoulomb強度からカスプ係数を決める。
   def simple_ee_cusp_fun(
       r: jnp.ndarray, cusp: float, alpha: jnp.ndarray
   ) -> jnp.ndarray:

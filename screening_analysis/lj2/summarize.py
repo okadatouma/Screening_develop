@@ -1,3 +1,5 @@
+# 指定したN36・rs15の学習CSVを集計し、末尾区間とその直前のエネルギー差を比較する。
+# 500点blockの標準誤差とlocstdは別物。単位換算もこの粒子数・密度に固定されている。
 import numpy as np, pandas as pd, glob, os
 base = 'results/lambda-jellium/CustomScreenformer'
 conv = (2 / 15**2) / 36 * 1000   # code units (36 electrons) -> mRy per electron

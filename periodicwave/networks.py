@@ -19,6 +19,8 @@
 # - included make_periodic_construct_input_features that correctly estimates distances on a periodic system
 
 """Implementation of Fermionic Neural Network in JAX."""
+# ネットワーク共通の入出力型と幾何情報を定義する。AttentionやHamiltonianの式は各専用モジュールに置く。
+# 通常の軌道構成はwavefunction.pyにあり、末尾で従来名make_orbitalsを再公開する。
 import enum
 from typing import Any, Iterable, Mapping, MutableMapping, Optional, Sequence, Tuple, Union
 
@@ -311,6 +313,8 @@ def make_periodic_construct_input_features(pbc_supercell: jnp.ndarray) -> ...:
   # WARNING: Using periodic norm for construct_input_features distorts the distances r_ee, r_ae on
   # length scales of the unit cell boundary. 
   # It only agrees with the real-space norm on short length scales.
+  # Aは格子ベクトルを列に持つ行列。変位自体は生のCartesian座標の差を返す。
+  # 距離だけをsin/cosによる周期ノルムに置き換える。最小像距離・Ewald用の距離とは異なる。
   print("making construct_input_features with periodic norm")
   rec = 2 * jnp.pi * jnp.linalg.inv(pbc_supercell)
   supercell_metric =  pbc_supercell.T @ pbc_supercell
@@ -391,6 +395,8 @@ def construct_input_features(
     The diagonal terms in r_ee are masked out such that the gradients of these
     terms are also zero.
   """
+  # pos[N*ndim] → ae[N,natom,ndim]とee[N,N,ndim]、および各距離を返す。
+  # この通常版はEuclidean距離。自己項をずらしてから0に戻し、対角の微分を保護する。
   assert atoms.shape[1] == ndim
   ae = jnp.reshape(pos, [-1, 1, ndim]) - atoms[None, ...]
   ee = jnp.reshape(pos, [1, -1, ndim]) - jnp.reshape(pos, [-1, 1, ndim])
@@ -410,6 +416,7 @@ def make_ferminet_features(
 ) -> FeatureLayer:
   """Returns the init and apply functions for the standard features."""
 
+  # 固定特徴は1体(r_ae,ae)、電子対(r_ee,ee)の連結。ここには学習可能な射影を含めない。
   del nspins
 
   def init() -> Tuple[Tuple[int, int], Param]:
