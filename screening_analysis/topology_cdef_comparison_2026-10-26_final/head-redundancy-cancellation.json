@@ -1,0 +1,636 @@
+{
+  "definition": "rho=<||sum c_h||\u00b2>/<sum ||c_h||\u00b2>, ratio of B/N moments, bias excluded",
+  "head_identity": "no matching of head numbers across runs",
+  "records": [
+    {
+      "id": "synthetic-band-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        1.0543818292712595,
+        1.0009335503558332
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.12121462088246708,
+        0.08305309404021159
+      ]
+    },
+    {
+      "id": "synthetic-band-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        1.0282124891232733,
+        1.0280400899136966
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.17895393331143777,
+        0.07694031128930594
+      ]
+    },
+    {
+      "id": "synthetic-band-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        0.9896342197016146,
+        0.9596514446312704
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.09989085010897678,
+        0.13558136279176494
+      ]
+    },
+    {
+      "id": "synthetic-band-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        1.0736684520487925,
+        0.9454154639113652
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.12172967523890216,
+        0.14704055040313485
+      ]
+    },
+    {
+      "id": "synthetic-band-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        0.976053893472219,
+        1.037500607033657
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.1209310748023595,
+        0.14792231284826513
+      ]
+    },
+    {
+      "id": "synthetic-band-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        0.9895175508422206,
+        1.070599413821021
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.15560001935384232,
+        0.14733990673942104
+      ]
+    },
+    {
+      "id": "synthetic-cos-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        1.016365851103972,
+        0.9858941919302913
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.031626537944961466,
+        0.01161492478007728
+      ]
+    },
+    {
+      "id": "synthetic-cos-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        1.031172010364593,
+        0.9491190038090425
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.24704899127865515,
+        0.16725299642484004
+      ]
+    },
+    {
+      "id": "synthetic-cos-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        1.0853933045014927,
+        0.8647361408963591
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.024047393449995298,
+        0.019349755136861584
+      ]
+    },
+    {
+      "id": "synthetic-cos-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        1.0892555138306428,
+        0.8422737370579484
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.19569562620166078,
+        0.254886837176556
+      ]
+    },
+    {
+      "id": "synthetic-cos-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        1.0659640737202536,
+        1.111438440900807
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.02583402512263697,
+        0.018100096832563837
+      ]
+    },
+    {
+      "id": "synthetic-cos-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        1.0207359202226938,
+        1.02259692865101
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.2652213456314683,
+        0.2641074728246204
+      ]
+    },
+    {
+      "id": "synthetic-fixed-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        0.9999356666123971,
+        0.9999991113438247
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.031626537944961466,
+        0.011885014123407638
+      ]
+    },
+    {
+      "id": "synthetic-fixed-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        0.9295189223623307,
+        0.9361455153182149
+      ],
+      "negative_head_pair_fraction": [
+        1.0,
+        1.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.24704899127865515,
+        0.17535119737005717
+      ]
+    },
+    {
+      "id": "synthetic-fixed-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        1.0009192541155387,
+        1.0001678838599628
+      ],
+      "negative_head_pair_fraction": [
+        0.0,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.024047393449995298,
+        0.019085184310147295
+      ]
+    },
+    {
+      "id": "synthetic-fixed-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        0.9936069961121843,
+        1.0283786197598437
+      ],
+      "negative_head_pair_fraction": [
+        0.6666666666666666,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.19569562620166078,
+        0.2310735664613267
+      ]
+    },
+    {
+      "id": "synthetic-fixed-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        1.0001102725461932,
+        1.0001276814424398
+      ],
+      "negative_head_pair_fraction": [
+        0.0,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.02583402512263697,
+        0.015685278098304153
+      ]
+    },
+    {
+      "id": "synthetic-fixed-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        1.0490414529928547,
+        0.9714553769983499
+      ],
+      "negative_head_pair_fraction": [
+        0.0,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.2652213456314683,
+        0.26940847965171133
+      ]
+    },
+    {
+      "id": "synthetic-gauss-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        1.049104722527069,
+        1.000515841336844
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.4650351061380776,
+        0.27771947923562257
+      ]
+    },
+    {
+      "id": "synthetic-gauss-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        1.0923964247631994,
+        1.0016262184972404
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.41587702555034567,
+        0.26669020081563743
+      ]
+    },
+    {
+      "id": "synthetic-gauss-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        1.0051864213777288,
+        0.9175022852938751
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.3792300849052577,
+        0.3977805997008155
+      ]
+    },
+    {
+      "id": "synthetic-gauss-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        1.1014860824253372,
+        0.9885962311074228
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.32452511586070293,
+        0.3899826373227368
+      ]
+    },
+    {
+      "id": "synthetic-gauss-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        0.9929948454038882,
+        1.1482278501953431
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.4399894905975151,
+        0.3999600062340506
+      ]
+    },
+    {
+      "id": "synthetic-gauss-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        1.0020555253760628,
+        1.0772493692923202
+      ],
+      "negative_head_pair_fraction": [
+        0.6666666666666666,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.41567860368969034,
+        0.4061749893533098
+      ]
+    },
+    {
+      "id": "synthetic-sin-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        1.0477187158926422,
+        1.0005141833344053
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.09132980774993014,
+        0.059353670776595674
+      ]
+    },
+    {
+      "id": "synthetic-sin-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        1.0926016711326685,
+        1.0022115614274654
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.09447670093946473,
+        0.03622616189307488
+      ]
+    },
+    {
+      "id": "synthetic-sin-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        0.9836038156430861,
+        0.9160803774272361
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.085840497363771,
+        0.10380772249009969
+      ]
+    },
+    {
+      "id": "synthetic-sin-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        1.0955243200062694,
+        0.9933070974950516
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.06191381155261443,
+        0.07349658103551528
+      ]
+    },
+    {
+      "id": "synthetic-sin-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        0.9893722929670621,
+        1.1369875102173583
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.08968172835724321,
+        0.09422136983909934
+      ]
+    },
+    {
+      "id": "synthetic-sin-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        1.0023481497461437,
+        1.0656166538775096
+      ],
+      "negative_head_pair_fraction": [
+        0.6666666666666666,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.08118203222199072,
+        0.07706407323826153
+      ]
+    },
+    {
+      "id": "synthetic-smooth7-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        1.0249730300151303,
+        0.9806967345297344
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.031626537944961466,
+        0.01161492478007728
+      ]
+    },
+    {
+      "id": "synthetic-smooth7-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        1.0353174829173488,
+        0.9433815488949527
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.24704899127865515,
+        0.16769931622098802
+      ]
+    },
+    {
+      "id": "synthetic-smooth7-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        1.0883124975067127,
+        0.8601196614316423
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.024047393449995298,
+        0.019349755136861584
+      ]
+    },
+    {
+      "id": "synthetic-smooth7-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        1.087536944884955,
+        0.8371643216216808
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.19569562620166078,
+        0.2549243409269311
+      ]
+    },
+    {
+      "id": "synthetic-smooth7-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        1.0719373765463336,
+        1.103927422018275
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.02583402512263697,
+        0.018067884753719635
+      ]
+    },
+    {
+      "id": "synthetic-smooth7-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        1.0155128577061618,
+        1.0165811148702655
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_jaccard_over_grid": [
+        0.2652213456314683,
+        0.2623232259727846
+      ]
+    },
+    {
+      "id": "synthetic-wide-seed11-ordered",
+      "pooled_cancellation_ratio": [
+        0.9570938141032914,
+        1.0064446409351067
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.2883468440159524,
+        0.18509486966637004
+      ]
+    },
+    {
+      "id": "synthetic-wide-seed11-uniform",
+      "pooled_cancellation_ratio": [
+        1.0162230538993473,
+        0.9697689236760787
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        1.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.3939464237319375,
+        0.2615494566848564
+      ]
+    },
+    {
+      "id": "synthetic-wide-seed23-ordered",
+      "pooled_cancellation_ratio": [
+        1.122073725376648,
+        0.8708154441373289
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.23815409040517144,
+        0.2630358120289142
+      ]
+    },
+    {
+      "id": "synthetic-wide-seed23-uniform",
+      "pooled_cancellation_ratio": [
+        1.147816773565863,
+        0.8477144907238712
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_jaccard_over_grid": [
+        0.3033770598231969,
+        0.3772551882764627
+      ]
+    },
+    {
+      "id": "synthetic-wide-seed37-ordered",
+      "pooled_cancellation_ratio": [
+        1.0410836076210954,
+        1.2272627058501306
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.27796370521896424,
+        0.28996438317970763
+      ]
+    },
+    {
+      "id": "synthetic-wide-seed37-uniform",
+      "pooled_cancellation_ratio": [
+        1.0098242564194682,
+        1.0791678855641682
+      ],
+      "negative_head_pair_fraction": [
+        0.3333333333333333,
+        0.0
+      ],
+      "mean_jaccard_over_grid": [
+        0.39652740178491924,
+        0.38148688597159425
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330">
+<rect width="900" height="330" fill="white"/>
+<g font-family="sans-serif" font-size="13" fill="#17232d">
+<text x="35" y="25">Synthetic ordered geometry: winding probability vs physical distance cutoff, QK a=0</text>
+<text x="55" y="52">Layer 0 (heads averaged)</text>
+<path d="M55,65 V245 H395" fill="none" stroke="#687886"/>
+<text x="35" y="75">1</text>
+<text x="35" y="245">0</text>
+<text x="55" y="263">0</text>
+<text x="380" y="263">1.1</text>
+<text x="165" y="283">distance cutoff b</text>
+<polyline points="55.00,65.00 97.50,65.00 140.00,65.00 182.50,65.00 225.00,65.00 267.50,65.00 310.00,65.00 352.50,105.00 395.00,230.00" stroke="#687886" stroke-width="2" fill="none"/>
+<polyline points="55.00,245.00 97.50,245.00 140.00,245.00 182.50,245.00 225.00,245.00 267.50,245.00 310.00,245.00 352.50,205.00 395.00,175.00" stroke="#c27b1b" stroke-width="2" fill="none"/>
+<polyline points="55.00,245.00 97.50,245.00 140.00,245.00 182.50,245.00 225.00,245.00 267.50,245.00 310.00,245.00 352.50,245.00 395.00,150.00" stroke="#7455a6" stroke-width="2" fill="none"/>
+<text x="485" y="52">Layer 1 (heads averaged)</text>
+<path d="M485,65 V245 H825" fill="none" stroke="#687886"/>
+<text x="465" y="75">1</text>
+<text x="465" y="245">0</text>
+<text x="485" y="263">0</text>
+<text x="810" y="263">1.1</text>
+<text x="595" y="283">distance cutoff b</text>
+<polyline points="485.00,65.00 527.50,65.00 570.00,65.00 612.50,65.00 655.00,65.00 697.50,65.00 740.00,65.00 782.50,75.00 825.00,165.00" stroke="#687886" stroke-width="2" fill="none"/>
+<polyline points="485.00,245.00 527.50,245.00 570.00,245.00 612.50,245.00 655.00,245.00 697.50,245.00 740.00,245.00 782.50,235.00 825.00,210.00" stroke="#c27b1b" stroke-width="2" fill="none"/>
+<polyline points="485.00,245.00 527.50,245.00 570.00,245.00 612.50,245.00 655.00,245.00 697.50,245.00 740.00,245.00 782.50,245.00 825.00,180.00" stroke="#7455a6" stroke-width="2" fill="none"/>
+<text x="150" y="320" fill="#687886">winding rank 0</text>
+<text x="390" y="320" fill="#c27b1b">winding rank 1</text>
+<text x="630" y="320" fill="#7455a6">winding rank 2</text>
+</g></svg>

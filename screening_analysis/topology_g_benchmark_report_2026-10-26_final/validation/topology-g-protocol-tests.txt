@@ -1,0 +1,52 @@
+test_catalog_never_converts_candidate_parameters_to_phase (tests.test_benchmark_protocol.ProtocolChecks.test_catalog_never_converts_candidate_parameters_to_phase) ... ok
+test_geometric_baselines_identical_under_shared_inputs (tests.test_benchmark_protocol.ProtocolChecks.test_geometric_baselines_identical_under_shared_inputs) ... ok
+test_physical_model_reconstruction_uses_same_wavefunction (tests.test_benchmark_protocol.ProtocolChecks.test_physical_model_reconstruction_uses_same_wavefunction) ... ok
+test_shared_probe_identical_inputs_and_readonly_source (tests.test_benchmark_protocol.ProtocolChecks.test_shared_probe_identical_inputs_and_readonly_source) ... ok
+test_PH_coordinates_are_actual_flag_diagrams (tests.test_topology_regularization.RegularizationChecks.test_PH_coordinates_are_actual_flag_diagrams) ... ok
+test_all_categories_gradients_and_invariances (tests.test_topology_regularization.RegularizationChecks.test_all_categories_gradients_and_invariances) ... ok
+test_disabled_callable_identity (tests.test_topology_regularization.RegularizationChecks.test_disabled_callable_identity) ... ok
+test_pair_stable_PH_gradient_finite_difference (tests.test_topology_regularization.RegularizationChecks.test_pair_stable_PH_gradient_finite_difference) ... ok
+test_production_diagnostic_parameter_gradient (tests.test_topology_regularization.RegularizationChecks.test_production_diagnostic_parameter_gradient) ... ok
+test_sampling_score_matches_full_population_derivative (tests.test_topology_regularization.RegularizationChecks.test_sampling_score_matches_full_population_derivative) ... ok
+test_grouped_folds_bootstrap_and_exact_permutation_refit (tests.test_phase_metrics.MetricChecks.test_grouped_folds_bootstrap_and_exact_permutation_refit) ... ok
+test_known_binary_metrics_and_auc_ties (tests.test_phase_metrics.MetricChecks.test_known_binary_metrics_and_auc_ties) ... ok
+test_multiclass_and_infinity_preservation (tests.test_phase_metrics.MetricChecks.test_multiclass_and_infinity_preservation) ... ok
+test_simultaneous_factor_and_seed_holdout (tests.test_phase_metrics.MetricChecks.test_simultaneous_factor_and_seed_holdout) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 7.928s
+
+OK
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+making construct_input_features with periodic norm

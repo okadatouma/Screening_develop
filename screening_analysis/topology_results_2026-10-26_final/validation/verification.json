@@ -1,0 +1,54 @@
+{
+  "original_checkpoint_count": 521,
+  "original_checkpoint_hashes_unchanged": true,
+  "all_existing_including_pilot_inputs_unchanged": true,
+  "trained_runs": 12,
+  "synthetic_runs": 42,
+  "tests": {
+    "topology": 10,
+    "optional_internal_probe": 1,
+    "existing_diagnostic_probe_tests": 16,
+    "all_pass": true
+  },
+  "snapshots": {
+    "float64": {
+      "arrays": 902,
+      "elements": 21651,
+      "exact": true
+    },
+    "float32_kfac": {
+      "arrays": 1319,
+      "elements": 31142,
+      "exact": true
+    }
+  },
+  "obsolete_snapshot_comparison": "expected failure against pre-G2b energy dtype; old snapshots unchanged",
+  "source_sha256": {
+    "screening_analysis/topology.py": "3efbc4636b80f4bcabd15ae62dfee1adbb01759bfb0dab2e7d8ad601fa7da92f",
+    "screening_analysis/topology_run.py": "dac84fe5d13f5bc9829bdb9138586a42ce010f6373511e9d553604f85ec3e850",
+    "screening_analysis/topology_pilot.py": "95576c81e895de27dbab911ecd6e8da1f4c721b45950cf8ebd6f3c4e4685cbc8",
+    "screening_analysis/topology_evaluate.py": "ddf0fcef5a0db26a88fa1f7d0f7d24d6b2b34570d73bfd8f7bd909949ea0fb6e",
+    "screening_analysis/attn_probe.py": "f31d1731672f3bfba8e4b7d6d3923ed6553f0cff78cbc215771567823f93d137",
+    "screening_analysis/graph_wind.py": "24cc1ac7ef14be9c41f63f5013f339af2ad5bfbc2cafac36fde84ce4e1f14c6b",
+    "screening_analysis/head_contrib.py": "511cc78d4cd286163cd4ce9d42d58af4d15d20c5e64d9afc0931a78b0ea01959",
+    "screening_analysis/head_cancel.py": "2c9d3cdcafed8fa186f15eff8c3e1e06b99516357795f0615d24f10db6dd7a61",
+    "tests/test_topology.py": "dd2d0e88b1a3d636cad28c4500aacf787017222359964cb291af997b0377382b",
+    "tests/test_topology_run.py": "e0e76f842eb063de24e190e8f33eed3dc0ad082653467206d9845b8bf9152434",
+    "tests/check_topology_probe.py": "8e52397890b59cd8b08721b3705a9d38c28a3d7dce035a567191953b68f7ab31"
+  },
+  "environment": {
+    "python": "3.13.14 (main, Jul 18 2026, 16:56:45) [Clang 22.1.3 ]",
+    "numpy": "2.3.3",
+    "scipy": "1.16.2",
+    "jax": "0.7.2",
+    "jaxlib": "0.7.2",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O"
+  },
+  "phase_validation": "not performed: no labeled WC/AHC research checkpoints",
+  "chern_berry": "not performed",
+  "vmc_topological_regularization": "not implemented or evaluated",
+  "plot_qa": "standalone SVG XML verified; no browser/renderer available for raster visual inspection",
+  "all_54_analysis_source_hashes_match_final_source": true,
+  "all_shuffle_density_curves_exactly_matched": true,
+  "all_rank_probability_curves_normalized": true
+}

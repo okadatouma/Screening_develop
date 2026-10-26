@@ -1,5 +1,16 @@
 # screening_analysis — 遮蔽注意の設定生成と内部解析
 
+ScreeningグラフのPersistent Homology・実空間トーラス巻き付き解析は
+[README_topology.md](README_topology.md)、実験結果は[TOPOLOGY_RESULTS.md](TOPOLOGY_RESULTS.md)を参照。
+C〜F（距離曲面・向き付きループ・Hidden PH・物理1RDM/Berry/C3）の追加は
+[README_topology_cdef.md](README_topology_cdef.md)、結果は[TOPOLOGY_CDEF_RESULTS.md](TOPOLOGY_CDEF_RESULTS.md)。
+
+G（PH/スペクトル/重み正則化）とseed分離ベンチマークは
+[README_topology_g.md](README_topology_g.md)、実測と限界は[TOPOLOGY_G_RESULTS.md](TOPOLOGY_G_RESULTS.md)。
+
+統合CLIと全体の日本語研究報告は[topology/RESEARCH_REPORT.md](topology/RESEARCH_REPORT.md)。
+`python -m screening_analysis.topology.cli --help`からscan/smoke/benchmark/report/trainを実行できます。
+
 2026-08-14 のクラウド実験で使ったものを、GPU で再実行できる形に置いたもの。
 以下の実験記述は当時の履歴です。現在は本体のLayerNorm/Screening Attentionの整理と、
 attn_probe/head_contrib/head_cancelの正式Diagnostic APIへの移行が完了しています。

@@ -1,0 +1,360 @@
+{
+  "run": {
+    "id": "screen-kfac32-000007",
+    "group": "screen-kfac32",
+    "phase": "unknown",
+    "purpose": "trained one-electron free-system diagnostic; no WC/AHC inference"
+  },
+  "probe_metadata": {
+    "method": "screenformer-diagnostic-v1",
+    "weight_definition": "aggregation_weights",
+    "legacy_weight_definition": "Trim^2 * legacy window, before fixed-Value diagonal removal and interventions",
+    "interpretation": "independent diagnostic reevaluation; not Production-internal bit patterns",
+    "collect_internal": true,
+    "fixed_value": false,
+    "seed": null,
+    "debug_config": {
+      "check_nan": false,
+      "deterministic": true
+    },
+    "hamiltonian": {
+      "convergence_radius": 2,
+      "kinetic_kwargs": {
+        "laplacian_method": "folx"
+      },
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "potential_kwargs": {
+        "interaction_energy_scale": 0.0
+      },
+      "potential_type": "Coulomb"
+    },
+    "checkpoint": "/Users/toma/academic/reserch/projects/Screening_develop/tests/g3a_validation/screen-kfac32/run/qmcjax_ckpt_000007.npz",
+    "checkpoint_sha256": "3652ad58fab984a7bf022e0072c98cf7b6ebcd879bb6e5fc84a3696733a6d0ce",
+    "config_sha256": "7bddfdb49e7791b7c3ba866a0abd050ad0d21ee6c5344938977d853776dcf010",
+    "step": 7,
+    "config_path": "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_results_2026-10-26/screen-kfac32-config.json",
+    "settings": {
+      "TRIM_MAX": 2.0,
+      "TRIM_POW": 2,
+      "WIN_SHAPE": "cos",
+      "FREEZE_W": false,
+      "CLIP_R": null,
+      "CLIP_BETA": 0.3,
+      "jax_enable_x64": false,
+      "jax_default_matmul_precision": "float32"
+    },
+    "settings_provenance": {
+      "recorded_keys": [],
+      "explicit_keys": [
+        "CLIP_BETA",
+        "CLIP_R",
+        "FREEZE_W",
+        "TRIM_MAX",
+        "TRIM_POW",
+        "WIN_SHAPE",
+        "jax_default_matmul_precision",
+        "jax_enable_x64"
+      ]
+    },
+    "lattice_override": false,
+    "selected_indices": [
+      0,
+      9,
+      18,
+      27,
+      36,
+      45,
+      54,
+      63
+    ],
+    "saved_devices": 1,
+    "feature_factory": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+    "feature_kwargs": {
+      "include_r_ae": false,
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ]
+    },
+    "network_options": {
+      "attn_dim": 4,
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 8,
+      "num_heads": 1,
+      "num_layers": 1,
+      "num_perceptrons_per_layer": 1,
+      "use_layer_norm": false,
+      "value_dim": 4
+    },
+    "jax": "0.7.2",
+    "jaxlib": "0.7.2",
+    "numpy": "2.3.3",
+    "parameter_dtypes": [
+      "float32"
+    ],
+    "input_dtypes": {
+      "positions": "float32",
+      "spins": "float32",
+      "atoms": "float32",
+      "charges": "float32"
+    },
+    "backend": "cpu",
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "xla_flags": null,
+    "runtime_settings_recovered_from_checkpoint": false,
+    "source_sha256": {
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py": "c2a8c40fd3649feb778c74f5d2d0d4751d717293cb4d0fdc844fbac030aec767",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py": "ec2e71e8bacec97b082d6f02c7069c9d045ddfa58d75e7e97d5b21f2ac1d23cd",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py": "8f82252acafbb3a340543d0a2e353e2bade34755393a262afea4ed627d4065ad",
+      "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/attn_probe.py": "aa254d32641f807402a60ea31dead51ae28576563ab55d9978f80d27466a887b",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/networks.py": "8eca73aa42fa25ae62bf1ec781f383f4c416b664b5b27c0614341f2fef6225b6",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py": "26201bb548b02ea722e97bb356704d7e5a67e83c8ca022cf3aa8d0e3c1e49fa5"
+    },
+    "wavefunction_status": "not evaluated; feature rank flag alone does not certify wavefunction stability",
+    "pilot_setting_evidence": {
+      "environment": "/Users/toma/academic/reserch/projects/Screening_develop/tests/g3a_validation/screen-kfac32/environment.json",
+      "constructor": "tests.check_g3a_vmc.build",
+      "note": "explicit defaults cross-checked with source and recorded environment, not restored checkpoint metadata"
+    }
+  },
+  "shape": [
+    8,
+    1,
+    1,
+    1
+  ],
+  "random_seed": 20261026,
+  "null_repeats": 1,
+  "aggregates": [
+    {
+      "source": "window",
+      "control": "raw",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "window",
+      "control": "rank",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "window",
+      "control": "shuffle",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "trim",
+      "control": "raw",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "trim",
+      "control": "rank",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "trim",
+      "control": "shuffle",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "screening",
+      "control": "raw",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "screening",
+      "control": "rank",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "screening",
+      "control": "shuffle",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "qk",
+      "control": "raw",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "qk",
+      "control": "rank",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    },
+    {
+      "source": "qk",
+      "control": "shuffle",
+      "beta0_auc": 1.0,
+      "beta1_auc": 0.0,
+      "H0_total_persistence": 0.0,
+      "H0_max_persistence": 0.0,
+      "H0_finite_intervals": 0.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.0,
+      "H1_max_persistence": 0.0,
+      "H1_finite_intervals": 0.0,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 1.0,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0
+    }
+  ],
+  "statistical_unit": "independent training group, NOT walkers/heads/checkpoints",
+  "absent_window": "identity window (ones)",
+  "geometry": "1-periodic_norm/max(periodic_norm), per configuration; baseline only, not comparable physical widths",
+  "essential": "infinite deaths retained in diagrams; excluded from finite persistence/landscape, counted separately",
+  "source_sha256": {
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_run.py": "b174dcb53574387247fb373580a1cfdea5a7d596af069da95d4c37b49d664a4d",
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology.py": "3efbc4636b80f4bcabd15ae62dfee1adbb01759bfb0dab2e7d8ad601fa7da92f",
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/graph_wind.py": "24cc1ac7ef14be9c41f63f5013f339af2ad5bfbc2cafac36fde84ce4e1f14c6b"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "system": {
+    "electrons": [
+      4,
+      0
+    ],
+    "ndim": 2,
+    "pbc_lattice": [
+      [
+        4.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.0
+      ]
+    ],
+    "pseudospin": false,
+    "make_local_energy_fn": "periodicwave.pbc.hamiltonian.local_energy",
+    "make_local_energy_kwargs": {
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "convergence_radius": 2,
+      "potential_type": "Coulomb",
+      "potential_kwargs": {
+        "interaction_energy_scale": 0.0
+      },
+      "kinetic_kwargs": {
+        "laplacian_method": "default"
+      }
+    }
+  },
+  "network": {
+    "network_type": "CustomScreenformer",
+    "complex": true,
+    "determinants": 1,
+    "bias_orbitals": true,
+    "jastrow": "NONE",
+    "jastrow_kwargs": {
+      "ndim": 2
+    },
+    "make_feature_layer_fn": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+    "make_feature_layer_kwargs": {
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "include_r_ae": false
+    },
+    "make_envelope_fn": "periodicwave.envelopes.make_null_envelope",
+    "make_envelope_kwargs": {},
+    "CustomScreenformer": {
+      "num_layers": 1,
+      "num_heads": 2,
+      "attn_dim": 4,
+      "value_dim": 4,
+      "mlp_dim": 16,
+      "num_perceptrons_per_layer": 1,
+      "use_layer_norm": false,
+      "mlp_activation_fct": "GELU",
+      "use_softmask": true,
+      "use_gate": true,
+      "use_tanh_norm": true,
+      "use_fixed_value": false,
+      "use_output_scale": true,
+      "init_output_scale": 0.0,
+      "init_trim_r": 1.9,
+      "init_softmask_w_factor": 0.8,
+      "init_softmask_w_spread": 2.0
+    }
+  },
+  "screening_attention_settings": {
+    "TRIM_MAX": 2.0,
+    "TRIM_POW": 2,
+    "WIN_SHAPE": "cos",
+    "FREEZE_W": false,
+    "CLIP_R": null,
+    "CLIP_BETA": 0.3,
+    "jax_enable_x64": true,
+    "jax_default_matmul_precision": "float32"
+  },
+  "phase_status": "unknown; free N4 numerical validation, not WC/AHC",
+  "seed": 23,
+  "optim": {
+    "optimizer": "adam",
+    "iterations": 64,
+    "topology_regularization": {
+      "mode": "off",
+      "gamma": 0.0,
+      "perturb_sigma": 0.03,
+      "max_samples": 4,
+      "ph_floor": 0.0001,
+      "landscape_levels": 3,
+      "landscape_grid": 21,
+      "sampling_score": true
+    }
+  },
+  "log": {
+    "save_path": "screening_analysis/topology_g_results_2026-10-26/off-g0-seed23"
+  }
+}

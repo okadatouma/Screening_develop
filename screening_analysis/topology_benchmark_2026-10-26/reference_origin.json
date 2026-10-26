@@ -1,0 +1,54 @@
+{
+  "kind": "analytic lower-band plane-wave Slater reference",
+  "self_consistent_HF": false,
+  "physical_phase": "unverified",
+  "integer_momenta": [
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "lattice": [
+    [
+      5.713876841183744,
+      -2.856938420591872
+    ],
+    [
+      0.0,
+      4.948362498560705
+    ]
+  ],
+  "sha256": "52cb179b75ce482b1903d46c775d2727174eeb3e18e9cb057b2b71a93ff3caef"
+}

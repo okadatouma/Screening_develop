@@ -80,6 +80,66 @@ def thresholds(F, dp, ne):
     return w1, w2
 
 
+def minimum_image_edges(positions, lattice, tie_tolerance=1e-12):
+    """Exact 2D closest lattice image, lattice vectors are columns.
+
+    Returns upper-edge fractional displacements, Euclidean lengths and tie flags.
+    An SVD lower bound makes enumeration complete even for skew cells. Equal
+    shortest images have no canonical embedded edge: weighted_winding rejects
+    active ties instead of reporting representation-dependent winding ranks.
+    """
+    from itertools import product
+    L = np.asarray(lattice,dtype=float); x = np.asarray(positions,dtype=float)
+    if L.shape != (2,2) or x.ndim!=2 or x.shape[1]!=2 or not np.isfinite(L).all() or not np.isfinite(x).all():
+        raise ValueError('finite [N,2] positions and [2,2] lattice required')
+    singular = np.linalg.svd(L,compute_uv=False)
+    if singular[-1] <= 0: raise ValueError('singular lattice')
+    # Wrapping first avoids huge image coordinates under independent lattice shifts.
+    f = np.mod(x @ np.linalg.inv(L).T,1.)
+    ij = np.triu_indices(len(x),1); delta = f[ij[1]]-f[ij[0]]
+    displacements,distances,ties = [],[],[]
+    for d in delta:
+        base = np.rint(d).astype(int)
+        bound = np.linalg.norm(L @ (d-base)) / singular[-1]
+        low=np.ceil(d-bound-1e-12).astype(int); high=np.floor(d+bound+1e-12).astype(int)
+        if np.prod(high-low+1)>100000:
+            raise ValueError('ill-conditioned lattice: closest-image enumeration too large')
+        shifts=np.array(list(product(*(range(a,b+1) for a,b in zip(low,high)))))
+        candidates=d-shifts
+        lengths=np.linalg.norm(candidates @ L.T,axis=1)
+        minimum=lengths.min(); match=np.flatnonzero(np.abs(lengths-minimum)<=tie_tolerance*max(1.,minimum))
+        displacements.append(candidates[match[0]]); distances.append(minimum); ties.append(len(match)>1)
+    return np.asarray(displacements).reshape(-1,2),np.asarray(distances),np.asarray(ties,dtype=bool)
+
+
+def weighted_winding(positions, lattice, weights, query_thresholds=None):
+    """Filtration B>t; simultaneous equal-weight events, no zero edges.
+
+    critical_rank1/2 are SUPREMA: the rank appears immediately BELOW that value,
+    not at equality. Missing events are NaN. Rank is across the union of all
+    components. This is an embedded real-space graph, never a many-body Chern number.
+    """
+    from screening_analysis.topology import symmetrize
+    b = symmetrize(weights); x=np.asarray(positions).reshape(-1,2)
+    if len(x)!=len(b): raise ValueError('positions and graph size differ')
+    dd,dist,ties = minimum_image_edges(x,lattice)
+    ij=np.triu_indices(len(b),1); w=b[ij]
+    if np.any(ties & (w>0)):
+        raise ValueError('active edge has degenerate shortest images; winding embedding is ambiguous')
+    events=np.unique(w[w>0])[::-1]; uf=UF(len(b)); ranks=[]
+    onset=[np.nan,np.nan]
+    for level in events:
+        for k in np.flatnonzero(w==level):
+            uf.union(int(ij[0][k]),int(ij[1][k]),dd[k])
+        rank=uf.rank(); ranks.append(rank)
+        for j in range(2):
+            if rank>=j+1 and np.isnan(onset[j]): onset[j]=level
+    query=np.linspace(0,1,51) if query_thresholds is None else np.asarray(query_thresholds)
+    curve=np.array([ranks[np.count_nonzero(events>t)-1] if np.any(events>t) else 0 for t in query])
+    return dict(event_weights=events,event_ranks=np.asarray(ranks),thresholds=query,rank=curve,
+                critical_rank1=onset[0],critical_rank2=onset[1],minimum_image_distances=dist)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--runs", required=True)

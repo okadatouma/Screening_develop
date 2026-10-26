@@ -1,0 +1,46 @@
+{
+  "preexisting_checkpoint_count": 563,
+  "preexisting_checkpoint_mismatches": [],
+  "catalog_count": 1334,
+  "verified_phase_count": 0,
+  "unreadable_checkpoints": [],
+  "catalog_checkpoint_mismatches": [],
+  "free_system_runs": 21,
+  "lambda_runs": 35,
+  "updates": 2052,
+  "finite_training_rows": 2052,
+  "training_source_hashes": {
+    "topology_g_results_2026-10-26": {
+      "files": 3,
+      "mismatches": []
+    },
+    "topology_benchmark_2026-10-26": {
+      "files": 5,
+      "mismatches": []
+    }
+  },
+  "evaluated_models": 38,
+  "primary_models": 24,
+  "shared_core_input_sha256": "f9ecacdaca154e17e121f38328f2d3c7d6ce4d33394ce7fac59954ab8fd66b36",
+  "seed_disjoint_classification_tests": 192,
+  "ewald_c3_max_difference": 7.389644451905042e-13,
+  "c3_residual_range": [
+    1.07688674897918,
+    3.491554058788315
+  ],
+  "svg_xml_valid": [
+    "within_between.svg",
+    "regularizer_training.svg",
+    "candidate_condition_accuracy.svg",
+    "coordinate_sensitivity.svg"
+  ],
+  "raster_visual_QA": "not performed",
+  "test_logs": {
+    "topology-g-all45.txt": "c1779533a186232a0bf9e8d6f53e3ca418450fee6b9b08c4dd90815065516359",
+    "topology-g-existing-probe.txt": "2b43d251b2c9f7132f143655ceace4c572fc6b2d261be83bba66ef46b820298a",
+    "topology-g-snapshot64.txt": "bfacc3a5dd3e077d13964e87235779da540d06ad5f5332a16875c26a4421cac3",
+    "topology-g-snapshot32.txt": "c25ab19091f6f0f5fdcd2ae3dc6f93ac85bcffe0d3d712270822f48be2498b01",
+    "topology-g-protocol-tests.txt": "aebafedb05ab31b9fa3dd1feb45ec842795b619f8abda5e05c263405ae993f88"
+  },
+  "status": "passed; physical phases and actual Screenformer Chern remain UNVERIFIED"
+}

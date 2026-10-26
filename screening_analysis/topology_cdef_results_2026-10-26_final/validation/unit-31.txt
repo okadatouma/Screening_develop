@@ -1,0 +1,36 @@
+test_all_four_vertex_flag_complexes (tests.test_topology.TopologyChecks.test_all_four_vertex_flag_complexes) ... ok
+test_ambiguous_embedding_rejected (tests.test_topology.TopologyChecks.test_ambiguous_embedding_rejected) ... ok
+test_controls (tests.test_topology.TopologyChecks.test_controls) ... ok
+test_distances_and_essential_parts (tests.test_topology.TopologyChecks.test_distances_and_essential_parts) ... ok
+test_known_winding_and_strict_threshold (tests.test_topology.TopologyChecks.test_known_winding_and_strict_threshold) ... ok
+test_skew_minimum_image_and_invariances (tests.test_topology.TopologyChecks.test_skew_minimum_image_and_invariances) ... ok
+test_square_diagonal_kills_cycle (tests.test_topology.TopologyChecks.test_square_diagonal_kills_cycle) ... ok
+test_weighted_ties_and_zero_edges (tests.test_topology.TopologyChecks.test_weighted_ties_and_zero_edges) ... ok
+test_grouped_phase_evaluation (tests.test_topology_run.RunnerChecks.test_grouped_phase_evaluation) ... ok
+test_sources_outputs_and_protection (tests.test_topology_run.RunnerChecks.test_sources_outputs_and_protection) ... ok
+test_U1_and_complex_conjugation (tests.test_topology_cdef.BerryChecks.test_U1_and_complex_conjugation) ... ok
+test_actual_twist_H_derivatives (tests.test_topology_cdef.BerryChecks.test_actual_twist_H_derivatives) ... ok
+test_lambda_jellium_C3_spinor_representation_and_eigenstates (tests.test_topology_cdef.BerryChecks.test_lambda_jellium_C3_spinor_representation_and_eigenstates) ... ok
+test_manybody_chern_independent_kubo_and_refinement (tests.test_topology_cdef.BerryChecks.test_manybody_chern_independent_kubo_and_refinement) ... ok
+test_slater_determinant_links_and_occupied_gauge (tests.test_topology_cdef.BerryChecks.test_slater_determinant_links_and_occupied_gauge) ... ok
+test_chirality_permutation_reflection_reverse (tests.test_topology_cdef.DirectedChecks.test_chirality_permutation_reflection_reverse) ... ok
+test_orthogonal_qk_invariance_but_not_general_GL (tests.test_topology_cdef.DirectedChecks.test_orthogonal_qk_invariance_but_not_general_GL) ... ok
+test_periodic_ambiguity_and_zero_regularization (tests.test_topology_cdef.DirectedChecks.test_periodic_ambiguity_and_zero_regularization) ... ok
+test_group_holdout (tests.test_topology_cdef.HiddenChecks.test_group_holdout) ... ok
+test_mean_collapse_and_euclidean_PH (tests.test_topology_cdef.HiddenChecks.test_mean_collapse_and_euclidean_PH) ... ok
+test_pooling_and_rotation_invariants (tests.test_topology_cdef.HiddenChecks.test_pooling_and_rotation_invariants) ... ok
+test_binary_boundary_rank_all_four_vertex_graphs (tests.test_topology_cdef.MultiscaleChecks.test_binary_boundary_rank_all_four_vertex_graphs) ... ok
+test_full_CDE_pipeline_head_invariance_and_phase_gate (tests.test_topology_cdef.MultiscaleChecks.test_full_CDE_pipeline_head_invariance_and_phase_gate) ... ok
+test_head_particle_and_periodic_invariance (tests.test_topology_cdef.MultiscaleChecks.test_head_particle_and_periodic_invariance) ... ok
+test_two_parameter_strict_thresholds (tests.test_topology_cdef.MultiscaleChecks.test_two_parameter_strict_thresholds) ... ok
+test_exact_two_particle_1RDM_conjugation_and_trace (tests.test_topology_cdef.PhysicalChecks.test_exact_two_particle_1RDM_conjugation_and_trace) ... ok
+test_fixed_basis_loops_gauge_TR_and_basis_permutation (tests.test_topology_cdef.PhysicalChecks.test_fixed_basis_loops_gauge_TR_and_basis_permutation) ... ok
+test_fresh_periodic_sampler_independent_streams (tests.test_topology_cdef.PhysicalChecks.test_fresh_periodic_sampler_independent_streams) ... ok
+test_independent_chain_product_and_no_trace_forcing (tests.test_topology_cdef.PhysicalChecks.test_independent_chain_product_and_no_trace_forcing) ... ok
+test_projected_particle_trace_is_not_total_particle_number (tests.test_topology_cdef.PhysicalChecks.test_projected_particle_trace_is_not_total_particle_number) ... ok
+test_pseudospin_offdiagonal_coherence (tests.test_topology_cdef.PhysicalChecks.test_pseudospin_offdiagonal_coherence) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.360s
+
+OK

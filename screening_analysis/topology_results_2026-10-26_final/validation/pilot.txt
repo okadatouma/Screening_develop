@@ -1,0 +1,162 @@
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-complex64-000000
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-complex64-000008
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-complex64-000015
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-default64-000000
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-default64-000008
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-default64-000015
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-complex32-000000
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-complex32-000008
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-complex32-000015
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-kfac32-000000
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-kfac32-000004
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+screen-kfac32-000007
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-band-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-band-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-band-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-band-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-band-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-band-seed37-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-cos-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-cos-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-cos-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-cos-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-cos-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-cos-seed37-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-fixed-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-fixed-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-fixed-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-fixed-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-fixed-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-fixed-seed37-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-gauss-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-gauss-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-gauss-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-gauss-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-gauss-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-gauss-seed37-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-sin-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-sin-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-sin-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-sin-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-sin-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-sin-seed37-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-smooth7-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-smooth7-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-smooth7-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-smooth7-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-smooth7-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-smooth7-seed37-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-wide-seed11-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-wide-seed11-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-wide-seed23-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-wide-seed23-uniform
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-wide-seed37-ordered
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+synthetic-wide-seed37-uniform

@@ -131,7 +131,11 @@ cfg.network.make_feature_layer_kwargs = {"lattice": supercell_lattice, "include_
 cfg.network.make_envelope_fn = "periodicwave.envelopes.make_null_envelope"
 
 cfg.batch_size = int(os.environ.get("PW_BATCH", 64))
-cfg.optim.optimizer = 'kfac'
+cfg.optim.optimizer = os.environ.get('PW_OPTIMIZER', 'kfac')
+cfg.optim.topology_regularization.mode = os.environ.get('PW_TOPO_MODE', 'off')
+cfg.optim.topology_regularization.gamma = float(os.environ.get('PW_TOPO_GAMMA', '0'))
+cfg.optim.topology_regularization.perturb_sigma = float(os.environ.get('PW_TOPO_SIGMA', '.03'))
+cfg.optim.topology_regularization.max_samples = int(os.environ.get('PW_TOPO_SAMPLES', '8'))
 cfg.optim.objective = 'vmc'
 cfg.optim.iterations = iterations
 cfg.optim.lr.rate = float(os.environ.get("PW_LR", 0.1))
@@ -145,7 +149,7 @@ cfg.log.save_frequency = float(os.environ.get("PW_SAVE_MIN", 2.0))   # チェッ
 cfg.mcmc.burn_in = int(os.environ.get("PW_BURN_IN", 100))
 cfg.mcmc.init_width = 1.0
 cfg.mcmc.move_width = 0.2
-cfg.mcmc.steps = 10
+cfg.mcmc.steps = int(os.environ.get('PW_MCMC_STEPS', '10'))
 cfg.mcmc.move_width_updater = 'adaptive'
 cfg.mcmc.spin_flips = spin_flips
 
@@ -195,9 +199,9 @@ cfg.network.network_type = 'CustomScreenformer'
 cfg.network.CustomScreenformer = ml_collections.ConfigDict({
     'num_layers': int(os.environ.get("PW_LAYERS", 1)),
     'num_heads': _H,
-    'attn_dim': 16,
-    'value_dim': 16,
-    'mlp_dim': 64,
+    'attn_dim': int(os.environ.get('PW_ATTN_DIM', 16)),
+    'value_dim': int(os.environ.get('PW_VALUE_DIM', 16)),
+    'mlp_dim': int(os.environ.get('PW_WIDTH', 64)),
     'num_perceptrons_per_layer': 2,
     'use_layer_norm': True,
     'mlp_activation_fct': "GELU",
@@ -250,16 +254,41 @@ folder_name = (f"results/lambda-jellium/CustomScreenformer/"
 if tag:
     folder_name += f"_{tag}"
 cfg.log.save_path = folder_name
+if os.environ.get('PW_OUTPUT_DIR'):
+    # Explicit fresh-output override for reproducible benchmark jobs; never resume implicitly.
+    from pathlib import Path as _Path
+    folder_name = os.environ['PW_OUTPUT_DIR']
+    if _Path(folder_name).exists():
+        raise FileExistsError('PW_OUTPUT_DIR must be a NEW directory: ' + folder_name)
+    cfg.log.save_path = folder_name
+
+# Preserve effective reconstruction metadata for NEW runs; old files are untouched.
+cfg.screening_attention_settings = {
+    'TRIM_MAX': float(_CS.TRIM_MAX), 'TRIM_POW': int(_CS.TRIM_POW),
+    'WIN_SHAPE': _CS.WIN_SHAPE, 'FREEZE_W': bool(_CS.FREEZE_W),
+    'CLIP_R': _CS.CLIP_R, 'CLIP_BETA': float(_CS.CLIP_BETA),
+    'jax_enable_x64': bool(jax.config.x64_enabled),
+    'jax_default_matmul_precision': str(jax.config.jax_default_matmul_precision),
+}
+cfg.phase_status = 'candidate parameters only; physical phase not independently verified'
+cfg.debug.deterministic = True
+cfg.debug.check_nan = _flag('PW_CHECK_NAN')
+if _flag("PW_SEED_FROM_TAG"):
+    import zlib
+    os.environ["PW_SEED"] = str(zlib.crc32(str(tag).encode()) % 2147483647)
+cfg.seed = int(os.environ.get('PW_SEED', '42'))
 
 writers.rename_file("device_info", folder_name, file_extension="log")
 custom_logging.log_device_info(folder_name + "/device_info.log")
 writers.rename_file("config", folder_name, file_extension="json")
 custom_logging.save_config_dict_as_json(cfg, cfg.log.save_path + '/config.json')
+if os.environ.get('PW_OUTPUT_DIR'):
+    # Exact structured arrays, unlike the legacy stringifying writer. This file
+    # only belongs to a freshly requested benchmark directory.
+    import json as _json
+    with open(folder_name + '/runtime_config.json', 'x') as _f:
+        _json.dump(cfg.to_dict(), _f, default=lambda a: np.asarray(a).tolist(), indent=2, allow_nan=False)
 
-cfg.debug.deterministic = True
-if _flag("PW_SEED_FROM_TAG"):
-    import zlib
-    os.environ["PW_SEED"] = str(zlib.crc32(str(tag).encode()) % 2147483647)
 print(f"[SEED] seed = {os.environ.get('PW_SEED', '42')}  (tag = {tag})")
 
 t_init = time()

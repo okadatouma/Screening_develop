@@ -1,0 +1,50 @@
+{
+  "tests": {
+    "new_CDEF": 21,
+    "retained_AB": 10,
+    "total": 31,
+    "status": "PASS"
+  },
+  "snapshots": {
+    "float64": {
+      "arrays": 902,
+      "elements": 21651,
+      "exact": true
+    },
+    "float32_kfac": {
+      "arrays": 1319,
+      "elements": 31142,
+      "exact": true
+    }
+  },
+  "original_checkpoint_count": 521,
+  "original_checkpoint_hashes_unchanged": true,
+  "previous_pilot_included_checkpoint_count": 563,
+  "all_563_checkpoints_unchanged": true,
+  "previous_AB_code_hashes_unchanged": true,
+  "CDE_runs": 54,
+  "CDE_probe_hashes_match": true,
+  "CDE_source_hashes_match_current_source": true,
+  "F_source_hashes_match_current_source": true,
+  "SVG_XML_valid": 169,
+  "raster_visual_qa": "not performed: no renderer/browser available",
+  "source_sha256": {
+    "screening_analysis/multiscale_topology.py": "8e3408b3ff82fddfa63aa95a38ce593877daa8bc758146ce275a8cf4cedbb457",
+    "screening_analysis/directed_loops.py": "4acfb14d70062113af68caf835715128dd52ad2a848d6f675a2f5226c3b429a9",
+    "screening_analysis/hidden_topology.py": "b1272d48c230d60a7ec341b86c57d59d8c15df1dd7cc82c8a87cd0d2ce4a7ffa",
+    "screening_analysis/physical_loops.py": "7b3778ecda3a532bd4d98677a9cd2a6a6899862ca47f238b24dd600784f05053",
+    "screening_analysis/rotation_probe.py": "b59069c9320fd937323a2c59d52ec4dbe17818a2484f77a21f7153fb73e34f21",
+    "screening_analysis/berry_validation.py": "2e81f4661253bfd751824f89aa8f5a81998fa9796db7f9139d1cfac2beb63a5c",
+    "screening_analysis/topology_cde_run.py": "fe90fa0714cb253d0a63e0519db54fe39af89a36afc8482e4b56af31634c55c5",
+    "screening_analysis/topology_f_pilot.py": "1c45822a5cf97a811ee5358945bb0b9abf0da576e7d11beffa92ae3468bef6ce",
+    "screening_analysis/topology_cdef_evaluate.py": "c54d27a04c7c13977c733cea6c151f6ae8394ebee5ff7b50580fee40d9426e53",
+    "tests/test_topology_cdef.py": "617f9b7476cc70989da3a56348e88e29924a282af1c82cfbad5fd84e06ee1ec8"
+  },
+  "environment": {
+    "python": "3.13.14 (main, Jul 18 2026, 16:56:45) [Clang 22.1.3 ]",
+    "numpy": "2.3.3",
+    "scipy": "1.16.2"
+  },
+  "target_WC_AHC": "UNVERIFIED: no independently labeled research checkpoints or physical twist family",
+  "independent_QWZ_chern": "PASS: exact many-body seam twists / Kubo / refinement; not Screenformer Chern"
+}

@@ -1,0 +1,1121 @@
+{
+  "label": "synthetic geometry only; not WC/AHC",
+  "definition": "(Wij-Wji)/(Wij+Wji+epsilon) then CCW triangle sum",
+  "results": [
+    {
+      "window": "cos",
+      "epsilon": 0.0001,
+      "max_circulation_change": 1.7381526232731548,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "epsilon": 1e-08,
+      "max_circulation_change": 1.7381526232731548,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "epsilon": 1e-12,
+      "max_circulation_change": 1.7381526232731548,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "epsilon": 0.0001,
+      "max_circulation_change": 1.6855646080547284,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "epsilon": 1e-08,
+      "max_circulation_change": 1.6855646080547284,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "epsilon": 1e-12,
+      "max_circulation_change": 1.6855646080547284,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "epsilon": 0.0001,
+      "max_circulation_change": 1.8678460605892098,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "epsilon": 1e-08,
+      "max_circulation_change": 1.8678460605892098,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "epsilon": 1e-12,
+      "max_circulation_change": 1.8678460605892098,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "epsilon": 0.0001,
+      "max_circulation_change": 1.9461958699008415,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "epsilon": 1e-08,
+      "max_circulation_change": 1.9461958699008415,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "epsilon": 1e-12,
+      "max_circulation_change": 1.9461958699008415,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "epsilon": 0.0001,
+      "max_circulation_change": 1.5592519705267651,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "epsilon": 1e-08,
+      "max_circulation_change": 1.5592519705267651,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "epsilon": 1e-12,
+      "max_circulation_change": 1.5592519705267651,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "epsilon": 0.0001,
+      "max_circulation_change": 2.807365693478793,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "epsilon": 1e-08,
+      "max_circulation_change": 2.807365693478793,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "epsilon": 1e-12,
+      "max_circulation_change": 2.807365693478793,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "epsilon": 0.0001,
+      "max_circulation_change": 1.4196100702847558,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "epsilon": 1e-08,
+      "max_circulation_change": 1.4196100702847558,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "epsilon": 1e-12,
+      "max_circulation_change": 1.4196100702847558,
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    }
+  ],
+  "source_inputs": [
+    {
+      "id": "synthetic-band-seed11-ordered",
+      "sha256": "69c1c4306e2f052433610a26533c8db82cce1996ce6857ad9e888550c0cae8c0"
+    },
+    {
+      "id": "synthetic-band-seed11-uniform",
+      "sha256": "c2a94331e74d0edc67ac1c3ec75712ed28c4c87168a4fb9611a4ccec80aa176c"
+    },
+    {
+      "id": "synthetic-band-seed23-ordered",
+      "sha256": "69b7181b483bded2381d88ac98413d9edde6cc4b3fa9d1401ac43f861408adb5"
+    },
+    {
+      "id": "synthetic-band-seed23-uniform",
+      "sha256": "8c5f66b148d6e3fb26e63efca72a7d6ef3ef04eaf65ae5e54b1c558ad4b8a8ac"
+    },
+    {
+      "id": "synthetic-band-seed37-ordered",
+      "sha256": "f253ae8fbb32e4bef7e75d9921505af1142ef804e96d3b423676d2f22be4b21e"
+    },
+    {
+      "id": "synthetic-band-seed37-uniform",
+      "sha256": "9e4f0ee9fe7559d23f0d31282290723c975c1fba13e7245dafbff5eeb1d5bfa3"
+    },
+    {
+      "id": "synthetic-cos-seed11-ordered",
+      "sha256": "12c61fa1cb15d95eaa9dc3bbbb9ad67cba56a1dd238f965d9c72fcb49f098294"
+    },
+    {
+      "id": "synthetic-cos-seed11-uniform",
+      "sha256": "f6616fab67e9dca29c6c98daeaf4a3c4c4b59dcc8073ceb542450ce1e13ffd70"
+    },
+    {
+      "id": "synthetic-cos-seed23-ordered",
+      "sha256": "69d36ab0ec3b9325ee8b805096d68cbac3812e36b15d559b640b60df7772a7b0"
+    },
+    {
+      "id": "synthetic-cos-seed23-uniform",
+      "sha256": "5a5a3ceee3c552ecc60e44dbc3a0995e2c81f5ce6a95ab9e2f8c6ea79aabebfb"
+    },
+    {
+      "id": "synthetic-cos-seed37-ordered",
+      "sha256": "eb620f5f56425a918131f3b24e9e3a39ebe36c79809d11d46c99befc0ea8ce75"
+    },
+    {
+      "id": "synthetic-cos-seed37-uniform",
+      "sha256": "6f0d9077989cbb9627666e2b063361744067aa6fb2a741a2be09df9f2604595f"
+    },
+    {
+      "id": "synthetic-fixed-seed11-ordered",
+      "sha256": "bdd6d5187d40848555e628a1c8676d2c1ce8a6434d2ae8806a34706842661655"
+    },
+    {
+      "id": "synthetic-fixed-seed11-uniform",
+      "sha256": "a8c92e9b3f53384f0b1e7a15ada4ffe58377e3a97919896cfef5e581ad8f040a"
+    },
+    {
+      "id": "synthetic-fixed-seed23-ordered",
+      "sha256": "2397c4444b9cf5aa2a22beef8c771fa84e9963107aad5418c6b398e7ce22f94d"
+    },
+    {
+      "id": "synthetic-fixed-seed23-uniform",
+      "sha256": "ee8f7b1fa4da5b76b09c0712f850e66d2d3af9e8ed7be3ce071f2617da5d3050"
+    },
+    {
+      "id": "synthetic-fixed-seed37-ordered",
+      "sha256": "d9a730f18f2c85c9e4cebfdd82dac365902b8527e178358988a970b1758a5409"
+    },
+    {
+      "id": "synthetic-fixed-seed37-uniform",
+      "sha256": "1f8600f4a893a223eac696591f2c2004b415c3550f938878731850a9010e52d6"
+    },
+    {
+      "id": "synthetic-gauss-seed11-ordered",
+      "sha256": "6937cb5690e516f0cb296cb175c2bdbf5bf45ab364c1bbb1fcebeaf927fd3ebd"
+    },
+    {
+      "id": "synthetic-gauss-seed11-uniform",
+      "sha256": "60ec6aa248bdd4638de6d4cdcd22981b64c5c1e613a0c8a3101335ea0cfb3587"
+    },
+    {
+      "id": "synthetic-gauss-seed23-ordered",
+      "sha256": "064a60d90a391307ed80c2f4f6d4cd9c49cb18e42419c6844cc10b6f9a882ea9"
+    },
+    {
+      "id": "synthetic-gauss-seed23-uniform",
+      "sha256": "70cb5d7a9e8c37b313ea492fdb29994d4de44bb1d5efe381f61ce61d93fe2b55"
+    },
+    {
+      "id": "synthetic-gauss-seed37-ordered",
+      "sha256": "3f31946c3bd567d162e56ac6a7334f3e52dbcf7a63ccc5340e8709865423108e"
+    },
+    {
+      "id": "synthetic-gauss-seed37-uniform",
+      "sha256": "4b8cb71e1e423ffa33398ab3766588c49ed89c6efdd5b9c4603a2ab88e1f59a8"
+    },
+    {
+      "id": "synthetic-sin-seed11-ordered",
+      "sha256": "a8c5419b14d8fbd024eb67d3c4495fcc01511c91ace62bf74a3f50b40b6ca637"
+    },
+    {
+      "id": "synthetic-sin-seed11-uniform",
+      "sha256": "17b998a3d842199471e617c8c59135910d38bdd625ce6a517e7a38c9383e3b95"
+    },
+    {
+      "id": "synthetic-sin-seed23-ordered",
+      "sha256": "14948b090378ddf9a39c22d8a08eb4f29d1c4d87880812e46af1351999df2eca"
+    },
+    {
+      "id": "synthetic-sin-seed23-uniform",
+      "sha256": "b597d849eaaba09926505bc1602953eb99e26cadc341b42a994408d29ad00ee7"
+    },
+    {
+      "id": "synthetic-sin-seed37-ordered",
+      "sha256": "22c46ccce79fa3f075768e6b9a62ad910d24c5edd21911566872306bc1a3b66f"
+    },
+    {
+      "id": "synthetic-sin-seed37-uniform",
+      "sha256": "23ac6510fccfe299cd3fc57acf19bd01aab0203b89cc6472d9e5acad5a34620a"
+    },
+    {
+      "id": "synthetic-smooth7-seed11-ordered",
+      "sha256": "44cd2f2369bce781a69e2bae21b3e6a4e1f67bf871d87c233044f314d8d04612"
+    },
+    {
+      "id": "synthetic-smooth7-seed11-uniform",
+      "sha256": "aa5daa81e3871fcdb7e597e15c30ab35a13155689f03f5706fd8b26d2df09a40"
+    },
+    {
+      "id": "synthetic-smooth7-seed23-ordered",
+      "sha256": "8b57f7bf398a30655cf810f483b60073fac5fe9d1f5f782933589b0da3c42f7e"
+    },
+    {
+      "id": "synthetic-smooth7-seed23-uniform",
+      "sha256": "5b58bccaf4883a9d9f2db9be7545c931293214cc8a312d73d79eb167d4d72d0a"
+    },
+    {
+      "id": "synthetic-smooth7-seed37-ordered",
+      "sha256": "ce921fa6f63cfa06774bce4ae907bc458dc36938b01c9ed4dbc1b8137d717732"
+    },
+    {
+      "id": "synthetic-smooth7-seed37-uniform",
+      "sha256": "4de43811b412710b8a2118724b99dcd4fcf0d60d529e904ccbd88c2952612eff"
+    },
+    {
+      "id": "synthetic-wide-seed11-ordered",
+      "sha256": "1b2479db6e505c2754a22d771acdf53c14c9a2287ac7d4b82d9b396172d9fe41"
+    },
+    {
+      "id": "synthetic-wide-seed11-uniform",
+      "sha256": "400bdf018e19cfdc861a4fb88dbe4d55f2736a36d844d62ef87ed1f25d23230b"
+    },
+    {
+      "id": "synthetic-wide-seed23-ordered",
+      "sha256": "00654f86b95fd1dd99a7e9802d5fc13e8ea3078587ce9b2bf3c26f34900a744b"
+    },
+    {
+      "id": "synthetic-wide-seed23-uniform",
+      "sha256": "1ee772266c06d5a1d06991260a6d49846f50570f186c7a9ccbb52eb8ce662a07"
+    },
+    {
+      "id": "synthetic-wide-seed37-ordered",
+      "sha256": "d3462cdfafa89327b677bf1898fa6bf705da60f013eab44dff4995bafa5ba3cf"
+    },
+    {
+      "id": "synthetic-wide-seed37-uniform",
+      "sha256": "226178c053dbe082ff51ca7589bffc0dc7ca2d0d26204b950d6dbbcef4e44fc1"
+    }
+  ]
+}

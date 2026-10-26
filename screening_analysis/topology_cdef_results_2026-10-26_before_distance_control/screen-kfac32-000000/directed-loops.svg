@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340">
+<rect width="1200" height="340" fill="white"/>
+<g font-family="sans-serif" fill="#17232d" font-size="13">
+<text x="25" y="28" font-size="17">Geometrically CCW network loops; nonquantized</text>
+<text x="55" y="60">qk L0: CCW / abs / RMS / std [range 0, 1]</text>
+<rect x="55.00" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="93.75" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="132.50" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="171.25" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="210.00" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="248.75" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="287.50" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="326.25" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="55.00" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="93.75" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="132.50" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="171.25" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="210.00" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="248.75" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="287.50" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="326.25" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="55.00" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="93.75" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="132.50" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="171.25" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="210.00" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="248.75" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="287.50" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="326.25" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="55.00" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="93.75" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="132.50" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="171.25" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="210.00" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="248.75" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="287.50" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="326.25" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<text x="145" y="279">triangle perimeter bin</text>
+<text x="25" y="160" transform="rotate(-90 25 160)">statistic</text>
+<text x="55" y="262">0</text>
+<text x="345" y="262">12</text>
+<text x="29" y="245">0</text>
+<text x="29" y="85">3</text>
+<text x="450" y="60">screening L0: CCW / abs / RMS / std [range 0, 1]</text>
+<rect x="450.00" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="488.75" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="527.50" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="566.25" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="605.00" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="643.75" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="682.50" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="721.25" y="202.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="450.00" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="488.75" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="527.50" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="566.25" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="605.00" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="643.75" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="682.50" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="721.25" y="160.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="450.00" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="488.75" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="527.50" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="566.25" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="605.00" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="643.75" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="682.50" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="721.25" y="117.50" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="450.00" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="488.75" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="527.50" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="566.25" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="605.00" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="643.75" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="682.50" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<rect x="721.25" y="75.00" width="38.95" height="42.70" fill="#bcbcbc"/>
+<text x="540" y="279">triangle perimeter bin</text>
+<text x="420" y="160" transform="rotate(-90 420 160)">statistic</text>
+<text x="450" y="262">0</text>
+<text x="740" y="262">12</text>
+<text x="424" y="245">0</text>
+<text x="424" y="85">3</text>
+</g></svg>

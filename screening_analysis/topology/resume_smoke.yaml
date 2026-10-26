@@ -1,0 +1,12 @@
+{
+  "description": "One actual statistical continuation test; does not create a new independent seed.",
+  "jobs": [
+    {
+      "id": "continue-one-update",
+      "restore": "../topology_benchmark_2026-10-26/N9-lam033-off-seed11",
+      "seed": 11,
+      "iterations": 25,
+      "platform": "cpu"
+    }
+  ]
+}

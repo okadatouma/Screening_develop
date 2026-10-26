@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340">
+<rect width="1200" height="340" fill="white"/>
+<g font-family="sans-serif" fill="#17232d" font-size="13">
+<text x="25" y="28" font-size="17">Epsilon sensitivity: columns cos/wide/smooth7/band/sin/gauss/fixed; rows 1e-4/1e-8/1e-12</text>
+<text x="55" y="60">screening-loop geometry accuracy [range 0.667, 1]</text>
+<rect x="55.00" y="188.33" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="99.29" y="188.33" width="44.49" height="56.87" fill="rgb(146,190,212)"/>
+<rect x="143.57" y="188.33" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="187.86" y="188.33" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="232.14" y="188.33" width="44.49" height="56.87" fill="rgb(146,190,212)"/>
+<rect x="276.43" y="188.33" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="320.71" y="188.33" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="55.00" y="131.67" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="99.29" y="131.67" width="44.49" height="56.87" fill="rgb(146,190,212)"/>
+<rect x="143.57" y="131.67" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="187.86" y="131.67" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="232.14" y="131.67" width="44.49" height="56.87" fill="rgb(146,190,212)"/>
+<rect x="276.43" y="131.67" width="44.49" height="56.87" fill="rgb(244,249,252)"/>
+<rect x="320.71" y="131.67" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="55.00" y="75.00" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="99.29" y="75.00" width="44.49" height="56.87" fill="rgb(146,190,212)"/>
+<rect x="143.57" y="75.00" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="187.86" y="75.00" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="232.14" y="75.00" width="44.49" height="56.87" fill="rgb(244,249,252)"/>
+<rect x="276.43" y="75.00" width="44.49" height="56.87" fill="rgb(244,249,252)"/>
+<rect x="320.71" y="75.00" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<text x="145" y="279">Window condition</text>
+<text x="25" y="160" transform="rotate(-90 25 160)">epsilon index</text>
+<text x="450" y="60">max change across epsilon sweep [range 1.42, 2.81]</text>
+<rect x="450.00" y="188.33" width="44.49" height="56.87" fill="rgb(199,222,233)"/>
+<rect x="494.29" y="188.33" width="44.49" height="56.87" fill="rgb(206,226,236)"/>
+<rect x="538.57" y="188.33" width="44.49" height="56.87" fill="rgb(181,211,226)"/>
+<rect x="582.86" y="188.33" width="44.49" height="56.87" fill="rgb(170,204,222)"/>
+<rect x="627.14" y="188.33" width="44.49" height="56.87" fill="rgb(224,237,244)"/>
+<rect x="671.43" y="188.33" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="715.71" y="188.33" width="44.49" height="56.87" fill="rgb(244,249,252)"/>
+<rect x="450.00" y="131.67" width="44.49" height="56.87" fill="rgb(199,222,233)"/>
+<rect x="494.29" y="131.67" width="44.49" height="56.87" fill="rgb(206,226,236)"/>
+<rect x="538.57" y="131.67" width="44.49" height="56.87" fill="rgb(181,211,226)"/>
+<rect x="582.86" y="131.67" width="44.49" height="56.87" fill="rgb(170,204,222)"/>
+<rect x="627.14" y="131.67" width="44.49" height="56.87" fill="rgb(224,237,244)"/>
+<rect x="671.43" y="131.67" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="715.71" y="131.67" width="44.49" height="56.87" fill="rgb(244,249,252)"/>
+<rect x="450.00" y="75.00" width="44.49" height="56.87" fill="rgb(199,222,233)"/>
+<rect x="494.29" y="75.00" width="44.49" height="56.87" fill="rgb(206,226,236)"/>
+<rect x="538.57" y="75.00" width="44.49" height="56.87" fill="rgb(181,211,226)"/>
+<rect x="582.86" y="75.00" width="44.49" height="56.87" fill="rgb(170,204,222)"/>
+<rect x="627.14" y="75.00" width="44.49" height="56.87" fill="rgb(224,237,244)"/>
+<rect x="671.43" y="75.00" width="44.49" height="56.87" fill="rgb(49,132,173)"/>
+<rect x="715.71" y="75.00" width="44.49" height="56.87" fill="rgb(244,249,252)"/>
+<text x="540" y="279">Window condition</text>
+<text x="420" y="160" transform="rotate(-90 420 160)">epsilon index</text>
+</g></svg>

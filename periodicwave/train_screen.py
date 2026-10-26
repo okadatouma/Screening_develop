@@ -596,6 +596,20 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
       local_energy_chunk=int(cfg.optim.get('local_energy_chunk', 0)),
   )
 
+  # No diagnostic construction or changed arithmetic on the default/gamma=0 path.
+  topo_config = dict(cfg.optim.get('topology_regularization', {}))
+  topo_active = topo_config.get('mode', 'off') != 'off' and topo_config.get('gamma', 0.) != 0
+  if topo_active:
+    from periodicwave import topology_regularization
+    topo_config = topology_regularization.configuration(topo_config)
+    if cfg.network.network_type != 'CustomScreenformer':
+      raise ValueError('topology_regularization currently requires CustomScreenformer')
+    if cfg.optim.optimizer not in ('adam', 'lamb', 'none'):
+      raise ValueError('topology_regularization is validated with Adam/LAMB; choose PW_OPTIMIZER=adam (KFAC unsupported)')
+    diagnostic = CustomScreenformer.make_screenformer_diagnostic(nspins, network.options)
+    evaluate_loss = topology_regularization.make_regularized_loss(evaluate_loss, network, diagnostic, topo_config)
+    train_schema = train_schema + ['objective', 'topology_penalty']
+
   # Compute the learning rate
   def learning_rate_schedule(t_: jnp.ndarray) -> jnp.ndarray:
     return cfg.optim.lr.rate * jnp.power(
@@ -691,8 +705,8 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
     logging.info('Completed burn-in MCMC steps')
     sharded_key, subkeys = kfac_jax.utils.p_split(sharded_key)
     ptotal_energy = constants.pmap(evaluate_loss)
-    initial_energy, _ = ptotal_energy(params, subkeys, data)
-    logging.info('Initial energy: %03.4f E_h', jnp.real(initial_energy[0]))
+    initial_energy, initial_aux = ptotal_energy(params, subkeys, data)
+    logging.info('Initial energy: %03.4f E_h', jnp.real(initial_aux.energy[0] if topo_active else initial_energy[0]))
 
   time_of_last_ckpt = time.time()
   weighted_stats = None
@@ -745,7 +759,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
       # due to pmean, loss, and pmove should be the same across devices.
       loss = loss[0]
       # Report Re(mean(E_L)); retain the raw loss/complex aux for physics and checks.
-      reported_energy = jnp.real(loss)
+      reported_energy = jnp.real(aux_data.energy[0]) if topo_active else jnp.real(loss)
       # EW statistics describe the sequence of reported real batch means.
       weighted_stats = statistics.exponentialy_weighted_stats(
           alpha=0.1, observation=reported_energy, previous_stats=weighted_stats)
@@ -793,6 +807,9 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
             'pmove': np.asarray(pmove),
             'locstd': np.asarray(local_std),
         }
+        if topo_active:
+          writer_kwargs.update(objective=np.asarray(jnp.real(loss)),
+                               topology_penalty=np.asarray((jnp.real(loss)-reported_energy)/topo_config['gamma']))
         if pseudospin:
           comps = aux_data.local_energy_mat
           comps = (np.asarray(comps).reshape(-1, 2).mean(axis=0)

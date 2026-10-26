@@ -1,0 +1,761 @@
+{
+  "exact_density": {
+    "case": "continuous-space two-fermion finite Fourier Slater; exact weighted quadrature, not MC",
+    "basis": {
+      "lattice": [
+        [
+          3.0,
+          -1.5
+        ],
+        [
+          0.0,
+          2.598076211353316
+        ]
+      ],
+      "integer_modes": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "components": null,
+      "dimension": 9,
+      "centres": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -0.5,
+          0.8660254037844386
+        ],
+        [
+          -1.0,
+          1.7320508075688772
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.8660254037844386
+        ],
+        [
+          5.551115123125783e-17,
+          1.7320508075688772
+        ],
+        [
+          2.0,
+          0.0
+        ],
+        [
+          1.5,
+          0.8660254037844386
+        ],
+        [
+          1.0,
+          1.7320508075688772
+        ]
+      ],
+      "basis": "fixed finite Fourier subspace, optionally unitary localized DVR",
+      "trace": "projected particle number; equals N only for a complete occupied subspace"
+    },
+    "max_error": 4.581772189210292e-16,
+    "trace_real": 1.9999999999999998,
+    "trace_imag": -1.2181617958707315e-16,
+    "hermiticity_residual": 7.607167541903107e-16,
+    "ccw_imaginary_loop_mean": 0.0005708803287282733,
+    "ccw_imaginary_loop_rms": 0.0012916718443581185,
+    "window_scale_comparison": [
+      {
+        "window": "cos",
+        "head_layer_values": [
+          [
+            null,
+            null,
+            0.0005708803287282733
+          ],
+          [
+            null,
+            null,
+            0.0005708803287282733
+          ]
+        ],
+        "head_permutation_invariant_mean": null
+      },
+      {
+        "window": "wide",
+        "head_layer_values": [
+          [
+            null,
+            0.0005708803287282733,
+            0.0005708803287282733
+          ],
+          [
+            null,
+            0.0005708803287282733,
+            0.0005708803287282733
+          ]
+        ],
+        "head_permutation_invariant_mean": null
+      },
+      {
+        "window": "smooth7",
+        "head_layer_values": [
+          [
+            null,
+            null,
+            0.0005708803287282731
+          ],
+          [
+            null,
+            null,
+            0.0005708803287282731
+          ]
+        ],
+        "head_permutation_invariant_mean": null
+      },
+      {
+        "window": "band",
+        "head_layer_values": [
+          [
+            null,
+            null,
+            0.0005708803287282732
+          ],
+          [
+            null,
+            null,
+            0.0005708803287282732
+          ]
+        ],
+        "head_permutation_invariant_mean": null
+      },
+      {
+        "window": "sin",
+        "head_layer_values": [
+          [
+            null,
+            null,
+            0.0005708803287282733
+          ],
+          [
+            null,
+            null,
+            0.0005708803287282733
+          ]
+        ],
+        "head_permutation_invariant_mean": null
+      },
+      {
+        "window": "gauss",
+        "head_layer_values": [
+          [
+            0.0005708803287282733,
+            0.0005708803287282734,
+            0.0005708803287282734
+          ],
+          [
+            0.0005708803287282733,
+            0.0005708803287282734,
+            0.0005708803287282734
+          ]
+        ],
+        "head_permutation_invariant_mean": 0.0005708803287282734
+      },
+      {
+        "window": "fixed",
+        "head_layer_values": [
+          [
+            null,
+            null,
+            0.0005708803287282733
+          ],
+          [
+            null,
+            null,
+            0.0005708803287282733
+          ]
+        ],
+        "head_permutation_invariant_mean": null
+      }
+    ],
+    "window_interpretation": "same physical G, frozen untrained-network radial Windows evaluated on basis centres; token alpha not transplanted"
+  },
+  "independent_chern_benchmark": {
+    "model": "QWZ half-filled noninteracting lattice model, NOT lambda-jellium or Screenformer",
+    "hamiltonian": "sin(kx)sigma_x+sin(ky)sigma_y+(m+cos(kx)+cos(ky))sigma_z",
+    "twist": "Peierls phases ONLY on bonds crossing each torus seam; H(theta+2pi)=H(theta) in fixed site basis",
+    "tracking": "entire gapped occupied subspace; Slater determinant, no individual-band index matching",
+    "convention": "links <psi(theta)|psi(theta+dtheta)>, CCW theta_x/theta_y; lower band C=-1 for m=-1",
+    "independent_checks": "analytic twist derivatives, exact Fourier spectrum, Fock vs determinant overlaps, U(1)/U(Nocc) gauge, Kubo curvature, grid/size refinement",
+    "records": [
+      {
+        "mass": -1.0,
+        "size": 2,
+        "grid": 6,
+        "method": "explicit 70-dimensional fixed Fock basis",
+        "chern": -1.0,
+        "gap": 1.9999999999999991,
+        "minimum_overlap": 0.8442649493503601,
+        "max_phase": 0.352136001786893
+      },
+      {
+        "mass": -1.0,
+        "size": 2,
+        "grid": 10,
+        "method": "explicit 70-dimensional fixed Fock basis",
+        "chern": -1.0,
+        "gap": 1.9999999999999982,
+        "minimum_overlap": 0.9400349553239224,
+        "max_phase": 0.13541628934089256
+      },
+      {
+        "mass": -1.0,
+        "size": 3,
+        "grid": 6,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": -0.9999999999999999,
+        "gap": 1.9999999999999978,
+        "minimum_overlap": 0.8136908813724011,
+        "max_phase": 0.2742905857915109,
+        "independent_kubo_size2": -0.9999999999999999,
+        "ccw_imaginary_loop_mean": -0.0008320090455528619,
+        "area_weighted_loop_mean": -0.00041600452277643096,
+        "max_abs_loop": 0.0015193627818308522,
+        "loop_count": 288
+      },
+      {
+        "mass": -1.0,
+        "size": 3,
+        "grid": 10,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": -0.9999999999999999,
+        "gap": 1.9999999999999978,
+        "minimum_overlap": 0.928397983741802,
+        "max_phase": 0.10020769085959264,
+        "independent_kubo_size2": -0.9999999999999999,
+        "ccw_imaginary_loop_mean": -0.0008320090455528619,
+        "area_weighted_loop_mean": -0.00041600452277643096,
+        "max_abs_loop": 0.0015193627818308522,
+        "loop_count": 288
+      },
+      {
+        "mass": -1.0,
+        "size": 5,
+        "grid": 6,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": -1.0,
+        "gap": 1.9999999999999951,
+        "minimum_overlap": 0.7392270028244101,
+        "max_phase": 0.19995714377673776,
+        "independent_kubo_size2": -0.9999999999999999,
+        "ccw_imaginary_loop_mean": -7.209810085879744e-05,
+        "area_weighted_loop_mean": -3.757590482327061e-05,
+        "max_abs_loop": 0.0016409626374951172,
+        "loop_count": 8800
+      },
+      {
+        "mass": -1.0,
+        "size": 5,
+        "grid": 10,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": -1.0000000000000002,
+        "gap": 1.9999999999999951,
+        "minimum_overlap": 0.8966716654743959,
+        "max_phase": 0.07146023644137217,
+        "independent_kubo_size2": -0.9999999999999999,
+        "ccw_imaginary_loop_mean": -7.209810085879744e-05,
+        "area_weighted_loop_mean": -3.757590482327061e-05,
+        "max_abs_loop": 0.0016409626374951172,
+        "loop_count": 8800
+      },
+      {
+        "mass": 1.0,
+        "size": 2,
+        "grid": 6,
+        "method": "explicit 70-dimensional fixed Fock basis",
+        "chern": 1.0000000000000002,
+        "gap": 1.9999999999999987,
+        "minimum_overlap": 0.8442649493503601,
+        "max_phase": 0.35213600178689297
+      },
+      {
+        "mass": 1.0,
+        "size": 2,
+        "grid": 10,
+        "method": "explicit 70-dimensional fixed Fock basis",
+        "chern": 1.0000000000000002,
+        "gap": 1.9999999999999976,
+        "minimum_overlap": 0.9400349553239227,
+        "max_phase": 0.1354162893408926
+      },
+      {
+        "mass": 1.0,
+        "size": 3,
+        "grid": 6,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": 1.0,
+        "gap": 1.999999999999997,
+        "minimum_overlap": 0.8136908813724005,
+        "max_phase": 0.2742905857915105,
+        "independent_kubo_size2": 1.0,
+        "ccw_imaginary_loop_mean": 0.0005352301165424848,
+        "area_weighted_loop_mean": 0.0002676150582712424,
+        "max_abs_loop": 0.0013798305027983883,
+        "loop_count": 288
+      },
+      {
+        "mass": 1.0,
+        "size": 3,
+        "grid": 10,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": 1.0,
+        "gap": 1.9999999999999964,
+        "minimum_overlap": 0.9283979837418038,
+        "max_phase": 0.10020769085959255,
+        "independent_kubo_size2": 1.0,
+        "ccw_imaginary_loop_mean": 0.0005352301165424848,
+        "area_weighted_loop_mean": 0.0002676150582712424,
+        "max_abs_loop": 0.0013798305027983883,
+        "loop_count": 288
+      },
+      {
+        "mass": 1.0,
+        "size": 5,
+        "grid": 6,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": 1.0,
+        "gap": 1.9999999999999933,
+        "minimum_overlap": 0.7392270028244021,
+        "max_phase": 0.19995714377673768,
+        "independent_kubo_size2": 1.0,
+        "ccw_imaginary_loop_mean": 6.554901838864411e-05,
+        "area_weighted_loop_mean": 3.461299298892495e-05,
+        "max_abs_loop": 0.0015979713919760865,
+        "loop_count": 8800
+      },
+      {
+        "mass": 1.0,
+        "size": 5,
+        "grid": 10,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": 1.0000000000000002,
+        "gap": 1.9999999999999933,
+        "minimum_overlap": 0.8966716654743874,
+        "max_phase": 0.07146023644137235,
+        "independent_kubo_size2": 1.0,
+        "ccw_imaginary_loop_mean": 6.554901838864411e-05,
+        "area_weighted_loop_mean": 3.461299298892495e-05,
+        "max_abs_loop": 0.0015979713919760865,
+        "loop_count": 8800
+      },
+      {
+        "mass": 3.0,
+        "size": 2,
+        "grid": 6,
+        "method": "explicit 70-dimensional fixed Fock basis",
+        "chern": -1.4356670437161707e-17,
+        "gap": 1.9999999999999991,
+        "minimum_overlap": 0.9705512961685895,
+        "max_phase": 0.049032822165790704
+      },
+      {
+        "mass": 3.0,
+        "size": 2,
+        "grid": 10,
+        "method": "explicit 70-dimensional fixed Fock basis",
+        "chern": -3.202641866751458e-17,
+        "gap": 1.9999999999999991,
+        "minimum_overlap": 0.9866715805483488,
+        "max_phase": 0.029061410181053814
+      },
+      {
+        "mass": 3.0,
+        "size": 3,
+        "grid": 6,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": 2.443394872478483e-17,
+        "gap": 1.9999999999999991,
+        "minimum_overlap": 0.9693401558092704,
+        "max_phase": 0.023228736967519512,
+        "independent_kubo_size2": 7.266392704184649e-18,
+        "ccw_imaginary_loop_mean": 1.9535520462827958e-05,
+        "area_weighted_loop_mean": 9.767760231413979e-06,
+        "max_abs_loop": 4.3682504056474294e-05,
+        "loop_count": 288
+      },
+      {
+        "mass": 3.0,
+        "size": 3,
+        "grid": 10,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": 1.5847555444097732e-16,
+        "gap": 1.9999999999999991,
+        "minimum_overlap": 0.9877732081536573,
+        "max_phase": 0.011860264634594702,
+        "independent_kubo_size2": 7.266392704184649e-18,
+        "ccw_imaginary_loop_mean": 1.9535520462827958e-05,
+        "area_weighted_loop_mean": 9.767760231413979e-06,
+        "max_abs_loop": 4.3682504056474294e-05,
+        "loop_count": 288
+      },
+      {
+        "mass": 3.0,
+        "size": 5,
+        "grid": 6,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": -1.3003830338275315e-16,
+        "gap": 2.000000000000001,
+        "minimum_overlap": 0.9562130945736032,
+        "max_phase": 0.00559335935004744,
+        "independent_kubo_size2": 7.266392704184649e-18,
+        "ccw_imaginary_loop_mean": 1.1625013315670337e-06,
+        "area_weighted_loop_mean": 5.419838291931612e-07,
+        "max_abs_loop": 2.8769667659792834e-05,
+        "loop_count": 8800
+      },
+      {
+        "mass": 3.0,
+        "size": 5,
+        "grid": 10,
+        "method": "exact many-body determinant overlaps in fixed site basis",
+        "chern": -7.909973231243902e-17,
+        "gap": 2.000000000000001,
+        "minimum_overlap": 0.9830617489219536,
+        "max_phase": 0.002611238431058045,
+        "independent_kubo_size2": 7.266392704184649e-18,
+        "ccw_imaginary_loop_mean": 1.1625013315670337e-06,
+        "area_weighted_loop_mean": 5.419838291931612e-07,
+        "max_abs_loop": 2.8769667659792834e-05,
+        "loop_count": 8800
+      }
+    ]
+  },
+  "checkpoint_density": {
+    "checkpoint": "/Users/toma/academic/reserch/projects/Screening_develop/tests/g3a_validation/screen-complex64/run/qmcjax_ckpt_000015.npz",
+    "checkpoint_sha256": "43be507f321db71c15f71e696fd03c34aa839fe46c2db87f2e880a6a48870550",
+    "checkpoint_unchanged": true,
+    "settings": {
+      "CLIP_BETA": 0.3,
+      "CLIP_R": null,
+      "FREEZE_W": false,
+      "TRIM_MAX": 2.0,
+      "TRIM_POW": 2,
+      "WIN_SHAPE": "cos",
+      "jax_default_matmul_precision": "float32",
+      "jax_enable_x64": true
+    },
+    "config_sha256": "0dd750fa9bab02f25677e833fbc3572c8e94554f6a2542822626181916d08e31",
+    "validation_constructor": "tests.check_g3a_vmc.build screen,N1,complex; known matching saved config; no init/training called",
+    "basis": {
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "integer_modes": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "components": null,
+      "dimension": 9,
+      "centres": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.3333333333333333
+        ],
+        [
+          0.0,
+          2.6666666666666665
+        ],
+        [
+          1.3333333333333333,
+          0.0
+        ],
+        [
+          1.3333333333333333,
+          1.3333333333333333
+        ],
+        [
+          1.3333333333333333,
+          2.6666666666666665
+        ],
+        [
+          2.6666666666666665,
+          0.0
+        ],
+        [
+          2.6666666666666665,
+          1.3333333333333333
+        ],
+        [
+          2.6666666666666665,
+          2.6666666666666665
+        ]
+      ],
+      "basis": "fixed finite Fourier subspace, optionally unitary localized DVR",
+      "trace": "projected particle number; equals N only for a complete occupied subspace"
+    },
+    "sampling": {
+      "seed": 1701,
+      "chains": 8,
+      "sweeps": 1024,
+      "burn": 256,
+      "steps_per_sample": 4,
+      "width": 0.2,
+      "position_acceptance": [
+        0.85498046875,
+        0.85986328125,
+        0.846923828125,
+        0.85595703125,
+        0.85498046875,
+        0.867431640625,
+        0.856689453125,
+        0.859130859375
+      ]
+    },
+    "trace_real": 0.9990188402169956,
+    "trace_imag": -4.751911566449685e-05,
+    "reference_projected_trace": 0.9992645255911832,
+    "hermiticity_residual": 0.04567847555594785,
+    "matrix_error_frobenius": 0.03223616323711638,
+    "chain_sem_frobenius": 0.030010188552803102,
+    "maximum_matrix_error_over_complex_SEM_plus_quad": 2.2143083906794767,
+    "reference_grid16_32_difference": 2.207551155958276e-06,
+    "reference_grid32_64_difference": 2.5359382233025585e-08,
+    "local_estimator_grid8_16_difference": 0.0009904865244273965,
+    "blocking_cos_x": {
+      "mean": -0.09051316075826711,
+      "local_std": 0.7032414655054273,
+      "iid_sem": 0.007770268165731566,
+      "conservative_block_sem": 0.008753272734374715,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 8192,
+          "sem": 0.007770268165731566
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 2048,
+          "sem": 0.008345983849759491
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 512,
+          "sem": 0.00874194535580418
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 256,
+          "sem": 0.008753272734374715
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 128,
+          "sem": 0.008597112365349059
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 64,
+          "sem": 0.008244386746347239
+        }
+      ],
+      "plateau_last3": true
+    },
+    "blocking_G01_real": {
+      "mean": 0.09037388781513207,
+      "local_std": 0.3491629421150566,
+      "iid_sem": 0.003857977418637951,
+      "conservative_block_sem": 0.0042499196950479675,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 8192,
+          "sem": 0.003857977418637951
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 2048,
+          "sem": 0.004013741689512186
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 512,
+          "sem": 0.004095263715216156
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 256,
+          "sem": 0.004139842480146608
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 128,
+          "sem": 0.0039736253185617045
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 64,
+          "sem": 0.0042499196950479675
+        }
+      ],
+      "plateau_last3": true
+    },
+    "blocking_trace_real": {
+      "mean": 0.999018840216995,
+      "local_std": 0.022115935961395845,
+      "iid_sem": 0.00024436379477806236,
+      "conservative_block_sem": 0.0002890654593781751,
+      "blocking": [
+        {
+          "block": 1,
+          "blocks_per_walker": 1024,
+          "independent_block_count": 8192,
+          "sem": 0.00024436379477806236
+        },
+        {
+          "block": 4,
+          "blocks_per_walker": 256,
+          "independent_block_count": 2048,
+          "sem": 0.0002489919469412682
+        },
+        {
+          "block": 16,
+          "blocks_per_walker": 64,
+          "independent_block_count": 512,
+          "sem": 0.0002524843617186038
+        },
+        {
+          "block": 32,
+          "blocks_per_walker": 32,
+          "independent_block_count": 256,
+          "sem": 0.0002484737506356197
+        },
+        {
+          "block": 64,
+          "blocks_per_walker": 16,
+          "independent_block_count": 128,
+          "sem": 0.00025448070468416266
+        },
+        {
+          "block": 128,
+          "blocks_per_walker": 8,
+          "independent_block_count": 64,
+          "sem": 0.0002890654593781751
+        }
+      ],
+      "plateau_last3": true
+    },
+    "retained_triangle_count": 36,
+    "loop_plugin_mean_imag": -6.042336690475595e-08,
+    "loop_independent_mean_imag": -5.6766794733860354e-08,
+    "loop_reference_max_abs_imag": 1.5211231428023335e-19,
+    "loop_jackknife_sem_max": 8.888334789300497e-06,
+    "window_weighted_loop_mean": [
+      [
+        null
+      ]
+    ],
+    "interpretation": "N1 trial wavefunction, not WC/AHC; exact 1RDM is rank one and physical triangular loops have zero imaginary part",
+    "uncertainty": "independent-chain SEM and chain jackknife; finite-chain error estimates, not a convergence proof"
+  },
+  "original_checkpoint_count": 563,
+  "all_checkpoints_unchanged": true,
+  "screenformer_chern": "UNVERIFIED: no physically twisted lambda-jellium Hamiltonian/state family or independent WC/AHC labels",
+  "screenformer_rotation_eigenvalue": "UNVERIFIED: no validated symmetry state family provided",
+  "source_sha256": {
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_f_pilot.py": "356561851d7c58d56f42f78dc7032d5f3e1f7a15e4ddb62770ac3365738a8a89",
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/physical_loops.py": "7b3778ecda3a532bd4d98677a9cd2a6a6899862ca47f238b24dd600784f05053",
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/berry_validation.py": "2e81f4661253bfd751824f89aa8f5a81998fa9796db7f9139d1cfac2beb63a5c"
+  }
+}

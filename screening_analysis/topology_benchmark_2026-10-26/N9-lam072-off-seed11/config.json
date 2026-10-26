@@ -1,0 +1,159 @@
+{
+    "batch_size": 16,
+    "optim": {
+        "objective": "vmc",
+        "iterations": 24,
+        "optimizer": "adam",
+        "laplacian": "default",
+        "lr": {
+            "rate": 0.002,
+            "decay": 1.0,
+            "delay": 20000.0
+        },
+        "clip_local_energy": 5.0,
+        "clip_median": false,
+        "center_at_clip": true,
+        "reset_if_nan": false,
+        "topology_regularization": {
+            "mode": "off",
+            "gamma": 0.0,
+            "perturb_sigma": 0.03,
+            "max_samples": 4,
+            "ph_floor": 0.0001,
+            "landscape_levels": 3,
+            "landscape_grid": 21,
+            "sampling_score": true
+        },
+        "kfac": {
+            "invert_every": 1,
+            "cov_update_every": 1,
+            "damping": 0.001,
+            "cov_ema_decay": 0.95,
+            "momentum": 0.0,
+            "momentum_type": "regular",
+            "min_damping": 1e-06,
+            "norm_constraint": 0.001,
+            "mean_center": true,
+            "l2_reg": 0.0,
+            "register_only_generic": false
+        },
+        "adam": {
+            "b1": 0.9,
+            "b2": 0.999,
+            "eps": 1e-08,
+            "eps_root": 0.0
+        },
+        "local_energy_chunk": 4
+    },
+    "log": {
+        "stats_frequency": 1,
+        "save_frequency": 0.0,
+        "save_path": "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/N9-lam072-off-seed11",
+        "restore_path": ""
+    },
+    "system": {
+        "electrons": [
+            9,
+            0
+        ],
+        "ndim": 2,
+        "make_local_energy_fn": "periodicwave.pbc.lambda_jellium.local_energy",
+        "make_local_energy_kwargs": {
+            "lattice": "unserializable object: [[ 5.71387684 -2.85693842]\n [ 0.          4.9483625 ]]",
+            "lam": 0.72,
+            "delta": 15.0,
+            "potential_type": "Coulomb",
+            "potential_kwargs": {
+                "interaction_energy_scale": 15.0
+            },
+            "kinetic_kwargs": {
+                "laplacian_method": "default"
+            },
+            "flip_batch": 3
+        },
+        "pbc_lattice": "unserializable object: [[ 5.71387684 -2.85693842]\n [ 0.          4.9483625 ]]",
+        "pseudospin": true,
+        "init_pseudospin": "up"
+    },
+    "mcmc": {
+        "burn_in": 16,
+        "steps": 2,
+        "init_width": 1.0,
+        "move_width": 0.2,
+        "move_width_updater": "adaptive",
+        "adapt_frequency": 100,
+        "blocks": 1,
+        "spin_flips": 1
+    },
+    "network": {
+        "network_type": "CustomScreenformer",
+        "complex": true,
+        "CustomPsiformer": {
+            "num_layers": 4,
+            "num_heads": 4,
+            "attn_dim": 32,
+            "value_dim": 32,
+            "mlp_dim": 128,
+            "num_perceptrons_per_layer": 2,
+            "use_layer_norm": true,
+            "mlp_activation_fct": "GELU"
+        },
+        "SlaterNet": {
+            "num_layers": 4,
+            "mlp_dim": 128,
+            "num_perceptrons_per_layer": 2,
+            "use_layer_norm": true,
+            "mlp_activation_fct": "GELU"
+        },
+        "determinants": 1,
+        "bias_orbitals": false,
+        "jastrow": "NONE",
+        "jastrow_kwargs": {
+            "ndim": 2
+        },
+        "make_feature_layer_fn": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+        "make_feature_layer_kwargs": {
+            "lattice": "unserializable object: [[ 5.71387684 -2.85693842]\n [ 0.          4.9483625 ]]",
+            "include_r_ae": false
+        },
+        "make_envelope_fn": "periodicwave.envelopes.make_null_envelope",
+        "make_envelope_kwargs": {},
+        "CustomScreenformer": {
+            "num_layers": 1,
+            "num_heads": 2,
+            "attn_dim": 4,
+            "value_dim": 4,
+            "mlp_dim": 16,
+            "num_perceptrons_per_layer": 2,
+            "use_layer_norm": true,
+            "mlp_activation_fct": "GELU",
+            "use_softmask": true,
+            "use_gate": true,
+            "use_tanh_norm": true,
+            "use_output_scale": true,
+            "init_trim_r": 1.9,
+            "init_output_scale": 0.0,
+            "init_softmask_w_factor": 0.9936333929527268,
+            "init_softmask_w_spread": 1.006407400448121,
+            "init_softmask_centres": null,
+            "init_softmask_rings": null,
+            "use_fixed_value": false
+        }
+    },
+    "debug": {
+        "check_nan": true,
+        "deterministic": true
+    },
+    "screening_attention_settings": {
+        "TRIM_MAX": 2.0,
+        "TRIM_POW": 2,
+        "WIN_SHAPE": "cos",
+        "FREEZE_W": false,
+        "CLIP_R": null,
+        "CLIP_BETA": 0.3,
+        "jax_enable_x64": true,
+        "jax_default_matmul_precision": "float32"
+    },
+    "phase_status": "candidate parameters only; physical phase not independently verified",
+    "seed": 11
+}

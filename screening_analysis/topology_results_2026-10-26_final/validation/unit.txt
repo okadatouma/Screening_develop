@@ -1,0 +1,15 @@
+test_all_four_vertex_flag_complexes (tests.test_topology.TopologyChecks.test_all_four_vertex_flag_complexes) ... ok
+test_ambiguous_embedding_rejected (tests.test_topology.TopologyChecks.test_ambiguous_embedding_rejected) ... ok
+test_controls (tests.test_topology.TopologyChecks.test_controls) ... ok
+test_distances_and_essential_parts (tests.test_topology.TopologyChecks.test_distances_and_essential_parts) ... ok
+test_known_winding_and_strict_threshold (tests.test_topology.TopologyChecks.test_known_winding_and_strict_threshold) ... ok
+test_skew_minimum_image_and_invariances (tests.test_topology.TopologyChecks.test_skew_minimum_image_and_invariances) ... ok
+test_square_diagonal_kills_cycle (tests.test_topology.TopologyChecks.test_square_diagonal_kills_cycle) ... ok
+test_weighted_ties_and_zero_edges (tests.test_topology.TopologyChecks.test_weighted_ties_and_zero_edges) ... ok
+test_grouped_phase_evaluation (tests.test_topology_run.RunnerChecks.test_grouped_phase_evaluation) ... ok
+test_sources_outputs_and_protection (tests.test_topology_run.RunnerChecks.test_sources_outputs_and_protection) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.095s
+
+OK

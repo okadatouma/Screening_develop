@@ -1,0 +1,15 @@
+Jax Devices: [CpuDevice(id=0)]
+[λJ] N = 9 (3x3), r_s = 15.0, lam = 0.72, Delta = 15.0 (= 1.0 x 2/r_s Ry), a = 1.9046, flips/step = 1, init spin = up
+[λJ] d_ref = 1.9291, value = 学習 W_V
+[λJ] 入れ子窓 w_h = 1.905, 1.929   [learnable]
+Folder '/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/N9-lam072-weights-seed37' does not exist.
+Device and environment info logged to /Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/N9-lam072-weights-seed37/device_info.log
+'config.json' does not exist in the folder '/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/N9-lam072-weights-seed37'.
+Configuration saved as JSON to /Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/N9-lam072-weights-seed37/config.json
+[SEED] seed = 37  (tag = N9-lam072-weights-seed37)
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 15.0
+[λ-jellium] lam = 0.72, Delta = 15.0 (code units; Delta/r_s = 1), r_s = 15.0, laplacian = default, flip_batch = 3, potential = Coulomb
+making construct_input_features with periodic norm
+'train_stats.csv' does not exist in the folder '/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/N9-lam072-weights-seed37'.

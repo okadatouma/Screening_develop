@@ -1,0 +1,4482 @@
+[
+  {
+    "view": "A",
+    "regularizer": "off",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13002414984853292
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.134286826555898
+    },
+    "finite_normalized_separation": 0.01612750543073404,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1293122208466851,
+        "finite_mean": 0.1293122208466851,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11978802450507739,
+        "finite_mean": 0.11978802450507739,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.12362085367202558,
+        "finite_mean": 0.12362085367202558,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.1146468914987222,
+        "finite_mean": 0.1146468914987222,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11918214434424343,
+        "finite_mean": 0.11918214434424343,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1791458689001344,
+        "finite_mean": 0.1791458689001344,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.12433220662632266,
+        "finite_mean": 0.12433220662632266,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1541846343818484,
+        "finite_mean": 0.1541846343818484,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10979050425633487,
+        "finite_mean": 0.10979050425633487,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1624858095844048,
+        "finite_mean": 0.1624858095844048,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14323472187461236,
+        "finite_mean": 0.14323472187461236,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10614197793617433,
+        "finite_mean": 0.10614197793617433,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "off",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.34023323978155684
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.35286798098636263
+    },
+    "finite_normalized_separation": 0.01822928718954955,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.293265146654931,
+        "finite_mean": 0.293265146654931,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2785968309087504,
+        "finite_mean": 0.2785968309087504,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3688312945487138,
+        "finite_mean": 0.3688312945487138,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3249792417669113,
+        "finite_mean": 0.3249792417669113,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2554433093226899,
+        "finite_mean": 0.2554433093226899,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.4092089804079497,
+        "finite_mean": 0.4092089804079497,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.29851625206019733,
+        "finite_mean": 0.29851625206019733,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.37458255883733754,
+        "finite_mean": 0.37458255883733754,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3410895582970659,
+        "finite_mean": 0.3410895582970659,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.4573405072377069,
+        "finite_mean": 0.4573405072377069,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.4116309632339674,
+        "finite_mean": 0.4116309632339674,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.3451226813312954,
+        "finite_mean": 0.3451226813312954,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "off",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13001114743354805
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13427339787324244
+    },
+    "finite_normalized_separation": 0.01612750543073422,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1292992896246004,
+        "finite_mean": 0.1292992896246004,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11977604570262695,
+        "finite_mean": 0.11977604570262695,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.1236084915866584,
+        "finite_mean": 0.1236084915866584,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.11463542680957237,
+        "finite_mean": 0.11463542680957237,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11917022612980904,
+        "finite_mean": 0.11917022612980904,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17912795431324438,
+        "finite_mean": 0.17912795431324438,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.12431977340566,
+        "finite_mean": 0.12431977340566,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1541692159184102,
+        "finite_mean": 0.1541692159184102,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10977952520590928,
+        "finite_mean": 0.10977952520590928,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.16246956100344634,
+        "finite_mean": 0.16246956100344634,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1432203984024249,
+        "finite_mean": 0.1432203984024249,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10613136373838072,
+        "finite_mean": 0.10613136373838072,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "off",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.34019921645757867
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.35283269418826396
+    },
+    "finite_normalized_separation": 0.01822928718954953,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2932358201402655,
+        "finite_mean": 0.2932358201402655,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2785689712256597,
+        "finite_mean": 0.2785689712256597,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.36879441141925895,
+        "finite_mean": 0.36879441141925895,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3249467438427346,
+        "finite_mean": 0.3249467438427346,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2554177649917576,
+        "finite_mean": 0.2554177649917576,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.40916805950990887,
+        "finite_mean": 0.40916805950990887,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.29848640043499114,
+        "finite_mean": 0.29848640043499114,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.3745451005814538,
+        "finite_mean": 0.3745451005814538,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3410554493412362,
+        "finite_mean": 0.3410554493412362,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.45729477318698303,
+        "finite_mean": 0.45729477318698303,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.4115898001376439,
+        "finite_mean": 0.4115898001376439,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.34508816906316225,
+        "finite_mean": 0.34508816906316225,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "persistence",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13002392883042646
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13428659871680798
+    },
+    "finite_normalized_separation": 0.016127507012068398,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.12931224885141637,
+        "finite_mean": 0.12931224885141637,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11978894211942964,
+        "finite_mean": 0.11978894211942964,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.12362208294650841,
+        "finite_mean": 0.12362208294650841,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.11464744603014473,
+        "finite_mean": 0.11464744603014473,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11918075544562247,
+        "finite_mean": 0.11918075544562247,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17914502437615792,
+        "finite_mean": 0.17914502437615792,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.12433048102417332,
+        "finite_mean": 0.12433048102417332,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.15418431311555006,
+        "finite_mean": 0.15418431311555006,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10979024480831343,
+        "finite_mean": 0.10979024480831343,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.16248543288302073,
+        "finite_mean": 0.16248543288302073,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14323437443382808,
+        "finite_mean": 0.14323437443382808,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10614181924924132,
+        "finite_mean": 0.10614181924924132,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "persistence",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.3402333192647416
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.35286753637983687
+    },
+    "finite_normalized_separation": 0.018228540640518393,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.29326677680468627,
+        "finite_mean": 0.29326677680468627,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2785994862506581,
+        "finite_mean": 0.2785994862506581,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.36883309229564654,
+        "finite_mean": 0.36883309229564654,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.324981867483552,
+        "finite_mean": 0.324981867483552,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.25544093055806755,
+        "finite_mean": 0.25544093055806755,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.4092065780572427,
+        "finite_mean": 0.4092065780572427,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.29851295260765737,
+        "finite_mean": 0.29851295260765737,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.3745820727751167,
+        "finite_mean": 0.3745820727751167,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3410886550598059,
+        "finite_mean": 0.3410886550598059,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.4573397968651939,
+        "finite_mean": 0.4573397968651939,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.4116310803160263,
+        "finite_mean": 0.4116310803160263,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.34512184479381736,
+        "finite_mean": 0.34512184479381736,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "persistence",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.1300109264375434
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13427317005693626
+    },
+    "finite_normalized_separation": 0.016127507012068353,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.12929931762653118,
+        "finite_mean": 0.12929931762653118,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11977696322521769,
+        "finite_mean": 0.11977696322521769,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.12360972073821375,
+        "finite_mean": 0.12360972073821375,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.11463598128554167,
+        "finite_mean": 0.11463598128554167,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11916883737007794,
+        "finite_mean": 0.11916883737007794,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17912710987372027,
+        "finite_mean": 0.17912710987372027,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.12431804797607088,
+        "finite_mean": 0.12431804797607088,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.15416889468423847,
+        "finite_mean": 0.15416889468423847,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.1097792657838326,
+        "finite_mean": 0.1097792657838326,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1624691843397324,
+        "finite_mean": 0.1624691843397324,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1432200509963847,
+        "finite_mean": 0.1432200509963847,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10613120506731635,
+        "finite_mean": 0.10613120506731635,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "persistence",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.340199295932815
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.3528322496261988
+    },
+    "finite_normalized_separation": 0.01822854064051845,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.29323745012700564,
+        "finite_mean": 0.29323745012700564,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2785716263020329,
+        "finite_mean": 0.2785716263020329,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3687962089864169,
+        "finite_mean": 0.3687962089864169,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3249493692968035,
+        "finite_mean": 0.3249493692968035,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2554153864650117,
+        "finite_mean": 0.2554153864650117,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.409165657399437,
+        "finite_mean": 0.409165657399437,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.29848310131239647,
+        "finite_mean": 0.29848310131239647,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.3745446145678391,
+        "finite_mean": 0.3745446145678391,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.34105454619429976,
+        "finite_mean": 0.34105454619429976,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.4572940628855072,
+        "finite_mean": 0.4572940628855072,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.41158991720799465,
+        "finite_mean": 0.41158991720799465,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.34508733260933777,
+        "finite_mean": 0.34508733260933777,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "laplacian",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.1300241078528529
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13428678072008807
+    },
+    "finite_normalized_separation": 0.01612749626112665,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.12931215990453193,
+        "finite_mean": 0.12931215990453193,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11978798602692389,
+        "finite_mean": 0.11978798602692389,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.12362081355060353,
+        "finite_mean": 0.12362081355060353,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.11464682220966631,
+        "finite_mean": 0.11464682220966631,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11918209925799872,
+        "finite_mean": 0.11918209925799872,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17914582043524013,
+        "finite_mean": 0.17914582043524013,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.1243321447424433,
+        "finite_mean": 0.1243321447424433,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.15418460580029333,
+        "finite_mean": 0.15418460580029333,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10979047758228176,
+        "finite_mean": 0.10979047758228176,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.16248577244117587,
+        "finite_mean": 0.16248577244117587,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14323468698430852,
+        "finite_mean": 0.14323468698430852,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10614194250217847,
+        "finite_mean": 0.10614194250217847,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "laplacian",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.34023317022785404
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.3528678971291848
+    },
+    "finite_normalized_separation": 0.018229270587491703,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2932650446914053,
+        "finite_mean": 0.2932650446914053,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2785967256026855,
+        "finite_mean": 0.2785967256026855,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3688311689316257,
+        "finite_mean": 0.3688311689316257,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3249790747338788,
+        "finite_mean": 0.3249790747338788,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2554432747547077,
+        "finite_mean": 0.2554432747547077,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.40920895637130417,
+        "finite_mean": 0.40920895637130417,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.2985161409099457,
+        "finite_mean": 0.2985161409099457,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.374582542061753,
+        "finite_mean": 0.374582542061753,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3410894997666018,
+        "finite_mean": 0.3410894997666018,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.45734045496581266,
+        "finite_mean": 0.45734045496581266,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.41163091468898655,
+        "finite_mean": 0.41163091468898655,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.34512260666352645,
+        "finite_mean": 0.34512260666352645,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "laplacian",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.1300111054420676
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13427335204201604
+    },
+    "finite_normalized_separation": 0.01612749626112667,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.12929922868854143,
+        "finite_mean": 0.12929922868854143,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11977600722832117,
+        "finite_mean": 0.11977600722832117,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.12360845146924845,
+        "finite_mean": 0.12360845146924845,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.1146353575274453,
+        "finite_mean": 0.1146353575274453,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11917018104807287,
+        "finite_mean": 0.11917018104807287,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17912790585319655,
+        "finite_mean": 0.17912790585319655,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.124319711527969,
+        "finite_mean": 0.124319711527969,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1541691873397133,
+        "finite_mean": 0.1541691873397133,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10977949853452354,
+        "finite_mean": 0.10977949853452354,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.16246952386393176,
+        "finite_mean": 0.16246952386393176,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14322036351561013,
+        "finite_mean": 0.14322036351561013,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10613132830792828,
+        "finite_mean": 0.10613132830792828,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "laplacian",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.3401991469108312
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.35283261033947183
+    },
+    "finite_normalized_separation": 0.018229270587491696,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.29323571818693617,
+        "finite_mean": 0.29323571818693617,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2785688659301252,
+        "finite_mean": 0.2785688659301252,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.36879428581473245,
+        "finite_mean": 0.36879428581473245,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.32494657682640526,
+        "finite_mean": 0.32494657682640526,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.25541773042723215,
+        "finite_mean": 0.25541773042723215,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.40916803547566694,
+        "finite_mean": 0.40916803547566694,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.29848628929585447,
+        "finite_mean": 0.29848628929585447,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.3745450838075468,
+        "finite_mean": 0.3745450838075468,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.34105539081662517,
+        "finite_mean": 0.34105539081662517,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.4572947209203159,
+        "finite_mean": 0.4572947209203159,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.41158975159751754,
+        "finite_mean": 0.41158975159751754,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.34508809440286004,
+        "finite_mean": 0.34508809440286004,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "weights",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13002002549280675
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13428207244148826
+    },
+    "finite_normalized_separation": 0.01612566446499055,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.12930575196822672,
+        "finite_mean": 0.12930575196822672,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11978552759631166,
+        "finite_mean": 0.11978552759631166,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.1236174946146421,
+        "finite_mean": 0.1236174946146421,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.11464094823000157,
+        "finite_mean": 0.11464094823000157,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11917754133574027,
+        "finite_mean": 0.11917754133574027,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17914016939240673,
+        "finite_mean": 0.17914016939240673,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.12432246924597029,
+        "finite_mean": 0.12432246924597029,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.15418163632875148,
+        "finite_mean": 0.15418163632875148,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10978971683715744,
+        "finite_mean": 0.10978971683715744,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.16248177945065637,
+        "finite_mean": 0.16248177945065637,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14323148263414065,
+        "finite_mean": 0.14323148263414065,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10613806997176486,
+        "finite_mean": 0.10613806997176486,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "weights",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.34022471044155606
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.35285887012376005
+    },
+    "finite_normalized_separation": 0.01822891212038077,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2932498451248682,
+        "finite_mean": 0.2932498451248682,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27858788124104455,
+        "finite_mean": 0.27858788124104455,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3688194705717759,
+        "finite_mean": 0.3688194705717759,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3249663503821232,
+        "finite_mean": 0.3249663503821232,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2554364939619204,
+        "finite_mean": 0.2554364939619204,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.40920029446268796,
+        "finite_mean": 0.40920029446268796,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.2985015905043724,
+        "finite_mean": 0.2985015905043724,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.3745799211680507,
+        "finite_mean": 0.3745799211680507,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3410855936535504,
+        "finite_mean": 0.3410855936535504,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.45733320852508164,
+        "finite_mean": 0.45733320852508164,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.41162705129910987,
+        "finite_mean": 0.41162705129910987,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.34511378249731156,
+        "finite_mean": 0.34511378249731156,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "weights",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.13000702349025747
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.1342686442342441
+    },
+    "finite_normalized_separation": 0.01612566446499044,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.12929282139302983,
+        "finite_mean": 0.12929282139302983,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11977354904355204,
+        "finite_mean": 0.11977354904355204,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.12360513286518063,
+        "finite_mean": 0.12360513286518063,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.11462948413517854,
+        "finite_mean": 0.11462948413517854,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.11916562358160665,
+        "finite_mean": 0.11916562358160665,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.17912225537546742,
+        "finite_mean": 0.17912225537546742,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.12431003699904558,
+        "finite_mean": 0.12431003699904558,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1541662181651186,
+        "finite_mean": 0.1541662181651186,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10977873786547372,
+        "finite_mean": 0.10977873786547372,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1624655312727113,
+        "finite_mean": 0.1624655312727113,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14321715948587727,
+        "finite_mean": 0.14321715948587727,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.10612745616476768,
+        "finite_mean": 0.10612745616476768,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "A",
+    "regularizer": "weights",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.3401906879705119
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.3528235842367477
+    },
+    "finite_normalized_separation": 0.01822891212038083,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2932205201403557,
+        "finite_mean": 0.2932205201403557,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27856002245292044,
+        "finite_mean": 0.27856002245292044,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.36878258862471863,
+        "finite_mean": 0.36878258862471863,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.32493385374708506,
+        "finite_mean": 0.32493385374708506,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2554109503125241,
+        "finite_mean": 0.2554109503125241,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.4091593744332416,
+        "finite_mean": 0.4091593744332416,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.29847174034532187,
+        "finite_mean": 0.29847174034532187,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.37454246317593387,
+        "finite_mean": 0.37454246317593387,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.3410514850941849,
+        "finite_mean": 0.3410514850941849,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.4572874752042291,
+        "finite_mean": 0.4572874752042291,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.41158588859397993,
+        "finite_mean": 0.41158588859397993,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.3450792711190618,
+        "finite_mean": 0.3450792711190618,
+        "infinite": 0,
+        "comparisons": 64,
+        "pairing": "product of natural configuration sets"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "off",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11092512564444106
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11200576007021397
+    },
+    "finite_normalized_separation": 0.004847396637342096,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.09666361565130806,
+        "finite_mean": 0.09666361565130806,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.13131200719023195,
+        "finite_mean": 0.13131200719023195,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10585911528021266,
+        "finite_mean": 0.10585911528021266,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14286316157306625,
+        "finite_mean": 0.14286316157306625,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08325624595879755,
+        "finite_mean": 0.08325624595879755,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.09934180685773158,
+        "finite_mean": 0.09934180685773158,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10612132370803237,
+        "finite_mean": 0.10612132370803237,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1340613900027431,
+        "finite_mean": 0.1340613900027431,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08378776299949783,
+        "finite_mean": 0.08378776299949783,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.10831993883723993,
+        "finite_mean": 0.10831993883723993,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14691782678678206,
+        "finite_mean": 0.14691782678678206,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09908111944228673,
+        "finite_mean": 0.09908111944228673,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "off",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27347754702400373
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2780487223106849
+    },
+    "finite_normalized_separation": 0.008288227670815053,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.24911875759840135,
+        "finite_mean": 0.24911875759840135,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27256203396844747,
+        "finite_mean": 0.27256203396844747,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.28132095912393656,
+        "finite_mean": 0.28132095912393656,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.312809294326897,
+        "finite_mean": 0.312809294326897,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2531936456808659,
+        "finite_mean": 0.2531936456808659,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2569660764252665,
+        "finite_mean": 0.2569660764252665,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.28290838496554993,
+        "finite_mean": 0.28290838496554993,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2857384440722326,
+        "finite_mean": 0.2857384440722326,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24854917495022677,
+        "finite_mean": 0.24854917495022677,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.28088267691369895,
+        "finite_mean": 0.28088267691369895,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.31401091703520234,
+        "finite_mean": 0.31401091703520234,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27109725094740633,
+        "finite_mean": 0.27109725094740633,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "off",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11091403313187657
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11199455949420696
+    },
+    "finite_normalized_separation": 0.004847396637342319,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.09665394928974291,
+        "finite_mean": 0.09665394928974291,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1312988759895129,
+        "finite_mean": 0.1312988759895129,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10584852936868465,
+        "finite_mean": 0.10584852936868465,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14284887525690898,
+        "finite_mean": 0.14284887525690898,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.0832479203342017,
+        "finite_mean": 0.0832479203342017,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.09933187267704578,
+        "finite_mean": 0.09933187267704578,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10611071157566154,
+        "finite_mean": 0.10611071157566154,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.13404798386374284,
+        "finite_mean": 0.13404798386374284,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08377938422319792,
+        "finite_mean": 0.08377938422319792,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.10830910684335619,
+        "finite_mean": 0.10830910684335619,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14690313500410335,
+        "finite_mean": 0.14690313500410335,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.0990712113303424,
+        "finite_mean": 0.0990712113303424,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "off",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2734501992693013
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2780209174384538
+    },
+    "finite_normalized_separation": 0.008288227670815064,
+    "pairs": [
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.24909384572264154,
+        "finite_mean": 0.24909384572264154,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27253477776505053,
+        "finite_mean": 0.27253477776505053,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.28129282702802416,
+        "finite_mean": 0.28129282702802416,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3127780133974642,
+        "finite_mean": 0.3127780133974642,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam033-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.25316832631629776,
+        "finite_mean": 0.25316832631629776,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.25694037981762397,
+        "finite_mean": 0.25694037981762397,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": false,
+        "mean": 0.2828800941270534,
+        "finite_mean": 0.2828800941270534,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed11",
+        "same_parameter_label": false,
+        "mean": 0.28570987022782546,
+        "finite_mean": 0.28570987022782546,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-off-seed37",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24852432003273164,
+        "finite_mean": 0.24852432003273164,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed23",
+        "same_parameter_label": true,
+        "mean": 0.28085458864600743,
+        "finite_mean": 0.28085458864600743,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed11",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.31397951594349893,
+        "finite_mean": 0.31397951594349893,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-off-seed23",
+        "right": "N9-lam072-off-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27107014122231154,
+        "finite_mean": 0.27107014122231154,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "persistence",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11092437797430559
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11200476574296296
+    },
+    "finite_normalized_separation": 0.004846328078250663,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.09666244912492439,
+        "finite_mean": 0.09666244912492439,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.13131019561785792,
+        "finite_mean": 0.13131019561785792,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10585834477718718,
+        "finite_mean": 0.10585834477718718,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14286180980895571,
+        "finite_mean": 0.14286180980895571,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08325372865223715,
+        "finite_mean": 0.08325372865223715,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.09934029474631759,
+        "finite_mean": 0.09934029474631759,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10611722008263248,
+        "finite_mean": 0.10611722008263248,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.13406265660197572,
+        "finite_mean": 0.13406265660197572,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08378826844070913,
+        "finite_mean": 0.08378826844070913,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.10831989748747108,
+        "finite_mean": 0.10831989748747108,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1469185994277234,
+        "finite_mean": 0.1469185994277234,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09908139753561948,
+        "finite_mean": 0.09908139753561948,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "persistence",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27347727456946397
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2780492817748286
+    },
+    "finite_normalized_separation": 0.008289731750488123,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.24911942836595338,
+        "finite_mean": 0.24911942836595338,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27256187361564294,
+        "finite_mean": 0.27256187361564294,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.2813239427728792,
+        "finite_mean": 0.2813239427728792,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.31281016587412835,
+        "finite_mean": 0.31281016587412835,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2531903515235371,
+        "finite_mean": 0.2531903515235371,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2569650320585177,
+        "finite_mean": 0.2569650320585177,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.28290393602269587,
+        "finite_mean": 0.28290393602269587,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2857409548203802,
+        "finite_mean": 0.2857409548203802,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.2485516591003703,
+        "finite_mean": 0.2485516591003703,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.28088267284193813,
+        "finite_mean": 0.28088267284193813,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.3140119677732264,
+        "finite_mean": 0.3140119677732264,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.271097353296486,
+        "finite_mean": 0.271097353296486,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "persistence",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11091328553650814
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11199356526638866
+    },
+    "finite_normalized_separation": 0.00484632807825071,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.09665278288001183,
+        "finite_mean": 0.09665278288001183,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.13129706459829618,
+        "finite_mean": 0.13129706459829618,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.1058477589427095,
+        "finite_mean": 0.1058477589427095,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14284752362797482,
+        "finite_mean": 0.14284752362797482,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08324540327937188,
+        "finite_mean": 0.08324540327937188,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.09933036071684291,
+        "finite_mean": 0.09933036071684291,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10610660836062416,
+        "finite_mean": 0.10610660836062416,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1340492503363155,
+        "finite_mean": 0.1340492503363155,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.0837798896138651,
+        "finite_mean": 0.0837798896138651,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1083090654977223,
+        "finite_mean": 0.1083090654977223,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14690390756778066,
+        "finite_mean": 0.14690390756778066,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09907148939586596,
+        "finite_mean": 0.09907148939586596,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "persistence",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.273449926842007
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2780214768466511
+    },
+    "finite_normalized_separation": 0.00828973175048818,
+    "pairs": [
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.24909451642311675,
+        "finite_mean": 0.24909451642311675,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27253461742828133,
+        "finite_mean": 0.27253461742828133,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.28129581037860185,
+        "finite_mean": 0.28129581037860185,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.312778884857541,
+        "finite_mean": 0.312778884857541,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam033-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.25316503248838473,
+        "finite_mean": 0.25316503248838473,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2569393355553117,
+        "finite_mean": 0.2569393355553117,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": false,
+        "mean": 0.28287564562909356,
+        "finite_mean": 0.28287564562909356,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed11",
+        "same_parameter_label": false,
+        "mean": 0.28571238072489824,
+        "finite_mean": 0.28571238072489824,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-persistence-seed37",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24852680393446028,
+        "finite_mean": 0.24852680393446028,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2808545845746538,
+        "finite_mean": 0.2808545845746538,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed11",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.313980566576449,
+        "finite_mean": 0.313980566576449,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-persistence-seed23",
+        "right": "N9-lam072-persistence-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2710702435611563,
+        "finite_mean": 0.2710702435611563,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "laplacian",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11092510717676274
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11200574766800842
+    },
+    "finite_normalized_separation": 0.004847424516440925,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.0966635382534263,
+        "finite_mean": 0.0966635382534263,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1313119457349047,
+        "finite_mean": 0.1313119457349047,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10585905366851153,
+        "finite_mean": 0.10585905366851153,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14286307065701778,
+        "finite_mean": 0.14286307065701778,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08325630440958695,
+        "finite_mean": 0.08325630440958695,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.09934182630096394,
+        "finite_mean": 0.09934182630096394,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10612136042869616,
+        "finite_mean": 0.10612136042869616,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.13406140452271387,
+        "finite_mean": 0.13406140452271387,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08378777043014723,
+        "finite_mean": 0.08378777043014723,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.108319937442198,
+        "finite_mean": 0.108319937442198,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14691781046193006,
+        "finite_mean": 0.14691781046193006,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09908110675853038,
+        "finite_mean": 0.09908110675853038,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "laplacian",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27347752267829994
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2780487076761148
+    },
+    "finite_normalized_separation": 0.008288245864348755,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2491187300590025,
+        "finite_mean": 0.2491187300590025,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2725618981679844,
+        "finite_mean": 0.2725618981679844,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.28132094461903356,
+        "finite_mean": 0.28132094461903356,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3128090646128383,
+        "finite_mean": 0.3128090646128383,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2531937580686909,
+        "finite_mean": 0.2531937580686909,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2569660812844322,
+        "finite_mean": 0.2569660812844322,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.2829084442313321,
+        "finite_mean": 0.2829084442313321,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.28573845497012806,
+        "finite_mean": 0.28573845497012806,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24854925633892444,
+        "finite_mean": 0.24854925633892444,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2808826976796859,
+        "finite_mean": 0.2808826976796859,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.31401084601598606,
+        "finite_mean": 0.31401084601598606,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2710972060784499,
+        "finite_mean": 0.2710972060784499,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "laplacian",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11091401466604507
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11199454709324164
+    },
+    "finite_normalized_separation": 0.0048474245164409815,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.096653871899601,
+        "finite_mean": 0.096653871899601,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1312988145403312,
+        "finite_mean": 0.1312988145403312,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10584846776314469,
+        "finite_mean": 0.10584846776314469,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14284878434995207,
+        "finite_mean": 0.14284878434995207,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08324797877914603,
+        "finite_mean": 0.08324797877914603,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.0993318921183339,
+        "finite_mean": 0.0993318921183339,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10611074829265334,
+        "finite_mean": 0.10611074829265334,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.1340479983822616,
+        "finite_mean": 0.1340479983822616,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08377939165310427,
+        "finite_mean": 0.08377939165310427,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.10830910544845379,
+        "finite_mean": 0.10830910544845379,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1469031186808839,
+        "finite_mean": 0.1469031186808839,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09907119864785457,
+        "finite_mean": 0.09907119864785457,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "laplacian",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2734501749260321
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27802090280534725
+    },
+    "finite_normalized_separation": 0.008288245864348967,
+    "pairs": [
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.24909381818599663,
+        "finite_mean": 0.24909381818599663,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27253464197816757,
+        "finite_mean": 0.27253464197816757,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.2812928125245716,
+        "finite_mean": 0.2812928125245716,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3127777837063769,
+        "finite_mean": 0.3127777837063769,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam033-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.253168438692884,
+        "finite_mean": 0.253168438692884,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2569403846763039,
+        "finite_mean": 0.2569403846763039,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": false,
+        "mean": 0.282880153386909,
+        "finite_mean": 0.282880153386909,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed11",
+        "same_parameter_label": false,
+        "mean": 0.28570988112463114,
+        "finite_mean": 0.28570988112463114,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-laplacian-seed37",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24852440141329077,
+        "finite_mean": 0.24852440141329077,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed23",
+        "same_parameter_label": true,
+        "mean": 0.28085460940991785,
+        "finite_mean": 0.28085460940991785,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed11",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.31397944493138447,
+        "finite_mean": 0.31397944493138447,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-laplacian-seed23",
+        "right": "N9-lam072-laplacian-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2710700963578421,
+        "finite_mean": 0.2710700963578421,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "weights",
+    "graph": "raw",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11092164702350364
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11200217628347127
+    },
+    "finite_normalized_separation": 0.0048470784501111665,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.09665684520143539,
+        "finite_mean": 0.09665684520143539,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.13130630989593933,
+        "finite_mean": 0.13130630989593933,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.10585303224078478,
+        "finite_mean": 0.10585303224078478,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.14285302665693775,
+        "finite_mean": 0.14285302665693775,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08325698818426999,
+        "finite_mean": 0.08325698818426999,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.0993419951972586,
+        "finite_mean": 0.0993419951972586,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10611569574143756,
+        "finite_mean": 0.10611569574143756,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.13406251906349337,
+        "finite_mean": 0.13406251906349337,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08378678880091556,
+        "finite_mean": 0.08378678880091556,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.10831995984759497,
+        "finite_mean": 0.10831995984759497,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.1469141950307435,
+        "finite_mean": 0.1469141950307435,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09907558398103866,
+        "finite_mean": 0.09907558398103866,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "weights",
+    "graph": "raw",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27346979347111056
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27804216675698973
+    },
+    "finite_normalized_separation": 0.008290614919734617,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.24910655350228944,
+        "finite_mean": 0.24910655350228944,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2725502681534753,
+        "finite_mean": 0.2725502681534753,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.2813122682291782,
+        "finite_mean": 0.2813122682291782,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.3127900763043132,
+        "finite_mean": 0.3127900763043132,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2531944829370054,
+        "finite_mean": 0.2531944829370054,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.25696009579345946,
+        "finite_mean": 0.25696009579345946,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.28289979254883146,
+        "finite_mean": 0.28289979254883146,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2857404492071681,
+        "finite_mean": 0.2857404492071681,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24855031845898776,
+        "finite_mean": 0.24855031845898776,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.28087930112046117,
+        "finite_mean": 0.28087930112046117,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.3140039777477064,
+        "finite_mean": 0.3140039777477064,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.2710841773657257,
+        "finite_mean": 0.2710841773657257,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "weights",
+    "graph": "completed",
+    "metric": "bottleneck",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11091055485880126
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.11199097606584296
+    },
+    "finite_normalized_separation": 0.004847078450111483,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.0966471795169152,
+        "finite_mean": 0.0966471795169152,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.13129317926494968,
+        "finite_mean": 0.13129317926494968,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.1058424469375607,
+        "finite_mean": 0.1058424469375607,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.1428387413542721,
+        "finite_mean": 0.1428387413542721,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.08324866248545157,
+        "finite_mean": 0.08324866248545157,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.09933206099773889,
+        "finite_mean": 0.09933206099773889,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.10610508417186346,
+        "finite_mean": 0.10610508417186346,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.13404911281158702,
+        "finite_mean": 0.13404911281158702,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.08377841012203552,
+        "finite_mean": 0.08377841012203552,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.1083091278516102,
+        "finite_mean": 0.1083091278516102,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.14689950361124043,
+        "finite_mean": 0.14689950361124043,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.09906567642264058,
+        "finite_mean": 0.09906567642264058,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  },
+  {
+    "view": "B",
+    "regularizer": "weights",
+    "graph": "completed",
+    "metric": "wasserstein1",
+    "within_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.2734424464917635
+    },
+    "between_parameter": {
+      "pairs": 6,
+      "infinite": 0,
+      "finite_mean": 0.27801436254031403
+    },
+    "finite_normalized_separation": 0.008290614919734474,
+    "pairs": [
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2490816428469393,
+        "finite_mean": 0.2490816428469393,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27252301312665994,
+        "finite_mean": 0.27252301312665994,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.28128413700235533,
+        "finite_mean": 0.28128413700235533,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.31275879729668277,
+        "finite_mean": 0.31275879729668277,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam033-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.25316916348871177,
+        "finite_mean": 0.25316916348871177,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2569343997838801,
+        "finite_mean": 0.2569343997838801,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": false,
+        "mean": 0.2828715025695766,
+        "finite_mean": 0.2828715025695766,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed11",
+        "same_parameter_label": false,
+        "mean": 0.2857118751622475,
+        "finite_mean": 0.2857118751622475,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam033-weights-seed37",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": false,
+        "mean": 0.24852546342714185,
+        "finite_mean": 0.24852546342714185,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed23",
+        "same_parameter_label": true,
+        "mean": 0.2808512131903492,
+        "finite_mean": 0.2808512131903492,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed11",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.3139725773499317,
+        "finite_mean": 0.3139725773499317,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      },
+      {
+        "left": "N9-lam072-weights-seed23",
+        "right": "N9-lam072-weights-seed37",
+        "same_parameter_label": true,
+        "mean": 0.27105706894798925,
+        "finite_mean": 0.27105706894798925,
+        "infinite": 0,
+        "comparisons": 8,
+        "pairing": "identical configurations"
+      }
+    ],
+    "label_kind": "same/different lambda, NOT verified phases"
+  }
+]

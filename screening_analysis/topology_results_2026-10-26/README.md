@@ -1,0 +1,1 @@
+開発途中のpilot。ここで生成したinputsを固定し、最終コードでtopology_results_2026-10-26_finalへ再評価した。研究上の集計・図はfinal側を使う。既存checkpointは変更していない。

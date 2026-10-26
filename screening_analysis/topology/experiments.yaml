@@ -1,0 +1,140 @@
+{
+  "description": "JSON syntax is valid YAML 1.2. Existing actual trained candidates, NOT verified WC/AHC.",
+  "seed": 20261026,
+  "nconf": 8,
+  "null_repeats": 1,
+  "runs": [
+    {
+      "id": "N9-lam033-off-seed11-A",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam033-off-seed11/probe_A.npz",
+      "seed": 11,
+      "group": "seed11",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "A",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam033-off-seed11-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam033-off-seed11/probe_B.npz",
+      "seed": 11,
+      "group": "seed11",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "B",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam033-off-seed23-A",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam033-off-seed23/probe_A.npz",
+      "seed": 23,
+      "group": "seed23",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "A",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam033-off-seed23-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam033-off-seed23/probe_B.npz",
+      "seed": 23,
+      "group": "seed23",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "B",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam033-off-seed37-A",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam033-off-seed37/probe_A.npz",
+      "seed": 37,
+      "group": "seed37",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "A",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam033-off-seed37-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam033-off-seed37/probe_B.npz",
+      "seed": 37,
+      "group": "seed37",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "B",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam072-off-seed11-A",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam072-off-seed11/probe_A.npz",
+      "seed": 11,
+      "group": "seed11",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.72",
+      "view": "A",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam072-off-seed11-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam072-off-seed11/probe_B.npz",
+      "seed": 11,
+      "group": "seed11",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.72",
+      "view": "B",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam072-off-seed23-A",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam072-off-seed23/probe_A.npz",
+      "seed": 23,
+      "group": "seed23",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.72",
+      "view": "A",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam072-off-seed23-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam072-off-seed23/probe_B.npz",
+      "seed": 23,
+      "group": "seed23",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.72",
+      "view": "B",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam072-off-seed37-A",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam072-off-seed37/probe_A.npz",
+      "seed": 37,
+      "group": "seed37",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.72",
+      "view": "A",
+      "synthetic": false
+    },
+    {
+      "id": "N9-lam072-off-seed37-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/N9-lam072-off-seed37/probe_B.npz",
+      "seed": 37,
+      "group": "seed37",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.72",
+      "view": "B",
+      "synthetic": false
+    }
+  ]
+}

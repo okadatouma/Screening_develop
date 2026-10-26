@@ -1,0 +1,186 @@
+{
+  "batch_size": 16,
+  "debug": {
+    "check_nan": true,
+    "deterministic": true
+  },
+  "log": {
+    "restore_path": "",
+    "save_frequency": 0.0,
+    "save_path": "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/stress-width_short",
+    "stats_frequency": 1
+  },
+  "mcmc": {
+    "adapt_frequency": 100,
+    "blocks": 1,
+    "burn_in": 16,
+    "init_width": 1.0,
+    "move_width": 0.2,
+    "move_width_updater": "adaptive",
+    "spin_flips": 1,
+    "steps": 2
+  },
+  "network": {
+    "CustomPsiformer": {
+      "attn_dim": 32,
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "num_perceptrons_per_layer": 2,
+      "use_layer_norm": true,
+      "value_dim": 32
+    },
+    "CustomScreenformer": {
+      "attn_dim": 4,
+      "init_output_scale": 0.0,
+      "init_softmask_centres": null,
+      "init_softmask_rings": null,
+      "init_softmask_w_factor": 0.439854444316507,
+      "init_softmask_w_spread": 1.4142135623730951,
+      "init_trim_r": 1.9,
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 16,
+      "num_heads": 2,
+      "num_layers": 1,
+      "num_perceptrons_per_layer": 2,
+      "use_fixed_value": false,
+      "use_gate": true,
+      "use_layer_norm": true,
+      "use_output_scale": true,
+      "use_softmask": true,
+      "use_tanh_norm": true,
+      "value_dim": 4
+    },
+    "SlaterNet": {
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 128,
+      "num_layers": 4,
+      "num_perceptrons_per_layer": 2,
+      "use_layer_norm": true
+    },
+    "bias_orbitals": false,
+    "complex": true,
+    "determinants": 1,
+    "jastrow": "NONE",
+    "jastrow_kwargs": {
+      "ndim": 2
+    },
+    "make_envelope_fn": "periodicwave.envelopes.make_null_envelope",
+    "make_envelope_kwargs": {},
+    "make_feature_layer_fn": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+    "make_feature_layer_kwargs": {
+      "include_r_ae": false,
+      "lattice": [
+        [
+          5.713876841183744,
+          -2.856938420591872
+        ],
+        [
+          0.0,
+          4.948362498560705
+        ]
+      ]
+    },
+    "network_type": "CustomScreenformer"
+  },
+  "optim": {
+    "adam": {
+      "b1": 0.9,
+      "b2": 0.999,
+      "eps": 1e-08,
+      "eps_root": 0.0
+    },
+    "center_at_clip": true,
+    "clip_local_energy": 5.0,
+    "clip_median": false,
+    "iterations": 12,
+    "kfac": {
+      "cov_ema_decay": 0.95,
+      "cov_update_every": 1,
+      "damping": 0.001,
+      "invert_every": 1,
+      "l2_reg": 0.0,
+      "mean_center": true,
+      "min_damping": 1e-06,
+      "momentum": 0.0,
+      "momentum_type": "regular",
+      "norm_constraint": 0.001,
+      "register_only_generic": false
+    },
+    "laplacian": "default",
+    "local_energy_chunk": 4,
+    "lr": {
+      "decay": 1.0,
+      "delay": 20000.0,
+      "rate": 0.002
+    },
+    "objective": "vmc",
+    "optimizer": "adam",
+    "reset_if_nan": false,
+    "topology_regularization": {
+      "gamma": 0.0,
+      "landscape_grid": 21,
+      "landscape_levels": 3,
+      "max_samples": 4,
+      "mode": "off",
+      "perturb_sigma": 0.03,
+      "ph_floor": 0.0001,
+      "sampling_score": true
+    }
+  },
+  "phase_status": "candidate parameters only; physical phase not independently verified",
+  "screening_attention_settings": {
+    "CLIP_BETA": 0.3,
+    "CLIP_R": null,
+    "FREEZE_W": false,
+    "TRIM_MAX": 2.0,
+    "TRIM_POW": 2,
+    "WIN_SHAPE": "cos",
+    "jax_default_matmul_precision": "float32",
+    "jax_enable_x64": true
+  },
+  "seed": 11,
+  "system": {
+    "electrons": [
+      9,
+      0
+    ],
+    "init_pseudospin": "up",
+    "make_local_energy_fn": "periodicwave.pbc.lambda_jellium.local_energy",
+    "make_local_energy_kwargs": {
+      "delta": 15.0,
+      "flip_batch": 3,
+      "kinetic_kwargs": {
+        "laplacian_method": "default"
+      },
+      "lam": 0.33,
+      "lattice": [
+        [
+          5.713876841183744,
+          -2.856938420591872
+        ],
+        [
+          0.0,
+          4.948362498560705
+        ]
+      ],
+      "potential_kwargs": {
+        "interaction_energy_scale": 15.0
+      },
+      "potential_type": "Coulomb"
+    },
+    "ndim": 2,
+    "pbc_lattice": [
+      [
+        5.713876841183744,
+        -2.856938420591872
+      ],
+      [
+        0.0,
+        4.948362498560705
+      ]
+    ],
+    "pseudospin": true
+  }
+}

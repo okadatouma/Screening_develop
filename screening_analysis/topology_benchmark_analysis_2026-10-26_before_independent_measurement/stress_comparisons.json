@@ -1,0 +1,150 @@
+[
+  {
+    "id": "stress-width_short",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.21535124291439178,
+      "finite_mean": 0.21535124291439178,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-width_wide",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.21247773338890724,
+      "finite_mean": 0.21247773338890724,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-smooth7",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.04900149588391561,
+      "finite_mean": 0.04900149588391561,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-gauss_ring",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.10931743328920897,
+      "finite_mean": 0.10931743328920897,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-trim4",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.11041198562813594,
+      "finite_mean": 0.11041198562813594,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-heads4",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.10831872051764076,
+      "finite_mean": 0.10831872051764076,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-layers2",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.14830666291233738,
+      "finite_mean": 0.14830666291233738,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "stress-N4",
+    "status": "different N/cell: no identical-configuration comparison"
+  },
+  {
+    "id": "plane-reference-lam0.33",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.06396051482707696,
+      "finite_mean": 0.06396051482707696,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "plane-reference-lam0.72",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.03355121511771324,
+      "finite_mean": 0.03355121511771324,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "N9-lam033-off-seed11-step000000",
+    "completed_updates": 1,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.023221512959648978,
+      "finite_mean": 0.023221512959648978,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "N9-lam033-off-seed11-step000011",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.0,
+      "finite_mean": 0.0,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  },
+  {
+    "id": "N9-lam072-off-seed11-step000011",
+    "completed_updates": 12,
+    "reference_updates": 12,
+    "distance": {
+      "mean": 0.0,
+      "finite_mean": 0.0,
+      "infinite": 0,
+      "comparisons": 8,
+      "pairing": "identical configurations"
+    }
+  }
+]

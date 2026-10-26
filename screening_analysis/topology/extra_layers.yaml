@@ -1,0 +1,18 @@
+{
+  "seed": 20261026,
+  "nconf": 8,
+  "null_repeats": 1,
+  "runs": [
+    {
+      "id": "stress-layers2-B",
+      "probe": "../topology_benchmark_analysis_2026-10-26_final/stress-layers2/probe_B.npz",
+      "seed": 11,
+      "group": "seed11",
+      "phase": "unknown",
+      "phase_verified": false,
+      "condition": "lambda=0.33",
+      "view": "B",
+      "synthetic": false
+    }
+  ]
+}

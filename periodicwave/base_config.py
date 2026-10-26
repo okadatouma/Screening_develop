@@ -60,6 +60,13 @@ def default() -> ml_collections.ConfigDict:
           'center_at_clip': True,
           # 更新後にNaNが生じたら、パラメータとoptimizer状態を前ステップへ戻す。
           'reset_if_nan': False,
+          # 明示有効時のみ追加。PH / Laplacianスペクトル / 重み平滑化は別の目的。
+          'topology_regularization': {
+              'mode': 'off', 'gamma': 0., 'perturb_sigma': .03,
+              'max_samples': 8, 'ph_floor': 1e-4,
+              'landscape_levels': 3, 'landscape_grid': 21,
+              'sampling_score': True,
+          },
           # KFAC：勾配の曲率情報を近似して更新する。Adamとは別の設定群。
           'kfac': {
               'invert_every': 1,  # 曲率近似の逆行列を更新する間隔

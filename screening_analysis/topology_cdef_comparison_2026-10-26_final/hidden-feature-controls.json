@@ -1,0 +1,10086 @@
+{
+  "label": "synthetic ordered vs uniform; no WC/AHC labels",
+  "results": [
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.16666666666666666,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "cos",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.0,
+      "confusion": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "wide",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.16666666666666666,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.16666666666666666,
+      "confusion": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "smooth7",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "band",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.3333333333333333,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "sin",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "gauss",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_gram_spectrum_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.6666666666666666,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_mean_std_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L0",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L0",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L0",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "uniform",
+        "uniform",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.5,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L0",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L1",
+      "part": "PH_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "uniform",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.8333333333333334,
+      "confusion": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L1",
+      "part": "H0_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L1",
+      "part": "H1_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "ordered",
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 0.16666666666666666,
+      "confusion": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independent_groups": 3
+    },
+    {
+      "window": "fixed",
+      "feature": "E_PH_moments_L1",
+      "part": "distance_only",
+      "classes": [
+        "ordered",
+        "uniform"
+      ],
+      "predicted": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "actual": [
+        "ordered",
+        "uniform",
+        "uniform",
+        "ordered",
+        "ordered",
+        "uniform"
+      ],
+      "groups": [
+        11,
+        11,
+        23,
+        23,
+        37,
+        37
+      ],
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "independent_groups": 3
+    }
+  ],
+  "slices": "PH summaries H0[0:4], H1[4:8]; ordinary distance quantiles [8:12] are a SEPARATE baseline"
+}

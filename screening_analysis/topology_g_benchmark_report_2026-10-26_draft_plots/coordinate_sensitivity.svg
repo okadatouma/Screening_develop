@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440">
+<rect width="1100" height="440" fill="white"/>
+<g font-family="sans-serif" font-size="12" fill="#17232d">
+<text x="30" y="25" font-size="17">Small coordinate perturbations at shared inputs; no sampling-distribution claim</text>
+<text x="60" y="50">lambda=033</text>
+<path d="M60,65 V325 H500" fill="none" stroke="#89939c"/>
+<text x="20" y="73">0.0406</text>
+<text x="20" y="325">-0.00127</text>
+<text x="60" y="342">0.001</text>
+<text x="485" y="342">0.05</text>
+<text x="210" y="362">Cartesian displacement sigma (code length)</text>
+<text x="10" y="215" transform="rotate(-90 10 215)">paired completed-PH bottleneck</text>
+<polyline points="60.00,312.50 140.82,273.80 500.00,143.79" fill="none" stroke="#44566d" stroke-width="2"/>
+<text x="60" y="387" fill="#44566d">seed11</text>
+<polyline points="60.00,311.56 140.82,262.80 500.00,76.82" fill="none" stroke="#4d8e65" stroke-width="2"/>
+<text x="210" y="387" fill="#4d8e65">seed23</text>
+<polyline points="60.00,313.18 140.82,277.68 500.00,137.52" fill="none" stroke="#ca7b25" stroke-width="2"/>
+<text x="360" y="387" fill="#ca7b25">seed37</text>
+<text x="600" y="50">lambda=072</text>
+<path d="M600,65 V325 H1040" fill="none" stroke="#89939c"/>
+<text x="560" y="73">0.0414</text>
+<text x="560" y="325">-0.0014</text>
+<text x="600" y="342">0.001</text>
+<text x="1025" y="342">0.05</text>
+<text x="750" y="362">Cartesian displacement sigma (code length)</text>
+<text x="550" y="215" transform="rotate(-90 550 215)">paired completed-PH bottleneck</text>
+<polyline points="600.00,311.64 680.82,270.01 1040.00,126.84" fill="none" stroke="#44566d" stroke-width="2"/>
+<text x="600" y="387" fill="#44566d">seed11</text>
+<polyline points="600.00,311.06 680.82,264.19 1040.00,76.82" fill="none" stroke="#4d8e65" stroke-width="2"/>
+<text x="750" y="387" fill="#4d8e65">seed23</text>
+<polyline points="600.00,313.18 680.82,283.69 1040.00,191.25" fill="none" stroke="#ca7b25" stroke-width="2"/>
+<text x="900" y="387" fill="#ca7b25">seed37</text>
+</g></svg>

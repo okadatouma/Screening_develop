@@ -1,0 +1,7 @@
+{
+  "periodicwave/configs/run_lambda_jellium.py": "d586a56e81360f3091f704cc1d075eab64a7f632ac49c05955d67bff2ee50bc0",
+  "periodicwave/train_screen.py": "c3c93d3f1750c845d5143ba26c015873cc2e9989f783a0ae17e1868a7d7f97e5",
+  "periodicwave/topology_regularization.py": "b679b4fdeeaa7e12107ec8a43b0c783f6493cf1dd74787f855d59a0e72abb215",
+  "periodicwave/base_config.py": "7c2c59e618508afab22d821a67fce2f43143b6791aecedbf3ed676ed3f4f3611",
+  "screening_analysis/lambda_benchmark.py": "078201b3b0b371eb4669093f287477ac3039e6fb75d302cda297f5c77bd938d2"
+}

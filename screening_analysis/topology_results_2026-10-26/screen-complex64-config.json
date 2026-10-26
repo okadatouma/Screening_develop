@@ -1,0 +1,147 @@
+{
+  "batch_size": 64,
+  "debug": {
+    "check_nan": false,
+    "deterministic": true
+  },
+  "log": {
+    "restore_path": "",
+    "save_frequency": 0.0,
+    "save_path": "tests/g3a_validation/screen-complex64/run",
+    "stats_frequency": 1
+  },
+  "mcmc": {
+    "adapt_frequency": 100,
+    "blocks": 1,
+    "burn_in": 16,
+    "init_width": 1.0,
+    "move_width": 1.0,
+    "move_width_updater": "const",
+    "steps": 8
+  },
+  "network": {
+    "CustomPsiformer": {
+      "attn_dim": 32,
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 128,
+      "num_heads": 4,
+      "num_layers": 4,
+      "num_perceptrons_per_layer": 2,
+      "use_layer_norm": true,
+      "value_dim": 32
+    },
+    "CustomScreenformer": {
+      "attn_dim": 4,
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 8,
+      "num_heads": 1,
+      "num_layers": 1,
+      "num_perceptrons_per_layer": 1,
+      "use_layer_norm": false,
+      "value_dim": 4
+    },
+    "SlaterNet": {
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 128,
+      "num_layers": 4,
+      "num_perceptrons_per_layer": 2,
+      "use_layer_norm": true
+    },
+    "bias_orbitals": true,
+    "complex": true,
+    "determinants": 1,
+    "jastrow": "NONE",
+    "jastrow_kwargs": {
+      "ndim": 2
+    },
+    "make_envelope_fn": "periodicwave.envelopes.make_null_envelope",
+    "make_envelope_kwargs": {},
+    "make_feature_layer_fn": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+    "make_feature_layer_kwargs": {
+      "include_r_ae": false,
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ]
+    },
+    "network_type": "CustomScreenformer"
+  },
+  "optim": {
+    "adam": {
+      "b1": 0.9,
+      "b2": 0.999,
+      "eps": 1e-08,
+      "eps_root": 0.0
+    },
+    "center_at_clip": true,
+    "clip_local_energy": 0.0,
+    "clip_median": false,
+    "iterations": 16,
+    "kfac": {
+      "cov_ema_decay": 0.95,
+      "cov_update_every": 1,
+      "damping": 0.001,
+      "invert_every": 1,
+      "l2_reg": 0.0,
+      "mean_center": true,
+      "min_damping": 1e-06,
+      "momentum": 0.0,
+      "momentum_type": "regular",
+      "norm_constraint": 0.001,
+      "register_only_generic": false
+    },
+    "laplacian": "default",
+    "lr": {
+      "decay": 0.0,
+      "delay": 10000.0,
+      "rate": 0.01
+    },
+    "objective": "vmc",
+    "optimizer": "adam",
+    "reset_if_nan": false
+  },
+  "system": {
+    "electrons": [
+      1,
+      0
+    ],
+    "make_local_energy_fn": "periodicwave.pbc.hamiltonian.local_energy",
+    "make_local_energy_kwargs": {
+      "convergence_radius": 2,
+      "kinetic_kwargs": {
+        "laplacian_method": "folx"
+      },
+      "lattice": [
+        [
+          4.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "potential_kwargs": {
+        "interaction_energy_scale": 0.0
+      },
+      "potential_type": "Coulomb"
+    },
+    "ndim": 2,
+    "pbc_lattice": [
+      [
+        4.0,
+        0.0
+      ],
+      [
+        0.0,
+        4.0
+      ]
+    ]
+  }
+}

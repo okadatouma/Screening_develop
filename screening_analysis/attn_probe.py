@@ -92,7 +92,8 @@ def _centres_from(P, dref, NL):
     return (c, sg)
 
 
-def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, lattice=None):
+def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, lattice=None,
+          collect_internal=False, config_path=None, evaluation_data=None):
     """保存walkerを評価する。paramsを初期化せず、返却値Wはaggregation_weights。
 
     settingsはSETTINGS全項目のdict/JSONファイル、またはconfig内の同名記録を使う。
@@ -100,8 +101,10 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
     共通格子指定。設定の一時適用中に同じプロセスでProductionのtraceを並行しないこと。
     """
     folder = Path(folder)
-    cfg_path = folder / "config.json"
+    cfg_path = Path(config_path) if config_path is not None else folder / "config.json"
     cfg = json.loads(cfg_path.read_text())
+    if config_path is not None and 'config' in cfg:
+        cfg = cfg['config']
     if cfg["network"]["network_type"] != "CustomScreenformer" or cfg["system"]["ndim"] != 2:
         raise ValueError("この入口は2D CustomScreenformer専用です")
     effective, provenance = _effective_settings(cfg, settings, trim_max)
@@ -127,10 +130,23 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
         if a.shape[:2] != (devices, walkers):
             raise ValueError("checkpoint dataのdevice/walker軸が不一致: " + key)
         batch[key] = a.reshape((-1,) + a.shape[2:])
+    input_mode = 'saved_checkpoint_walkers'
+    available = devices*walkers
+    if evaluation_data is not None:
+        # Shared-input comparisons are diagnostic interventions, NOT samples
+        # newly drawn from this wavefunction. No checkpoint arrays are changed.
+        external = {key:np.asarray(evaluation_data[key]) for key in ('positions','spins','atoms','charges')}
+        available = len(external['positions'])
+        if available<1 or any(len(a)!=available for a in external.values()):
+            raise ValueError('evaluation_data must have aligned nonempty batch axes')
+        if external['positions'].shape[1:]!=(2*sum(cfg['system']['electrons']),) or external['spins'].shape[1:]!=(sum(cfg['system']['electrons']),):
+            raise ValueError('evaluation_data electron/coordinate dimensions differ')
+        if any(not np.isfinite(a).all() for a in external.values()):raise ValueError('nonfinite evaluation_data')
+        batch = external;input_mode = 'shared_external_configurations'
     if nconf is not None and (type(nconf) is not int or nconf <= 0):
         raise ValueError("nconfは正の整数です")
-    count = min(nconf or devices*walkers, devices*walkers)
-    indices = np.linspace(0, devices*walkers-1, count).astype(int)
+    count = min(nconf or available, available)
+    indices = np.linspace(0, available-1, count).astype(int)
     batch = {key: value[indices] for key, value in batch.items()}
     if not effective["jax_enable_x64"] and any(np.asarray(a).dtype == np.float64
             for a in jax.tree_util.tree_leaves((P, batch))):
@@ -204,10 +220,35 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
             results = {key: [] for key in ("S", "W", "W_window", "W_intervened", "Alpha", "d", "feature_rank_deficient", "finite_features")}
             if options.use_softmask:
                 results["Window"] = []
+            if collect_internal:
+                # Optional storage only: the diagnostic and Production kernels are unchanged.
+                for key in ('q', 'k', 'q_normalized', 'k_normalized', 'hidden_input',
+                            'hidden_output', 'head_vectors', 'head_bias', 'attention_output'):
+                    results[key] = []
+                for key in (('pair_features',) if options.use_fixed_value else
+                            ('v', 'v_normalized', 'v_effective')):
+                    results[key] = []
             # walkerだけのループ。Transformerのループ/式は正式APIと共有し、再実装しない。
             for i in range(count):
                 pos, spins, atoms, charges = (jnp.asarray(batch[k][i]) for k in ("positions", "spins", "atoms", "charges"))
                 x, layers = diagnostic(P, pos, spins, atoms, charges)
+                if collect_internal:
+                    from screening_analysis.head_contrib import projected_heads
+                    for key in ('q', 'k', 'q_normalized', 'k_normalized', 'v',
+                                'v_normalized', 'v_effective', 'pair_features'):
+                        if key in results:
+                            results[key].append(np.stack([np.asarray(r['attention'][key]) for r in layers]))
+                    for key, source in (('hidden_input', 'input'), ('hidden_output', 'output'),
+                                        ('attention_output', 'attention_output')):
+                        results[key].append(np.stack([np.asarray(r[source]) for r in layers]))
+                    heads, biases = [], []
+                    for record, ap in zip(layers, P['layers']['attention']):
+                        scale = jnp.exp(ap['out_scale']) if options.use_output_scale else 1.
+                        c, bias = projected_heads(record['attention']['gate_output'],
+                                                 ap['attn_output'], options.num_heads, scale)
+                        heads.append(np.asarray(c)); biases.append(np.asarray(bias))
+                    results['head_vectors'].append(np.stack(heads))
+                    results['head_bias'].append(np.stack(biases))
                 for key, source in (("S", "similarity"), ("W", "aggregation_weights"),
                                     ("W_window", "weights_window"), ("W_intervened", "weights"), ("Alpha", "alpha")):
                     results[key].append(np.stack([np.asarray(layer["attention"][source]) for layer in layers]))
@@ -218,6 +259,13 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
                 results["feature_rank_deficient"].append(bool(state["feature_rank_deficient"]))
                 results["finite_features"].append(bool(state["finite_features"]))
             result = {key: np.asarray(value) for key, value in results.items()}
+            if collect_internal:
+                c = result['head_vectors']  # [B,L,N,H,E]; signed cross terms retain cancellation.
+                result['head_gram'] = np.einsum('blnhe,blnke->blhk', c, c) / c.shape[2]
+                gram = result['head_gram']
+                denominator = np.trace(gram, axis1=-2, axis2=-1)
+                result['head_cancellation_ratio'] = np.divide(gram.sum(axis=(-1,-2)), denominator,
+                    out=np.full_like(denominator, np.nan), where=denominator > 0)
             widths, centres, representative, trim, shells = [], [], [], [], []
             # 以下は表示用のcheckpointパラメータ読出しのみ。Weightは再計算しない。
             for ap in P["layers"]["attention"]:
@@ -240,8 +288,17 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
     result["metadata"] = dict(method="screenformer-diagnostic-v1", weight_definition="aggregation_weights",
         legacy_weight_definition="Trim^2 * legacy window, before fixed-Value diagonal removal and interventions",
         interpretation="independent diagnostic reevaluation; not Production-internal bit patterns",
+        collect_internal=collect_internal, fixed_value=options.use_fixed_value,
+        window_parameters=[{key:np.asarray(value).tolist() for key,value in ap.items()
+                            if key.startswith('mask_')} for ap in P['layers']['attention']],
+        seed=cfg.get('seed', cfg.get('debug', {}).get('seed')),
+        debug_config=cfg.get('debug', {}), hamiltonian=cfg['system'].get('make_local_energy_kwargs', {}),
         checkpoint=str(ck.resolve()), checkpoint_sha256=hashlib.sha256(ck.read_bytes()).hexdigest(),
         config_sha256=hashlib.sha256(cfg_path.read_bytes()).hexdigest(), step=step,
+        config_path=str(cfg_path.resolve()),
+        input_mode=input_mode,
+        evaluation_input_sha256=hashlib.sha256(b''.join(np.ascontiguousarray(batch[k]).tobytes() for k in
+            ('positions','spins','atoms','charges'))).hexdigest(),
         settings=effective, settings_provenance=provenance, lattice_override=lattice is not None,
         selected_indices=indices.tolist(), saved_devices=devices,
         feature_factory=feature_name, feature_kwargs=network.get("make_feature_layer_kwargs", {}),
@@ -315,11 +372,14 @@ if __name__ == "__main__":
     parser.add_argument("--trim-max", type=float)
     parser.add_argument("--nconf", type=int)
     parser.add_argument("--output")
+    parser.add_argument("--collect-internal", action="store_true")
+    parser.add_argument("--config-path", help="明示した外部config。effective-configのconfigラッパーも対応")
     args = parser.parse_args()
     output = Path(args.output) if args.output else Path(args.folder) / "attn_probe_diagnostic_v1.npz"
     if output.exists():
         parser.error("既存出力は上書きしません: " + str(output))
-    a = probe(args.folder, args.checkpoint, args.trim_max, args.nconf, settings=args.settings, lattice=args.lattice)
+    a = probe(args.folder, args.checkpoint, args.trim_max, args.nconf, settings=args.settings, lattice=args.lattice,
+              collect_internal=args.collect_internal, config_path=args.config_path)
     summarize(a)
     save_probe(a, output)
     print("  saved:", output)

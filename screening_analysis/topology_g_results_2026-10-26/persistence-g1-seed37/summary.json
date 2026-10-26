@@ -1,0 +1,44 @@
+{
+  "id": "persistence-g1-seed37",
+  "seed": 37,
+  "seed_group": "seed37",
+  "label": "unknown",
+  "label_verified": false,
+  "model": "free N4 polarized fermions, L=4 square",
+  "regularizer": {
+    "mode": "persistence",
+    "gamma": 1.0,
+    "perturb_sigma": 0.03,
+    "max_samples": 4,
+    "ph_floor": 0.0001,
+    "landscape_levels": 3,
+    "landscape_grid": 21,
+    "sampling_score": true
+  },
+  "iterations": 64,
+  "exact_ground_energy": 3.7011016504085092,
+  "energy_units": "total code units",
+  "init": "random Screenformer; same seed/initial samples across variants",
+  "status": "complete",
+  "nan_steps": 0,
+  "nan_rate_observed": 0.0,
+  "measurement": {
+    "energy": 3.6935822263252183,
+    "imaginary_energy": 0.028548526544748848,
+    "variance_abs_complex": 1.902554535188663,
+    "variance_real": 1.5267176441991783,
+    "independent_chain_sem": 0.07559586701294435,
+    "sweeps": 32,
+    "chains": 16,
+    "burn": 32
+  },
+  "common_configuration_stability": {
+    "persistence": 0.005169190060286629,
+    "laplacian": 0.00034661616542325035,
+    "weights": 0.03255083559863201
+  },
+  "median_update_seconds_excluding_first3": 0.0032375003211200237,
+  "first_step_seconds": 0.0050062090158462524,
+  "training_energy_final": 4.073247012631388,
+  "convergence_status": "short finite-budget trajectory, not independently converged"
+}

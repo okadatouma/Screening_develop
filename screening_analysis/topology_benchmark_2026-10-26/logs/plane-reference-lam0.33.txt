@@ -1,0 +1,15 @@
+Jax Devices: [CpuDevice(id=0)]
+[λJ] N = 9 (3x3), r_s = 15.0, lam = 0.33, Delta = 15.0 (= 1.0 x 2/r_s Ry), a = 1.9046, flips/step = 1, init spin = up
+[λJ] d_ref = 1.9291, value = 学習 W_V
+[λJ] 入れ子窓 w_h = 1.905, 1.929   [learnable]
+[λJ] lj2：HF の表 /Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/lower_band_plane_wave_reference.txt、カスプ (++, --, +-) = 1.1718, 5.0000, 5.6958、Jastrow なし、網の初期の大きさ 0.05、密度の山 r0 = (-0.019, 0.034)、山/谷 = 1.00
+Folder '/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/plane-reference-lam0.33' does not exist.
+Device and environment info logged to /Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/plane-reference-lam0.33/device_info.log
+'config.json' does not exist in the folder '/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/plane-reference-lam0.33'.
+Configuration saved as JSON to /Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/plane-reference-lam0.33/config.json
+[SEED] seed = 11  (tag = plane-reference-lam0.33)
+[λJ] HF の軌道 /Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/lower_band_plane_wave_reference.txt：k 9 点、G 1 本、lam = 0.33、カスプ (++, --, +-) = (1.1717834544176235, 5.0, 5.69584203531422)、網の初期の大きさ 0.05、Jastrow なし
+making construct_input_features with periodic norm
+making 2DCoulomb potential with energy scale: 15.0
+[λ-jellium] lam = 0.33, Delta = 15.0 (code units; Delta/r_s = 1), r_s = 15.0, laplacian = default, flip_batch = 3, potential = Coulomb
+'train_stats.csv' does not exist in the folder '/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_benchmark_2026-10-26/plane-reference-lam0.33'.

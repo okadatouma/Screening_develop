@@ -1,0 +1,423 @@
+{
+  "run": {
+    "id": "synthetic-band-seed11-ordered",
+    "group": "seed11",
+    "phase": "unknown",
+    "synthetic_geometry": "ordered",
+    "window": "band",
+    "seed": 11
+  },
+  "probe_metadata": {
+    "method": "screenformer-diagnostic-v1",
+    "weight_definition": "aggregation_weights",
+    "legacy_weight_definition": "Trim^2 * legacy window, before fixed-Value diagonal removal and interventions",
+    "interpretation": "independent diagnostic reevaluation; not Production-internal bit patterns",
+    "collect_internal": true,
+    "fixed_value": false,
+    "window_parameters": [
+      {
+        "mask_centre": [
+          0.0,
+          0.4000000059604645,
+          0.800000011920929
+        ],
+        "mask_omega": [
+          -0.709632933139801,
+          -0.709632933139801,
+          -0.709632933139801
+        ]
+      },
+      {
+        "mask_centre": [
+          0.0,
+          0.4000000059604645,
+          0.800000011920929
+        ],
+        "mask_omega": [
+          -0.709632933139801,
+          -0.709632933139801,
+          -0.709632933139801
+        ]
+      }
+    ],
+    "seed": 11,
+    "debug_config": {},
+    "hamiltonian": {},
+    "checkpoint": "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_results_2026-10-26/inputs/synthetic-band-seed11-ordered/qmcjax_ckpt_000000.npz",
+    "checkpoint_sha256": "8382165270d6e9647a7e180917fef3e3e771094c7c18428bcb4389ae8573fb1d",
+    "config_sha256": "cecaa357b3f3de4cfc9d785e855b4f299852c0e75110c45d9a2992c364a86893",
+    "step": 0,
+    "config_path": "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_results_2026-10-26/inputs/synthetic-band-seed11-ordered/config.json",
+    "settings": {
+      "TRIM_MAX": 2.0,
+      "TRIM_POW": 2,
+      "WIN_SHAPE": "cos",
+      "FREEZE_W": false,
+      "CLIP_R": null,
+      "CLIP_BETA": 0.3,
+      "jax_enable_x64": true,
+      "jax_default_matmul_precision": "float32"
+    },
+    "settings_provenance": {
+      "recorded_keys": [
+        "CLIP_BETA",
+        "CLIP_R",
+        "FREEZE_W",
+        "TRIM_MAX",
+        "TRIM_POW",
+        "WIN_SHAPE",
+        "jax_default_matmul_precision",
+        "jax_enable_x64"
+      ],
+      "explicit_keys": []
+    },
+    "lattice_override": false,
+    "selected_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "saved_devices": 1,
+    "feature_factory": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+    "feature_kwargs": {
+      "lattice": [
+        [
+          3.0,
+          -1.5
+        ],
+        [
+          0.0,
+          2.598076211353316
+        ]
+      ],
+      "include_r_ae": false
+    },
+    "network_options": {
+      "num_layers": 2,
+      "num_heads": 3,
+      "attn_dim": 4,
+      "value_dim": 4,
+      "mlp_dim": 16,
+      "num_perceptrons_per_layer": 1,
+      "use_layer_norm": true,
+      "mlp_activation_fct": "GELU",
+      "use_softmask": true,
+      "use_gate": true,
+      "use_tanh_norm": true,
+      "use_fixed_value": false,
+      "use_output_scale": true,
+      "init_output_scale": 0.0,
+      "init_trim_r": 1.9,
+      "init_softmask_w_factor": 0.7,
+      "init_softmask_w_spread": 2.0,
+      "init_softmask_centres": [
+        [
+          0.0,
+          0.4,
+          0.8
+        ],
+        [
+          0.4,
+          0.4,
+          0.4
+        ]
+      ]
+    },
+    "jax": "0.7.2",
+    "jaxlib": "0.7.2",
+    "numpy": "2.3.3",
+    "parameter_dtypes": [
+      "float32"
+    ],
+    "input_dtypes": {
+      "positions": "float32",
+      "spins": "float32",
+      "atoms": "float32",
+      "charges": "float32"
+    },
+    "backend": "cpu",
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "xla_flags": null,
+    "runtime_settings_recovered_from_checkpoint": false,
+    "source_sha256": {
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/network_blocks.py": "c2a8c40fd3649feb778c74f5d2d0d4751d717293cb4d0fdc844fbac030aec767",
+      "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/attn_probe.py": "f31d1731672f3bfba8e4b7d6d3923ed6553f0cff78cbc215771567823f93d137",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/CustomScreenformer.py": "ec2e71e8bacec97b082d6f02c7069c9d045ddfa58d75e7e97d5b21f2ac1d23cd",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/pbc/feature_layer.py": "8f82252acafbb3a340543d0a2e353e2bade34755393a262afea4ed627d4065ad",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/attention.py": "26201bb548b02ea722e97bb356704d7e5a67e83c8ca022cf3aa8d0e3c1e49fa5",
+      "/Users/toma/academic/reserch/projects/Screening_develop/periodicwave/networks.py": "8eca73aa42fa25ae62bf1ec781f383f4c416b664b5b27c0614341f2fef6225b6"
+    },
+    "wavefunction_status": "not evaluated; feature rank flag alone does not certify wavefunction stability",
+    "synthetic": "untrained random network, prescribed geometry; NOT |psi|^2 samples or physical phase"
+  },
+  "shape": [
+    12,
+    2,
+    3,
+    9
+  ],
+  "random_seed": 20261026,
+  "null_repeats": 2,
+  "aggregates": [
+    {
+      "source": "window",
+      "control": "raw",
+      "support_density": 0.4220679012345679,
+      "weight_mean": 0.2867207801833753,
+      "weight_std": 0.07548674442652342,
+      "beta0_auc": 6.245642701525054,
+      "beta1_auc": 0.03812636165577342,
+      "H0_total_persistence": 2.366678009105647,
+      "H0_max_persistence": 0.3366427855495925,
+      "H0_finite_intervals": 5.138888888888889,
+      "H0_essential_intervals": 3.861111111111111,
+      "H1_total_persistence": 0.033715042485513574,
+      "H1_max_persistence": 0.015660879381647574,
+      "H1_finite_intervals": 1.3055555555555556,
+      "H1_essential_intervals": 0.3611111111111111,
+      "rank0_probability": 0.6683006535947712,
+      "rank1_probability": 0.007625272331154683,
+      "rank2_probability": 0.32407407407407407
+    },
+    {
+      "source": "window",
+      "control": "rank",
+      "support_density": 0.4220679012345679,
+      "weight_mean": 0.22029320987654322,
+      "weight_std": 0.19105080930016682,
+      "beta0_auc": 5.0931372549019605,
+      "beta1_auc": 0.275599128540305,
+      "H0_total_persistence": 1.1938902918069585,
+      "H0_max_persistence": 0.34259259259259256,
+      "H0_finite_intervals": 4.472222222222222,
+      "H0_essential_intervals": 3.861111111111111,
+      "H1_total_persistence": 0.21604938271604937,
+      "H1_max_persistence": 0.09104938271604938,
+      "H1_finite_intervals": 1.3055555555555556,
+      "H1_essential_intervals": 0.3611111111111111,
+      "rank0_probability": 0.704248366013072,
+      "rank1_probability": 0.07026143790849673,
+      "rank2_probability": 0.22549019607843135
+    },
+    {
+      "source": "window",
+      "control": "shuffle",
+      "support_density": 0.4220679012345679,
+      "weight_mean": 0.2867207801833753,
+      "weight_std": 0.07548674442652342,
+      "beta0_auc": 6.242919389978214,
+      "beta1_auc": 0.05446623093681917,
+      "H0_total_persistence": 2.301410150932583,
+      "H0_max_persistence": 0.3361370368956334,
+      "H0_finite_intervals": 5.076388888888889,
+      "H0_essential_intervals": 3.923611111111111,
+      "H1_total_persistence": 0.04953677005931066,
+      "H1_max_persistence": 0.028510107074121313,
+      "H1_finite_intervals": 1.2430555555555556,
+      "H1_essential_intervals": 0.3472222222222222,
+      "rank0_probability": 0.6673474945533768,
+      "rank1_probability": 0.00394880174291939,
+      "rank2_probability": 0.3287037037037037
+    },
+    {
+      "source": "trim",
+      "control": "raw",
+      "support_density": 0.9830246913580246,
+      "weight_mean": 0.2729047261672954,
+      "weight_std": 0.1490035832933753,
+      "beta0_auc": 5.266884531590413,
+      "beta1_auc": 0.201797385620915,
+      "H0_total_persistence": 4.274851295891373,
+      "H0_max_persistence": 0.6699845144678729,
+      "H0_finite_intervals": 8.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.20486996569695654,
+      "H1_max_persistence": 0.09788427774660069,
+      "H1_finite_intervals": 2.4166666666666665,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.5806100217864923,
+      "rank1_probability": 0.08197167755991286,
+      "rank2_probability": 0.33741830065359474
+    },
+    {
+      "source": "trim",
+      "control": "rank",
+      "support_density": 0.9830246913580246,
+      "weight_mean": 0.5054012345679012,
+      "weight_std": 0.29274777862037005,
+      "beta0_auc": 2.098856209150327,
+      "beta1_auc": 0.38888888888888895,
+      "H0_total_persistence": 1.0319480634520564,
+      "H0_max_persistence": 0.32055981184697185,
+      "H0_finite_intervals": 7.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.3953116231762065,
+      "H1_max_persistence": 0.17803907126823793,
+      "H1_finite_intervals": 2.4166666666666665,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.18954248366013074,
+      "rank1_probability": 0.14324618736383443,
+      "rank2_probability": 0.6672113289760347
+    },
+    {
+      "source": "trim",
+      "control": "shuffle",
+      "support_density": 0.9830246913580246,
+      "weight_mean": 0.2729047261672954,
+      "weight_std": 0.14900358329337532,
+      "beta0_auc": 5.179330065359476,
+      "beta1_auc": 0.2656590413943355,
+      "H0_total_persistence": 4.18528590553268,
+      "H0_max_persistence": 0.6446733002742416,
+      "H0_finite_intervals": 8.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.27318416556643643,
+      "H1_max_persistence": 0.13107375164364735,
+      "H1_finite_intervals": 3.5833333333333335,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.5968137254901961,
+      "rank1_probability": 0.0494281045751634,
+      "rank2_probability": 0.3537581699346405
+    },
+    {
+      "source": "screening",
+      "control": "raw",
+      "support_density": 0.41705246913580246,
+      "weight_mean": 0.07591576522666019,
+      "weight_std": 0.04793945281825232,
+      "beta0_auc": 7.806644880174293,
+      "beta1_auc": 0.053649237472766884,
+      "H0_total_persistence": 3.9466854943293046,
+      "H0_max_persistence": 0.5649977642098043,
+      "H0_finite_intervals": 5.097222222222222,
+      "H0_essential_intervals": 3.9027777777777777,
+      "H1_total_persistence": 0.0487004649454214,
+      "H1_max_persistence": 0.025661476956361815,
+      "H1_finite_intervals": 0.8333333333333334,
+      "H1_essential_intervals": 0.3194444444444444,
+      "rank0_probability": 0.8880718954248367,
+      "rank1_probability": 0.025326797385620912,
+      "rank2_probability": 0.08660130718954248
+    },
+    {
+      "source": "screening",
+      "control": "rank",
+      "support_density": 0.41705246913580246,
+      "weight_mean": 0.2177854938271605,
+      "weight_std": 0.1892384173814167,
+      "beta0_auc": 5.143246187363834,
+      "beta1_auc": 0.184640522875817,
+      "H0_total_persistence": 1.2034571909571907,
+      "H0_max_persistence": 0.3468885281385281,
+      "H0_finite_intervals": 4.430555555555555,
+      "H0_essential_intervals": 3.9027777777777777,
+      "H1_total_persistence": 0.12461419753086418,
+      "H1_max_persistence": 0.0640432098765432,
+      "H1_finite_intervals": 0.8333333333333334,
+      "H1_essential_intervals": 0.3194444444444444,
+      "rank0_probability": 0.7061546840958606,
+      "rank1_probability": 0.07734204793028322,
+      "rank2_probability": 0.21650326797385622
+    },
+    {
+      "source": "screening",
+      "control": "shuffle",
+      "support_density": 0.41705246913580246,
+      "weight_mean": 0.0759157652266602,
+      "weight_std": 0.04793945281825232,
+      "beta0_auc": 7.81781045751634,
+      "beta1_auc": 0.09177559912854032,
+      "H0_total_persistence": 3.8928128545944265,
+      "H0_max_persistence": 0.5680917610053782,
+      "H0_finite_intervals": 5.034722222222222,
+      "H0_essential_intervals": 3.9652777777777777,
+      "H1_total_persistence": 0.08730233199860432,
+      "H1_max_persistence": 0.04378035466914322,
+      "H1_finite_intervals": 1.2083333333333333,
+      "H1_essential_intervals": 0.3055555555555556,
+      "rank0_probability": 0.8816721132897604,
+      "rank1_probability": 0.020016339869281044,
+      "rank2_probability": 0.09831154684095861
+    },
+    {
+      "source": "qk",
+      "control": "raw",
+      "support_density": 1.0,
+      "weight_mean": 0.4727798454685044,
+      "weight_std": 0.14491913512314428,
+      "beta0_auc": 3.810185185185185,
+      "beta1_auc": 0.17238562091503265,
+      "H0_total_persistence": 2.7857470644526776,
+      "H0_max_persistence": 0.4606319133213219,
+      "H0_finite_intervals": 8.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.17585356459922374,
+      "H1_max_persistence": 0.0818532549155569,
+      "H1_finite_intervals": 2.513888888888889,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.3951525054466231,
+      "rank1_probability": 0.06345315904139433,
+      "rank2_probability": 0.5413943355119826
+    },
+    {
+      "source": "qk",
+      "control": "rank",
+      "support_density": 1.0,
+      "weight_mean": 0.5138888888888888,
+      "weight_std": 0.2885637415231004,
+      "beta0_auc": 2.102668845315904,
+      "beta1_auc": 0.3826252723311547,
+      "H0_total_persistence": 1.0378086419753088,
+      "H0_max_persistence": 0.3263888888888889,
+      "H0_finite_intervals": 7.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.38850308641975306,
+      "H1_max_persistence": 0.17245370370370372,
+      "H1_finite_intervals": 2.513888888888889,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.1898148148148148,
+      "rank1_probability": 0.12962962962962965,
+      "rank2_probability": 0.6805555555555556
+    },
+    {
+      "source": "qk",
+      "control": "shuffle",
+      "support_density": 1.0,
+      "weight_mean": 0.47277984546850427,
+      "weight_std": 0.14491913512314428,
+      "beta0_auc": 3.749046840958605,
+      "beta1_auc": 0.26742919389978215,
+      "H0_total_persistence": 2.7228523935761264,
+      "H0_max_persistence": 0.4405872497082929,
+      "H0_finite_intervals": 8.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.27334885813793947,
+      "H1_max_persistence": 0.13130117297718236,
+      "H1_finite_intervals": 3.513888888888889,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.39637799564270154,
+      "rank1_probability": 0.05215141612200436,
+      "rank2_probability": 0.551470588235294
+    }
+  ],
+  "statistical_unit": "independent training group, NOT walkers/heads/checkpoints",
+  "absent_window": "identity window (ones)",
+  "geometry": "exp(-periodic_norm/dref); cutoff=-dref*log(t), strict d<cutoff; shortest-image edges",
+  "essential": "infinite deaths retained in diagrams; excluded from finite persistence/landscape, counted separately",
+  "source_sha256": {
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology_run.py": "dac84fe5d13f5bc9829bdb9138586a42ce010f6373511e9d553604f85ec3e850",
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/topology.py": "3efbc4636b80f4bcabd15ae62dfee1adbb01759bfb0dab2e7d8ad601fa7da92f",
+    "/Users/toma/academic/reserch/projects/Screening_develop/screening_analysis/graph_wind.py": "24cc1ac7ef14be9c41f63f5013f339af2ad5bfbc2cafac36fde84ce4e1f14c6b"
+  }
+}

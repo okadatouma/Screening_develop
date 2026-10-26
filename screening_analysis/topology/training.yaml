@@ -1,0 +1,99 @@
+{
+  "description": "UNEXECUTED scale-up template. Change platform to cuda only on an available GPU. No inferred physical labels.",
+  "defaults": {
+    "rs": 15,
+    "iterations": 2000,
+    "platform": "cpu",
+    "env": {
+      "PW_OPTIMIZER": "adam",
+      "PW_BATCH": 64,
+      "PW_WIDTH": 32,
+      "PW_HEADS": 2,
+      "PW_ATTN_DIM": 8,
+      "PW_VALUE_DIM": 8,
+      "PW_DET": 1,
+      "PW_LAPL": "default",
+      "PW_SEED_FROM_TAG": 0,
+      "PW_MCMC_STEPS": 10,
+      "PW_BURN_IN": 256,
+      "PW_SAVE_MIN": 0,
+      "PW_TOPO_MODE": "off",
+      "PW_TOPO_GAMMA": 0,
+      "PW_CHECK_NAN": 1
+    }
+  },
+  "jobs": [
+    {
+      "id": "N9-lam0.33-seed101",
+      "n": 9,
+      "lam": 0.33,
+      "seed": 101
+    },
+    {
+      "id": "N9-lam0.33-seed211",
+      "n": 9,
+      "lam": 0.33,
+      "seed": 211
+    },
+    {
+      "id": "N9-lam0.33-seed307",
+      "n": 9,
+      "lam": 0.33,
+      "seed": 307
+    },
+    {
+      "id": "N9-lam0.33-seed401",
+      "n": 9,
+      "lam": 0.33,
+      "seed": 401
+    },
+    {
+      "id": "N9-lam0.33-seed503",
+      "n": 9,
+      "lam": 0.33,
+      "seed": 503
+    },
+    {
+      "id": "N9-lam0.33-seed601",
+      "n": 9,
+      "lam": 0.33,
+      "seed": 601
+    },
+    {
+      "id": "N9-lam0.72-seed101",
+      "n": 9,
+      "lam": 0.72,
+      "seed": 101
+    },
+    {
+      "id": "N9-lam0.72-seed211",
+      "n": 9,
+      "lam": 0.72,
+      "seed": 211
+    },
+    {
+      "id": "N9-lam0.72-seed307",
+      "n": 9,
+      "lam": 0.72,
+      "seed": 307
+    },
+    {
+      "id": "N9-lam0.72-seed401",
+      "n": 9,
+      "lam": 0.72,
+      "seed": 401
+    },
+    {
+      "id": "N9-lam0.72-seed503",
+      "n": 9,
+      "lam": 0.72,
+      "seed": 503
+    },
+    {
+      "id": "N9-lam0.72-seed601",
+      "n": 9,
+      "lam": 0.72,
+      "seed": 601
+    }
+  ]
+}

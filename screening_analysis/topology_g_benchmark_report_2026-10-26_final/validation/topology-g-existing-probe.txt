@@ -1,0 +1,366 @@
+test_all_devices_subsampling_and_provenance (tests.check_attn_probe.AttnProbeChecks.test_all_devices_subsampling_and_provenance) ... ok
+test_api_and_legacy_by_condition (tests.check_attn_probe.AttnProbeChecks.test_api_and_legacy_by_condition) ... <saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpo9mkl6ar/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp2r5yrljb/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpwovguzp4/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpw4p5pnq7/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp5mh0lqxp/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpnz528z9w/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpvl57y1e9/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpbq7j7zv3/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp3c_psbw2/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpuduzoocv/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpce29a49c/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmprzyaqpbe/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmptjxeh1ja/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpuqmtrll6/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpticjgqxm/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpx2z96w56/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpfl6z0u73/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp81d9unyg/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp6g6m_go6/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmplfdse1p4/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpx8i710yq/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpoydmccqw/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmpcc5smqv4/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<saved legacy attn_probe>:60: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/xq/35m3wy016756dkg_h2r_nlhh0000gn/T/tmp3m7u7pmo/config.json' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_cli_uses_separate_name_and_refuses_overwrite (tests.check_attn_probe.AttnProbeChecks.test_cli_uses_separate_name_and_refuses_overwrite) ... ok
+test_missing_settings_and_lossy_config_do_not_guess (tests.check_attn_probe.AttnProbeChecks.test_missing_settings_and_lossy_config_do_not_guess) ... ok
+test_rank_warning_is_not_a_wavefunction_certificate (tests.check_attn_probe.AttnProbeChecks.test_rank_warning_is_not_a_wavefunction_certificate) ... ok
+test_saving_keeps_old_and_new_outputs_intact (tests.check_attn_probe.AttnProbeChecks.test_saving_keeps_old_and_new_outputs_intact) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 93.127s
+
+OK
+
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+Using customized local_energy from pbc.hamiltonian 
+local_energy, using folx with complex_output: True
+making 2DCoulomb potential with energy scale: 2.0
+get_jastrow: NOT using Jastrow
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm
+making construct_input_features with periodic norm

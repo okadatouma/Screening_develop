@@ -1,0 +1,612 @@
+{
+  "case": "same exactly validated continuous-space two-fermion G; frozen untrained-network Windows, not WC/AHC",
+  "integration": "sum_{layer,head,triangle} m_ab*m_bc*m_ca*Im(G_abG_bcG_ca) / sum mass; invariant under Head permutations",
+  "empty_mass": "undefined (null), no epsilon normalization",
+  "basis": {
+    "lattice": [
+      [
+        3.0,
+        -1.5
+      ],
+      [
+        0.0,
+        2.598076211353316
+      ]
+    ],
+    "integer_modes": [
+      [
+        -2,
+        -2
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -1,
+        -2
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        -2
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        -2
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "components": null,
+    "dimension": 25,
+    "centres": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -0.30000000000000004,
+        0.5196152422706632
+      ],
+      [
+        -0.6000000000000001,
+        1.0392304845413265
+      ],
+      [
+        -0.8999999999999999,
+        1.5588457268119895
+      ],
+      [
+        -1.2000000000000002,
+        2.078460969082653
+      ],
+      [
+        0.6000000000000001,
+        0.0
+      ],
+      [
+        0.30000000000000004,
+        0.5196152422706632
+      ],
+      [
+        5.551115123125783e-17,
+        1.0392304845413265
+      ],
+      [
+        -0.2999999999999999,
+        1.5588457268119895
+      ],
+      [
+        -0.6,
+        2.078460969082653
+      ],
+      [
+        1.2000000000000002,
+        0.0
+      ],
+      [
+        0.9000000000000001,
+        0.5196152422706632
+      ],
+      [
+        0.6000000000000001,
+        1.0392304845413265
+      ],
+      [
+        0.3000000000000002,
+        1.5588457268119895
+      ],
+      [
+        1.1102230246251565e-16,
+        2.078460969082653
+      ],
+      [
+        1.7999999999999998,
+        0.0
+      ],
+      [
+        1.4999999999999998,
+        0.5196152422706632
+      ],
+      [
+        1.1999999999999997,
+        1.0392304845413265
+      ],
+      [
+        0.8999999999999999,
+        1.5588457268119895
+      ],
+      [
+        0.5999999999999998,
+        2.078460969082653
+      ],
+      [
+        2.4000000000000004,
+        0.0
+      ],
+      [
+        2.1000000000000005,
+        0.5196152422706632
+      ],
+      [
+        1.8000000000000003,
+        1.0392304845413265
+      ],
+      [
+        1.5000000000000004,
+        1.5588457268119895
+      ],
+      [
+        1.2000000000000002,
+        2.078460969082653
+      ]
+    ],
+    "basis": "fixed finite Fourier subspace, optionally unitary localized DVR",
+    "trace": "projected particle number; equals N only for a complete occupied subspace"
+  },
+  "results": [
+    {
+      "window": "cos",
+      "integrated_window_loop_mean": -2.6269834574965244e-06,
+      "integrated_mass": 119.2831206454432,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 28.95369002747018,
+          "weighted_loop": -1.4102681290418285e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 44.9558028495294,
+          "weighted_loop": -7.748641185325135e-07,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 38.9787182481628,
+          "weighted_loop": 2.5935791960730667e-06,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 6.394909520280815,
+          "weighted_loop": 4.489527750732805e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    },
+    {
+      "window": "wide",
+      "integrated_window_loop_mean": 1.339812195323699e-07,
+      "integrated_mass": 911.4918845009039,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 112.0077733427049,
+          "weighted_loop": -1.410268129041829e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 266.14150156699884,
+          "weighted_loop": -7.748641185325176e-07,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 417.4845669370329,
+          "weighted_loop": 2.593579196073064e-06,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 115.85804265416715,
+          "weighted_loop": 7.1223103498405054e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    },
+    {
+      "window": "smooth7",
+      "integrated_window_loop_mean": -4.291615561330265e-06,
+      "integrated_mass": 111.5108036352965,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 37.05522077256309,
+          "weighted_loop": -1.4102681290418281e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 44.40139132136193,
+          "weighted_loop": -7.748641185325029e-07,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 26.68678002499602,
+          "weighted_loop": 2.593579196073078e-06,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 3.3674115163754763,
+          "weighted_loop": 2.734217657664868e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    },
+    {
+      "window": "band",
+      "integrated_window_loop_mean": 2.054507572318976e-06,
+      "integrated_mass": 384.3366779003219,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 34.30500525643487,
+          "weighted_loop": -1.4102681290418274e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 30.61857072705933,
+          "weighted_loop": -7.748641185325365e-07,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 163.11011949550402,
+          "weighted_loop": 2.5935791960730472e-06,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 156.3029824213237,
+          "weighted_loop": 5.592352599723188e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    },
+    {
+      "window": "sin",
+      "integrated_window_loop_mean": -1.4065959164345139e-05,
+      "integrated_mass": 7.1876316775555695,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 7.163948444536183,
+          "weighted_loop": -1.4102681290418274e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 0.023683233019387014,
+          "weighted_loop": -2.957871947268628e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    },
+    {
+      "window": "gauss",
+      "integrated_window_loop_mean": -1.3497505064628176e-05,
+      "integrated_mass": 4.847931066289948,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 4.636263727034045,
+          "weighted_loop": -1.4102681290418268e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 0.14476744352477247,
+          "weighted_loop": -7.74864118532495e-07,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 0.04596064519206937,
+          "weighted_loop": 2.593579196073047e-06,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 0.02093925053906034,
+          "weighted_loop": -2.781946522370019e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    },
+    {
+      "window": "fixed",
+      "integrated_window_loop_mean": -2.6269834574965244e-06,
+      "integrated_mass": 119.2831206454432,
+      "perimeter_bands": [
+        {
+          "perimeter_low": 0.0,
+          "perimeter_high": 0.6000000000600002,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 0.6000000000600002,
+          "perimeter_high": 1.2000000001200004,
+          "count": 0,
+          "window_mass": 0.0,
+          "weighted_loop": null,
+          "unweighted_loop": null
+        },
+        {
+          "perimeter_low": 1.2000000001200004,
+          "perimeter_high": 1.8000000001800007,
+          "count": 50,
+          "window_mass": 28.95369002747018,
+          "weighted_loop": -1.4102681290418285e-05,
+          "unweighted_loop": -1.410268129041829e-05
+        },
+        {
+          "perimeter_low": 1.8000000001800007,
+          "perimeter_high": 2.400000000240001,
+          "count": 150,
+          "window_mass": 44.9558028495294,
+          "weighted_loop": -7.748641185325135e-07,
+          "unweighted_loop": -7.74864118532519e-07
+        },
+        {
+          "perimeter_low": 2.400000000240001,
+          "perimeter_high": 3.000000000300001,
+          "count": 300,
+          "window_mass": 38.9787182481628,
+          "weighted_loop": 2.5935791960730667e-06,
+          "unweighted_loop": 2.5935791960730633e-06
+        },
+        {
+          "perimeter_low": 3.000000000300001,
+          "perimeter_high": 3.6000000003600015,
+          "count": 100,
+          "window_mass": 6.394909520280815,
+          "weighted_loop": 4.489527750732805e-06,
+          "unweighted_loop": 7.865957295302668e-06
+        }
+      ]
+    }
+  ]
+}
