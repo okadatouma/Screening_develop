@@ -1,0 +1,429 @@
+{
+  "run": {
+    "id": "N36-lam0.72-ahc-off-seed101",
+    "folder": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/production/N36-lam0.72-ahc-off-seed101/training/N36-lam0.72-ahc-off-seed101/run",
+    "config_path": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/production/N36-lam0.72-ahc-off-seed101/training/N36-lam0.72-ahc-off-seed101/run/runtime_config.json",
+    "nconf": 8,
+    "group": "seed101",
+    "phase": "unknown",
+    "phase_verified": false,
+    "initial_hf_kind": "ahc"
+  },
+  "probe_metadata": {
+    "method": "screenformer-diagnostic-v1",
+    "weight_definition": "aggregation_weights",
+    "legacy_weight_definition": "Trim^2 * legacy window, before fixed-Value diagonal removal and interventions",
+    "interpretation": "independent diagnostic reevaluation; not Production-internal bit patterns",
+    "collect_internal": true,
+    "fixed_value": false,
+    "window_parameters": [
+      {
+        "mask_omega": [
+          -0.06359905004501343,
+          0.031614676117897034
+        ]
+      }
+    ],
+    "seed": 101,
+    "debug_config": {
+      "check_nan": true,
+      "deterministic": true
+    },
+    "hamiltonian": {
+      "delta": 15.0,
+      "flip_batch": 6,
+      "kinetic_kwargs": {
+        "laplacian_method": "folx"
+      },
+      "lam": 0.72,
+      "lattice": [
+        [
+          11.427753682367488,
+          -5.713876841183744
+        ],
+        [
+          0.0,
+          9.89672499712141
+        ]
+      ],
+      "potential_kwargs": {
+        "interaction_energy_scale": 15.0
+      },
+      "potential_type": "Coulomb"
+    },
+    "checkpoint": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/production/N36-lam0.72-ahc-off-seed101/training/N36-lam0.72-ahc-off-seed101/run/qmcjax_ckpt_079999.npz",
+    "checkpoint_sha256": "b44e9284fd899f63d6c245c2d4f1efdaaf278061f635aaca289927ae0409c8bb",
+    "config_sha256": "3e97a85dc0a3b5b084cce2277f5d3566ec5401cd0f0533dda588fbabf9929e8c",
+    "step": 79999,
+    "config_path": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/production/N36-lam0.72-ahc-off-seed101/training/N36-lam0.72-ahc-off-seed101/run/runtime_config.json",
+    "input_mode": "saved_checkpoint_walkers",
+    "evaluation_input_sha256": "c9b29a14d5dc544a51f6c61950db5a2fc431c2ebcde0e1516e758e253c5d2720",
+    "settings": {
+      "CLIP_BETA": 0.3,
+      "CLIP_R": null,
+      "FREEZE_W": false,
+      "TRIM_MAX": 2.0,
+      "TRIM_POW": 4,
+      "WIN_SHAPE": "smooth7",
+      "jax_default_matmul_precision": "float32",
+      "jax_enable_x64": true
+    },
+    "settings_provenance": {
+      "recorded_keys": [
+        "CLIP_BETA",
+        "CLIP_R",
+        "FREEZE_W",
+        "TRIM_MAX",
+        "TRIM_POW",
+        "WIN_SHAPE",
+        "jax_default_matmul_precision",
+        "jax_enable_x64"
+      ],
+      "explicit_keys": []
+    },
+    "lattice_override": false,
+    "selected_indices": [
+      0,
+      9,
+      18,
+      27,
+      36,
+      45,
+      54,
+      63
+    ],
+    "saved_devices": 1,
+    "feature_factory": "periodicwave.pbc.feature_layer.make_pbc_feature_layer",
+    "feature_kwargs": {
+      "include_r_ae": false,
+      "lattice": [
+        [
+          11.427753682367488,
+          -5.713876841183744
+        ],
+        [
+          0.0,
+          9.89672499712141
+        ]
+      ]
+    },
+    "network_options": {
+      "attn_dim": 8,
+      "init_output_scale": 0.0,
+      "init_softmask_centres": null,
+      "init_softmask_rings": null,
+      "init_softmask_w_factor": 0.7026049101702706,
+      "init_softmask_w_spread": 1.423274994986383,
+      "init_trim_r": 1.9,
+      "lj_cusps": [
+        0.30207829869502173,
+        5.0,
+        1.7092069279854147
+      ],
+      "lj_hf_path": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/hf/hf_N36_lam0.72_ahc.txt",
+      "lj_jastrow": true,
+      "lj_lam": 0.72,
+      "lj_net_scale": 0.05,
+      "mlp_activation_fct": "GELU",
+      "mlp_dim": 32,
+      "num_heads": 2,
+      "num_layers": 1,
+      "num_perceptrons_per_layer": 2,
+      "use_fixed_value": false,
+      "use_gate": true,
+      "use_layer_norm": true,
+      "use_output_scale": true,
+      "use_softmask": true,
+      "use_tanh_norm": true,
+      "value_dim": 8
+    },
+    "jax": "0.7.2",
+    "jaxlib": "0.7.2",
+    "numpy": "2.3.3",
+    "parameter_dtypes": [
+      "float32",
+      "float64"
+    ],
+    "input_dtypes": {
+      "positions": "float64",
+      "spins": "float64",
+      "atoms": "float64",
+      "charges": "float64"
+    },
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "xla_flags": null,
+    "runtime_settings_recovered_from_checkpoint": false,
+    "source_sha256": {
+      "/home/tomax/projects/Screening_topology_gpu/periodicwave/pbc/feature_layer.py": "8f82252acafbb3a340543d0a2e353e2bade34755393a262afea4ed627d4065ad",
+      "/home/tomax/projects/Screening_topology_gpu/periodicwave/CustomScreenformer.py": "ec2e71e8bacec97b082d6f02c7069c9d045ddfa58d75e7e97d5b21f2ac1d23cd",
+      "/home/tomax/projects/Screening_topology_gpu/periodicwave/networks.py": "8eca73aa42fa25ae62bf1ec781f383f4c416b664b5b27c0614341f2fef6225b6",
+      "/home/tomax/projects/Screening_topology_gpu/screening_analysis/attn_probe.py": "b284960b37e60cf4153f3b3a19869102eeba38fcd9b077772a2d121665bb3fc2",
+      "/home/tomax/projects/Screening_topology_gpu/periodicwave/attention.py": "26201bb548b02ea722e97bb356704d7e5a67e83c8ca022cf3aa8d0e3c1e49fa5",
+      "/home/tomax/projects/Screening_topology_gpu/periodicwave/network_blocks.py": "c2a8c40fd3649feb778c74f5d2d0d4751d717293cb4d0fdc844fbac030aec767"
+    },
+    "wavefunction_status": "not evaluated; feature rank flag alone does not certify wavefunction stability"
+  },
+  "shape": [
+    8,
+    1,
+    2,
+    36
+  ],
+  "random_seed": 20261026,
+  "null_repeats": 1,
+  "aggregates": [
+    {
+      "source": "window",
+      "control": "raw",
+      "support_density": 0.2177579365079365,
+      "weight_mean": 0.0358327881843237,
+      "weight_std": 0.12392632447339984,
+      "beta0_auc": 19.583333333333332,
+      "beta1_auc": 1.2879901960784315,
+      "H0_total_persistence": 18.61108144793051,
+      "H0_max_persistence": 0.8648834132613439,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.7326606261920733,
+      "H1_max_persistence": 0.14105046823506964,
+      "H1_finite_intervals": 11.6875,
+      "H1_essential_intervals": 4.5625,
+      "rank0_probability": 0.8026960784313726,
+      "rank1_probability": 0.022058823529411766,
+      "rank2_probability": 0.1752450980392157
+    },
+    {
+      "source": "window",
+      "control": "rank",
+      "support_density": 0.2177579365079365,
+      "weight_mean": 0.10967261904761905,
+      "weight_std": 0.247253649939974,
+      "beta0_auc": 6.254901960784314,
+      "beta1_auc": 4.889705882352941,
+      "H0_total_persistence": 4.994657443034775,
+      "H0_max_persistence": 0.3668824771618946,
+      "H0_finite_intervals": 34.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 2.3154805684987654,
+      "H1_max_persistence": 0.5003267848352654,
+      "H1_finite_intervals": 11.6875,
+      "H1_essential_intervals": 4.5625,
+      "rank0_probability": 0.3026960784313726,
+      "rank1_probability": 0.030637254901960786,
+      "rank2_probability": 0.6666666666666667
+    },
+    {
+      "source": "window",
+      "control": "shuffle",
+      "support_density": 0.2177579365079365,
+      "weight_mean": 0.0358327881843237,
+      "weight_std": 0.12392632447339984,
+      "beta0_auc": 19.645833333333332,
+      "beta1_auc": 4.802696078431373,
+      "H0_total_persistence": 18.67821410804065,
+      "H0_max_persistence": 0.9341562359230668,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 1.353205881959153,
+      "H1_max_persistence": 0.2663087561213864,
+      "H1_finite_intervals": 18.875,
+      "H1_essential_intervals": 34.75,
+      "rank0_probability": 0.6102941176470589,
+      "rank1_probability": 0.08946078431372548,
+      "rank2_probability": 0.30024509803921573
+    },
+    {
+      "source": "trim",
+      "control": "raw",
+      "support_density": 1.0,
+      "weight_mean": 0.07880514767226957,
+      "weight_std": 0.06795575507734222,
+      "beta0_auc": 30.536764705882355,
+      "beta1_auc": 18.6078431372549,
+      "H0_total_persistence": 29.69778003846988,
+      "H0_max_persistence": 0.9171800806790614,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 19.12173786657697,
+      "H1_max_persistence": 0.07691574150033789,
+      "H1_finite_intervals": 137.8125,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.8406862745098038,
+      "rank1_probability": 0.0024509803921568627,
+      "rank2_probability": 0.1568627450980392
+    },
+    {
+      "source": "trim",
+      "control": "rank",
+      "support_density": 1.0,
+      "weight_mean": 0.5007936507936508,
+      "weight_std": 0.2886747709322828,
+      "beta0_auc": 4.252450980392156,
+      "beta1_auc": 35.205882352941174,
+      "H0_total_persistence": 2.9280753968253967,
+      "H0_max_persistence": 0.38948412698412693,
+      "H0_finite_intervals": 34.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 35.917361111111106,
+      "H1_max_persistence": 0.39761904761904765,
+      "H1_finite_intervals": 137.8125,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.05514705882352941,
+      "rank1_probability": 0.036764705882352935,
+      "rank2_probability": 0.9080882352941178
+    },
+    {
+      "source": "trim",
+      "control": "shuffle",
+      "support_density": 1.0,
+      "weight_mean": 0.07880514767226957,
+      "weight_std": 0.06795575507734222,
+      "beta0_auc": 30.459558823529413,
+      "beta1_auc": 0.012254901960784314,
+      "H0_total_persistence": 29.553939899093194,
+      "H0_max_persistence": 0.84898085589779,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.23946170131306865,
+      "H1_max_persistence": 0.017341906980594415,
+      "H1_finite_intervals": 59.75,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.8431372549019608,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.1568627450980392
+    },
+    {
+      "source": "screening",
+      "control": "raw",
+      "support_density": 0.2177579365079365,
+      "weight_mean": 0.0028216464872684354,
+      "weight_std": 0.01302304365241889,
+      "beta0_auc": 34.14828431372548,
+      "beta1_auc": 0.10294117647058824,
+      "H0_total_persistence": 33.45466403454989,
+      "H0_max_persistence": 0.9953982313529015,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.05121905958145202,
+      "H1_max_persistence": 0.018301295220281108,
+      "H1_finite_intervals": 13.75,
+      "H1_essential_intervals": 4.5625,
+      "rank0_probability": 0.9803921568627451,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.0196078431372549
+    },
+    {
+      "source": "screening",
+      "control": "rank",
+      "support_density": 0.2177579365079365,
+      "weight_mean": 0.10967261904761905,
+      "weight_std": 0.247253649939974,
+      "beta0_auc": 6.25,
+      "beta1_auc": 5.422794117647058,
+      "H0_total_persistence": 4.991377960138778,
+      "H0_max_persistence": 0.37140894577598405,
+      "H0_finite_intervals": 34.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 2.8647623000050246,
+      "H1_max_persistence": 0.5164200319706826,
+      "H1_finite_intervals": 13.75,
+      "H1_essential_intervals": 4.5625,
+      "rank0_probability": 0.2990196078431373,
+      "rank1_probability": 0.0661764705882353,
+      "rank2_probability": 0.6348039215686274
+    },
+    {
+      "source": "screening",
+      "control": "shuffle",
+      "support_density": 0.2177579365079365,
+      "weight_mean": 0.0028216464872684354,
+      "weight_std": 0.01302304365241889,
+      "beta0_auc": 34.131127450980394,
+      "beta1_auc": 0.6593137254901962,
+      "H0_total_persistence": 33.45542432255444,
+      "H0_max_persistence": 0.9981284587964269,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.05241412356344757,
+      "H1_max_persistence": 0.01602012034975052,
+      "H1_finite_intervals": 20.5,
+      "H1_essential_intervals": 32.4375,
+      "rank0_probability": 0.9669117647058822,
+      "rank1_probability": 0.011029411764705881,
+      "rank2_probability": 0.022058823529411763
+    },
+    {
+      "source": "qk",
+      "control": "raw",
+      "support_density": 1.0,
+      "weight_mean": 0.4996533100578972,
+      "weight_std": 0.14089043181742494,
+      "beta0_auc": 13.636029411764707,
+      "beta1_auc": 40.3357843137255,
+      "H0_total_persistence": 12.465811212453664,
+      "H0_max_persistence": 0.4808170277825385,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 40.516891973555644,
+      "H1_max_persistence": 0.16120643724337086,
+      "H1_finite_intervals": 137.8125,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.35539215686274506,
+      "rank1_probability": 0.0,
+      "rank2_probability": 0.6446078431372548
+    },
+    {
+      "source": "qk",
+      "control": "rank",
+      "support_density": 1.0,
+      "weight_mean": 0.5007936507936508,
+      "weight_std": 0.2886747709322828,
+      "beta0_auc": 4.2463235294117645,
+      "beta1_auc": 35.212009803921575,
+      "H0_total_persistence": 2.9217261904761904,
+      "H0_max_persistence": 0.3883928571428571,
+      "H0_finite_intervals": 34.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 35.95466269841269,
+      "H1_max_persistence": 0.39513888888888893,
+      "H1_finite_intervals": 137.8125,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.05514705882352941,
+      "rank1_probability": 0.036764705882352935,
+      "rank2_probability": 0.9080882352941178
+    },
+    {
+      "source": "qk",
+      "control": "shuffle",
+      "support_density": 1.0,
+      "weight_mean": 0.4996533100578972,
+      "weight_std": 0.14089043181742494,
+      "beta0_auc": 13.400735294117649,
+      "beta1_auc": 0.05024509803921569,
+      "H0_total_persistence": 12.267759621894958,
+      "H0_max_persistence": 0.3544536504985067,
+      "H0_finite_intervals": 35.0,
+      "H0_essential_intervals": 1.0,
+      "H1_total_persistence": 0.23478885073965938,
+      "H1_max_persistence": 0.01019496482515355,
+      "H1_finite_intervals": 59.9375,
+      "H1_essential_intervals": 0.0,
+      "rank0_probability": 0.3566176470588235,
+      "rank1_probability": 0.0012254901960784314,
+      "rank2_probability": 0.642156862745098
+    }
+  ],
+  "statistical_unit": "independent training group, NOT walkers/heads/checkpoints",
+  "absent_window": "identity window (ones)",
+  "geometry": "exp(-periodic_norm/dref); cutoff=-dref*log(t), strict d<cutoff; shortest-image edges",
+  "essential": "infinite deaths retained in diagrams; excluded from finite persistence/landscape, counted separately",
+  "source_sha256": {
+    "/home/tomax/projects/Screening_topology_gpu/screening_analysis/topology_run.py": "0549ca81cde8aea6477cde8b47b21ce18ddf601581acf1e851325dab18248bb2",
+    "/home/tomax/projects/Screening_topology_gpu/screening_analysis/topology/__init__.py": "da013a0547ebb2e5200eeffd5feea4b864e42154d03d40defb1ea7ade150be68",
+    "/home/tomax/projects/Screening_topology_gpu/screening_analysis/topology/persistence.py": "3efbc4636b80f4bcabd15ae62dfee1adbb01759bfb0dab2e7d8ad601fa7da92f",
+    "/home/tomax/projects/Screening_topology_gpu/screening_analysis/graph_wind.py": "24cc1ac7ef14be9c41f63f5013f339af2ad5bfbc2cafac36fde84ce4e1f14c6b"
+  }
+}

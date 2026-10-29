@@ -1,0 +1,66 @@
+#!/bin/bash
+#SBATCH --job-name=vmc
+#SBATCH --partition=debug
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:1
+#SBATCH --mem=16G
+#SBATCH --output=vmc-%A_%a.log
+#SBATCH --array=0-1%2
+
+
+set -euo pipefail
+cd /home/tomax/projects/Screening_topology_gpu
+
+PYTHON=/home/tomax/venvs/screening-gpu/bin/python
+
+# デバイス・スレッド
+export JAX_PLATFORMS=cuda,cpu
+export JAX_ENABLE_X64=1
+export XLA_PYTHON_CLIENT_PREALLOCATE=false
+export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
+export OPENBLAS_NUM_THREADS="$SLURM_CPUS_PER_TASK"
+export MKL_NUM_THREADS="$SLURM_CPUS_PER_TASK"
+
+
+# 1 GPU per condition; both conditions may run concurrently.
+#ちゃんと対応するλのHF表が存在することを確認する
+case "${SLURM_ARRAY_TASK_ID:?Submit with sbatch}" in
+  0) LAM=.33; HF_KIND=wc ;;
+  1) LAM=.72; HF_KIND=ahc ;;
+  *) echo "Unexpected array index" >&2; exit 1 ;;
+esac
+
+# 計算条件：N36、WC/AHCのHF初期状態を比較（学習後の相は未検証）
+export PW_OPTIMIZER=adam
+export PW_LR=.05 PW_LR_DELAY=160000.  #元はPW_LR=.002
+export PW_BATCH=64 PW_EL_CHUNK=8 PW_FLIP_BATCH=6
+export PW_LAYERS=1 PW_HEADS=2
+export PW_ATTN_DIM=8 PW_VALUE_DIM=8 PW_WIDTH=32 PW_DET=1
+export PW_MCMC_STEPS=10 PW_BURN_IN=256
+export PW_LAPL=folx
+export PW_WIN_SHAPE=smooth7 PW_TRIM_POW=4
+export PW_TOPO_MODE=off PW_TOPO_GAMMA=0
+export PW_SEED=101 PW_SEED_FROM_TAG=0
+export PW_SAVE_MIN=15 PW_CHECK_NAN=1
+
+# 入力と保存先：ジョブIDごとに保存
+export PW_LJ_HF="$PWD/gpu_runs/20261026/hf/hf_N36_lam0${LAM}_${HF_KIND}.txt"
+RUN_ROOT="$PWD/results/manual/array-${SLURM_ARRAY_JOB_ID}/lam0${LAM}-${HF_KIND}"
+export PW_OUTPUT_DIR="$RUN_ROOT/training"
+test -r "$PW_LJ_HF"
+
+# GPU確認
+"$PYTHON" -c \
+  'import jax; print(jax.devices()); assert jax.default_backend() == "gpu"; assert len(jax.devices()) == 1'
+
+# 電子数 rs λ 更新回数 ラベル
+"$PYTHON" -u -m periodicwave.configs.run_lambda_jellium \
+  36 15 "$LAM" "${VMC_ITERATIONS:-80000}" "${HF_KIND}-${SLURM_JOB_ID}"
+
+# Fresh sampling uses the allocated GPU; PH/winding runs on CPU afterwards.
+"$PYTHON" -u -m screening_analysis.manual_job_analysis \
+  "$PW_OUTPUT_DIR" --output "$RUN_ROOT/analysis" \
+  --initial-hf "$HF_KIND" --seed "$PW_SEED" \
+  --sweeps "${VMC_ANALYSIS_SWEEPS:-512}"

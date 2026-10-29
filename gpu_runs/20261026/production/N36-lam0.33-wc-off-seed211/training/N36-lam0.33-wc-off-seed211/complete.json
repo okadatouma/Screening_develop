@@ -1,0 +1,42 @@
+{
+  "signature": {
+    "config": {
+      "id": "N36-lam0.33-wc-off-seed211",
+      "n": 36,
+      "rs": 15,
+      "lam": 0.33,
+      "seed": 211,
+      "iterations": 80000,
+      "platform": "cuda,cpu",
+      "initial_hf_kind": "wc",
+      "phase_verified": false,
+      "env": {
+        "PW_OPTIMIZER": "adam",
+        "PW_LR": ".002",
+        "PW_LR_DELAY": "20000",
+        "PW_BATCH": "64",
+        "PW_EL_CHUNK": "8",
+        "PW_FLIP_BATCH": "6",
+        "PW_HEADS": "2",
+        "PW_ATTN_DIM": "8",
+        "PW_VALUE_DIM": "8",
+        "PW_WIDTH": "32",
+        "PW_DET": "1",
+        "PW_LAYERS": "1",
+        "PW_MCMC_STEPS": "10",
+        "PW_BURN_IN": "256",
+        "PW_SAVE_MIN": "15",
+        "PW_WIN_SHAPE": "smooth7",
+        "PW_TRIM_POW": "4",
+        "PW_CHECK_NAN": "1",
+        "PW_TOPO_SAMPLES": "2",
+        "PW_LAPL": "folx",
+        "PW_SEED_FROM_TAG": "0",
+        "PW_LJ_HF": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/hf/hf_N36_lam0.33_wc.txt",
+        "PW_TOPO_MODE": "off",
+        "PW_TOPO_GAMMA": "0"
+      }
+    }
+  },
+  "status": "executed; physical phase unverified"
+}

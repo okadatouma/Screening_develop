@@ -1,0 +1,14 @@
+[
+  {
+    "sample": 0,
+    "critical_cutoff1": 1.8129214504872695,
+    "critical_cutoff2": 1.8289241520630484,
+    "ambiguous_embedding": false
+  },
+  {
+    "sample": 1,
+    "critical_cutoff1": 1.7186839392591766,
+    "critical_cutoff2": 1.9102567122438079,
+    "ambiguous_embedding": false
+  }
+]

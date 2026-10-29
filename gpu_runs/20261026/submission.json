@@ -1,0 +1,20 @@
+{
+  "job_id": 2437,
+  "submitted_at_utc": "2026-10-26T03:35:39.769718+00:00",
+  "cwd": "/home/tomax/projects/Screening_topology_gpu",
+  "command": "sbatch --parsable --array=0-29%2 gpu_runs/20261026/production.sbatch",
+  "iterations": 80000,
+  "max_parallel": 2,
+  "tasks": 30,
+  "source_commit": "d451f1d",
+  "python": "/home/tomax/venvs/screening-gpu/bin/python",
+  "successful_pilots": [
+    2433,
+    2436
+  ],
+  "failed_pilot": {
+    "job_id": 2434,
+    "reason": "PH host callback required CPU backend; corrected to JAX_PLATFORMS=cuda,cpu"
+  },
+  "analysis": "After training: 500-step blocking over last 20000 updates, stationarity flag, internal PH and torus winding; optimized physical phases remain unverified"
+}

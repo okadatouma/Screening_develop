@@ -1,0 +1,16 @@
+{
+  "seed": 307,
+  "null_repeats": 1,
+  "runs": [
+    {
+      "id": "N36-lam0.33-wc-off-seed307",
+      "folder": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/production/N36-lam0.33-wc-off-seed307/training/N36-lam0.33-wc-off-seed307/run",
+      "config_path": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/production/N36-lam0.33-wc-off-seed307/training/N36-lam0.33-wc-off-seed307/run/runtime_config.json",
+      "nconf": 8,
+      "group": "seed307",
+      "phase": "unknown",
+      "phase_verified": false,
+      "initial_hf_kind": "wc"
+    }
+  ]
+}

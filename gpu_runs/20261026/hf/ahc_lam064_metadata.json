@@ -1,0 +1,12 @@
+{
+  "kind": "ahc",
+  "n": 36,
+  "rs": 15.0,
+  "lam": 0.64,
+  "gcut": 2.01,
+  "C": 1.0,
+  "residual": 9.450808324025849e-08,
+  "converged": true,
+  "used": "scf",
+  "sha256": "089a83dd7c7fa3120b364c6243c5b88b12c92a38bcf192970d346ca98f206e36"
+}

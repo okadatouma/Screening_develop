@@ -1,0 +1,14 @@
+{
+  "null_repeats": 1,
+  "runs": [
+    {
+      "id": "pilot-wc",
+      "folder": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/pilot-2433",
+      "config_path": "/home/tomax/projects/Screening_topology_gpu/gpu_runs/20261026/pilot-2433/runtime_config.json",
+      "nconf": 2,
+      "group": "pilot",
+      "phase": "unknown",
+      "phase_verified": false
+    }
+  ]
+}

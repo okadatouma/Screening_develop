@@ -1,0 +1,16 @@
+{
+  "kind": "ahc",
+  "n": 36,
+  "L": 6,
+  "rs": 15.0,
+  "lam": 0.72,
+  "gcut": 2.01,
+  "C": 1.0,
+  "target_C": 1,
+  "residual": 9.816201423928916e-08,
+  "iterations": 156,
+  "energy": -282.95729143560436,
+  "seconds": 19.45094919204712,
+  "converged": true,
+  "sha256": "324e73485280d1474e4ec2616d77508f8e7e228e3a03133fa9f0cd59d0e08fe1"
+}
