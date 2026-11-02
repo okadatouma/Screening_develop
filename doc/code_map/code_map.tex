@@ -30,6 +30,7 @@
 \newcommand{\fm}[1]{\texttt{#1}}                          % 関数名・コード
 \newcommand{\fp}[1]{{\scriptsize\texttt{#1}}}             % 長いパス
 \newcommand{\bs}{\boldsymbol}
+\newcommand{\rf}[1]{{\color{nw}\footnotesize 参照：\texttt{\textbf{lj\_reference/#1}}}}   % 参照用コードのファイル
 \tikzset{
   x=1mm, y=1mm,
   head/.style={rounded corners=1.2mm, fill=#1, text=white, font=\normalsize\bfseries,
@@ -52,7 +53,7 @@
 \node[anchor=north west, font=\LARGE\bfseries, text=ink] at (0,281)
   {PeriodicWave（wada\_dev）のファイルの地図 ── λ-jellium の WC と AHC の計算};
 \node[anchor=north west, font=\small, text=sub, text width=300mm, align=flush left] at (0.4,272.4)
-  {どの工程でどのファイルが呼ばれるか。①〜⑦ は工程の順で、⑤ は ④ の中で毎回呼ばれる。2026-11-02 の wada\_dev による。};
+  {どの工程でどのファイルが呼ばれるか。①〜⑦ は工程の順で、⑤ は ④ の中で毎回呼ばれる。「参照」は \fn{lj\_reference/} の同じ段のファイル（本体のうち lj3 で通る部分だけを段ごとに書き直したもの。本体と同じ値を出す）。2026-11-02 の wada\_dev による。};
 \begin{scope}[shift={(306,281)}]
   \node[anchor=north west, font=\footnotesize\bfseries, text=ink] at (0,0) {箱の枠の色 ＝ 走る場所};
   \foreach \c/\t [count=\k from 0] in {pc/PC（Windows）,sv/計算サーバ（Slurm・GPU）,cl/クラウドか PC の CPU,nw/ネットワークの中（⑤）}{
@@ -116,7 +117,8 @@
    ・出発点：HF の密度の山の格子にウォーカーを置く\\[0.2ex]
    ・保存先（run ごと）：\\
    \hspace*{1em}\fp{results/lambda-jellium/CustomScreenformer/}\\
-   \hspace*{1em}\fp{N36\_rs15\_lam\{λ\}\_\{タグ\}/}};
+   \hspace*{1em}\fp{N36\_rs15\_lam\{λ\}\_\{タグ\}/}\\[0.3ex]
+   \rf{model.py}（run の \fm{config.json} とチェックポイントを読む）};
 \node[file=sv, below=\gap of c1.south west, anchor=north west] (c2)
   {\fm{train\_screen.train(cfg)} を呼ぶ（④）};
 \draw[call] (c1) -- (c2);
@@ -128,11 +130,12 @@
    初期化：ネットワークを作る（\fm{CustomScreenformer.make\_fermi\_net}、⑤）。ウォーカーは格子点のまわり、擬スピンは乱数};
 \node[file=sv, below=\gap of d1.south west, anchor=north west] (d2)
   {\textbf{1 step}（約 4 万回くりかえす）\\[0.4ex]
-   1. サンプル：\fn{mcmc.py}。全電子を動かす提案 1 回ごとに、擬スピン反転の提案（\fm{mh\_spin\_flip}）を 3 回\\[0.3ex]
-   2. 局所エネルギー $E_L=H\psi/\psi$：\fn{pbc/lambda\_jellium.py}（運動エネルギーと λ の項、擬スピン反転の項、$\Delta n_-$）。クーロン（Ewald）は \fn{pbc/hamiltonian.py}\\[0.3ex]
-   3. 勾配：\fn{loss.py}。$E=\langle E_L\rangle$、\\
+   ④-1 サンプル：\fn{mcmc.py}。全電子を動かす提案 1 回ごとに、擬スピン反転の提案（\fm{mh\_spin\_flip}）を 3 回\\[0.3ex]
+   ④-2 局所エネルギー $E_L=H\psi/\psi$：\fn{pbc/lambda\_jellium.py}（運動エネルギーと λ の項、擬スピン反転の項、$\Delta n_-$）。クーロン（Ewald）は \fn{pbc/hamiltonian.py}\\[0.3ex]
+   ④-3 勾配：\fn{loss.py}。$E=\langle E_L\rangle$、\\
    \hspace*{1em}$\partial E/\partial\theta=2\,\mathrm{Re}\langle(E_L-E)\,O^{*}\rangle$、$O=\partial\ln\psi/\partial\theta$\\[0.3ex]
-   4. 更新：KFAC（\fm{kfac\_jax}、\fn{curvature\_tags\_and\_blocks.py}）\\[0.4ex]
+   ④-4 更新：KFAC（\fm{kfac\_jax}、\fn{curvature\_tags\_and\_blocks.py}）\\[0.4ex]
+   {\color{nw}\footnotesize 参照：\texttt{\textbf{lj\_reference/}} の ④-1 \fn{sampling.py}、④-2 \fn{hamiltonian.py}、④-3・4 \fn{gradient.py}}\\[0.4ex]
    {\scriptsize\color{sub}$\Delta$：上のバンドを抑えるエネルギー（$2/r_s$ Ry）、$n_-$：擬スピン $-1$ の電子の数、$\theta$：⑤ の学習で動くパラメータ}};
 \node[data=sv, below=\gap of d2.south west, anchor=north west] (d3)
   {書き出し：\fn{checkpoint.py} → \fm{qmcjax\_ckpt\_*.npz}（15 分ごと）、\fn{utils/writers.py} → \fm{train\_stats.csv}。690 分で自分で止まる（\fm{PW\_MAX\_MINUTES}）};
@@ -202,28 +205,33 @@
    電子 $i$ の位置 $\bs r_i$ と擬スピン $s_i=\pm1$（$i=1,\dots,36$）\\[0.4ex]
    $R=\{(\bs r_i,s_i)\}$：全電子の配置};
 \node[nwbox] (n2) at ($(yb)+(59,0)$)
-  {\textbf{特徴}\quad\fn{pbc/feature\_layer.py}\\
+  {\textbf{⑤-1 特徴}\quad\fn{pbc/feature\_layer.py}\\
    $(\sin2\pi\bs u_i,\ \cos2\pi\bs u_i)$、$\bs u_i=A^{-1}\bs r_i$（$A$：セルの格子ベクトル）\\[0.4ex]
-   対の距離 $d_{ij}$（周期ノルム）};
+   対の距離 $d_{ij}$（周期ノルム）\\[0.6ex]
+   \rf{inputs.py}};
 \node[nwbox] (n3) at ($(yb)+(118,0)$)
-  {\textbf{1 電子の入力と埋め込み}\quad\fm{one\_electron\_inputs}\\
-   上の 4 成分 ＋ 結晶の高調波 $\cos\bs G\!\cdot\!\bs r_i$、$\sin\bs G\!\cdot\!\bs r_i$（$\bs G$ 3 本、\fm{crystal\_harmonics}）＋ one-hot $(n_+,n_-)$ ＝ 12 成分\\[0.4ex]
-   埋め込み $\bs x_i=W_{\rm emb}\times$（12 成分）};
+  {\textbf{⑤-1 1 電子の入力}\quad\fm{one\_electron\_inputs}\\
+   上の 4 成分 ＋ 結晶の高調波 $\cos\bs G\!\cdot\!\bs r_i$、$\sin\bs G\!\cdot\!\bs r_i$（$\bs G$ 3 本、\fm{crystal\_harmonics}）＋ one-hot $(n_+,n_-)$ ＝ 12 成分\\[0.6ex]
+   \rf{inputs.py}};
 \node[nwbox, text width=102.6mm] (n4) at ($(yb)+(177,0)$)
-  {\textbf{遮蔽アテンション}\quad\fm{make\_screening\_attention}\\
+  {\textbf{⑤-2 埋め込みと遮蔽アテンション}\quad\fm{make\_screening\_attention}\\
+   埋め込み $\bs x_i=W_{\rm emb}\times$（12 成分）\\[0.3ex]
    $\bs q_i,\bs k_j,\bs v_j$ を $\bs x$ から作る（単位長）。ヘッド $h$ の重みは\\[0.5ex]
    \hspace*{1.5em}$W^h_{ij}=\alpha(s^h_{ij})\,m_h(d_{ij})$、\qquad$s^h_{ij}=\hat{\bs q}^h_i\!\cdot\!\hat{\bs k}^h_j$、\qquad$\alpha(s)=\bigl((1+s)/2\bigr)^4$\\[0.5ex]
    $m_h$：ヘッドごとの入れ子の窓（距離 $d$ で 1 から 0 へ）。$\sum_j W^h_{ij}\bs v^h_j$（softmax の分母はない）→ TanhNorm・ゲート・$W_O$ でヘッドを足す\\[0.5ex]
-   → MLP（残差に足す）→ 各電子の特徴 $\bs h_i$};
+   → MLP（残差に足す）→ 各電子の特徴 $\bs h_i$\\[0.6ex]
+   \rf{attention.py}};
 \node[nwbox] (n5) at ($(yb)+(290,0)$)
-  {\textbf{軌道}\quad\fn{lj\_orbitals.py}\\
+  {\textbf{⑤-3 軌道}\quad\fn{lj\_orbitals.py}\\
    $\phi^k_j(\bs r_i,s_i)$\\
    \hspace*{1em}$=\phi^{\rm HF}_j(\bs r_i,s_i)+\varepsilon\,[W^k_{s_i}\bs h_i]_j$\\[0.4ex]
-   $\phi^{\rm HF}$：① の HF の表、$\varepsilon=0.05$、$k$：行列式の番号};
+   $\phi^{\rm HF}$：① の HF の表、$\varepsilon=0.05$、$k$：行列式の番号。各成分に $e^{J/N}$（$J$：擬スピンの組ごとの Jastrow、カスプつき）\\[0.6ex]
+   \rf{orbitals.py}};
 \node[nwbox] (n6) at ($(yb)+(349,0)$)
-  {\textbf{出力}\\
-   行列式 4 枚（$k=1,\dots,4$）の和 $\times\,e^{J}$（$J$：擬スピンの組ごとの Jastrow、カスプつき）\\[0.4ex]
-   → $\ln\psi_\theta(R)$（複素）};
+  {\textbf{⑤-4 出力}\quad\fm{logdet\_matmul}\\
+   行列式 4 枚（$k=1,\dots,4$）の和（Jastrow の $e^{J}$ を含む）\\[0.4ex]
+   → $\ln\psi_\theta(R)$（複素）\\[0.6ex]
+   \rf{wavefunction.py}};
 \foreach \u/\v in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n6}{\draw[call] (\u.east) -- (\v.west);}
 \node[anchor=north west, font=\footnotesize, text=ink, text width=398mm, align=flush left] (learn) at ($(n1.south west)+(0,-2.6)$)
   {学習で動く $\theta$：$W_{\rm emb}$、$W_q,W_k,W_v$、ゲート、$W_O$、MLP、$W^k_\pm$、Jastrow の長さなど。\quad
@@ -242,6 +250,7 @@
   {\fn{periodicwave/}\quad 計算の本体（③④⑤）。いまの設定は \fn{configs/run\_lambda\_jellium.py}\\[0.3ex]
    \fn{screening\_analysis/}\quad 解析。いまの λ-jellium は \fn{lj\_hf\_branch.py}・\fn{lj2/}・\fn{lj3/}。ほかの 19 本は共有の部品（右）\\[0.3ex]
    \fn{test\_*.py}\quad 検算（中）\qquad \fn{archive/}\quad いまは使っていないもの（2DEG・モアレ・窓の設計、λ-jellium の最初のスキャン）\\[0.3ex]
+   \fn{lj\_reference/}\quad ③④⑤ のうち lj3 で通る部分を、段ごとに 1 ファイルに書き直した参照用コード（本体と同じ値を出す）\\[0.3ex]
    \fn{doc/code\_map/}\quad この図。ほかの \fn{doc/} は ☆\\[0.3ex]
    ☆ \fn{ws\_pw\_kit/}\quad 投入と回収（②⑥）、HF の表 \fn{lj2\_hf/}、回収した結果 \fn{pulled\_lj3/}・\fn{pulled\_lj2/}、古い結果 \fn{pulled\_old/}\\[0.3ex]
    ☆ \fn{gh\_kit/}\quad GitHub に送る道具（\fn{\_push\_wada\_dev.bat}）\qquad ☆ \fn{\_to\_delete/}\quad 整理で外したもの（消してよいか確かめてから消す）};
@@ -249,7 +258,8 @@
 \node[file=cl, font=\small, text width=104mm, below=3mm of hb2.south west, anchor=north west] (g2)
   {\fn{test\_lambda\_jellium.py}\quad 局所エネルギーを差分の $[H\psi]/\psi$ と比べる（入力 12 成分のネットワークも）、擬スピンのモンテカルロの分布、反転＋半分ずらしの対称性、初期値 match で関数が変わらないこと\\[0.3ex]
    \fn{test\_screenformer.py}\quad 反対称性、格子の周期、勾配とラプラシアンが有限\\[0.3ex]
-   \fn{test\_gauss\_rings.py}\quad ガウスでぼかした輪の窓（いまは使っていない設定）};
+   \fn{test\_gauss\_rings.py}\quad ガウスでぼかした輪の窓（いまは使っていない設定）\\[0.3ex]
+   \fn{lj\_reference/check.py}\quad 参照用コードと本体を、lj3 の run の同じパラメータ・ウォーカーで比べる（⑤ の各段、MCMC、$E_L$、勾配。差は倍精度の丸めの大きさ、相対 $10^{-11}$ 以下）};
 \node[head=gr, text width=82.2mm] (hb3) at ($(yl)+(315.4,0)$) {共有の部品\quad{\footnotesize\mdseries \fn{screening\_analysis/} の 19 本}};
 \node[file=gr, font=\small, text width=83mm, below=3mm of hb3.south west, anchor=north west] (g3)
   {2DEG・モアレの時期に作り、ほかの解析やテストが import するので残したもの\\[0.4ex]

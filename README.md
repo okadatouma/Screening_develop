@@ -10,6 +10,7 @@
   ほかは 2DEG・モアレの時期に作り、別の解析が import している共有の部品（`screening_analysis/README.md` の末尾）
 - 検算 `test_lambda_jellium.py`、`test_screenformer.py`、`test_gauss_rings.py`
 - どのファイルがどの工程で呼ばれるかの図：`doc/code_map/code_map.pdf`
+- いまの λ-jellium（lj3）の計算を、処理の段ごとに 1 ファイルずつ書き直した参照用コード `lj_reference/`。読むためのもので学習には使わない。本体と同じ値を出すことを `lj_reference/check.py` で確かめた（`lj_reference/README.md`）
 - 2DEG・モアレ・窓の設計（2026-08〜09）と λ-jellium の最初のスキャン（2026-10 上旬）だけで使ったスクリプト・設定・説明は `archive/` に移した（`archive/README.md`）
 
 元の PeriodicWave から変えたファイルは `.gitignore`、`evaluate-density.py`、`evaluate-energies.py`、`periodicwave/configs/run_2deg.py`、`periodicwave/loss.py`、`periodicwave/mcmc.py` です。
