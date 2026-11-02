@@ -47,6 +47,11 @@
 # at d = w with bounded second derivative, and dm/dd -> 0 as d -> 0, so the
 # softmask introduces no new cusps at electron coincidences. The squared ReLU
 # of Trim is likewise C^1 with bounded second derivative.
+#
+# [λ-jellium lj3]（2026-10-27）既定値のままなら従来と同じ。
+#   input_mode='lj12'：1 電子の入力を (sin θ, cos θ) 4 + 結晶の逆格子の高調波 (cos G·r, sin G·r) 6
+#                      + 擬スピンの one-hot (n_+, n_-) 2 の 12 成分にする（one_electron_inputs）。
+#   trim_fixed=True  ：Trim の幅を r = 2 に固定する（trim_rho を作らない）。
 # =============================================================================
 
 """ Screening-attention neural network variational wavefunction ansatz. """
@@ -130,9 +135,77 @@ class ScreenformerOptions(networks.BaseNetworkOptions):
   use_fixed_value: bool = False             # [SCREEN] value を対の固定特徴 e(r_ij) にする
   use_output_scale: bool = True             # [SCREEN]
   init_output_scale: float = 0.0            # [SCREEN] 0 = auto-calibrate
+  input_mode: str = 'sincos_s'              # [λ-jellium lj3] 'sincos_s'（従来）か 'lj12'
+  input_harmonics: Any = None               # [λ-jellium lj3] 'lj12' で足す高調波の整数の組 n（G·r = 2π n·f）
+  input_init: str = 'match'                 # [λ-jellium lj3] 'lj12' の埋め込みの初期値。'match' か 'random'
+  trim_fixed: bool = False                  # [λ-jellium lj3] Trim の幅を r = 2 に固定
 
 
 TRIM_MAX = 2.0
+
+
+# [λ-jellium lj3] 1 電子の入力（ScreenformerOptions.input_mode）
+#   'sincos_s'（従来）：特徴層の (sin θ_1, sin θ_2, cos θ_1, cos θ_2) と擬スピン s_i = ±1 の 5 成分。
+#   'lj12'           ：特徴層の 4 成分、結晶の逆格子の高調波 (cos G_k·r_i, sin G_k·r_i)（G_k は input_harmonics）、
+#                      擬スピンの one-hot (n_+, n_-) = ((1 + s_i)/2, (1 - s_i)/2)。G_k が最短の 3 本なら 12 成分。
+#   θ_a = 2π f_a、f = A^{-1} r はセルの分数座標（A の列がセルの並進ベクトル）。G·r = 2π n·f（n は整数の組）。
+#   埋め込みも q, k もバイアスがないので、従来の入力では「全員の s を反転してセルの半分ずらす」と入力が −1 倍になり
+#   q·k が変わらない。高調波（半分ずらしても変わらない）と one-hot（−1 倍にならない）でこの対称性が壊れる。
+INPUT_MODES = ('sincos_s', 'lj12')
+
+
+def crystal_harmonics(supercell_lattice, crystal_lattice, nshells: int = 1):
+  """[λ-jellium lj3] 結晶の逆格子の最短の G（nshells 殻）を、セルの分数座標の整数倍 n（G·r = 2π n·f）で返す。
+
+  ± の組からは 1 本だけ（最初の 0 でない成分が正のもの）。格子は列が並進ベクトル。
+  N = 36（6 x 6）の三角格子なら [(6, 0), (0, 6), (6, -6)]（|G| a = 4π/√3）。
+  """
+  A_s = np.asarray(supercell_lattice, dtype=np.float64)
+  A_c = np.asarray(crystal_lattice, dtype=np.float64)
+  M = np.linalg.inv(A_c) @ A_s              # 結晶の格子で測ったセルの並進（整数のはず）
+  Mi = np.rint(M)
+  if np.max(np.abs(M - Mi)) > 1e-6:
+    raise ValueError("セルが結晶の格子の整数倍になっていない: inv(A_c) A_s = %s" % M)
+  Bc = np.linalg.inv(A_c)                   # 行 i が結晶の逆格子ベクトル / 2π
+  cand = []
+  for m1 in range(-3, 4):
+    for m2 in range(-3, 4):
+      if m1 == 0 and m2 == 0:
+        continue
+      m = np.array([m1, m2], dtype=np.float64)
+      n = tuple(int(v) for v in (m @ Mi))
+      if n[0] < 0 or (n[0] == 0 and n[1] < 0):    # ± の組の片方だけ残す
+        continue
+      g2 = round(float(m @ Bc @ Bc.T @ m), 9)
+      cand.append((g2, abs(n[0]) + abs(n[1]), -n[0], -n[1], n))
+  shells = sorted(set(c[0] for c in cand))[:nshells]
+  return [c[-1] for c in sorted(cand) if c[0] in shells]
+
+
+def one_electron_input_dim(options, base_dim: int) -> int:
+  """[λ-jellium lj3] 埋め込みに入れる 1 電子の入力の次元。base_dim は特徴層の 1 電子特徴の次元。"""
+  if getattr(options, 'input_mode', 'sincos_s') == 'lj12':
+    return base_dim + 2 * len(options.input_harmonics) + 2
+  return base_dim + 1
+
+
+def one_electron_inputs(options, ae_features: jnp.ndarray, ae: jnp.ndarray,
+                        spins: jnp.ndarray) -> jnp.ndarray:
+  """[λ-jellium lj3] 埋め込みに入れる 1 電子の入力 [N, D]。学習でも解析でもこの関数を使う。
+
+  ae_features：特徴層の 1 電子特徴 [N, 4]（sin θ_1, sin θ_2, cos θ_1, cos θ_2）。
+  ae：電子と（ダミーの）原子の差 [N, natoms, ndim]。高調波は特徴層と同じく原子 0 から測る。
+  """
+  if getattr(options, 'input_mode', 'sincos_s') != 'lj12':
+    return jnp.concatenate((ae_features, spins[..., None]), axis=-1)
+  dt = ae.dtype
+  inv_lat = jnp.asarray(np.linalg.inv(np.asarray(options.pbc_lattice, dtype=np.float64)), dtype=dt)
+  n = jnp.asarray(np.asarray(options.input_harmonics, dtype=np.float64), dtype=dt)        # [K, ndim]
+  f = jnp.einsum('il,jl->ji', inv_lat, ae[:, 0, :])               # 分数座標 [N, ndim]（特徴層の s_ae と同じ）
+  ph = 2.0 * jnp.pi * jnp.einsum('jd,kd->jk', f, n)                # G_k·r_j [N, K]
+  harm = jnp.stack((jnp.cos(ph), jnp.sin(ph)), axis=-1).reshape(ph.shape[0], -1)   # cos G_1·r, sin G_1·r, cos G_2·r, ...
+  onehot = jnp.stack((0.5 * (1.0 + spins), 0.5 * (1.0 - spins)), axis=-1)
+  return jnp.concatenate((ae_features, harm, onehot.astype(ae_features.dtype)), axis=-1)
 
 
 
@@ -256,7 +329,8 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
                              use_fixed_value=False,
                              pair_dim=0,
                              use_output_scale: bool = True,
-                             init_output_scale: float = 0.0) ->...:
+                             init_output_scale: float = 0.0,
+                             trim_fixed: bool = False) ->...:
   """[SCREEN] Screening (multiscreen) replacement of MultiHeadAttention.
 
   Pipeline per head h:
@@ -284,6 +358,9 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
   # [FIX] paper (arXiv:2604.01178) defines r = sigmoid(s_r) in (0,1).
   init_trim_r = float(np.clip(init_trim_r, 1e-3, TRIM_MAX - 1e-3))
   rho_init = float(np.log(init_trim_r / (TRIM_MAX - init_trim_r)))  # logit(r/TRIM_MAX)
+  # [λ-jellium lj3] trim_fixed：r = TRIM_MAX = 2 に固定し trim_rho を作らない。
+  #   α = (relu(s + 1)/2)^p = ((1 + s)/2)^p で、単位長の q̄, k̄ では s ∈ (−1, 1) なので relu は効かない。
+  _r_cal = TRIM_MAX if trim_fixed else init_trim_r
 
   # [SCREEN] geometrically spaced initial screening lengths (multiscreen).
   centre = max(float(init_softmask_w_factor), 1e-3)
@@ -350,7 +427,7 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
   _pdf = np.exp(-0.5 * (_s_grid / _sig) ** 2)
   _pdf = _pdf / _pdf.sum()
   _alpha_mean = float(
-      (np.power(np.maximum(_s_grid - (1.0 - init_trim_r), 0.0) / init_trim_r, TRIM_POW) * _pdf).sum())
+      (np.power(np.maximum(_s_grid - (1.0 - _r_cal), 0.0) / _r_cal, TRIM_POW) * _pdf).sum())
   # Empirical gain of the remaining stages (TanhNorm, gate, W_O) relative to
   # the naive estimate. Calibrated by measuring |attention output| at
   # initialisation against softmax attention on the same inputs, so that the
@@ -396,7 +473,8 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
       params['g_w'] = network_blocks.init_linear_layer(
           subkeys[4], in_dim=embed_dim, out_dim=num_heads * _vd, include_bias=False)['w']
     # [SCREEN] learnable knobs, one per head: acceptance width r, screening length w
-    params['trim_rho'] = rho_init * jnp.ones((num_heads,))
+    if not trim_fixed:                      # [λ-jellium lj3] trim_fixed なら r = 2 で固定（パラメータなし）
+      params['trim_rho'] = rho_init * jnp.ones((num_heads,))
     if use_softmask:
       # per-head, geometrically spaced -> multiscreen from the very first step
       params['mask_omega'] = jnp.asarray(omega_init, dtype=jnp.float32)
@@ -454,7 +532,10 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
     s = jnp.einsum('ihd,jhd->hij', qbar, kbar)
 
     # [SCREEN] 2. Trim with learnable acceptance width r_h in (0, 2).
-    r = TRIM_MAX * jax.nn.sigmoid(params['trim_rho'])      # [FIX] r in (0, TRIM_MAX)
+    if 'trim_rho' in params:
+      r = TRIM_MAX * jax.nn.sigmoid(params['trim_rho'])    # [FIX] r in (0, TRIM_MAX)
+    else:
+      r = jnp.full((num_heads,), TRIM_MAX, dtype=s.dtype)  # [λ-jellium lj3] trim_fixed：r = 2
     r = r[:, None, None]
     alpha = jax.nn.relu(s - (1.0 - r)) / r                   # exactly 0 for s <= 1-r
     alpha = jnp.square(alpha) if TRIM_POW == 2 else jnp.square(jnp.square(alpha))
@@ -647,7 +728,8 @@ def make_self_attention_block(num_layers: int,
                                use_fixed_value=False,
                               pair_dim=0,
                               use_output_scale: bool = True,
-                              init_output_scale: float = 0.0) ->...:
+                              init_output_scale: float = 0.0,
+                              trim_fixed: bool = False) ->...:
   """Create a screening self-attention block. [SCREEN]"""
   attention_init, attention_apply = make_screening_attention(
       num_heads, mlp_dim, attn_dim, value_dim, num_electrons, d_ref,
@@ -659,7 +741,8 @@ def make_self_attention_block(num_layers: int,
       use_fixed_value=use_fixed_value,
       pair_dim=pair_dim,
       use_output_scale=use_output_scale,
-      init_output_scale=init_output_scale)
+      init_output_scale=init_output_scale,
+      trim_fixed=trim_fixed)
 
   if use_layer_norm:
     layer_norm_init, layer_norm_apply = make_layer_norm()
@@ -756,6 +839,7 @@ def make_screenformer_layers(
       pair_dim=int(options.feature_layer.init()[0][1]),
       use_output_scale=options.use_output_scale,
       init_output_scale=options.init_output_scale,
+      trim_fixed=bool(getattr(options, 'trim_fixed', False)),
   )
 
   def init(key: chex.PRNGKey) -> Tuple[int, networks.ParamTree]:
@@ -765,13 +849,26 @@ def make_screenformer_layers(
     feature_dims, params['input'] = options.feature_layer.init()
     one_electron_feature_dim, _ = feature_dims
     # Concatenate spin of each electron with other one-electron features.
-    feature_dim = one_electron_feature_dim + 1
+    # [λ-jellium lj3] input_mode = 'lj12' なら高調波と one-hot も足す（one_electron_inputs）。
+    feature_dim = one_electron_input_dim(options, one_electron_feature_dim)
 
     # Map to Attention dim.
     key, subkey = jax.random.split(key)
-    params['embed'] = network_blocks.init_linear_layer(
-        subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
-    )['w']
+    if (getattr(options, 'input_mode', 'sincos_s') == 'lj12'
+        and getattr(options, 'input_init', 'match') == 'match'):
+      # [λ-jellium lj3] 'match'：学習の始めは従来の入力の網と同じ関数にする。従来の 5 行（sin, cos の 4 と s）を
+      # 同じ乱数で作り、高調波の行は 0、one-hot の行は (w_s, −w_s)（n_+ w_s − n_- w_s = s w_s）。
+      # 増えた入力の重みは学習で 0 から育つので、従来の run との差は学習で生じた分だけになる。
+      w5 = network_blocks.init_linear_layer(
+          subkey, in_dim=one_electron_feature_dim + 1, out_dim=options.mlp_dim, include_bias=False
+      )['w']
+      nh = feature_dim - one_electron_feature_dim - 2
+      params['embed'] = jnp.concatenate(
+          (w5[:-1], jnp.zeros((nh, options.mlp_dim), dtype=w5.dtype), w5[-1:], -w5[-1:]), axis=0)
+    else:
+      params['embed'] = network_blocks.init_linear_layer(
+          subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
+      )['w']
 
     # Attention block params.
     key, subkey = jax.random.split(key)
@@ -814,7 +911,8 @@ def make_screenformer_layers(
 
     # For the Psiformer, the spin feature is required for correct permutation
     # equivariance.
-    ae_features = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
+    # [λ-jellium lj3] 従来（'sincos_s'）は (ae_features, spins) の連結そのもの。'lj12' は高調波と one-hot。
+    ae_features = one_electron_inputs(options, ae_features, ae, spins)
 
     features = ae_features  # Just 1-electron stream for now.
 
@@ -878,6 +976,10 @@ def make_fermi_net(
     lj_cusps=None,
     lj_net_scale: float = 0.05,
     lj_jastrow: bool = True,
+    input_mode: str = 'sincos_s',
+    input_harmonics=None,
+    input_init: str = 'match',
+    trim_fixed: bool = False,
 ) -> networks.Network:
   """Screenformer: stacked screening self-attention layers. [SCREEN]
 
@@ -916,6 +1018,11 @@ def make_fermi_net(
       screening lengths across the heads of a layer.
     use_output_scale: [SCREEN] learnable output scale e^{s_O}.
     init_output_scale: [SCREEN] initial e^{s_O}; 0 means auto-calibrate.
+    input_mode: [λ-jellium lj3] 1 電子の入力。'sincos_s'（従来）か 'lj12'（one_electron_inputs を参照）。
+    input_harmonics: [λ-jellium lj3] 'lj12' で足す高調波の整数の組 n の列（crystal_harmonics で作る）。
+    input_init: [λ-jellium lj3] 'lj12' の埋め込みの初期値。'match'（従来の入力の網と同じ関数から出発、
+      高調波の重み 0）か 'random'（12 行とも乱数）。
+    trim_fixed: [λ-jellium lj3] True なら Trim の幅を r = 2 に固定する。
 
   Returns:
     Network object containing init, apply, orbitals, options, where init and
@@ -937,6 +1044,25 @@ def make_fermi_net(
       jastrow = jastrows.JastrowType.NONE
     else:
       jastrow = jastrows.JastrowType[jastrow.upper()]
+
+  # [λ-jellium lj3] 1 電子の入力と Trim
+  if input_mode not in INPUT_MODES:
+    raise ValueError("input_mode は %s のどれか（いま %r）" % (INPUT_MODES, input_mode))
+  if input_mode == 'lj12':
+    if not input_harmonics:
+      raise ValueError("input_mode = 'lj12' には input_harmonics（crystal_harmonics の出力）が要る")
+    input_harmonics = tuple(tuple(int(v) for v in n) for n in input_harmonics)
+    if any(len(n) != ndim for n in input_harmonics):
+      raise ValueError("input_harmonics の各組は ndim 個の整数")
+  else:
+    input_harmonics = None
+  if input_init not in ('match', 'random'):
+    raise ValueError("input_init は 'match' か 'random'（いま %r）" % (input_init,))
+  if input_mode == 'lj12' or trim_fixed:
+    print(f"[λJ] 入力 {input_mode}"
+          + (f"（高調波 n = {', '.join(str(n) for n in input_harmonics)}、one-hot、初期値 {input_init}）"
+             if input_harmonics else "")
+          + f"、Trim の幅 {'r = 2 に固定' if trim_fixed else '学習'}")
 
   options = ScreenformerOptions(
       ndim=ndim,
@@ -967,6 +1093,10 @@ def make_fermi_net(
       use_fixed_value=use_fixed_value,
       use_output_scale=use_output_scale,
       init_output_scale=init_output_scale,
+      input_mode=input_mode,
+      input_harmonics=input_harmonics,
+      input_init=input_init,
+      trim_fixed=bool(trim_fixed),
   )  # pytype: disable=wrong-keyword-args
 
   screenformer_layers = make_screenformer_layers(nspins, charges.shape[0], options)

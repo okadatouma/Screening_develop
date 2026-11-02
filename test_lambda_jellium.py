@@ -6,6 +6,9 @@
 1. 1 粒子の固有状態：下のバンドのスピノル平面波で E_L = q^2/2、上のバンドで q^2/2 + Delta(1 + lam^2 q^2)
 2. 自由フェルミオン（スピノル平面波の Slater 行列式、N = 3）で E_L が一定 = 軌道エネルギーの和
 3. 乱数の CustomScreenformer（N = 3、複素）で E_L を差分の力ずく計算と比べる（folx / default の両方）
+   3b. 入力 12 成分（結晶の高調波 + one-hot、lj3）・Trim 固定の網でも同じ比較
+   3c. 全員の擬スピンを反転してセルの半分ずらすと、従来の入力では 1 層目の q·k が変わらず、12 成分では変わる（N = 36）
+   3d. 初期値 'match' の 12 成分の網は、同じ種の従来の網と同じ関数
 4. lam = 0 で従来の pbc.hamiltonian.local_energy と一致（全員 s = +1、Coulomb あり）
 5. モンテカルロ：1 粒子で P(s = -1) = lam^2 q^2 / (1 + lam^2 q^2)、2 粒子で擬スピン配置の分布
 """
@@ -122,16 +125,37 @@ def test_free_fermions():
                   err < 1e-7 * max(1, abs(want)), f"max err over 6 configs {err:.1e}")
 
 
-def build_net(lat, n, heads=2, layers=1, det=2, seed=3):
+def build_net(lat, n, heads=2, layers=1, det=2, seed=3, **kw):
     feat = FL.make_pbc_feature_layer(natoms=1, nspins=(n, 0), ndim=2, lattice=lat, include_r_ae=False)
     net = CS.make_fermi_net(
         (n, 0), CHARGES, ndim=2, determinants=det, envelope=envelopes.make_null_envelope(),
         feature_layer=feat, jastrow='NONE', jastrow_kwargs={'ndim': 2}, complex_output=True,
         bias_orbitals=False, num_layers=layers, num_heads=heads, attn_dim=8, value_dim=8, mlp_dim=16,
         num_perceptrons_per_layer=1, use_layer_norm=True, mlp_activation_fct='GELU', pbc_lattice=lat,
-        init_softmask_w_factor=0.7, init_softmask_w_spread=1.5)
+        init_softmask_w_factor=0.7, init_softmask_w_spread=1.5, **kw)
     params = net.init(jax.random.PRNGKey(seed))
     return net, params
+
+
+def lj3_cell(n):
+    """セル、結晶の格子、結晶の逆格子の最短の高調波（lj3 の入力用）。"""
+    lat, crys = lattices._triangular_lattice_vecs_periodic_potential(A_WC, n)
+    return jnp.asarray(lat), CS.crystal_harmonics(lat, crys)
+
+
+def first_layer_qk(net, params, x, s):
+    """1 層目の q̄·k̄ [H, N, N]。入力は網と同じ関数 CS.one_electron_inputs で作る。"""
+    o = net.options
+    xr = jnp.reshape(jnp.asarray(x), (-1, 1, 2)) - ATOMS[None, :, :]
+    n = xr.shape[0]
+    ee = xr[:, None, 0, :] - xr[None, :, 0, :]
+    feat, _ = o.feature_layer.apply(ae=xr, r_ae=None, ee=ee, r_ee=None)
+    P = params['layers']
+    emb = CS.one_electron_inputs(o, feat, xr, jnp.asarray(s, jnp.float64)) @ P['embed']
+    at = P['attention'][0]
+    q = (emb @ at['q_w']).reshape(n, o.num_heads, o.attn_dim)
+    k = (emb @ at['k_w']).reshape(n, o.num_heads, o.attn_dim)
+    return jnp.einsum('ihd,jhd->hij', CS._unit_length(q), CS._unit_length(k))
 
 
 def brute_force_e_l(f, params, x, s, lam, delta, h=2e-3):
@@ -178,6 +202,61 @@ def test_network_vs_brute_force():
             err = abs(got - ref)
             check(f"trial {trial} s={s.astype(int).tolist()} {m:7s} E_L = {got:.5f}  (差分 {ref:.5f})",
                   err < 2e-5 * max(1.0, abs(ref)), f"|diff| {err:.1e}")
+
+
+def test_lj12_vs_brute_force():
+    print("[3b] 入力 12 成分（高調波 + one-hot、初期値は乱数）・Trim 固定の網（N = 3）で差分の力ずく計算と比較")
+    lat, harm = lj3_cell(3)
+    net, params = build_net(lat, 3, input_mode='lj12', input_harmonics=harm, input_init='random', trim_fixed=True)
+    nin = params['layers']['embed'].shape[0]
+    check(f"高調波 n = {harm}、入力の次元 {nin} = 4 + 2 x {len(harm)} + 2、trim_rho なし",
+          nin == 4 + 2 * len(harm) + 2 and 'trim_rho' not in params['layers']['attention'][0])
+    lam, delta = 0.72, 12.0
+    rng = np.random.default_rng(7)
+    els = {m: jax.jit(e_l_fn(net.apply, lat, lam, delta, m)) for m in ['folx', 'default']}
+    for trial in range(3):
+        x = rng.normal(size=6)
+        s = rng.choice([-1.0, 1.0], size=3)
+        ref = brute_force_e_l(net.apply, params, x, s, lam, delta)
+        for m, el in els.items():
+            got = complex(el(params, None, data_of(x, s))[0])
+            err = abs(got - ref)
+            check(f"trial {trial} s={s.astype(int).tolist()} {m:7s} E_L = {got:.5f}  (差分 {ref:.5f})",
+                  err < 2e-5 * max(1.0, abs(ref)), f"|diff| {err:.1e}")
+
+
+def test_flip_shift_symmetry():
+    print("[3c] 全員の擬スピンを反転しセルの半分ずらす：従来の入力では 1 層目の q̄·k̄ が変わらない（N = 36）")
+    lat, harm = lj3_cell(36)
+    S = np.asarray(lat)
+    rng = np.random.default_rng(11)
+    x = rng.uniform(-8.0, 8.0, size=72)
+    s = rng.choice([-1.0, 1.0], size=36)
+    x2 = (x.reshape(36, 2) + 0.5 * (S[:, 0] + S[:, 1])).reshape(-1)
+    cases = [("従来（sin, cos, s）", {}, True),
+             ("12 成分・初期値 match（学習前は従来と同じ関数）", dict(input_mode='lj12', input_harmonics=harm,
+                                                       input_init='match', trim_fixed=True), True),
+             ("12 成分・初期値 random", dict(input_mode='lj12', input_harmonics=harm,
+                                             input_init='random', trim_fixed=True), False)]
+    for name, kw, invariant in cases:
+        net, params = build_net(lat, 36, heads=4, seed=5, **kw)
+        d = float(jnp.max(jnp.abs(first_layer_qk(net, params, x2, -s) - first_layer_qk(net, params, x, s))))
+        check(f"{name}: max|Δ(q̄·k̄)| = {d:.1e}", (d < 1e-10) if invariant else (d > 1e-2))
+
+
+def test_match_init_same_function():
+    print("[3d] 初期値 match の 12 成分の網は、同じ種の従来の網と同じ関数（Trim の幅は両方とも学習）")
+    lat, harm = lj3_cell(3)
+    net0, p0 = build_net(lat, 3, seed=9)
+    net1, p1 = build_net(lat, 3, seed=9, input_mode='lj12', input_harmonics=harm, input_init='match')
+    rng = np.random.default_rng(13)
+    for trial in range(3):
+        x = jnp.asarray(rng.normal(size=6))
+        s = jnp.asarray(rng.choice([-1.0, 1.0], size=3))
+        a = net0.apply(p0, x, s, ATOMS, CHARGES)
+        b = net1.apply(p1, x, s, ATOMS, CHARGES)
+        d = max(abs(float(a[0] - b[0])), abs(float(a[1] - b[1])))
+        check(f"trial {trial}: log|psi| {float(a[1]):.6f} / {float(b[1]):.6f}", d < 1e-12, f"max|diff| {d:.1e}")
 
 
 def test_lambda_zero_matches_existing():
@@ -268,6 +347,9 @@ if __name__ == "__main__":
     test_single_particle()
     test_free_fermions()
     test_network_vs_brute_force()
+    test_lj12_vs_brute_force()
+    test_flip_shift_symmetry()
+    test_match_init_same_function()
     test_lambda_zero_matches_existing()
     test_mcmc_single()
     test_mcmc_two()

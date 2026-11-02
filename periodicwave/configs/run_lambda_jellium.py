@@ -39,6 +39,11 @@
   PW_LJ_JASTROW=0     擬スピンの組ごとの Jastrow を外す（検算用）
   PW_WIN_SHAPE=smooth7, PW_TRIM_POW=4   窓と Trim を 3 階微分まで連続に（CustomScreenformer.py）
   PW_SAVE_MIN         チェックポイントの間隔（分、既定 2）。チェックポイントは消さずに溜まるので、長い run では大きく
+入力を 12 成分にする版（2026-10-27、lj3）
+  PW_INPUT12=1        1 電子の入力を (sin θ_1, sin θ_2, cos θ_1, cos θ_2) + 結晶の逆格子の最短の 3 方向の高調波
+                      (cos G·r, sin G·r) + 擬スピンの one-hot (n_+, n_-) の 12 成分にする（従来は sin, cos の 4 と s = ±1）
+  PW_INPUT12_INIT     埋め込みの初期値。'match'（既定：従来の入力の網と同じ関数から出発し、高調波の重みは 0）か 'random'
+  PW_TRIM_FIX=1       Trim の幅を r = 2 に固定する（α = ((1 + s)/2)^p、学習しない）
 """
 
 import os
@@ -210,6 +215,19 @@ cfg.network.CustomScreenformer = ml_collections.ConfigDict({
     'init_softmask_rings': _rings,
     'use_fixed_value': _fixv,
 })
+
+# ---------------- [lj3] 1 電子の入力を 12 成分に、Trim の幅を固定 ----------------
+if _flag("PW_INPUT12"):
+    _harm = _CS.crystal_harmonics(supercell_lattice, wc_lattice)
+    cfg.network.CustomScreenformer.input_mode = 'lj12'
+    cfg.network.CustomScreenformer.input_harmonics = [list(v) for v in _harm]
+    cfg.network.CustomScreenformer.input_init = os.environ.get("PW_INPUT12_INIT", "match")
+    print("[λJ] lj3：入力 = (sin θ_1, sin θ_2, cos θ_1, cos θ_2) + 結晶の高調波 (cos G·r, sin G·r)（G·r = 2π n·f、n = "
+          + ", ".join(str(tuple(v)) for v in _harm) + "）+ 擬スピンの one-hot (n_+, n_-) の "
+          + f"{4 + 2 * len(_harm) + 2} 成分、初期値 {cfg.network.CustomScreenformer.input_init}")
+if _flag("PW_TRIM_FIX"):
+    cfg.network.CustomScreenformer.trim_fixed = True
+    print(f"[λJ] lj3：Trim の幅を r = 2 に固定（α = ((1 + s)/2)^{_CS.TRIM_POW}、学習しない）")
 
 # ---------------- [lj2] HF の結晶から出発 ----------------
 _hf_path = os.environ.get("PW_LJ_HF", "")
