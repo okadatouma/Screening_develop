@@ -1,0 +1,258 @@
+% PeriodicWave（wada_dev）のファイルの地図。lualatex code_map.tex でコンパイルする（A3 横 1 枚）。
+\documentclass[10pt]{article}
+\usepackage[a3paper,landscape,margin=8mm]{geometry}
+\usepackage{luatexja-fontspec}
+\setmainfont{TeX Gyre Heros}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\setmainjfont{Noto Sans CJK JP}[BoldFont={Noto Sans CJK JP Bold}]
+\setsansjfont{Noto Sans CJK JP}[BoldFont={Noto Sans CJK JP Bold}]
+\ltjsetparameter{jacharrange={-2}}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+% ---------------------------------------------------------------- 色
+\definecolor{ink}{HTML}{141412}
+\definecolor{sub}{HTML}{55534F}
+\definecolor{pc}{HTML}{2A78D6}      % PC
+\definecolor{pcb}{HTML}{EDF3FB}
+\definecolor{sv}{HTML}{0F7B6C}      % 計算サーバ
+\definecolor{svb}{HTML}{EAF2F0}
+\definecolor{cl}{HTML}{C2581F}      % クラウドか PC の CPU
+\definecolor{clb}{HTML}{FCEFE8}
+\definecolor{nw}{HTML}{5E4FA2}      % ネットワークの中
+\definecolor{nwb}{HTML}{F1EFF8}
+\definecolor{gr}{HTML}{6F6C66}
+% ---------------------------------------------------------------- 書式
+\newcommand{\fn}[1]{\texttt{\textbf{#1}}}                 % ファイル名
+\newcommand{\fm}[1]{\texttt{#1}}                          % 関数名・コード
+\newcommand{\fp}[1]{{\scriptsize\texttt{#1}}}             % 長いパス
+\newcommand{\bs}{\boldsymbol}
+\tikzset{
+  x=1mm, y=1mm,
+  head/.style={rounded corners=1.2mm, fill=#1, text=white, font=\normalsize\bfseries,
+               inner xsep=2.2mm, inner ysep=1.6mm, anchor=north west, text width=57.6mm, align=flush left},
+  file/.style={rounded corners=1mm, draw=#1, line width=0.5pt, fill=white, font=\small,
+               inner xsep=1.8mm, inner ysep=1.5mm, text width=58.4mm, align=flush left},
+  data/.style={file=#1, dashed},
+  call/.style={-{Stealth[length=2.4mm,width=1.8mm]}, line width=0.8pt, draw=ink},
+  pass/.style={-{Stealth[length=2.4mm,width=1.8mm]}, line width=0.8pt, draw=ink, dashed},
+  lab/.style={font=\scriptsize, text=sub, fill=white, inner sep=0.6mm},
+  nwbox/.style={rounded corners=1mm, draw=nw, line width=0.5pt, fill=white, font=\small,
+                inner xsep=1.6mm, inner ysep=1.5mm, text width=48.6mm, align=flush left, anchor=north west,
+                minimum height=36mm},
+  colbg/.style={rounded corners=1.8mm, fill=#1, inner sep=1.4mm},
+}
+\begin{document}
+\begin{tikzpicture}
+% ================================================================ 表題と凡例
+\useasboundingbox (0,0) rectangle (404,281);
+\node[anchor=north west, font=\LARGE\bfseries, text=ink] at (0,281)
+  {PeriodicWave（wada\_dev）のファイルの地図 ── λ-jellium の WC と AHC の計算};
+\node[anchor=north west, font=\small, text=sub, text width=300mm, align=flush left] at (0.4,272.4)
+  {どの工程でどのファイルが呼ばれるか。①〜⑦ は工程の順で、⑤ は ④ の中で毎回呼ばれる。2026-11-02 の wada\_dev による。};
+\begin{scope}[shift={(306,281)}]
+  \node[anchor=north west, font=\footnotesize\bfseries, text=ink] at (0,0) {箱の枠の色 ＝ 走る場所};
+  \foreach \c/\t [count=\k from 0] in {pc/PC（Windows）,sv/計算サーバ（Slurm・GPU）,cl/クラウドか PC の CPU,nw/ネットワークの中（⑤）}{
+    \fill[\c] (0.4, -7.0-\k*3.9) rectangle ++(4,2.6);
+    \node[anchor=west, font=\footnotesize, text=ink] at (5.6,-5.7-\k*3.9) {\t};
+  }
+  \draw[call] (55,-5.7) -- ++(10,0); \node[anchor=west, font=\footnotesize] at (66.4,-5.7) {呼ぶ（実行・import）};
+  \draw[pass] (55,-9.6) -- ++(10,0); \node[anchor=west, font=\footnotesize] at (66.4,-9.6) {ファイルを渡す};
+  \draw[rounded corners=0.8mm, draw=ink, line width=0.5pt] (55,-15.2) rectangle ++(10,3.2);
+  \node[anchor=west, font=\footnotesize] at (66.4,-13.6) {コード};
+  \draw[rounded corners=0.8mm, draw=ink, dashed, line width=0.5pt] (55,-19.1) rectangle ++(10,3.2);
+  \node[anchor=west, font=\footnotesize] at (66.4,-17.5) {データのファイル};
+\end{scope}
+
+% ================================================================ 上の段：①〜④、⑥、⑦
+\def\ytop{256}
+\def\xa{0}\def\xb{68.4}\def\xc{136.8}\def\xd{205.2}\def\xe{273.6}\def\xf{342.0}
+\def\gap{5mm}
+
+% ---------------- ① HF の表
+\node[head=cl] (h1) at (\xa,\ytop) {① 出発点の HF の表を作る\\[-0.2ex]{\footnotesize\mdseries クラウドか PC の CPU}};
+\node[file=cl, below=4mm of h1.south west, anchor=north west] (a1)
+  {\fn{screening\_analysis/lj\_hf\_branch.py}\\
+   λ ごとに WC 型と AHC 型の HF を解く。λ に沿って前の λ の解を種にし、チャーン数 $C$ が変わらなければ採る};
+\node[file=cl, below=\gap of a1.south west, anchor=north west] (a2)
+  {\fn{periodicwave/pbc/lj\_hf.py}\\
+   クラス \fm{LJHF}：下のバンドに射影した HF を $6\times6$ の $\bs k$ で解く（\fm{solve}）、チャーン数（\fm{chern}）、表を書く（\fm{orbitals\_text}）};
+\node[data=cl, below=\gap of a2.south west, anchor=north west] (a3)
+  {\fn{hf\_N36\_lam\{λ\}\_\{wc|ahc\}.txt}\\
+   HF の Bloch 軌道の係数の表（λ 6 点 × 2 型 ＝ 12 枚）。PC の \fn{ws\_pw\_kit/lj2\_hf/} に置く};
+\draw[call] (a1) -- node[lab, right=1mm]{import} (a2);
+\draw[pass] (a2) -- node[lab, right=1mm]{書く} (a3);
+
+% ---------------- ② 投入
+\node[head=pc] (h2) at (\xb,\ytop) {② 投入\\[-0.2ex]{\footnotesize\mdseries PC（学内か VPN）から計算サーバへ}};
+\node[file=pc, below=4mm of h2.south west, anchor=north west] (b1)
+  {\fn{ws\_pw\_kit/\_log\_lj3.bat}\\
+   ダブルクリックで実行。条件を環境変数で決める：λ、型、タグ、\fm{PW\_INPUT12=1}（入力 12 成分）、\fm{PW\_TRIM\_FIX=1}（Trim の幅を固定）、690 分で止める};
+\node[file=pc, below=\gap of b1.south west, anchor=north west] (b2)
+  {\fn{ws\_pw\_kit/ws\_go\_lj3.ps1}\\
+   (1) コード 8 本・\fn{pw\_lj3.sh}・HF の表を計算サーバへ送り、md5 で確かめる\\
+   (2) 計算サーバで import を確かめる\\
+   (3) \fm{sbatch}\quad (4) 待ち行列を表示\\
+   ssh の設定は \fn{ws\_config.ps1}};
+\node[file=sv, below=\gap of b2.south west, anchor=north west] (b3)
+  {\fn{jobs/pw\_lj3.sh}（\fn{ws\_pw\_kit/pw\_lj3.sh} を送ったもの）\\
+   1 ジョブで WC 型と AHC 型の 2 本（GPU 1 枚に 1 本）。各本で\\
+   \fp{python periodicwave/configs/}\\
+   \hspace*{1em}\fp{run\_lambda\_jellium.py N r\_s λ 反復数 タグ}\\
+   HF の表は環境変数 \fm{PW\_LJ\_HF} で渡す};
+\draw[call] (b1) -- node[lab, right=1mm]{実行（λ ごとに 1 回）} (b2);
+\draw[call] (b2) -- node[lab, right=1mm]{\fm{sbatch}} (b3);
+
+% ---------------- ③ 設定
+\node[head=sv] (h3) at (\xc,\ytop) {③ 設定\\[-0.2ex]{\footnotesize\mdseries 計算サーバ}};
+\node[file=sv, below=4mm of h3.south west, anchor=north west] (c1)
+  {\fn{periodicwave/configs/}\\\fn{run\_lambda\_jellium.py}\\
+   設定 \fm{cfg} を作る（既定値は \fn{base\_config.py}）\\[0.5ex]
+   ・系：$6\times6$ の三角格子のセル（\fn{pbc/lattices.py}）、局所エネルギーは \fm{pbc.lambda\_jellium.local\_energy}、擬スピンあり\\[0.2ex]
+   ・ネットワーク：CustomScreenformer（1 層 16 ヘッド、窓 \fm{smooth7} を固定、入力 12 成分の高調波 \fm{crystal\_harmonics}、軌道は HF の表）\\[0.2ex]
+   ・出発点：HF の密度の山の格子にウォーカーを置く\\[0.2ex]
+   ・保存先（run ごと）：\\
+   \hspace*{1em}\fp{results/lambda-jellium/CustomScreenformer/}\\
+   \hspace*{1em}\fp{N36\_rs15\_lam\{λ\}\_\{タグ\}/}};
+\node[file=sv, below=\gap of c1.south west, anchor=north west] (c2)
+  {\fm{train\_screen.train(cfg)} を呼ぶ（④）};
+\draw[call] (c1) -- (c2);
+
+% ---------------- ④ 学習のループ
+\node[head=sv] (h4) at (\xd,\ytop) {④ 学習のループ\\[-0.2ex]{\footnotesize\mdseries 計算サーバの GPU}};
+\node[file=sv, below=4mm of h4.south west, anchor=north west] (d1)
+  {\fn{periodicwave/train\_screen.py}\\
+   初期化：ネットワークを作る（\fm{CustomScreenformer.make\_fermi\_net}、⑤）。ウォーカーは格子点のまわり、擬スピンは乱数};
+\node[file=sv, below=\gap of d1.south west, anchor=north west] (d2)
+  {\textbf{1 step}（約 4 万回くりかえす）\\[0.4ex]
+   1. サンプル：\fn{mcmc.py}。全電子を動かす提案 1 回ごとに、擬スピン反転の提案（\fm{mh\_spin\_flip}）を 3 回\\[0.3ex]
+   2. 局所エネルギー $E_L=H\psi/\psi$：\fn{pbc/lambda\_jellium.py}（運動エネルギーと λ の項、擬スピン反転の項、$\Delta n_-$）。クーロン（Ewald）は \fn{pbc/hamiltonian.py}\\[0.3ex]
+   3. 勾配：\fn{loss.py}。$E=\langle E_L\rangle$、\\
+   \hspace*{1em}$\partial E/\partial\theta=2\,\mathrm{Re}\langle(E_L-E)\,O^{*}\rangle$、$O=\partial\ln\psi/\partial\theta$\\[0.3ex]
+   4. 更新：KFAC（\fm{kfac\_jax}、\fn{curvature\_tags\_and\_blocks.py}）\\[0.4ex]
+   {\scriptsize\color{sub}$\Delta$：上のバンドを抑えるエネルギー（$2/r_s$ Ry）、$n_-$：擬スピン $-1$ の電子の数、$\theta$：⑤ の学習で動くパラメータ}};
+\node[data=sv, below=\gap of d2.south west, anchor=north west] (d3)
+  {書き出し：\fn{checkpoint.py} → \fm{qmcjax\_ckpt\_*.npz}（15 分ごと）、\fn{utils/writers.py} → \fm{train\_stats.csv}。690 分で自分で止まる（\fm{PW\_MAX\_MINUTES}）};
+\draw[call] (d1) -- (d2);
+\draw[pass] (d2) -- node[lab, right=1mm]{書く} (d3);
+
+% ---------------- ⑥ 確認と回収
+\node[head=pc] (h6) at (\xe,\ytop) {⑥ 確認と回収\\[-0.2ex]{\footnotesize\mdseries PC（学内か VPN）、\fn{ws\_pw\_kit/}}};
+\node[file=pc, below=4mm of h6.south west, anchor=north west] (e1)
+  {\fn{\_log\_check\_lj3.bat} → \fn{ws\_check\_lj3.ps1}\\
+   読むだけ：待ち行列、GPU、ログの頭と尻、\fm{train\_stats} → \fm{\_logs/check\_lj3.log}};
+\node[file=pc, below=\gap of e1.south west, anchor=north west] (e2)
+  {\fn{\_log\_get\_lj3.bat} → \fn{ws\_get\_lj3.ps1}\\
+   最後のチェックポイント、\fm{config.json}、\fm{train\_stats.csv}、ログを取ってくる（比べる lj2 の run も）};
+\node[data=pc, below=\gap of e2.south west, anchor=north west] (e3)
+  {回収した run\\
+   \fp{ws\_pw\_kit/pulled\_lj3/results/lambda-jellium/}\\
+   \hspace*{1em}\fp{CustomScreenformer/N36\_rs15\_lam\{λ\}\_\{タグ\}/}\\
+   lj2 の run は \fn{ws\_pw\_kit/pulled\_lj2/}};
+\node[file=pc, below=\gap of e3.south west, anchor=north west] (e4)
+  {\fn{\_log\_lj3\_stop.bat} → \fn{ws\_stop\_lj3.ps1}\\
+   lj3 のジョブを取り消す（チェックポイントは残る）};
+\draw[pass] (e2) -- node[lab, right=1mm]{書く} (e3);
+
+% ---------------- ⑦ 解析
+\node[head=cl] (h7) at (\xf,\ytop) {⑦ 解析\\[-0.2ex]{\footnotesize\mdseries クラウドの CPU、\fn{screening\_analysis/lj3/}}};
+\node[file=cl, below=4mm of h7.south west, anchor=north west] (f1)
+  {\fn{lj3net.py}\\
+   チェックポイントからネットワークを作り直す（\fn{../sampler.py}、\fn{CustomScreenformer.py}）};
+\node[file=cl, below=\gap of f1.south west, anchor=north west] (f2)
+  {\fn{readout3.py}\\
+   1 層目のアテンションの中身（$s^h_{ij}$、$\alpha$、$m_h$）。ネットワークの出力と相対 $5\times10^{-7}$ で一致};
+\node[file=cl, below=\gap of f2.south west, anchor=north west] (f3)
+  {\fn{analyze\_all.py} → \fm{ana\_all.json}\\
+   C3 固有値（\fn{../lj2/c3hf.py}）、擬スピンの模様、擬スピンの組ごとの重み};
+\node[file=cl, below=\gap of f3.south west, anchor=north west] (f4)
+  {\fn{energies.py}（エネルギー）、\fn{input12\_check.py}（入力の対称性）、\fn{transfer.py}・\fn{swap.py}・\fn{moved.py}（WC 型と AHC 型の差、配置の入れ替え、パラメータの動き）\\[0.3ex]
+   lj2 の 12 本の解析は \fn{screening\_analysis/lj2/}};
+\draw[call] (f1) -- node[lab, right=1mm]{import} (f2);
+\draw[call] (f2) -- node[lab, right=1mm]{import} (f3);
+
+% ---------------- 列の背景
+\begin{scope}[on background layer]
+  \node[colbg=clb, fit=(h1)(a1)(a2)(a3)] (k1) {};
+  \node[colbg=pcb, fit=(h2)(b1)(b2)(b3)] (k2) {};
+  \node[colbg=svb, fit=(h3)(c1)(c2)] (k3) {};
+  \node[colbg=svb, fit=(h4)(d1)(d2)(d3)] (k4) {};
+  \node[colbg=pcb, fit=(h6)(e1)(e2)(e3)(e4)] (k6) {};
+  \node[colbg=clb, fit=(h7)(f1)(f2)(f3)(f4)] (k7) {};
+\end{scope}
+
+% ---------------- 列のあいだの矢印
+\draw[pass] (a3.east) -- ++(3.2,0) |- (b2.west);
+\draw[call] (b3.east) -- ++(3.2,0) |- (c1.west);
+\draw[call] (c2.east) -- ++(3.2,0) |- (d1.west);
+\draw[pass] (d3.east) -- ++(3.2,0) |- (e2.west);
+\draw[pass] (e3.east) -- ++(3.2,0) |- (f1.west);
+
+% ================================================================ 中の段：⑤ ネットワークの中
+\path let \p1=(k1.south), \p2=(k2.south), \p3=(k3.south), \p4=(k4.south), \p5=(k6.south), \p6=(k7.south)
+  in coordinate (low) at (0, {min(\y1,\y2,\y3,\y4,\y5,\y6)});
+\node[head=nw, text width=150mm] (h5) at ($(low)+(0,-7)$)
+  {⑤ 1 回の $\psi_\theta(R)$ の計算\quad{\footnotesize\mdseries \fn{periodicwave/CustomScreenformer.py} の \fm{make\_fermi\_net}（④ の 1〜3 で毎回使う）}};
+\coordinate (yb) at ($(h5.south west)+(0,-4)$);
+\node[nwbox] (n1) at (yb)
+  {\textbf{入力}\\
+   電子 $i$ の位置 $\bs r_i$ と擬スピン $s_i=\pm1$（$i=1,\dots,36$）\\[0.4ex]
+   $R=\{(\bs r_i,s_i)\}$：全電子の配置};
+\node[nwbox] (n2) at ($(yb)+(59,0)$)
+  {\textbf{特徴}\quad\fn{pbc/feature\_layer.py}\\
+   $(\sin2\pi\bs u_i,\ \cos2\pi\bs u_i)$、$\bs u_i=A^{-1}\bs r_i$（$A$：セルの格子ベクトル）\\[0.4ex]
+   対の距離 $d_{ij}$（周期ノルム）};
+\node[nwbox] (n3) at ($(yb)+(118,0)$)
+  {\textbf{1 電子の入力と埋め込み}\quad\fm{one\_electron\_inputs}\\
+   上の 4 成分 ＋ 結晶の高調波 $\cos\bs G\!\cdot\!\bs r_i$、$\sin\bs G\!\cdot\!\bs r_i$（$\bs G$ 3 本、\fm{crystal\_harmonics}）＋ one-hot $(n_+,n_-)$ ＝ 12 成分\\[0.4ex]
+   埋め込み $\bs x_i=W_{\rm emb}\times$（12 成分）};
+\node[nwbox, text width=102.6mm] (n4) at ($(yb)+(177,0)$)
+  {\textbf{遮蔽アテンション}\quad\fm{make\_screening\_attention}\\
+   $\bs q_i,\bs k_j,\bs v_j$ を $\bs x$ から作る（単位長）。ヘッド $h$ の重みは\\[0.5ex]
+   \hspace*{1.5em}$W^h_{ij}=\alpha(s^h_{ij})\,m_h(d_{ij})$、\qquad$s^h_{ij}=\hat{\bs q}^h_i\!\cdot\!\hat{\bs k}^h_j$、\qquad$\alpha(s)=\bigl((1+s)/2\bigr)^4$\\[0.5ex]
+   $m_h$：ヘッドごとの入れ子の窓（距離 $d$ で 1 から 0 へ）。$\sum_j W^h_{ij}\bs v^h_j$（softmax の分母はない）→ TanhNorm・ゲート・$W_O$ でヘッドを足す\\[0.5ex]
+   → MLP（残差に足す）→ 各電子の特徴 $\bs h_i$};
+\node[nwbox] (n5) at ($(yb)+(290,0)$)
+  {\textbf{軌道}\quad\fn{lj\_orbitals.py}\\
+   $\phi^k_j(\bs r_i,s_i)$\\
+   \hspace*{1em}$=\phi^{\rm HF}_j(\bs r_i,s_i)+\varepsilon\,[W^k_{s_i}\bs h_i]_j$\\[0.4ex]
+   $\phi^{\rm HF}$：① の HF の表、$\varepsilon=0.05$、$k$：行列式の番号};
+\node[nwbox] (n6) at ($(yb)+(349,0)$)
+  {\textbf{出力}\\
+   行列式 4 枚（$k=1,\dots,4$）の和 $\times\,e^{J}$（$J$：擬スピンの組ごとの Jastrow、カスプつき）\\[0.4ex]
+   → $\ln\psi_\theta(R)$（複素）};
+\foreach \u/\v in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n6}{\draw[call] (\u.east) -- (\v.west);}
+\node[anchor=north west, font=\footnotesize, text=ink, text width=398mm, align=flush left] (learn) at ($(n1.south west)+(0,-2.6)$)
+  {学習で動く $\theta$：$W_{\rm emb}$、$W_q,W_k,W_v$、ゲート、$W_O$、MLP、$W^k_\pm$、Jastrow の長さなど。\quad
+   固定：窓 $m_h$、Trim の幅（$r=2$）、$\phi^{\rm HF}$。\quad
+   \textcolor{sub}{⑦ の \fn{readout3.py} が読むのは遮蔽アテンションの $s^h_{ij}$、$\alpha$、$m_h$。}};
+\begin{scope}[on background layer]
+  \node[colbg=nwb, fit=(h5)(n1)(n6)(learn)] (k5) {};
+\end{scope}
+% ④ → ⑤
+\draw[call] (k4.south) -- node[lab, right=1mm]{$\psi$ と微分を計算（毎 step）} (k4.south |- n4.north);
+
+% ================================================================ 下の段：置き場所、検算、共有の部品
+\coordinate (yl) at ($(k5.south west)+(0,-7)$);
+\node[head=gr, text width=180mm] (hb1) at (yl) {フォルダの並び\quad{\footnotesize\mdseries PC と GitHub で同じ。☆ は PC にだけある（GitHub に上げない）}};
+\node[file=gr, font=\small, text width=180mm, below=3mm of hb1.south west, anchor=north west] (g1)
+  {\fn{periodicwave/}\quad 計算の本体（③④⑤）。いまの設定は \fn{configs/run\_lambda\_jellium.py}\\[0.3ex]
+   \fn{screening\_analysis/}\quad 解析。いまの λ-jellium は \fn{lj\_hf\_branch.py}・\fn{lj2/}・\fn{lj3/}。ほかの 19 本は共有の部品（右）\\[0.3ex]
+   \fn{test\_*.py}\quad 検算（中）\qquad \fn{archive/}\quad いまは使っていないもの（2DEG・モアレ・窓の設計、λ-jellium の最初のスキャン）\\[0.3ex]
+   \fn{doc/code\_map/}\quad この図。ほかの \fn{doc/} は ☆\\[0.3ex]
+   ☆ \fn{ws\_pw\_kit/}\quad 投入と回収（②⑥）、HF の表 \fn{lj2\_hf/}、回収した結果 \fn{pulled\_lj3/}・\fn{pulled\_lj2/}、古い結果 \fn{pulled\_old/}\\[0.3ex]
+   ☆ \fn{gh\_kit/}\quad GitHub に送る道具（\fn{\_push\_wada\_dev.bat}）\qquad ☆ \fn{\_to\_delete/}\quad 整理で外したもの（消してよいか確かめてから消す）};
+\node[head=cl, text width=104mm] (hb2) at ($(yl)+(190,0)$) {検算\quad{\footnotesize\mdseries クラウドか PC の CPU}};
+\node[file=cl, font=\small, text width=104mm, below=3mm of hb2.south west, anchor=north west] (g2)
+  {\fn{test\_lambda\_jellium.py}\quad 局所エネルギーを差分の $[H\psi]/\psi$ と比べる（入力 12 成分のネットワークも）、擬スピンのモンテカルロの分布、反転＋半分ずらしの対称性、初期値 match で関数が変わらないこと\\[0.3ex]
+   \fn{test\_screenformer.py}\quad 反対称性、格子の周期、勾配とラプラシアンが有限\\[0.3ex]
+   \fn{test\_gauss\_rings.py}\quad ガウスでぼかした輪の窓（いまは使っていない設定）};
+\node[head=gr, text width=82.2mm] (hb3) at ($(yl)+(315.4,0)$) {共有の部品\quad{\footnotesize\mdseries \fn{screening\_analysis/} の 19 本}};
+\node[file=gr, font=\small, text width=83mm, below=3mm of hb3.south west, anchor=north west] (g3)
+  {2DEG・モアレの時期に作り、ほかの解析やテストが import するので残したもの\\[0.4ex]
+   {\scriptsize\ttfamily style.py\quad sampler.py\quad attn\_probe.py\quad head\_contrib.py\quad head\_cancel.py\quad psi\_probe.py\quad reach.py\quad moire\_analysis.py\quad moire\_summary.py\quad graph\_wind.py\quad lj\_maps.py\quad bigN\_maps.py\quad fig\_channels.py\quad fig\_fig6.py\quad fig\_qk.py\quad fig\_kernel.py\quad fig\_order.py\quad fig\_lambda.py\quad analyze\_all.py}};
+\end{tikzpicture}
+\end{document}
