@@ -83,3 +83,12 @@ python screening_analysis/attn_plots.py results/2deg-Coulomb/CustomScreenformer/
 2. **ΔE(w) 曲線**。w を固定して 1.0〜3.0 で掃引すると「相関を距離 w で重み付けたときの変分コスト」
    が得られる。ゲージの曖昧さのない物理量で、人手の 2 体波動関数との比較の物差しになる
 3. 減衰を raised cosine から `exp(−d/w)` に変える（打ち切りが消え、勾配も死なない）
+
+## 2026-11-02 の整理：いまの λ-jellium の解析はどれか
+
+- いまの λ-jellium（WC と AHC）の解析：`lj_hf_branch.py`（VMC の出発点にする HF の表を作る）、`lj2/`、`lj3/`（それぞれに README）。
+- ここに残したほかのファイルは 2DEG・モアレの時期に作ったもので、別の解析やテストが import しているので動かしていない：
+  `style.py`、`sampler.py`、`attn_probe.py`、`head_contrib.py`、`head_cancel.py`、`psi_probe.py`、`reach.py`、`moire_analysis.py`、`moire_summary.py`、
+  `graph_wind.py`、`lj_maps.py`、`bigN_maps.py`、`fig_channels.py`、`fig_fig6.py`、`fig_qk.py`、`fig_kernel.py`、`fig_order.py`、`fig_lambda.py`、`analyze_all.py`。
+- 上の本文に出てくるスクリプトでここにないものは `archive/2deg_moire/screening_analysis/` に、λ-jellium の最初のスキャン（液体から出発、2026-10-08〜09）の解析は
+  `archive/lj_scan_v1/screening_analysis/` にある（走らせ方は `archive/README.md`）。
