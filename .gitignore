@@ -23,6 +23,21 @@ results/
 # 手元の作業用・計算の出力（リポジトリには入れない）
 *.log
 *.npz
+ljm*.out
+ljm*.err
 screening_analysis/out*/
 _to_delete/
 Claude outputs/
+
+# 解析の出力（数値の JSON・CSV）。スクリプトだけを入れる
+screening_analysis/lj2/*.json
+screening_analysis/lj2/*.csv
+screening_analysis/lj3/*.json
+screening_analysis/lj3/*.csv
+
+# PC にだけ置くもの（計算サーバ用の設定と結果の回収、GitHub 用の道具、資料）。資料はファイルの地図だけ入れる
+ws_pw_kit/
+gh_kit/
+計算サーバ利用マニュアル.md
+doc/*
+!doc/code_map/

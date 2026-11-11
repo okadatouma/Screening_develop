@@ -369,6 +369,15 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
   batch_atoms = jnp.tile(atoms[None, ...], [device_batch_size, 1, 1])
   batch_atoms = kfac_jax.utils.replicate_all_local_devices(batch_atoms)
   batch_charges = jnp.tile(charges[None, ...], [device_batch_size, 1])
+  # [λ-jellium 多点] 1 本のネットワークで多くの (r_s, lam) を学習するときは、各ウォーカーの charges を
+  # (r_s, lam, 点の番号) にする（lj_multi.py）。各デバイスに全部の点を同じ数ずつ置く。
+  multi_points = cfg.system.get('multi_points', None)
+  if multi_points is not None:
+    from periodicwave import lj_multi
+    multi_points = np.asarray(multi_points, dtype=np.float64)
+    batch_charges = jnp.asarray(lj_multi.walker_params(multi_points, device_batch_size))
+    logging.info('[多点] %d 点、デバイスあたり 1 点 %d ウォーカー', multi_points.shape[0],
+                 device_batch_size // multi_points.shape[0])
   batch_charges = kfac_jax.utils.replicate_all_local_devices(batch_charges)
 
   if cfg.debug.deterministic:
@@ -520,6 +529,14 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
       _w = float(cfg.system.get('init_sites_width', 0.3))
       pos = _sites[None, :] + _w * jax.random.normal(site_key, (host_batch_size, _sites.shape[0]), dtype=pos.dtype)
 
+    # [λ-jellium 多点] 結晶を仮定しないときは、ウォーカーをセルの中に一様に置く。
+    if cfg.system.get('init_uniform', False):
+      prng_key, uni_key = jax.random.split(prng_key)
+      uni_key = jax.random.fold_in(uni_key, jax.process_index())
+      _lat = jnp.asarray(np.asarray(cfg.system.pbc_lattice, dtype=np.float64), dtype=pos.dtype)
+      _u = jax.random.uniform(uni_key, (host_batch_size, sum(nspins), cfg.system.ndim), dtype=pos.dtype)
+      pos = jnp.einsum('bnd,ed->bne', _u, _lat).reshape(host_batch_size, -1)   # r = A u（A の列がセルの並進）
+
     # [λ-jellium] 擬スピンの初期値。既定は全員 +1（上成分）。'random' なら ±1 を等確率で。
     if (cfg.system.get('pseudospin', False)
         and cfg.system.get('init_pseudospin', 'up') == 'random'):
@@ -537,6 +554,17 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
     t_init = 0
     opt_state_ckpt = None
     mcmc_width_ckpt = None
+
+    # [λ-jellium 多点] 事前学習：ネットワークの軌道を、相互作用のない λ-jellium の基底状態の軌道
+    # （各ウォーカーの lam の下のバンド）に合わせる。チェックポイントから再開するときはしない。
+    _pre = cfg.get('pretrain', None)
+    if _pre is not None and int(_pre.get('steps', 0)) > 0:
+      from periodicwave import lj_multi
+      prng_key, pre_key = jax.random.split(prng_key)
+      params = lj_multi.pretrain(
+          params, data, network, cfg.system.pbc_lattice, int(round(np.sqrt(sum(nspins)))),
+          steps=int(_pre.steps), lr=float(_pre.get('lr', 1e-3)), key=pre_key,
+          log_every=int(_pre.get('log_every', 100)), save_path=ckpt_save_path)
 
   # Set up logging and observables
   train_schema = ['step', 'energy', 'ewmean', 'ewvar', 'pmove', 'locstd']
@@ -586,6 +614,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
       center_at_clipped_energy=cfg.optim.center_at_clip,
       complex_output=use_complex,
       local_energy_chunk=int(cfg.optim.get('local_energy_chunk', 0)),
+      num_groups=0 if multi_points is None else int(multi_points.shape[0]),   # [λ-jellium 多点]
   )
 
   # Compute the learning rate
@@ -719,7 +748,16 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
         directory=ckpt_save_path,
         iteration_key=None,
         log=False)
-    
+
+  # [λ-jellium 多点] 点ごとの記録 multi_stats.csv：E{p} = 点 p の Re<E_L>、nm{p} = 点 p の <n_->/N
+  # （各 step、点 p のウォーカーの平均）。前の run のファイルは multi_stats_N.csv に名前を変えて残す。
+  multi_fh = None
+  if multi_points is not None:
+    _P = int(multi_points.shape[0])
+    writers.rename_file('multi_stats', cfg.log.save_path, file_extension='csv')
+    multi_fh = open(os.path.join(ckpt_save_path, 'multi_stats.csv'), 'w', encoding='utf-8')
+    multi_fh.write(','.join(['step'] + [f'E{p}' for p in range(_P)] + [f'nm{p}' for p in range(_P)]) + '\n')
+
   with writer_manager as writer:
     # Main training loop
     num_resets = 0  # used if reset_if_nan is true
@@ -792,6 +830,14 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
               'eimag': np.asarray(aux_data.local_energy).imag.mean(),
           })
         writer.write(t, **writer_kwargs)
+        if multi_fh is not None:   # [λ-jellium 多点] 点ごとの平均
+          from periodicwave import lj_multi
+          _e = lj_multi.group_means(np.asarray(aux_data.local_energy).real, data.charges, _P)
+          _mat = aux_data.local_energy_mat
+          _nm = (lj_multi.group_means(np.asarray(_mat)[..., 1], data.charges, _P) / sum(nspins)
+                 if _mat is not None else np.full(_P, np.nan))
+          multi_fh.write(','.join([str(t)] + [f'{v:.6f}' for v in _e] + [f'{v:.5f}' for v in _nm]) + '\n')
+          multi_fh.flush()
 
         # log training data
         logging_str = ('Step %05d: '
@@ -809,5 +855,7 @@ def train(cfg: ml_collections.ConfigDict, writer_manager=None):
         logging.info('PW_MAX_MINUTES に達したので step %d で止める（チェックポイント保存済み）', t)
         print(f"[lj2] PW_MAX_MINUTES = {_max_min:g} に達したので step {t} で止めた", flush=True)
         break
+    if multi_fh is not None:
+      multi_fh.close()
 
 

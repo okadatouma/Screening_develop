@@ -13,6 +13,11 @@ h_i は CustomScreenformer の出力（擬スピン s_i は入力の 1 成分と
 カスプ（d -> 0 で d log Psi / d d = gamma）：2 体の相対運動の運動エネルギーの係数は c_{s_i} + c_{s_j}、
 c_+ = 1/2 + Delta lam^2、c_- = 1/2（lambda_jellium.py の c_i）。Coulomb の強さ r_s に対し、2 次元で
   逆向き（節なし）gamma_{+-} = r_s / (c_+ + c_-)、同じ向き（行列式の節つき、l = 1）gamma_{ss} = r_s / (3 * 2 c_s)。
+
+[多点、2026-11] HF なし・1 本のネットワークで多くの (r_s, lam) を学習する版（lj_multi.py）：
+  hf_k = None なら HF の軌道を使わず、軌道はネットワークの出力そのもの phi^k_j = eps [W^k_s h_i]_j（eps = 1 で使う）。
+  per_walker = True なら、カスプを各ウォーカーの (r_s, lam)（charges[0], charges[1]、Delta = r_s x delta_mult）から計算する。
+  apply(..., with_jastrow=False) は e^{J/N} を掛ける前の軌道を返す（事前学習で使う）。
 """
 
 from typing import Sequence
@@ -57,31 +62,42 @@ def make_lj_orbitals(
     charges: jnp.ndarray,
     options,
     equivariant_layers,
-    hf_k: np.ndarray,
-    hf_G: np.ndarray,
-    hf_c: np.ndarray,
+    hf_k,
+    hf_G,
+    hf_c,
     lam: float,
     cusps: Sequence[float],
     net_scale: float = 0.05,
     use_jastrow: bool = True,
+    per_walker: bool = False,
+    delta_mult: float = 1.0,
 ):
   equivariant_layers_init, equivariant_layers_apply = equivariant_layers
   n = int(sum(nspins))
-  nk = hf_k.shape[0]
-  if nk != n:
-    raise ValueError(f"HF の k の数 {nk} が電子数 {n} と違う")
+  use_hf = hf_k is not None
+  if use_hf and hf_k.shape[0] != n:
+    raise ValueError(f"HF の k の数 {hf_k.shape[0]} が電子数 {n} と違う")
   ndet = int(options.determinants)
   construct = networks.make_periodic_construct_input_features(options.pbc_lattice)
 
-  kk = jnp.asarray(hf_k)                       # (N, 2)
-  GG = jnp.asarray(hf_G)                       # (NG, 2)
-  q = hf_k[:, None, :] + hf_G[None, :, :]      # (N, NG, 2)
-  qp = q[..., 0] + 1j * q[..., 1]
-  nrm = 1.0 / np.sqrt(1.0 + lam ** 2 * np.sum(q ** 2, axis=-1))
-  coef_p = jnp.asarray(hf_c * nrm)             # c_j(G) u_{k_j+G}(+1)
-  coef_m = jnp.asarray(hf_c * lam * qp * nrm)  # c_j(G) u_{k_j+G}(-1)
-  g_pp, g_mm, g_pm = [float(v) for v in cusps]
+  if use_hf:
+    kk = jnp.asarray(hf_k)                       # (N, 2)
+    GG = jnp.asarray(hf_G)                       # (NG, 2)
+    q = hf_k[:, None, :] + hf_G[None, :, :]      # (N, NG, 2)
+    qp = q[..., 0] + 1j * q[..., 1]
+    nrm = 1.0 / np.sqrt(1.0 + lam ** 2 * np.sum(q ** 2, axis=-1))
+    coef_p = jnp.asarray(hf_c * nrm)             # c_j(G) u_{k_j+G}(+1)
+    coef_m = jnp.asarray(hf_c * lam * qp * nrm)  # c_j(G) u_{k_j+G}(-1)
+  if not per_walker:
+    g_pp, g_mm, g_pm = [float(v) for v in cusps]
   iu = np.triu_indices(n, k=1)
+
+  def walker_cusps(charges):
+    """[多点] ウォーカーの (r_s, lam) からカスプ (++, --, +-)。cusp_values と同じ式（Delta = r_s x delta_mult）。"""
+    r_s, lam_w = charges[0], charges[1]
+    cp = 0.5 + r_s * delta_mult * lam_w ** 2
+    cm = 0.5
+    return r_s / (6.0 * cp), r_s / (6.0 * cm), r_s / (cp + cm)
 
   def init(key: chex.PRNGKey):
     key, subkey = jax.random.split(key)
@@ -109,7 +125,7 @@ def make_lj_orbitals(
     si, sj = spins[iu[0]], spins[iu[1]]
     return d, si, sj
 
-  def apply(params, pos, spins, atoms, charges):
+  def apply(params, pos, spins, atoms, charges, with_jastrow=True):
     ae, ee, r_ae, r_ee = construct(pos, atoms, ndim=options.ndim)
     h = equivariant_layers_apply(params['layers'], ae=ae, r_ae=r_ae, ee=ee, r_ee=r_ee,
                                  spins=spins, charges=charges)
@@ -117,15 +133,18 @@ def make_lj_orbitals(
     out = out[..., ::2] + 1.0j * out[..., 1::2]                     # (N_e, 2 n ndet)
     out = jnp.reshape(out, (n, 2, ndet, n))
     net = jnp.where(spins[:, None, None] > 0, out[:, 0], out[:, 1])  # (N_e, ndet, N_orb)
-    phi = hf_orbitals(pos, spins)[:, None, :] + net_scale * net       # (N_e, ndet, N_orb)
+    phi = net_scale * net                                             # (N_e, ndet, N_orb)
+    if use_hf:
+      phi = hf_orbitals(pos, spins)[:, None, :] + phi
     orbital = jnp.transpose(phi, (1, 0, 2))                           # (ndet, N_e, N_orb)
-    if use_jastrow:
+    if use_jastrow and with_jastrow:
       d, si, sj = jastrow(r_ee, spins)
       pp = (si > 0) & (sj > 0)
       mm = (si < 0) & (sj < 0)
       a_pp, a_mm, a_pm = (jax.nn.softplus(params['jastrow_ss'][k][0]) for k in ('alpha_pp', 'alpha_mm', 'alpha_pm'))
       a = jnp.where(pp, a_pp, jnp.where(mm, a_mm, a_pm))
-      g = jnp.where(pp, g_pp, jnp.where(mm, g_mm, g_pm))
+      cpp, cmm, cpm = walker_cusps(charges) if per_walker else (g_pp, g_mm, g_pm)
+      g = jnp.where(pp, cpp, jnp.where(mm, cmm, cpm))
       J = jnp.sum(-g * a * jnp.exp(-d / a))
       orbital = orbital * jnp.exp(J / n)
     return [orbital]

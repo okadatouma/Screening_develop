@@ -1,0 +1,15 @@
+# λ-jellium の多点学習（lj_multi）を GPU で走らせる Python パッケージ（2026-11 にクラウドの CPU で検算したときの版）。
+# CPU だけなら jax[cuda12] の代わりに jax==0.7.2。
+jax[cuda12]==0.7.2
+folx==0.2.19
+kfac-jax==0.0.7
+chex==0.1.92
+optax==0.2.8
+ml_collections==1.1.0
+absl-py
+attrs
+h5py
+numpy
+pandas
+scipy
+typing_extensions
