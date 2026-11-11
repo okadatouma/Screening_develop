@@ -53,7 +53,38 @@ PYTHON=python bash hpc/setup_env.sh      # $HOME/venv_pw の python は pw311 �
 同じ TAG の結果のフォルダがあれば、最後のチェックポイントから自動で再開する（事前学習はしない）。
 `PW_MAX_MINUTES` を過ぎたら、チェックポイントを書いて自分で止まる（ジョブの時間切れで消えないように）。
 値を変えるときは `sbatch --export=ALL,TAG=m32b,PW_BATCH=8192 hpc/ljm_slurm.sh`、`qsub -g <グループ> -v TAG=m32b hpc/ljm_tsubame.sh` のように。
-Slurm のパーティションや GPU の数の書き方は計算機ごとに `hpc/ljm_slurm.sh` の `#SBATCH` を直す。
+ログは `jobs/logs/run_<TAG>_<ジョブ番号>.log`（事前学習の loss、止まった step、エラー）。
+
+### ほかの計算機で走らせるとき（GPU が 1〜2 枚の Slurm、Slurm のない PC）
+
+GPU の数・パーティション・時間は sbatch の引数で変える（`hpc/ljm_slurm.sh` の `#SBATCH` の行より優先される）。
+`PW_MAX_MINUTES` はジョブの時間の上限より 1 時間ほど短く（7 日 = 10080 分）：
+
+```
+sbatch --gres=gpu:2 --partition=<パーティション> --time=7-00:00:00 \
+       --export=ALL,TAG=m32a,PW_BATCH=2048,PW_MAX_MINUTES=10000 hpc/ljm_slurm.sh
+```
+
+Slurm のない Linux の PC（GPU 付き）では、同じスクリプトをそのまま走らせる（`#SBATCH` の行はただのコメント。PC の GPU を全部使い、
+選ぶときは前に `CUDA_VISIBLE_DEVICES=0` などを付ける）。Windows は WSL2 の中で（jax の GPU 版は Linux だけ）：
+
+```
+TAG=m32a PW_BATCH=1024 nohup bash hpc/ljm_slurm.sh > ljm_m32a.out 2>&1 &
+```
+
+- `PW_BATCH` を 1024・2048・4096 にすれば、32 点で GPU 1・2・4 枚のどれでも割り切れる。割り切れないときは始めにエラーで止まる。
+- GPU のメモリが足りない（ログに `RESOURCE_EXHAUSTED`）ときは `PW_EL_CHUNK` を 64、32 と小さくする（遅くなるが、値は丸めの範囲で同じ）。
+- 単精度で走らせる（ジョブのスクリプトで `JAX_ENABLE_X64=0`、lj3 と同じ）。
+- このブランチ（wada_dev）のコードで走らせる。ほかのブランチのコードとは環境変数の名前などが違うので、別のフォルダに clone する。
+
+はじめての計算機では、まず短い試しで 1 step の時間とメモリを確かめる（事前学習 4000 step のあと 60 分学習して止まる）：
+
+```
+sbatch --gres=gpu:<GPU の数> --time=02:00:00 --export=ALL,TAG=t1,PW_MAX_MINUTES=60 hpc/ljm_slurm.sh
+```
+
+ログの最後の「PW_MAX_MINUTES = 60 に達したので step T で止めた」から 1 step ≈ 3600/T 秒。
+`train_stats.csv` の energy と `multi_stats.csv` の点ごとの E が下がっていて、NaN と Traceback がなければよい。
 
 ## 出力
 
@@ -82,6 +113,7 @@ r_s = 15 の lj3（HF から出発）の値：λ = 0.33 の WC −445.204、λ =
 | `PW_LR`、`PW_LR_DELAY` | 10、100000 | KFAC の学習率 lr/(1 + t/delay) |
 | `PW_MAX_MINUTES`、`PW_SAVE_MIN` | 1380（ws は 690）、30 | 自分で止まるまでの分、チェックポイントの間隔（分） |
 | `PW_EL_CHUNK` | 128 | 局所エネルギーを GPU 1 枚で何ウォーカーずつ計算するか（メモリが足りなければ小さく） |
+| `PW_VENV` | `$HOME/venv_pw` | Python の環境（`hpc/setup_env.sh` で作ったもの） |
 
 ネットワークは lj3 と同じ（1 層、16 ヘッド、q·k 16、MLP 64、行列式 4、窓は smooth7 で固定、Trim の幅は r = 2 で固定）に、
 入力 (r_s, λ) の 2 成分を足し、軌道は HF なしのネットワークの出力（倍率 1）。
@@ -91,6 +123,7 @@ r_s = 15 の lj3（HF から出発）の値：λ = 0.33 の WC −445.204、λ =
 lj3 は ws の GPU 1 枚で 1024 ウォーカー・約 0.94 秒/step（ウォーカー 1 本・1 step あたり約 0.9 ms）。
 4096 ウォーカー（32 点 × 128）で 20 万 step なら、ws の GPU 換算で約 200 GPU 時間（H100 での速さは未測定）。
 必要な step 数はまだ分からない（CPU の N = 9 と ws の短い run で当たりを取ってから決める）。
+チェックポイントは 1 個約 6 MB（N = 36、4096 ウォーカー）で、30 分ごとに消さずに溜まる（1 日約 0.3 GB）。Python の環境は数 GB。
 
 ## 確かめたこと（クラウドの CPU、jax 0.7.2）
 
