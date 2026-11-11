@@ -139,6 +139,9 @@ class ScreenformerOptions(networks.BaseNetworkOptions):
   input_harmonics: Any = None               # [λ-jellium lj3] 'lj12' で足す高調波の整数の組 n（G·r = 2π n·f）
   input_init: str = 'match'                 # [λ-jellium lj3] 'lj12' の埋め込みの初期値。'match' か 'random'
   trim_fixed: bool = False                  # [λ-jellium lj3] Trim の幅を r = 2 に固定
+  input_cond: bool = False                  # [λ-jellium 多点] 1 電子の入力の最後に (r_s, lam) の 2 成分を足す
+  cond_center: Any = None                   # [λ-jellium 多点] (r_s, lam) の中心（入力は (値 - 中心)/幅）
+  cond_scale: Any = None                    # [λ-jellium 多点] (r_s, lam) の幅
 
 
 TRIM_MAX = 2.0
@@ -185,27 +188,49 @@ def crystal_harmonics(supercell_lattice, crystal_lattice, nshells: int = 1):
 def one_electron_input_dim(options, base_dim: int) -> int:
   """[λ-jellium lj3] 埋め込みに入れる 1 電子の入力の次元。base_dim は特徴層の 1 電子特徴の次元。"""
   if getattr(options, 'input_mode', 'sincos_s') == 'lj12':
-    return base_dim + 2 * len(options.input_harmonics) + 2
-  return base_dim + 1
+    dim = base_dim + 2 * len(options.input_harmonics) + 2
+  else:
+    dim = base_dim + 1
+  if getattr(options, 'input_cond', False):        # [λ-jellium 多点] (r_s, lam) の 2 成分
+    dim += 2
+  return dim
+
+
+def condition_inputs(options, charges: jnp.ndarray, n: int, dtype) -> jnp.ndarray:
+  """[λ-jellium 多点] ウォーカーの (r_s, lam)（charges[0], charges[1]）を、全電子に同じ 2 成分として [N, 2] で返す。
+
+  入力は ((r_s - r_c)/r_w, (lam - lam_c)/lam_w)。中心 (r_c, lam_c) と幅 (r_w, lam_w) は学習させる点の範囲から決める
+  （lj_multi.cond_scaling）。ネットワークが (r_s, lam) を知るのはここだけ。
+  """
+  c = (charges[:2].astype(dtype) - jnp.asarray(options.cond_center, dtype=dtype)) / jnp.asarray(
+      options.cond_scale, dtype=dtype)
+  return jnp.broadcast_to(c[None, :], (n, 2))
 
 
 def one_electron_inputs(options, ae_features: jnp.ndarray, ae: jnp.ndarray,
-                        spins: jnp.ndarray) -> jnp.ndarray:
+                        spins: jnp.ndarray, charges: jnp.ndarray = None) -> jnp.ndarray:
   """[λ-jellium lj3] 埋め込みに入れる 1 電子の入力 [N, D]。学習でも解析でもこの関数を使う。
 
   ae_features：特徴層の 1 電子特徴 [N, 4]（sin θ_1, sin θ_2, cos θ_1, cos θ_2）。
   ae：電子と（ダミーの）原子の差 [N, natoms, ndim]。高調波は特徴層と同じく原子 0 から測る。
+  charges：[λ-jellium 多点] options.input_cond のとき、ウォーカーの (r_s, lam, 点の番号)。最後に (r_s, lam) の 2 成分を足す。
   """
   if getattr(options, 'input_mode', 'sincos_s') != 'lj12':
-    return jnp.concatenate((ae_features, spins[..., None]), axis=-1)
-  dt = ae.dtype
-  inv_lat = jnp.asarray(np.linalg.inv(np.asarray(options.pbc_lattice, dtype=np.float64)), dtype=dt)
-  n = jnp.asarray(np.asarray(options.input_harmonics, dtype=np.float64), dtype=dt)        # [K, ndim]
-  f = jnp.einsum('il,jl->ji', inv_lat, ae[:, 0, :])               # 分数座標 [N, ndim]（特徴層の s_ae と同じ）
-  ph = 2.0 * jnp.pi * jnp.einsum('jd,kd->jk', f, n)                # G_k·r_j [N, K]
-  harm = jnp.stack((jnp.cos(ph), jnp.sin(ph)), axis=-1).reshape(ph.shape[0], -1)   # cos G_1·r, sin G_1·r, cos G_2·r, ...
-  onehot = jnp.stack((0.5 * (1.0 + spins), 0.5 * (1.0 - spins)), axis=-1)
-  return jnp.concatenate((ae_features, harm, onehot.astype(ae_features.dtype)), axis=-1)
+    x = jnp.concatenate((ae_features, spins[..., None]), axis=-1)
+  else:
+    dt = ae.dtype
+    inv_lat = jnp.asarray(np.linalg.inv(np.asarray(options.pbc_lattice, dtype=np.float64)), dtype=dt)
+    n = jnp.asarray(np.asarray(options.input_harmonics, dtype=np.float64), dtype=dt)        # [K, ndim]
+    f = jnp.einsum('il,jl->ji', inv_lat, ae[:, 0, :])               # 分数座標 [N, ndim]（特徴層の s_ae と同じ）
+    ph = 2.0 * jnp.pi * jnp.einsum('jd,kd->jk', f, n)                # G_k·r_j [N, K]
+    harm = jnp.stack((jnp.cos(ph), jnp.sin(ph)), axis=-1).reshape(ph.shape[0], -1)   # cos G_1·r, sin G_1·r, cos G_2·r, ...
+    onehot = jnp.stack((0.5 * (1.0 + spins), 0.5 * (1.0 - spins)), axis=-1)
+    x = jnp.concatenate((ae_features, harm, onehot.astype(ae_features.dtype)), axis=-1)
+  if getattr(options, 'input_cond', False):
+    if charges is None:
+      raise ValueError("input_cond には charges（ウォーカーの (r_s, lam, 点の番号)）が要る")
+    x = jnp.concatenate((x, condition_inputs(options, charges, x.shape[0], x.dtype)), axis=-1)
+  return x
 
 
 
@@ -862,9 +887,11 @@ def make_screenformer_layers(
       w5 = network_blocks.init_linear_layer(
           subkey, in_dim=one_electron_feature_dim + 1, out_dim=options.mlp_dim, include_bias=False
       )['w']
-      nh = feature_dim - one_electron_feature_dim - 2
+      nh = 2 * len(options.input_harmonics)
+      ncond = 2 if getattr(options, 'input_cond', False) else 0   # [λ-jellium 多点] (r_s, lam) の行も 0 から
       params['embed'] = jnp.concatenate(
-          (w5[:-1], jnp.zeros((nh, options.mlp_dim), dtype=w5.dtype), w5[-1:], -w5[-1:]), axis=0)
+          (w5[:-1], jnp.zeros((nh, options.mlp_dim), dtype=w5.dtype), w5[-1:], -w5[-1:],
+           jnp.zeros((ncond, options.mlp_dim), dtype=w5.dtype)), axis=0)
     else:
       params['embed'] = network_blocks.init_linear_layer(
           subkey, in_dim=feature_dim, out_dim=options.mlp_dim, include_bias=False
@@ -902,7 +929,7 @@ def make_screenformer_layers(
       output_dim, is given by init, and is suitable for projection into orbital
       space.
     """
-    del charges  # Unused.
+    # charges は [λ-jellium 多点] の input_cond のときだけ使う（ウォーカーの (r_s, lam, 点の番号)）。
 
     # Only one-electron features are used by the Screenformer stream.
     ae_features, _ = options.feature_layer.apply(
@@ -912,7 +939,8 @@ def make_screenformer_layers(
     # For the Psiformer, the spin feature is required for correct permutation
     # equivariance.
     # [λ-jellium lj3] 従来（'sincos_s'）は (ae_features, spins) の連結そのもの。'lj12' は高調波と one-hot。
-    ae_features = one_electron_inputs(options, ae_features, ae, spins)
+    ae_features = one_electron_inputs(options, ae_features, ae, spins,
+                                      charges if getattr(options, 'input_cond', False) else None)
 
     features = ae_features  # Just 1-electron stream for now.
 
@@ -980,11 +1008,20 @@ def make_fermi_net(
     input_harmonics=None,
     input_init: str = 'match',
     trim_fixed: bool = False,
+    input_cond: bool = False,
+    cond_center=None,
+    cond_scale=None,
+    lj_net_only: bool = False,
+    lj_per_walker: bool = False,
+    lj_delta_mult: float = 1.0,
 ) -> networks.Network:
   """Screenformer: stacked screening self-attention layers. [SCREEN]
 
   [λ-jellium] lj_hf_path が空でなければ、軌道を lj_orbitals.make_lj_orbitals（HF の Bloch スピノル
   + 擬スピンで重みを分けた網の補正、擬スピンの組ごとの Jastrow）にする。
+  [λ-jellium 多点] lj_net_only なら HF を使わず、軌道はネットワークの出力そのもの（lj_net_scale 倍）。
+  lj_per_walker なら Jastrow のカスプをウォーカーごとの (r_s, lam)（charges）から計算する（Delta = r_s x lj_delta_mult）。
+  input_cond なら 1 電子の入力の最後にウォーカーの (r_s, lam) の 2 成分を足す（cond_center、cond_scale で中心と幅をそろえる）。
 
   Includes standard envelope and determinants. Identical to
   CustomPsiformer.make_fermi_net except that the attention operator is the
@@ -1058,10 +1095,16 @@ def make_fermi_net(
     input_harmonics = None
   if input_init not in ('match', 'random'):
     raise ValueError("input_init は 'match' か 'random'（いま %r）" % (input_init,))
+  if input_cond:
+    if cond_center is None or cond_scale is None or len(cond_center) != 2 or len(cond_scale) != 2:
+      raise ValueError("input_cond には cond_center と cond_scale（どちらも (r_s, lam) の 2 つ）が要る")
+    cond_center = tuple(float(v) for v in cond_center)
+    cond_scale = tuple(float(v) for v in cond_scale)
   if input_mode == 'lj12' or trim_fixed:
     print(f"[λJ] 入力 {input_mode}"
           + (f"（高調波 n = {', '.join(str(n) for n in input_harmonics)}、one-hot、初期値 {input_init}）"
              if input_harmonics else "")
+          + (f" + (r_s, lam)（中心 {cond_center}、幅 {cond_scale}）" if input_cond else "")
           + f"、Trim の幅 {'r = 2 に固定' if trim_fixed else '学習'}")
 
   options = ScreenformerOptions(
@@ -1097,10 +1140,15 @@ def make_fermi_net(
       input_harmonics=input_harmonics,
       input_init=input_init,
       trim_fixed=bool(trim_fixed),
+      input_cond=bool(input_cond),
+      cond_center=cond_center,
+      cond_scale=cond_scale,
   )  # pytype: disable=wrong-keyword-args
 
   screenformer_layers = make_screenformer_layers(nspins, charges.shape[0], options)
 
+  if lj_hf_path and lj_net_only:
+    raise ValueError("lj_hf_path と lj_net_only は同時に使えない")
   if lj_hf_path:
     from periodicwave import lj_orbitals
     _k, _G, _c = lj_orbitals.load_hf_table(lj_hf_path)
@@ -1110,7 +1158,20 @@ def make_fermi_net(
     orbitals_init, orbitals_apply = lj_orbitals.make_lj_orbitals(
         nspins, charges, options, screenformer_layers, _k, _G, _c, float(lj_lam),
         tuple(lj_cusps) if lj_cusps is not None else (0.0, 0.0, 0.0),
-        net_scale=float(lj_net_scale), use_jastrow=bool(lj_jastrow))
+        net_scale=float(lj_net_scale), use_jastrow=bool(lj_jastrow),
+        per_walker=bool(lj_per_walker), delta_mult=float(lj_delta_mult))
+  elif lj_net_only:
+    # [λ-jellium 多点] HF なし：軌道はネットワークの出力そのもの。擬スピンの組ごとの Jastrow はそのまま。
+    from periodicwave import lj_orbitals
+    print(f"[λJ] 多点：軌道はネットワークの出力（HF なし、倍率 {lj_net_scale}）、"
+          f"Jastrow {'あり' if lj_jastrow else 'なし'}"
+          + ("（カスプはウォーカーごとの (r_s, lam) から）" if lj_per_walker else
+             f"（カスプ {tuple(lj_cusps) if lj_cusps is not None else None}）"))
+    orbitals_init, orbitals_apply = lj_orbitals.make_lj_orbitals(
+        nspins, charges, options, screenformer_layers, None, None, None, float(lj_lam),
+        tuple(lj_cusps) if lj_cusps is not None else (0.0, 0.0, 0.0),
+        net_scale=float(lj_net_scale), use_jastrow=bool(lj_jastrow),
+        per_walker=bool(lj_per_walker), delta_mult=float(lj_delta_mult))
   else:
     orbitals_init, orbitals_apply = networks.make_orbitals(
         nspins=nspins,

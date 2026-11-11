@@ -10,7 +10,7 @@ CustomScreenformer は s_i を 1 電子特徴に足している（CustomScreenfo
 nspins = (N, 0) の 1 枚の行列式で、そのまま (r, s) の関数になる。擬スピンはモンテカルロで
 位置と一緒に標本化する（mcmc.mh_spin_flip）。
 
-ハミルトニアン（コード単位：長さ r_s a_B、エネルギー 1 = Ry r_s^2 / 2）
+ハミルトニアン（コード単位：長さ r_s a_B、エネルギーは 2/r_s^2 Ry を 1 とする。E[Ry] = (2/r_s^2) E）
     H = sum_i [ -1/2 lap_i + Delta h(i) ] + r_s sum_{i<j} 1/r_ij          （Coulomb は Ewald）
     h = [[ -lam^2 lap , i lam d    ],
          [ i lam dbar , 1          ]],    d = d_x - i d_y,  dbar = d_x + i d_y
@@ -137,6 +137,8 @@ def local_energy(
     kinetic_kwargs: Optional[dict] = None,
     flip_batch: int = 0,
     return_components: bool = True,
+    per_walker: bool = False,
+    delta_mult: float = 1.0,
 ):
   """λ-jellium の局所エネルギー e_l(params, key, data) -> (E_L, 付随量) を作る。
 
@@ -151,6 +153,9 @@ def local_energy(
     flip_batch: 擬スピン反転項を何電子ずつ処理するか（0 = 全部まとめて）。
     return_components: True なら付随量 [V, n_-] をウォーカーごとに返す
       （loss の local_energy_mat に入り、学習ログに出る）。
+    per_walker: [多点] True なら r_s と lam をウォーカーごとに data.charges[0]、data.charges[1] から読む
+      （lam、delta、interaction_energy_scale の引数は使わない）。Delta = r_s x delta_mult、Coulomb は強さ 1 の Ewald に r_s を掛ける。
+    delta_mult: [多点] Delta を 2/r_s Ry（コード単位で r_s）の何倍にするか。
   """
   del nspins, use_scan
   if not complex_output:
@@ -159,9 +164,14 @@ def local_energy(
     raise ValueError('lambda_jellium.local_energy には lattice が要る。')
   potential_kwargs = dict(potential_kwargs or {})
   kinetic_kwargs = dict(kinetic_kwargs or {})
-  r_s = float(potential_kwargs.get('interaction_energy_scale', 1.0))
-  delta = r_s if delta is None else float(delta)
-  lam = float(lam)
+  if per_walker:
+    r_s = 1.0                                   # Ewald は強さ 1 で作り、ウォーカーの r_s を掛ける
+    delta = None
+    lam = None
+  else:
+    r_s = float(potential_kwargs.get('interaction_energy_scale', 1.0))
+    delta = r_s if delta is None else float(delta)
+    lam = float(lam)
   method = kinetic_kwargs.get('laplacian_method', 'folx')
   ndim = int(np.asarray(lattice).shape[0])
 
@@ -176,8 +186,12 @@ def local_energy(
   else:
     raise NotImplementedError(f'lambda_jellium: potential_type {potential_type}')
 
-  print(f"[λ-jellium] lam = {lam}, Delta = {delta} (code units; Delta/r_s = {delta / r_s:.4g}), "
-        f"r_s = {r_s}, laplacian = {method}, flip_batch = {flip_batch}, potential = {potential_type}")
+  if per_walker:
+    print(f"[λ-jellium] 多点：r_s と lam はウォーカーごと（data.charges）、Delta = r_s x {delta_mult}, "
+          f"laplacian = {method}, flip_batch = {flip_batch}, potential = {potential_type}")
+  else:
+    print(f"[λ-jellium] lam = {lam}, Delta = {delta} (code units; Delta/r_s = {delta / r_s:.4g}), "
+          f"r_s = {r_s}, laplacian = {method}, flip_batch = {flip_batch}, potential = {potential_type}")
 
   def _e_l(params, key, data):
     del key
@@ -185,14 +199,22 @@ def local_energy(
     dtype = data.positions.dtype
     plus = (s > 0).astype(dtype)
     n_minus = jnp.sum(1.0 - plus)
-    c = 0.5 + delta * lam ** 2 * plus
-    e_l = -wlap(params, data, c) + delta * n_minus
-    if lam != 0.0:
+    if per_walker:
+      r_s_w = data.charges[0].astype(dtype)
+      lam_w = data.charges[1].astype(dtype)
+      delta_w = r_s_w * delta_mult
+    else:
+      r_s_w, lam_w, delta_w = 1.0, lam, delta
+    c = 0.5 + delta_w * lam_w ** 2 * plus
+    e_l = -wlap(params, data, c) + delta_w * n_minus
+    if per_walker or lam != 0.0:
       phase0, logabs0 = f(params, data.positions, s, data.atoms, data.charges)
-      e_l = e_l + 1j * delta * lam * jnp.sum(flips(params, data, phase0, logabs0))
+      e_l = e_l + 1j * delta_w * lam_w * jnp.sum(flips(params, data, phase0, logabs0))
     if potential is not None:
       ae, ee, _, _ = networks.construct_input_features(data.positions, data.atoms, ndim=ndim)
       v = potential(ae, ee)
+      if per_walker:
+        v = r_s_w * v
     else:
       v = jnp.zeros((), dtype)
     e_l = e_l + v

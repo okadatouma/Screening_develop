@@ -44,6 +44,16 @@
                       (cos G·r, sin G·r) + 擬スピンの one-hot (n_+, n_-) の 12 成分にする（従来は sin, cos の 4 と s = ±1）
   PW_INPUT12_INIT     埋め込みの初期値。'match'（既定：従来の入力の網と同じ関数から出発し、高調波の重みは 0）か 'random'
   PW_TRIM_FIX=1       Trim の幅を r = 2 に固定する（α = ((1 + s)/2)^p、学習しない）
+多点（HF なし、1 本のネットワークで多くの (r_s, lam)、2026-11、periodicwave/lj_multi.py）
+    PW_MULTI=<点の表> python run_lambda_jellium.py <N> [<iterations> [<tag>]]
+  PW_MULTI=<点の表>   各行 'r_s lam' の表（periodicwave/configs/lj_multi_points_32.txt など）。r_s と lam はコマンドの引数でなく表から。
+                      点ごとに変えるのは (r_s, lam) だけ（ネットワークの入力の 2 成分、ハミルトニアン、Jastrow のカスプ）。
+                      入力は 12 成分 + (r_s, lam)、Trim の幅は r = 2 に固定、軌道は HF なしのネットワークの出力、
+                      ウォーカーはセルの中に一様に置いて始める。PW_BATCH は デバイスの数 x 点の数 の倍数。
+  PW_PRETRAIN         事前学習（ネットワークの軌道を相互作用のない下のバンドの軌道に合わせる、Adam）の step 数（既定 4000）
+  PW_PRETRAIN_LR      事前学習の学習率（既定 1e-3）
+  PW_LJ_NETSCALE      多点では軌道の倍率（既定 1）。PW_INPUT12_INIT の既定は 'random'
+  結果：results/lambda-jellium/CustomScreenformer/N{N}_multi{点の数}_{tag}（点ごとの記録は multi_stats.csv）
 """
 
 import os
@@ -76,7 +86,19 @@ def format_for_folder_name(value: float) -> str:
 
 # ---------------- 引数 ----------------
 N, r_s, lam, iterations, tag = 9, 15.0, 0.72, 200000, ""
-if len(argv) > 1:
+_multi_path = os.environ.get("PW_MULTI", "")
+if _multi_path:
+    # [多点] python run_lambda_jellium.py <N> [<iterations> [<tag>]]（r_s と lam は点の表から）
+    from periodicwave import lj_multi as _ljm
+    _points = _ljm.load_points(_multi_path)
+    r_s, lam = float("nan"), float("nan")
+    if len(argv) > 1:
+        N = int(argv[1])
+    if len(argv) > 2:
+        iterations = int(argv[2])
+    if len(argv) > 3:
+        tag = argv[3]
+elif len(argv) > 1:
     if len(argv) < 4:
         raise ValueError("usage: run_lambda_jellium.py <N> <r_s> <lam> [<iterations> [<tag>]]")
     N, r_s, lam = int(argv[1]), float(argv[2]), float(argv[3])
@@ -111,8 +133,12 @@ cfg.system.electrons = (N, 0)
 cfg.system.ndim = 2
 a_wc = np.sqrt(2 * np.pi / np.sqrt(3))        # 電子 1 個あたり面積 pi の三角格子（コード単位）
 supercell_lattice, wc_lattice = lattices._triangular_lattice_vecs_periodic_potential(a_wc, N)
-print(f"[λJ] N = {N} ({L}x{L}), r_s = {r_s}, lam = {lam}, Delta = {delta} (= {delta_mult} x 2/r_s Ry), "
-      f"a = {a_wc:.4f}, flips/step = {spin_flips}, init spin = {init_spin}")
+if _multi_path:
+    print(f"[λJ] N = {N} ({L}x{L}), 多点（r_s と lam は点の表から）, Delta = {delta_mult} x 2/r_s Ry, "
+          f"a = {a_wc:.4f}, flips/step = {spin_flips}, init spin = {init_spin}")
+else:
+    print(f"[λJ] N = {N} ({L}x{L}), r_s = {r_s}, lam = {lam}, Delta = {delta} (= {delta_mult} x 2/r_s Ry), "
+          f"a = {a_wc:.4f}, flips/step = {spin_flips}, init spin = {init_spin}")
 
 cfg.system.make_local_energy_fn = "periodicwave.pbc.lambda_jellium.local_energy"
 cfg.system.make_local_energy_kwargs = {
@@ -127,6 +153,18 @@ cfg.system.make_local_energy_kwargs = {
 cfg.system.pbc_lattice = supercell_lattice
 cfg.system.pseudospin = True
 cfg.system.init_pseudospin = init_spin
+
+# ---------------- [多点] r_s と lam はウォーカーごと（点の表） ----------------
+if _multi_path:
+    if os.environ.get("PW_LJ_HF", ""):
+        raise ValueError("PW_MULTI と PW_LJ_HF は同時に使えない（多点は HF なし）")
+    cfg.system.make_local_energy_kwargs.update({
+        "lam": 0.0, "delta": None, "potential_kwargs": {"interaction_energy_scale": 1.0},   # 使わない（ウォーカーごと）
+        "per_walker": True, "delta_mult": delta_mult})
+    cfg.system.multi_points = [[float(a), float(b)] for a, b in _points]
+    cfg.system.init_uniform = True
+    print(f"[λJ] 多点：{len(_points)} 点（{_multi_path}）、r_s {_points[:, 0].min():g}–{_points[:, 0].max():g}、"
+          f"lam {_points[:, 1].min():g}–{_points[:, 1].max():g}、Delta = r_s x {delta_mult}（ウォーカーごと）")
 
 cfg.network.make_feature_layer_fn = "periodicwave.pbc.feature_layer.make_pbc_feature_layer"
 cfg.network.make_feature_layer_kwargs = {"lattice": supercell_lattice, "include_r_ae": False}
@@ -229,6 +267,32 @@ if _flag("PW_TRIM_FIX"):
     cfg.network.CustomScreenformer.trim_fixed = True
     print(f"[λJ] lj3：Trim の幅を r = 2 に固定（α = ((1 + s)/2)^{_CS.TRIM_POW}、学習しない）")
 
+# ---------------- [多点] 入力 12 成分 + (r_s, lam)、Trim 固定、HF なしの軌道、事前学習 ----------------
+if _multi_path:
+    _harm = _CS.crystal_harmonics(supercell_lattice, wc_lattice)
+    _cc, _cs = _ljm.cond_scaling(_points)
+    _csf = cfg.network.CustomScreenformer
+    _csf.input_mode = 'lj12'
+    _csf.input_harmonics = [list(v) for v in _harm]
+    _csf.input_init = os.environ.get("PW_INPUT12_INIT", "random")
+    _csf.trim_fixed = True
+    _csf.input_cond = True
+    _csf.cond_center = _cc
+    _csf.cond_scale = _cs
+    _csf.lj_net_only = True
+    _csf.lj_per_walker = True
+    _csf.lj_delta_mult = float(delta_mult)
+    _csf.lj_net_scale = float(os.environ.get("PW_LJ_NETSCALE", 1.0))
+    _csf.lj_jastrow = _flag("PW_LJ_JASTROW", "1")
+    cfg.pretrain = ml_collections.ConfigDict({
+        'steps': int(os.environ.get("PW_PRETRAIN", 4000)),
+        'lr': float(os.environ.get("PW_PRETRAIN_LR", 1e-3)),
+        'log_every': 100,
+    })
+    print(f"[λJ] 多点：入力 {4 + 2 * len(_harm) + 2} + 2 成分（(r_s, lam)、中心 {_cc}、幅 {_cs}）、初期値 {_csf.input_init}、"
+          f"Trim 固定、軌道は HF なし（倍率 {_csf.lj_net_scale}）、Jastrow {'あり' if _csf.lj_jastrow else 'なし'}、"
+          f"事前学習 {cfg.pretrain.steps} step（学習率 {cfg.pretrain.lr}）")
+
 # ---------------- [lj2] HF の結晶から出発 ----------------
 _hf_path = os.environ.get("PW_LJ_HF", "")
 if _hf_path:
@@ -260,8 +324,11 @@ if _hf_path:
           f"密度の山 r0 = ({_r0[0]:.3f}, {_r0[1]:.3f})、山/谷 = {_rho.max() / max(_rho.min(), 1e-12):.2f}")
 
 # ---------------- 保存先・種 ----------------
-folder_name = (f"results/lambda-jellium/CustomScreenformer/"
-               f"N{N}_rs{format_for_folder_name(r_s)}_lam{format_for_folder_name(lam)}")
+if _multi_path:
+    folder_name = f"results/lambda-jellium/CustomScreenformer/N{N}_multi{len(_points)}"
+else:
+    folder_name = (f"results/lambda-jellium/CustomScreenformer/"
+                   f"N{N}_rs{format_for_folder_name(r_s)}_lam{format_for_folder_name(lam)}")
 if tag:
     folder_name += f"_{tag}"
 cfg.log.save_path = folder_name

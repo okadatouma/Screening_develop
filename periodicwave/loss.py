@@ -161,7 +161,8 @@ def make_loss(network: networks.LogFermiNetLike,
               clip_from_median: bool = True,
               center_at_clipped_energy: bool = True,
               complex_output: bool = False,
-              local_energy_chunk: int = 0) -> LossFn:
+              local_energy_chunk: int = 0,
+              num_groups: int = 0) -> LossFn:
   """Creates the loss function, including custom gradients.
 
   Args:
@@ -184,6 +185,12 @@ def make_loss(network: networks.LogFermiNetLike,
     local_energy_chunk: [λ-jellium] > 0 なら局所エネルギーをウォーカー local_energy_chunk 本ずつ
       順に計算してメモリの山を抑える（jax.lax.map）。0（既定）なら従来どおり全ウォーカーを
       一度に vmap する。値は変わらない。
+    num_groups: [λ-jellium 多点] > 0 なら、ウォーカーは data.charges[2] の点の番号（0, ..., num_groups - 1）で
+      組に分かれる（点ごとにハミルトニアンの (r_s, lam) が違う）。E_L の切り詰めと、勾配で E_L から引く平均を
+      点ごとに取る：勾配 = (2/B) sum_b Re[(E_c,b - Re Ebar_{c,p(b)}) conj(O_b)]、O = d log psi / d theta
+      （全点の平均を引くと 2 (E_p - c) Re<O>_p だけずれる）。各点のウォーカー数が同じなら、
+      点ごとのエネルギー E_p の勾配の平均 (1/P) sum_p dE_p/dtheta と同じ。記録する loss は全ウォーカーの平均のまま。
+      clip_from_median には対応しない。
 
   Returns:
     Callable with signature (params, data) and returns (loss, aux_data), where
@@ -252,11 +259,52 @@ def make_loss(network: networks.LogFermiNetLike,
         local_energy_mat=e_l_mat,
     )
 
+  if num_groups > 0 and clip_from_median and clip_local_energy > 0.0:
+    raise ValueError('num_groups（多点）は clip_from_median に対応しない（cfg.optim.clip_median = False にする）')
+
+  def group_terms(local_energy, charges):
+    """[多点] 点ごとに切り詰めた E_L と、勾配に掛ける重み w_b = E_c,b - Re Ebar_{c,p(b)}（ウォーカーごと）。"""
+    dt = jnp.real(local_energy).dtype
+    onehot = jax.nn.one_hot(charges[:, 2].astype(jnp.int32), num_groups, dtype=dt)   # (B, P)
+    count = jnp.maximum(constants.pmean(jnp.sum(onehot, axis=0)), 1.0)             # 点ごとのウォーカー数
+
+    def gmean(v):                     # 点ごとの平均（全デバイス）を、各ウォーカーの位置に戻す
+      return onehot @ (constants.pmean(onehot.T @ v) / count)
+
+    def clip(v):
+      c = gmean(v)
+      tv = gmean(jnp.abs(v - c))
+      return jnp.clip(v, c - clip_local_energy * tv, c + clip_local_energy * tv)
+
+    if clip_local_energy > 0.0:
+      clipped = (clip(local_energy.real) + 1j * clip(local_energy.imag)) if complex_output else clip(local_energy)
+    else:
+      clipped = local_energy
+    ref = clipped if center_at_clipped_energy else local_energy
+    if complex_output:
+      return clipped, clipped - gmean(ref.real)
+    return clipped, clipped - gmean(ref)
+
   @total_energy.defjvp
   def total_energy_jvp(primals, tangents):  # pylint: disable=unused-variable
     """Custom Jacobian-vector product for unbiased local energy gradients."""
     params, key, data = primals
     loss, aux_data = total_energy(params, key, data)
+
+    if num_groups > 0:
+      aux_data.clipped_energy, weights = group_terms(aux_data.local_energy, data.charges)
+      data_tangents = tangents[2]
+      psi_primal, psi_tangent = jax.jvp(
+          batch_network, (params, data.positions, data.spins, data.atoms, data.charges),
+          (tangents[0], data_tangents.positions, data_tangents.spins, data_tangents.atoms,
+           data_tangents.charges))
+      device_batch_size = jnp.shape(aux_data.local_energy)[0]
+      if complex_output:
+        kfac_jax.register_normal_predictive_distribution(psi_primal.real[:, None])
+        grad_dot = 2.0 * jnp.real(jnp.dot(jnp.conjugate(weights), psi_tangent)) / device_batch_size
+        return (loss.real, aux_data), (grad_dot, aux_data)
+      kfac_jax.register_normal_predictive_distribution(psi_primal[:, None])
+      return (loss, aux_data), (jnp.dot(psi_tangent, weights) / device_batch_size, aux_data)
 
     if clip_local_energy > 0.0:
       aux_data.clipped_energy, diff = clip_local_values(

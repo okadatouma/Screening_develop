@@ -23,6 +23,8 @@ results/
 # 手元の作業用・計算の出力（リポジトリには入れない）
 *.log
 *.npz
+ljm*.out
+ljm*.err
 screening_analysis/out*/
 _to_delete/
 Claude outputs/
