@@ -247,5 +247,6 @@ def basis_windows(basis,window_parameters,settings,dref,num_heads):
             params={k:jnp.asarray(v) for k,v in record.items()}
             windows.append(np.ones((num_heads,basis.size,basis.size)) if 'mask_omega' not in params else
                 np.asarray(attention.screening_window(params,d,jnp.asarray(dref),
-                           win_shape=settings['WIN_SHAPE'],freeze_w=settings['FREEZE_W'])))
+                           win_shape=settings['WIN_SHAPE'],freeze_w=settings['FREEZE_W'],
+                           algebraic_power=settings.get('WIN_POWER',4),freeze_eta=settings.get('FREEZE_ETA',False))))
     return np.asarray(windows)

@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=rs-sweep
+#SBATCH --partition=debug
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:1
+#SBATCH --mem=16G
+#SBATCH --output=rs-sweep-%A_%a.log
+
+set -euo pipefail
+PYTHON=${SWEEP_PYTHON:-/home/tomax/venvs/screening-gpu/bin/python}
+export JAX_PLATFORMS=${JAX_PLATFORMS:-cuda,cpu}
+export JAX_ENABLE_X64=1 XLA_PYTHON_CLIENT_PREALLOCATE=false
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-2}
+export OPENBLAS_NUM_THREADS=$OMP_NUM_THREADS MKL_NUM_THREADS=$OMP_NUM_THREADS
+: "${SWEEP_PLAN:?Set SWEEP_PLAN to the prepared plan.json}"
+: "${SLURM_ARRAY_TASK_ID:?Use the array range printed by prepare}"
+SWEEP_REPOSITORY=$("$PYTHON" -c 'import json,sys; print(json.load(open(sys.argv[1]))["repository"])' "$SWEEP_PLAN")
+cd "$SWEEP_REPOSITORY"
+"$PYTHON" -u -m screening_analysis.rs_sweep run "$SWEEP_PLAN" --index "$SLURM_ARRAY_TASK_ID"

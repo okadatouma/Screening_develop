@@ -1,0 +1,14 @@
+{
+  "experiment": "results/manual/head-count-sweep-20261031/experiment.json",
+  "output": "results/analysis/physical-phase-diagnostics-20261102",
+  "samples": 32,
+  "phase_samples": 4,
+  "coordinate_samples": 2,
+  "ablation_samples": 2,
+  "distance_bins": 12,
+  "qmax": 8,
+  "min_bin_count": 20,
+  "seed": 20261102,
+  "coordinate_epsilon": 0.0001,
+  "plot_python": "/home/tomax/venvs/pyrite-bands/bin/python"
+}

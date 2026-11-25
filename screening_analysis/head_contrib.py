@@ -27,7 +27,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from periodicwave import networks, CustomScreenformer as CS
-from screening_analysis.attn_probe import SETTINGS, _effective_settings, lattice_from_config, _centres_from
+from screening_analysis.attn_probe import GLOBAL_SETTINGS, _effective_settings, lattice_from_config, _centres_from
 
 
 def projected_heads(gate_output, projection, num_heads, scale=1.):
@@ -97,9 +97,9 @@ def analyze(folder, nconf=64, checkpoint=None, sel=None, *, settings=None, latti
             for a in jax.tree_util.tree_leaves((P, batch))):
         raise ValueError("float64 checkpointをx64無効で切り捨てることはできません")
 
-    globals_before = {k: getattr(CS, k) for k in SETTINGS[:6]}
+    globals_before = {k: getattr(CS, k) for k in GLOBAL_SETTINGS}
     try:
-        for key in SETTINGS[:6]:
+        for key in GLOBAL_SETTINGS:
             setattr(CS, key, effective[key])
         with jax.experimental.enable_x64(effective["jax_enable_x64"]), jax.default_matmul_precision(effective["jax_default_matmul_precision"]):
             nspins = tuple(cfg["system"]["electrons"])
@@ -172,6 +172,7 @@ def analyze(folder, nconf=64, checkpoint=None, sel=None, *, settings=None, latti
                 dict(ap,_diag_only=jnp.ones(options.num_heads)),x,d,pair,options=core_options,
                 trim_max=effective['TRIM_MAX'],trim_pow=effective['TRIM_POW'],
                 win_shape=effective['WIN_SHAPE'],freeze_w=effective['FREEZE_W'],
+                algebraic_power=effective['WIN_POWER'],freeze_eta=effective['FREEZE_ETA'],
                 clip_r=effective['CLIP_R'],clip_beta=effective['CLIP_BETA'],return_aux=True))
             samples=[]
             for i in range(count):
@@ -215,10 +216,12 @@ def analyze(folder, nconf=64, checkpoint=None, sel=None, *, settings=None, latti
             # 表示用の長さだけをcheckpointから読む。輪切りsigmaは旧head_contribと同じ全幅。
             widths=[];centres=[];outer=[];representative=[];shells=[]
             for ap in P['layers']['attention']:
-                sigma=np.asarray(jax.nn.softplus(ap['mask_omega'])) if 'mask_omega' in ap else np.full(options.num_heads,np.nan)
+                sigma=(np.asarray(jax.nn.softplus(ap['mask_omega']))
+                       if 'mask_omega' in ap and effective['WIN_SHAPE']!='full' else np.full(options.num_heads,np.nan))
                 centre=np.asarray(ap['mask_centre']) if 'mask_centre' in ap else np.zeros_like(sigma)
                 shell='mask_centre' in ap or 'mask_rings' in ap
                 edge=centre+sigma
+                if effective['WIN_SHAPE'] not in ('cos','smooth7'):edge=np.full_like(sigma,np.inf)
                 if 'mask_rings' in ap:
                     rings=np.asarray(ap['mask_rings']);centre=.5*(rings[:-1]+rings[1:])
                     sigma=np.diff(rings);edge=rings[1:]

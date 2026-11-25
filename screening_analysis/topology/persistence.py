@@ -14,9 +14,13 @@ def symmetrize(weights):
     w = np.asarray(weights, dtype=float)
     if w.ndim != 2 or w.shape[0] != w.shape[1] or not len(w) or not np.isfinite(w).all():
         raise ValueError('finite nonempty square weight matrix required')
-    b = (w + w.T) / 2
-    if np.any(b < 0) or np.any(b > 1):
+    # Cosine windows evaluated at the cutoff can be -O(1e-16) in float64.
+    # Match the existing density-PH tolerance, retaining strict rejection of
+    # genuinely invalid inputs and never changing the checkpoint/forward path.
+    if np.any(w < -1e-12) or np.any(w > 1 + 1e-12):
         raise ValueError('weights must be in [0,1]; map QK to (s+1)/2 explicitly')
+    w = np.clip(w, 0., 1.)
+    b = (w + w.T) / 2
     np.fill_diagonal(b, 0.)
     return b
 

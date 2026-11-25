@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=continuum-window
+#SBATCH --partition=debug
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:1
+#SBATCH --mem=24G
+#SBATCH --time=7-00:00:00
+set -euo pipefail
+: "${CONTINUOUS_ROOT:?Set CONTINUOUS_ROOT}"
+cd "${CONTINUOUS_SOURCE:-$CONTINUOUS_ROOT/source}"
+export JAX_PLATFORMS="${CONTINUOUS_BACKEND:-cuda}" JAX_ENABLE_X64=1
+export XLA_PYTHON_CLIENT_PREALLOCATE=false
+export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-2}" OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+PYTHON_BIN=/home/tomax/venvs/screening-gpu/bin/python
+"$PYTHON_BIN" -u -m screening_analysis.converged_window_study "${CONTINUOUS_PHASE:-case}" "$CONTINUOUS_ROOT" "$SLURM_ARRAY_TASK_ID"

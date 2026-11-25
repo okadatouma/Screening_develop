@@ -27,8 +27,9 @@ import jaxlib
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from periodicwave import networks, CustomScreenformer as CS  # noqa: E402
 
-SETTINGS = ("TRIM_MAX", "TRIM_POW", "WIN_SHAPE", "FREEZE_W", "CLIP_R", "CLIP_BETA",
-            "jax_enable_x64", "jax_default_matmul_precision")
+GLOBAL_SETTINGS = ("TRIM_MAX", "TRIM_POW", "WIN_SHAPE", "FREEZE_W", "CLIP_R", "CLIP_BETA",
+                   "WIN_POWER", "WIN_ETA", "FREEZE_ETA")
+SETTINGS = GLOBAL_SETTINGS + ("jax_enable_x64", "jax_default_matmul_precision")
 
 
 def lattice_from_config(cfg):
@@ -60,12 +61,24 @@ def _effective_settings(cfg, settings, trim_max):
     if trim_max is not None:
         effective["TRIM_MAX"] = trim_max
         provenance["analysis_override"] = {"TRIM_MAX": trim_max}
+    # These knobs do not enter old cos/smooth7 checkpoints. Preserve their
+    # exact forward path without inferring any new-window settings from env.
+    if effective.get('WIN_SHAPE') in ('cos', 'smooth7'):
+        defaults={'WIN_POWER':4,'WIN_ETA':.1,'FREEZE_ETA':False}
+        provenance['legacy_irrelevant_defaults']={k:v for k,v in defaults.items() if k not in effective}
+        effective={**defaults,**effective}
     missing, extra = set(SETTINGS)-effective.keys(), effective.keys()-set(SETTINGS)
     if missing or extra:
         raise ValueError("未保存設定を環境から推測しません。settingsに必要: "
                          + str(sorted(missing)) + "; 未対応キー: " + str(sorted(extra)))
-    if effective["TRIM_POW"] not in (2, 4) or effective["WIN_SHAPE"] not in ("cos", "smooth7"):
-        raise ValueError("TRIM_POWは2/4、WIN_SHAPEはcos/smooth7")
+    if effective["TRIM_POW"] not in (2, 4) or effective["WIN_SHAPE"] not in CS.attention.WINDOW_SHAPES:
+        raise ValueError('unsupported TRIM_POW or WIN_SHAPE')
+    if type(effective['WIN_POWER']) is not int or effective['WIN_POWER']<2 or effective['WIN_POWER']%2:
+        raise ValueError('WIN_POWER must be an even integer >= 2')
+    if not np.isfinite(effective['WIN_ETA']) or not 0<=effective['WIN_ETA']<=1 or type(effective['FREEZE_ETA']) is not bool:
+        raise ValueError('WIN_ETA in [0,1] and boolean FREEZE_ETA required')
+    if effective['WIN_SHAPE']=='hybrid' and not effective['FREEZE_ETA'] and not 0<effective['WIN_ETA']<1:
+        raise ValueError('learned Hybrid initial eta must be strictly between 0 and 1')
     if type(effective["FREEZE_W"]) is not bool or type(effective["jax_enable_x64"]) is not bool:
         raise ValueError("FREEZE_Wとjax_enable_x64はJSON booleanで指定してください")
     if not np.isfinite(effective["TRIM_MAX"]) or effective["TRIM_MAX"] <= 0:
@@ -152,9 +165,9 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
             for a in jax.tree_util.tree_leaves((P, batch))):
         raise ValueError("float64 checkpointをx64無効で切り捨てることはできません")
 
-    globals_before = {k: getattr(CS, k) for k in SETTINGS[:6]}
+    globals_before = {k: getattr(CS, k) for k in GLOBAL_SETTINGS}
     try:
-        for key in SETTINGS[:6]:
+        for key in GLOBAL_SETTINGS:
             setattr(CS, key, effective[key])
         with jax.experimental.enable_x64(effective["jax_enable_x64"]), jax.default_matmul_precision(effective["jax_default_matmul_precision"]):
             nspins = tuple(cfg["system"]["electrons"])
@@ -208,6 +221,8 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
             for ap, mlp in zip(P["layers"]["attention"], P["layers"]["mlp"]):
                 flags = {"v_w": not options.use_fixed_value, "g_w": options.use_gate,
                          "out_scale": options.use_output_scale, "mask_omega": options.use_softmask}
+                flags.update(mask_eta=options.use_softmask and effective['WIN_SHAPE']=='hybrid' and effective['FREEZE_ETA'],
+                             mask_eta_logit=options.use_softmask and effective['WIN_SHAPE']=='hybrid' and not effective['FREEZE_ETA'])
                 if any((key in ap) != enabled for key, enabled in flags.items()):
                     raise ValueError("configとcheckpointのValue/Gate/Window/出力倍率の構造が不一致")
                 if (ap["q_w"].shape != (options.mlp_dim, options.num_heads*options.attn_dim)
@@ -269,7 +284,8 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
             widths, centres, representative, trim, shells = [], [], [], [], []
             # 以下は表示用のcheckpointパラメータ読出しのみ。Weightは再計算しない。
             for ap in P["layers"]["attention"]:
-                sigma = np.asarray(dref * jax.nn.softplus(ap["mask_omega"])) if "mask_omega" in ap else np.full(options.num_heads, np.nan)
+                sigma = (np.asarray(dref * jax.nn.softplus(ap["mask_omega"]))
+                         if "mask_omega" in ap and effective['WIN_SHAPE']!='full' else np.full(options.num_heads, np.nan))
                 shell = "mask_centre" in ap or "mask_rings" in ap
                 c = np.asarray(dref * ap["mask_centre"]) if "mask_centre" in ap else np.zeros_like(sigma)
                 if "mask_rings" in ap:
@@ -279,7 +295,8 @@ def probe(folder, checkpoint=None, trim_max=None, nconf=None, *, settings=None, 
                 trim.append(np.asarray(effective["TRIM_MAX"] * jax.nn.sigmoid(ap["trim_rho"])))
             result.update(w=np.asarray(representative), r=np.asarray(trim), dref=dref,
                 w_sigma=np.asarray(widths), w_centre=np.asarray(centres),
-                w_outer=np.asarray(centres)+np.asarray(widths), shell=all(shells), shell_by_layer=np.asarray(shells),
+                w_outer=(np.asarray(centres)+np.asarray(widths) if effective['WIN_SHAPE'] in ('cos','smooth7')
+                         else np.full_like(np.asarray(widths),np.inf)), shell=all(shells), shell_by_layer=np.asarray(shells),
                 spins=batch["spins"], positions=batch["positions"], atoms=batch["atoms"], charges=batch["charges"], lattice=L,
                 NE=sum(nspins), NL=options.num_layers, NH=options.num_heads, checkpoint=ck.name, folder=str(folder))
     finally:

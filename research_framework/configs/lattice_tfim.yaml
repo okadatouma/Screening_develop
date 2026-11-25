@@ -1,0 +1,105 @@
+experiment:
+  name: pilot
+  task: lattice_tfim
+  seed: 101
+  stage: pilot
+physics:
+  n: 6
+  J: 1.0
+  g: 1.0
+  lattice:
+  - - 4.0
+    - 0.0
+  - - 0.0
+    - 4.0
+  crystal_supercell:
+  - - 2
+    - 0
+  - - 0
+    - 2
+  lam: 0.0
+  delta: 1.0
+  rs: 1.0
+  potential: none
+  hf_path: null
+  twist:
+  - 0.0
+  - 0.0
+  nk: 8
+  train_masses:
+  - -3.0
+  - -1.4
+  - -1.0
+  - -0.6
+  - 0.6
+  - 1.0
+  - 1.4
+  - 3.0
+  test_masses:
+  - 2.8
+  - 0.8
+  - -1.2
+model:
+  width: 12
+  heads: 2
+  head_dim: 4
+  depth: 1
+  perceptrons: 1
+  layer_norm: false
+  capacity_mode: natural
+  embedding_budget: 20
+embedding:
+  type: baseline
+  spin_encoding: scalar
+  modes:
+  - - 1
+    - 0
+  - - 0
+    - 1
+  - - 1
+    - -1
+  amplitude_initial: 1.0
+  sparse_penalty: 0.0
+  normalize_projection: true
+attention:
+  type: screening
+  phase_transport: false
+  window:
+    mode: fixed
+    shape: hard
+    width: full
+    lower: 0.05
+    upper: 4.0
+    temperature: 0.25
+    regularization: 0.0
+wavefunction:
+  type: baseline
+  complex_phase: true
+  jastrow: false
+  net_scale: 0.05
+training:
+  method: exact
+  steps: 150
+  learning_rate: 0.01
+  checkpoint_every: 50
+  walkers: 16
+  burn_in: 8
+  sweeps: 2
+  gradient_clip: 5.0
+evaluation:
+  samples: 32
+  chains: 4
+  burn_in: 16
+  thinning: 2
+  probe_samples: 8
+  ph: true
+  interventions: true
+  phase_samples: 8
+analysis:
+  energy: true
+  attention: true
+  persistent_homology: true
+  structure_factor: false
+  phase_sensitivity: true
+  entanglement: true
+  berry: false

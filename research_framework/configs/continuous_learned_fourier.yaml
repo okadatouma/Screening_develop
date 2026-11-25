@@ -1,0 +1,111 @@
+experiment:
+  name: fullQ_learned_fourier
+  task: continuous_electrons
+  seed: 202
+  stage: B_candidate_control
+physics:
+  n: 2
+  J: 1.0
+  g: 1.0
+  lattice:
+  - - 4.0
+    - 0.0
+  - - 0.0
+    - 4.0
+  crystal_supercell:
+  - - 2
+    - 0
+  - - 0
+    - 2
+  lam: 0.0
+  delta: 1.0
+  rs: 1.0
+  potential: none
+  hf_path: null
+  twist:
+  - 0.0
+  - 0.0
+  nk: 8
+  train_masses:
+  - -3.0
+  - -1.4
+  - -1.0
+  - -0.6
+  - 0.6
+  - 1.0
+  - 1.4
+  - 3.0
+  test_masses:
+  - 2.8
+  - 0.8
+  - -1.2
+model:
+  width: 8
+  heads: 2
+  head_dim: 2
+  depth: 1
+  perceptrons: 1
+  layer_norm: false
+  capacity_mode: padded
+  embedding_budget: 20
+embedding:
+  type: learned_fourier
+  spin_encoding: scalar
+  modes:
+  - - 1
+    - 0
+  - - 0
+    - 1
+  - - 1
+    - -1
+  - - 2
+    - 0
+  - - 0
+    - 2
+  - - 2
+    - -2
+  amplitude_initial: 1.0
+  sparse_penalty: 0.0
+  normalize_projection: true
+attention:
+  type: screening
+  phase_transport: false
+  window:
+    mode: fixed
+    shape: cos
+    width: 1.5
+    lower: 0.05
+    upper: 3.0
+    temperature: 0.25
+    regularization: 0.0
+wavefunction:
+  type: hf_nn_jastrow
+  complex_phase: true
+  jastrow: false
+  net_scale: 0.05
+training:
+  method: vmc
+  steps: 12
+  learning_rate: 0.002
+  checkpoint_every: 6
+  walkers: 12
+  burn_in: 12
+  sweeps: 2
+  gradient_clip: 5.0
+evaluation:
+  samples: 16
+  chains: 4
+  burn_in: 24
+  thinning: 2
+  probe_samples: 8
+  ph: true
+  interventions: true
+  phase_samples: 8
+analysis:
+  energy: true
+  attention: true
+  persistent_homology: true
+  structure_factor: true
+  phase_sensitivity: true
+  entanglement: false
+  berry: false

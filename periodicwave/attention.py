@@ -49,7 +49,11 @@ def _ring_steps(d_ee, b, dl, gauss=False):
   return th.at[0].set(1.0).at[-1].set(0.0)             # 端の輪は片側だけ切る
 
 
-def screening_window(params, d_ee, d_ref, *, win_shape, freeze_w):
+WINDOW_SHAPES = ('cos', 'smooth7', 'gaussian', 'algebraic', 'hybrid', 'full')
+
+
+def screening_window(params, d_ee, d_ref, *, win_shape, freeze_w,
+                     algebraic_power=4, freeze_eta=False):
   """Screeningの距離窓 m_h(d_ij) を返す（shape [H, N, N]）。
 
   params: mask_omega [H] は w=d_ref*softplus(omega) の幅。
@@ -57,7 +61,10 @@ def screening_window(params, d_ee, d_ref, *, win_shape, freeze_w):
     mask_rings [H+1] があれば境界 b=d_ref*rings の輪切り窓。
     mask_envp（scalar）は全体窓の指数、mask_gauss（scalar）があればGaussian階段。
   d_ee: 周期ノルムの距離 [N,N]。d_ref: 既存の基準距離（同じ長さ単位）。
-  win_shape: 単調窓だけに適用する 'cos' または 'smooth7'。
+  win_shape: cos/smooth7/gaussian/algebraic/hybrid/full。
+    新しい窓では w を長さ尺度 xi として使う（有限カットオフではない）。
+    algebraic_power は固定の偶整数 >= 2。d^2 の整数累乗で原点の微分を保つ。
+    hybrid の eta は sigmoid(mask_eta_logit)、固定時は mask_eta を使用。
   freeze_w: 幅・中心・輪境界への勾配を止める。座標への勾配は止めない。
     全体窓の指数とGaussian目印への勾配は常に停止する。
 
@@ -65,13 +72,34 @@ def screening_window(params, d_ee, d_ref, *, win_shape, freeze_w):
   帯窓: m=(1+cos(pi*clip((d-c)/w,-1,1)))/2。
   輪切り: m_h=(T_h-T_{h+1})*g, g=(1+cos(pi*clip(d/d_ref,0,1)^p))/2。
   余弦の接続はC1、smooth7はC3。境界でのclipの微分規約と、
-  原点の累乗保護を維持する。Windowなしは呼出元でこの関数を通らない。
+  原点の累乗保護を維持する。use_softmask=Falseなら呼出元でこの関数を通らない。
   JITではwin_shapeとfreeze_wを静的設定として渡す。
   """
+  if win_shape not in WINDOW_SHAPES:
+    raise ValueError('unknown Window shape: ' + str(win_shape))
+  if win_shape not in ('cos', 'smooth7') and ('mask_rings' in params or 'mask_centre' in params):
+    raise ValueError('new Window shapes cannot be combined with ring/band windows')
+  if win_shape == 'full':
+    return jnp.ones((params['mask_omega'].shape[0],) + d_ee.shape, dtype=d_ee.dtype)
   _om = params['mask_omega']
   if freeze_w:
     _om = jax.lax.stop_gradient(_om)   # 窓を固定（目盛りとして使う）
-  w = d_ref * jax.nn.softplus(_om)                     # [num_heads] 半値幅 sigma_h
+  w = d_ref * jax.nn.softplus(_om)                     # [num_heads] scale w or xi
+  if win_shape in ('gaussian', 'algebraic', 'hybrid'):
+    squared = (d_ee[None, :, :] / w[:, None, None]) ** 2
+    if win_shape == 'algebraic':
+      if algebraic_power < 2 or algebraic_power % 2 or int(algebraic_power) != algebraic_power:
+        raise ValueError('algebraic_power must be an even integer >= 2')
+      return 1.0 / (1.0 + squared ** (int(algebraic_power) // 2))
+    local = jnp.exp(-squared)
+    if win_shape == 'gaussian':
+      return local
+    eta = (jax.lax.stop_gradient(params['mask_eta']) if freeze_eta
+           else jax.nn.sigmoid(params['mask_eta_logit']))
+    # Subtract/add in the same precision as the distance-dependent term.
+    # Otherwise float32 (1-eta) promoted to float64 can make m(0) > 1.
+    eta = jnp.asarray(eta, dtype=local.dtype)
+    return (1.0 - eta[:, None, None]) * local + eta[:, None, None]
   if 'mask_rings' in params:
     _b = params['mask_rings']
     if freeze_w:
@@ -107,6 +135,36 @@ def screening_window(params, d_ee, d_ref, *, win_shape, freeze_w):
   return m
 
 
+def window_scales(params, d_ref, win_shape, *, freeze_eta=False):
+  """Report the actual scale, half-height radius, and tail (monotone windows).
+
+  Full has no meaningful width. Hybrid has no finite absolute half-height
+  radius when eta >= 1/2; half_decay_radius measures decay above its floor.
+  """
+  xi = d_ref * jax.nn.softplus(params['mask_omega'])
+  zero = jnp.zeros_like(xi)
+  missing = jnp.full_like(xi, jnp.nan)
+  floor, eta = zero, missing
+  cutoff = xi if win_shape in ('cos', 'smooth7') else jnp.full_like(xi, jnp.inf)
+  half = xi / 2 if win_shape in ('cos', 'smooth7') else xi * jnp.sqrt(jnp.log(2.0))
+  decay = half
+  if win_shape == 'algebraic':
+    half = decay = xi
+  elif win_shape == 'hybrid':
+    eta = params['mask_eta'] if freeze_eta else jax.nn.sigmoid(params['mask_eta_logit'])
+    eta = jnp.asarray(eta, dtype=xi.dtype)
+    floor = eta
+    exists = eta < .5
+    ratio = jnp.where(exists, .5-eta, 1.) / jnp.where(exists, 1.-eta, 1.)
+    half = jnp.where(exists, xi * jnp.sqrt(-jnp.log(ratio)), missing)
+    decay = jnp.where(eta < 1, xi*jnp.sqrt(jnp.log(2.0)), missing)
+    xi = jnp.where(eta < 1, xi, missing)
+  elif win_shape == 'full':
+    xi, half, decay, floor = missing, missing, missing, jnp.ones_like(xi)
+  return dict(width=xi, half_weight_radius=half, half_decay_radius=decay,
+              tail_floor=floor, cutoff_radius=cutoff, eta=eta)
+
+
 def _unit_length(x: jnp.ndarray, eps: float = 1e-6) -> jnp.ndarray:
   norm = jnp.sqrt(jnp.sum(x * x, axis=-1, keepdims=True) + eps * eps)
   return x / norm
@@ -115,7 +173,8 @@ def _unit_length(x: jnp.ndarray, eps: float = 1e-6) -> jnp.ndarray:
 def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
                         options, trim_max, trim_pow, win_shape, freeze_w,
                         clip_r, clip_beta, return_aux=False,
-                        window=None, qk_stream=None, gate_stream=None):
+                        window=None, qk_stream=None, gate_stream=None,
+                        algebraic_power=4, freeze_eta=False):
   """Screening Attentionの出力 [N, embed_dim] を評価する。
 
   x=single_electron_stream は [N,embed_dim]、d_eeは周期距離 [N,N]。
@@ -192,7 +251,8 @@ def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
 
   # 5–6. 周期距離のWindowと重み weights=alpha*m（行和で割らない）。
   if use_softmask:
-    m = (screening_window(params, d_ee, d_ref, win_shape=win_shape, freeze_w=freeze_w)
+    m = (screening_window(params, d_ee, d_ref, win_shape=win_shape, freeze_w=freeze_w,
+                         algebraic_power=algebraic_power, freeze_eta=freeze_eta)
          if window is None else window)
     weights = alpha * m
     if return_aux:
@@ -220,6 +280,29 @@ def screening_attention(params, single_electron_stream, d_ee, pair_feat=None, *,
     _t = jnp.clip((d_ee[None, :, :] - (1.0 - clip_beta) * clip_r)
                   / (clip_beta * clip_r), 0.0, 1.0)
     weights = weights * 0.5 * (1.0 + jnp.cos(jnp.pi * _t))
+
+  # Optional diagnostic intervention on actual directed connections. Absent in
+  # training/checkpoints by default; identity scale preserves the original path.
+  # Applied after Window/clip/diagonal interventions and before Value aggregation.
+  _edge_scale = params.get('_edge_scale', None)
+  if _edge_scale is not None:
+    if _edge_scale.shape != weights.shape:
+      raise ValueError('_edge_scale must have shape [heads, electrons, electrons]')
+    weights = weights * _edge_scale
+
+  # Distance-band interventions for post-training wavefunction/energy analysis.
+  # Recompute from coordinates inside the forward pass: kinetic derivatives
+  # must include this factor. The compact bump is C3 at its outer boundaries.
+  if '_radial_epsilon' in params:
+    centers = params['_radial_centers']
+    widths = params['_radial_widths']
+    epsilon = params['_radial_epsilon']
+    if centers.ndim != 1 or widths.shape != centers.shape or epsilon.shape != (weights.shape[0], centers.shape[0]):
+      raise ValueError('radial intervention requires centers/widths [bands], epsilon [heads,bands]')
+    u = (d_ee[None, :, :] - centers[:, None, None]) / widths[:, None, None]
+    band = jnp.maximum(1.0 - u * u, 0.0) ** 4
+    band = band * (1.0 - jnp.eye(d_ee.shape[0]))[None, :, :]
+    weights = weights * jnp.exp(jnp.einsum('hb,bij->hij', epsilon, band))
 
   if return_aux:
     aux['weights'] = weights

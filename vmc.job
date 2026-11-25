@@ -34,7 +34,7 @@ esac
 
 # 計算条件：N36、WC/AHCのHF初期状態を比較（学習後の相は未検証）
 export PW_OPTIMIZER=adam
-export PW_LR=.05 PW_LR_DELAY=160000.  #元はPW_LR=.002
+export PW_LR=.004 PW_LR_DELAY=160000.  #元はPW_LR=.002
 export PW_BATCH=64 PW_EL_CHUNK=8 PW_FLIP_BATCH=6
 export PW_LAYERS=1 PW_HEADS=2
 export PW_ATTN_DIM=8 PW_VALUE_DIM=8 PW_WIDTH=32 PW_DET=1
@@ -50,6 +50,15 @@ export PW_LJ_HF="$PWD/gpu_runs/20261026/hf/hf_N36_lam0${LAM}_${HF_KIND}.txt"
 RUN_ROOT="$PWD/results/manual/array-${SLURM_ARRAY_JOB_ID}/lam0${LAM}-${HF_KIND}"
 export PW_OUTPUT_DIR="$RUN_ROOT/training"
 test -r "$PW_LJ_HF"
+
+
+#計算終了後の解析
+""
+training:学習中に保存
+anaysis:学習後の解析
+convergence-review:学習中の収束確認
+""
+
 
 # GPU確認
 "$PYTHON" -c \

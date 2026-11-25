@@ -131,6 +131,9 @@ class ScreenformerOptions(networks.BaseNetworkOptions):
   use_fixed_value: bool = False             # [SCREEN] value を対の固定特徴 e(r_ij) にする
   use_output_scale: bool = True             # [SCREEN]
   init_output_scale: float = 0.0            # [SCREEN] 0 = auto-calibrate
+  # Opt-in research interfaces. None preserves the original parameters/RNG/math.
+  input_embedding: Any = None
+  attention_factory: Any = None
 
 
 TRIM_MAX = 2.0
@@ -159,9 +162,18 @@ FREEZE_W = os.environ.get("PW_FREEZE_W", "0").lower() not in ("0", "", "false")
 #                          （d = w で 3 階微分まで連続、max|m''| = 7.5/w^2。余弦の窓は 2 階微分が pi^2/2w^2 跳ぶ）
 #   PW_TRIM_POW=4        : Trim を relu の 4 乗にする（s = 1 - r で 3 階微分まで連続）
 WIN_SHAPE = os.environ.get("PW_WIN_SHAPE", "cos").lower()
+WIN_POWER = int(os.environ.get('PW_WIN_POWER', '4'))
+WIN_ETA = float(os.environ.get('PW_WIN_ETA', '0.1'))
+FREEZE_ETA = os.environ.get('PW_FREEZE_ETA', '0').lower() not in ('0', '', 'false')
 TRIM_POW = int(os.environ.get("PW_TRIM_POW", "2"))
-if WIN_SHAPE not in ("cos", "smooth7"):
-  raise ValueError("PW_WIN_SHAPE は cos か smooth7")
+if WIN_SHAPE not in attention.WINDOW_SHAPES:
+  raise ValueError('PW_WIN_SHAPE must be one of ' + str(attention.WINDOW_SHAPES))
+if WIN_POWER < 2 or WIN_POWER % 2:
+  raise ValueError('PW_WIN_POWER must be an even integer >= 2')
+if not np.isfinite(WIN_ETA) or not 0 <= WIN_ETA <= 1:
+  raise ValueError('PW_WIN_ETA must be in [0,1]')
+if WIN_SHAPE == 'hybrid' and not FREEZE_ETA and not 0 < WIN_ETA < 1:
+  raise ValueError('learned Hybrid eta needs 0 < PW_WIN_ETA < 1; use PW_FREEZE_ETA=1 for exact endpoints')
 if TRIM_POW not in (2, 4):
   raise ValueError("PW_TRIM_POW は 2 か 4")
 
@@ -252,6 +264,8 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
 
   # [SCREEN] geometrically spaced initial screening lengths (multiscreen).
   centre = max(float(init_softmask_w_factor), 1e-3)
+  if WIN_SHAPE not in ('cos', 'smooth7') and (init_softmask_centres is not None or init_softmask_rings is not None):
+    raise ValueError('new Window shapes require monotone windows, not rings/centres')
   spread = max(float(init_softmask_w_spread), 1.0)
   if num_heads == 1 or spread == 1.0:
     w_factors = np.full((num_heads,), centre)
@@ -365,6 +379,11 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
     if use_softmask:
       # per-head, geometrically spaced -> multiscreen from the very first step
       params['mask_omega'] = jnp.asarray(omega_init, dtype=jnp.float32)
+      if WIN_SHAPE == 'hybrid':
+        if FREEZE_ETA:
+          params['mask_eta'] = jnp.full((num_heads,), WIN_ETA, dtype=jnp.float32)
+        else:
+          params['mask_eta_logit'] = jnp.full((num_heads,), np.log(WIN_ETA/(1-WIN_ETA)), dtype=jnp.float32)
       if centre_init is not None:
         # [SCREEN] 帯域窓の中心 c_h / d_ref。生のまま持つので 0 も表現できる
         # （0 = 従来の単調減少窓）。
@@ -413,11 +432,13 @@ def make_screening_attention(num_heads: int, embed_dim: int, attn_dim: int,
       return attention.screening_attention(
           params, single_electron_stream, d_ee, pair_feat, options=attention_options,
           trim_max=TRIM_MAX, trim_pow=TRIM_POW, win_shape=WIN_SHAPE,
-          freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA, return_aux=True)
+          freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA, return_aux=True,
+          algebraic_power=WIN_POWER, freeze_eta=FREEZE_ETA)
     return attention.screening_attention(
         params, single_electron_stream, d_ee, pair_feat, options=attention_options,
         trim_max=TRIM_MAX, trim_pow=TRIM_POW, win_shape=WIN_SHAPE,
-        freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA)
+        freeze_w=FREEZE_W, clip_r=CLIP_R, clip_beta=CLIP_BETA,
+        algebraic_power=WIN_POWER, freeze_eta=FREEZE_ETA)
 
   return init, apply
 
@@ -496,9 +517,10 @@ def make_self_attention_block(num_layers: int,
                                use_fixed_value=False,
                               pair_dim=0,
                               use_output_scale: bool = True,
-                              init_output_scale: float = 0.0) ->...:
+                              init_output_scale: float = 0.0,
+                              attention_factory=None) ->...:
   """Create a screening self-attention block. [SCREEN]"""
-  attention_init, attention_apply = make_screening_attention(
+  attention_init, attention_apply = (attention_factory or make_screening_attention)(
       num_heads, mlp_dim, attn_dim, value_dim, num_electrons, d_ref,
       use_softmask=use_softmask, use_gate=use_gate, use_tanh_norm=use_tanh_norm,
       init_trim_r=init_trim_r, init_softmask_w_factor=init_softmask_w_factor,
@@ -636,6 +658,7 @@ def make_screenformer_layers(
       pair_dim=int(options.feature_layer.init()[0][1]),
       use_output_scale=options.use_output_scale,
       init_output_scale=options.init_output_scale,
+      attention_factory=getattr(options, 'attention_factory', None),
   )
 
   def init(key: chex.PRNGKey) -> Tuple[int, networks.ParamTree]:
@@ -647,9 +670,13 @@ def make_screenformer_layers(
 
     # Map to Attention dim.
     key, subkey = jax.random.split(key)
-    params['embed'] = network_blocks.init_input_embedding(
-        subkey, one_electron_feature_dim, options.mlp_dim
-    )
+    if getattr(options, 'input_embedding', None) is None:
+      params['embed'] = network_blocks.init_input_embedding(
+          subkey, one_electron_feature_dim, options.mlp_dim
+      )
+    else:
+      params['embed'], params['embedding_extra'] = options.input_embedding.init(
+          subkey, one_electron_feature_dim, options.mlp_dim)
 
     # Attention block params.
     key, subkey = jax.random.split(key)
@@ -693,7 +720,11 @@ def make_screenformer_layers(
     )
 
     # Spin is part of the equivariant one-electron embedding.
-    x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
+    if getattr(options, 'input_embedding', None) is None:
+      x = network_blocks.apply_input_embedding(params['embed'], ae_features, spins)
+    else:
+      x = options.input_embedding.apply(params['embed'], params['embedding_extra'],
+                                        ae_features, spins, ae)
 
     # [SCREEN] pairwise physical (periodic) distances for the softmask.
     d_ee = r_ee[..., 0]
@@ -832,6 +863,8 @@ def make_fermi_net(
     lj_cusps=None,
     lj_net_scale: float = 0.05,
     lj_jastrow: bool = True,
+    input_embedding=None,
+    attention_factory=None,
 ) -> networks.Network:
   """Screenformer: stacked screening self-attention layers. [SCREEN]
 
@@ -921,6 +954,8 @@ def make_fermi_net(
       use_fixed_value=use_fixed_value,
       use_output_scale=use_output_scale,
       init_output_scale=init_output_scale,
+      input_embedding=input_embedding,
+      attention_factory=attention_factory,
   )  # pytype: disable=wrong-keyword-args
 
   screenformer_layers = make_screenformer_layers(nspins, charges.shape[0], options)

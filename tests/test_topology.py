@@ -31,6 +31,14 @@ def oracle_betti(b,t):
 
 
 class TopologyChecks(unittest.TestCase):
+    def test_roundoff_bounds_without_accepting_invalid_weights(self):
+        w=np.array([[0.,-6.4e-17,1.+2e-16],[-6.4e-17,0.,.5],[1.+2e-16,.5,0.]])
+        expected=np.array([[0.,0.,1.],[0.,0.,.5],[1.,.5,0.]])
+        np.testing.assert_array_equal(ph.symmetrize(w),expected)
+        for value in (-1e-6,1.+1e-6):
+            invalid=w.copy();invalid[0,1]=value
+            with self.assertRaises(ValueError):ph.symmetrize(invalid)
+
     def test_all_four_vertex_flag_complexes(self):
         ij=np.triu_indices(4,1)
         for code in range(64):

@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name=continuum-report
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=12G
+#SBATCH --time=04:00:00
+set -euo pipefail
+: "${CONTINUOUS_ROOT:?Set CONTINUOUS_ROOT}"
+cd "${CONTINUOUS_SOURCE:-$CONTINUOUS_ROOT/source}"
+export OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 JAX_PLATFORMS=cpu JAX_ENABLE_X64=1
+/home/tomax/venvs/pyrite-bands/bin/python -u -m screening_analysis.converged_window_report "$CONTINUOUS_ROOT"

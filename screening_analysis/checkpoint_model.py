@@ -7,7 +7,7 @@ import numpy as np
 import jax
 import jax.numpy as jnp
 from periodicwave import CustomScreenformer as CS
-from screening_analysis.attn_probe import _effective_settings,lattice_from_config,SETTINGS
+from screening_analysis.attn_probe import _effective_settings,lattice_from_config,GLOBAL_SETTINGS
 from screening_analysis.checkpoint_catalog import find_config
 
 
@@ -25,9 +25,9 @@ def load_model(folder,checkpoint=None,settings=None,lattice=None):
     if isinstance(cfg['system']['pbc_lattice'],str) and lattice is None:raise ValueError('original precision lattice required; no rounded reconstruction')
     L=lattice_from_config(cfg) if lattice is None else np.asarray(lattice)
     path=Path(checkpoint) if checkpoint else sorted(folder.glob('qmcjax_ckpt_*.npz'))[-1]
-    globals_before={key:getattr(CS,key) for key in SETTINGS[:6]}
+    globals_before={key:getattr(CS,key) for key in GLOBAL_SETTINGS}
     try:
-        for key in SETTINGS[:6]:setattr(CS,key,effective[key])
+        for key in GLOBAL_SETTINGS:setattr(CS,key,effective[key])
         with jax.experimental.enable_x64(effective['jax_enable_x64']),jax.default_matmul_precision(effective['jax_default_matmul_precision']):
             with np.load(path,allow_pickle=True) as z:raw=z['params'].item();data=z['data'].item();step=int(z['t'])
             devices=np.asarray(data['positions']).shape[0]

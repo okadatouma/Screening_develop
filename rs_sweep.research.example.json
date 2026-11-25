@@ -1,0 +1,111 @@
+{
+  "n": 36,
+  "rs": [
+    10,
+    15,
+    20
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "iterations": 80000,
+  "branches": [
+    {
+      "label": "liquid-candidate",
+      "lam": 0.0,
+      "initialization": "plane"
+    },
+    {
+      "label": "wc-candidate",
+      "lam": 0.33,
+      "initialization": "wc"
+    },
+    {
+      "label": "wc-init-0p5",
+      "lam": 0.5,
+      "initialization": "wc"
+    },
+    {
+      "label": "ahc-init-0p5",
+      "lam": 0.5,
+      "initialization": "ahc",
+      "hf_reference": "gpu_runs/20261026/hf/hf_N36_lam0.72_ahc.txt"
+    },
+    {
+      "label": "wc-init-0p6",
+      "lam": 0.6,
+      "initialization": "wc"
+    },
+    {
+      "label": "ahc-init-0p6",
+      "lam": 0.6,
+      "initialization": "ahc",
+      "hf_reference": "gpu_runs/20261026/hf/hf_N36_lam0.72_ahc.txt"
+    },
+    {
+      "label": "wc-init-0p64",
+      "lam": 0.64,
+      "initialization": "wc"
+    },
+    {
+      "label": "ahc-init-0p64",
+      "lam": 0.64,
+      "initialization": "ahc",
+      "hf_reference": "gpu_runs/20261026/hf/hf_N36_lam0.72_ahc.txt"
+    },
+    {
+      "label": "ahc-candidate",
+      "lam": 0.72,
+      "initialization": "ahc",
+      "hf_reference": "gpu_runs/20261026/hf/hf_N36_lam0.72_ahc.txt"
+    }
+  ],
+  "hf": {
+    "gcut": 2.01,
+    "max_iterations": 500,
+    "mix": 0.5,
+    "tolerance": 1e-07
+  },
+  "training_environment": {
+    "PW_OPTIMIZER": "adam",
+    "PW_LR": "0.003",
+    "PW_LR_DELAY": "160000",
+    "PW_BATCH": "64",
+    "PW_EL_CHUNK": "8",
+    "PW_FLIP_BATCH": "6",
+    "PW_LAYERS": "1",
+    "PW_HEADS": "2",
+    "PW_ATTN_DIM": "8",
+    "PW_VALUE_DIM": "8",
+    "PW_WIDTH": "32",
+    "PW_DET": "1",
+    "PW_MCMC_STEPS": "10",
+    "PW_BURN_IN": "256",
+    "PW_LAPL": "folx",
+    "PW_WIN_SHAPE": "smooth7",
+    "PW_TRIM_POW": "4",
+    "PW_SAVE_MIN": "15",
+    "PW_CHECK_NAN": "1",
+    "PW_FLIPS": "3"
+  },
+  "analysis": {
+    "native_samples": 32,
+    "common_samples": 32,
+    "ph_samples": 8,
+    "phase_samples": 8,
+    "null_repeats": 4,
+    "research": {
+      "enabled": true,
+      "samples": 8,
+      "repeats": 8,
+      "ks": [
+        60,
+        90
+      ],
+      "bins": 6,
+      "energy_samples": 8
+    }
+  }
+}

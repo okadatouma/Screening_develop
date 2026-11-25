@@ -193,7 +193,10 @@ if _rings is not None:
           + (f"   ガウス核 sigma = {_rings[1] * _dref:.4f}" if len(_rings) > 3
              else f"   delta = {_rings[1] * _dref:.4f}") + f"   p = {_rings[2]:g}" + _frz)
 else:
-    print("[λJ] 入れ子窓 w_h = " + ", ".join(f"{v:.3f}" for v in np.geomspace(_lo, _hi, _H)) + _frz)
+    print(f"[λJ] Window={_CS.WIN_SHAPE}; scale w/xi = " + ", ".join(f"{v:.3f}" for v in np.geomspace(_lo, _hi, _H)) + _frz)
+    if _CS.WIN_SHAPE == 'algebraic':print(f'[λJ] Algebraic p={_CS.WIN_POWER} (fixed)')
+    if _CS.WIN_SHAPE == 'hybrid':print(f'[λJ] Hybrid eta={_CS.WIN_ETA}, frozen={_CS.FREEZE_ETA}')
+    if _CS.WIN_SHAPE == 'full':print('[λJ] Window=1; width has no effect. QK Trim remains enabled.')
 
 cfg.network.network_type = 'CustomScreenformer'
 cfg.network.CustomScreenformer = ml_collections.ConfigDict({
@@ -242,8 +245,11 @@ if _hf_path:
             + np.abs(np.einsum('pkg,kg->pk', _ph, _c * lam * _qp * _nr)) ** 2).sum(1)
     _r0 = _pts[int(np.argmax(_rho))]
     _sites = np.array([_r0 + i * _A[:, 0] + j * _A[:, 1] for i in range(L) for j in range(L)])
-    cfg.system.init_sites = [float(v) for v in _sites.reshape(-1)]
-    cfg.system.init_sites_width = float(os.environ.get("PW_INIT_SITES_WIDTH", 0.3))
+    # A plane-wave reference for a liquid candidate must not force crystalline
+    # walker positions. Existing HF runs keep their original initialization.
+    if _flag('PW_INIT_LOCALIZE', '1'):
+        cfg.system.init_sites = [float(v) for v in _sites.reshape(-1)]
+        cfg.system.init_sites_width = float(os.environ.get("PW_INIT_SITES_WIDTH", 0.3))
     print(f"[λJ] lj2：HF の表 {_hf_path}、カスプ (++, --, +-) = " + ", ".join(f"{v:.4f}" for v in _cusps)
           + f"、Jastrow {'あり' if _use_j else 'なし'}、網の初期の大きさ {cfg.network.CustomScreenformer.lj_net_scale}、"
           f"密度の山 r0 = ({_r0[0]:.3f}, {_r0[1]:.3f})、山/谷 = {_rho.max() / max(_rho.min(), 1e-12):.2f}")
@@ -266,6 +272,7 @@ if os.environ.get('PW_OUTPUT_DIR'):
 cfg.screening_attention_settings = {
     'TRIM_MAX': float(_CS.TRIM_MAX), 'TRIM_POW': int(_CS.TRIM_POW),
     'WIN_SHAPE': _CS.WIN_SHAPE, 'FREEZE_W': bool(_CS.FREEZE_W),
+    'WIN_POWER': int(_CS.WIN_POWER), 'WIN_ETA': float(_CS.WIN_ETA), 'FREEZE_ETA': bool(_CS.FREEZE_ETA),
     'CLIP_R': _CS.CLIP_R, 'CLIP_BETA': float(_CS.CLIP_BETA),
     'jax_enable_x64': bool(jax.config.x64_enabled),
     'jax_default_matmul_precision': str(jax.config.jax_default_matmul_precision),
